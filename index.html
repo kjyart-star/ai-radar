@@ -1,0 +1,998 @@
+<!doctype html>
+<html lang="ko" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI 레이더 — AI 공모전·영화제·지원사업·뉴스</title>
+<meta name="description" content="AI 공모전, AI 영화제, AI 지원사업, AI 뉴스 브리핑과 유튜브 영상을 한 곳에서 모아 봅니다.">
+<style>
+  /* ===== 토큰: 다크 기본 ===== */
+  :root{
+    color-scheme: dark;
+    --bg:#111311; --surface:#1a1d19; --surface-2:#20241f; --surface-3:#262b23;
+    --line:#2c302a; --line-strong:#3a3f37;
+    --ink:#f0f1ea; --ink-2:#b6b9ac; --ink-3:#868a7c;
+    --accent:#5cbb92; --accent-soft:#1e2f27; --accent-ink:#8fd3b3;
+    --vfx:#3987e5; --vfx-soft:#16273b;
+    --aivfx:#199e70; --aivfx-soft:#123128;
+    --aicontent:#d95926; --aicontent-soft:#33221a;
+    --aiedu:#d55181; --aiedu-soft:#331a24;
+    --pos:#5cbb92; --pending:#d6a63f; --pending-soft:#332b13;
+    --urgent:#e46a5c; --urgent-soft:#351f1c;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.34);
+    --radius:14px;
+    --font:"Apple SD Gothic Neo","Pretendard","Malgun Gothic","맑은 고딕",-apple-system,system-ui,"Segoe UI",Roboto,sans-serif;
+    --sidebar-w:260px;
+  }
+  :root[data-theme="light"]{
+    color-scheme: light;
+    --bg:#f6f5ef; --surface:#fffffe; --surface-2:#faf9f3; --surface-3:#f2f0e6;
+    --line:#e6e4d8; --line-strong:#d3d0c2;
+    --ink:#1b1e1a; --ink-2:#55584e; --ink-3:#83867a;
+    --accent:#2f7d5b; --accent-soft:#e4efe8; --accent-ink:#235e45;
+    --vfx:#2a78d6; --vfx-soft:#e2edfb;
+    --aivfx:#1baf7a; --aivfx-soft:#dcf0e8;
+    --aicontent:#eb6834; --aicontent-soft:#fbe8dd;
+    --aiedu:#e87ba4; --aiedu-soft:#fbe3ec;
+    --pos:#2f7d5b; --pending:#b07d16; --pending-soft:#f6ecd2;
+    --urgent:#cf4a3c; --urgent-soft:#fae2df;
+    --shadow:0 1px 2px rgba(30,34,26,.04), 0 6px 20px rgba(30,34,26,.05);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{font-family:var(--font); color:var(--ink); background:var(--bg);
+    -webkit-font-smoothing:antialiased; line-height:1.55; font-size:15px;}
+  .tnum{font-variant-numeric:tabular-nums;}
+  a{color:inherit;}
+  button{font-family:var(--font);}
+
+  /* ===== 레이아웃 ===== */
+  .app{display:flex; min-height:100vh;}
+  .sidebar{width:var(--sidebar-w); flex:none; background:var(--surface);
+    border-right:1px solid var(--line); position:fixed; top:0; bottom:0; left:0;
+    display:flex; flex-direction:column; z-index:40;}
+  .sb-brand{display:flex; align-items:center; gap:11px; padding:18px 18px 14px;
+    border-bottom:1px solid var(--line); flex:none;}
+  .sb-brand .mark{width:32px;height:32px;flex:none;}
+  .sb-brand h1{margin:0;font-size:17px;font-weight:800;letter-spacing:-.02em;}
+  .sb-brand .sub{margin:1px 0 0;font-size:10.5px;color:var(--ink-3);letter-spacing:.02em;}
+  .sb-nav{flex:1; overflow-y:auto; padding:12px 10px 8px;}
+  .sb-nav::-webkit-scrollbar{width:8px;}
+  .sb-nav::-webkit-scrollbar-thumb{background:var(--line-strong);border-radius:8px;}
+  .nav-cap{font-size:10px; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--ink-3); font-weight:700; padding:12px 10px 5px;}
+  .nav-item{display:flex; align-items:center; gap:10px; padding:9px 12px; margin:2px 0;
+    border-radius:10px; cursor:pointer; color:var(--ink-2); font-size:14px;
+    font-weight:600; text-decoration:none; user-select:none;}
+  .nav-item .ic{width:19px; text-align:center; flex:none; font-size:14.5px;}
+  .nav-item:hover{background:var(--surface-2); color:var(--ink);}
+  .nav-item.active{background:var(--accent-soft); color:var(--accent-ink);}
+  .sb-foot{flex:none; border-top:1px solid var(--line); padding:10px 12px;
+    display:flex; flex-wrap:wrap; gap:7px;}
+  .sb-foot button{flex:1 1 auto; min-width:0; border:1px solid var(--line-strong);
+    background:var(--surface-2); color:var(--ink-2); border-radius:9px; padding:7px 8px;
+    font-size:11.5px; font-weight:700; cursor:pointer; display:flex; align-items:center;
+    justify-content:center; gap:5px; white-space:nowrap;}
+  .sb-foot button:hover{color:var(--ink); border-color:var(--accent);}
+
+  .main{flex:1; margin-left:var(--sidebar-w); min-width:0; display:flex; flex-direction:column;}
+  .topbar{display:none;}
+  .content{padding:clamp(20px,3vw,40px); max-width:none; width:100%; margin:0 auto;}
+
+  /* ===== 페이지 헤더 ===== */
+  .page-head{display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between;
+    gap:12px; margin-bottom:24px;}
+  .page-head .eyebrow{font-size:11px; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--ink-3); font-weight:700;}
+  .page-head h2{margin:2px 0 0; font-size:clamp(19px,2.6vw,24px); font-weight:800; letter-spacing:-.02em;}
+  .page-head .desc{margin:5px 0 0; font-size:13px; color:var(--ink-3);}
+  .page-head .ph-actions{display:flex; gap:8px; flex-wrap:wrap;}
+
+  /* ===== 버튼 ===== */
+  .btn{border:1px solid var(--line-strong); background:var(--surface); color:var(--ink);
+    border-radius:10px; padding:8px 14px; font-size:13px; font-weight:700; cursor:pointer;
+    display:inline-flex; align-items:center; gap:6px; white-space:nowrap;}
+  .btn:hover{border-color:var(--accent);}
+  .btn.primary{background:var(--accent); border-color:var(--accent); color:#fff;}
+  .btn.primary:hover{filter:brightness(1.06);}
+  .btn.sm{padding:5px 10px; font-size:12px; border-radius:8px;}
+  .btn.ghost{background:transparent;}
+
+  /* ===== 섹션/카드 ===== */
+  section.panel{background:var(--surface); border:1px solid var(--line);
+    border-radius:var(--radius); box-shadow:var(--shadow); margin-bottom:24px;}
+  .sec-head{display:flex; align-items:baseline; justify-content:space-between; gap:12px;
+    padding:18px 22px 0;}
+  .sec-head h3{margin:0; font-size:15.5px; font-weight:700; letter-spacing:-.01em;}
+  .sec-head .eyebrow{font-size:11px; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--ink-3); font-weight:700;}
+  .sec-note{font-size:12.5px; color:var(--ink-3);}
+  .fold-head{cursor:pointer; user-select:none;}
+  .fold-btn{display:inline-grid; place-items:center; width:26px; height:26px; border-radius:8px;
+    border:1px solid var(--line-strong); color:var(--ink-2); font-size:13px; transition:transform .18s; flex:none;}
+  section.collapsed .fold-btn{transform:rotate(-90deg);}
+  section.collapsed .fold-body{display:none;}
+
+  /* ===== 플레이스홀더 ===== */
+  .placeholder{margin:0; border:1.5px dashed var(--line-strong); border-radius:14px; padding:56px 24px;
+    text-align:center; color:var(--ink-3); background:var(--surface-2);}
+  .placeholder .ico{font-size:34px; opacity:.55;}
+  .placeholder h3{margin:12px 0 0; font-size:16px; color:var(--ink-2);}
+  .placeholder p{margin:8px auto 0; font-size:13px; max-width:460px; line-height:1.6;}
+  .placeholder a{color:var(--accent-ink); font-weight:700;}
+  .empty{padding:40px 20px; text-align:center; color:var(--ink-3); font-size:13px;}
+  .proj-empty{display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:8px; text-align:center; padding:48px 20px; color:var(--ink-3);}
+  .proj-empty .pe-ico{font-size:34px;}
+  .proj-empty h3{font-size:15px; color:var(--ink); margin:0;}
+  .proj-empty p{font-size:12.5px; margin:0 0 6px;}
+
+  /* ===== D-day 배지 ===== */
+  .dday{flex:none; width:56px; text-align:center; font-weight:800; font-size:13px;
+    padding:6px 0; border-radius:9px;}
+  .dday.soon{color:var(--urgent); background:var(--urgent-soft);}
+  .dday.mid{color:var(--pending); background:var(--pending-soft);}
+  .dday.far{color:var(--ink-3); background:var(--surface-2);}
+  .dday.over{color:#fff; background:var(--urgent);}
+
+  /* ===== 검색·필터 칩 ===== */
+  .proj-search{border:1px solid var(--line-strong); background:var(--surface-2); color:var(--ink);
+    border-radius:9px; padding:10px 12px; font-size:13.5px; width:100%; font-family:var(--font);}
+  .proj-search:focus{outline:none; border-color:var(--accent);}
+  .proj-chip{border:1px solid var(--line-strong); background:var(--surface-2); color:var(--ink-2);
+    border-radius:999px; padding:6px 13px; font-size:12.5px; font-weight:700; cursor:pointer;
+    display:inline-flex; align-items:center;}
+  .proj-chip:hover{color:var(--ink); border-color:var(--accent);}
+  .proj-chip.on{background:var(--accent); color:#fff; border-color:var(--accent);}
+
+  /* ===== 리포트 ===== */
+  .rep-wrap{display:grid; grid-template-columns:clamp(260px,26vw,360px) minmax(0,1fr); gap:20px; align-items:start;}
+  .rep-list{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    box-shadow:var(--shadow); overflow:hidden;}
+  .rep-item{display:block; width:100%; text-align:left; border:0; border-bottom:1px solid var(--line);
+    background:transparent; padding:13px 15px; cursor:pointer;}
+  .rep-item:last-child{border-bottom:0;}
+  .rep-item:hover{background:var(--surface-2);}
+  .rep-item.on{background:var(--accent-soft);}
+  .rep-item .ri-top{display:flex; align-items:center; gap:8px; margin-bottom:4px;}
+  .rep-item .ri-title{font-size:13.5px; font-weight:700; color:var(--ink); min-width:0;
+    overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+  .rep-item.on .ri-title{color:var(--accent-ink);}
+  .rep-item .ri-date{font-size:11.5px; color:var(--ink-3);}
+  .rep-detail{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    box-shadow:var(--shadow); overflow:hidden; min-width:0;}
+  .rep-note{padding:11px 20px; font-size:12px; color:var(--ink-3);
+    background:var(--surface-2); border-bottom:1px solid var(--line);}
+  .rep-d-head{display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
+    padding:16px 20px; border-bottom:1px solid var(--line);}
+  .rep-d-title{font-size:18px; font-weight:800; letter-spacing:-.01em;}
+  .rep-d-meta{font-size:12px; color:var(--ink-3); margin-top:6px; display:flex; gap:8px;
+    align-items:center; flex-wrap:wrap;}
+  .rep-content{padding:18px 20px; font-size:13.5px; line-height:1.7; color:var(--ink-2);
+    white-space:pre-wrap; word-break:break-word;}
+  .rep-content a{color:var(--accent-ink); text-decoration:underline; text-underline-offset:2px;}
+  .rep-content a:hover{color:var(--accent);}
+  /* 뉴스 링크 카드 (파비콘+도메인) */
+  .rep-content .news-card{display:inline-flex; align-items:center; gap:7px; padding:5px 11px;
+    border:1px solid var(--line-strong); border-radius:9px; background:var(--surface-2);
+    text-decoration:none; margin:3px 0; vertical-align:middle;}
+  .rep-content .news-card:hover{border-color:var(--accent);}
+  .rep-content .nc-ico{width:16px; height:16px; border-radius:4px; display:block;}
+  .rep-content .nc-domain{font-size:12px; color:var(--ink-2);}
+  .rep-content .nc-go{font-size:12px; color:var(--accent-ink); font-weight:700; text-decoration:none;}
+  /* 유튜브 썸네일 카드 */
+  .rep-content .yt-thumb{display:inline-flex; flex-direction:column; gap:5px; margin:8px 12px 8px 0;
+    text-decoration:none; vertical-align:top;}
+  .rep-content .yt-thumb img{width:250px; max-width:100%; border-radius:10px;
+    border:1px solid var(--line); display:block;}
+  .rep-content .yt-thumb span{font-size:12px; color:var(--accent-ink); font-weight:700;}
+  /* 리치 아이템 카드: [썸네일 | 제목·설명·링크] — 연속 카드는 card-grid로 2열 배치 */
+  .rep-content .card-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px; margin:8px 0; white-space:normal;}
+  .rep-content .card-grid .item-card{margin:0;}
+  .rep-content .card-grid .item-card.yt img{width:150px;}
+  .rep-content .item-card{display:flex; gap:14px; align-items:flex-start; width:100%;
+    border:1px solid var(--line); border-radius:12px; background:var(--surface-2);
+    padding:13px 15px; margin:8px 0; text-decoration:none; white-space:normal;}
+  .rep-content .item-card:hover{border-color:var(--accent);}
+  .rep-content .item-card img{flex:none; display:block; border-radius:8px;}
+  .rep-content .item-card.yt img{width:200px; aspect-ratio:16/9; object-fit:cover; border:1px solid var(--line);}
+  .rep-content .item-card.news img{width:42px; height:42px; padding:6px; background:var(--surface);
+    border:1px solid var(--line);}
+  /* 기사 사진이 있는 뉴스 카드 — 유튜브 카드와 동일한 썸네일 크기 */
+  .rep-content .item-card.news.photo img{width:150px; height:auto; aspect-ratio:16/9;
+    object-fit:cover; padding:0; background:var(--surface-2); border:1px solid var(--line);}
+  .rep-content .ic-body{display:flex; flex-direction:column; gap:4px; min-width:0;}
+  .rep-content .ic-title{font-weight:700; color:var(--ink); font-size:14.5px; line-height:1.45;}
+  .rep-content .ic-desc{font-size:13px; color:var(--ink-2); line-height:1.55;}
+  .rep-content .ic-url{font-size:11.5px; color:var(--ink-3); word-break:break-all; text-decoration:none;}
+  @media (max-width:860px){
+    .rep-content .card-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:600px){
+    .rep-content .item-card{flex-direction:column;}
+    .rep-content .item-card.yt img{width:100%;}
+  }
+  .rtype-badge{font-size:11px; font-weight:700; padding:2px 9px; border-radius:999px; white-space:nowrap;}
+  .rtype-badge.brief{color:var(--aicontent); background:var(--aicontent-soft);}
+  @media (max-width:820px){ .rep-wrap{grid-template-columns:1fr;} }
+
+  /* ===== 공모전·영화제·지원사업 카드 ===== */
+  .ct-tabs{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px;}
+  .ct-controls{display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-bottom:18px;}
+  .ct-controls .proj-search{max-width:340px; flex:1 1 240px;}
+  .ct-cats{display:flex; flex-wrap:wrap; gap:7px; flex:1 1 auto;}
+  .ct-cats .proj-chip{padding:5px 11px; font-size:12px;}
+  .ct-list{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; padding:6px 6px 8px;}
+  @media (max-width:860px){ .ct-list{grid-template-columns:1fr;} }
+  .ct-card{display:flex; gap:14px; align-items:flex-start; width:100%; text-decoration:none; color:inherit;
+    border:1px solid var(--line); border-radius:12px; padding:14px 16px; background:var(--surface-2);}
+  a.ct-card{cursor:pointer;}
+  a.ct-card:hover{border-color:var(--accent);}
+  .ct-card .dday{margin-top:2px;}
+  .ct-main{flex:1; min-width:0;}
+  .ct-title{font-size:14.5px; font-weight:700; display:flex; flex-wrap:wrap; align-items:center; gap:8px; line-height:1.35;}
+  .ct-tag{display:inline-flex; align-items:center; font-size:11px; font-weight:700; padding:2px 8px;
+    border-radius:999px; background:var(--accent-soft); color:var(--accent-ink); white-space:nowrap;}
+  .ct-country{display:inline-flex; align-items:center; font-size:11px; font-weight:700; padding:2px 8px;
+    border-radius:999px; background:var(--vfx-soft); color:var(--vfx); white-space:nowrap;}
+  .ct-meta{font-size:12px; color:var(--ink-3); margin-top:5px; display:flex; flex-wrap:wrap; gap:3px 12px;}
+  .ct-meta b{color:var(--ink-2); font-weight:700;}
+  .ct-sum{font-size:12.5px; color:var(--ink-2); margin-top:7px; line-height:1.5;
+    display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;}
+  .ct-await-list{display:flex; flex-direction:column;}
+  .ct-await-row{display:flex; align-items:baseline; gap:12px; padding:11px 8px; border-bottom:1px solid var(--line);}
+  .ct-await-row:last-child{border-bottom:0;}
+  .ct-await-row .caw-title{font-size:13.5px; font-weight:600; flex:1; min-width:0;}
+  .ct-await-row .caw-org{font-size:12px; color:var(--ink-3); flex:none;}
+  .ct-await-row .caw-date{font-size:12px; color:var(--ink-2); font-weight:700; flex:none;}
+  .ct-credit{font-size:12.5px; color:var(--ink-3);}
+  .ct-credit b{color:var(--ink-2); font-weight:700;}
+  .ct-fail{margin:0; border:1.5px dashed var(--line-strong); border-radius:14px; padding:40px 24px;
+    text-align:center; color:var(--ink-3); background:var(--surface-2);}
+  .ct-fail .ico{font-size:30px; opacity:.55;}
+  .ct-fail h3{margin:10px 0 0; font-size:15px; color:var(--ink-2);}
+  .ct-fail p{margin:8px auto 0; font-size:13px; max-width:420px; line-height:1.6;}
+  .ct-fail a{color:var(--accent-ink); font-weight:700;}
+  @media (max-width:560px){
+    .ct-card{flex-direction:row;}
+    .ct-await-row{flex-wrap:wrap; gap:4px 10px;}
+  }
+
+  /* ===== 반응형 ===== */
+  .hamb{display:none;}
+  .backdrop{display:none;}
+  @media (max-width:760px){
+    body{font-size:14px;}
+    .content{padding:clamp(14px,4vw,20px);}
+    section.panel{margin-bottom:18px;} .page-head{margin-bottom:18px;}
+    .sidebar{transform:translateX(-100%); transition:transform .22s; box-shadow:0 0 40px rgba(0,0,0,.5);}
+    body.nav-open .sidebar{transform:translateX(0);}
+    body.nav-open .backdrop{display:block; position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:35;}
+    .main{margin-left:0;}
+    .topbar{display:flex; align-items:center; gap:12px; padding:12px 16px; border-bottom:1px solid var(--line);
+      background:var(--surface); position:sticky; top:0; z-index:30;}
+    .hamb{display:grid; place-items:center; width:38px; height:38px; border-radius:10px;
+      border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); font-size:18px; cursor:pointer;}
+    .topbar .tb-title{font-size:15px; font-weight:800;}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none !important;}}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="sb-brand">
+      <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+        <circle cx="24" cy="24" r="11" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity=".65"/>
+        <circle cx="24" cy="24" r="4.5" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity=".65"/>
+        <path d="M24 24 L24 6 A18 18 0 0 1 39.6 33 Z" fill="var(--accent)" opacity=".28"/>
+        <path d="M24 24 L40 15" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="33" cy="16" r="2.6" fill="var(--accent)"/>
+      </svg>
+      <div>
+        <h1>AI 레이더</h1>
+        <div class="sub">AI 공모전·영화제·지원사업·뉴스를 한 곳에서</div>
+      </div>
+    </div>
+    <nav class="sb-nav" id="nav"></nav>
+    <div class="sb-foot">
+      <button id="themeBtn" title="테마 전환">◐ 테마</button>
+      <button id="reloadBtn" title="데이터 새로고침">↻ 새로고침</button>
+    </div>
+  </aside>
+  <div class="backdrop" id="backdrop"></div>
+  <div class="main">
+    <div class="topbar">
+      <button class="hamb" id="hamb" aria-label="메뉴">☰</button>
+      <div class="tb-title">AI 레이더</div>
+    </div>
+    <div class="content" id="content"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ============ 공개 API (키 불필요·읽기 전용) ============ */
+var API = "https://script.google.com/macros/s/AKfycbxMoPJVo5xcCzv8Ql0Ba91CQETuVhzoHd3DN_PlbjzLxzwij-qOB-KsG3j_LlTyqN-K/exec";
+
+/* ============ 상태 ============ */
+var state = { data:null, loading:true, error:null };
+var C = document.getElementById("content");
+
+/* ============ 유틸 ============ */
+function esc(s){ s = (s==null?"":String(s));
+  return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+
+/* 본문 속 URL을 새 탭으로 열리는 링크로 변환 (이스케이프 후 치환 — 괄호·따옴표는 URL에서 제외).
+   유튜브 링크는 썸네일 카드로 렌더링 */
+function linkify(s){
+  return esc(s).replace(/(https?:\/\/[^\s)<>"'　]+)/g, function(u){
+    var m = u.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([A-Za-z0-9_-]{6,20})/);
+    if (m) {
+      return "<a class='yt-thumb' href='"+u+"' target='_blank' rel='noopener noreferrer'>"+
+        "<img src='https://i.ytimg.com/vi/"+m[1]+"/mqdefault.jpg' alt='유튜브 썸네일' loading='lazy'>"+
+        "<span>▶ 영상 보기</span></a>";
+    }
+    var h = u.match(/^https?:\/\/([^\/]+)/);
+    var host = h ? h[1].replace(/^www\./,"") : "";
+    return "<a class='news-card' href='"+u+"' target='_blank' rel='noopener noreferrer'>"+
+      "<img class='nc-ico' src='https://www.google.com/s2/favicons?domain="+host+"&amp;sz=64' alt='' loading='lazy'>"+
+      "<span class='nc-domain'>"+host+"</span><span class='nc-go'>기사 보기 ↗</span></a>";
+  });
+}
+
+/* 리포트 본문을 리치 카드로 렌더링: "• 제목 — 요약 (출처: URL)" 줄을
+   [썸네일 | 제목·설명·링크] 가로 카드로 변환 (유튜브=영상 썸네일, 뉴스=언론사 아이콘/기사 사진) */
+function richReport(s){
+  var lines = String(s==null?"":s).replace(/\*\*/g,"").split("\n");
+  var out = [], cardBuf = [];
+  /* 연속된 카드 라인은 2열 그리드(card-grid)로 묶는다 */
+  function flushCards(){
+    if (cardBuf.length){
+      out.push("<span class='card-grid'>"+cardBuf.join("")+"</span>");
+      cardBuf = [];
+    }
+  }
+  for (var i=0;i<lines.length;i++){
+    var t = lines[i].trim();
+    /* (img: URL) 마커 = 기사 사진 → 사진 카드로 렌더 */
+    var imgM = t.match(/[\(（]\s*img\s*:\s*(https?:\/\/[^\s)）]+)\s*[\)）]/i);
+    var photo = imgM ? imgM[1] : "";
+    if (imgM) t = t.replace(imgM[0], "").trim();
+    var um = t.match(/(https?:\/\/[^\s)<>"'　]+)/);
+    if (/^[•\-*]/.test(t) && um){
+      var url = um[1];
+      var body = t.replace(/^[•\-*]+\s*/,"")
+        .replace(/[\(（]\s*(?:출처|링크)\s*:?\s*https?:\/\/[^\s)）]+\s*[\)）]?/g,"")
+        .replace(/https?:\/\/[^\s)<>"'　]+/g,"")
+        .replace(/[\(（]\s*[\)）]/g,"").trim();
+      var title = body, desc = "";
+      var dash = body.indexOf(" — "); if (dash < 0) dash = body.indexOf(" - ");
+      if (dash > -1){ title = body.slice(0,dash).trim(); desc = body.slice(dash+3).trim(); }
+      var ym = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([A-Za-z0-9_-]{6,20})/);
+      var hh = url.match(/^https?:\/\/([^\/]+)/); var hst = hh ? hh[1].replace(/^www\./,"") : "";
+      var img, cls, go;
+      if (ym){ img = "https://i.ytimg.com/vi/"+ym[1]+"/mqdefault.jpg"; cls = "yt"; go = "youtube.com · ▶ 영상 보기"; }
+      else if (photo){ img = photo; cls = "news photo"; go = hst+" · 기사 보기 ↗"; }
+      else { img = "https://www.google.com/s2/favicons?domain="+hst+"&sz=128"; cls = "news"; go = hst+" · 기사 보기 ↗"; }
+      /* 사진 로드 실패 시 파비콘으로 대체 (깨진 이미지 방지) */
+      var onerr = photo ? " onerror=\"this.onerror=null;this.src='https://www.google.com/s2/favicons?domain="+esc(hst)+"&sz=128';this.closest('.item-card').classList.remove('photo')\"" : "";
+      cardBuf.push("<a class='item-card "+cls+"' href='"+esc(url)+"' target='_blank' rel='noopener noreferrer'>"+
+        "<img src='"+img+"' alt='' loading='lazy'"+onerr+">"+
+        "<span class='ic-body'><span class='ic-title'>"+esc(title)+"</span>"+
+        (desc ? "<span class='ic-desc'>"+esc(desc)+"</span>" : "")+
+        "<span class='ic-url'>"+esc(go)+"</span></span></a>");
+    } else {
+      if (t === "" && cardBuf.length){ continue; } /* 카드 사이 빈 줄로 그리드가 끊기지 않게 */
+      flushCards();
+      out.push(linkify(lines[i]));
+    }
+  }
+  flushCards();
+  return out.join("\n");
+}
+
+/* Asia/Seoul 현재 시각 */
+function seoulNow(){
+  var s = new Date().toLocaleString("en-US",{timeZone:"Asia/Seoul"});
+  return new Date(s);
+}
+function parseDate(s){ if(!s) return null; var p=String(s).slice(0,10).split("-"); if(p.length<3) return null;
+  return new Date(+p[0], +p[1]-1, +p[2]); }
+function ddayInfo(due, today){
+  var dd = parseDate(due), cls="far", txt="—";
+  if (dd){ var diff = Math.round((dd-today)/86400000);
+    txt = diff===0?"D-DAY": diff>0?("D-"+diff):("D+"+(-diff));
+    cls = diff<0?"over": diff<=3?"soon": diff<=7?"mid":"far"; }
+  return { cls:cls, txt:txt };
+}
+function findById(list, id){ for(var i=0;i<(list||[]).length;i++){ if(String(list[i].id)===String(id)) return list[i]; } return null; }
+function bindFold(root){
+  root.querySelectorAll("[data-fold]").forEach(function(h){
+    h.onclick = function(){ h.closest("[data-foldsec]").classList.toggle("collapsed"); };
+  });
+}
+function ctSafeUrl(u){ return /^https?:\/\//i.test(String(u||"")) ? String(u) : ""; }
+
+/* ============ 메뉴 ============ */
+var MENU = [
+  { cap:"자료·리포트", items:[
+    ["contests","🏆","AI 공모전"],
+    ["festivals","🎥","AI 영화제"],
+    ["gov","🏛️","AI 지원사업"],
+    ["newsrep","📰","뉴스리포트"],
+    ["youtube","▶️","AI 유튜브"]
+  ] }
+];
+var TITLES = {};
+MENU.forEach(function(g){ g.items.forEach(function(it){ TITLES[it[0]] = it[2]; }); });
+var DEFAULT_ROUTE = "newsrep";
+
+function buildNav(){
+  var nav = document.getElementById("nav");
+  var cur = curRoute();
+  var html = "";
+  MENU.forEach(function(g){
+    html += "<div class='nav-cap'>"+esc(g.cap)+"</div>";
+    g.items.forEach(function(it){
+      var active = it[0]===cur ? " active" : "";
+      html += "<a class='nav-item"+active+"' href='#"+it[0]+"'><span class='ic'>"+it[1]+"</span>"+esc(it[2])+"</a>";
+    });
+  });
+  nav.innerHTML = html;
+}
+function curRoute(){ var h = location.hash.replace(/^#/,"").split("/")[0]; return TITLES[h] ? h : DEFAULT_ROUTE; }
+
+/* ============ 페이지 헤더 ============ */
+function pageHead(route, desc, actions){
+  var g = null, item = null;
+  MENU.forEach(function(gr){ gr.items.forEach(function(it){ if(it[0]===route){ g=gr; item=it; } }); });
+  return "<div class='page-head'><div><div class='eyebrow'>"+esc(g?g.cap:"")+"</div>"+
+    "<h2>"+esc(item?item[2]:"")+"</h2>"+(desc?"<div class='desc'>"+desc+"</div>":"")+"</div>"+
+    "<div class='ph-actions'>"+(actions||"")+"</div></div>";
+}
+
+/* ============ 데이터 (공개 목록 API — 읽기 전용) ============ */
+function loadData(){
+  return fetch(API + "?action=pub&t=" + Date.now(), { cache:"no-store" })
+    .then(function(r){ if(!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+    .then(function(j){
+      if (!j || (!j.reports && !j.festivals)) throw new Error("응답 형식이 올바르지 않습니다");
+      state.data = j; state.loading = false; state.error = null;
+      return j;
+    });
+}
+function failBox(msg, extra){
+  return "<div class='ct-fail'><div class='ico'>📡</div><h3>데이터를 불러오지 못했습니다</h3>"+
+    "<p>"+esc(msg||"네트워크 상태를 확인한 뒤 다시 시도해 주세요.")+"</p>"+(extra||"")+
+    "<p><button class='btn sm primary' data-retry>↻ 다시 시도</button></p></div>";
+}
+function bindRetry(root){
+  var b = root.querySelector("[data-retry]");
+  if (!b) return;
+  b.onclick = function(){
+    state.loading = true; state.error = null; render();
+    loadData().catch(function(e){ state.loading=false; state.error=e.message||String(e); }).then(render);
+  };
+}
+
+/* ============ 뉴스리포트 ============ */
+var reportSelId = null;
+var NEWS_DESC = "AI 업계 브리핑 — 매일 아침 자동 발행됩니다 (뉴스 · 정부지원사업 · 유튜브 영상은 'AI 유튜브' 메뉴).";
+
+function sortedReports(){
+  return ((state.data && state.data.reports) || []).slice()
+    .sort(function(a,b){ return String(b.report_date||"").localeCompare(String(a.report_date||"")); });
+}
+function renderReports(){
+  var html = pageHead("newsrep", NEWS_DESC, "");
+  var all = sortedReports();
+  if (!all.length){
+    html += "<section class='panel' style='background:transparent;border:0;box-shadow:none'>"+
+      "<div class='placeholder'><div class='ico'>📰</div><h3>아직 발행된 브리핑이 없습니다</h3>"+
+      "<p>브리핑은 매일 아침 자동으로 발행됩니다. 잠시 후 다시 확인해 주세요.</p></div></section>";
+    C.innerHTML = html;
+    return;
+  }
+  html += "<div class='rep-wrap'><aside class='rep-list' data-rep-list></aside><main class='rep-detail' data-rep-detail></main></div>";
+  C.innerHTML = html;
+  var listEl = C.querySelector("[data-rep-list]");
+  var detailEl = C.querySelector("[data-rep-detail]");
+
+  function drawList(){
+    if (!findById(all, reportSelId)) reportSelId = all[0].id;
+    var h = "";
+    all.forEach(function(r){
+      var on = String(r.id)===String(reportSelId) ? " on" : "";
+      h += "<button class='rep-item"+on+"' data-rep-pick='"+esc(r.id)+"'>"+
+        "<div class='ri-top'><span class='rtype-badge brief'>브리핑</span>"+
+        "<span class='ri-title'>"+esc(r.title||"(제목 없음)")+"</span></div>"+
+        "<div class='ri-date tnum'>"+esc(String(r.report_date||"").slice(0,10))+"</div></button>";
+    });
+    listEl.innerHTML = h;
+    listEl.querySelectorAll("[data-rep-pick]").forEach(function(b){
+      b.onclick = function(){ reportSelId = b.getAttribute("data-rep-pick"); drawList(); drawDetail(); };
+    });
+  }
+  function drawDetail(){
+    var r = findById(all, reportSelId);
+    if (!r){ detailEl.innerHTML = "<div class='proj-empty'><div class='pe-ico'>📑</div><h3>리포트가 없습니다</h3></div>"; return; }
+    detailEl.innerHTML =
+      "<div class='rep-note'>"+esc(NEWS_DESC)+"</div>"+
+      "<div class='rep-d-head'><div><div class='rep-d-title'>"+esc(r.title||"(제목 없음)")+"</div>"+
+      "<div class='rep-d-meta'><span class='rtype-badge brief'>브리핑</span>"+
+      "<span class='tnum'>"+esc(String(r.report_date||"").slice(0,10))+"</span></div></div></div>"+
+      "<div class='rep-content'>"+richReport(stripYtSection(r.content||""))+"</div>";
+  }
+  drawList(); drawDetail();
+}
+
+/* ============ AI 유튜브 (브리핑의 [유튜브 최신 영상] 섹션만 날짜별 모음) ============ */
+var YT_MARK = "[유튜브 최신 영상]";
+function ytSectionOf(content){
+  var c = String(content||"");
+  var i = c.indexOf(YT_MARK);
+  if (i < 0) return "";
+  var rest = c.slice(i + YT_MARK.length);
+  var nx = rest.search(/\n\[[^\[\]\n]+\]/);   /* 다음 섹션 헤더 직전까지 */
+  return (nx > -1 ? rest.slice(0, nx) : rest).trim();
+}
+function stripYtSection(content){
+  var c = String(content||"");
+  var i = c.indexOf(YT_MARK);
+  if (i < 0) return c;
+  var rest = c.slice(i + YT_MARK.length);
+  var nx = rest.search(/\n\[[^\[\]\n]+\]/);
+  return (c.slice(0, i) + (nx > -1 ? rest.slice(nx) : "")).replace(/\n{3,}/g, "\n\n").trim();
+}
+function renderYoutube(){
+  var noteDesc = "매일 아침 브리핑에서 수집한 AI 관련 유튜브 영상 모음입니다 (생성형 AI · 바이브코딩 · AI 영상 제작).";
+  var html = pageHead("youtube", noteDesc, "");
+  var briefs = sortedReports()
+    .filter(function(r){ return !!ytSectionOf(r.content); })
+    .slice(0, 30);
+  if (!briefs.length){
+    html += "<section class='panel' style='background:transparent;border:0;box-shadow:none'>"+
+      "<div class='placeholder'><div class='ico'>▶️</div><h3>아직 수집된 유튜브 영상이 없습니다</h3>"+
+      "<p>매일 아침 브리핑이 발행될 때 자동으로 쌓입니다.</p></div></section>";
+    C.innerHTML = html; return;
+  }
+  briefs.forEach(function(r, bi){
+    var sec = ytSectionOf(r.content);
+    var cnt = (sec.match(/^•/gm)||[]).length;
+    html += "<section class='panel"+(bi>0?" collapsed":"")+"'"+(bi>0?" data-foldsec":"")+">"+
+      "<div class='sec-head"+(bi>0?" fold-head' data-fold":"'")+"><div><div class='eyebrow'>AI 유튜브</div>"+
+      "<h3 class='tnum'>"+esc(String(r.report_date||"").slice(0,10))+"</h3></div>"+
+      "<div style='display:flex;align-items:center;gap:10px'><div class='sec-note'>"+cnt+"편</div>"+
+      (bi>0?"<span class='fold-btn'>▾</span>":"")+"</div></div>"+
+      "<div class='rep-content' style='padding:8px 14px 14px'>"+richReport(sec)+"</div></section>";
+  });
+  C.innerHTML = html;
+  bindFold(C);
+}
+
+/* ============ AI 영화제 ============ */
+var FESTIVALS_UPDATED = "2026-07-26";
+/* 폴백 시드 (서버 목록을 못 받았을 때만 사용 — 원본은 매일 자동 갱신) */
+var FESTIVALS = [
+  {name:"대한민국 AI 콘텐츠 어워즈 (구 대한민국 AI국제영화제)",region:"국내",place:"수원, 대한민국",host:"경기도·경기콘텐츠진흥원",deadline:"2026-07-12",event:"2026-10-15 ~ 10-16",url:"https://www.gcon.or.kr/aiff.html",note:"중편·단편 경쟁 + 백남준 특별상 3개 부문, 롯데시네마 수원 개최"},
+  {name:"부천국제판타스틱영화제 AI 영화 국제경쟁 (BIFAN)",region:"국내",place:"부천, 대한민국",host:"부천국제판타스틱영화제 조직위원회",deadline:"미정",event:"2026-07-02 ~ 07-12",url:"https://www.bifan.kr",note:"제30회(2026) 종료. AI 장편 상영 첫 시도·숏폼 공식 섹션 승격 (차기 회차 미공고)"},
+  {name:"제주 AI 국제필름페스티벌·글로벌 AI 영상 공모전",region:"국내",place:"제주, 대한민국",host:"제주특별자치도·제주콘텐츠진흥원",deadline:"2026-07-13",event:"2026-09-15 ~ 09-17",url:"https://www.jjaiff.kr/",note:"대상 2,000만원·최우수상 4편 각 600만원. 101개국 1,185편 접수"},
+  {name:"WAIFF Seoul 세계 AI 영화제 서울",region:"국내",place:"서울, 대한민국",host:"비전컬쳐(WAIFF 글로벌 네트워크)",deadline:"2026-02-10",event:"2026-03-06 ~ 03-07",url:"https://www.worldaifilmfestival.kr/en",note:"국내 최대 규모 AI 영화 시상. 수상 5팀 WAIFF 칸 그랜드 파이널 공식 초청"},
+  {name:"미추홀구 AI 영화제 (제1회)",region:"국내",place:"인천, 대한민국",host:"인천 미추홀구",deadline:"2026-05-29",event:"미정",url:"https://www.michuhol.go.kr/main/board/view.do?sq=300733&board_code=board_13",note:"3~5분 AI 영화 공모. 최우수상 150만원, 10-20 수상작 발표 예정"},
+  {name:"런웨이 AI 영화제 (Runway AI Film Festival)",region:"해외",place:"뉴욕·로스앤젤레스, 미국",host:"Runway",deadline:"2026-04-27",event:"2026-06-11 ~ 06-18",url:"https://aif.runwayml.com/",note:"총상금 $135,000(그랑프리 $20,000). 3~15분·생성형 영상 필수, 출품료 무료"},
+  {name:"월드 AI 필름 페스티벌 (WAiFF)",region:"해외",place:"칸, 프랑스",host:"WAIFF 조직위원회",deadline:"미정",event:"2026-04-21 ~ 04-22",url:"https://worldaifilmfestival.com/",note:"2회(2026) 80개국 5,500편 출품. 그랑프리 1만 유로 (차기 회차 미공고)"},
+  {name:"리플라이 AI 필름 페스티벌 (Reply AI Film Festival)",region:"해외",place:"베니스, 이탈리아",host:"Reply (Mastercard 협력)",deadline:"2026-06-02",event:"2026-09-02 ~ 09-12",url:"https://challenges.reply.com/challenges/creative/aifilmfestival/home/",note:"상금 풀 3만 유로+. 제83회 베니스영화제 기간 중 프리미어·시상"},
+  {name:"프로젝트 오디세이 (Project Odyssey by Civitai)",region:"해외",place:"온라인",host:"Civitai·ElevenLabs 등",deadline:"2026-01-19",event:"미정",url:"https://civitai.com/articles/9383/project-odyssey-season-2-the-ai-filmmaking-competition-returns",note:"시즌2 상금 $70,000+, 9개 부문(내러티브·뮤직비디오·광고 등)"},
+  {name:"크로마 어워즈 시즌2 (Chroma Awards Season 2)",region:"해외",place:"온라인",host:"Devpost·ElevenLabs·FAL·Freepik 등",deadline:"2026-12-31",event:"미정",url:"https://chromaawards.com",note:"현금 상금 $175,000+·툴 크레딧 $100만+, 약 25개 부문, 무료 출품·접수 중"},
+  {name:"AI 포 굿 필름 페스티벌 (AI for Good Film Festival)",region:"해외",place:"제네바, 스위스",host:"ITU (국제전기통신연합, UN)",deadline:"2026-03-15",event:"2026-07-07",url:"https://aiforgood.itu.int/ai-for-good-film-festival",note:"UN AI for Good 글로벌 서밋 연계 AI 단편 공모·상영"},
+  {name:"힉스필드 AI 필름 컴피티션 (Higgsfield AI Film Competition)",region:"해외",place:"온라인",host:"Higgsfield AI",deadline:"2026-03-18",event:"미정",url:"https://higgsfield.ai/creative-challenge",note:"총상금 $500,000(그랑프리 $150,000)로 AI 영화 공모전 최대급"},
+  {name:"아르테팩트 AI 필름 페스티벌 (Artefact AI Film Festival)",region:"해외",place:"파리, 프랑스",host:"Artefact",deadline:"미정",event:"2026-02-12",url:"https://artefact-ai-film-festival.com",note:"그랑프리 1만 유로. 2026 회차 종료, 차기 일정 미공고"},
+  {name:"AI 인터내셔널 필름 페스티벌 (AIIFF)",region:"해외",place:"로스앤젤레스, 미국",host:"AIIFF",deadline:"미정",event:"2026-03-01",url:"https://aifilmfest.org",note:"IMDb 등재 자격 영화제. 2026 회차 종료, 차기 일정 미공고"},
+  {name:"발리 국제 AI 영화제 (BIAIFF)",region:"해외",place:"우붓(발리), 인도네시아",host:"BIAIFF (Paradiso Ubud Cinema)",deadline:"미정",event:"2026-05-01 ~ 12-31",url:"https://filmfreeway.com/BaliAiFilmFestival",note:"연중 상영형 AI 영화제. FilmFreeway 접수"},
+  {name:"AI ZONE 국제 AI 영화제",region:"해외",place:"온라인",host:"AI ZONE",deadline:"미정",event:"2026-06-01 ~ 12-31",url:"https://filmfreeway.com/AIZONEInternationalAIFilmFestival2026",note:"온라인 개최, Best AI Mini Movie 제작 지원금. FilmFreeway 접수 중"},
+  {name:"인공지능 미디어 페스티벌 (AIMF)",region:"해외",place:"로스앤젤레스, 미국",host:"AIMF",deadline:"미정",event:"2026-09-11 ~ 09-13",url:"https://aimf.digital",note:"AI 영상·미디어 종합 페스티벌, Crystal Award 수여"},
+  {name:"레드록스 AI 필름 페스티벌 (Red Rocks AI Film Festival)",region:"해외",place:"세인트조지(유타), 미국",host:"Red Rocks AI Film Festival",deadline:"미정",event:"2026-09-24",url:"https://filmfreeway.com/RedRocksAIFilmFestival",note:"수상 인증서·로렐 수여, FilmFreeway 접수"},
+  {name:"AI 필름 3 — AI 필름 앤 아트 페스티벌 애리조나",region:"해외",place:"애리조나, 미국",host:"AI Film 3",deadline:"미정",event:"2026-10-01 ~ 11-01",url:"https://aifilm3.com",note:"AI 영화·아트 결합 페스티벌, 3회차"},
+  {name:"AI 필름 & 애즈 어워즈 발리 (AI Film & Ads Awards)",region:"해외",place:"발리, 인도네시아",host:"filmawards.ai",deadline:"미정",event:"2026-11-07",url:"https://filmawards.ai",note:"AI 영화·광고 부문 시상. 5-21 칸 에디션도 별도 개최"},
+  {name:"AI 필름 페스티벌 재팬 (AI Film Festival Japan)",region:"해외",place:"도쿄, 일본",host:"AI Film Festival Japan",deadline:"미정",event:"2026-04-25",url:"https://filmfreeway.com/AIFilmFestivalJapan2026",note:"2026 회차 종료, 차기 일정 미공고. FilmFreeway 접수"},
+  {name:"글로벌 AI 필름 어워드 (1 Billion Followers Summit)",region:"해외",place:"두바이, 아랍에미리트",host:"1 Billion Followers Summit (UAE 정부)",deadline:"미정",event:"2026-01-09 ~ 01-11",url:"https://1billionsummit.com/ai-film-award",note:"상금 100만 달러로 세계 최대 규모 AI 영화상. 차기 일정 미공고"}
+];
+function festivalCard(f, today){
+  var isD = /^\d{4}-\d{2}-\d{2}$/.test(String(f.deadline||""));
+  var di = isD ? ddayInfo(f.deadline, today) : { cls:"far", txt:"미정" };
+  var titleBits = esc(f.name) + "<span class='ct-tag'>"+esc(f.region||"")+"</span>";
+  var metaBits = [];
+  if (f.host) metaBits.push("<b>"+esc(f.host)+"</b>");
+  if (f.place) metaBits.push(esc(f.place));
+  if (isD) metaBits.push("마감 "+esc(f.deadline));
+  if (f.event && f.event!=="미정") metaBits.push("개최 "+esc(f.event));
+  var inner = "<div class='dday "+di.cls+" tnum'>"+di.txt+"</div>"+
+    "<div class='ct-main'><div class='ct-title'>"+titleBits+"</div>"+
+    "<div class='ct-meta'>"+metaBits.join("<span>·</span>")+"</div>"+
+    (f.note?"<div class='ct-sum'>"+esc(f.note)+"</div>":"")+"</div>";
+  var url = ctSafeUrl(f.url);
+  if (url) return "<a class='ct-card' href='"+esc(url)+"' target='_blank' rel='noopener noreferrer'>"+inner+"</a>";
+  return "<div class='ct-card'>"+inner+"</div>";
+}
+function renderFestivals(){
+  var served = state.data && state.data.festivals && state.data.festivals.length;
+  var list = served ? state.data.festivals : FESTIVALS;
+  var updated = FESTIVALS_UPDATED;
+  for (var u=0; u<list.length; u++){ if (list[u].updated){ updated = String(list[u].updated).slice(0,10); break; } }
+  var desc = "전 세계 AI 영화제·AI 영화 공모 모음 — 매일 아침 자동 재조사 (마지막 갱신 "+esc(updated)+")";
+  if (!served && !state.loading) desc += " · <b style='color:var(--pending)'>목록을 불러오지 못해 저장된 기본 목록을 표시합니다</b>";
+  var html = pageHead("festivals", desc, "");
+  if (state.loading){
+    html += "<div class='empty'>영화제 목록을 불러오는 중…</div>";
+    C.innerHTML = html; return;
+  }
+  var today = new Date(); today.setHours(0,0,0,0);
+  var isD = function(s){ return /^\d{4}-\d{2}-\d{2}$/.test(String(s||"")); };
+  var open = [], closed = [], tbd = [];
+  list.forEach(function(f){
+    if (isD(f.deadline)){
+      var d = parseDate(f.deadline);
+      (d && d >= today ? open : closed).push(f);
+    } else tbd.push(f);
+  });
+  open.sort(function(a,b){ return String(a.deadline).localeCompare(String(b.deadline)); });
+  html += "<section class='panel'><div class='sec-head'><div><div class='eyebrow'>접수 중</div>"+
+    "<h3>출품 가능</h3></div><div class='sec-note'>"+open.length+"건 · 마감 임박순</div></div><div class='ct-list'>";
+  if (!open.length) html += "<div class='empty'>현재 접수 중인 영화제가 없습니다.</div>";
+  else open.forEach(function(f){ html += festivalCard(f, today); });
+  html += "</div></section>";
+  if (tbd.length){
+    html += "<section class='panel collapsed' data-foldsec><div class='sec-head fold-head' data-fold>"+
+      "<div><div class='eyebrow'>공고 대기</div><h3>차기 일정 미공고 <span style='font-weight:400;color:var(--ink-3);font-size:12px'>(클릭하여 펼치기)</span></h3></div>"+
+      "<div style='display:flex;align-items:center;gap:10px'><div class='sec-note'>"+tbd.length+"건</div><span class='fold-btn'>▾</span></div></div><div class='fold-body'><div class='ct-list'>";
+    tbd.forEach(function(f){ html += festivalCard(f, today); });
+    html += "</div></div></section>";
+  }
+  if (closed.length){
+    html += "<section class='panel collapsed' data-foldsec><div class='sec-head fold-head' data-fold>"+
+      "<div><div class='eyebrow'>마감</div><h3>접수 마감·지난 회차 <span style='font-weight:400;color:var(--ink-3);font-size:12px'>(클릭하여 펼치기)</span></h3></div>"+
+      "<div style='display:flex;align-items:center;gap:10px'><div class='sec-note'>"+closed.length+"건</div><span class='fold-btn'>▾</span></div></div><div class='fold-body'><div class='ct-list'>";
+    closed.sort(function(a,b){ return String(b.deadline).localeCompare(String(a.deadline)); });
+    closed.forEach(function(f){ html += festivalCard(f, today); });
+    html += "</div></div></section>";
+  }
+  C.innerHTML = html;
+  bindFold(C);
+}
+
+/* ============ AI 공모전 (외부 공개 JSON 직접 조회) ============ */
+var CONTEST_URLS = {
+  domestic: "https://junyeo217.github.io/ai-contest-board/data/contests.json",
+  overseas: "https://junyeo217.github.io/ai-contest-board/data/overseas-contests.json"
+};
+var CONTEST_BOARD = "https://junyeo217.github.io/ai-contest-board/";
+var CONTEST_TTL = 10*60*1000; /* 10분 모듈 캐시 (두 파일 각각) */
+var contestCache = {};
+var contestTab = "domestic", contestCat = "전체", contestSearch = "";
+function fetchContests(kind, force){
+  var c = contestCache[kind];
+  if (!force && c && (Date.now()-c.t) < CONTEST_TTL) return Promise.resolve(c.data);
+  return fetch(CONTEST_URLS[kind], { cache:"no-store" }).then(function(r){
+    if (!r.ok) throw new Error("HTTP "+r.status);
+    return r.json();
+  }).then(function(j){ contestCache[kind] = { t:Date.now(), data:j }; return j; });
+}
+function ctFmtGen(g){ if(!g) return ""; return String(g).replace("T"," ").replace(/(:\d\d)(\.\d+)?(Z|[+-]\d\d:?\d\d)?$/,"$1").slice(0,16); }
+function renderContests(){
+  var now = seoulNow(), today = new Date(now.getFullYear(),now.getMonth(),now.getDate());
+  var actions = "<button class='btn sm' data-ct-refresh>↻ 갱신</button>";
+  var html = pageHead("contests", "데이터: <b>AI 공모전 보드</b>(자동 갱신) · <span class='ct-credit' data-ct-gen>불러오는 중…</span>", actions);
+  html += "<div class='ct-tabs' data-ct-tabs>"+
+    [["domestic","국내"],["overseas","해외"]].map(function(t){
+      return "<button class='proj-chip"+(t[0]===contestTab?" on":"")+"' data-ct-tab='"+esc(t[0])+"'>"+esc(t[1])+"</button>";
+    }).join("")+"</div>";
+  html += "<div class='ct-controls'><input class='proj-search' type='text' placeholder='제목·주최 검색' data-ct-search>"+
+    "<div class='ct-cats' data-ct-cats></div></div>";
+  html += "<div data-ct-body><div class='empty'>공모전 보드를 불러오는 중…</div></div>";
+  C.innerHTML = html;
+
+  var bodyEl = C.querySelector("[data-ct-body]");
+  var catsEl = C.querySelector("[data-ct-cats]");
+  var genEl  = C.querySelector("[data-ct-gen]");
+  var searchEl = C.querySelector("[data-ct-search]");
+  searchEl.value = contestSearch;
+  var curData = null;
+
+  function collectCats(data){
+    var set = {}, order = [];
+    ["starting_today","ongoing","awaiting_results"].forEach(function(k){
+      ((data.sections&&data.sections[k])||[]).forEach(function(it){
+        var c = String(it.category||"").trim();
+        if (c && !set[c]){ set[c]=1; order.push(c); }
+      });
+    });
+    return order;
+  }
+  function drawCats(){
+    var chips = ["전체"].concat(curData ? collectCats(curData) : []);
+    if (contestCat!=="전체" && chips.indexOf(contestCat)<0) contestCat = "전체";
+    catsEl.innerHTML = chips.map(function(c){
+      return "<button class='proj-chip"+(c===contestCat?" on":"")+"' data-ct-cat='"+esc(c)+"'>"+esc(c)+"</button>";
+    }).join("");
+    catsEl.querySelectorAll("[data-ct-cat]").forEach(function(b){
+      b.onclick = function(){ contestCat = b.getAttribute("data-ct-cat"); drawCats(); drawBody(); };
+    });
+  }
+  function match(it){
+    if (contestCat!=="전체" && String(it.category||"")!==contestCat) return false;
+    var q = String(contestSearch||"").trim().toLowerCase();
+    if (!q) return true;
+    return String(it.title||"").toLowerCase().indexOf(q)>=0 ||
+           String(it.organizer||"").toLowerCase().indexOf(q)>=0;
+  }
+  function contestCard(it){
+    var di = ddayInfo(it.submission_end, today);
+    var url = ctSafeUrl(it.url);
+    var titleBits = "<span>"+esc(it.title||"(제목 없음)")+"</span>";
+    if (it.category) titleBits += "<span class='ct-tag'>"+esc(it.category)+"</span>";
+    if (it.country)  titleBits += "<span class='ct-country'>"+esc(it.country)+"</span>";
+    var metaBits = [];
+    if (it.organizer) metaBits.push("<b>"+esc(it.organizer)+"</b>");
+    var sd = String(it.submission_start||"").slice(0,10), ed = String(it.submission_end||"").slice(0,10);
+    if (sd || ed) metaBits.push("접수 "+esc(sd||"미정")+" ~ "+esc(ed||"미정"));
+    var rd = String(it.result_date||"").trim();
+    if (rd && rd!=="미정") metaBits.push("발표 "+esc(rd.slice(0,10)));
+    var inner =
+      "<div class='dday "+di.cls+" tnum'>"+di.txt+"</div>"+
+      "<div class='ct-main'><div class='ct-title'>"+titleBits+"</div>"+
+      "<div class='ct-meta'>"+metaBits.join("<span>·</span>")+"</div>"+
+      (it.summary?"<div class='ct-sum'>"+esc(it.summary)+"</div>":"")+"</div>";
+    if (url) return "<a class='ct-card' href='"+esc(url)+"' target='_blank' rel='noopener noreferrer'>"+inner+"</a>";
+    return "<div class='ct-card'>"+inner+"</div>";
+  }
+  function drawBody(){
+    if (!curData){ return; }
+    var sec = curData.sections || {};
+    var ongoing = ((sec.ongoing||[]).concat(sec.starting_today||[])).filter(match)
+      .sort(function(a,b){ return String(a.submission_end||"9999").localeCompare(String(b.submission_end||"9999")); });
+    var awaiting = (sec.awaiting_results||[]).filter(match);
+
+    var h = "<section class='panel'><div class='sec-head'><div><div class='eyebrow'>모집 중</div>"+
+      "<h3>진행중 공모전</h3></div><div class='sec-note'>"+ongoing.length+"건 · 마감 임박순</div></div><div class='ct-list'>";
+    if (!ongoing.length) h += "<div class='empty'>표시할 진행중 공모전이 없습니다.</div>";
+    else ongoing.forEach(function(it){ h += contestCard(it); });
+    h += "</div></section>";
+
+    h += "<section class='panel collapsed' data-foldsec><div class='sec-head fold-head' data-fold>"+
+      "<div><div class='eyebrow'>결과 발표</div><h3>발표 대기 <span style='color:var(--ink-3);font-weight:600'>("+awaiting.length+")</span></h3></div>"+
+      "<span class='fold-btn'>▾</span></div><div class='fold-body'><div class='ct-await-list'>";
+    if (!awaiting.length) h += "<div class='empty'>발표 대기 중인 공모전이 없습니다.</div>";
+    else awaiting.forEach(function(it){
+      var rd = String(it.result_date||"").trim();
+      h += "<div class='ct-await-row'><span class='caw-title'>"+esc(it.title||"(제목 없음)")+"</span>"+
+        (it.organizer?"<span class='caw-org'>"+esc(it.organizer)+"</span>":"")+
+        "<span class='caw-date tnum'>발표 "+esc(rd && rd!=="미정" ? rd.slice(0,10) : "미정")+"</span></div>";
+    });
+    h += "</div></div></section>";
+
+    bodyEl.innerHTML = h;
+    /* 발표 대기 섹션 기본 접힘 */
+    var fs = bodyEl.querySelector("[data-foldsec]"); if (fs) fs.classList.add("collapsed");
+    bindFold(bodyEl);
+  }
+  function showFail(){
+    curData = null;
+    genEl.textContent = "불러오기 실패";
+    catsEl.innerHTML = "";
+    bodyEl.innerHTML = "<div class='ct-fail'><div class='ico'>📡</div><h3>공모전 보드를 불러오지 못했습니다</h3>"+
+      "<p>네트워크 상태를 확인한 뒤 다시 시도하거나, 원본 보드를 직접 확인하세요.</p>"+
+      "<p><a href='"+esc(CONTEST_BOARD)+"' target='_blank' rel='noopener noreferrer'>AI 공모전 보드 열기 ↗</a></p></div>";
+  }
+  function load(force){
+    bodyEl.innerHTML = "<div class='empty'>공모전 보드를 불러오는 중…</div>";
+    genEl.textContent = "불러오는 중…";
+    fetchContests(contestTab, force).then(function(j){
+      if (curRoute()!=="contests") return;   /* 라우트 이탈 시 무시 */
+      curData = j;
+      genEl.textContent = j.generated_at ? ("업데이트 "+ctFmtGen(j.generated_at)) : "";
+      drawCats(); drawBody();
+    }).catch(function(){ if (curRoute()==="contests") showFail(); });
+  }
+
+  C.querySelectorAll("[data-ct-tab]").forEach(function(b){
+    b.onclick = function(){
+      var k = b.getAttribute("data-ct-tab"); if (k===contestTab) return;
+      contestTab = k; contestCat = "전체";
+      C.querySelectorAll("[data-ct-tab]").forEach(function(x){ x.classList.toggle("on", x.getAttribute("data-ct-tab")===contestTab); });
+      load(false);
+    };
+  });
+  searchEl.oninput = function(){ contestSearch = searchEl.value; if (curData) drawBody(); };
+  var rf = C.querySelector("[data-ct-refresh]");
+  if (rf) rf.onclick = function(){ delete contestCache[contestTab]; load(true); };
+
+  load(false);
+}
+
+/* ============ AI 지원사업 (공개 API: action=pubgov) ============ */
+var GOV_TTL = 10*60*1000, govCache = null;
+var govAiOnly = true, govCls = "전체", govSearch = "";
+var GOV_AI_RE = /AI|인공지능|생성형|딥테크|디지털|데이터/i;
+function fetchGov(force){
+  if (!force && govCache && (Date.now()-govCache.t) < GOV_TTL) return Promise.resolve(govCache.data);
+  var u = API + "?action=pubgov" + (force?"&reload=1":"") + "&t=" + Date.now();
+  return fetch(u, { cache:"no-store" }).then(function(r){
+    if (!r.ok) throw new Error("HTTP "+r.status);
+    return r.json();
+  }).then(function(j){ govCache = { t:Date.now(), data:j }; return j; });
+}
+function renderGov(){
+  var now = seoulNow(), today = new Date(now.getFullYear(),now.getMonth(),now.getDate());
+  var html = pageHead("gov", "데이터: <b>K-Startup 창업지원 공고</b>(공공데이터포털) · <span data-gov-gen>불러오는 중…</span>",
+    "<button class='btn sm' data-gov-refresh>↻ 갱신</button>");
+  html += "<div class='ct-controls'><input class='proj-search' type='text' placeholder='공고명·기관 검색' data-gov-search>"+
+    "<div class='ct-cats' data-gov-chips></div></div>";
+  html += "<div data-gov-body><div class='empty'>지원사업 공고를 불러오는 중…</div></div>";
+  C.innerHTML = html;
+  var bodyEl = C.querySelector("[data-gov-body]");
+  var chipsEl = C.querySelector("[data-gov-chips]");
+  var genEl = C.querySelector("[data-gov-gen]");
+  var searchEl = C.querySelector("[data-gov-search]");
+  searchEl.value = govSearch;
+  var cur = null;
+
+  function clsList(){
+    var set = {}, order = [];
+    ((cur && cur.items) || []).forEach(function(it){
+      var c = String(it.cls||"").trim();
+      if (c && !set[c]){ set[c]=1; order.push(c); }
+    });
+    return order;
+  }
+  function drawChips(){
+    var h = "<button class='proj-chip"+(govAiOnly?" on":"")+"' data-gov-ai>🤖 AI 관련만</button>";
+    var chips = ["전체"].concat(clsList());
+    if (govCls!=="전체" && chips.indexOf(govCls)<0) govCls = "전체";
+    h += chips.map(function(c){
+      return "<button class='proj-chip"+(c===govCls?" on":"")+"' data-gov-cls='"+esc(c)+"'>"+esc(c)+"</button>";
+    }).join("");
+    chipsEl.innerHTML = h;
+    chipsEl.querySelector("[data-gov-ai]").onclick = function(){ govAiOnly = !govAiOnly; drawChips(); drawBody(); };
+    chipsEl.querySelectorAll("[data-gov-cls]").forEach(function(b){
+      b.onclick = function(){ govCls = b.getAttribute("data-gov-cls"); drawChips(); drawBody(); };
+    });
+  }
+  function match(it){
+    if (govAiOnly && !GOV_AI_RE.test((it.nm||"")+" "+(it.trgt||"")+" "+(it.cls||""))) return false;
+    if (govCls!=="전체" && String(it.cls||"")!==govCls) return false;
+    var q = String(govSearch||"").trim().toLowerCase();
+    if (!q) return true;
+    return String(it.nm||"").toLowerCase().indexOf(q)>=0 ||
+           String(it.org||"").toLowerCase().indexOf(q)>=0 ||
+           String(it.inst||"").toLowerCase().indexOf(q)>=0;
+  }
+  function govCard(it){
+    var di = ddayInfo(it.end, today);
+    var url = ctSafeUrl(it.url);
+    var titleBits = "<span>"+esc(it.nm||"(공고명 없음)")+"</span>";
+    if (it.cls) titleBits += "<span class='ct-tag'>"+esc(it.cls)+"</span>";
+    if (it.regin) titleBits += "<span class='ct-country'>"+esc(it.regin)+"</span>";
+    var metaBits = [];
+    var orgTxt = [it.org, it.inst].filter(function(x){return x;}).filter(function(x,i,a){return a.indexOf(x)===i;}).join(" · ");
+    if (orgTxt) metaBits.push("<b>"+esc(orgTxt)+"</b>");
+    metaBits.push("접수 "+esc(it.bgng||"미정")+" ~ "+esc(it.end||"미정"));
+    var inner =
+      "<div class='dday "+di.cls+" tnum'>"+di.txt+"</div>"+
+      "<div class='ct-main'><div class='ct-title'>"+titleBits+"</div>"+
+      "<div class='ct-meta'>"+metaBits.join("<span>·</span>")+"</div>"+
+      (it.trgt?"<div class='ct-sum'>대상: "+esc(String(it.trgt).slice(0,120))+"</div>":"")+"</div>";
+    if (url) return "<a class='ct-card' href='"+esc(url)+"' target='_blank' rel='noopener noreferrer'>"+inner+"</a>";
+    return "<div class='ct-card'>"+inner+"</div>";
+  }
+  function drawBody(){
+    if (!cur || !cur.ok){ return; }
+    var list = (cur.items||[]).filter(match);
+    var h = "<section class='panel'><div class='sec-head'><div><div class='eyebrow'>모집 중</div>"+
+      "<h3>"+(govAiOnly?"AI 관련 지원사업":"전체 지원사업")+"</h3></div><div class='sec-note'>"+list.length+"건 · 마감 임박순</div></div><div class='ct-list'>";
+    if (!list.length) h += "<div class='empty'>조건에 맞는 공고가 없습니다. ('AI 관련만'을 끄면 전체 공고가 보입니다)</div>";
+    else list.forEach(function(it){ h += govCard(it); });
+    h += "</div></section>";
+    bodyEl.innerHTML = h;
+  }
+  function load(force){
+    bodyEl.innerHTML = "<div class='empty'>지원사업 공고를 불러오는 중…</div>";
+    fetchGov(force).then(function(j){
+      if (curRoute()!=="gov") return;
+      cur = j;
+      if (!j || !j.ok){
+        genEl.textContent = "";
+        bodyEl.innerHTML = "<div class='ct-fail'><div class='ico'>📡</div><h3>공고를 불러오지 못했습니다</h3>"+
+          "<p>"+esc(j && j.error ? String(j.error) : "잠시 후 다시 시도해 주세요.")+"</p>"+
+          "<p><a href='https://www.k-startup.go.kr' target='_blank' rel='noopener noreferrer'>K-Startup 바로가기 ↗</a></p></div>";
+        return;
+      }
+      genEl.textContent = "업데이트 " + (j.generated||"") + " · 총 " + (j.total||0) + "건";
+      drawChips(); drawBody();
+    }).catch(function(e){
+      if (curRoute()!=="gov") return;
+      genEl.textContent = "";
+      bodyEl.innerHTML = "<div class='ct-fail'><div class='ico'>📡</div><h3>공고를 불러오지 못했습니다</h3>"+
+        "<p>"+esc(String(e && e.message || e))+"</p>"+
+        "<p><a href='https://www.k-startup.go.kr' target='_blank' rel='noopener noreferrer'>K-Startup 바로가기 ↗</a></p></div>";
+    });
+  }
+  var refBtn = C.querySelector("[data-gov-refresh]"); if (refBtn) refBtn.onclick = function(){ load(true); };
+  if (searchEl) searchEl.oninput = function(){ govSearch = searchEl.value; drawBody(); };
+  load(false);
+}
+
+/* ============ 라우팅 ============ */
+var ROUTES = {
+  contests:renderContests, festivals:renderFestivals, gov:renderGov,
+  newsrep:renderReports, youtube:renderYoutube
+};
+/* 공개 목록 API(action=pub) 데이터가 반드시 필요한 화면 */
+var NEEDS_PUB = { newsrep:1, youtube:1 };
+
+function render(){
+  var route = curRoute();
+  buildNav();
+  var tb = document.querySelector(".tb-title"); if(tb) tb.textContent = TITLES[route]||"AI 레이더";
+  if (NEEDS_PUB[route]){
+    if (state.loading){
+      C.innerHTML = pageHead(route, "", "") + "<div class='empty' style='padding:80px 20px'>데이터를 불러오는 중…</div>";
+      document.body.classList.remove("nav-open");
+      return;
+    }
+    if (state.error){
+      C.innerHTML = pageHead(route, "", "") + failBox(state.error);
+      bindRetry(C);
+      document.body.classList.remove("nav-open");
+      return;
+    }
+  }
+  (ROUTES[route] || renderReports)();
+  document.body.classList.remove("nav-open");
+}
+
+/* ============ 사이드바 액션 ============ */
+document.getElementById("themeBtn").onclick = function(){
+  var root = document.documentElement;
+  var next = root.getAttribute("data-theme")==="light" ? "dark" : "light";
+  root.setAttribute("data-theme", next);
+  try{ localStorage.setItem("airadar_theme", next); }catch(e){}
+};
+document.getElementById("reloadBtn").onclick = function(){
+  var btn = this;
+  btn.textContent = "↻ …";
+  govCache = null; contestCache = {};
+  state.loading = true; state.error = null; render();
+  loadData().catch(function(e){ state.loading=false; state.error=e.message||String(e); })
+    .then(function(){ render(); btn.textContent = "↻ 새로고침"; });
+};
+document.getElementById("hamb").onclick = function(){ document.body.classList.toggle("nav-open"); };
+document.getElementById("backdrop").onclick = function(){ document.body.classList.remove("nav-open"); };
+window.addEventListener("hashchange", render);
+
+/* ============ 초기화 ============ */
+(function init(){
+  var savedTheme = "dark";
+  try{ savedTheme = localStorage.getItem("airadar_theme") || "dark"; }catch(e){}
+  document.documentElement.setAttribute("data-theme", savedTheme);
+  if (!location.hash) location.replace("#" + DEFAULT_ROUTE);
+  buildNav();
+  render();
+  loadData().catch(function(e){ state.loading=false; state.error=e.message||String(e); }).then(render);
+  /* 탭이 보일 때만 10분마다 목록 갱신 */
+  setInterval(function(){
+    if (document.hidden) return;
+    loadData().then(function(){
+      if (NEEDS_PUB[curRoute()] || curRoute()==="festivals") render();
+    }).catch(function(){});
+  }, 600000);
+})();
+
+})();
+</script>
+</body>
+</html>
