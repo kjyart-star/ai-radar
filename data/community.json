@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-11T19:24:58.825Z",
+ "generated": "2026-08-11T19:42:27.050Z",
  "source": "Hacker News · r/artificial",
  "sources": [
   "Hacker News",
@@ -7,13 +7,22 @@
  ],
  "items": [
   {
-   "title": "Zuckerberg published a manifesto saying no single company should control AI. Then Meta released a model that runs on your laptop. Same day.",
-   "url": "https://www.reddit.com/r/artificial/comments/1vlpfe7/zuckerberg_published_a_manifesto_saying_no_single/",
-   "date": "2026-08-11T18:18:23.000Z",
+   "title": "Open-source tool that maps what concepts an LLM has learned into browsable tree structures using hyperbolic geometry",
+   "url": "https://www.reddit.com/r/artificial/comments/1vlqi6s/opensource_tool_that_maps_what_concepts_an_llm/",
+   "date": "2026-08-11T18:56:54.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "<!-- SC_OFF --><div class=\"md\"><p>I&#39;ve been sitting with this one all morning because the contrast is hard to ignore.</p> <p>Today Meta dropped Muse Glimmer. 30 billion parameters. Runs on a singl"
+   "summary": "<!-- SC_OFF --><div class=\"md\"><p>I built HyperSAE, an open-source interpretability tool that extracts what an LLM &quot;knows&quot; and organizes it into tree-shaped concept maps.</p> <p>The idea: LL"
+  },
+  {
+   "title": "Is more reasoning necessarily better?",
+   "url": "https://www.reddit.com/r/artificial/comments/1vlq4zw/is_more_reasoning_necessarily_better/",
+   "date": "2026-08-11T18:43:45.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "<!-- SC_OFF --><div class=\"md\"><p>I’ve just been setting my model to use max/xhigh reasoning levels, but now I’m wondering how wise that is. I definitely see that it uses up a lot more tokens. Like I "
   },
   {
    "title": "Which ai is best for planing stuff?",
@@ -29,8 +38,8 @@
    "url": "https://developers.googleblog.com/why-go-is-an-ideal-language-for-ai-assisted-software-engineering/",
    "date": "2026-08-11T16:57:09.000Z",
    "source": "Hacker News",
-   "points": 128,
-   "comments": 149,
+   "points": 145,
+   "comments": 169,
    "summary": ""
   },
   {
@@ -95,15 +104,6 @@
    "points": null,
    "comments": null,
    "summary": "<!-- SC_OFF --><div class=\"md\"><p>Hello everyone,</p> <p>I am a PhD student and I am doing a speech basically how to explain AI to your grandparents...</p> <p>I would like to open with some mind blowi"
-  },
-  {
-   "title": "What's an AI capability you thought was hype until you actually used it?",
-   "url": "https://www.reddit.com/r/artificial/comments/1vlfpxs/whats_an_ai_capability_you_thought_was_hype_until/",
-   "date": "2026-08-11T12:12:53.000Z",
-   "source": "r/artificial",
-   "points": null,
-   "comments": null,
-   "summary": "<!-- SC_OFF --><div class=\"md\"><p>What&#39;s an AI capability you thought was hype until you actually used it? I&#39;ll go first: agent orchestration. I read about agents managing other agents and ass"
   },
   {
    "title": "Strategic survival game project",
@@ -191,8 +191,8 @@
    "url": "https://thewalrus.ca/google-search-is-dying/",
    "date": "2026-08-10T22:36:30.000Z",
    "source": "Hacker News",
-   "points": 792,
-   "comments": 801,
+   "points": 802,
+   "comments": 808,
    "summary": ""
   },
   {
@@ -209,8 +209,8 @@
    "url": "https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content",
    "date": "2026-08-10T21:36:56.000Z",
    "source": "Hacker News",
-   "points": 389,
-   "comments": 367,
+   "points": 393,
+   "comments": 368,
    "summary": ""
   },
   {
@@ -228,7 +228,7 @@
    "date": "2026-08-10T14:56:32.000Z",
    "source": "Hacker News",
    "points": 152,
-   "comments": 168,
+   "comments": 169,
    "summary": ""
   },
   {
@@ -245,8 +245,8 @@
    "url": "https://www.ft.com/content/4e3957f8-ea7c-4c46-a3de-cdce8e526878",
    "date": "2026-08-10T14:06:22.000Z",
    "source": "Hacker News",
-   "points": 619,
-   "comments": 577,
+   "points": 620,
+   "comments": 579,
    "summary": ""
   },
   {
@@ -254,7 +254,7 @@
    "url": "https://www.bbc.com/news/articles/cvgx4yd1gl2o",
    "date": "2026-08-10T09:53:37.000Z",
    "source": "Hacker News",
-   "points": 121,
+   "points": 123,
    "comments": 47,
    "summary": ""
   },
@@ -264,7 +264,7 @@
    "date": "2026-08-10T06:02:38.000Z",
    "source": "Hacker News",
    "points": 674,
-   "comments": 377,
+   "comments": 379,
    "summary": ""
   },
   {
