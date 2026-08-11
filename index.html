@@ -55,11 +55,15 @@
         display:flex; align-items:center; justify-content:space-between; gap:20px;
         padding:0 32px; border-bottom:1px solid var(--line-dark);
         background:rgba(7,17,13,.82); backdrop-filter:blur(20px); }
-  .brand{ display:flex; align-items:center; gap:11px; font-family:var(--display);
-          font-size:12px; letter-spacing:.16em; font-weight:800; white-space:nowrap; }
-  .brand svg{ width:26px; height:26px; display:block; }
-  .nav-links{ display:flex; gap:26px; font-size:11px; letter-spacing:.13em;
-              text-transform:uppercase; color:var(--muted-dark); font-weight:700;
+  /* 로고를 키웠다 (대표 지시 2026-08-12). 서비스 이름이 내비에서 가장 큰 글자여야
+     한다 — 여기가 유일하게 브랜드를 말하는 자리다. 마크 26→34px, 워드마크 12→17px. */
+  .brand{ display:flex; align-items:center; gap:13px; font-family:var(--display);
+          font-size:17px; letter-spacing:.13em; font-weight:900; white-space:nowrap; }
+  .brand svg{ width:34px; height:34px; display:block; }
+  /* 한글 라벨이라 uppercase 와 넓은 자간을 뺐다 — 한글에는 대문자가 없고,
+     자간을 벌리면 낱자가 흩어져 읽기 더 어려워진다. 크기는 12px 로 올렸다. */
+  .nav-links{ display:flex; gap:24px; font-size:12px; letter-spacing:.01em;
+              color:var(--muted-dark); font-weight:700;
               overflow-x:auto; scrollbar-width:none; }
   .nav-links::-webkit-scrollbar{ display:none; }
   .nav-links a{ white-space:nowrap; padding:6px 0; border-bottom:2px solid transparent; }
@@ -536,13 +540,25 @@ function dueWithin(list, key, days, today){
 }
 
 /* ============ 메뉴 ============
-   이모지 아이콘을 뺐다. 이 시스템은 타이포와 숫자로만 말한다. */
+   이모지 아이콘을 뺐다. 이 시스템은 타이포와 숫자로만 말한다.
+
+   내비 라벨은 한글이다 (대표 지시 2026-08-12). 영문 대문자가 에디토리얼 문법에
+   맞긴 하지만, 한국어 서비스에서 CONTESTS·FUNDING 을 매번 해석하게 만드는 건
+   멋을 위해 사용성을 깎는 것이다. 영문 대문자 대비는 히어로의 거대 라틴 제목과
+   eyebrow 가 이미 충분히 만들고 있다. (세 번째 값은 그 히어로 제목에 계속 쓴다)
+
+   순서는 뉴스리포트가 먼저다 — 매일 아침 갱신되는 유일한 메뉴라 가장 자주 본다.
+   첫 화면(DEFAULT_ROUTE)과 첫 메뉴가 어긋나면 "왜 두 번째가 열리지"가 된다.
+
+   라벨에서 "AI " 접두는 뺐다. 서비스 이름이 이미 AI 레이더이고 히어로에 "AI 공모전"
+   전체 이름이 크게 나온다. 다섯 개가 375px 안에 가로 스크롤 없이 들어가야 하는데
+   접두를 붙이면 넘친다. 문서 제목에는 히어로의 전체 이름(HERO[route].ko)을 쓴다. */
 var MENU = [
-  ["contests","AI 공모전","CONTESTS"],
-  ["festivals","AI 영화제","FESTIVALS"],
-  ["gov","AI 지원사업","FUNDING"],
   ["newsrep","뉴스리포트","BRIEFING"],
-  ["youtube","AI 유튜브","WATCH"]
+  ["contests","공모전","CONTESTS"],
+  ["festivals","영화제","FESTIVALS"],
+  ["gov","지원사업","FUNDING"],
+  ["youtube","유튜브","WATCH"]
 ];
 var TITLES = {};
 MENU.forEach(function(it){ TITLES[it[0]] = it[1]; });
@@ -559,8 +575,9 @@ function curRoute(){ var h = location.hash.replace(/^#/,"").split("/")[0]; retur
 function buildNav(){
   var cur = curRoute();
   document.getElementById("navLinks").innerHTML = MENU.map(function(it){
+    /* it[1] = 한글 라벨. it[2](영문)는 히어로 제목 전용이다 */
     return "<a class='"+(it[0]===cur?"on":"")+"' href='#"+it[0]+"'"+
-      (it[0]===cur?" aria-current='page'":"")+">"+esc(it[2])+"</a>";
+      (it[0]===cur?" aria-current='page'":"")+">"+esc(it[1])+"</a>";
   }).join("");
 }
 
@@ -1174,7 +1191,9 @@ function render(){
   var route = curRoute();
   buildNav();
   drawHero(route);
-  document.title = TITLES[route] + " — AI 레이더";
+  /* 제목은 내비의 짧은 라벨이 아니라 전체 이름을 쓴다 — 브라우저 탭·검색 결과·
+     공유 링크에서는 "공모전"보다 "AI 공모전"이 무엇인지 분명하다. */
+  document.title = ((HERO[route] || {}).ko || TITLES[route]) + " — AI 레이더";
   if (NEEDS_PUB[route]){
     if (state.loading){
       setKicker(["불러오는 중"]);
