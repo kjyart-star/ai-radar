@@ -1505,7 +1505,8 @@ function videoCards(list){
     var sub = v.subscribers != null ? " · 구독 "+kfmt(v.subscribers) : "";
     var when = v.published ? " · "+String(v.published).slice(0,10) : "";
     return "<a class='item-card yt' href='"+esc(ctSafeUrl(v.url))+"' target='_blank' rel='noopener noreferrer'>"+
-      "<img src='"+esc(v.thumbnail||"")+"' alt='' loading='lazy'>"+
+      /* 썸네일 주소도 http(s) 인지 보고 넣는다. 바깥에서 온 값이 그대로 src 로 들어가는 자리다 */
+      "<img src='"+esc(ctSafeUrl(v.thumbnail))+"' alt='' loading='lazy'>"+
       "<span class='ic-body'>"+
         "<span class='ic-title'>"+esc(v.title||"(제목 없음)")+"</span>"+
         "<span class='ic-desc'>"+esc(v.channel||"")+esc(sub)+"</span>"+
