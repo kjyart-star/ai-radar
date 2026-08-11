@@ -242,11 +242,14 @@
   .dark .sec-label.meta{ color:var(--lime); }
   .card-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:14px;
               margin:14px 0 20px; white-space:normal; }
-  .item-card{ display:grid; grid-template-columns:112px 1fr; gap:14px; align-items:start;
+  /* 썸네일을 112 → 184px 로 키웠다 (대표 지시 2026-08-12, "썸네일이 잘 보이게").
+     16:9 는 그대로 두고 칸만 넓혔다. 카드가 한 칸에 580px 가까이 되므로 제목 자리는
+     380px 넘게 남는다 — 제목이 더 접히지 않는 선에서 최대로 키운 값이다. */
+  .item-card{ display:grid; grid-template-columns:184px 1fr; gap:15px; align-items:start;
               border:1px solid var(--line-light); padding:13px;
               transition:background .18s ease, color .18s ease; }
   .dark .item-card{ border-color:var(--line-dark); }
-  .item-card img{ width:112px; height:63px; object-fit:cover; background:var(--ink-2); }
+  .item-card img{ width:184px; height:104px; object-fit:cover; background:var(--ink-2); }
   .item-card:not(.photo):not(.yt) img{ width:38px; height:38px; object-fit:contain;
                                        background:none; }
   @media (hover:hover){
@@ -328,15 +331,22 @@
     .card-grid{ grid-template-columns:1fr; }
   }
   @media (max-width:760px){
-    :root{ --navh:104px; }
+    :root{ --navh:124px; }
     .nav{ flex-direction:column; align-items:stretch; justify-content:center; gap:0;
           padding:0 18px; }
     .brand{ height:52px; }
-    /* 다섯 메뉴가 375px 안에 전부 들어가야 한다. 가로 스크롤로 밀면
-       마지막 메뉴가 있는 줄 모르는 사람이 생긴다. */
-    .nav-links{ height:50px; align-items:center; gap:12px; font-size:10px;
-                letter-spacing:.085em;
+    /* 메뉴가 여섯 개가 되면서 375px 한 줄에 더는 안 들어간다 (다섯 개일 때 이미 348px 였다).
+       가로 스크롤로 밀지 않고 두 줄로 접는다 — 밀어 두면 마지막 메뉴가 있는 줄
+       모르는 사람이 생기고, 그건 안 붙인 것과 같다.
+       높이를 72px 로 고정해 두는 이유: --navh(124 = 52+72)가 히어로 상단 여백을
+       계산하는 값이라, 내비가 늘었다 줄었다 하면 히어로가 잘리거나 뜬다. */
+    .nav-links{ height:72px; flex-wrap:wrap; align-items:center; align-content:center;
+                row-gap:7px; column-gap:13px; font-size:10px; letter-spacing:.085em;
+                overflow:hidden;
                 border-top:1px solid var(--line-dark); margin:0 -18px; padding:0 14px; }
+    /* 자연스럽게 흘리면 5 + 1 로 끊겨 마지막 메뉴가 딸려 나온 것처럼 보인다.
+       3 + 3 으로 고정해 두 줄이 같은 무게가 되게 한다. */
+    .nav-links a{ padding:3px 0; flex:0 0 calc(33.333% - 9px); }
   }
   @media (max-width:680px){
     .hero{ min-height:0; }
@@ -348,8 +358,15 @@
     .dd{ font-size:21px; }
     .dd.tbd{ font-size:9px; padding-top:6px; }
     .brief-head{ grid-template-columns:1fr; gap:12px; align-items:start; }
-    .item-card{ grid-template-columns:84px 1fr; gap:11px; }
-    .item-card img{ width:84px; height:48px; }
+    /* 모바일에서는 옆에 붙이지 않고 위로 올린다. 375px 에서 썸네일을 키우면서
+       가로로 나란히 두면 제목 자리가 150px 밖에 안 남아 글자가 잘게 접힌다.
+       썸네일을 폭 전체로 쓰면 그림도 커지고 제목도 한 줄을 다 쓴다. */
+    .card-grid{ grid-template-columns:1fr; gap:12px; }
+    .item-card{ grid-template-columns:1fr; gap:11px; }
+    .item-card img{ width:100%; height:auto; aspect-ratio:16/9; }
+    /* 파비콘만 있는 뉴스 카드는 키울 그림이 없다 — 원래대로 옆에 작게 둔다 */
+    .item-card:not(.photo):not(.yt){ grid-template-columns:38px 1fr; gap:11px; }
+    .item-card:not(.photo):not(.yt) img{ width:38px; height:38px; aspect-ratio:auto; }
     .arch{ grid-template-columns:1fr; }
     .footer-inner{ display:block; }
     .footer-meta{ text-align:left; margin-top:22px; }
@@ -416,6 +433,31 @@
    주소를 바꿀 일이 생기면 반드시 살아 있는지 먼저 확인한다:
      curl -sL "<주소>?action=pub" | head -c 80     → {"generated": … 가 나와야 한다 */
 var API = "https://script.google.com/macros/s/AKfycbxqPn36E8gpmKp3RzUR60XTaNL7G4wY_-xyUMXszOUUj8mQh3OoSOcWCzFZ-rkxdHU5/exec";
+
+/* ============ 자기 저장소 JSON (같은 출처 — CORS 없음) ============
+   Google News·TechCrunch·Reddit·Devpost·힉스필드는 CORS 헤더를 주지 않아 브라우저에서
+   직접 못 부른다. 그래서 GitHub Actions(.github/workflows/collect.yml)가 매일 아침
+   수집해 data/*.json 으로 커밋하고, 여기서는 같은 출처 파일만 읽는다.
+   관리시스템(Apps Script) 할당량을 쓰지 않는 것도 이 구조를 고른 이유다.
+   파일이 없거나 실패하면 그 섹션만 조용히 빠진다 — 다른 화면은 영향을 받지 않는다. */
+var FEED_FILES = {
+  news:"data/news.json", community:"data/community.json", tech:"data/tech.json",
+  devpost:"data/devpost.json", higgsfield:"data/higgsfield.json"
+};
+var feedCache = {};
+function loadFeed(key){
+  if (!feedCache[key]){
+    feedCache[key] = fetch(FEED_FILES[key], { cache:"no-store" })
+      .then(function(r){ if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); });
+  }
+  return feedCache[key];
+}
+
+/* ============ 인기 AI 영상 API ============
+   유튜브 전역 검색은 YouTube Data API 키가 필요해 수집을 관리시스템 쪽에서 한다.
+   주소가 정해지기 전까지는 비워 둔다 — 비어 있으면 메뉴와 섹션이 아예 나오지 않는다.
+   (없는 걸 "불러오는 중"으로 띄워 두면 고장난 것처럼 보인다) */
+var AIVIDEO_API = "";
 
 /* ============ 상태 ============ */
 var state = { data:null, loading:true, error:null };
@@ -528,6 +570,56 @@ function bindFold(root){
 }
 function ctSafeUrl(u){ return /^https?:\/\//i.test(String(u||"")) ? String(u) : ""; }
 function todaySeoul(){ var n = seoulNow(); return new Date(n.getFullYear(), n.getMonth(), n.getDate()); }
+/* ---- 수집물 공용 포맷 ----
+   뉴스·커뮤니티·기술동향은 마감이 없어 D-day 를 쓸 수 없다. 대신 왼쪽 큰 칸에
+   "얼마나 최근인가"를 넣는다 — 피드에서 실제로 궁금한 건 그것이다.
+   세 섹션이 같은 의미의 칸을 쓰도록 통일했다. 칸마다 뜻이 다르면 읽을 때마다 다시 배워야 한다. */
+function agoText(iso){
+  var t = Date.parse(iso||"");
+  if (isNaN(t)) return "—";
+  var m = Math.round((Date.now()-t)/60000);
+  if (m < 1) return "방금";
+  if (m < 60) return m+"분 전";
+  var h = Math.round(m/60);
+  if (h < 24) return h+"시간 전";
+  var d = Math.round(h/24);
+  return d < 30 ? d+"일 전" : Math.round(d/30)+"개월 전";
+}
+function nfmt(n){
+  n = Number(n);
+  if (!isFinite(n)) return "";
+  return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+/* 큰 수를 한 칸에 넣기 위한 축약. 385950 → 386K, 12345678 → 1,235만 */
+function kfmt(n){
+  n = Number(n);
+  if (!isFinite(n) || n < 0) return "";
+  if (n >= 100000000) return (n/100000000).toFixed(1).replace(/\.0$/,"")+"억";
+  if (n >= 10000) return nfmt(n/10000)+"만";
+  if (n >= 1000) return (n/1000).toFixed(1).replace(/\.0$/,"")+"K";
+  return String(n);
+}
+/* "$1,000,000" → "$1M" (왼쪽 큰 칸에 넣을 상금 축약. 원본은 meta 에 그대로 남긴다) */
+function prizeShort(s){
+  var n = Number(String(s||"").replace(/[^\d]/g,""));
+  if (!n) return "";
+  if (n >= 1000000) return "$"+(n/1000000).toFixed(n%1000000?1:0).replace(/\.0$/,"")+"M";
+  if (n >= 1000) return "$"+Math.round(n/1000)+"K";
+  return "$"+n;
+}
+/* 수집 시각은 UTC 로 찍히고 대표는 KST 로 본다. 로케일 문자열을 정규식으로 주무르면
+   브라우저마다 다른 모양이 나오므로 조각(formatToParts)으로 직접 조립한다.
+   KST 라고 명시한다 — 어느 시간대인지 모르면 "언제 수집했나"가 답이 안 된다. */
+function fmtGen(iso){
+  var d = new Date(iso||"");
+  if (isNaN(d)) return String(iso||"");
+  var g = {};
+  new Intl.DateTimeFormat("en-CA",{ timeZone:"Asia/Seoul", year:"numeric", month:"2-digit",
+    day:"2-digit", hour:"2-digit", minute:"2-digit", hour12:false })
+    .formatToParts(d).forEach(function(p){ g[p.type] = p.value; });
+  return g.year+"-"+g.month+"-"+g.day+" "+g.hour+":"+g.minute+" KST";
+}
+
 /* 마감이 오늘부터 N일 이내인 건수 — 히어로 숫자에 쓴다 */
 function dueWithin(list, key, days, today){
   var n = 0;
@@ -552,13 +644,19 @@ function dueWithin(list, key, days, today){
 
    라벨은 대표 지시(2026-08-12)로 AI 접두를 붙였다. 띄어쓰기 없이 "AI공모전" 인 것도
    지시 그대로다 — 폭이 줄어 375px 에 다섯 개를 넣기가 오히려 수월하다.
-   문서 제목에는 히어로의 전체 이름(HERO[route].ko)을 쓴다. */
+   문서 제목에는 히어로의 전체 이름(HERO[route].ko)을 쓴다.
+
+   여섯 번째로 "AI인기영상"이 붙었다 (대표 지시 2026-08-12). AI유튜브정보 바로 옆이다 —
+   둘 다 영상이라 붙어 있어야 비교가 된다. 다만 다섯 개도 375px 에 빠듯했으므로
+   모바일 내비는 두 줄로 접힌다(아래 @media 760px). 가로 스크롤은 쓰지 않는다.
+   여섯 번째 메뉴가 있는 줄 모르는 사람이 생기면 안 붙인 것과 같다. */
 var MENU = [
   ["newsrep","뉴스리포트","BRIEFING"],
   ["contests","AI공모전","CONTESTS"],
   ["festivals","AI영화제","FESTIVALS"],
   ["gov","AI지원사업","FUNDING"],
-  ["youtube","AI유튜브정보","WATCH"]
+  ["youtube","AI유튜브정보","WATCH"],
+  ["aivideo","AI인기영상","POPULAR"]
 ];
 var TITLES = {};
 MENU.forEach(function(it){ TITLES[it[0]] = it[1]; });
@@ -591,8 +689,12 @@ var HERO = {
     copy:"K-Startup에 올라온 창업지원 공고 가운데 AI와 관련된 것을 골라 둡니다. 필터를 끄면 전체가 보입니다." },
   newsrep:{ latin:"BRIEFING", ko:"뉴스리포트",
     copy:"밤사이 나온 AI 소식을 아침에 한 번 정리합니다. 요약 옆에 기사 원문 링크를 그대로 답니다." },
+  /* 두 영상 화면이 어떻게 다른지 각자의 첫 문장에서 바로 말한다.
+     "왜 메뉴가 두 개지"가 나오면 둘 중 하나는 안 쓰이게 된다. */
   youtube:{ latin:"WATCH", ko:"AI 유튜브",
-    copy:"아침 브리핑에서 걸러낸 AI 영상을 날짜별로 쌓아 둡니다. 생성형 AI, 바이브코딩, AI 영상 제작." }
+    copy:"아침 브리핑이 그날 골라낸 AI 영상을 날짜별로 쌓아 둡니다. 조회수와 무관하게, 그날 다뤄진 것들입니다." },
+  aivideo:{ latin:"POPULAR", ko:"AI 인기영상",
+    copy:"유튜브에서 AI 영상을 찾아 조회수가 높은 순으로 세웁니다. 국내와 해외를 나눠서 봅니다." }
 };
 function drawHero(route){
   var h = HERO[route] || HERO[DEFAULT_ROUTE];
@@ -674,6 +776,101 @@ function stamp(){
   if (el && state.data && state.data.generated) el.textContent = "목록 갱신 " + state.data.generated + " (KST)";
 }
 
+/* ============ 뉴스리포트 — 바깥 소스 섹션 ============
+   관리시스템 브리핑(위쪽)은 하루 한 번 사람이 읽을 수 있게 정리된 것이고,
+   아래 세 섹션은 원문 피드를 그대로 세운 것이다. 성격이 달라 섞지 않는다.
+   전부 우리 저장소의 JSON 을 읽는다 — 원본 소스는 CORS 를 열어 주지 않는다. */
+function newsSection(){
+  return loadFeed("news").then(function(j){
+    var items = (j && j.items) || [];
+    if (!items.length) return "";
+    var rows = items.map(function(it){
+      var meta = [];
+      if (it.source && it.source !== it.feed) meta.push("<b>"+esc(it.source)+"</b>");
+      if (it.date) meta.push(esc(String(it.date).slice(0,10)));
+      return row({ dd:agoText(it.date), ddCls:"tbd", title:it.title,
+                   tags:[it.feed], meta:meta, sum:it.summary, url:it.url });
+    }).join("");
+    return "<section class='section paper-alt'><div class='inner'>"+
+      sectionHead("Newswire","오늘의<br>AI 뉴스.",
+        "Google News(한국어)·TechCrunch·MIT Technology Review·The Verge 의 AI 지면을 합쳐 최신순으로 세웁니다. "+
+        "요약은 원문 매체가 쓴 것이고, 제목을 누르면 그 매체로 갑니다. 수집 "+esc(fmtGen(j.generated)),
+        "<b>"+items.length+"</b>건")+
+      "<div class='rows'>"+rows+"</div></div></section>";
+  }).catch(function(){ return ""; });
+}
+function communitySection(){
+  return loadFeed("community").then(function(j){
+    var items = (j && j.items) || [];
+    if (!items.length) return "";
+    var rows = items.map(function(it){
+      var meta = [];
+      if (it.points != null) meta.push("<b>"+nfmt(it.points)+"점</b>");
+      if (it.comments != null) meta.push("댓글 "+nfmt(it.comments));
+      if (it.date) meta.push(esc(String(it.date).slice(0,10)));
+      return row({ dd:agoText(it.date), ddCls:"tbd", title:it.title,
+                   tags:[it.source], meta:meta, sum:it.summary, url:it.url });
+    }).join("");
+    return "<section class='section dark'><div class='inner'>"+
+      sectionHead("Community","커뮤니티에서<br>도는 이야기.",
+        "Hacker News(50점 이상)와 Reddit r/artificial 의 하루 인기글입니다. "+
+        "기사가 되기 전 단계의 이야기라 방향을 먼저 읽는 데 씁니다. 수집 "+esc(fmtGen(j.generated)),
+        "<b>"+items.length+"</b>건")+
+      "<div class='rows'>"+rows+"</div></div></section>";
+  }).catch(function(){ return ""; });
+}
+/* 기술 동향은 매일 볼 것이 아니라 필요할 때 여는 자료다 — 접어 둔다.
+   메뉴를 새로 만들지 않은 이유이기도 하다(대표가 방금 메뉴를 확정했다). */
+function techSection(){
+  return loadFeed("tech").then(function(j){
+    if (!j) return "";
+    var ax = j.arxiv||[], gh = j.github||[], hf = j.huggingface||[];
+    var n = ax.length + gh.length + hf.length;
+    if (!n) return "";
+    function group(label, note, rows){
+      return "<p class='count' style='margin:0 0 14px'><b>"+esc(label)+"</b> · "+esc(note)+"</p>"+
+             "<div class='rows' style='margin-bottom:38px'>"+rows+"</div>";
+    }
+    var body = "";
+    if (ax.length) body += group("arXiv cs.AI", ax.length+"편 · 최근 등록순",
+      ax.map(function(it){
+        return row({ dd:agoText(it.date), ddCls:"tbd", title:it.title,
+                     tags:["논문"], meta:[esc(String(it.date).slice(0,10))], sum:it.summary, url:it.url });
+      }).join(""));
+    if (gh.length) body += group("GitHub", gh.length+"곳 · 최근 7일 안에 갱신된 ai 토픽 저장소를 별 많은 순으로",
+      gh.map(function(it){
+        var meta = [];
+        if (it.language) meta.push(esc(it.language));
+        if (it.date) meta.push("갱신 "+esc(String(it.date).slice(0,10)));
+        return row({ dd:kfmt(it.stars), ddCls:"far", title:it.title,
+                     tags:["별 "+nfmt(it.stars)], meta:meta, sum:it.summary, url:it.url });
+      }).join(""));
+    if (hf.length) body += group("Hugging Face", hf.length+"개 · 트렌딩 모델",
+      hf.map(function(it){
+        var meta = [];
+        if (it.task) meta.push(esc(it.task));
+        if (it.downloads != null) meta.push("내려받기 "+nfmt(it.downloads));
+        if (it.date) meta.push(esc(String(it.date).slice(0,10)));
+        return row({ dd:it.likes != null ? kfmt(it.likes) : "—", ddCls:"far", title:it.title,
+                     tags:["좋아요"], meta:meta, url:it.url });
+      }).join(""));
+    body = "<p class='section-intro' style='margin:0 0 30px'>"+
+      "논문·오픈소스·모델이 어디로 가는지 보는 자리입니다. 출처 arXiv · GitHub · Hugging Face · 수집 "+
+      esc(fmtGen(j.generated))+"</p>" + body;
+    return foldSection("paper-alt","Research","기술 동향", n+"건", body);
+  }).catch(function(){ return ""; });
+}
+
+function fillNewsExtra(){
+  var el = C.querySelector("[data-extra]");
+  if (!el) return;
+  Promise.all([newsSection(), communitySection(), techSection()]).then(function(parts){
+    if (curRoute()!=="newsrep") return;   /* 라우트를 떠났으면 버린다 */
+    el.innerHTML = parts.join("");
+    bindFold(el);
+  });
+}
+
 /* ============ 뉴스리포트 ============ */
 var reportSelId = null;
 function sortedReports(){
@@ -688,7 +885,8 @@ function renderReports(){
     C.innerHTML = "<section class='section paper'><div class='inner'>"+
       sectionHead("Briefing","아직 발행된 브리핑이<br>없습니다.",
         "브리핑은 매일 아침 자동으로 올라옵니다. 잠시 뒤 다시 열어 주세요.","")+
-      "</div></section>";
+      "</div></section><div data-extra></div>";
+    fillNewsExtra();
     return;
   }
   if (!findById(all, reportSelId)) reportSelId = all[0].id;
@@ -702,11 +900,15 @@ function renderReports(){
       "<p class='section-intro'>기사 요약 아래에 원문 링크를 그대로 답니다. 카드를 누르면 해당 매체로 바로 갑니다. 유튜브 영상은 <a href='#youtube' style='text-decoration:underline'>AI 유튜브</a>에서 따로 봅니다.</p></div>"+
       "<div data-brief></div>"+
     "</div></section>"+
+    /* 바깥 소스 세 섹션은 브리핑 바로 아래에 온다. 보관함(지난 브리핑)은 다시 찾아볼 때
+       쓰는 자리라 맨 끝으로 내렸다 — 매일 새로 오는 것이 위, 쌓아 두는 것이 아래다. */
+    "<div data-extra></div>"+
     "<section class='section dark'><div class='inner'>"+
-      sectionHead("Archive","지난 브리핑","날짜를 누르면 위쪽 본문이 그 날짜로 바뀝니다.",
+      sectionHead("Archive","지난 브리핑","날짜를 누르면 맨 위 본문이 그 날짜로 바뀝니다.",
         "<b>"+all.length+"</b>호 보관")+
       "<div class='arch' data-arch></div>"+
     "</div></section>";
+  fillNewsExtra();
 
   var briefEl = C.querySelector("[data-brief]");
   var archEl = C.querySelector("[data-arch]");
@@ -914,6 +1116,92 @@ function fetchContests(kind, force){
   }).then(function(j){ contestCache[kind] = { t:Date.now(), data:j }; return j; });
 }
 function ctFmtGen(g){ if(!g) return ""; return String(g).replace("T"," ").replace(/(:\d\d)(\.\d+)?(Z|[+-]\d\d:?\d\d)?$/,"$1").slice(0,16); }
+
+/* ---- 힉스필드 공모전 ----
+   따로 세우는 이유: 우리 회사가 영상 제작사이고, 여기 공모전은 전부 AI 영상·앱 제작
+   부문인 데다 상금이 백만 달러 단위다. 목록에 섞으면 묻힌다.
+   힉스필드 페이지는 자바스크립트로 그려져서 브라우저 없이는 못 읽는다 —
+   매일 아침 Actions 가 실제 브라우저로 열어 뽑는다 (scripts/collect-higgsfield.mjs). */
+function hfSection(){
+  return loadFeed("higgsfield").then(function(j){
+    var items = (j && j.items) || [];
+    if (!items.length) return "";
+    var rows = items.map(function(it){
+      var short = prizeShort(it.prize);
+      var open = /is open/i.test(it.status||"");
+      var meta = [];
+      if (it.prize) meta.push("<b>상금 "+esc(it.prize)+"</b>");
+      if (it.dates) meta.push(esc(it.dates));
+      if (it.status) meta.push(esc(it.status));
+      /* 상금을 왼쪽 큰 칸에 넣는다. 접수 중인 것만 라임으로 뜬다(.dark .dd.soon).
+         태그에 "Higgsfield"를 또 달지 않는다 — 섹션 제목이 이미 그 말을 하고 있다.
+         대신 지금 낼 수 있는지를 태그로 말한다. 이 목록에서 그게 유일한 갈림길이다. */
+      /* "Winners announced" 가 /announced$/ 에도 걸린다 — 발표를 먼저 본다 */
+      var tag = open ? "접수 중" : (/winners?/i.test(it.status||"") ? "발표 완료" :
+                /announced$/i.test(it.status||"") ? "예고" : "");
+      return row({ dd: short || "—", ddCls: open ? "soon" : (short ? "far" : "tbd"),
+                   title: it.title, tags:[tag], meta:meta, sum:it.desc, url:it.url });
+    }).join("");
+    return "<section class='section dark'><div class='inner'>"+
+      sectionHead("Higgsfield","상금이 가장 큰<br>AI 영상 공모전.",
+        "힉스필드가 여는 공모전입니다. 전부 AI 영상·앱 제작 부문이라 우리 작업과 바로 닿습니다. "+
+        "출처 <a href='https://higgsfield.ai/contests' target='_blank' rel='noopener noreferrer' style='text-decoration:underline'>higgsfield.ai/contests</a> · 수집 "+esc(fmtGen(j.generated)),
+        "<b>"+items.length+"</b>건")+
+      "<div class='rows'>"+rows+"</div></div></section>";
+  }).catch(function(){ return ""; });
+}
+
+/* ---- Devpost 해커톤·공모전 ----
+   "Jun 17 - Sep 01, 2026" / "Aug 08 - 12, 2026" 두 형태가 온다.
+   뒤쪽에 달이 없으면 앞쪽 달을 쓴다. 연도는 문자열 끝에 한 번만 붙는다. */
+var DP_MON = { Jan:1,Feb:2,Mar:3,Apr:4,May:5,Jun:6,Jul:7,Aug:8,Sep:9,Oct:10,Nov:11,Dec:12 };
+function dpEnd(s){
+  s = String(s||"");
+  var year = (s.match(/(\d{4})\s*$/)||[])[1];
+  var parts = s.split(/\s+[–—-]\s+/);
+  if (!year || parts.length < 2) return "";
+  var em = parts[1].match(/([A-Z][a-z]{2})\s+(\d{1,2})/);
+  var mon = em ? DP_MON[em[1]] : DP_MON[(parts[0].match(/([A-Z][a-z]{2})/)||[])[1]];
+  var day = em ? em[2] : (parts[1].match(/(\d{1,2})/)||[])[1];
+  if (!mon || !day) return "";
+  return year+"-"+("0"+mon).slice(-2)+"-"+("0"+day).slice(-2);
+}
+function dpRow(it, today){
+  var end = dpEnd(it.dates);
+  var di = end ? ddayInfo(end, today) : { cls:"tbd", txt:"미정" };
+  var meta = [];
+  var money = Number(String(it.prize||"").replace(/[^\d]/g,""));
+  if (money) meta.push("<b>상금 "+esc(it.prize)+"</b>");
+  if (it.dates) meta.push(esc(it.dates));
+  if (it.location) meta.push(esc(it.location));
+  if (it.registrations) meta.push(nfmt(it.registrations)+"명 등록");
+  return row({ dd:di.txt, ddCls:di.cls, title:it.title||"(제목 없음)",
+               tags:(it.themes||[]).slice(0,2), meta:meta, url:it.url });
+}
+function dpSection(){
+  return loadFeed("devpost").then(function(j){
+    var items = (j && j.items) || [];
+    if (!items.length) return "";
+    var today = todaySeoul();
+    var open = items.filter(function(i){ return i.state === "open"; });
+    var soon = items.filter(function(i){ return i.state === "upcoming"; });
+    var html = "<section class='section paper-alt'><div class='inner'>"+
+      sectionHead("Devpost","해외 해커톤과<br>AI 챌린지.",
+        "Devpost 에 등록된 AI 관련 공모전 가운데 접수 중인 것을 상금이 큰 순으로 모았습니다. "+
+        "전체 "+nfmt(j.total_on_devpost||0)+"건 중 "+items.length+"건입니다. "+
+        "출처 <a href='https://devpost.com/hackathons?search=ai' target='_blank' rel='noopener noreferrer' style='text-decoration:underline'>devpost.com</a> · 수집 "+esc(fmtGen(j.generated)),
+        "<b>"+open.length+"</b>건 접수 중")+
+      "<div class='rows'>"+
+      (open.length ? open.map(function(i){ return dpRow(i, today); }).join("")
+                   : emptyNote("지금 접수 중인 Devpost 공모전이 없습니다."))+
+      "</div></div></section>";
+    if (soon.length){
+      html += foldSection("dark","Upcoming","곧 접수가 열리는 곳", soon.length+"건",
+        "<div class='rows'>"+soon.map(function(i){ return dpRow(i, today); }).join("")+"</div>");
+    }
+    return html;
+  }).catch(function(){ return ""; });
+}
 function renderContests(){
   var today = todaySeoul();
   setKicker(["AI 공모전 보드", "자동 갱신"]);
@@ -934,7 +1222,14 @@ function renderContests(){
       "<div class='controls'><div class='chips' data-cats></div></div>"+
       "<div data-body>"+emptyNote("공모전 보드를 불러오는 중입니다.")+"</div>"+
     "</div></section>"+
+    "<div data-hf></div><div data-dp></div>"+
     "<div data-await></div>";
+
+  /* 힉스필드·Devpost 는 우리 저장소의 JSON 이라 공모전 보드와 따로 논다.
+     하나가 늦거나 실패해도 나머지 화면은 그대로 뜬다 — 섹션만 비고 만다. */
+  var hfEl = C.querySelector("[data-hf]"), dpEl = C.querySelector("[data-dp]");
+  hfSection().then(function(h){ if (curRoute()==="contests") hfEl.innerHTML = h; });
+  dpSection().then(function(h){ if (curRoute()!=="contests") return; dpEl.innerHTML = h; bindFold(dpEl); });
 
   var bodyEl = C.querySelector("[data-body]");
   var awaitEl = C.querySelector("[data-await]");
@@ -999,7 +1294,10 @@ function renderContests(){
       (ongoing.length ? ongoing.map(contestRow).join("")
                       : emptyNote("조건에 맞는 진행 중 공모전이 없습니다."))+"</div>";
 
-    awaitEl.innerHTML = foldSection("dark","Awaiting","결과 발표를 기다리는 중", awaiting.length+"건",
+    /* 다크였다가 페이퍼로 바꿨다. 이 화면에 힉스필드(다크)·Devpost(페이퍼)·
+       Devpost 예정(다크) 세 섹션이 앞에 붙으면서 다크가 두 번 연달아 왔다 —
+       다크↔페이퍼 교차가 이 디자인의 리듬이라 마지막 칸을 페이퍼로 넘긴다. */
+    awaitEl.innerHTML = foldSection("paper-alt","Awaiting","결과 발표를 기다리는 중", awaiting.length+"건",
       "<div class='rows'>"+
       (awaiting.length ? awaiting.map(function(it){
           var rd = String(it.result_date||"").trim();
@@ -1062,8 +1360,13 @@ function renderGov(){
 
   C.innerHTML =
     "<section class='section paper'><div class='inner'>"+
+      /* "돈을 내는 곳"이었다. "돈을 낸다"는 보통 지불한다는 뜻이라 지원금을 주는 쪽인지
+         내는 쪽인지 두 갈래로 읽혔다 (대표가 바로 걸렸다, 2026-08-12).
+         영화제의 "지금 출품할 수 있는 곳."과 대구를 이루는 문장으로 바꿨다.
+         이 목록이 실제로 접수 중인 공고만 담는지 확인하고 골랐다 —
+         action=pubgov 응답 263건이 전부 마감 전이었다(2026-08-12 실측). */
       "<div class='section-head'><div><p class='eyebrow'>Funding</p>"+
-      "<h2>정부·기관이<br>돈을 내는 곳.</h2></div>"+
+      "<h2>지금 신청할 수<br>있는 지원사업.</h2></div>"+
       "<div><p class='section-intro'>K-Startup 창업지원 공고를 그대로 가져와 AI와 관련된 것만 먼저 보여 줍니다. 필터를 끄면 전체 공고가 나옵니다.</p>"+
       "<p class='count' style='margin:14px 0 0' data-gen>불러오는 중</p></div></div>"+
       "<div class='controls'>"+
@@ -1179,10 +1482,78 @@ function renderGov(){
   load(false);
 }
 
+/* ============ AI 인기영상 (유튜브 검색 — 조회수순) ============
+   AI유튜브정보와 다른 자료다. 저쪽은 아침 브리핑이 그날 고른 영상이고,
+   이쪽은 유튜브에서 검색해 조회수로 세운 것이다. 두 화면 설명에 각각 그렇게 적었다.
+
+   수집은 관리시스템(Apps Script)이 한다 — 유튜브 전역 검색에는 API 키가 필요하고
+   키는 이 공개 저장소에 둘 수 없다. 주소가 정해지면 AIVIDEO_API 한 줄만 채우면 된다.
+   비어 있는 동안에는 목록 자리에 "아직 연결되지 않았다"고 적는다. 에러 박스는 띄우지 않는다 —
+   고장난 게 아니라 아직 안 붙은 것이다. */
+var aivideoCache = null;
+function fetchAiVideos(){
+  if (!AIVIDEO_API) return Promise.reject(new Error("no-endpoint"));
+  if (aivideoCache) return Promise.resolve(aivideoCache);
+  var u = AIVIDEO_API + (AIVIDEO_API.indexOf("?")>=0 ? "&" : "?") + "action=aivideos&t=" + Date.now();
+  return fetch(u, { cache:"no-store" })
+    .then(function(r){ if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); })
+    .then(function(j){ if(!j || !j.ok) throw new Error("bad-response"); aivideoCache = j; return j; });
+}
+/* 브리핑 본문이 쓰는 카드(.card-grid/.item-card)를 그대로 쓴다. 영상 카드는 이미 이 시스템에 있다 */
+function videoCards(list){
+  return "<span class='card-grid'>"+(list||[]).map(function(v){
+    var sub = v.subscribers != null ? " · 구독 "+kfmt(v.subscribers) : "";
+    var when = v.published ? " · "+String(v.published).slice(0,10) : "";
+    return "<a class='item-card yt' href='"+esc(ctSafeUrl(v.url))+"' target='_blank' rel='noopener noreferrer'>"+
+      "<img src='"+esc(v.thumbnail||"")+"' alt='' loading='lazy'>"+
+      "<span class='ic-body'>"+
+        "<span class='ic-title'>"+esc(v.title||"(제목 없음)")+"</span>"+
+        "<span class='ic-desc'>"+esc(v.channel||"")+esc(sub)+"</span>"+
+        "<span class='ic-url'>조회수 "+esc(nfmt(v.views))+esc(when)+"</span>"+
+      "</span></a>";
+  }).join("")+"</span>";
+}
+function videoSection(cls, eyebrow, h2, list, queries, generated){
+  var q = (queries||[]).length ? "검색어 "+esc(queries.join(" · "))+" · " : "";
+  return "<section class='section "+cls+"'><div class='inner'>"+
+    sectionHead(eyebrow, h2, q+"수집 "+esc(fmtGen(generated))+". 조회수가 높은 순입니다.",
+      "<b>"+(list||[]).length+"</b>편")+
+    ((list||[]).length ? videoCards(list) : emptyNote("아직 모인 영상이 없습니다."))+
+    "</div></section>";
+}
+function renderAiVideo(){
+  setKicker(["유튜브 검색", "조회수순"]);
+  setFacts([["—","국내"],["—","해외"],["—","최고 조회수"]]);
+  C.innerHTML = "<section class='section paper'><div class='inner'>"+
+    emptyNote("인기 영상을 불러오는 중입니다.")+"</div></section>";
+
+  fetchAiVideos().then(function(j){
+    if (curRoute()!=="aivideo") return;
+    var dom = j.domestic||[], ovs = j.overseas||[];
+    var top = 0;
+    dom.concat(ovs).forEach(function(v){ if (Number(v.views) > top) top = Number(v.views); });
+    setKicker(["유튜브 검색", "조회수순", (dom.length+ovs.length)+"편"]);
+    setFacts([[String(dom.length),"국내"],[String(ovs.length),"해외"],[kfmt(top)||"—","최고 조회수"]]);
+    C.innerHTML =
+      videoSection("paper","Domestic","국내에서<br>많이 본 AI 영상.", dom, (j.queries||{}).domestic, j.generated)+
+      videoSection("dark","Overseas","해외에서<br>많이 본 AI 영상.", ovs, (j.queries||{}).overseas, j.generated);
+    observeReveal();
+  }).catch(function(){
+    if (curRoute()!=="aivideo") return;
+    setKicker(["연결 준비 중"]);
+    setFacts([["—","국내"],["—","해외"],["—","최고 조회수"]]);
+    C.innerHTML = "<section class='section paper'><div class='inner'>"+
+      sectionHead("Popular","아직 영상 수집이<br>연결되지 않았습니다.",
+        "유튜브 검색 수집이 붙으면 이 자리에 국내·해외 인기 AI 영상이 조회수순으로 올라옵니다. "+
+        "그동안은 <a href='#youtube' style='text-decoration:underline'>AI 유튜브정보</a>에서 아침 브리핑이 고른 영상을 보실 수 있습니다.","")+
+      "</div></section>";
+  });
+}
+
 /* ============ 라우팅 ============ */
 var ROUTES = {
   contests:renderContests, festivals:renderFestivals, gov:renderGov,
-  newsrep:renderReports, youtube:renderYoutube
+  newsrep:renderReports, youtube:renderYoutube, aivideo:renderAiVideo
 };
 /* 공개 목록 API(action=pub) 데이터가 반드시 필요한 화면 */
 var NEEDS_PUB = { newsrep:1, youtube:1 };
