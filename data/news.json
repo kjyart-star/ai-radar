@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-11T20:26:42.601Z",
+ "generated": "2026-08-11T20:39:46.925Z",
  "source": "Google News · TechCrunch · MIT Technology Review · The Verge",
  "sources": [
   "Google News",
@@ -9,10 +9,10 @@
  ],
  "items": [
   {
-   "title": "그 미국 AI, 뇌는 중국산이었다…백악관 기겁한 ‘문샷’ 습격",
-   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1ndXN3bk92LUhKUUVpNmwwX25idVk5M3BCLXZZRGlRbW84cWZBNHB1ZUdVdHQycGcwbDRPS29OMm16VnJxUlh6MFJSLXpGTHE1OGhWQmxR?oc=5",
-   "date": "2026-08-11T20:04:23.000Z",
-   "source": "중앙일보",
+   "title": "일년 만에 월 매출 1000배 ‘껑충’… AI 캐릭터 챗 ‘위프’ 투자 유치",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE52ZkpOZXM2d3RtcTlfMGxOVGtGenA1dUhyRkd3UTd3NzVjMnZwTnoyYVhPTGwtcHhqZVpmYTRYcFpaOVhmaHZPTXAwdl9oMl9BVkHSAVNBVV95cUxQOFV6N09sSXo4X0Ewa1p2bjU2SjBKVVJZM2M1WHFobGY2Q2dKckhmY0RFamlZeDNhUzIzUlRma1hkY2V1RElpdWJFR1hjMEVOekZmdw?oc=5",
+   "date": "2026-08-11T20:30:00.000Z",
+   "source": "서울경제",
    "feed": "Google News",
    "summary": ""
   },
@@ -33,25 +33,24 @@
    "summary": ""
   },
   {
-   "title": "ChatGPT and Gemini both just passed 1 billion users",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/978113/chatgpt-gemini-1-billion-users",
-   "date": "2026-08-11T19:41:42.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "For the 14th time, a Google product has hit 1 billion users. Google CEO Sundar Pichai posted on X that a billion people are using Gemini every month, and that Gemini is Google's fastest-growing product ever. A billion us",
-   "titleKo": "ChatGPT와 Gemini는 모두 10억 명의 사용자를 통과했습니다."
-  },
-  {
    "title": "AI가 흔든 검색 판도… 구글, 네이버 첫 추월",
-   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5OM1dQclo2THM5NTlVS2ZQeDQ5MXl6UjNRV005Ri1uNFZ0MFBzbHNRXzExTzRPaGJuRkJqZTRab184dkRWRC01Wmx4SzV0VUhYYmRBUHJzOHRZMUVDR2VYNVBEcU5IWm9vM1VhUTJjejJ5OS0xWVHSAWZBVV95cUxPTTBUMUhFX042MnVxUVBXNzJxMzBJLWVfUUNMNS12UVdDQ3pSRGVuRDIxblY5ZjZ2NHdsNjVjNXhoM0E5U2l5U0lZR3lYNXZyUnhHUk9RclhsV1VMWDZ3bmc0MGIwSVE?oc=5",
-   "date": "2026-08-11T19:30:00.000Z",
-   "source": "동아일보",
+   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5HRC1hTUhOM21iUWdIVFFMY0N0Q2pVSlJBZjExTlBSdEtVSWZoaEprajRPdE1sY3lWZjdQSk5RVERMekJoclF4MzFwTmNzbzQ?oc=5",
+   "date": "2026-08-11T19:35:54.000Z",
+   "source": "v.daum.net",
    "feed": "Google News",
    "summary": ""
   },
   {
    "title": "검색에 AI 접목 3개월 빨랐던 구글, 이용자 증가폭 네이버의 4배",
    "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE8zSlBQUUgzbjVxeEdFclQxU0U4bmJYVHdPUmcxVG5Dc1dRcjJNdlE2ZE5nX0ZkVGh4U2tFNUFwVmV5ZXhTbVo4aUczY1d3bUhQZ0JqZmR6QjJjdEFXMFU1aUJBVEpqR3pIb3JHRHY5T0x4YnZXX3fSAWZBVV95cUxNLXRDa0o1Ti1SSUQwQ00tWWxqUTE3cEczQnhRWGwwMTlNNTJLcjVzU0FWelliVzVTNU84LUstSXJQUFNxQWJQX1FmaDFHclg1X2hSeXZyWFIxTVNhOXlDTS1hZlhjX0E?oc=5",
+   "date": "2026-08-11T19:30:00.000Z",
+   "source": "동아일보",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "월가 투자사 손잡은 엔비디아 “5000억달러 AI인프라 자금 마련”",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1PTW9qdEY2NVVvRTQ2TzVWQkF3cmN3VEsxaWZCSVFocjl3NHhuR2pxZk9VSkcwRVNiX0U0TUl2NUZXaWFtcUxORFpMYTFkMDl0cU1rY2VyamVqeUZHSGFlY0dBYldXWkpMb245cG8zdVZEWWp5a3fSAWZBVV95cUxPV2ptb2g1WDNOaDRCV1U0S2VjbFdkTmxnYzk1d3NvWFQwWjVTbjhuUXlIQWNlamJKNnY3YkQwMEVEMjN3ajlQM29MUWZ4ZV8xYkY2VFRoM1AzM082LTNTZlV3aFdkWHc?oc=5",
    "date": "2026-08-11T19:30:00.000Z",
    "source": "동아일보",
    "feed": "Google News",
@@ -154,18 +153,18 @@
    "titleKo": "Apple은 iPhone 사진이 딥페이크가 아님을 증명하는 데 도움을 줄 수 있습니다."
   },
   {
-   "title": "AI 말만 믿는 부장님… 오늘도 속끓는 김대리",
-   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOMlRuTXJhY3NYRHZhQW5hbi1XcTRDZ1pTQVdCYlRGX2VScUxvd1Nnd3BrREJzVlpUVnR5bXl3VkNtTlhfUWJ6YktDU2xoLTlsdEV0SVU1YXVhajkwUGgwT0NweEpMOV95VnFiWVlCbDI2TkdFZ19zZWw0QkMxWEs5WlpoZw?oc=5",
-   "date": "2026-08-11T15:34:00.000Z",
-   "source": "조선일보",
+   "title": "“AI 3만7000개가 제약회사처럼 협업”…스탠포드, ‘가상 바이오테크’로 신약 자율 설계",
+   "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE44bVptRTdJaFpSM2djdWl0TWhZSHQtdXRNVFczYURkUEp3UW5SM3lyQXg5S05BWWU4cTZ2UnUzSzRBcHJ1c1lGZTdGQ3hLTEhKWUhOcmRXTlZpU3phM3NBWDYxVkwyRVVud2c?oc=5",
+   "date": "2026-08-11T16:14:20.000Z",
+   "source": "AI타임스",
    "feed": "Google News",
    "summary": ""
   },
   {
-   "title": "엔비디아 vs ASML…AI 반도체 시장 최종 승자는?",
-   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5WZXY1dDUyVjByVkF6amlHRjJHajYtM3VBUUhpS181QzFaaTRsR2kzVWlMOFpuamhRc2R4S2tpTE1Bc1FwSTYwOXN2eVBmMVo4ck04cGRTMlczQ2xGTFJnaNIBeEFVX3lxTE1QMXI1OVlZd2VjSU12ajdUSms1RjJmaHFhdC1Fb1JPUzBxR1czajM0SjlSMEVDQzBzRTEtazM0aUR1Z3RqZE1NVmJuMzR6LTUtR21kOWVKS0Z0RVJZa0FaTkxTSElEb180dzlTQkJJSlJqeDFiMWlKdQ?oc=5",
-   "date": "2026-08-11T15:29:00.000Z",
-   "source": "뉴시스",
+   "title": "AI 말만 믿는 부장님… 오늘도 속끓는 김대리",
+   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOMlRuTXJhY3NYRHZhQW5hbi1XcTRDZ1pTQVdCYlRGX2VScUxvd1Nnd3BrREJzVlpUVnR5bXl3VkNtTlhfUWJ6YktDU2xoLTlsdEV0SVU1YXVhajkwUGgwT0NweEpMOV95VnFiWVlCbDI2TkdFZ19zZWw0QkMxWEs5WlpoZw?oc=5",
+   "date": "2026-08-11T15:34:00.000Z",
+   "source": "조선일보",
    "feed": "Google News",
    "summary": ""
   },
@@ -187,14 +186,6 @@
    "titleKo": "20개 미만의 AI 프롬프트를 사용하여 발견된 ’Zoomsday’ 해킹"
   },
   {
-   "title": "[로터리]죽느냐 사느냐... AI가 문제로다",
-   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9JdGdHSXFTMVFNRmFJczNkVkVZWWlXVjJrcUNScWJOeGwyS3hzQVNiMnNvUHZOT0dTMWd1ZTdqSGJVUTVBdXdsamFQVDRFX0xSVmfSAVNBVV95cUxPbXljUHd5bGFKY2xZcFhuMTNDR1oySmxFTHQtRWd0Z3lQbFpDQVpac2R1Q2VDWVVsdHcwQ1dyQVhyRjBmQWNHWUNwb0VJMFhxbXV0dw?oc=5",
-   "date": "2026-08-11T13:50:44.000Z",
-   "source": "서울경제",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
    "title": "Why your Amazon order confirmation emails have become so unhelpful",
    "url": "https://www.theverge.com/ai-artificial-intelligence/977733/amazon-order-emails-google-gmail-ai-agents-data",
    "date": "2026-08-11T13:27:20.000Z",
@@ -202,14 +193,6 @@
    "feed": "The Verge",
    "summary": "Earlier this summer, Amazon customers began noticing that emails related to their online orders looked sparse: Order confirmation emails didn't name specific items anymore, and instead listed only item categories. \"Your ",
    "titleKo": "Amazon 주문 확인 이메일이 도움이 되지 않는 이유"
-  },
-  {
-   "title": "돼지 등급판정 AI 데이터, '종돈 개량·삼겹살 선별'까지 활용 넓힌다",
-   "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1aZHAwOXFtd3pzVmhkUzJqNE1kTnpSNEVSaVRyUVI2TWd6MFRnRzdoVkYtM2Nwc1MxRmZGekhVQVhmQnotVDVSMzRNTUIybTBlODJmcGJvV1hvZzV3czc3dnVR?oc=5",
-   "date": "2026-08-11T13:24:03.000Z",
-   "source": "돼지와사람",
-   "feed": "Google News",
-   "summary": ""
   },
   {
    "title": "Spotify will label ‘AI Persona’ profiles and exclude their music from recommendations",
@@ -230,14 +213,6 @@
    "titleKo": "Spotify는 ‘AI Personas‘ 의 음악을 추천하지 않을 것이라고 말합니다."
   },
   {
-   "title": "‘글로벌 AI 허브’ 시작 전부터 유치 경쟁 후끈",
-   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBWTXhJUVBwY1RYdlFZbWNoWHhDSk1GaHozVlZSOUY2eTF3V0p0ZXMxVERFOFNEZGdYd1dvQXg4MDRKalZhWlZSY0tQaWpkcjRjRXNxeVZ4eWFFdFE?oc=5",
-   "date": "2026-08-11T12:42:00.000Z",
-   "source": "KBS 뉴스",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
    "title": "Claude will apply invisible watermarks to AI text and images",
    "url": "https://www.theverge.com/ai-artificial-intelligence/977823/anthropic-claude-ai-watermarks-c2pa-text-images",
    "date": "2026-08-11T12:22:20.000Z",
@@ -247,6 +222,14 @@
    "titleKo": "Claude는 AI 텍스트 및 이미지에 보이지 않는 워터마크를 적용합니다."
   },
   {
+   "title": "[단독] 책임지지 않는 AI…“막아도 다시 뚫린다”",
+   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9SYko3T0JsWGRpZlNpalNPZzNmeHJhLUdoTlcxMXJIeDVmT1VtRHV5NGtxSFQyNjVYcVVQaVg3R08zWktUME10RExmdzI5dlVZQ3RBRmlsXzFXWVF1aHY4c0RnaGpxZw?oc=5",
+   "date": "2026-08-11T12:14:00.000Z",
+   "source": "KBS 뉴스",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
    "title": "Anthropic says it will watermark text generated by its AI models",
    "url": "https://techcrunch.com/2026/08/11/anthropic-says-it-will-watermark-text-generated-by-its-ai-models/",
    "date": "2026-08-11T12:13:47.000Z",
@@ -254,6 +237,14 @@
    "feed": "TechCrunch",
    "summary": "Anthropic will extend support for watermarking AI generations for older models as well.",
    "titleKo": "Anthropic은 AI 모델에서 생성된 텍스트에 워터마크를 표시할 것이라고 말합니다."
+  },
+  {
+   "title": "국민연금 개혁 토론회에 AI가 ‘조력자’로 나선다",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBRVzJhZlg1SUhVQUV0T01hUUNCS1hjN3EtcHotNGJ6dEJBNXBScFEwdXJpMFo5b1dNRmhicC1peV85dFJ1Qm53NHJNRVJJVFh1RllUSGZfQlBhQdIBX0FVX3lxTE12Q1pJOWhmcDFVdmFNNXhkRmR4QmRDcHpKcXFGZk11eFNxOHdmRnFxdjdoV2JJMDZJeV9mQ3RKcnNURUxjODFKRlptOTdCX0lwNFF3cWMzSGd0S2g1NXhn?oc=5",
+   "date": "2026-08-11T12:09:00.000Z",
+   "source": "경향신문",
+   "feed": "Google News",
+   "summary": ""
   },
   {
    "title": "‘개방형 AI’ 내세운 메타 “초인공지능 독점 안 돼”",
@@ -273,10 +264,10 @@
    "titleKo": "수학의 인공지능 장악이 시작되었습니다"
   },
   {
-   "title": "한국 독자 AI 모델 4개 모두 '글로벌 주목 모델' 등재",
-   "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9jTW9hYzBuTHotS0tMdm9hWXRfSDhIOHRwazJLOU5lNEZyendFMmxSVmZLOHRfNHFxVWNBYzEtUkZKMlA3RmVicmJDSzAtZlRiVTZtRkFQdS02c2RIak5vTFlNNmF0ZnprVHpGNA?oc=5",
-   "date": "2026-08-11T07:30:00.000Z",
-   "source": "대한민국 정책브리핑",
+   "title": "엔비디아, 월가 투자사 6곳과 AI 인프라 투자 확대… 5000억달러 조성 - 조선비즈",
+   "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPTkpqajZWZ0cyS0hrZzE3cjA3N3ExY3RHYjBKdmhROURfVE9uRFZ5dGd2ZElBWl9ERnZrUmgxY0RwQTljb3BaSkF0V0dQbVY4N2pDT3JnRm1OcVBLYkh4VGZHUnhONzVvclV3ZjY3UVRHRDlZS1FuLTdSdDBDRzY5Y0Z30gGWAUFVX3lxTE5Xdm94S1ppajVpUVdKXzRpeGk3VTNpNzZMeVllYXBYSlVKelZQd1dyMzI0enp3TE5hOGpGdDhNV3VMaTEwTUpoOWhncUo3X3c0MkhySzBSSTNUS3E5Mk9XNmNmUHQ0V2k4N2Rpc3NwN2hqMnRIdEN1cVNiS1lTS19TdDVMYnpKV0UtOUZxRkpJLTVvQUFTUQ?oc=5",
+   "date": "2026-08-11T05:27:00.000Z",
+   "source": "Chosunbiz",
    "feed": "Google News",
    "summary": ""
   },
@@ -368,12 +359,13 @@
    "titleKo": "Meta의 새로운 Glimmer AI 모델은 Zuckerberg의 개인 인텔리전스 비전에 대한 힌트를 제공합니다."
   },
   {
-   "title": "AI 감시에 맞선 인간… AI가 인식 못하는 ‘디지털 투명 망토’ 등장",
-   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQRW9wTDRIYkUtMVNpQzJhQ3VsMVNvb1k5eWdKd3FpWDFjenpXajJRNGoyNGVOVU1tQU9ONXVUdm05elJCOXRjUWFzdFdQODNfcE04S0FYZFVTN2dJRWtMNlYtcDBtLW9qc095d24xSFFpWXBWejV2aEhTWGtZejBTLUJDNA?oc=5",
-   "date": "2026-08-10T15:52:13.000Z",
-   "source": "조선일보",
-   "feed": "Google News",
-   "summary": ""
+   "title": "Four takeaways from Mark Zuckerberg’s massive AI manifesto",
+   "url": "https://www.theverge.com/tech/977395/meta-mark-zuckerberg-superintelligent-ai-ramble",
+   "date": "2026-08-10T15:19:05.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "Meta CEO Mark Zuckerberg has a lot to say about the idealized future he now envisions for humanity co-existing with artificial intelligence - his latest essay spans more than 6,500 words on the matter. The lengthy manife",
+   "titleKo": "Mark Zuckerberg의 대규모 AI 선언문의 네 가지 핵심 사항"
   },
   {
    "title": "Discovered Materials is playing AI whack-a-mole to hunt cooler chips",
@@ -401,6 +393,14 @@
    "feed": "MIT Technology Review",
    "summary": "MIT Technology Review’s What’s Next series looks across industries, trends, and technologies to give you a first look at the future. You can read the rest of them here. Way back in the summer of 2017, AI researchers at G",
    "titleKo": "이 신생 기업들은 LLM에서 다음 큰 일을 쫓고 있습니다."
+  },
+  {
+   "title": "'동시 소통' AI 에이전트 등장…단일 '클로드 오퍼스 4.8' 성적 뛰어넘었다",
+   "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE8yT1JuejQ4eVpmVXBHS3NoTU0wajY2MjhWZGUwak1oRVZucjR3UDRiUWcxUURtazlrR0lxWTA1ZjlkXzZiZG1Gek45cDZrV0hJRjA3LWhpd2d5NlhfeW5yazRycW5hRGR3UXc?oc=5",
+   "date": "2026-08-10T08:56:00.000Z",
+   "source": "AI타임스",
+   "feed": "Google News",
+   "summary": ""
   },
   {
    "title": "Embattled hedge fund Situational Awareness invests $400M in chip startup Source Foundry",

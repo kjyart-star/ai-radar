@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-11T20:26:42.601Z",
+ "generated": "2026-08-11T20:39:46.925Z",
  "source": "arXiv cs.AI · GitHub · Hugging Face",
  "sources": [
   "arXiv cs.AI",
@@ -151,9 +151,9 @@
   {
    "title": "openclaw/openclaw",
    "url": "https://github.com/openclaw/openclaw",
-   "stars": 385947,
+   "stars": 385949,
    "language": "TypeScript",
-   "date": "2026-08-11T20:28:46Z",
+   "date": "2026-08-11T20:41:47Z",
    "summary": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 "
   },
   {
@@ -167,9 +167,9 @@
   {
    "title": "NousResearch/hermes-agent",
    "url": "https://github.com/NousResearch/hermes-agent",
-   "stars": 228973,
+   "stars": 228975,
    "language": "Python",
-   "date": "2026-08-11T20:04:17Z",
+   "date": "2026-08-11T20:40:02Z",
    "summary": "The agent that grows with you"
   },
   {
@@ -177,7 +177,7 @@
    "url": "https://github.com/n8n-io/n8n",
    "stars": 200248,
    "language": "TypeScript",
-   "date": "2026-08-11T20:14:58Z",
+   "date": "2026-08-11T20:41:35Z",
    "summary": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations."
   },
   {
@@ -185,13 +185,13 @@
    "url": "https://github.com/Significant-Gravitas/AutoGPT",
    "stars": 186527,
    "language": "Python",
-   "date": "2026-08-11T20:26:14Z",
+   "date": "2026-08-11T20:30:26Z",
    "summary": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters."
   },
   {
    "title": "f/prompts.chat",
    "url": "https://github.com/f/prompts.chat",
-   "stars": 167005,
+   "stars": 167006,
    "language": "HTML",
    "date": "2026-08-11T03:35:52Z",
    "summary": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy."
@@ -199,7 +199,7 @@
   {
    "title": "firecrawl/firecrawl",
    "url": "https://github.com/firecrawl/firecrawl",
-   "stars": 165808,
+   "stars": 165814,
    "language": "TypeScript",
    "date": "2026-08-11T19:53:20Z",
    "summary": "The context API to search, scrape, and interact with the web at scale. 🔥"
@@ -223,7 +223,7 @@
   {
    "title": "open-webui/open-webui",
    "url": "https://github.com/open-webui/open-webui",
-   "stars": 148501,
+   "stars": 148500,
    "language": "Python",
    "date": "2026-08-11T18:50:53Z",
    "summary": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)"
@@ -247,15 +247,15 @@
   {
    "title": "Comfy-Org/ComfyUI",
    "url": "https://github.com/Comfy-Org/ComfyUI",
-   "stars": 126794,
+   "stars": 126796,
    "language": "Python",
-   "date": "2026-08-11T19:54:48Z",
+   "date": "2026-08-11T20:39:43Z",
    "summary": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface."
   },
   {
    "title": "github/spec-kit",
    "url": "https://github.com/github/spec-kit",
-   "stars": 126250,
+   "stars": 126251,
    "language": "Python",
    "date": "2026-08-11T18:14:19Z",
    "summary": "💫 Toolkit to help you get started with Spec-Driven Development"
@@ -273,13 +273,13 @@
    "url": "https://github.com/supabase/supabase",
    "stars": 107841,
    "language": "TypeScript",
-   "date": "2026-08-11T20:27:11Z",
+   "date": "2026-08-11T20:30:32Z",
    "summary": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications."
   },
   {
    "title": "google-gemini/gemini-cli",
    "url": "https://github.com/google-gemini/gemini-cli",
-   "stars": 106465,
+   "stars": 106468,
    "language": "TypeScript",
    "date": "2026-08-11T20:18:13Z",
    "summary": "An open-source AI agent that brings the power of Gemini directly into your terminal."
@@ -295,7 +295,7 @@
   {
    "title": "JuliusBrussee/caveman",
    "url": "https://github.com/JuliusBrussee/caveman",
-   "stars": 97488,
+   "stars": 97492,
    "language": "Go",
    "date": "2026-08-11T16:02:03Z",
    "summary": "🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman"
@@ -330,7 +330,7 @@
    "title": "deepseek-ai/DeepSeek-V4-Flash-0731",
    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731",
    "downloads": 1048685,
-   "likes": 3136,
+   "likes": 3137,
    "task": "text-generation",
    "date": "2026-07-31T07:30:24.000Z"
   },
