@@ -550,15 +550,15 @@ function dueWithin(list, key, days, today){
    순서는 뉴스리포트가 먼저다 — 매일 아침 갱신되는 유일한 메뉴라 가장 자주 본다.
    첫 화면(DEFAULT_ROUTE)과 첫 메뉴가 어긋나면 "왜 두 번째가 열리지"가 된다.
 
-   라벨에서 "AI " 접두는 뺐다. 서비스 이름이 이미 AI 레이더이고 히어로에 "AI 공모전"
-   전체 이름이 크게 나온다. 다섯 개가 375px 안에 가로 스크롤 없이 들어가야 하는데
-   접두를 붙이면 넘친다. 문서 제목에는 히어로의 전체 이름(HERO[route].ko)을 쓴다. */
+   라벨은 대표 지시(2026-08-12)로 AI 접두를 붙였다. 띄어쓰기 없이 "AI공모전" 인 것도
+   지시 그대로다 — 폭이 줄어 375px 에 다섯 개를 넣기가 오히려 수월하다.
+   문서 제목에는 히어로의 전체 이름(HERO[route].ko)을 쓴다. */
 var MENU = [
   ["newsrep","뉴스리포트","BRIEFING"],
-  ["contests","공모전","CONTESTS"],
-  ["festivals","영화제","FESTIVALS"],
-  ["gov","지원사업","FUNDING"],
-  ["youtube","유튜브","WATCH"]
+  ["contests","AI공모전","CONTESTS"],
+  ["festivals","AI영화제","FESTIVALS"],
+  ["gov","AI지원사업","FUNDING"],
+  ["youtube","AI유튜브정보","WATCH"]
 ];
 var TITLES = {};
 MENU.forEach(function(it){ TITLES[it[0]] = it[1]; });
