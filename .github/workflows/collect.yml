@@ -1,0 +1,69 @@
+# AI 레이더 — 외부 소스 자동 수집
+#
+# 왜 Actions 인가:
+#   Google News·TechCrunch·Reddit·Devpost·힉스필드는 CORS 헤더를 주지 않아
+#   정적 페이지(index.html)에서 직접 못 부른다. 여기서 받아 data/*.json 으로 커밋하면
+#   화면은 같은 출처의 파일만 읽으면 되고, 관리시스템(Apps Script) 할당량도 안 쓴다.
+#
+# 원칙:
+#   - 소스 하나가 죽어도 나머지는 수집한다 (개별 try/catch + continue-on-error)
+#   - 수집 0건인 소스는 기존 JSON 을 덮어쓰지 않는다 (스크립트가 판단)
+#   - 변경이 없으면 커밋하지 않는다 (빈 커밋 금지)
+#   - 새 시크릿을 만들지 않는다. 기본 제공되는 GITHUB_TOKEN 만 쓴다
+
+name: 데이터 수집
+
+on:
+  schedule:
+    - cron: "0 22 * * *"   # UTC 22:00 = KST 07:00
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: RSS·JSON 소스 수집
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/collect-feeds.mjs
+
+      - name: Playwright 설치
+        continue-on-error: true
+        run: |
+          npm install --no-save playwright@1.49
+          npx playwright install --with-deps chromium
+
+      - name: 힉스필드 공모전 수집
+        continue-on-error: true
+        run: node scripts/collect-higgsfield.mjs
+
+      - name: 수집 결과 확인
+        run: ls -l data/ || true
+
+      - name: 변경분 커밋
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ || true
+          if git diff --cached --quiet; then
+            echo "변경 없음 — 커밋하지 않는다"
+            exit 0
+          fi
+          git commit -m "data: 소스 자동 수집 $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M') KST"
+          git push
+
