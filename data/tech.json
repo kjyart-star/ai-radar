@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-11T20:39:46.925Z",
+ "generated": "2026-08-11T22:49:37.488Z",
  "source": "arXiv cs.AI · GitHub · Hugging Face",
  "sources": [
   "arXiv cs.AI",
@@ -151,15 +151,15 @@
   {
    "title": "openclaw/openclaw",
    "url": "https://github.com/openclaw/openclaw",
-   "stars": 385949,
+   "stars": 385954,
    "language": "TypeScript",
-   "date": "2026-08-11T20:41:47Z",
+   "date": "2026-08-11T22:51:10Z",
    "summary": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 "
   },
   {
    "title": "obra/superpowers",
    "url": "https://github.com/obra/superpowers",
-   "stars": 270699,
+   "stars": 270727,
    "language": "Shell",
    "date": "2026-08-08T01:45:49Z",
    "summary": "An agentic skills framework & software development methodology that works."
@@ -167,17 +167,17 @@
   {
    "title": "NousResearch/hermes-agent",
    "url": "https://github.com/NousResearch/hermes-agent",
-   "stars": 228975,
+   "stars": 228998,
    "language": "Python",
-   "date": "2026-08-11T20:40:02Z",
+   "date": "2026-08-11T22:20:16Z",
    "summary": "The agent that grows with you"
   },
   {
    "title": "n8n-io/n8n",
    "url": "https://github.com/n8n-io/n8n",
-   "stars": 200248,
+   "stars": 200258,
    "language": "TypeScript",
-   "date": "2026-08-11T20:41:35Z",
+   "date": "2026-08-11T22:34:03Z",
    "summary": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations."
   },
   {
@@ -185,13 +185,13 @@
    "url": "https://github.com/Significant-Gravitas/AutoGPT",
    "stars": 186527,
    "language": "Python",
-   "date": "2026-08-11T20:30:26Z",
+   "date": "2026-08-11T22:07:10Z",
    "summary": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters."
   },
   {
    "title": "f/prompts.chat",
    "url": "https://github.com/f/prompts.chat",
-   "stars": 167006,
+   "stars": 167007,
    "language": "HTML",
    "date": "2026-08-11T03:35:52Z",
    "summary": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy."
@@ -199,15 +199,15 @@
   {
    "title": "firecrawl/firecrawl",
    "url": "https://github.com/firecrawl/firecrawl",
-   "stars": 165814,
+   "stars": 165843,
    "language": "TypeScript",
-   "date": "2026-08-11T19:53:20Z",
+   "date": "2026-08-11T22:04:10Z",
    "summary": "The context API to search, scrape, and interact with the web at scale. 🔥"
   },
   {
    "title": "Snailclimb/JavaGuide",
    "url": "https://github.com/Snailclimb/JavaGuide",
-   "stars": 157701,
+   "stars": 157703,
    "language": "JavaScript",
    "date": "2026-08-08T06:58:19Z",
    "summary": "Java 面试 & 后端通用面试指南，覆盖计算机基础、数据库、分布式、高并发、系统设计与 AI 应用开发"
@@ -215,7 +215,7 @@
   {
    "title": "langgenius/dify",
    "url": "https://github.com/langgenius/dify",
-   "stars": 152112,
+   "stars": 152118,
    "language": "TypeScript",
    "date": "2026-08-11T18:34:17Z",
    "summary": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without reb"
@@ -223,23 +223,23 @@
   {
    "title": "open-webui/open-webui",
    "url": "https://github.com/open-webui/open-webui",
-   "stars": 148500,
+   "stars": 148506,
    "language": "Python",
-   "date": "2026-08-11T18:50:53Z",
+   "date": "2026-08-11T21:14:01Z",
    "summary": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)"
   },
   {
    "title": "langchain-ai/langchain",
    "url": "https://github.com/langchain-ai/langchain",
-   "stars": 143993,
+   "stars": 143998,
    "language": "Python",
-   "date": "2026-08-11T19:16:54Z",
+   "date": "2026-08-11T22:50:39Z",
    "summary": "The agent engineering platform."
   },
   {
    "title": "x1xhlol/system-prompts-and-models-of-ai-tools",
    "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-   "stars": 142735,
+   "stars": 142739,
    "language": "",
    "date": "2026-08-11T13:01:09Z",
    "summary": "FULL Augment Code, Claude Code, Cluely, CodeBuddy, Comet, Cursor, Devin AI, Junie, Kiro, Leap.new, Lovable, Manus, NotionAI, Orchids.app, Perplexity, Poke, Qoder, Replit, Same.dev, Trae, Traycer AI, V"
@@ -247,23 +247,23 @@
   {
    "title": "Comfy-Org/ComfyUI",
    "url": "https://github.com/Comfy-Org/ComfyUI",
-   "stars": 126796,
+   "stars": 126808,
    "language": "Python",
-   "date": "2026-08-11T20:39:43Z",
+   "date": "2026-08-11T22:06:37Z",
    "summary": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface."
   },
   {
    "title": "github/spec-kit",
    "url": "https://github.com/github/spec-kit",
-   "stars": 126251,
+   "stars": 126256,
    "language": "Python",
-   "date": "2026-08-11T18:14:19Z",
+   "date": "2026-08-11T21:58:21Z",
    "summary": "💫 Toolkit to help you get started with Spec-Driven Development"
   },
   {
    "title": "microsoft/generative-ai-for-beginners",
    "url": "https://github.com/microsoft/generative-ai-for-beginners",
-   "stars": 117506,
+   "stars": 117515,
    "language": "Jupyter Notebook",
    "date": "2026-08-06T03:44:01Z",
    "summary": "21 Lessons, Get Started Building with Generative AI "
@@ -271,23 +271,23 @@
   {
    "title": "supabase/supabase",
    "url": "https://github.com/supabase/supabase",
-   "stars": 107841,
+   "stars": 107844,
    "language": "TypeScript",
-   "date": "2026-08-11T20:30:32Z",
+   "date": "2026-08-11T22:50:31Z",
    "summary": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications."
   },
   {
    "title": "google-gemini/gemini-cli",
    "url": "https://github.com/google-gemini/gemini-cli",
-   "stars": 106468,
+   "stars": 106470,
    "language": "TypeScript",
-   "date": "2026-08-11T20:18:13Z",
+   "date": "2026-08-11T22:17:51Z",
    "summary": "An open-source AI agent that brings the power of Gemini directly into your terminal."
   },
   {
    "title": "rasbt/LLMs-from-scratch",
    "url": "https://github.com/rasbt/LLMs-from-scratch",
-   "stars": 102417,
+   "stars": 102428,
    "language": "Jupyter Notebook",
    "date": "2026-08-10T01:11:40Z",
    "summary": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step"
@@ -295,7 +295,7 @@
   {
    "title": "JuliusBrussee/caveman",
    "url": "https://github.com/JuliusBrussee/caveman",
-   "stars": 97492,
+   "stars": 97508,
    "language": "Go",
    "date": "2026-08-11T16:02:03Z",
    "summary": "🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman"
@@ -303,7 +303,7 @@
   {
    "title": "hacksider/Deep-Live-Cam",
    "url": "https://github.com/hacksider/Deep-Live-Cam",
-   "stars": 95870,
+   "stars": 95873,
    "language": "Python",
    "date": "2026-08-07T23:15:21Z",
    "summary": "real time face swap and one-click video deepfake with only a single image"
@@ -314,7 +314,7 @@
    "title": "MiniMaxAI/MiniMax-H3",
    "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3",
    "downloads": 59368,
-   "likes": 3553,
+   "likes": 3562,
    "task": "image-text-to-video",
    "date": "2026-07-28T10:45:18.000Z"
   },
@@ -322,7 +322,7 @@
    "title": "meta-models/Muse-Glimmer-30B",
    "url": "https://huggingface.co/meta-models/Muse-Glimmer-30B",
    "downloads": 0,
-   "likes": 1060,
+   "likes": 1077,
    "task": "image-text-to-text",
    "date": "2026-08-09T17:51:35.000Z"
   },
@@ -330,7 +330,7 @@
    "title": "deepseek-ai/DeepSeek-V4-Flash-0731",
    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731",
    "downloads": 1048685,
-   "likes": 3137,
+   "likes": 3144,
    "task": "text-generation",
    "date": "2026-07-31T07:30:24.000Z"
   },
@@ -338,7 +338,7 @@
    "title": "larryvrh/MiniMax-H3-Turbo-Lora",
    "url": "https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora",
    "downloads": 0,
-   "likes": 644,
+   "likes": 648,
    "task": "text-to-video",
    "date": "2026-08-05T21:58:56.000Z"
   },
@@ -346,55 +346,55 @@
    "title": "Comfy-Org/MiniMax-H3",
    "url": "https://huggingface.co/Comfy-Org/MiniMax-H3",
    "downloads": 6798796,
-   "likes": 1210,
+   "likes": 1211,
    "task": "",
    "date": "2026-07-30T22:36:12.000Z"
-  },
-  {
-   "title": "LiquidAI/LFM2.5-2.6B",
-   "url": "https://huggingface.co/LiquidAI/LFM2.5-2.6B",
-   "downloads": 93668,
-   "likes": 543,
-   "task": "text-generation",
-   "date": "2026-07-28T22:14:32.000Z"
   },
   {
    "title": "moonshotai/Kimi-K3",
    "url": "https://huggingface.co/moonshotai/Kimi-K3",
    "downloads": 1565484,
-   "likes": 10522,
+   "likes": 10524,
    "task": "image-text-to-text",
    "date": "2026-06-13T06:42:57.000Z"
+  },
+  {
+   "title": "LiquidAI/LFM2.5-2.6B",
+   "url": "https://huggingface.co/LiquidAI/LFM2.5-2.6B",
+   "downloads": 93668,
+   "likes": 548,
+   "task": "text-generation",
+   "date": "2026-07-28T22:14:32.000Z"
   },
   {
    "title": "DavidAU/Qwen3.6-27B-Fable-Fusion-711-Uncensored-Heretic-NM-DAU-NEO-MAX-MTP-GGUF",
    "url": "https://huggingface.co/DavidAU/Qwen3.6-27B-Fable-Fusion-711-Uncensored-Heretic-NM-DAU-NEO-MAX-MTP-GGUF",
    "downloads": 2521093,
-   "likes": 1892,
+   "likes": 1894,
    "task": "image-text-to-text",
    "date": "2026-07-17T00:27:17.000Z"
-  },
-  {
-   "title": "deepgrove/maple-preview",
-   "url": "https://huggingface.co/deepgrove/maple-preview",
-   "downloads": 2049,
-   "likes": 330,
-   "task": "text-generation",
-   "date": "2026-08-04T20:50:54.000Z"
   },
   {
    "title": "lightx2v/Minimax-h3-Turbo",
    "url": "https://huggingface.co/lightx2v/Minimax-h3-Turbo",
    "downloads": 20376,
-   "likes": 325,
+   "likes": 334,
    "task": "image-to-video",
    "date": "2026-08-07T12:59:07.000Z"
+  },
+  {
+   "title": "deepgrove/maple-preview",
+   "url": "https://huggingface.co/deepgrove/maple-preview",
+   "downloads": 2049,
+   "likes": 331,
+   "task": "text-generation",
+   "date": "2026-08-04T20:50:54.000Z"
   },
   {
    "title": "unsloth/Muse-Glimmer-30B-GGUF",
    "url": "https://huggingface.co/unsloth/Muse-Glimmer-30B-GGUF",
    "downloads": 0,
-   "likes": 295,
+   "likes": 301,
    "task": "image-text-to-text",
    "date": "2026-08-10T09:11:29.000Z"
   },
@@ -402,7 +402,7 @@
    "title": "Kijai/MiniMax-H3_comfy",
    "url": "https://huggingface.co/Kijai/MiniMax-H3_comfy",
    "downloads": 0,
-   "likes": 273,
+   "likes": 275,
    "task": "",
    "date": "2026-08-07T13:13:09.000Z"
   },
@@ -410,7 +410,7 @@
    "title": "drbaph/MiniMax-H3-Turbo-Lora-ComfyUI",
    "url": "https://huggingface.co/drbaph/MiniMax-H3-Turbo-Lora-ComfyUI",
    "downloads": 0,
-   "likes": 271,
+   "likes": 272,
    "task": "text-to-video",
    "date": "2026-08-06T05:40:36.000Z"
   },
@@ -426,9 +426,17 @@
    "title": "SexGod1979/PinkCherry_MiniMax-H3",
    "url": "https://huggingface.co/SexGod1979/PinkCherry_MiniMax-H3",
    "downloads": 0,
-   "likes": 262,
+   "likes": 263,
    "task": "text-to-video",
    "date": "2026-08-05T19:05:53.000Z"
+  },
+  {
+   "title": "nvidia/NVIDIA-NemotronLabs-VoiceChat-11B",
+   "url": "https://huggingface.co/nvidia/NVIDIA-NemotronLabs-VoiceChat-11B",
+   "downloads": 653,
+   "likes": 322,
+   "task": "",
+   "date": "2026-07-29T17:46:48.000Z"
   },
   {
    "title": "inclusionAI/Ling-3.0-flash",
@@ -439,18 +447,10 @@
    "date": "2026-08-02T16:14:41.000Z"
   },
   {
-   "title": "nvidia/NVIDIA-NemotronLabs-VoiceChat-11B",
-   "url": "https://huggingface.co/nvidia/NVIDIA-NemotronLabs-VoiceChat-11B",
-   "downloads": 653,
-   "likes": 319,
-   "task": "",
-   "date": "2026-07-29T17:46:48.000Z"
-  },
-  {
    "title": "meta-models/Muse-Glimmer-30B-GGUF",
    "url": "https://huggingface.co/meta-models/Muse-Glimmer-30B-GGUF",
    "downloads": 0,
-   "likes": 198,
+   "likes": 202,
    "task": "image-text-to-text",
    "date": "2026-08-09T17:54:22.000Z"
   },
@@ -463,12 +463,12 @@
    "date": "2026-08-05T07:58:56.000Z"
   },
   {
-   "title": "mistralai/Shieldstral-1.0-3B",
-   "url": "https://huggingface.co/mistralai/Shieldstral-1.0-3B",
-   "downloads": 6769,
-   "likes": 228,
+   "title": "unsloth/DeepSeek-V4-Flash-0731-GGUF",
+   "url": "https://huggingface.co/unsloth/DeepSeek-V4-Flash-0731-GGUF",
+   "downloads": 207990,
+   "likes": 648,
    "task": "",
-   "date": "2026-07-16T10:24:13.000Z"
+   "date": "2026-07-31T12:24:24.000Z"
   }
  ]
 }
