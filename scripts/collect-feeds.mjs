@@ -47,15 +47,21 @@ async function get(url, { json = false, timeout = 45000, headers = {} } = {}) {
 function unwrapCdata(s) {
   return String(s ?? "").replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1");
 }
-function decode(s) {
-  return unwrapCdata(s)
-    .replace(/<[^>]+>/g, " ")
+function entities(s) {
+  return String(s)
     .replace(/&#(\d+);/g, (_, d) => String.fromCharCode(+d))
     .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCharCode(parseInt(h, 16)))
     .replace(/&quot;/g, '"').replace(/&apos;/g, "'").replace(/&nbsp;/g, " ")
-    .replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&")
-    .replace(/\s+/g, " ")
-    .trim();
+    .replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
+}
+/* 엔티티를 먼저 풀고 나서 태그를 지운다.
+   Google News 의 <description> 은 HTML 이 엔티티로 인코딩돼 온다(&lt;a href=…&gt;).
+   태그를 먼저 지우면 그건 태그로 안 보여서 살아남고, 그 다음 엔티티를 풀면
+   화면에 <a href="https://…"> 가 글자 그대로 찍힌다. 실제로 그렇게 나갔다. */
+function decode(s) {
+  let t = entities(unwrapCdata(s ?? ""));
+  t = t.replace(/<[^>]+>/g, " ");
+  return entities(t).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 }
 function tag(block, name) {
   const m = block.match(new RegExp("<" + name + "(?:\\s[^>]*)?>([\\s\\S]*?)</" + name + ">", "i"));
@@ -121,7 +127,13 @@ async function collectNews() {
           const m = x.title.match(/^([\s\S]+?)\s+-\s+([^-]{2,40})$/);
           if (m) { title = m[1].trim(); src = m[2].trim(); }
         }
-        return { title, url: x.url, date: x.date, source: src, feed: name, summary: x.summary.slice(0, 220) };
+        /* Google News 의 요약은 "제목 + 매체명"이라 새로 알려주는 게 없다.
+           화면에 제목과 매체를 이미 따로 보여주므로 같은 말을 세 번 하게 된다 — 비운다.
+           특정 피드를 지목하지 않고 "요약이 제목으로 시작하면"으로 판정한다. */
+        const flat = (t) => String(t).replace(/\s+/g, "").toLowerCase();
+        let summary = x.summary.slice(0, 220);
+        if (title && flat(summary).indexOf(flat(title)) === 0) summary = "";
+        return { title, url: x.url, date: x.date, source: src, feed: name, summary };
       });
       items.push(...got);
       okSources.push(name);

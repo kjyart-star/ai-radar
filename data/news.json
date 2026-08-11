@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-11T19:42:27.050Z",
+ "generated": "2026-08-11T19:58:59.505Z",
  "source": "Google News · TechCrunch · MIT Technology Review · The Verge",
  "sources": [
   "Google News",
@@ -9,12 +9,28 @@
  ],
  "items": [
   {
-   "title": "AI가 흔든 검색 판도… 구글, 네이버 첫 추월",
-   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5OM1dQclo2THM5NTlVS2ZQeDQ5MXl6UjNRV005Ri1uNFZ0MFBzbHNRXzExTzRPaGJuRkJqZTRab184dkRWRC01Wmx4SzV0VUhYYmRBUHJzOHRZMUVDR2VYNVBEcU5IWm9vM1VhUTJjejJ5OS0xWVHSAWZBVV95cUxPTTBUMUhFX042MnVxUVBXNzJxMzBJLWVfUUNMNS12UVdDQ3pSRGVuRDIxblY5ZjZ2NHdsNjVjNXhoM0E5U2l5U0lZR3lYNXZyUnhHUk9RclhsV1VMWDZ3bmc0MGIwSVE?oc=5",
-   "date": "2026-08-11T19:30:00.000Z",
-   "source": "동아일보",
+   "title": "오픈AI, 또다시 임원 줄퇴사...IPO 앞두고 괜찮나?",
+   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5zRG9PYUlMWFVCbmVGS2xxM2lad2tiLUQ1SmpLZW5YME9DU01QZXF6RWZNWW5KaGRINDVJclJJeWk2aFBrMEVSUGhSUjIwMXc?oc=5",
+   "date": "2026-08-11T19:42:00.000Z",
+   "source": "v.daum.net",
    "feed": "Google News",
-   "summary": "<a href=\"https://news.google.com/rss/articles/CBMidkFVX3lxTE5OM1dQclo2THM5NTlVS2ZQeDQ5MXl6UjNRV005Ri1uNFZ0MFBzbHNRXzExTzRPaGJuRkJqZTRab184dkRWRC01Wmx4SzV0VUhYYmRBUHJzOHRZMUVDR2VYNVBEcU5IWm9vM1VhUTJjejJ5OS0xWVHSAWZBVV95cU"
+   "summary": ""
+  },
+  {
+   "title": "ChatGPT and Gemini both just passed 1 billion users",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/978113/chatgpt-gemini-1-billion-users",
+   "date": "2026-08-11T19:41:42.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "For the 14th time, a Google product has hit 1 billion users. Google CEO Sundar Pichai posted on X that a billion people are using Gemini every month, and that Gemini is Google's fastest-growing product ever. A billion us"
+  },
+  {
+   "title": "AI가 흔든 검색 판도… 구글, 네이버 첫 추월",
+   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5HRC1hTUhOM21iUWdIVFFMY0N0Q2pVSlJBZjExTlBSdEtVSWZoaEprajRPdE1sY3lWZjdQSk5RVERMekJoclF4MzFwTmNzbzQ?oc=5",
+   "date": "2026-08-11T19:35:54.000Z",
+   "source": "v.daum.net",
+   "feed": "Google News",
+   "summary": ""
   },
   {
    "title": "검색에 AI 접목 3개월 빨랐던 구글, 이용자 증가폭 네이버의 4배",
@@ -22,7 +38,7 @@
    "date": "2026-08-11T19:30:00.000Z",
    "source": "동아일보",
    "feed": "Google News",
-   "summary": "<a href=\"https://news.google.com/rss/articles/CBMidkFVX3lxTE8zSlBQUUgzbjVxeEdFclQxU0U4bmJYVHdPUmcxVG5Dc1dRcjJNdlE2ZE5nX0ZkVGh4U2tFNUFwVmV5ZXhTbVo4aUczY1d3bUhQZ0JqZmR6QjJjdEFXMFU1aUJBVEpqR3pIb3JHRHY5T0x4YnZXX3fSAWZBVV95cU"
+   "summary": ""
   },
   {
    "title": "OpenAI launches ChatGPT desktop app for Linux",
@@ -38,7 +54,7 @@
    "date": "2026-08-11T19:06:01.000Z",
    "source": "v.daum.net",
    "feed": "Google News",
-   "summary": "<a href=\"https://news.google.com/rss/articles/CBMiT0FVX3lxTE5TcmtkYV9xMnRyQWx3VXo1ZS1FdFRzdXJYNnd1NmpjS1c3VTk1QzdMTzBrLUg4bHdkUWxlYXFnNTE1amh4WVU4VmdvbWp3NFE?oc=5\" target=\"_blank\">'개방형 옹호' 엔비디아, 경량 AI 모델 출시…초대형 모델도 준비중</"
+   "summary": ""
   },
   {
    "title": "수능 서·논술형 해답, AI 채점?... 국교위 \"공정한 평가 가능하다\" - 머니투데이",
@@ -46,7 +62,7 @@
    "date": "2026-08-11T19:01:00.000Z",
    "source": "머니투데이",
    "feed": "Google News",
-   "summary": "<a href=\"https://news.google.com/rss/articles/CBMiakFVX3lxTE1hbHA5NHNFN3dmMUhtTTVJcWlBV0tzMGNfRUduVVlGY2RDNnduekQ0TnM3cmIybG5saWRwR0lVYTNNSDlhVXpCZTlWVDZ5WVNkRk5WQTh5UEFLTlhTeGx6M1ZFdTNWT2xGc3fSAW9BVV95cUxOM0hrZkxYR2FXT0"
+   "summary": ""
   },
   {
    "title": "Google’s Gemini app surges to one billion users",
@@ -62,7 +78,7 @@
    "date": "2026-08-11T18:21:16.000Z",
    "source": "마켓인",
    "feed": "Google News",
-   "summary": "<a href=\"https://news.google.com/rss/articles/CBMic0FVX3lxTE9JYlBfRF94QU9zcXVyQ0NCMWVWQTZhOWFFVjFTMEp3OHN1LTVmdmllRXA1OXRJVGlfVTN5SWdhQnotZmRPWjFLX3BkNG51QmVBUjRmWV9SSTlLeHRpNHNMZjVnSkZlYkFTRllEWW03cE15Slk?oc=5\" target=\""
+   "summary": ""
   },
   {
    "title": "Another OpenAI executive takes off",
@@ -118,7 +134,7 @@
    "date": "2026-08-11T15:34:00.000Z",
    "source": "조선일보",
    "feed": "Google News",
-   "summary": "<a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxOMlRuTXJhY3NYRHZhQW5hbi1XcTRDZ1pTQVdCYlRGX2VScUxvd1Nnd3BrREJzVlpUVnR5bXl3VkNtTlhfUWJ6YktDU2xoLTlsdEV0SVU1YXVhajkwUGgwT0NweEpMOV95VnFiWVlCbDI2TkdFZ19zZWw0QkMxWE"
+   "summary": ""
   },
   {
    "title": "엔비디아 vs ASML…AI 반도체 시장 최종 승자는?",
@@ -126,7 +142,7 @@
    "date": "2026-08-11T15:29:00.000Z",
    "source": "뉴시스",
    "feed": "Google News",
-   "summary": "<a href=\"https://news.google.com/rss/articles/CBMiYEFVX3lxTE5WZXY1dDUyVjByVkF6amlHRjJHajYtM3VBUUhpS181QzFaaTRsR2kzVWlMOFpuamhRc2R4S2tpTE1Bc1FwSTYwOXN2eVBmMVo4ck04cGRTMlczQ2xGTFJnaNIBeEFVX3lxTE1QMXI1OVlZd2VjSU12ajdUSms1Rj"
+   "summary": ""
   },
   {
    "title": "\"구글 AI가 독자 빼앗아\"…프랑스 언론사들, 경쟁당국에 제소",
@@ -134,7 +150,7 @@
    "date": "2026-08-11T15:02:48.000Z",
    "source": "연합뉴스",
    "feed": "Google News",
-   "summary": "<a href=\"https://news.google.com/rss/articles/CBMiW0FVX3lxTE5WZHI1Mk8yeUY3cDB1WnVHRkg2d3pBZ2FzaWxOTGlJVEhEcUtUeXp4eFpPZWVCbFA3UVZGTWxwRm04NGFzZEFZV3JPUnZ5SmhwR3Bmc0xZaDFITzg?oc=5\" target=\"_blank\">\"구글 AI가 독자 빼앗아\"…프랑스 언론사들"
+   "summary": ""
   },
   {
    "title": "‘Zoomsday’ hack uncovered using fewer than 20 AI prompts",
@@ -150,7 +166,7 @@
    "date": "2026-08-11T13:50:44.000Z",
    "source": "서울경제",
    "feed": "Google News",
-   "summary": "<a href=\"https://news.google.com/rss/articles/CBMiUkFVX3lxTE9JdGdHSXFTMVFNRmFJczNkVkVZWWlXVjJrcUNScWJOeGwyS3hzQVNiMnNvUHZOT0dTMWd1ZTdqSGJVUTVBdXdsamFQVDRFX0xSVmfSAVNBVV95cUxPbXljUHd5bGFKY2xZcFhuMTNDR1oySmxFTHQtRWd0Z3lQbF"
+   "summary": ""
   },
   {
    "title": "Why your Amazon order confirmation emails have become so unhelpful",
@@ -166,7 +182,7 @@
    "date": "2026-08-11T13:24:03.000Z",
    "source": "돼지와사람",
    "feed": "Google News",
-   "summary": "<a href=\"https://news.google.com/rss/articles/CBMiYkFVX3lxTE1aZHAwOXFtd3pzVmhkUzJqNE1kTnpSNEVSaVRyUVI2TWd6MFRnRzdoVkYtM2Nwc1MxRmZGekhVQVhmQnotVDVSMzRNTUIybTBlODJmcGJvV1hvZzV3czc3dnVR?oc=5\" target=\"_blank\">돼지 등급판정 AI 데이터,"
+   "summary": ""
   },
   {
    "title": "Spotify will label ‘AI Persona’ profiles and exclude their music from recommendations",
@@ -185,6 +201,14 @@
    "summary": "Spotify will soon label AI artists and remove their music from your recommendations. The change, which will start rolling out in mid-September, means you'll see an \"AI Persona\" badge on an artist's profile across the app"
   },
   {
+   "title": "‘글로벌 AI 허브’ 시작 전부터 유치 경쟁 후끈",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBWTXhJUVBwY1RYdlFZbWNoWHhDSk1GaHozVlZSOUY2eTF3V0p0ZXMxVERFOFNEZGdYd1dvQXg4MDRKalZhWlZSY0tQaWpkcjRjRXNxeVZ4eWFFdFE?oc=5",
+   "date": "2026-08-11T12:42:00.000Z",
+   "source": "KBS 뉴스",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
    "title": "Claude will apply invisible watermarks to AI text and images",
    "url": "https://www.theverge.com/ai-artificial-intelligence/977823/anthropic-claude-ai-watermarks-c2pa-text-images",
    "date": "2026-08-11T12:22:20.000Z",
@@ -194,11 +218,11 @@
   },
   {
    "title": "[단독] 책임지지 않는 AI…“막아도 다시 뚫린다”",
-   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5rOG1QU3gxbmNsSzc1dVprVDdrc3hLQ0ZZSnFlSGlxYUlwYkZDNXhnMzgxd1NZcEhYcmNFOGRNSGtNQ1c4SGFUU2FMT1VCcm96cXVDczdPRVd0Znc?oc=5",
+   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9SYko3T0JsWGRpZlNpalNPZzNmeHJhLUdoTlcxMXJIeDVmT1VtRHV5NGtxSFQyNjVYcVVQaVg3R08zWktUME10RExmdzI5dlVZQ3RBRmlsXzFXWVF1aHY4c0RnaGpxZw?oc=5",
    "date": "2026-08-11T12:14:00.000Z",
    "source": "KBS 뉴스",
    "feed": "Google News",
-   "summary": "<a href=\"https://news.google.com/rss/articles/CBMiW0FVX3lxTE5rOG1QU3gxbmNsSzc1dVprVDdrc3hLQ0ZZSnFlSGlxYUlwYkZDNXhnMzgxd1NZcEhYcmNFOGRNSGtNQ1c4SGFUU2FMT1VCcm96cXVDczdPRVd0Znc?oc=5\" target=\"_blank\">[단독] 책임지지 않는 AI…“막아도 다시 "
+   "summary": ""
   },
   {
    "title": "Anthropic says it will watermark text generated by its AI models",
@@ -209,20 +233,20 @@
    "summary": "Anthropic will extend support for watermarking AI generations for older models as well."
   },
   {
-   "title": "국민연금 개혁 토론회에 AI가 ‘조력자’로 나선다",
-   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBRVzJhZlg1SUhVQUV0T01hUUNCS1hjN3EtcHotNGJ6dEJBNXBScFEwdXJpMFo5b1dNRmhicC1peV85dFJ1Qm53NHJNRVJJVFh1RllUSGZfQlBhQdIBX0FVX3lxTE12Q1pJOWhmcDFVdmFNNXhkRmR4QmRDcHpKcXFGZk11eFNxOHdmRnFxdjdoV2JJMDZJeV9mQ3RKcnNURUxjODFKRlptOTdCX0lwNFF3cWMzSGd0S2g1NXhn?oc=5",
-   "date": "2026-08-11T12:09:00.000Z",
-   "source": "경향신문",
-   "feed": "Google News",
-   "summary": "<a href=\"https://news.google.com/rss/articles/CBMiWkFVX3lxTFBRVzJhZlg1SUhVQUV0T01hUUNCS1hjN3EtcHotNGJ6dEJBNXBScFEwdXJpMFo5b1dNRmhicC1peV85dFJ1Qm53NHJNRVJJVFh1RllUSGZfQlBhQdIBX0FVX3lxTE12Q1pJOWhmcDFVdmFNNXhkRmR4QmRDcHpKcX"
-  },
-  {
    "title": "‘개방형 AI’ 내세운 메타 “초인공지능 독점 안 돼”",
    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBCM0hKR0R3ZXBwYS1aVURsSWh1ODFFOWg0Mi1SYXlGeGFKRnFGcUhCU1JSUWY1RHB1M1ZZdHR3VUl1WUMwb1MyWTQtQlBfeFVrWmRkQ05tT04zQdIBX0FVX3lxTE1BSHVvdWNXdWt0bklnaE5rV09BdU9mRzA5OS1FNFg5QktMMnNFTWVkVE5LV0ExcEJ0LTU5XzlRd3pkTlJiWWRzYTRRT05xeE5TNHh3YzdQZEhuVXJoaktv?oc=5",
    "date": "2026-08-11T11:40:00.000Z",
    "source": "경향신문",
    "feed": "Google News",
-   "summary": "<a href=\"https://news.google.com/rss/articles/CBMiWkFVX3lxTFBCM0hKR0R3ZXBwYS1aVURsSWh1ODFFOWg0Mi1SYXlGeGFKRnFGcUhCU1JSUWY1RHB1M1ZZdHR3VUl1WUMwb1MyWTQtQlBfeFVrWmRkQ05tT04zQdIBX0FVX3lxTE1BSHVvdWNXdWt0bklnaE5rV09BdU9mRzA5OS"
+   "summary": ""
+  },
+  {
+   "title": "“총 상금 약 1억”… ‘제8회 교육 공공데이터 AI 활용대회’ 시상",
+   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFByTkItOFZtQVgxMnVLM1dBWG53X0xyQkZLVnF0SXoxaGZNM0VfOG9XMGlWbUQ5MGRhdk15ZVk1MXdWYUFVUzUtcS1ncmNfMExrUHpYN1F1WG83djA2Q1dtN3ZwcGpFdw?oc=5",
+   "date": "2026-08-11T11:33:57.000Z",
+   "source": "411개 대학을 연결하는 '힘'",
+   "feed": "Google News",
+   "summary": ""
   },
   {
    "title": "The AI takeover of mathematics has begun",
@@ -233,28 +257,12 @@
    "summary": "Mathematician James Maynard has spent a lot of time this past year \"soul searching.\" A professor at the University of Oxford and winner of the prestigious Fields Medal, Maynard told The Verge he's been grappling with the"
   },
   {
-   "title": "엔비디아, 710조 AI 자금 조달…과열 우려에도 빅테크 투자 공세 이어져",
-   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5wdHZ1TVRLRGt2MjJQYVNrUkdyZ2JVOHhkTUpCUVRyYl8zRmVYT0FMUU9fUTJlUEoyUDREMWpRd1gxdzhPNVd3bkZUejVpcHc?oc=5",
-   "date": "2026-08-11T09:15:00.000Z",
-   "source": "v.daum.net",
-   "feed": "Google News",
-   "summary": "<a href=\"https://news.google.com/rss/articles/CBMiT0FVX3lxTE5wdHZ1TVRLRGt2MjJQYVNrUkdyZ2JVOHhkTUpCUVRyYl8zRmVYT0FMUU9fUTJlUEoyUDREMWpRd1gxdzhPNVd3bkZUejVpcHc?oc=5\" target=\"_blank\">엔비디아, 710조 AI 자금 조달…과열 우려에도 빅테크 투자 공세 이어"
-  },
-  {
    "title": "한국 독자 AI 모델 4개 모두 '글로벌 주목 모델' 등재",
    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9jTW9hYzBuTHotS0tMdm9hWXRfSDhIOHRwazJLOU5lNEZyendFMmxSVmZLOHRfNHFxVWNBYzEtUkZKMlA3RmVicmJDSzAtZlRiVTZtRkFQdS02c2RIak5vTFlNNmF0ZnprVHpGNA?oc=5",
    "date": "2026-08-11T07:30:00.000Z",
    "source": "대한민국 정책브리핑",
    "feed": "Google News",
-   "summary": "<a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE9jTW9hYzBuTHotS0tMdm9hWXRfSDhIOHRwazJLOU5lNEZyendFMmxSVmZLOHRfNHFxVWNBYzEtUkZKMlA3RmVicmJDSzAtZlRiVTZtRkFQdS02c2RIak5vTFlNNmF0ZnprVHpGNA?oc=5\" target=\"_blank\">한"
-  },
-  {
-   "title": "엔비디아, 월가 투자사 6곳과 AI 인프라 투자 확대… 5000억달러 조성 - 조선비즈",
-   "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPTkpqajZWZ0cyS0hrZzE3cjA3N3ExY3RHYjBKdmhROURfVE9uRFZ5dGd2ZElBWl9ERnZrUmgxY0RwQTljb3BaSkF0V0dQbVY4N2pDT3JnRm1OcVBLYkh4VGZHUnhONzVvclV3ZjY3UVRHRDlZS1FuLTdSdDBDRzY5Y0Z30gGWAUFVX3lxTE5Xdm94S1ppajVpUVdKXzRpeGk3VTNpNzZMeVllYXBYSlVKelZQd1dyMzI0enp3TE5hOGpGdDhNV3VMaTEwTUpoOWhncUo3X3c0MkhySzBSSTNUS3E5Mk9XNmNmUHQ0V2k4N2Rpc3NwN2hqMnRIdEN1cVNiS1lTS19TdDVMYnpKV0UtOUZxRkpJLTVvQUFTUQ?oc=5",
-   "date": "2026-08-11T05:27:00.000Z",
-   "source": "Chosunbiz",
-   "feed": "Google News",
-   "summary": "<a href=\"https://news.google.com/rss/articles/CBMiggFBVV95cUxPTkpqajZWZ0cyS0hrZzE3cjA3N3ExY3RHYjBKdmhROURfVE9uRFZ5dGd2ZElBWl9ERnZrUmgxY0RwQTljb3BaSkF0V0dQbVY4N2pDT3JnRm1OcVBLYkh4VGZHUnhONzVvclV3ZjY3UVRHRDlZS1FuLTdSdDBDRz"
+   "summary": ""
   },
   {
    "title": "‘네이버 아성’ 제동…AI 검색 앞세운 구글, 이용자 첫 추월",
@@ -262,7 +270,7 @@
    "date": "2026-08-11T05:24:48.000Z",
    "source": "v.daum.net",
    "feed": "Google News",
-   "summary": "<a href=\"https://news.google.com/rss/articles/CBMiT0FVX3lxTE1iS1paeDNRLWNuSW52MDQyR3ZKdnV3WTFhRVYzWElFd3lWWEdKODVCZ3ducHVQVlRDalpBVHZEcFBmUGVXVGFGRHFBdlpyRE0?oc=5\" target=\"_blank\">‘네이버 아성’ 제동…AI 검색 앞세운 구글, 이용자 첫 추월</a>&n"
+   "summary": ""
   },
   {
    "title": "저커버그, 오픈소스 복귀 선언하며 폐쇄형 정조준...\"증류도 허용해야\"",
@@ -270,7 +278,7 @@
    "date": "2026-08-11T04:47:23.000Z",
    "source": "AI타임스",
    "feed": "Google News",
-   "summary": "<a href=\"https://news.google.com/rss/articles/CBMiakFVX3lxTE5PSldYWmZDSG5TNTRmU1pzbDduSV9tYUZZN2pFQkxQMlRSWFdEbmdhVWktbmN5ZVhfOXVoS1NnSk1HQzB5Mi1kTTVxeWt2TGxXVm0yZzhaZFVvcEowcHRBaHhwbXlxaEhkcFE?oc=5\" target=\"_blank\">저커버그"
+   "summary": ""
   },
   {
    "title": "저커버그 6500단어 AI 선언…\"소수기업이 AI권력 독점시 더 위험\"",
@@ -278,7 +286,7 @@
    "date": "2026-08-11T03:38:00.000Z",
    "source": "v.daum.net",
    "feed": "Google News",
-   "summary": "<a href=\"https://news.google.com/rss/articles/CBMiT0FVX3lxTE9JZjlkb0tLTE9PLUhDZXoxX29RR0NHV3RUd2x0TnNuMUhNQnhDazM2VzVZVE1mZzdrQ1ZGRDFzbWsxOGxYaTFlNTk1QXFENDg?oc=5\" target=\"_blank\">저커버그 6500단어 AI 선언…\"소수기업이 AI권력 독점시 더 위험\"<"
+   "summary": ""
   },
   {
    "title": "OpenAI reportedly completed a $7 billion employee tender offer",
@@ -337,12 +345,12 @@
    "summary": "Meta’s new open-weight Muse Glimmer model offers a glimpse of Mark Zuckerberg’s personal superintelligence vision, as well as the emerging divide between AI users can own and access."
   },
   {
-   "title": "Four takeaways from Mark Zuckerberg’s massive AI manifesto",
-   "url": "https://www.theverge.com/tech/977395/meta-mark-zuckerberg-superintelligent-ai-ramble",
-   "date": "2026-08-10T15:19:05.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "Meta CEO Mark Zuckerberg has a lot to say about the idealized future he now envisions for humanity co-existing with artificial intelligence - his latest essay spans more than 6,500 words on the matter. The lengthy manife"
+   "title": "AI 감시에 맞선 인간… AI가 인식 못하는 ‘디지털 투명 망토’ 등장",
+   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQRW9wTDRIYkUtMVNpQzJhQ3VsMVNvb1k5eWdKd3FpWDFjenpXajJRNGoyNGVOVU1tQU9ONXVUdm05elJCOXRjUWFzdFdQODNfcE04S0FYZFVTN2dJRWtMNlYtcDBtLW9qc095d24xSFFpWXBWejV2aEhTWGtZejBTLUJDNA?oc=5",
+   "date": "2026-08-10T15:52:13.000Z",
+   "source": "조선일보",
+   "feed": "Google News",
+   "summary": ""
   },
   {
    "title": "Discovered Materials is playing AI whack-a-mole to hunt cooler chips",
@@ -367,14 +375,6 @@
    "source": "MIT Technology Review",
    "feed": "MIT Technology Review",
    "summary": "MIT Technology Review’s What’s Next series looks across industries, trends, and technologies to give you a first look at the future. You can read the rest of them here. Way back in the summer of 2017, AI researchers at G"
-  },
-  {
-   "title": "'동시 소통' AI 에이전트 등장…단일 '클로드 오퍼스 4.8' 성적 뛰어넘었다",
-   "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE8yT1JuejQ4eVpmVXBHS3NoTU0wajY2MjhWZGUwak1oRVZucjR3UDRiUWcxUURtazlrR0lxWTA1ZjlkXzZiZG1Gek45cDZrV0hJRjA3LWhpd2d5NlhfeW5yazRycW5hRGR3UXc?oc=5",
-   "date": "2026-08-10T08:56:00.000Z",
-   "source": "AI타임스",
-   "feed": "Google News",
-   "summary": "<a href=\"https://news.google.com/rss/articles/CBMiakFVX3lxTE8yT1JuejQ4eVpmVXBHS3NoTU0wajY2MjhWZGUwak1oRVZucjR3UDRiUWcxUURtazlrR0lxWTA1ZjlkXzZiZG1Gek45cDZrV0hJRjA3LWhpd2d5NlhfeW5yazRycW5hRGR3UXc?oc=5\" target=\"_blank\">'동시 "
   },
   {
    "title": "Embattled hedge fund Situational Awareness invests $400M in chip startup Source Foundry",

@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-11T19:42:27.050Z",
+ "generated": "2026-08-11T19:58:59.505Z",
  "source": "arXiv cs.AI · GitHub · Hugging Face",
  "sources": [
   "arXiv cs.AI",
@@ -132,15 +132,15 @@
   {
    "title": "openclaw/openclaw",
    "url": "https://github.com/openclaw/openclaw",
-   "stars": 385949,
+   "stars": 385948,
    "language": "TypeScript",
-   "date": "2026-08-11T19:40:22Z",
+   "date": "2026-08-11T19:58:33Z",
    "summary": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 "
   },
   {
    "title": "obra/superpowers",
    "url": "https://github.com/obra/superpowers",
-   "stars": 270693,
+   "stars": 270697,
    "language": "Shell",
    "date": "2026-08-08T01:45:49Z",
    "summary": "An agentic skills framework & software development methodology that works."
@@ -148,15 +148,15 @@
   {
    "title": "NousResearch/hermes-agent",
    "url": "https://github.com/NousResearch/hermes-agent",
-   "stars": 228950,
+   "stars": 228959,
    "language": "Python",
-   "date": "2026-08-11T19:01:07Z",
+   "date": "2026-08-11T19:47:53Z",
    "summary": "The agent that grows with you"
   },
   {
    "title": "n8n-io/n8n",
    "url": "https://github.com/n8n-io/n8n",
-   "stars": 200244,
+   "stars": 200245,
    "language": "TypeScript",
    "date": "2026-08-11T19:35:46Z",
    "summary": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations."
@@ -166,7 +166,7 @@
    "url": "https://github.com/Significant-Gravitas/AutoGPT",
    "stars": 186527,
    "language": "Python",
-   "date": "2026-08-11T19:38:21Z",
+   "date": "2026-08-11T19:55:19Z",
    "summary": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters."
   },
   {
@@ -180,9 +180,9 @@
   {
    "title": "firecrawl/firecrawl",
    "url": "https://github.com/firecrawl/firecrawl",
-   "stars": 165787,
+   "stars": 165794,
    "language": "TypeScript",
-   "date": "2026-08-11T19:27:09Z",
+   "date": "2026-08-11T19:53:20Z",
    "summary": "The context API to search, scrape, and interact with the web at scale. 🔥"
   },
   {
@@ -204,7 +204,7 @@
   {
    "title": "open-webui/open-webui",
    "url": "https://github.com/open-webui/open-webui",
-   "stars": 148499,
+   "stars": 148501,
    "language": "Python",
    "date": "2026-08-11T18:50:53Z",
    "summary": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)"
@@ -212,7 +212,7 @@
   {
    "title": "langchain-ai/langchain",
    "url": "https://github.com/langchain-ai/langchain",
-   "stars": 143991,
+   "stars": 143992,
    "language": "Python",
    "date": "2026-08-11T19:16:54Z",
    "summary": "The agent engineering platform."
@@ -228,15 +228,15 @@
   {
    "title": "Comfy-Org/ComfyUI",
    "url": "https://github.com/Comfy-Org/ComfyUI",
-   "stars": 126789,
+   "stars": 126791,
    "language": "Python",
-   "date": "2026-08-11T19:38:14Z",
+   "date": "2026-08-11T19:54:48Z",
    "summary": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface."
   },
   {
    "title": "github/spec-kit",
    "url": "https://github.com/github/spec-kit",
-   "stars": 126245,
+   "stars": 126246,
    "language": "Python",
    "date": "2026-08-11T18:14:19Z",
    "summary": "💫 Toolkit to help you get started with Spec-Driven Development"
@@ -244,7 +244,7 @@
   {
    "title": "microsoft/generative-ai-for-beginners",
    "url": "https://github.com/microsoft/generative-ai-for-beginners",
-   "stars": 117502,
+   "stars": 117503,
    "language": "Jupyter Notebook",
    "date": "2026-08-06T03:44:01Z",
    "summary": "21 Lessons, Get Started Building with Generative AI "
@@ -262,13 +262,13 @@
    "url": "https://github.com/google-gemini/gemini-cli",
    "stars": 106464,
    "language": "TypeScript",
-   "date": "2026-08-11T19:41:50Z",
+   "date": "2026-08-11T19:54:34Z",
    "summary": "An open-source AI agent that brings the power of Gemini directly into your terminal."
   },
   {
    "title": "rasbt/LLMs-from-scratch",
    "url": "https://github.com/rasbt/LLMs-from-scratch",
-   "stars": 102413,
+   "stars": 102414,
    "language": "Jupyter Notebook",
    "date": "2026-08-10T01:11:40Z",
    "summary": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step"
@@ -276,7 +276,7 @@
   {
    "title": "JuliusBrussee/caveman",
    "url": "https://github.com/JuliusBrussee/caveman",
-   "stars": 97487,
+   "stars": 97488,
    "language": "Go",
    "date": "2026-08-11T16:02:03Z",
    "summary": "🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman"
@@ -295,7 +295,7 @@
    "title": "MiniMaxAI/MiniMax-H3",
    "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3",
    "downloads": 59368,
-   "likes": 3549,
+   "likes": 3550,
    "task": "image-text-to-video",
    "date": "2026-07-28T10:45:18.000Z"
   },
@@ -303,7 +303,7 @@
    "title": "meta-models/Muse-Glimmer-30B",
    "url": "https://huggingface.co/meta-models/Muse-Glimmer-30B",
    "downloads": 0,
-   "likes": 1049,
+   "likes": 1052,
    "task": "image-text-to-text",
    "date": "2026-08-09T17:51:35.000Z"
   },
@@ -311,7 +311,7 @@
    "title": "deepseek-ai/DeepSeek-V4-Flash-0731",
    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731",
    "downloads": 1048685,
-   "likes": 3134,
+   "likes": 3135,
    "task": "text-generation",
    "date": "2026-07-31T07:30:24.000Z"
   },
@@ -327,7 +327,7 @@
    "title": "Comfy-Org/MiniMax-H3",
    "url": "https://huggingface.co/Comfy-Org/MiniMax-H3",
    "downloads": 6798796,
-   "likes": 1208,
+   "likes": 1210,
    "task": "",
    "date": "2026-07-30T22:36:12.000Z"
   },
@@ -335,7 +335,7 @@
    "title": "LiquidAI/LFM2.5-2.6B",
    "url": "https://huggingface.co/LiquidAI/LFM2.5-2.6B",
    "downloads": 93668,
-   "likes": 540,
+   "likes": 542,
    "task": "text-generation",
    "date": "2026-07-28T22:14:32.000Z"
   },
@@ -343,7 +343,7 @@
    "title": "moonshotai/Kimi-K3",
    "url": "https://huggingface.co/moonshotai/Kimi-K3",
    "downloads": 1565484,
-   "likes": 10518,
+   "likes": 10520,
    "task": "image-text-to-text",
    "date": "2026-06-13T06:42:57.000Z"
   },
@@ -399,7 +399,7 @@
    "title": "ethanfel/Qwen3-VL-32B-Ultra-Heretic-H3-ComfyUI-INT8-ConvRot",
    "url": "https://huggingface.co/ethanfel/Qwen3-VL-32B-Ultra-Heretic-H3-ComfyUI-INT8-ConvRot",
    "downloads": 0,
-   "likes": 455,
+   "likes": 456,
    "task": "image-text-to-text",
    "date": "2026-08-03T09:25:01.000Z"
   },
@@ -412,20 +412,20 @@
    "date": "2026-08-05T19:05:53.000Z"
   },
   {
-   "title": "inclusionAI/Ling-3.0-flash",
-   "url": "https://huggingface.co/inclusionAI/Ling-3.0-flash",
-   "downloads": 6148,
-   "likes": 302,
-   "task": "text-generation",
-   "date": "2026-08-02T16:14:41.000Z"
-  },
-  {
    "title": "nvidia/NVIDIA-NemotronLabs-VoiceChat-11B",
    "url": "https://huggingface.co/nvidia/NVIDIA-NemotronLabs-VoiceChat-11B",
    "downloads": 653,
    "likes": 318,
    "task": "",
    "date": "2026-07-29T17:46:48.000Z"
+  },
+  {
+   "title": "inclusionAI/Ling-3.0-flash",
+   "url": "https://huggingface.co/inclusionAI/Ling-3.0-flash",
+   "downloads": 6148,
+   "likes": 302,
+   "task": "text-generation",
+   "date": "2026-08-02T16:14:41.000Z"
   },
   {
    "title": "meta-models/Muse-Glimmer-30B-GGUF",

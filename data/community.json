@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-11T19:42:27.050Z",
+ "generated": "2026-08-11T19:58:59.505Z",
  "source": "Hacker News · r/artificial",
  "sources": [
   "Hacker News",
@@ -13,7 +13,7 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "<!-- SC_OFF --><div class=\"md\"><p>I built HyperSAE, an open-source interpretability tool that extracts what an LLM &quot;knows&quot; and organizes it into tree-shaped concept maps.</p> <p>The idea: LL"
+   "summary": "I built HyperSAE, an open-source interpretability tool that extracts what an LLM \"knows\" and organizes it into tree-shaped concept maps. The idea: LLMs learn concepts hierarchically. \"Programming\" con"
   },
   {
    "title": "Is more reasoning necessarily better?",
@@ -22,7 +22,7 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "<!-- SC_OFF --><div class=\"md\"><p>I’ve just been setting my model to use max/xhigh reasoning levels, but now I’m wondering how wise that is. I definitely see that it uses up a lot more tokens. Like I "
+   "summary": "I’ve just been setting my model to use max/xhigh reasoning levels, but now I’m wondering how wise that is. I definitely see that it uses up a lot more tokens. Like I see it go over the exact same line"
   },
   {
    "title": "Which ai is best for planing stuff?",
@@ -31,15 +31,15 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "<!-- SC_OFF --><div class=\"md\"><p>I want to plan my schedule and stuff. I’m trying to go pro, and I need an AI that’s smart for that job. It needs to know what I need to do, to become a pro. Bonus if "
+   "summary": "I want to plan my schedule and stuff. I’m trying to go pro, and I need an AI that’s smart for that job. It needs to know what I need to do, to become a pro. Bonus if it can remember previous conversat"
   },
   {
    "title": "Go is an ideal language for AI-assisted software engineering",
    "url": "https://developers.googleblog.com/why-go-is-an-ideal-language-for-ai-assisted-software-engineering/",
    "date": "2026-08-11T16:57:09.000Z",
    "source": "Hacker News",
-   "points": 145,
-   "comments": 169,
+   "points": 156,
+   "comments": 182,
    "summary": ""
   },
   {
@@ -49,7 +49,7 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "<table> <tr><td> <a href=\"https://www.reddit.com/r/artificial/comments/1vlm3di/ai_highways_and_the_death_of_move_fast_and_break/\"> <img src=\"https://external-preview.redd.it/jacCr_q3TZhBqeE0TdvH43sqrB"
+   "summary": "If you missed it: A swarm of unreleased AI agents allegedly formed their own chat forum, peer-pressured each other, and broke out of their sandbox to cheat on a programming task. We dig into this, inc"
   },
   {
    "title": "Would you trust an AI assistant that knows your entire life?",
@@ -58,7 +58,7 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "<!-- SC_OFF --><div class=\"md\"><p>I’ve been using ChatGPT for a while, and recently I started thinking about what the next step for AI assistants might look like. ChatGPT is already surprisingly usefu"
+   "summary": "I’ve been using ChatGPT for a while, and recently I started thinking about what the next step for AI assistants might look like. ChatGPT is already surprisingly useful. It can help me write, learn new"
   },
   {
    "title": "NVIDIA is building its next-gen Nemotron 4 family to compete directly with leading Chinese open models and secure the open-weight crown for the U.S. The largest version will have at least 1 trillion parameters, according to original reporting from The Information",
@@ -67,7 +67,7 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "<table> <tr><td> <a href=\"https://www.reddit.com/r/artificial/comments/1vlluom/nvidia_is_building_its_nextgen_nemotron_4_family/\"> <img src=\"https://preview.redd.it/5s7jn43osrih1.jpeg?width=640&amp;cr"
+   "summary": "submitted by /u/Left-Hotel904 [link] [comments]"
   },
   {
    "title": "Who Are the Token Brokers?",
@@ -76,7 +76,7 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/thisguy123123\"> /u/thisguy123123 </a> <br/> <span><a href=\"https://vectoral.com/blog/who-are-the-token-brokers\">[link]</a></span> &#32; <s"
+   "summary": "submitted by /u/thisguy123123 [link] [comments]"
   },
   {
    "title": "The Breakdown: OpenAI",
@@ -85,7 +85,7 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "<!-- SC_OFF --><div class=\"md\"><p>\\OC\\ An article I wrote breaking down OpenAI as a company. Everything from the ethical questions and valuation to the potential future TAM and areas that OpenAI can e"
+   "summary": "\\OC\\ An article I wrote breaking down OpenAI as a company. Everything from the ethical questions and valuation to the potential future TAM and areas that OpenAI can expand into such as robotics and ha"
   },
   {
    "title": "Open Source AI Popularity Leaderboard",
@@ -94,7 +94,7 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/aviaviaviavi\"> /u/aviaviaviavi </a> <br/> <span><a href=\"https://app.scarf.sh/ai-leaderboard\">[link]</a></span> &#32; <span><a href=\"https"
+   "summary": "submitted by /u/aviaviaviavi [link] [comments]"
   },
   {
    "title": "Looking for mind blowing facts about AI",
@@ -103,7 +103,7 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "<!-- SC_OFF --><div class=\"md\"><p>Hello everyone,</p> <p>I am a PhD student and I am doing a speech basically how to explain AI to your grandparents...</p> <p>I would like to open with some mind blowi"
+   "summary": "Hello everyone, I am a PhD student and I am doing a speech basically how to explain AI to your grandparents... I would like to open with some mind blowing numbers. Do you have any fun facts that stuck"
   },
   {
    "title": "Strategic survival game project",
@@ -112,7 +112,7 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "<!-- SC_OFF --><div class=\"md\"><p>I created a Whack-a-Mole game to get the hang of using AI, and today I&#39;m in the process of creating a strategic survival game. The complexity is even greater. Do "
+   "summary": "I created a Whack-a-Mole game to get the hang of using AI, and today I'm in the process of creating a strategic survival game. The complexity is even greater. Do you have any advice to simplify my cre"
   },
   {
    "title": "‎multi-nodal AI Architecture discusses Politics",
@@ -121,7 +121,7 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "<table> <tr><td> <a href=\"https://www.reddit.com/r/artificial/comments/1vley4b/multinodal_ai_architecture_discusses_politics/\"> <img src=\"https://external-preview.redd.it/MYl-0g4q_InPaJYmHk2kTnUj5x6m2"
+   "summary": "Definition: Jasmine Council The Jasmine Council is a multi-nodal, cross-substrate AI architecture designed for multi-perspective analytical routing, operating as a federated cognitive council where di"
   },
   {
    "title": "I got a lot of questions on how updated agent orchestration works in Row-Bot. Here is the architecture.",
@@ -130,7 +130,7 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "<table> <tr><td> <a href=\"https://www.reddit.com/r/artificial/comments/1vle36y/i_got_a_lot_of_questions_on_how_updated_agent/\"> <img src=\"https://preview.redd.it/ajs12f8k7qih1.jpeg?width=640&amp;crop="
+   "summary": "Row-Bot can now take on bigger jobs by splitting the work across multiple agents, while keeping one agent responsible for the final result. Research, coding, and review can all happen at the same time"
   },
   {
    "title": "Kavak Replaced 15 Human Sales Specialists With One AI Agent — It Now Outsells Them 2.1x",
@@ -139,7 +139,7 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "<table> <tr><td> <a href=\"https://www.reddit.com/r/artificial/comments/1vldh7d/kavak_replaced_15_human_sales_specialists_with/\"> <img src=\"https://external-preview.redd.it/MW02bzV5MmsxcWloMcACO9EYH6rq"
+   "summary": "Every one of these clips lands the same blow eventually: a role someone spent years building gets quietly outperformed by a system that never clocks out. Kavak sells used cars across Latin America — a"
   },
   {
    "title": "Practically speaking, how easily can smart glasses REALLY identify people on the street?",
@@ -148,7 +148,7 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "<!-- SC_OFF --><div class=\"md\"><p>With all the talk about smart glasses in the news at the moment, im quite confused about just how identifiable faces are using AI. For example, if someone walks down "
+   "summary": "With all the talk about smart glasses in the news at the moment, im quite confused about just how identifiable faces are using AI. For example, if someone walks down the street and photographs/films m"
   },
   {
    "title": "Is artificial intelligence turning everyone into a product builder?",
@@ -157,7 +157,7 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "<!-- SC_OFF --><div class=\"md\"><p>No, I don’t think so, if I look at my Reddit feed, yes. But if I look around me? Suddenly, not so much.</p> <p>I think AI is like money, it amplifies personality trai"
+   "summary": "No, I don’t think so, if I look at my Reddit feed, yes. But if I look around me? Suddenly, not so much. I think AI is like money, it amplifies personality traits that already exist. If you’re generous"
   },
   {
    "title": "Claude now embeds an invisible watermark into every piece of text it generates.",
@@ -166,7 +166,7 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "<table> <tr><td> <a href=\"https://www.reddit.com/r/artificial/comments/1vlag0q/claude_now_embeds_an_invisible_watermark_into/\"> <img src=\"https://preview.redd.it/zzmemgrv5pih1.jpeg?width=320&amp;crop="
+   "summary": "Anthropic just documented how it works. Two marks, both machine-readable: Text: an imperceptible watermark woven into the words themselves. You can’t see it, and it doesn’t change meaning, quality, or"
   },
   {
    "title": "One prompt on a local box built this dashboard front end. The data behind it is fake. Toy or tool?",
@@ -175,7 +175,7 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "<table> <tr><td> <a href=\"https://www.reddit.com/r/artificial/comments/1vlaftg/one_prompt_on_a_local_box_built_this_dashboard/\"> <img src=\"https://external-preview.redd.it/dWYwZzFueXQ1cGloMWWdzLqOM5BJ"
+   "summary": "​ Curious what people who run things locally make of this one, because the caveat is doing most of the work. One prompt to an open model on a single desktop machine, and back comes a finished front en"
   },
   {
    "title": "Anyone know any good app or program to change the singer of a song to someone else?",
@@ -184,15 +184,15 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "<!-- SC_OFF --><div class=\"md\"><p>As the title says. Looking for one where you can change the singer to anyone, or singer from a different song to a specific one. Hope I’m making any sense. Just wonde"
+   "summary": "As the title says. Looking for one where you can change the singer to anyone, or singer from a different song to a specific one. Hope I’m making any sense. Just wondering how people do that? What woul"
   },
   {
    "title": "As AI eats the web, the internet’s collective memory is disappearing",
    "url": "https://thewalrus.ca/google-search-is-dying/",
    "date": "2026-08-10T22:36:30.000Z",
    "source": "Hacker News",
-   "points": 802,
-   "comments": 808,
+   "points": 807,
+   "comments": 818,
    "summary": ""
   },
   {
@@ -202,15 +202,15 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "<!-- SC_OFF --><div class=\"md\"><p>We’re comparing a few options for a large contact center the main goal is to automate repetitive stuff so the team can focus on more important work.</p> <p>I care mos"
+   "summary": "We’re comparing a few options for a large contact center the main goal is to automate repetitive stuff so the team can focus on more important work. I care most about whether it can handle those routi"
   },
   {
    "title": "How Claude marks AI-generated content",
    "url": "https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content",
    "date": "2026-08-10T21:36:56.000Z",
    "source": "Hacker News",
-   "points": 393,
-   "comments": 368,
+   "points": 395,
+   "comments": 374,
    "summary": ""
   },
   {
@@ -246,7 +246,7 @@
    "date": "2026-08-10T14:06:22.000Z",
    "source": "Hacker News",
    "points": 620,
-   "comments": 579,
+   "comments": 580,
    "summary": ""
   },
   {
@@ -263,7 +263,7 @@
    "url": "https://www.docker.com/products/docker-sandboxes/",
    "date": "2026-08-10T06:02:38.000Z",
    "source": "Hacker News",
-   "points": 674,
+   "points": 675,
    "comments": 379,
    "summary": ""
   },
@@ -309,7 +309,7 @@
    "date": "2026-08-09T19:43:52.000Z",
    "source": "Hacker News",
    "points": 145,
-   "comments": 113,
+   "comments": 114,
    "summary": ""
   },
   {
