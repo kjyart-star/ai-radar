@@ -172,8 +172,8 @@
   @media (hover:hover){
     .row:hover{ background:var(--ink); color:#fff; }
     .dark .row:hover{ background:var(--lime); color:var(--ink); }
-    .row:hover .r-meta,.row:hover .r-sum{ color:rgba(255,255,255,.72); }
-    .dark .row:hover .r-meta,.dark .row:hover .r-sum{ color:rgba(7,17,13,.72); }
+    .row:hover .r-meta,.row:hover .r-sum,.row:hover .r-title-en{ color:rgba(255,255,255,.72); }
+    .dark .row:hover .r-meta,.dark .row:hover .r-sum,.dark .row:hover .r-title-en{ color:rgba(7,17,13,.72); }
     .row:hover .tag{ border-color:rgba(255,255,255,.4); }
     .dark .row:hover .tag{ border-color:rgba(7,17,13,.4); }
     .row:hover .dd{ color:var(--lime); }
@@ -189,6 +189,12 @@
   .r-main{ min-width:0; }
   .r-title{ font-size:clamp(17px,1.5vw,20px); font-weight:800; letter-spacing:-.02em;
             line-height:1.35; word-break:keep-all; }
+  /* 번역 제목 아래 붙는 영문 원문. 기계번역은 틀릴 때가 있어 원문을 지우면 확인할 길이
+     없어진다. 다만 읽는 순서는 한글이 먼저라 원문은 메타 정보 크기로 낮춘다.
+     긴 영문 제목이 375px 를 넘지 않도록 break-word 를 준다. */
+  .r-title-en{ margin-top:6px; font-size:12.5px; font-weight:600; letter-spacing:0;
+               line-height:1.45; color:var(--muted-light); overflow-wrap:break-word; }
+  .dark .r-title-en{ color:var(--muted-dark); }
   .tag{ display:inline-block; margin-left:8px; border:1px solid var(--line-light);
         border-radius:999px; padding:3px 9px; font-size:10px; font-weight:700;
         letter-spacing:.08em; vertical-align:middle; white-space:nowrap; }
@@ -742,6 +748,9 @@ function row(o){
     return "<span class='tag'>"+esc(t)+"</span>"; }).join("");
   var inner = dd + "<div class='r-main'>"+
     "<div class='r-title'>"+esc(o.title)+tags+"</div>"+
+    /* titleEn 은 번역문을 제목 자리에 올렸을 때만 채워진다 (수집기의 titleKo).
+       원문을 지우지 않는 이유는 CSS 주석(.r-title-en)에 적어 뒀다. */
+    (o.titleEn ? "<div class='r-title-en'>"+esc(o.titleEn)+"</div>" : "")+
     (o.meta && o.meta.length ? "<div class='r-meta'>"+o.meta.filter(Boolean).join("<i>·</i>")+"</div>" : "")+
     (o.sum ? "<div class='r-sum'>"+esc(o.sum)+"</div>" : "")+"</div>";
   var url = ctSafeUrl(o.url);
@@ -791,13 +800,15 @@ function newsSection(){
       var meta = [];
       if (it.source && it.source !== it.feed) meta.push("<b>"+esc(it.source)+"</b>");
       if (it.date) meta.push(esc(String(it.date).slice(0,10)));
-      return row({ dd:agoText(it.date), ddCls:"tbd", title:it.title,
+      return row({ dd:agoText(it.date), ddCls:"tbd",
+                   title:it.titleKo || it.title, titleEn:it.titleKo ? it.title : "",
                    tags:[it.feed], meta:meta, sum:it.summary, url:it.url });
     }).join("");
     return "<section class='section paper-alt'><div class='inner'>"+
       sectionHead("Newswire","오늘의<br>AI 뉴스.",
         "Google News(한국어)·TechCrunch·MIT Technology Review·The Verge 의 AI 지면을 합쳐 최신순으로 세웁니다. "+
-        "요약은 원문 매체가 쓴 것이고, 제목을 누르면 그 매체로 갑니다. 수집 "+esc(fmtGen(j.generated)),
+        "요약은 원문 매체가 쓴 것이고, 제목을 누르면 그 매체로 갑니다. "+
+        "영문 제목은 기계번역을 붙였습니다 — 틀릴 수 있어 원문을 바로 아래 함께 둡니다. 수집 "+esc(fmtGen(j.generated)),
         "<b>"+items.length+"</b>건")+
       "<div class='rows'>"+rows+"</div></div></section>";
   }).catch(function(){ return ""; });
@@ -811,7 +822,8 @@ function communitySection(){
       if (it.points != null) meta.push("<b>"+nfmt(it.points)+"점</b>");
       if (it.comments != null) meta.push("댓글 "+nfmt(it.comments));
       if (it.date) meta.push(esc(String(it.date).slice(0,10)));
-      return row({ dd:agoText(it.date), ddCls:"tbd", title:it.title,
+      return row({ dd:agoText(it.date), ddCls:"tbd",
+                   title:it.titleKo || it.title, titleEn:it.titleKo ? it.title : "",
                    tags:[it.source], meta:meta, sum:it.summary, url:it.url });
     }).join("");
     return "<section class='section dark'><div class='inner'>"+
@@ -837,7 +849,8 @@ function techSection(){
     var body = "";
     if (ax.length) body += group("arXiv cs.AI", ax.length+"편 · 최근 등록순",
       ax.map(function(it){
-        return row({ dd:agoText(it.date), ddCls:"tbd", title:it.title,
+        return row({ dd:agoText(it.date), ddCls:"tbd",
+                     title:it.titleKo || it.title, titleEn:it.titleKo ? it.title : "",
                      tags:["논문"], meta:[esc(String(it.date).slice(0,10))], sum:it.summary, url:it.url });
       }).join(""));
     if (gh.length) body += group("GitHub", gh.length+"곳 · 최근 7일 안에 갱신된 ai 토픽 저장소를 별 많은 순으로",

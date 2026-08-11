@@ -89,6 +89,78 @@ function parseFeed(xml) {
   }).filter((x) => x.title && /^https?:\/\//.test(x.url));
 }
 
+/* ---------- 제목 번역 (MyMemory · 키도 결제 계정도 없이 쓴다) ----------
+ *
+ * 왜: 뉴스리포트의 제목이 TechCrunch·MIT·The Verge·Hacker News·Reddit·arXiv 쪽은
+ *     전부 영어라 훑어보기가 어렵다 (대표 2026-08-12).
+ *
+ * 왜 MyMemory 인가: Google Cloud Translation 은 결제 계정 등록이 필수라 과금 위험이 있어
+ *     쓰지 않는다(대표 거부). MyMemory 는 키 없이 HTTP 200 이고, 익명 한도(하루 5,000단어)를
+ *     넘겨도 청구되지 않고 그냥 실패한다. 우리가 보내는 건 제목뿐이라 약 1,000단어(한도의 20%)다.
+ *     한도를 늘려 주는 de=<이메일> 파라미터는 쓰지 않는다 — 공개 저장소에 개인정보를 넣지 않는다.
+ *
+ * 규칙:
+ *   - 원문 title 은 그대로 두고 titleKo 를 "덧붙인다". 기계번역은 틀릴 때가 있어
+ *     원문을 잃으면 되돌릴 방법이 없다
+ *   - 이미 한국어인 제목은 건너뛴다 (Google News 한국어 기사)
+ *   - 실패·타임아웃이면 titleKo 를 넣지 않는다. 빈 문자열로 채우지 않는다
+ *     (화면이 "번역했는데 비었다"와 "번역 안 했다"를 구분할 수 있어야 한다)
+ *   - 요약은 번역하지 않는다. 한도와 품질 모두 제목 쪽에 쓰는 편이 낫다
+ *   - 번역 때문에 수집이 실패하면 안 된다. 부가 단계다
+ */
+
+const TRANSLATE = process.env.NO_TRANSLATE !== "1";
+const MM_MAX_CALLS = 140;   // 하루 총 호출 상한. 제목만 ~95건이라 여유가 있지만 폭주를 막는다
+const MM_GAP_MS = 1200;     // 연속 호출로 차단당하면 그날 전부 실패한다
+const MM_GIVEUP = 5;        // 연속 실패 5회면 더 안 부른다 (네트워크 차단 시 25분을 태우지 않으려고)
+
+let mmCalls = 0, mmStreak = 0, mmStop = "";
+
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+/* 글자 중 한글 비율. 0.2 이상이면 이미 한국어로 본다 */
+function hangulRatio(s) {
+  const letters = String(s).match(/[A-Za-z가-힣]/g) || [];
+  if (!letters.length) return 1;
+  return letters.filter((c) => c >= "가" && c <= "힣").length / letters.length;
+}
+
+async function translateKo(text) {
+  const j = await get(
+    "https://api.mymemory.translated.net/get?langpair=en%7Cko&q=" + encodeURIComponent(text),
+    { json: true, timeout: 12000 }
+  );
+  if (j.quotaFinished) { mmStop = "일일 한도 소진"; throw new Error("quota finished"); }
+  if (Number(j.responseStatus) !== 200) throw new Error("responseStatus " + j.responseStatus);
+  const out = String(j?.responseData?.translatedText || "").trim();
+  /* 실패는 200 안에 대문자 경고문으로 온다("MYMEMORY WARNING…", "QUERY LENGTH LIMIT…").
+     한글이 하나도 없으면 번역된 게 아니다. */
+  if (!out || !/[가-힣]/.test(out)) throw new Error("번역 결과가 아님");
+  if (out === text) throw new Error("원문 그대로 돌아옴");
+  return out;
+}
+
+async function attachTitleKo(items, label) {
+  if (!TRANSLATE) { log(`  · 번역 ${label}: 건너뜀 (NO_TRANSLATE=1)`); return; }
+  let ok = 0, skip = 0, fail = 0;
+  for (const it of items || []) {
+    const t = String(it.title || "").trim();
+    if (!t || t.length > 400 || hangulRatio(t) >= 0.2) { skip++; continue; }
+    if (mmStop || mmCalls >= MM_MAX_CALLS) { fail++; continue; }
+    mmCalls++;
+    try {
+      it.titleKo = await translateKo(t);
+      ok++; mmStreak = 0;
+    } catch (e) {
+      fail++;
+      if (++mmStreak >= MM_GIVEUP && !mmStop) mmStop = `연속 ${MM_GIVEUP}회 실패 (${e.message})`;
+    }
+    await sleep(MM_GAP_MS);
+  }
+  log(`  · 번역 ${label}: ${ok}건 붙임 · 한국어라 건너뜀 ${skip} · 실패 ${fail}` +
+      (mmStop ? ` — 중단: ${mmStop}` : ""));
+}
+
 /* 이전 결과를 그대로 두는 저장 — 수집이 0건이면 쓰지 않는다 */
 function save(name, payload, count) {
   if (!existsSync(DATA)) mkdirSync(DATA, { recursive: true });
@@ -143,7 +215,9 @@ async function collectNews() {
     }
   }
   items.sort((a, b) => String(b.date).localeCompare(String(a.date)));
-  return save("news.json", { generated: NOW, source: okSources.join(" · "), sources: okSources, items: items.slice(0, 60) }, items.length);
+  const top = items.slice(0, 60);
+  await attachTitleKo(top, "뉴스");
+  return save("news.json", { generated: NOW, source: okSources.join(" · "), sources: okSources, items: top }, items.length);
 }
 
 /* ---------- 2. 커뮤니티 (Hacker News · Reddit) ---------- */
@@ -176,6 +250,7 @@ async function collectCommunity() {
   } catch (e) { log(`  ! Reddit 실패: ${e.message}`); }
 
   items.sort((a, b) => String(b.date).localeCompare(String(a.date)));
+  await attachTitleKo(items, "커뮤니티");
   return save("community.json", { generated: NOW, source: okSources.join(" · "), sources: okSources, items }, items.length);
 }
 
@@ -221,6 +296,9 @@ async function collectTech() {
 
   out.sources = ok;
   out.source = ok.join(" · ");
+  /* arXiv 논문 제목만 번역한다. GitHub 는 저장소 이름(owner/repo), Hugging Face 는
+     모델 ID 라 번역하면 오히려 못 찾는 식별자가 된다. */
+  await attachTitleKo(out.arxiv, "arXiv");
   return save("tech.json", out, out.arxiv.length + out.github.length + out.huggingface.length);
 }
 

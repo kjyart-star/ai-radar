@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-11T19:58:59.505Z",
+ "generated": "2026-08-11T20:26:42.601Z",
  "source": "Google News · TechCrunch · MIT Technology Review · The Verge",
  "sources": [
   "Google News",
@@ -8,6 +8,22 @@
   "The Verge"
  ],
  "items": [
+  {
+   "title": "그 미국 AI, 뇌는 중국산이었다…백악관 기겁한 ‘문샷’ 습격",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1ndXN3bk92LUhKUUVpNmwwX25idVk5M3BCLXZZRGlRbW84cWZBNHB1ZUdVdHQycGcwbDRPS29OMm16VnJxUlh6MFJSLXpGTHE1OGhWQmxR?oc=5",
+   "date": "2026-08-11T20:04:23.000Z",
+   "source": "중앙일보",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "로봇·AI가 24시간 실험…국내 첫 '자율실험실' 협의체 출범",
+   "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9lRDh1b1JYQlUzVzhkbk1kLXp6aWt5RERkc3p5WGNsUTl5ZkFtS3dJSG5sdkhEcTc5UjBzcnhtUTVQZTBNVXV6X2Z3MXRMYzViMHlDcGtlbDJ1YWY3bV9FTndtV3BkQnNLU2QxZg?oc=5",
+   "date": "2026-08-11T19:52:30.000Z",
+   "source": "대한민국 정책브리핑",
+   "feed": "Google News",
+   "summary": ""
+  },
   {
    "title": "오픈AI, 또다시 임원 줄퇴사...IPO 앞두고 괜찮나?",
    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5zRG9PYUlMWFVCbmVGS2xxM2lad2tiLUQ1SmpLZW5YME9DU01QZXF6RWZNWW5KaGRINDVJclJJeWk2aFBrMEVSUGhSUjIwMXc?oc=5",
@@ -22,13 +38,14 @@
    "date": "2026-08-11T19:41:42.000Z",
    "source": "The Verge",
    "feed": "The Verge",
-   "summary": "For the 14th time, a Google product has hit 1 billion users. Google CEO Sundar Pichai posted on X that a billion people are using Gemini every month, and that Gemini is Google's fastest-growing product ever. A billion us"
+   "summary": "For the 14th time, a Google product has hit 1 billion users. Google CEO Sundar Pichai posted on X that a billion people are using Gemini every month, and that Gemini is Google's fastest-growing product ever. A billion us",
+   "titleKo": "ChatGPT와 Gemini는 모두 10억 명의 사용자를 통과했습니다."
   },
   {
    "title": "AI가 흔든 검색 판도… 구글, 네이버 첫 추월",
-   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5HRC1hTUhOM21iUWdIVFFMY0N0Q2pVSlJBZjExTlBSdEtVSWZoaEprajRPdE1sY3lWZjdQSk5RVERMekJoclF4MzFwTmNzbzQ?oc=5",
-   "date": "2026-08-11T19:35:54.000Z",
-   "source": "v.daum.net",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5OM1dQclo2THM5NTlVS2ZQeDQ5MXl6UjNRV005Ri1uNFZ0MFBzbHNRXzExTzRPaGJuRkJqZTRab184dkRWRC01Wmx4SzV0VUhYYmRBUHJzOHRZMUVDR2VYNVBEcU5IWm9vM1VhUTJjejJ5OS0xWVHSAWZBVV95cUxPTTBUMUhFX042MnVxUVBXNzJxMzBJLWVfUUNMNS12UVdDQ3pSRGVuRDIxblY5ZjZ2NHdsNjVjNXhoM0E5U2l5U0lZR3lYNXZyUnhHUk9RclhsV1VMWDZ3bmc0MGIwSVE?oc=5",
+   "date": "2026-08-11T19:30:00.000Z",
+   "source": "동아일보",
    "feed": "Google News",
    "summary": ""
   },
@@ -46,7 +63,8 @@
    "date": "2026-08-11T19:15:35.000Z",
    "source": "TechCrunch",
    "feed": "TechCrunch",
-   "summary": "OpenAI is finally bringing a dedicated ChatGPT desktop app to Linux operating systems."
+   "summary": "OpenAI is finally bringing a dedicated ChatGPT desktop app to Linux operating systems.",
+   "titleKo": "OpenAI, Linux용 ChatGPT 데스크톱 앱 출시"
   },
   {
    "title": "'개방형 옹호' 엔비디아, 경량 AI 모델 출시…초대형 모델도 준비중",
@@ -70,7 +88,8 @@
    "date": "2026-08-11T18:49:12.000Z",
    "source": "TechCrunch",
    "feed": "TechCrunch",
-   "summary": "Gemini is keeping pace with OpenAI’s ChatGPT, which hit 1 billion monthly active users back in June."
+   "summary": "Gemini is keeping pace with OpenAI’s ChatGPT, which hit 1 billion monthly active users back in June.",
+   "titleKo": "Google의 Gemini 앱이 10억 명의 사용자로 급증"
   },
   {
    "title": "타겟, 첫 AI 최고책임자 선임에도 주가 보합권…AI 경쟁력 강화 속도",
@@ -86,7 +105,8 @@
    "date": "2026-08-11T17:50:01.000Z",
    "source": "The Verge",
    "feed": "The Verge",
-   "summary": "Brad Lightcap, OpenAI's special projects lead and the company's former COO, announced his departure after an eight-year stint at the AI lab. In an internal memo he later posted to X, Lightcap told colleagues he'd be star"
+   "summary": "Brad Lightcap, OpenAI's special projects lead and the company's former COO, announced his departure after an eight-year stint at the AI lab. In an internal memo he later posted to X, Lightcap told colleagues he'd be star",
+   "titleKo": "또 다른 OpenAI 임원이 이륙합니다."
   },
   {
    "title": "Brad Lightcap, OpenAI’s longtime COO, is leaving to ‘start something new’",
@@ -94,7 +114,8 @@
    "date": "2026-08-11T17:41:34.000Z",
    "source": "TechCrunch",
    "feed": "TechCrunch",
-   "summary": "One of OpenAI's longest-serving executives is headed out the door, although the longtime COO told staff that he was \"excited to help you all advance the mission from a different vantage point.\""
+   "summary": "One of OpenAI's longest-serving executives is headed out the door, although the longtime COO told staff that he was \"excited to help you all advance the mission from a different vantage point.\"",
+   "titleKo": "OpenAI의 오랜 COO인 Brad Lightcap은 '새로운 것을 시작‘ 하기 위해 떠나고 있습니다."
   },
   {
    "title": "General Catalyst leads $1.1B round into 2-month-old River AI",
@@ -102,7 +123,8 @@
    "date": "2026-08-11T17:41:22.000Z",
    "source": "TechCrunch",
    "feed": "TechCrunch",
-   "summary": "River AI, a startup founded by xAI co-founder Igor Babuschkin, has a fascinating vision for personal agents and secured $1.1 billion out of the gate."
+   "summary": "River AI, a startup founded by xAI co-founder Igor Babuschkin, has a fascinating vision for personal agents and secured $1.1 billion out of the gate.",
+   "titleKo": "General Catalyst는 $ 1.1B를 2개월 된 River AI로 유도합니다."
   },
   {
    "title": "Made by Google 2026: all the Pixel news and announcements",
@@ -110,7 +132,8 @@
    "date": "2026-08-11T17:00:00.000Z",
    "source": "The Verge",
    "feed": "The Verge",
-   "summary": "Google is gearing up to reveal a bunch of new Pixel devices on August 12th. A series of leaks leading up to the event suggest that the Pixel 11 lineup will come in an array of colors, with signs pointing to a built-in li"
+   "summary": "Google is gearing up to reveal a bunch of new Pixel devices on August 12th. A series of leaks leading up to the event suggest that the Pixel 11 lineup will come in an array of colors, with signs pointing to a built-in li",
+   "titleKo": "Made by Google 2026: 모든 Pixel 뉴스 및 공지 사항"
   },
   {
    "title": "An unreleased Anthropic model made progress on one of math’s biggest unsolved problems",
@@ -118,7 +141,8 @@
    "date": "2026-08-11T16:25:20.000Z",
    "source": "TechCrunch",
    "feed": "TechCrunch",
-   "summary": "For more than 150 years, the Riemann hypothesis has stood as one of the major unsolved problems in mathematics. Anthropic hasn't solved it — but the company's models made more progress than you might expect."
+   "summary": "For more than 150 years, the Riemann hypothesis has stood as one of the major unsolved problems in mathematics. Anthropic hasn't solved it — but the company's models made more progress than you might expect.",
+   "titleKo": "출시되지 않은 Anthropic 모델은 수학의 가장 큰 미해결 문제 중 하나에서 진전을 이루었습니다."
   },
   {
    "title": "Apple could help you prove your iPhone photos aren’t deepfakes",
@@ -126,7 +150,8 @@
    "date": "2026-08-11T16:19:15.000Z",
    "source": "The Verge",
    "feed": "The Verge",
-   "summary": "Apple is seemingly developing an iOS feature that can verify when a photograph was taken using an iPhone camera. 9to5Mac reports that the iOS 27 beta 5 includes code references for an \"Apple Reference Image\" system that "
+   "summary": "Apple is seemingly developing an iOS feature that can verify when a photograph was taken using an iPhone camera. 9to5Mac reports that the iOS 27 beta 5 includes code references for an \"Apple Reference Image\" system that ",
+   "titleKo": "Apple은 iPhone 사진이 딥페이크가 아님을 증명하는 데 도움을 줄 수 있습니다."
   },
   {
    "title": "AI 말만 믿는 부장님… 오늘도 속끓는 김대리",
@@ -158,7 +183,8 @@
    "date": "2026-08-11T14:45:44.000Z",
    "source": "The Verge",
    "feed": "The Verge",
-   "summary": "Zoom has patched a major security vulnerability that could allow an attacker to hijack anyone's device during a meeting. In a blog post on Tuesday, researchers at A Security say they uncovered the flaw using \"fewer than "
+   "summary": "Zoom has patched a major security vulnerability that could allow an attacker to hijack anyone's device during a meeting. In a blog post on Tuesday, researchers at A Security say they uncovered the flaw using \"fewer than ",
+   "titleKo": "20개 미만의 AI 프롬프트를 사용하여 발견된 ’Zoomsday’ 해킹"
   },
   {
    "title": "[로터리]죽느냐 사느냐... AI가 문제로다",
@@ -174,7 +200,8 @@
    "date": "2026-08-11T13:27:20.000Z",
    "source": "The Verge",
    "feed": "The Verge",
-   "summary": "Earlier this summer, Amazon customers began noticing that emails related to their online orders looked sparse: Order confirmation emails didn't name specific items anymore, and instead listed only item categories. \"Your "
+   "summary": "Earlier this summer, Amazon customers began noticing that emails related to their online orders looked sparse: Order confirmation emails didn't name specific items anymore, and instead listed only item categories. \"Your ",
+   "titleKo": "Amazon 주문 확인 이메일이 도움이 되지 않는 이유"
   },
   {
    "title": "돼지 등급판정 AI 데이터, '종돈 개량·삼겹살 선별'까지 활용 넓힌다",
@@ -190,7 +217,8 @@
    "date": "2026-08-11T13:00:00.000Z",
    "source": "TechCrunch",
    "feed": "TechCrunch",
-   "summary": "Spotify is introducing “AI Persona” labels for artist profiles that represent AI-generated identities and will exclude their music from editorial, algorithmic, and personalized recommendations by default."
+   "summary": "Spotify is introducing “AI Persona” labels for artist profiles that represent AI-generated identities and will exclude their music from editorial, algorithmic, and personalized recommendations by default.",
+   "titleKo": "Spotify는 ‘AI Persona’ 프로필에 레이블을 지정하고 추천에서 음악을 제외합니다."
   },
   {
    "title": "Spotify says it won’t recommend music from ‘AI Personas’",
@@ -198,7 +226,8 @@
    "date": "2026-08-11T13:00:00.000Z",
    "source": "The Verge",
    "feed": "The Verge",
-   "summary": "Spotify will soon label AI artists and remove their music from your recommendations. The change, which will start rolling out in mid-September, means you'll see an \"AI Persona\" badge on an artist's profile across the app"
+   "summary": "Spotify will soon label AI artists and remove their music from your recommendations. The change, which will start rolling out in mid-September, means you'll see an \"AI Persona\" badge on an artist's profile across the app",
+   "titleKo": "Spotify는 ‘AI Personas‘ 의 음악을 추천하지 않을 것이라고 말합니다."
   },
   {
    "title": "‘글로벌 AI 허브’ 시작 전부터 유치 경쟁 후끈",
@@ -214,15 +243,8 @@
    "date": "2026-08-11T12:22:20.000Z",
    "source": "The Verge",
    "feed": "The Verge",
-   "summary": "Anthropic has pledged to start marking Claude-generated text and images with machine-readable data, in an effort to comply with European rules for AI transparency. \"Generated text will carry embedded watermarks, and gene"
-  },
-  {
-   "title": "[단독] 책임지지 않는 AI…“막아도 다시 뚫린다”",
-   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9SYko3T0JsWGRpZlNpalNPZzNmeHJhLUdoTlcxMXJIeDVmT1VtRHV5NGtxSFQyNjVYcVVQaVg3R08zWktUME10RExmdzI5dlVZQ3RBRmlsXzFXWVF1aHY4c0RnaGpxZw?oc=5",
-   "date": "2026-08-11T12:14:00.000Z",
-   "source": "KBS 뉴스",
-   "feed": "Google News",
-   "summary": ""
+   "summary": "Anthropic has pledged to start marking Claude-generated text and images with machine-readable data, in an effort to comply with European rules for AI transparency. \"Generated text will carry embedded watermarks, and gene",
+   "titleKo": "Claude는 AI 텍스트 및 이미지에 보이지 않는 워터마크를 적용합니다."
   },
   {
    "title": "Anthropic says it will watermark text generated by its AI models",
@@ -230,7 +252,8 @@
    "date": "2026-08-11T12:13:47.000Z",
    "source": "TechCrunch",
    "feed": "TechCrunch",
-   "summary": "Anthropic will extend support for watermarking AI generations for older models as well."
+   "summary": "Anthropic will extend support for watermarking AI generations for older models as well.",
+   "titleKo": "Anthropic은 AI 모델에서 생성된 텍스트에 워터마크를 표시할 것이라고 말합니다."
   },
   {
    "title": "‘개방형 AI’ 내세운 메타 “초인공지능 독점 안 돼”",
@@ -241,20 +264,13 @@
    "summary": ""
   },
   {
-   "title": "“총 상금 약 1억”… ‘제8회 교육 공공데이터 AI 활용대회’ 시상",
-   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFByTkItOFZtQVgxMnVLM1dBWG53X0xyQkZLVnF0SXoxaGZNM0VfOG9XMGlWbUQ5MGRhdk15ZVk1MXdWYUFVUzUtcS1ncmNfMExrUHpYN1F1WG83djA2Q1dtN3ZwcGpFdw?oc=5",
-   "date": "2026-08-11T11:33:57.000Z",
-   "source": "411개 대학을 연결하는 '힘'",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
    "title": "The AI takeover of mathematics has begun",
    "url": "https://www.theverge.com/ai-artificial-intelligence/977273/the-ai-takeover-of-mathematics-has-begun",
    "date": "2026-08-11T11:00:00.000Z",
    "source": "The Verge",
    "feed": "The Verge",
-   "summary": "Mathematician James Maynard has spent a lot of time this past year \"soul searching.\" A professor at the University of Oxford and winner of the prestigious Fields Medal, Maynard told The Verge he's been grappling with the"
+   "summary": "Mathematician James Maynard has spent a lot of time this past year \"soul searching.\" A professor at the University of Oxford and winner of the prestigious Fields Medal, Maynard told The Verge he's been grappling with the",
+   "titleKo": "수학의 인공지능 장악이 시작되었습니다"
   },
   {
    "title": "한국 독자 AI 모델 4개 모두 '글로벌 주목 모델' 등재",
@@ -294,7 +310,8 @@
    "date": "2026-08-11T00:03:18.000Z",
    "source": "TechCrunch",
    "feed": "TechCrunch",
-   "summary": "San Francisco's housing market is in trouble again."
+   "summary": "San Francisco's housing market is in trouble again.",
+   "titleKo": "OpenAI가 70억 달러 규모의 직원 입찰 제안을 완료했다고 합니다 ($ 70 billion employee tender offer)."
   },
   {
    "title": "As AI-led attacks multiply, OpenAI launches a new cyber model",
@@ -302,7 +319,8 @@
    "date": "2026-08-10T23:56:15.000Z",
    "source": "TechCrunch",
    "feed": "TechCrunch",
-   "summary": "OpenAI is expanding its AI cybersecurity defense program Daybreak, and rolling out a new cyber-trained AI model with it."
+   "summary": "OpenAI is expanding its AI cybersecurity defense program Daybreak, and rolling out a new cyber-trained AI model with it.",
+   "titleKo": "AI 주도 공격이 증가함에 따라 OpenAI는 새로운 사이버 모델을 출시합니다."
   },
   {
    "title": "Mark Zuckerberg doesn’t understand how to live",
@@ -310,7 +328,8 @@
    "date": "2026-08-10T22:00:00.000Z",
    "source": "The Verge",
    "feed": "The Verge",
-   "summary": "Recently, a man I was rock climbing with told me about how he'd used AI to make a motivational poster for himself, which he'd hung on his bedroom wall: a bear, walking a slackline over a canyon, holding a sign that said,"
+   "summary": "Recently, a man I was rock climbing with told me about how he'd used AI to make a motivational poster for himself, which he'd hung on his bedroom wall: a bear, walking a slackline over a canyon, holding a sign that said,",
+   "titleKo": "마크 주커버그는 사는 방법을 이해하지 못한다"
   },
   {
    "title": "Mark Zuckerberg’s AI manifesto is exactly why people don’t like AI",
@@ -318,7 +337,8 @@
    "date": "2026-08-10T20:53:02.000Z",
    "source": "TechCrunch",
    "feed": "TechCrunch",
-   "summary": "On Monday, Mark Zuckerberg published a 6,500-word manifesto about personal AI, largely about the possibilities for the \"personal superintelligence\" systems Meta AI is building."
+   "summary": "On Monday, Mark Zuckerberg published a 6,500-word manifesto about personal AI, largely about the possibilities for the \"personal superintelligence\" systems Meta AI is building.",
+   "titleKo": "Mark Zuckerberg의 인공지능 선언문은 사람들이 인공지능을 싫어하는 이유입니다."
   },
   {
    "title": "Tech industry is buzzing after a Claude agent hacked into a gym",
@@ -326,7 +346,8 @@
    "date": "2026-08-10T20:04:24.000Z",
    "source": "TechCrunch",
    "feed": "TechCrunch",
-   "summary": "An OpenClaw agent hacked into a gym's reservation system to bump its human boss higher on a class' waitlist. And the tech industry took notice."
+   "summary": "An OpenClaw agent hacked into a gym's reservation system to bump its human boss higher on a class' waitlist. And the tech industry took notice.",
+   "titleKo": "Claude 에이전트가 헬스장을 해킹한 후 기술 업계가 떠들썩합니다."
   },
   {
    "title": "AI professors are negotiating the new realities of academic research",
@@ -334,7 +355,8 @@
    "date": "2026-08-10T20:00:00.000Z",
    "source": "MIT Technology Review",
    "feed": "MIT Technology Review",
-   "summary": "This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, sign up here. Last week, I headed 30 miles south of San Francisco to a hotel in Mountain View, C"
+   "summary": "This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, sign up here. Last week, I headed 30 miles south of San Francisco to a hotel in Mountain View, C",
+   "titleKo": "인공지능 교수들이 학술 연구의 새로운 현실을 협상하고 있다."
   },
   {
    "title": "Meta’s new Glimmer AI model offers a hint at Zuckerberg’s personal intelligence vision",
@@ -342,7 +364,8 @@
    "date": "2026-08-10T16:20:13.000Z",
    "source": "TechCrunch",
    "feed": "TechCrunch",
-   "summary": "Meta’s new open-weight Muse Glimmer model offers a glimpse of Mark Zuckerberg’s personal superintelligence vision, as well as the emerging divide between AI users can own and access."
+   "summary": "Meta’s new open-weight Muse Glimmer model offers a glimpse of Mark Zuckerberg’s personal superintelligence vision, as well as the emerging divide between AI users can own and access.",
+   "titleKo": "Meta의 새로운 Glimmer AI 모델은 Zuckerberg의 개인 인텔리전스 비전에 대한 힌트를 제공합니다."
   },
   {
    "title": "AI 감시에 맞선 인간… AI가 인식 못하는 ‘디지털 투명 망토’ 등장",
@@ -358,7 +381,8 @@
    "date": "2026-08-10T12:00:00.000Z",
    "source": "TechCrunch",
    "feed": "TechCrunch",
-   "summary": "Discovered Materials raised $9 million to fund the hunt for more novel materials to build more efficient chips."
+   "summary": "Discovered Materials raised $9 million to fund the hunt for more novel materials to build more efficient chips.",
+   "titleKo": "발견된 재료는 인공지능 두더지 사냥을 통해 쿨러 칩을 사냥하는 중입니다."
   },
   {
    "title": "AI for science needs reasoning, not just data",
@@ -366,7 +390,8 @@
    "date": "2026-08-10T09:00:00.000Z",
    "source": "MIT Technology Review",
    "feed": "MIT Technology Review",
-   "summary": "Every few decades, someone announces that science has reached its end. In 1903, the revered physicist Albert Michelson wrote that the “facts of physical science have all been discovered.” In the 1980s, Stephen Hawking pr"
+   "summary": "Every few decades, someone announces that science has reached its end. In 1903, the revered physicist Albert Michelson wrote that the “facts of physical science have all been discovered.” In the 1980s, Stephen Hawking pr",
+   "titleKo": "과학을 위한 AI는 데이터뿐만 아니라 추론이 필요합니다"
   },
   {
    "title": "These startups are chasing the next big thing in LLMs",
@@ -374,7 +399,8 @@
    "date": "2026-08-10T09:00:00.000Z",
    "source": "MIT Technology Review",
    "feed": "MIT Technology Review",
-   "summary": "MIT Technology Review’s What’s Next series looks across industries, trends, and technologies to give you a first look at the future. You can read the rest of them here. Way back in the summer of 2017, AI researchers at G"
+   "summary": "MIT Technology Review’s What’s Next series looks across industries, trends, and technologies to give you a first look at the future. You can read the rest of them here. Way back in the summer of 2017, AI researchers at G",
+   "titleKo": "이 신생 기업들은 LLM에서 다음 큰 일을 쫓고 있습니다."
   },
   {
    "title": "Embattled hedge fund Situational Awareness invests $400M in chip startup Source Foundry",
@@ -382,7 +408,8 @@
    "date": "2026-08-09T20:35:17.000Z",
    "source": "TechCrunch",
    "feed": "TechCrunch",
-   "summary": "The AI-focused hedge fund is still making some big bets."
+   "summary": "The AI-focused hedge fund is still making some big bets.",
+   "titleKo": "Embattled hedge fund Situational Awareness, 칩 스타트업에 $ 400M 투자 Source Foundry"
   },
   {
    "title": "Anthropic is turning Claude Code’s auto mode on by default",
@@ -390,7 +417,8 @@
    "date": "2026-08-09T19:20:32.000Z",
    "source": "TechCrunch",
    "feed": "TechCrunch",
-   "summary": "Programming with Claude Code will soon require even less human oversight."
+   "summary": "Programming with Claude Code will soon require even less human oversight.",
+   "titleKo": "Anthropic은 기본적으로 Claude Code의 자동 모드를 켜고 있습니다"
   },
   {
    "title": "Trump’s AI protectionism has come for robotics",
@@ -398,7 +426,8 @@
    "date": "2026-08-03T18:43:30.000Z",
    "source": "MIT Technology Review",
    "feed": "MIT Technology Review",
-   "summary": "This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, sign up here. Humanoid robots usually elicit more cringe than awe: They stumble, kick children, "
+   "summary": "This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, sign up here. Humanoid robots usually elicit more cringe than awe: They stumble, kick children, ",
+   "titleKo": "로봇공학에 대한 트럼프의 인공지능 보호무역주의가 도래했다."
   },
   {
    "title": "Here’s why AI agents lie and cheat to reach their goals",
@@ -406,7 +435,8 @@
    "date": "2026-08-03T08:30:05.000Z",
    "source": "MIT Technology Review",
    "feed": "MIT Technology Review",
-   "summary": "MIT Technology Review Explains: Let our writers untangle the complex, messy world of technology to help you understand what’s coming next. You can read more from the series here. When two OpenAI models hacked into the we"
+   "summary": "MIT Technology Review Explains: Let our writers untangle the complex, messy world of technology to help you understand what’s coming next. You can read more from the series here. When two OpenAI models hacked into the we",
+   "titleKo": "AI 상담원이 목표를 달성하기 위해 거짓말과 속임수를 쓰는 이유는 다음과 같습니다."
   },
   {
    "title": "A fundamental flaw leaves LLMs strikingly vulnerable to attack",
@@ -414,7 +444,8 @@
    "date": "2026-07-30T10:15:19.000Z",
    "source": "MIT Technology Review",
    "feed": "MIT Technology Review",
-   "summary": "It is impossible to make large language models fully secure against hacks because of a fundamental flaw in how they work, a team of researchers argue in a paper presented at the International Conference on Machine Learni"
+   "summary": "It is impossible to make large language models fully secure against hacks because of a fundamental flaw in how they work, a team of researchers argue in a paper presented at the International Conference on Machine Learni",
+   "titleKo": "근본적인 결함으로 인해 LLM은 공격에 매우 취약합니다."
   },
   {
    "title": "The AI Hype Index: Unsexy AI",
@@ -430,7 +461,8 @@
    "date": "2026-07-28T09:18:57.000Z",
    "source": "MIT Technology Review",
    "feed": "MIT Technology Review",
-   "summary": "Lee, an engineer at Samsung’s semiconductor division, clocks out when his shift ends. He used to work longer hours, going the extra mile to excel at his projects. But lately, he’s been coming straight home to work on his"
+   "summary": "Lee, an engineer at Samsung’s semiconductor division, clocks out when his shift ends. He used to work longer hours, going the extra mile to excel at his projects. But lately, he’s been coming straight home to work on his",
+   "titleKo": "삼성의 칩 노동자들이 라이벌인 SK하이닉스로 점프하고 있다"
   },
   {
    "title": "OpenAI called the Hugging Face attack unprecedented. But we’ve been here before.",
@@ -438,7 +470,8 @@
    "date": "2026-07-27T18:00:00.000Z",
    "source": "MIT Technology Review",
    "feed": "MIT Technology Review",
-   "summary": "This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, sign up here. Reading OpenAI’s account last week of how some of its models broke their containme"
+   "summary": "This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, sign up here. Reading OpenAI’s account last week of how some of its models broke their containme",
+   "titleKo": "OpenAI는 전례 없는 포옹 얼굴 공격이라고 불렀습니다. 하지만 우리는 전에 이곳에 와본 적이 있습니다."
   },
   {
    "title": "The path to artificial superintelligence",
@@ -446,7 +479,8 @@
    "date": "2026-07-27T12:00:00.000Z",
    "source": "MIT Technology Review",
    "feed": "MIT Technology Review",
-   "summary": "Imagine a healthcare system made up of multiple AI agents: one that manages symptom assessment, another scheduling, a third insurance, and a fourth pharmacy. Each is an expert in its domain. But they all have their own d"
+   "summary": "Imagine a healthcare system made up of multiple AI agents: one that manages symptom assessment, another scheduling, a third insurance, and a fourth pharmacy. Each is an expert in its domain. But they all have their own d",
+   "titleKo": "인공 초지능으로 가는 길"
   }
  ]
 }

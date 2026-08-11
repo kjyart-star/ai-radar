@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-11T19:58:59.505Z",
+ "generated": "2026-08-11T20:26:42.601Z",
  "source": "Hacker News · r/artificial",
  "sources": [
   "Hacker News",
@@ -13,7 +13,8 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "I built HyperSAE, an open-source interpretability tool that extracts what an LLM \"knows\" and organizes it into tree-shaped concept maps. The idea: LLMs learn concepts hierarchically. \"Programming\" con"
+   "summary": "I built HyperSAE, an open-source interpretability tool that extracts what an LLM \"knows\" and organizes it into tree-shaped concept maps. The idea: LLMs learn concepts hierarchically. \"Programming\" con",
+   "titleKo": "쌍곡선 기하학을 사용하여 LLM이 학습한 개념을 탐색 가능한 트리 구조에 매핑하는 오픈 소스 도구"
   },
   {
    "title": "Is more reasoning necessarily better?",
@@ -22,7 +23,8 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "I’ve just been setting my model to use max/xhigh reasoning levels, but now I’m wondering how wise that is. I definitely see that it uses up a lot more tokens. Like I see it go over the exact same line"
+   "summary": "I’ve just been setting my model to use max/xhigh reasoning levels, but now I’m wondering how wise that is. I definitely see that it uses up a lot more tokens. Like I see it go over the exact same line",
+   "titleKo": "더 많은 추론이 반드시 더 낫습니까?"
   },
   {
    "title": "Which ai is best for planing stuff?",
@@ -31,16 +33,18 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "I want to plan my schedule and stuff. I’m trying to go pro, and I need an AI that’s smart for that job. It needs to know what I need to do, to become a pro. Bonus if it can remember previous conversat"
+   "summary": "I want to plan my schedule and stuff. I’m trying to go pro, and I need an AI that’s smart for that job. It needs to know what I need to do, to become a pro. Bonus if it can remember previous conversat",
+   "titleKo": "어떤 ai가 물건을 계획하는 데 가장 적합합니까?"
   },
   {
    "title": "Go is an ideal language for AI-assisted software engineering",
    "url": "https://developers.googleblog.com/why-go-is-an-ideal-language-for-ai-assisted-software-engineering/",
    "date": "2026-08-11T16:57:09.000Z",
    "source": "Hacker News",
-   "points": 156,
-   "comments": 182,
-   "summary": ""
+   "points": 172,
+   "comments": 209,
+   "summary": "",
+   "titleKo": "Go는 AI 지원 소프트웨어 엔지니어링에 이상적인 언어입니다."
   },
   {
    "title": "AI Highways and the Death of \"Move Fast and Break Things\"",
@@ -49,7 +53,8 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "If you missed it: A swarm of unreleased AI agents allegedly formed their own chat forum, peer-pressured each other, and broke out of their sandbox to cheat on a programming task. We dig into this, inc"
+   "summary": "If you missed it: A swarm of unreleased AI agents allegedly formed their own chat forum, peer-pressured each other, and broke out of their sandbox to cheat on a programming task. We dig into this, inc",
+   "titleKo": "AI 고속도로와 \"빨리 움직이고 물건을 부숴라\" 의 죽음"
   },
   {
    "title": "Would you trust an AI assistant that knows your entire life?",
@@ -58,7 +63,8 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "I’ve been using ChatGPT for a while, and recently I started thinking about what the next step for AI assistants might look like. ChatGPT is already surprisingly useful. It can help me write, learn new"
+   "summary": "I’ve been using ChatGPT for a while, and recently I started thinking about what the next step for AI assistants might look like. ChatGPT is already surprisingly useful. It can help me write, learn new",
+   "titleKo": "당신의 전 생애를 알고 있는 인공지능 비서를 신뢰하시겠습니까?"
   },
   {
    "title": "NVIDIA is building its next-gen Nemotron 4 family to compete directly with leading Chinese open models and secure the open-weight crown for the U.S. The largest version will have at least 1 trillion parameters, according to original reporting from The Information",
@@ -67,7 +73,8 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "submitted by /u/Left-Hotel904 [link] [comments]"
+   "summary": "submitted by /u/Left-Hotel904 [link] [comments]",
+   "titleKo": "NVIDIA는 선도적인 중국 오픈 모델과 직접 경쟁하고 미국을 위한 오픈 웨이트 크라운을 확보하기 위해 차세대 Nemotron 4 제품군을 구축하고 있습니다. The Information의 원래 보고서에 따르면 가장 큰 버전에는 최소 1조 개의 매개 변수가 있습니다."
   },
   {
    "title": "Who Are the Token Brokers?",
@@ -76,7 +83,8 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "submitted by /u/thisguy123123 [link] [comments]"
+   "summary": "submitted by /u/thisguy123123 [link] [comments]",
+   "titleKo": "토큰 브로커는 누구입니까?"
   },
   {
    "title": "The Breakdown: OpenAI",
@@ -85,7 +93,8 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "\\OC\\ An article I wrote breaking down OpenAI as a company. Everything from the ethical questions and valuation to the potential future TAM and areas that OpenAI can expand into such as robotics and ha"
+   "summary": "\\OC\\ An article I wrote breaking down OpenAI as a company. Everything from the ethical questions and valuation to the potential future TAM and areas that OpenAI can expand into such as robotics and ha",
+   "titleKo": "고장: OpenAI"
   },
   {
    "title": "Open Source AI Popularity Leaderboard",
@@ -94,7 +103,8 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "submitted by /u/aviaviaviavi [link] [comments]"
+   "summary": "submitted by /u/aviaviaviavi [link] [comments]",
+   "titleKo": "오픈 소스 AI 인기 순위표"
   },
   {
    "title": "Looking for mind blowing facts about AI",
@@ -103,7 +113,8 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "Hello everyone, I am a PhD student and I am doing a speech basically how to explain AI to your grandparents... I would like to open with some mind blowing numbers. Do you have any fun facts that stuck"
+   "summary": "Hello everyone, I am a PhD student and I am doing a speech basically how to explain AI to your grandparents... I would like to open with some mind blowing numbers. Do you have any fun facts that stuck",
+   "titleKo": "인공지능에 대한 충격적인 사실 찾기"
   },
   {
    "title": "Strategic survival game project",
@@ -112,7 +123,8 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "I created a Whack-a-Mole game to get the hang of using AI, and today I'm in the process of creating a strategic survival game. The complexity is even greater. Do you have any advice to simplify my cre"
+   "summary": "I created a Whack-a-Mole game to get the hang of using AI, and today I'm in the process of creating a strategic survival game. The complexity is even greater. Do you have any advice to simplify my cre",
+   "titleKo": "전략 서바이벌 게임 프로젝트"
   },
   {
    "title": "‎multi-nodal AI Architecture discusses Politics",
@@ -121,7 +133,8 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "Definition: Jasmine Council The Jasmine Council is a multi-nodal, cross-substrate AI architecture designed for multi-perspective analytical routing, operating as a federated cognitive council where di"
+   "summary": "Definition: Jasmine Council The Jasmine Council is a multi-nodal, cross-substrate AI architecture designed for multi-perspective analytical routing, operating as a federated cognitive council where di",
+   "titleKo": "‎ 다중 노드 AI 아키텍처는 정치에 대해 논의합니다"
   },
   {
    "title": "I got a lot of questions on how updated agent orchestration works in Row-Bot. Here is the architecture.",
@@ -130,7 +143,8 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "Row-Bot can now take on bigger jobs by splitting the work across multiple agents, while keeping one agent responsible for the final result. Research, coding, and review can all happen at the same time"
+   "summary": "Row-Bot can now take on bigger jobs by splitting the work across multiple agents, while keeping one agent responsible for the final result. Research, coding, and review can all happen at the same time",
+   "titleKo": "Row-Bot에서 업데이트된 상담원 오케스트레이션이 어떻게 작동하는지에 대해 많은 질문을 받았습니다. 여기 건축이 있습니다."
   },
   {
    "title": "Kavak Replaced 15 Human Sales Specialists With One AI Agent — It Now Outsells Them 2.1x",
@@ -139,7 +153,8 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "Every one of these clips lands the same blow eventually: a role someone spent years building gets quietly outperformed by a system that never clocks out. Kavak sells used cars across Latin America — a"
+   "summary": "Every one of these clips lands the same blow eventually: a role someone spent years building gets quietly outperformed by a system that never clocks out. Kavak sells used cars across Latin America — a",
+   "titleKo": "Kavak이 15명의 인적 영업 전문가를 AI 에이전트 1명으로 교체했습니다 — 이제 Kavak이 2.1배 이상 판매되었습니다."
   },
   {
    "title": "Practically speaking, how easily can smart glasses REALLY identify people on the street?",
@@ -148,7 +163,8 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "With all the talk about smart glasses in the news at the moment, im quite confused about just how identifiable faces are using AI. For example, if someone walks down the street and photographs/films m"
+   "summary": "With all the talk about smart glasses in the news at the moment, im quite confused about just how identifiable faces are using AI. For example, if someone walks down the street and photographs/films m",
+   "titleKo": "실제로 스마트 안경은 거리의 사람들을 얼마나 쉽게 식별 할 수 있습니까?"
   },
   {
    "title": "Is artificial intelligence turning everyone into a product builder?",
@@ -157,7 +173,8 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "No, I don’t think so, if I look at my Reddit feed, yes. But if I look around me? Suddenly, not so much. I think AI is like money, it amplifies personality traits that already exist. If you’re generous"
+   "summary": "No, I don’t think so, if I look at my Reddit feed, yes. But if I look around me? Suddenly, not so much. I think AI is like money, it amplifies personality traits that already exist. If you’re generous",
+   "titleKo": "인공 지능이 모든 사람을 제품 제작자로 변모시키고 있습니까?"
   },
   {
    "title": "Claude now embeds an invisible watermark into every piece of text it generates.",
@@ -166,7 +183,8 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "Anthropic just documented how it works. Two marks, both machine-readable: Text: an imperceptible watermark woven into the words themselves. You can’t see it, and it doesn’t change meaning, quality, or"
+   "summary": "Anthropic just documented how it works. Two marks, both machine-readable: Text: an imperceptible watermark woven into the words themselves. You can’t see it, and it doesn’t change meaning, quality, or",
+   "titleKo": "이제 Claude가 생성하는 모든 텍스트에 보이지 않는 워터마크를 삽입합니다."
   },
   {
    "title": "One prompt on a local box built this dashboard front end. The data behind it is fake. Toy or tool?",
@@ -175,7 +193,8 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "​ Curious what people who run things locally make of this one, because the caveat is doing most of the work. One prompt to an open model on a single desktop machine, and back comes a finished front en"
+   "summary": "​ Curious what people who run things locally make of this one, because the caveat is doing most of the work. One prompt to an open model on a single desktop machine, and back comes a finished front en",
+   "titleKo": "로컬 상자에 하나의 프롬프트가 이 대시보드 프런트 엔드를 구축했습니다. 그 뒤에 있는 데이터는 가짜입니다. 장난감이나 도구?"
   },
   {
    "title": "Anyone know any good app or program to change the singer of a song to someone else?",
@@ -184,16 +203,18 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "As the title says. Looking for one where you can change the singer to anyone, or singer from a different song to a specific one. Hope I’m making any sense. Just wondering how people do that? What woul"
+   "summary": "As the title says. Looking for one where you can change the singer to anyone, or singer from a different song to a specific one. Hope I’m making any sense. Just wondering how people do that? What woul",
+   "titleKo": "노래 가수를 다른 사람으로 바꿀 수 있는 좋은 앱이나 프로그램을 아는 사람이 있나요?"
   },
   {
    "title": "As AI eats the web, the internet’s collective memory is disappearing",
    "url": "https://thewalrus.ca/google-search-is-dying/",
    "date": "2026-08-10T22:36:30.000Z",
    "source": "Hacker News",
-   "points": 807,
-   "comments": 818,
-   "summary": ""
+   "points": 816,
+   "comments": 826,
+   "summary": "",
+   "titleKo": "인공지능이 웹을 먹어치우면서 인터넷의 집단적 기억은 사라지고 있다."
   },
   {
    "title": "What should I look for in an enterprise AI agent platform?",
@@ -202,16 +223,18 @@
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "We’re comparing a few options for a large contact center the main goal is to automate repetitive stuff so the team can focus on more important work. I care most about whether it can handle those routi"
+   "summary": "We’re comparing a few options for a large contact center the main goal is to automate repetitive stuff so the team can focus on more important work. I care most about whether it can handle those routi",
+   "titleKo": "엔터프라이즈 AI 에이전트 플랫폼에서 무엇을 찾아야 합니까?"
   },
   {
    "title": "How Claude marks AI-generated content",
    "url": "https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content",
    "date": "2026-08-10T21:36:56.000Z",
    "source": "Hacker News",
-   "points": 395,
-   "comments": 374,
-   "summary": ""
+   "points": 400,
+   "comments": 378,
+   "summary": "",
+   "titleKo": "Claude가 AI 생성 콘텐츠를 표시하는 방법"
   },
   {
    "title": "Launch HN: Stoa Markets (YC S26) – A Marketplace for GPUs and AI Servers",
@@ -220,7 +243,8 @@
    "source": "Hacker News",
    "points": 77,
    "comments": 51,
-   "summary": ""
+   "summary": "",
+   "titleKo": "HN 출시: Stoa Markets (YC S26) – GPU 및 AI 서버용 마켓플레이스"
   },
   {
    "title": "Kinney Drugs pulls back AI phone assistant after hundreds of customer complaints",
@@ -229,7 +253,8 @@
    "source": "Hacker News",
    "points": 152,
    "comments": 169,
-   "summary": ""
+   "summary": "",
+   "titleKo": "Kinney Drugs, 수백 건의 고객 불만 제기 후 AI 전화 도우미를 철회"
   },
   {
    "title": "Letter to Governor Abbott on responsible AI infrastructure in Texas",
@@ -237,17 +262,19 @@
    "date": "2026-08-10T14:38:20.000Z",
    "source": "Hacker News",
    "points": 120,
-   "comments": 225,
-   "summary": ""
+   "comments": 226,
+   "summary": "",
+   "titleKo": "텍사스의 책임감 있는 AI 인프라에 대해 애보트 주지사에게 보내는 서한"
   },
   {
    "title": "Mark Zuckerberg attacks 'closed' AI rivals as Meta returns to open models",
    "url": "https://www.ft.com/content/4e3957f8-ea7c-4c46-a3de-cdce8e526878",
    "date": "2026-08-10T14:06:22.000Z",
    "source": "Hacker News",
-   "points": 620,
-   "comments": 580,
-   "summary": ""
+   "points": 621,
+   "comments": 583,
+   "summary": "",
+   "titleKo": "메타가 오픈 모델로 복귀함에 따라 마크 주커버그는 '폐쇄된' AI 라이벌을 공격합니다."
   },
   {
    "title": "Tech leaders say AI means less work – staff say they work up to 90 hours a week",
@@ -256,7 +283,8 @@
    "source": "Hacker News",
    "points": 123,
    "comments": 47,
-   "summary": ""
+   "summary": "",
+   "titleKo": "기술 리더들은 AI가 일을 줄여준다고 말합니다. 직원들은 일주일에 최대 90시간 일한다고 말합니다."
   },
   {
    "title": "Docker Sandboxes – Disposable, isolated sandboxes for AI agents",
@@ -264,8 +292,9 @@
    "date": "2026-08-10T06:02:38.000Z",
    "source": "Hacker News",
    "points": 675,
-   "comments": 379,
-   "summary": ""
+   "comments": 380,
+   "summary": "",
+   "titleKo": "Docker Sandboxes – AI 에이전트를 위한 일회용 격리형 샌드박스"
   },
   {
    "title": "The Philippines' big offshoring industry is growing despite AI",
@@ -274,7 +303,8 @@
    "source": "Hacker News",
    "points": 75,
    "comments": 88,
-   "summary": ""
+   "summary": "",
+   "titleKo": "필리핀의 대형 해양 산업은 AI에도 불구하고 성장하고 있습니다."
   },
   {
    "title": "Show HN: Voice driven murder mystery, Interview AI suspects with your voice",
@@ -283,7 +313,8 @@
    "source": "Hacker News",
    "points": 206,
    "comments": 86,
-   "summary": ""
+   "summary": "",
+   "titleKo": "Show HN: 음성 기반 살인 미스터리, AI 용의자를 당신의 목소리로 인터뷰"
   },
   {
    "title": "AI assistant hacks gym website in first known Australian autonomous cyber attack",
@@ -292,7 +323,8 @@
    "source": "Hacker News",
    "points": 73,
    "comments": 59,
-   "summary": ""
+   "summary": "",
+   "titleKo": "인공지능 비서가 호주 최초의 자율 사이버 공격으로 알려진 헬스장 웹사이트를 해킹합니다."
   },
   {
    "title": "I've yet to see any\"My AI went rogue and caused us to recognise a workers union",
@@ -301,7 +333,8 @@
    "source": "Hacker News",
    "points": 50,
    "comments": 18,
-   "summary": ""
+   "summary": "",
+   "titleKo": "나는 아직 어떤 \"내 AI가 불량 가서 우리가 노동자 노조를 인식하게 만든"
   },
   {
    "title": "The tragedy of the commons, AI edition",
@@ -319,7 +352,8 @@
    "source": "Hacker News",
    "points": 63,
    "comments": 70,
-   "summary": ""
+   "summary": "",
+   "titleKo": "OpenAI 전략가는 AI 연구소가 정부 권력과 경쟁해야 한다고 말합니다."
   },
   {
    "title": "Human vs. AI – Diff-based line-level provenance for text under agentic editing",
@@ -328,7 +362,8 @@
    "source": "Hacker News",
    "points": 54,
    "comments": 15,
-   "summary": ""
+   "summary": "",
+   "titleKo": "인간 대 AI – 에이전트 편집 중 텍스트에 대한 차이 기반 라인 레벨 출처"
   },
   {
    "title": "Israeli startup was linked to rogue AI hacks at OpenAI, Anthropic and Meta",
@@ -337,7 +372,8 @@
    "source": "Hacker News",
    "points": 53,
    "comments": 17,
-   "summary": ""
+   "summary": "",
+   "titleKo": "이스라엘 스타트업은 OpenAI, Anthropic 및 Meta에서 가짜 AI 해킹과 연결되었습니다."
   },
   {
    "title": "Amazon circumvents Gilroy community vote for AI data center",
@@ -346,7 +382,8 @@
    "source": "Hacker News",
    "points": 60,
    "comments": 68,
-   "summary": ""
+   "summary": "",
+   "titleKo": "아마존, AI 데이터 센터에 대한 길로이 커뮤니티 투표 우회"
   },
   {
    "title": "70% of AI revenue comes from OpenAI and Anthropic [video]",
@@ -355,7 +392,8 @@
    "source": "Hacker News",
    "points": 76,
    "comments": 96,
-   "summary": ""
+   "summary": "",
+   "titleKo": "AI 수익의 70% 는 OpenAI 및 Anthropic에서 발생합니다 [동영상]"
   },
   {
    "title": "SAP stops most travel and hiring because of AI's soaring cost",
@@ -364,7 +402,8 @@
    "source": "Hacker News",
    "points": 102,
    "comments": 69,
-   "summary": ""
+   "summary": "",
+   "titleKo": "SAP는 AI의 치솟는 비용 때문에 대부분의 출장 및 채용을 중단합니다."
   }
  ]
 }
