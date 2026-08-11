@@ -454,10 +454,13 @@ function loadFeed(key){
 }
 
 /* ============ 인기 AI 영상 API ============
-   유튜브 전역 검색은 YouTube Data API 키가 필요해 수집을 관리시스템 쪽에서 한다.
-   주소가 정해지기 전까지는 비워 둔다 — 비어 있으면 메뉴와 섹션이 아예 나오지 않는다.
-   (없는 걸 "불러오는 중"으로 띄워 두면 고장난 것처럼 보인다) */
-var AIVIDEO_API = "";
+   유튜브 전역 검색은 YouTube Data API 키가 필요하다. 키를 이 공개 저장소에 둘 수 없으므로
+   수집은 수신부(Apps Script)가 하고 여기서는 결과만 읽는다.
+   응답에 키는 실리지 않는다 — 키는 유튜브 API 주소를 만들 때만 쓰인다.
+
+   수집은 수신부가 하루 한 번만 하고 여기서는 캐시된 결과를 받는다.
+   방문자마다 수집하면 무료 할당량이 하루도 못 간다. */
+var AIVIDEO_API = "https://script.google.com/macros/s/AKfycbww9cob2CYg8PVnQO35WesnTaZRIPVmYg-ClLQbyWN7q-b2skKmXZG1XAjLbQhntnYA/exec";
 
 /* ============ 상태 ============ */
 var state = { data:null, loading:true, error:null };
