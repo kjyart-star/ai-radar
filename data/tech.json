@@ -1,0 +1,455 @@
+{
+ "generated": "2026-08-11T19:24:58.825Z",
+ "source": "arXiv cs.AI · GitHub · Hugging Face",
+ "sources": [
+  "arXiv cs.AI",
+  "GitHub",
+  "Hugging Face"
+ ],
+ "arxiv": [
+  {
+   "title": "Beyond Naturalness: Probing Automated Text-To-Speech Evaluators on Linguistically Grounded Dimensions",
+   "url": "https://arxiv.org/abs/2608.09930v1",
+   "date": "2026-08-10T17:59:51.000Z",
+   "summary": "Automated Text-to-Speech (TTS) evaluation methods (Mean Opinion Score (MOS) predictors and Audio Large Language Models (Audio-LLM) judges) are expected to reflect human perception, yet it is unclear how well they capture"
+  },
+  {
+   "title": "Multimodal Model Diffing for Feature Discovery and Control",
+   "url": "https://arxiv.org/abs/2608.09928v1",
+   "date": "2026-08-10T17:59:30.000Z",
+   "summary": "Multimodal Large Language Models (MLLMs) exhibit strong visual understanding, yet the internal features that cause these behaviors remain difficult to identify, audit, or control. While applicable to post-hoc inspection,"
+  },
+  {
+   "title": "From Values to Benchmarks: Evaluating Large Language Models for Governmental Use in Dutch",
+   "url": "https://arxiv.org/abs/2608.09925v1",
+   "date": "2026-08-10T17:59:05.000Z",
+   "summary": "Large language models are increasingly being deployed in governmental settings, yet few existing evaluation frameworks jointly reflect the values of public administration and the linguistic requirements of non-English co"
+  },
+  {
+   "title": "GENCO - A Unified Neural Solver Embedded in a Development Framework for Steady-State Grid Analysis",
+   "url": "https://arxiv.org/abs/2608.09921v1",
+   "date": "2026-08-10T17:57:49.000Z",
+   "summary": "Foundation models are transforming business workflows and boosting productivity, yet they remain largely absent from engineering domains such as power system analysis, where strict physical consistency must be enforced. "
+  },
+  {
+   "title": "DSLE: A Learning Environment for Dark Souls Boss Encounters",
+   "url": "https://arxiv.org/abs/2608.09902v1",
+   "date": "2026-08-10T17:48:45.000Z",
+   "summary": "We introduce the Dark Souls Learning Environment (DSLE), a containerized platform that presents all 22 boss encounters of Dark Souls: Remastered as game-playing agent benchmarks through a Gymnasium-style interface. DSLE "
+  },
+  {
+   "title": "Fusion Training for Mathematical Generalization in Large Language Models",
+   "url": "https://arxiv.org/abs/2608.09893v1",
+   "date": "2026-08-10T17:41:19.000Z",
+   "summary": "Thinking Mode Fusion (TMF) enables large language models to support both concise responses and long-form reasoning by unifying a non-thinking mode and a thinking mode within a single model. However, its training dynamics"
+  },
+  {
+   "title": "BDH-CQ: In-Context Learning with Recurrent Latent Reasoning",
+   "url": "https://arxiv.org/abs/2608.09888v1",
+   "date": "2026-08-10T17:39:16.000Z",
+   "summary": "We introduce BDH-CQ, a reasoning model that combines in-context learning with recurrent latent reasoning. Inputs presented at inference time continuously update the model's recurrent memory; the model then solves a query"
+  },
+  {
+   "title": "SHE: Trajectory-driven Safety Harness Evolution for LLM Agents",
+   "url": "https://arxiv.org/abs/2608.09885v1",
+   "date": "2026-08-10T17:35:08.000Z",
+   "summary": "The safety of large language model (LLM) agents depends not only on model weights but also on the agent harness that manages context, memory, tools, permissions, and runtime control. Existing safety mechanisms often trea"
+  },
+  {
+   "title": "Energy-Structured Latent World Models with Neural Time Fields for Physically Constistent Open-World Motion Planning",
+   "url": "https://arxiv.org/abs/2608.09876v1",
+   "date": "2026-08-10T17:31:18.000Z",
+   "summary": "Physically consistent motion planning remains a fundamental challenge in embodied AI, as generated trajectories must strictly conform to real-world execution dynamics. While latent world models offer a promising approach"
+  },
+  {
+   "title": "ArchAgent v2: A Case Study with the Data Prefetching Championship",
+   "url": "https://arxiv.org/abs/2608.09874v1",
+   "date": "2026-08-10T17:28:05.000Z",
+   "summary": "Agentic artificial intelligence has shown great promise in automating algorithm design, but scaling similar techniques to computer microarchitecture discovery remains challenging due to vast search spaces, strict hardwar"
+  },
+  {
+   "title": "Sci-VBench: Evaluating Knowledge- and Reasoning-Intensive Video Generation in Science Domains",
+   "url": "https://arxiv.org/abs/2608.09873v1",
+   "date": "2026-08-10T17:27:32.000Z",
+   "summary": "We introduce Sci-VBench, a comprehensive benchmark for evaluating knowledge- and reasoning-intensive video generation across scientific domains. It contains 1,253 expert-annotated examples spanning 60 subjects across fou"
+  },
+  {
+   "title": "Stealing Reasoning Traces from Proprietary LLM APIs",
+   "url": "https://arxiv.org/abs/2608.09867v1",
+   "date": "2026-08-10T17:24:50.000Z",
+   "summary": "Leading large language model providers now conceal their models' step-by-step reasoning, or chain-of-thought, to protect intellectual property and limit information leakage. Rather than storing these traces server-side, "
+  },
+  {
+   "title": "Towards Expert-level Medical AI for Real-time Video Consultations",
+   "url": "https://arxiv.org/abs/2608.09861v1",
+   "date": "2026-08-10T17:19:31.000Z",
+   "summary": "Audio-visual interaction is the standard for patient-physician consultations, enabling natural communication and effective assessment of illness through non-verbal cues. While text-based AI has shown promise, it discards"
+  },
+  {
+   "title": "Agentic Harnesses: LLM-Driven Verification Layers for Robot Autonomy",
+   "url": "https://arxiv.org/abs/2608.09857v1",
+   "date": "2026-08-10T17:15:55.000Z",
+   "summary": "Advances in advanced artificial intelligence tools have sparked research in robot autonomy, but the development of such systems has largely focused on execution rather than verifying the feasibility actions planning mode"
+  },
+  {
+   "title": "Agentic Auto-Research is Fuzz Testing",
+   "url": "https://arxiv.org/abs/2608.09855v1",
+   "date": "2026-08-10T17:13:02.000Z",
+   "summary": "Autonomous research agents can generate experiments faster than researchers can validate them. Researchers have responded by scaling the proposer and ranking more samples with a learned judge or human reviewers. We argue"
+  },
+  {
+   "title": "CEAA: A Cognitive Embodied Agents Architecture for Interactive Computing Systems",
+   "url": "https://arxiv.org/abs/2608.09848v1",
+   "date": "2026-08-10T17:07:41.000Z",
+   "summary": "The development of embodied Intelligent Virtual Agents (IVAs) that have cognitive capabilities in real-time interactive virtual environments remains a challenge, even with today's advancements in technology. Existing arc"
+  },
+  {
+   "title": "Mismatch Matters: On-Policy Distillation Beyond Token Agreement",
+   "url": "https://arxiv.org/abs/2608.09836v1",
+   "date": "2026-08-10T16:53:14.000Z",
+   "summary": "On-policy distillation (OPD) has emerged as a core component of modern LLM post-training pipelines, yet we reveal a failure mode: degenerate agreement, where students exploit repetitive loops to achieve near-perfect toke"
+  },
+  {
+   "title": "Multi-Agent AI Safety as an Institutional Design Problem",
+   "url": "https://arxiv.org/abs/2608.09828v1",
+   "date": "2026-08-10T16:47:01.000Z",
+   "summary": "AI agents increasingly work inside systems that govern how they delegate tasks, move information, execute actions, and use shared resources. Recent work already shows that deployment rules can change collective behavior."
+  },
+  {
+   "title": "Distill Skills into Weights, Not Prompts: Abstract Skills as Privileged Signals for On-Policy Self-Distillation",
+   "url": "https://arxiv.org/abs/2608.09826v1",
+   "date": "2026-08-10T16:43:18.000Z",
+   "summary": "Reinforcement learning with verifiable rewards yields no group-relative signal when rollout groups are uniformly correct or uniformly wrong, which account for 63.0-68.0% of groups in our experiments. We propose SKALD (Sk"
+  },
+  {
+   "title": "MedPixel: A Unified Pixel-Language Model for Medical Reasoning and Segmentation",
+   "url": "https://arxiv.org/abs/2608.09818v1",
+   "date": "2026-08-10T16:37:24.000Z",
+   "summary": "Reliable medical image understanding requires models to connect clinical language and visual reasoning with pixel-level grounding. Yet medical vision-language models often lack precise localization, whereas medical segme"
+  }
+ ],
+ "github": [
+  {
+   "title": "openclaw/openclaw",
+   "url": "https://github.com/openclaw/openclaw",
+   "stars": 385950,
+   "language": "TypeScript",
+   "date": "2026-08-11T19:24:51Z",
+   "summary": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 "
+  },
+  {
+   "title": "obra/superpowers",
+   "url": "https://github.com/obra/superpowers",
+   "stars": 270689,
+   "language": "Shell",
+   "date": "2026-08-08T01:45:49Z",
+   "summary": "An agentic skills framework & software development methodology that works."
+  },
+  {
+   "title": "NousResearch/hermes-agent",
+   "url": "https://github.com/NousResearch/hermes-agent",
+   "stars": 228942,
+   "language": "Python",
+   "date": "2026-08-11T19:01:07Z",
+   "summary": "The agent that grows with you"
+  },
+  {
+   "title": "n8n-io/n8n",
+   "url": "https://github.com/n8n-io/n8n",
+   "stars": 200244,
+   "language": "TypeScript",
+   "date": "2026-08-11T19:06:12Z",
+   "summary": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations."
+  },
+  {
+   "title": "Significant-Gravitas/AutoGPT",
+   "url": "https://github.com/Significant-Gravitas/AutoGPT",
+   "stars": 186527,
+   "language": "Python",
+   "date": "2026-08-11T19:17:29Z",
+   "summary": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters."
+  },
+  {
+   "title": "f/prompts.chat",
+   "url": "https://github.com/f/prompts.chat",
+   "stars": 167005,
+   "language": "HTML",
+   "date": "2026-08-11T03:35:52Z",
+   "summary": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy."
+  },
+  {
+   "title": "firecrawl/firecrawl",
+   "url": "https://github.com/firecrawl/firecrawl",
+   "stars": 165785,
+   "language": "TypeScript",
+   "date": "2026-08-11T18:50:03Z",
+   "summary": "The context API to search, scrape, and interact with the web at scale. 🔥"
+  },
+  {
+   "title": "Snailclimb/JavaGuide",
+   "url": "https://github.com/Snailclimb/JavaGuide",
+   "stars": 157701,
+   "language": "JavaScript",
+   "date": "2026-08-08T06:58:19Z",
+   "summary": "Java 面试 & 后端通用面试指南，覆盖计算机基础、数据库、分布式、高并发、系统设计与 AI 应用开发"
+  },
+  {
+   "title": "langgenius/dify",
+   "url": "https://github.com/langgenius/dify",
+   "stars": 152109,
+   "language": "TypeScript",
+   "date": "2026-08-11T18:34:17Z",
+   "summary": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without reb"
+  },
+  {
+   "title": "open-webui/open-webui",
+   "url": "https://github.com/open-webui/open-webui",
+   "stars": 148498,
+   "language": "Python",
+   "date": "2026-08-11T18:50:53Z",
+   "summary": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)"
+  },
+  {
+   "title": "langchain-ai/langchain",
+   "url": "https://github.com/langchain-ai/langchain",
+   "stars": 143991,
+   "language": "Python",
+   "date": "2026-08-11T19:16:54Z",
+   "summary": "The agent engineering platform."
+  },
+  {
+   "title": "x1xhlol/system-prompts-and-models-of-ai-tools",
+   "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
+   "stars": 142732,
+   "language": "",
+   "date": "2026-08-11T13:01:09Z",
+   "summary": "FULL Augment Code, Claude Code, Cluely, CodeBuddy, Comet, Cursor, Devin AI, Junie, Kiro, Leap.new, Lovable, Manus, NotionAI, Orchids.app, Perplexity, Poke, Qoder, Replit, Same.dev, Trae, Traycer AI, V"
+  },
+  {
+   "title": "Comfy-Org/ComfyUI",
+   "url": "https://github.com/Comfy-Org/ComfyUI",
+   "stars": 126786,
+   "language": "Python",
+   "date": "2026-08-11T19:20:44Z",
+   "summary": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface."
+  },
+  {
+   "title": "github/spec-kit",
+   "url": "https://github.com/github/spec-kit",
+   "stars": 126243,
+   "language": "Python",
+   "date": "2026-08-11T18:14:19Z",
+   "summary": "💫 Toolkit to help you get started with Spec-Driven Development"
+  },
+  {
+   "title": "microsoft/generative-ai-for-beginners",
+   "url": "https://github.com/microsoft/generative-ai-for-beginners",
+   "stars": 117502,
+   "language": "Jupyter Notebook",
+   "date": "2026-08-06T03:44:01Z",
+   "summary": "21 Lessons, Get Started Building with Generative AI "
+  },
+  {
+   "title": "supabase/supabase",
+   "url": "https://github.com/supabase/supabase",
+   "stars": 107839,
+   "language": "TypeScript",
+   "date": "2026-08-11T18:45:27Z",
+   "summary": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications."
+  },
+  {
+   "title": "google-gemini/gemini-cli",
+   "url": "https://github.com/google-gemini/gemini-cli",
+   "stars": 106464,
+   "language": "TypeScript",
+   "date": "2026-08-11T18:29:18Z",
+   "summary": "An open-source AI agent that brings the power of Gemini directly into your terminal."
+  },
+  {
+   "title": "rasbt/LLMs-from-scratch",
+   "url": "https://github.com/rasbt/LLMs-from-scratch",
+   "stars": 102411,
+   "language": "Jupyter Notebook",
+   "date": "2026-08-10T01:11:40Z",
+   "summary": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step"
+  },
+  {
+   "title": "JuliusBrussee/caveman",
+   "url": "https://github.com/JuliusBrussee/caveman",
+   "stars": 97485,
+   "language": "Go",
+   "date": "2026-08-11T16:02:03Z",
+   "summary": "🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman"
+  },
+  {
+   "title": "hacksider/Deep-Live-Cam",
+   "url": "https://github.com/hacksider/Deep-Live-Cam",
+   "stars": 95870,
+   "language": "Python",
+   "date": "2026-08-07T23:15:21Z",
+   "summary": "real time face swap and one-click video deepfake with only a single image"
+  }
+ ],
+ "huggingface": [
+  {
+   "title": "MiniMaxAI/MiniMax-H3",
+   "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3",
+   "downloads": 59368,
+   "likes": 3549,
+   "task": "image-text-to-video",
+   "date": "2026-07-28T10:45:18.000Z"
+  },
+  {
+   "title": "meta-models/Muse-Glimmer-30B",
+   "url": "https://huggingface.co/meta-models/Muse-Glimmer-30B",
+   "downloads": 0,
+   "likes": 1046,
+   "task": "image-text-to-text",
+   "date": "2026-08-09T17:51:35.000Z"
+  },
+  {
+   "title": "deepseek-ai/DeepSeek-V4-Flash-0731",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731",
+   "downloads": 1048685,
+   "likes": 3134,
+   "task": "text-generation",
+   "date": "2026-07-31T07:30:24.000Z"
+  },
+  {
+   "title": "larryvrh/MiniMax-H3-Turbo-Lora",
+   "url": "https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora",
+   "downloads": 0,
+   "likes": 644,
+   "task": "text-to-video",
+   "date": "2026-08-05T21:58:56.000Z"
+  },
+  {
+   "title": "Comfy-Org/MiniMax-H3",
+   "url": "https://huggingface.co/Comfy-Org/MiniMax-H3",
+   "downloads": 6798796,
+   "likes": 1207,
+   "task": "",
+   "date": "2026-07-30T22:36:12.000Z"
+  },
+  {
+   "title": "LiquidAI/LFM2.5-2.6B",
+   "url": "https://huggingface.co/LiquidAI/LFM2.5-2.6B",
+   "downloads": 93668,
+   "likes": 540,
+   "task": "text-generation",
+   "date": "2026-07-28T22:14:32.000Z"
+  },
+  {
+   "title": "moonshotai/Kimi-K3",
+   "url": "https://huggingface.co/moonshotai/Kimi-K3",
+   "downloads": 1565484,
+   "likes": 10517,
+   "task": "image-text-to-text",
+   "date": "2026-06-13T06:42:57.000Z"
+  },
+  {
+   "title": "DavidAU/Qwen3.6-27B-Fable-Fusion-711-Uncensored-Heretic-NM-DAU-NEO-MAX-MTP-GGUF",
+   "url": "https://huggingface.co/DavidAU/Qwen3.6-27B-Fable-Fusion-711-Uncensored-Heretic-NM-DAU-NEO-MAX-MTP-GGUF",
+   "downloads": 2521093,
+   "likes": 1892,
+   "task": "image-text-to-text",
+   "date": "2026-07-17T00:27:17.000Z"
+  },
+  {
+   "title": "deepgrove/maple-preview",
+   "url": "https://huggingface.co/deepgrove/maple-preview",
+   "downloads": 2049,
+   "likes": 330,
+   "task": "text-generation",
+   "date": "2026-08-04T20:50:54.000Z"
+  },
+  {
+   "title": "lightx2v/Minimax-h3-Turbo",
+   "url": "https://huggingface.co/lightx2v/Minimax-h3-Turbo",
+   "downloads": 20376,
+   "likes": 323,
+   "task": "image-to-video",
+   "date": "2026-08-07T12:59:07.000Z"
+  },
+  {
+   "title": "unsloth/Muse-Glimmer-30B-GGUF",
+   "url": "https://huggingface.co/unsloth/Muse-Glimmer-30B-GGUF",
+   "downloads": 0,
+   "likes": 292,
+   "task": "image-text-to-text",
+   "date": "2026-08-10T09:11:29.000Z"
+  },
+  {
+   "title": "Kijai/MiniMax-H3_comfy",
+   "url": "https://huggingface.co/Kijai/MiniMax-H3_comfy",
+   "downloads": 0,
+   "likes": 272,
+   "task": "",
+   "date": "2026-08-07T13:13:09.000Z"
+  },
+  {
+   "title": "ethanfel/Qwen3-VL-32B-Ultra-Heretic-H3-ComfyUI-INT8-ConvRot",
+   "url": "https://huggingface.co/ethanfel/Qwen3-VL-32B-Ultra-Heretic-H3-ComfyUI-INT8-ConvRot",
+   "downloads": 0,
+   "likes": 455,
+   "task": "image-text-to-text",
+   "date": "2026-08-03T09:25:01.000Z"
+  },
+  {
+   "title": "drbaph/MiniMax-H3-Turbo-Lora-ComfyUI",
+   "url": "https://huggingface.co/drbaph/MiniMax-H3-Turbo-Lora-ComfyUI",
+   "downloads": 0,
+   "likes": 271,
+   "task": "text-to-video",
+   "date": "2026-08-06T05:40:36.000Z"
+  },
+  {
+   "title": "SexGod1979/PinkCherry_MiniMax-H3",
+   "url": "https://huggingface.co/SexGod1979/PinkCherry_MiniMax-H3",
+   "downloads": 0,
+   "likes": 262,
+   "task": "text-to-video",
+   "date": "2026-08-05T19:05:53.000Z"
+  },
+  {
+   "title": "inclusionAI/Ling-3.0-flash",
+   "url": "https://huggingface.co/inclusionAI/Ling-3.0-flash",
+   "downloads": 6148,
+   "likes": 302,
+   "task": "text-generation",
+   "date": "2026-08-02T16:14:41.000Z"
+  },
+  {
+   "title": "nvidia/NVIDIA-NemotronLabs-VoiceChat-11B",
+   "url": "https://huggingface.co/nvidia/NVIDIA-NemotronLabs-VoiceChat-11B",
+   "downloads": 653,
+   "likes": 318,
+   "task": "",
+   "date": "2026-07-29T17:46:48.000Z"
+  },
+  {
+   "title": "meta-models/Muse-Glimmer-30B-GGUF",
+   "url": "https://huggingface.co/meta-models/Muse-Glimmer-30B-GGUF",
+   "downloads": 0,
+   "likes": 197,
+   "task": "image-text-to-text",
+   "date": "2026-08-09T17:54:22.000Z"
+  },
+  {
+   "title": "mistralai/Shieldstral-1.0-3B",
+   "url": "https://huggingface.co/mistralai/Shieldstral-1.0-3B",
+   "downloads": 6769,
+   "likes": 228,
+   "task": "",
+   "date": "2026-07-16T10:24:13.000Z"
+  },
+  {
+   "title": "Kijai/MiniMax-H3-experimental",
+   "url": "https://huggingface.co/Kijai/MiniMax-H3-experimental",
+   "downloads": 0,
+   "likes": 189,
+   "task": "",
+   "date": "2026-08-05T07:58:56.000Z"
+  }
+ ]
+}
