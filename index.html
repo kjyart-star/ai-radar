@@ -702,7 +702,7 @@ var HERO = {
   youtube:{ latin:"WATCH", ko:"AI 유튜브",
     copy:"AI 뉴스와 바이브코딩 영상을 유튜브에서 모으고, 아침 브리핑이 그날 고른 영상도 날짜별로 쌓아 둡니다." },
   aivideo:{ latin:"SHOWCASE", ko:"AI 작품소개",
-    copy:"AI로 만든 영상 작품을 모읍니다. 강의나 도구 소개는 빼고, 작품만 국내와 해외로 나눠 봅니다." }
+    copy:"AI로 만든 영상 작품을 모읍니다. 강의나 도구 소개는 넣지 않습니다." }
 };
 function drawHero(route){
   var h = HERO[route] || HERO[DEFAULT_ROUTE];
@@ -1570,9 +1570,13 @@ function renderGov(){
 
 /* ============ AI 작품소개 (유튜브 검색 — AI로 만든 영상 작품) ============
    AI유튜브정보와 같은 엔드포인트를 쓰지만 보는 목록이 다르다. 저쪽은 news·vibe(AI 뉴스·바이브코딩),
-   이쪽은 domestic·overseas(AI로 만든 영상 작품)다. 두 화면 설명에 각각 그렇게 적었다.
+   이쪽은 works(AI로 만든 영상 작품)다. 두 화면 설명에 각각 그렇게 적었다.
    순위표가 아니라 소개 화면이다 — 강의·도구 소개·리뷰는 수집에서 걸러지고, 순서도 조회수
    단독이 아니라 화제성·반응·신선도를 함께 본다. 화면 문구에 "조회수순"이라 적으면 안 된다.
+
+   국내/해외 구분은 없앴다 (대표 지시 2026-08-12). 국내 AI 작품이 아직 드물어 국내 섹션이
+   계속 1편 이하로 비어 보였다. 서버가 works 하나로 합쳐서 준다. 옛 응답(domestic·overseas)만
+   오는 동안에도 화면이 살아야 하므로 works 가 없으면 둘을 이어 붙여 쓴다.
 
    수집은 관리시스템(Apps Script)이 한다 — 유튜브 전역 검색에는 API 키가 필요하고
    키는 이 공개 저장소에 둘 수 없다. 주소가 정해지면 AIVIDEO_API 한 줄만 채우면 된다.
@@ -1592,12 +1596,15 @@ function videoCards(list){
   return "<span class='card-grid'>"+(list||[]).map(function(v){
     var sub = v.subscribers != null ? " · 구독 "+kfmt(v.subscribers) : "";
     var when = v.published ? " · "+String(v.published).slice(0,10) : "";
+    /* 대표가 재생목록에 직접 담은 작품. 배지를 새로 만들지 않고 채널명 앞 텍스트로만 표시한다.
+       pick 이 없는 목록(뉴스·바이브코딩)에는 아무것도 붙지 않는다 */
+    var pick = v.pick ? "직접 고름 · " : "";
     return "<a class='item-card yt' href='"+esc(ctSafeUrl(v.url))+"' target='_blank' rel='noopener noreferrer'>"+
       /* 썸네일 주소도 http(s) 인지 보고 넣는다. 바깥에서 온 값이 그대로 src 로 들어가는 자리다 */
       "<img src='"+esc(ctSafeUrl(v.thumbnail))+"' alt='' loading='lazy'>"+
       "<span class='ic-body'>"+
         "<span class='ic-title'>"+esc(v.title||"(제목 없음)")+"</span>"+
-        "<span class='ic-desc'>"+esc(v.channel||"")+esc(sub)+"</span>"+
+        "<span class='ic-desc'>"+esc(pick)+esc(v.channel||"")+esc(sub)+"</span>"+
         "<span class='ic-url'>조회수 "+esc(nfmt(v.views))+esc(when)+"</span>"+
       "</span></a>";
   }).join("")+"</span>";
@@ -1612,26 +1619,27 @@ function videoSection(cls, eyebrow, h2, list, queries, generated){
 }
 function renderAiVideo(){
   setKicker(["유튜브 검색", "작품만"]);
-  setFacts([["—","국내"],["—","해외"],["—","합계"]]);
+  setFacts([["—","작품"],["—","직접 고름"],["—","수집"]]);
   C.innerHTML = "<section class='section paper'><div class='inner'>"+
     emptyNote("작품을 불러오는 중입니다.")+"</div></section>";
 
   fetchAiVideos().then(function(j){
     if (curRoute()!=="aivideo") return;
-    var dom = j.domestic||[], ovs = j.overseas||[];
-    setKicker(["유튜브 검색", "작품만", (dom.length+ovs.length)+"편"]);
-    setFacts([[String(dom.length),"국내"],[String(ovs.length),"해외"],[String(dom.length+ovs.length),"합계"]]);
+    var works = j.works || (j.domestic||[]).concat(j.overseas||[]);
+    var picks = works.filter(function(v){ return v.pick; }).length;
+    setKicker(["유튜브 검색", "작품만", works.length+"편"]);
+    setFacts([[String(works.length),"작품"],[String(picks),"직접 고름"],
+              [fmtGen(j.generated).slice(0,10)||"—","수집"]]);
     C.innerHTML =
-      videoSection("paper","Domestic","국내에서 만든<br>AI 작품.", dom, (j.queries||{}).domestic, j.generated)+
-      videoSection("dark","Overseas","해외에서 만든<br>AI 작품.", ovs, (j.queries||{}).overseas, j.generated);
+      videoSection("paper","Showcase","AI로 만든<br>영상 작품.", works, (j.queries||{}).works, j.generated);
     observeReveal();
   }).catch(function(){
     if (curRoute()!=="aivideo") return;
     setKicker(["연결 준비 중"]);
-    setFacts([["—","국내"],["—","해외"],["—","합계"]]);
+    setFacts([["—","작품"],["—","직접 고름"],["—","수집"]]);
     C.innerHTML = "<section class='section paper'><div class='inner'>"+
       sectionHead("Showcase","아직 영상 수집이<br>연결되지 않았습니다.",
-        "유튜브 검색 수집이 붙으면 이 자리에 국내·해외 AI 영상 작품이 올라옵니다.","")+
+        "유튜브 검색 수집이 붙으면 이 자리에 AI 영상 작품이 올라옵니다.","")+
       "</div></section>";
   });
 }
