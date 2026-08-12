@@ -420,8 +420,6 @@
     <div class="footer-brand">AI<br>RADAR</div>
     <div class="footer-meta">
       AI 공모전 · 영화제 · 지원사업 · 뉴스<br>
-      출처 <a href="https://junyeo217.github.io/ai-contest-board/" target="_blank" rel="noopener noreferrer">AI 공모전 보드</a> ·
-      <a href="https://www.k-startup.go.kr" target="_blank" rel="noopener noreferrer">K-Startup</a><br>
       <span id="footStamp">데이터 확인 중</span><br>
       <button type="button" id="refreshBtn">↻ 새로 불러오기</button>
     </div>
@@ -871,7 +869,7 @@ function techSection(){
                      tags:["좋아요"], meta:meta, url:it.url });
       }).join(""));
     body = "<p class='section-intro' style='margin:0 0 30px'>"+
-      "논문·오픈소스·모델이 어디로 가는지 보는 자리입니다. 출처 arXiv · GitHub · Hugging Face · 수집 "+
+      "논문·오픈소스·모델이 어디로 가는지 보는 자리입니다. 수집 "+
       esc(fmtGen(j.generated))+"</p>" + body;
     return foldSection("paper-alt","Research","기술 동향", n+"건", body);
   }).catch(function(){ return ""; });
@@ -1169,7 +1167,7 @@ function hfSection(){
     return "<section class='section dark'><div class='inner'>"+
       sectionHead("Higgsfield","상금이 가장 큰<br>AI 영상 공모전.",
         "힉스필드가 여는 공모전입니다. 전부 AI 영상·앱 제작 부문이라 우리 작업과 바로 닿습니다. "+
-        "출처 <a href='https://higgsfield.ai/contests' target='_blank' rel='noopener noreferrer' style='text-decoration:underline'>higgsfield.ai/contests</a> · 수집 "+esc(fmtGen(j.generated)),
+        "수집 "+esc(fmtGen(j.generated)),
         "<b>"+items.length+"</b>건")+
       "<div class='rows'>"+rows+"</div></div></section>";
   }).catch(function(){ return ""; });
@@ -1213,7 +1211,7 @@ function dpSection(){
       sectionHead("Devpost","해외 해커톤과<br>AI 챌린지.",
         "Devpost 에 등록된 AI 관련 공모전 가운데 접수 중인 것을 상금이 큰 순으로 모았습니다. "+
         "전체 "+nfmt(j.total_on_devpost||0)+"건 중 "+items.length+"건입니다. "+
-        "출처 <a href='https://devpost.com/hackathons?search=ai' target='_blank' rel='noopener noreferrer' style='text-decoration:underline'>devpost.com</a> · 수집 "+esc(fmtGen(j.generated)),
+        "수집 "+esc(fmtGen(j.generated)),
         "<b>"+open.length+"</b>건 접수 중")+
       "<div class='rows'>"+
       (open.length ? open.map(function(i){ return dpRow(i, today); }).join("")
