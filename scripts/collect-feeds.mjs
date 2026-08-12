@@ -162,14 +162,15 @@ async function attachTitleKo(items, label) {
 }
 
 /* 이전 결과를 그대로 두는 저장 — 수집이 0건이면 쓰지 않는다 */
-function save(name, payload, count) {
+function save(name, payload, count, opts = {}) {
   if (!existsSync(DATA)) mkdirSync(DATA, { recursive: true });
   const path = join(DATA, name);
   if (!count) {
     log(`  ! ${name}: 수집 0건 — 기존 파일을 유지한다 (덮어쓰지 않음)`);
     return false;
   }
-  const next = JSON.stringify(payload, null, 1) + "\n";
+  /* compact: 사람이 읽을 일이 없고 덩치가 큰 스냅샷은 들여쓰기 없이 쓴다 (pub 은 228KB 다) */
+  const next = JSON.stringify(payload, null, opts.compact ? 0 : 1) + "\n";
   writeFileSync(path, next, "utf8");
   log(`  ✓ ${name}: ${count}건`);
   return true;
@@ -349,10 +350,89 @@ async function collectDevpost() {
   }, items.length);
 }
 
+/* ---------- 5. 관리시스템 응답 스냅샷 (첫 로딩용) ----------
+ *
+ * 왜: index.html 이 화면을 그리기 전에 Apps Script 를 기다린다. 2026-08-12 실측으로
+ *     ?action=pub 은 6.0 ~ 68.5초, ?action=aivideos 는 6.3 ~ 37.7초가 걸렸고
+ *     둘 다 세 번에 한 번꼴로 404(HTML 7,954B)를 냈다. 같은 출처의 data/*.json 은 0.05~0.27초다.
+ *     그래서 응답을 그대로 떠 두고, 화면은 스냅샷으로 먼저 그린 뒤 살아있는 값으로 조용히 갱신한다.
+ *
+ * 규칙:
+ *   - 주소는 index.html 에서 읽는다. 여기에 옮겨 적으면 재배포로 주소가 바뀔 때 어긋난다
+ *     (2026-08-12: 옛 주소를 계속 부르다 다섯 메뉴가 조용히 죽었다)
+ *   - 응답을 가공하지 않고 그대로 저장한다. 화면이 라이브와 같은 코드로 읽어야 한다.
+ *     generated 도 서버 값 그대로 둔다 — 화면의 "수집 시각"이 거짓이 되면 안 된다
+ *   - 기대한 키가 없으면(404 HTML·빈 응답) 기존 파일을 그대로 둔다
+ *   - 404 가 잦으므로 몇 번 다시 부른다. 그래도 안 되면 오늘은 갱신하지 않는다
+ */
+
+const SNAP_TRIES = 4;
+const SNAP_GAP_MS = 5000;
+
+function readEndpoints() {
+  const html = readFileSync(join(ROOT, "index.html"), "utf8");
+  const pick = (name) => {
+    const m = html.match(new RegExp("var\\s+" + name + '\\s*=\\s*"([^"]*)"'));
+    return m ? m[1] : "";
+  };
+  return { pub: pick("API"), aivideos: pick("AIVIDEO_API") };
+}
+
+/* 응답이 valid() 를 통과할 때까지만 다시 부른다. 404 는 HTTP 404 라 get() 이 던진다 */
+async function fetchSnapshot(label, url, valid) {
+  for (let i = 1; i <= SNAP_TRIES; i++) {
+    try {
+      const j = await get(url, { json: true, timeout: 90000 });
+      if (!valid(j)) throw new Error("기대한 키가 없다");
+      log(`  · ${label} ${i}번째 시도에서 받음`);
+      return j;
+    } catch (e) {
+      log(`  ! ${label} ${i}/${SNAP_TRIES} 실패: ${e.message}`);
+      if (i < SNAP_TRIES) await sleep(SNAP_GAP_MS);
+    }
+  }
+  return null;
+}
+
+async function collectSnapshots() {
+  log("[관리시스템 스냅샷]");
+  const ep = readEndpoints();
+  let wrote = false;
+
+  try {
+    if (!ep.pub) throw new Error("index.html 에서 API 주소를 못 읽었다");
+    const sep = ep.pub.indexOf("?") >= 0 ? "&" : "?";
+    const j = await fetchSnapshot("pub", ep.pub + sep + "action=pub", (x) => x && Array.isArray(x.reports));
+    if (j) {
+      const n = j.reports.length + (Array.isArray(j.festivals) ? j.festivals.length : 0);
+      wrote = save("pub.json", j, n, { compact: true }) || wrote;
+      log(`  · pub: 리포트 ${j.reports.length}건 · 영화제 ${(j.festivals || []).length}건 · generated ${j.generated || "미확인"}`);
+    } else {
+      log("  ! pub: 끝내 못 받음 — 기존 data/pub.json 을 유지한다");
+    }
+  } catch (e) { log(`  ! pub 실패: ${e.message}`); }
+
+  try {
+    if (!ep.aivideos) throw new Error("index.html 에서 AIVIDEO_API 주소를 못 읽었다");
+    const sep = ep.aivideos.indexOf("?") >= 0 ? "&" : "?";
+    const j = await fetchSnapshot("aivideos", ep.aivideos + sep + "action=aivideos", (x) => x && x.ok === true && x.generated);
+    if (j) {
+      const len = (k) => (Array.isArray(j[k]) ? j[k].length : 0);
+      const n = len("works") + len("domestic") + len("overseas") + len("news") + len("vibe");
+      wrote = save("aivideos.json", j, n, { compact: true }) || wrote;
+      log(`  · aivideos: works ${len("works")} · 국내 ${len("domestic")} · 해외 ${len("overseas")} · 뉴스 ${len("news")} · 바이브 ${len("vibe")} · generated ${j.generated}`);
+    } else {
+      log("  ! aivideos: 끝내 못 받음 — 기존 data/aivideos.json 을 유지한다");
+    }
+  } catch (e) { log(`  ! aivideos 실패: ${e.message}`); }
+
+  return wrote;
+}
+
 /* ---------- 실행 ---------- */
 
 const results = [];
-for (const [name, fn] of [["news", collectNews], ["community", collectCommunity], ["tech", collectTech], ["devpost", collectDevpost]]) {
+for (const [name, fn] of [["news", collectNews], ["community", collectCommunity], ["tech", collectTech], ["devpost", collectDevpost], ["snapshots", collectSnapshots]]) {
   try {
     results.push([name, await fn()]);
   } catch (e) {

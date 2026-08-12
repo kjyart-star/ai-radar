@@ -470,7 +470,7 @@ function loadFeed(key){
 var AIVIDEO_API = "https://script.google.com/macros/s/AKfycbww9cob2CYg8PVnQO35WesnTaZRIPVmYg-ClLQbyWN7q-b2skKmXZG1XAjLbQhntnYA/exec";
 
 /* ============ 상태 ============ */
-var state = { data:null, loading:true, error:null };
+var state = { data:null, loading:true, error:null, pubLive:false, pubChanged:true };
 var C = document.getElementById("view");
 
 /* ============ 유틸 ============ */
@@ -774,14 +774,46 @@ function bindRetry(root){
   };
 }
 
-/* ============ 데이터 (공개 목록 API — 읽기 전용) ============ */
+/* ============ 데이터 (공개 목록 API — 읽기 전용) ============
+   목록은 두 곳에서 온다. 순서가 곧 첫 로딩 속도다.
+   (1) data/pub.json — 우리 저장소 스냅샷. 같은 출처라 0.05~0.27초에 온다. 이걸로 먼저 그린다
+   (2) ?action=pub — 살아있는 값. 2026-08-12 실측 6.0~68.5초, 세 번에 한 번은 404 였다.
+       늦게 와서 스냅샷과 내용이 다를 때만 조용히 다시 그린다. 같으면 그리지 않는다 —
+       멀쩡한 화면을 다시 세우면 그게 깜빡임이다
+   라이브가 끝내 실패해도 스냅샷이 있으면 화면은 정상이다. 그때 stamp() 가 보여주는 시각은
+   스냅샷 안에 든 서버 생성 시각이다 — 없는 신선도를 지어내지 않는다. */
+var PUB_SNAPSHOT = "data/pub.json";
+
+function validPub(j){ return !!(j && (j.reports || j.festivals)); }
+/* 다시 그릴지 판단하는 최소 지문 — 리포트 수 · 최신 발행일 · 영화제 수.
+   generated 는 넣지 않는다. 매번 달라져 내용이 같아도 다시 그리게 된다 */
+function pubSig(j){
+  var rs = (j && j.reports) || [], last = "";
+  for (var i=0;i<rs.length;i++){ var d = String(rs[i].report_date||""); if (d > last) last = d; }
+  return rs.length + "/" + last + "/" + (((j && j.festivals) || []).length);
+}
+function applyPub(j){
+  state.data = j; state.loading = false; state.error = null;
+  stamp();
+}
+function loadPubSnapshot(){
+  return fetch(PUB_SNAPSHOT, { cache:"no-store" })
+    .then(function(r){ if(!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+    .then(function(j){
+      if (!validPub(j)) throw new Error("스냅샷 형식이 올바르지 않습니다");
+      if (state.pubLive) return null;   /* 라이브가 먼저 왔으면 스냅샷은 버린다 */
+      applyPub(j);
+      return j;
+    });
+}
 function loadData(){
   return fetch(API + "?action=pub&t=" + Date.now(), { cache:"no-store" })
     .then(function(r){ if(!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
     .then(function(j){
-      if (!j || (!j.reports && !j.festivals)) throw new Error("응답 형식이 올바르지 않습니다");
-      state.data = j; state.loading = false; state.error = null;
-      stamp();
+      if (!validPub(j)) throw new Error("응답 형식이 올바르지 않습니다");
+      state.pubChanged = !state.data || pubSig(state.data) !== pubSig(j);
+      state.pubLive = true;
+      applyPub(j);
       return j;
     });
 }
@@ -1585,14 +1617,44 @@ function renderGov(){
    키는 이 공개 저장소에 둘 수 없다. 주소가 정해지면 AIVIDEO_API 한 줄만 채우면 된다.
    비어 있는 동안에는 목록 자리에 "아직 연결되지 않았다"고 적는다. 에러 박스는 띄우지 않는다 —
    고장난 게 아니라 아직 안 붙은 것이다. */
-var aivideoCache = null;
-function fetchAiVideos(){
-  if (!AIVIDEO_API) return Promise.reject(new Error("no-endpoint"));
-  if (aivideoCache) return Promise.resolve(aivideoCache);
+/* 목록과 같은 구조다 — data/aivideos.json 스냅샷으로 먼저 그리고, 라이브가 늦게 와서
+   다르면 조용히 다시 그린다. 라이브(?action=aivideos)는 2026-08-12 실측 6.3~37.7초에
+   404 도 잦았다. 스냅샷은 0.05초대이고, 화면에 찍히는 "수집" 시각은 스냅샷 안의 generated 다. */
+var AIVIDEO_SNAPSHOT = "data/aivideos.json";
+var aivideoCache = null;        /* 화면이 지금 쓰는 값 (스냅샷이거나 라이브) */
+var aivideoLivePromise = null;  /* 라이브는 한 번만 부른다 */
+
+function validAiVideos(j){ return !!(j && j.ok); }
+
+function fetchAiVideosLive(){
+  if (aivideoLivePromise) return aivideoLivePromise;
+  if (!AIVIDEO_API){ aivideoLivePromise = Promise.reject(new Error("no-endpoint")); return aivideoLivePromise; }
   var u = AIVIDEO_API + (AIVIDEO_API.indexOf("?")>=0 ? "&" : "?") + "action=aivideos&t=" + Date.now();
-  return fetch(u, { cache:"no-store" })
+  aivideoLivePromise = fetch(u, { cache:"no-store" })
     .then(function(r){ if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); })
-    .then(function(j){ if(!j || !j.ok) throw new Error("bad-response"); aivideoCache = j; return j; });
+    .then(function(j){ if(!validAiVideos(j)) throw new Error("bad-response"); return j; });
+  aivideoLivePromise.then(function(j){
+    var had = aivideoCache;
+    aivideoCache = j;
+    if (!had) return;                                                   /* 첫 표시는 부른 쪽이 그린다 */
+    if (String(had.generated||"") === String(j.generated||"")) return;   /* 같으면 다시 그리지 않는다 */
+    if (curRoute()==="aivideo") renderAiVideo();                         /* 보고 있는 화면만 */
+    else if (curRoute()==="youtube") renderYoutube();
+  }, function(){});
+  return aivideoLivePromise;
+}
+function fetchAiVideos(){
+  if (aivideoCache) return Promise.resolve(aivideoCache);
+  var live = fetchAiVideosLive();
+  live.catch(function(){});   /* 스냅샷으로 끝난 경우의 미처리 거부를 막는다 */
+  return fetch(AIVIDEO_SNAPSHOT, { cache:"no-store" })
+    .then(function(r){ if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); })
+    .then(function(j){
+      if (!validAiVideos(j)) throw new Error("bad-snapshot");
+      if (!aivideoCache) aivideoCache = j;   /* 라이브가 먼저 왔으면 그쪽을 쓴다 */
+      return aivideoCache;
+    })
+    .catch(function(){ return live; });      /* 스냅샷이 없으면 지금처럼 라이브를 기다린다 */
 }
 /* 브리핑 본문이 쓰는 카드(.card-grid/.item-card)를 그대로 쓴다. 영상 카드는 이미 이 시스템에 있다 */
 function videoCards(list){
@@ -1720,7 +1782,15 @@ window.addEventListener("hashchange", function(){
   if (!location.hash) location.replace("#" + DEFAULT_ROUTE);
   render();
   onScroll();
-  loadData().catch(function(e){ state.loading=false; state.error=e.message||String(e); }).then(render);
+  /* 스냅샷 먼저 그리고(0.3초), 라이브는 뒤에서 받아 다를 때만 다시 그린다(6~68초) */
+  var drawn = false;
+  loadPubSnapshot().then(function(j){ if (!j) return; drawn = true; render(); }, function(){});
+  loadData().then(function(){
+    if (!drawn || state.pubChanged) render();
+  }, function(e){
+    if (state.data) return;   /* 스냅샷으로 이미 그려져 있다 — 멀쩡한 화면을 에러로 덮지 않는다 */
+    state.loading = false; state.error = e.message||String(e); render();
+  });
   /* 탭이 보일 때만 10분마다 목록 갱신 */
   setInterval(function(){
     if (document.hidden) return;
