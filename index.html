@@ -701,7 +701,7 @@ var HERO = {
   /* 두 영상 화면이 어떻게 다른지 각자의 첫 문장에서 바로 말한다.
      "왜 메뉴가 두 개지"가 나오면 둘 중 하나는 안 쓰이게 된다. */
   youtube:{ latin:"WATCH", ko:"AI 유튜브",
-    copy:"아침 브리핑이 그날 골라낸 AI 영상을 날짜별로 쌓아 둡니다. 조회수와 무관하게, 그날 다뤄진 것들입니다." },
+    copy:"AI 뉴스와 바이브코딩 영상을 유튜브에서 모읍니다. 인기영상이 작품이라면, 이쪽은 소식과 개발입니다." },
   aivideo:{ latin:"POPULAR", ko:"AI 인기영상",
     copy:"유튜브에서 AI 영상을 찾아 조회수가 높은 순으로 세웁니다. 국내와 해외를 나눠서 봅니다." }
 };
@@ -913,7 +913,7 @@ function renderReports(){
     "<section class='section paper' id='brief'><div class='inner'>"+
       "<div class='section-head'><div><p class='eyebrow'>Today</p>"+
       "<h2>오늘 아침의<br>AI 브리핑.</h2></div>"+
-      "<p class='section-intro'>기사 요약 아래에 원문 링크를 그대로 답니다. 카드를 누르면 해당 매체로 바로 갑니다. 유튜브 영상은 <a href='#youtube' style='text-decoration:underline'>AI 유튜브</a>에서 따로 봅니다.</p></div>"+
+      "<p class='section-intro'>기사 요약 아래에 원문 링크를 그대로 답니다. 카드를 누르면 해당 매체로 바로 갑니다.</p></div>"+
       "<div data-brief></div>"+
     "</div></section>"+
     /* 바깥 소스 세 섹션은 브리핑 바로 아래에 온다. 보관함(지난 브리핑)은 다시 찾아볼 때
@@ -961,16 +961,9 @@ function renderReports(){
   drawBrief(); drawArch();
 }
 
-/* ============ AI 유튜브 (브리핑의 [유튜브 최신 영상] 섹션만 날짜별 모음) ============ */
+/* ============ 브리핑 본문의 [유튜브 최신 영상] 섹션 제거 ============
+   브리핑 본문에서 이 섹션은 빼고 보여준다. 영상은 AI 유튜브·AI 인기영상이 따로 수집한다. */
 var YT_MARK = "[유튜브 최신 영상]";
-function ytSectionOf(content){
-  var c = String(content||"");
-  var i = c.indexOf(YT_MARK);
-  if (i < 0) return "";
-  var rest = c.slice(i + YT_MARK.length);
-  var nx = rest.search(/\n\[[^\[\]\n]+\]/);   /* 다음 섹션 헤더 직전까지 */
-  return (nx > -1 ? rest.slice(0, nx) : rest).trim();
-}
 function stripYtSection(content){
   var c = String(content||"");
   var i = c.indexOf(YT_MARK);
@@ -979,46 +972,35 @@ function stripYtSection(content){
   var nx = rest.search(/\n\[[^\[\]\n]+\]/);
   return (c.slice(0, i) + (nx > -1 ? rest.slice(nx) : "")).replace(/\n{3,}/g, "\n\n").trim();
 }
+/* ============ AI 유튜브 (AI 뉴스·바이브코딩 — 유튜브 수집) ============
+   AI 인기영상과 같은 엔드포인트(action=aivideos)를 쓰고 aivideoCache 를 공유한다 —
+   두 화면을 오가도 요청은 한 번이다. 저쪽은 조회수 높은 AI 영상, 이쪽은 뉴스와 바이브코딩이다. */
 function renderYoutube(){
-  var briefs = sortedReports()
-    .filter(function(r){ return !!ytSectionOf(r.content); })
-    .slice(0, 30);
-  if (!briefs.length){
-    setKicker(["대기 중"]);
-    setFacts([["0","모인 영상"],["0","수집한 날"],["매일 아침","수집 주기"]]);
+  setKicker(["유튜브 검색", "뉴스·바이브코딩"]);
+  setFacts([["—","AI 뉴스"],["—","바이브코딩"],["—","최고 조회수"]]);
+  C.innerHTML = "<section class='section paper'><div class='inner'>"+
+    emptyNote("영상을 불러오는 중입니다.")+"</div></section>";
+
+  fetchAiVideos().then(function(j){
+    if (curRoute()!=="youtube") return;
+    var news = j.news||[], vibe = j.vibe||[];
+    var top = 0;
+    news.concat(vibe).forEach(function(v){ if (Number(v.views) > top) top = Number(v.views); });
+    setKicker(["유튜브 검색", "뉴스·바이브코딩", (news.length+vibe.length)+"편"]);
+    setFacts([[String(news.length),"AI 뉴스"],[String(vibe.length),"바이브코딩"],[kfmt(top)||"—","최고 조회수"]]);
+    C.innerHTML =
+      videoSection("paper","News","AI 소식을<br>영상으로.", news, (j.queries||{}).news, j.generated)+
+      videoSection("dark","Vibe Coding","바이브코딩<br>지금 뭐가 되나.", vibe, (j.queries||{}).vibe, j.generated);
+    observeReveal();
+  }).catch(function(){
+    if (curRoute()!=="youtube") return;
+    setKicker(["연결 준비 중"]);
+    setFacts([["—","AI 뉴스"],["—","바이브코딩"],["—","최고 조회수"]]);
     C.innerHTML = "<section class='section paper'><div class='inner'>"+
-      sectionHead("Watch","아직 모인 영상이<br>없습니다.",
-        "아침 브리핑이 올라올 때 영상도 함께 쌓입니다.","")+
+      sectionHead("Watch","아직 영상 수집이<br>연결되지 않았습니다.",
+        "유튜브 검색 수집이 붙으면 이 자리에 AI 뉴스와 바이브코딩 영상이 올라옵니다.","")+
       "</div></section>";
-    return;
-  }
-  var counts = briefs.map(function(r){ return (ytSectionOf(r.content).match(/^•/gm)||[]).length; });
-  var total = counts.reduce(function(a,b){ return a+b; }, 0);
-  setKicker(["브리핑에서 수집", briefs.length + "일치", total + "편"]);
-  setFacts([
-    [String(total), "모인 영상"],
-    [String(briefs.length), "수집한 날"],
-    [String(briefs[0].report_date||"").slice(5,10).replace("-","/"), "가장 최근 수집"]
-  ]);
-
-  var top = briefs[0];
-  var html = "<section class='section paper'><div class='inner'>"+
-    sectionHead("Latest","가장 최근에<br>걸린 영상.",
-      "브리핑이 그날 고른 영상입니다. 썸네일을 누르면 유튜브로 갑니다.",
-      "<b>"+counts[0]+"</b>편 · "+esc(String(top.report_date||"").slice(0,10)))+
-    "<div class='brief-body'>"+richReport(ytSectionOf(top.content))+"</div>"+
-    "</div></section>";
-
-  if (briefs.length > 1){
-    var body = briefs.slice(1).map(function(r,i){
-      return "<div style='margin-bottom:34px'>"+
-        "<p class='count' style='margin:0 0 12px'><b>"+esc(String(r.report_date||"").slice(0,10))+"</b> · "+counts[i+1]+"편</p>"+
-        "<div class='brief-body'>"+richReport(ytSectionOf(r.content))+"</div></div>";
-    }).join("");
-    html += foldSection("dark","Archive","지난 날짜", (briefs.length-1)+"일치", body);
-  }
-  C.innerHTML = html;
-  bindFold(C);
+  });
 }
 
 /* ============ AI 영화제 ============ */
@@ -1536,8 +1518,8 @@ function renderGov(){
 }
 
 /* ============ AI 인기영상 (유튜브 검색 — 조회수순) ============
-   AI유튜브정보와 다른 자료다. 저쪽은 아침 브리핑이 그날 고른 영상이고,
-   이쪽은 유튜브에서 검색해 조회수로 세운 것이다. 두 화면 설명에 각각 그렇게 적었다.
+   AI유튜브정보와 같은 엔드포인트를 쓰지만 보는 목록이 다르다. 저쪽은 news·vibe(AI 뉴스·바이브코딩),
+   이쪽은 domestic·overseas(조회수 높은 AI 영상)다. 두 화면 설명에 각각 그렇게 적었다.
 
    수집은 관리시스템(Apps Script)이 한다 — 유튜브 전역 검색에는 API 키가 필요하고
    키는 이 공개 저장소에 둘 수 없다. 주소가 정해지면 AIVIDEO_API 한 줄만 채우면 된다.
@@ -1598,8 +1580,7 @@ function renderAiVideo(){
     setFacts([["—","국내"],["—","해외"],["—","최고 조회수"]]);
     C.innerHTML = "<section class='section paper'><div class='inner'>"+
       sectionHead("Popular","아직 영상 수집이<br>연결되지 않았습니다.",
-        "유튜브 검색 수집이 붙으면 이 자리에 국내·해외 인기 AI 영상이 조회수순으로 올라옵니다. "+
-        "그동안은 <a href='#youtube' style='text-decoration:underline'>AI 유튜브정보</a>에서 아침 브리핑이 고른 영상을 보실 수 있습니다.","")+
+        "유튜브 검색 수집이 붙으면 이 자리에 국내·해외 인기 AI 영상이 조회수순으로 올라옵니다.","")+
       "</div></section>";
   });
 }
@@ -1610,7 +1591,7 @@ var ROUTES = {
   newsrep:renderReports, youtube:renderYoutube, aivideo:renderAiVideo
 };
 /* 공개 목록 API(action=pub) 데이터가 반드시 필요한 화면 */
-var NEEDS_PUB = { newsrep:1, youtube:1 };
+var NEEDS_PUB = { newsrep:1 };
 
 function render(){
   var route = curRoute();
