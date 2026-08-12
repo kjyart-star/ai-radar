@@ -699,7 +699,7 @@ var HERO = {
   /* 두 영상 화면이 어떻게 다른지 각자의 첫 문장에서 바로 말한다.
      "왜 메뉴가 두 개지"가 나오면 둘 중 하나는 안 쓰이게 된다. */
   youtube:{ latin:"WATCH", ko:"AI 유튜브",
-    copy:"AI 뉴스와 바이브코딩 영상을 유튜브에서 모읍니다. 인기영상이 작품이라면, 이쪽은 소식과 개발입니다." },
+    copy:"AI 뉴스와 바이브코딩 영상을 유튜브에서 모으고, 아침 브리핑이 그날 고른 영상도 날짜별로 쌓아 둡니다." },
   aivideo:{ latin:"POPULAR", ko:"AI 인기영상",
     copy:"유튜브에서 AI 영상을 찾아 조회수가 높은 순으로 세웁니다. 국내와 해외를 나눠서 봅니다." }
 };
@@ -959,9 +959,17 @@ function renderReports(){
   drawBrief(); drawArch();
 }
 
-/* ============ 브리핑 본문의 [유튜브 최신 영상] 섹션 제거 ============
-   브리핑 본문에서 이 섹션은 빼고 보여준다. 영상은 AI 유튜브·AI 인기영상이 따로 수집한다. */
+/* ============ 브리핑 본문의 [유튜브 최신 영상] 섹션 ============
+   뉴스리포트 본문에서는 빼고(stripYtSection), AI 유튜브 화면에서 날짜별로 모아 보여준다(ytSectionOf). */
 var YT_MARK = "[유튜브 최신 영상]";
+function ytSectionOf(content){
+  var c = String(content||"");
+  var i = c.indexOf(YT_MARK);
+  if (i < 0) return "";
+  var rest = c.slice(i + YT_MARK.length);
+  var nx = rest.search(/\n\[[^\[\]\n]+\]/);   /* 다음 섹션 헤더 직전까지 */
+  return (nx > -1 ? rest.slice(0, nx) : rest).trim();
+}
 function stripYtSection(content){
   var c = String(content||"");
   var i = c.indexOf(YT_MARK);
@@ -970,34 +978,78 @@ function stripYtSection(content){
   var nx = rest.search(/\n\[[^\[\]\n]+\]/);
   return (c.slice(0, i) + (nx > -1 ? rest.slice(nx) : "")).replace(/\n{3,}/g, "\n\n").trim();
 }
-/* ============ AI 유튜브 (AI 뉴스·바이브코딩 — 유튜브 수집) ============
-   AI 인기영상과 같은 엔드포인트(action=aivideos)를 쓰고 aivideoCache 를 공유한다 —
-   두 화면을 오가도 요청은 한 번이다. 저쪽은 조회수 높은 AI 영상, 이쪽은 뉴스와 바이브코딩이다. */
+/* ============ AI 유튜브 (수집 2섹션 + 브리핑 아카이브 1섹션) ============
+   자료가 두 갈래다.
+   (1) 유튜브 수집 — AI 인기영상과 같은 엔드포인트(action=aivideos)를 쓰고 aivideoCache 를
+       공유한다. 저쪽은 조회수 높은 AI 영상, 이쪽은 뉴스와 바이브코딩이다.
+   (2) 아침 브리핑이 그날 고른 영상 — 브리핑 본문의 [유튜브 최신 영상] 섹션을 날짜별로 쌓아 둔다.
+   한쪽이 없어도 다른 쪽은 그린다. 둘 다 없을 때만 안내 문구를 낸다. */
 function renderYoutube(){
   setKicker(["유튜브 검색", "뉴스·바이브코딩"]);
-  setFacts([["—","AI 뉴스"],["—","바이브코딩"],["—","최고 조회수"]]);
+  setFacts([["—","AI 뉴스"],["—","바이브코딩"],["—","브리핑 수집"]]);
   C.innerHTML = "<section class='section paper'><div class='inner'>"+
     emptyNote("영상을 불러오는 중입니다.")+"</div></section>";
 
-  fetchAiVideos().then(function(j){
+  /* 수집이 실패해도 아카이브는 그려야 하므로 실패를 null 로 받아 넘긴다 */
+  fetchAiVideos().catch(function(){ return null; }).then(function(j){
     if (curRoute()!=="youtube") return;
-    var news = j.news||[], vibe = j.vibe||[];
-    var top = 0;
-    news.concat(vibe).forEach(function(v){ if (Number(v.views) > top) top = Number(v.views); });
-    setKicker(["유튜브 검색", "뉴스·바이브코딩", (news.length+vibe.length)+"편"]);
-    setFacts([[String(news.length),"AI 뉴스"],[String(vibe.length),"바이브코딩"],[kfmt(top)||"—","최고 조회수"]]);
-    C.innerHTML =
-      videoSection("paper","News","AI 소식을<br>영상으로.", news, (j.queries||{}).news, j.generated)+
-      videoSection("dark","Vibe Coding","바이브코딩<br>지금 뭐가 되나.", vibe, (j.queries||{}).vibe, j.generated);
+    var news = (j && j.news) || [], vibe = (j && j.vibe) || [];
+    var briefs = sortedReports()
+      .filter(function(r){ return !!ytSectionOf(r.content); })
+      .slice(0, 30);
+    var counts = briefs.map(function(r){ return (ytSectionOf(r.content).match(/^•/gm)||[]).length; });
+    var total = counts.reduce(function(a,b){ return a+b; }, 0);
+
+    if (!news.length && !vibe.length && !briefs.length){
+      setKicker(["대기 중"]);
+      setFacts([["—","AI 뉴스"],["—","바이브코딩"],["0","브리핑 수집"]]);
+      C.innerHTML = "<section class='section paper'><div class='inner'>"+
+        sectionHead("Watch","아직 모인 영상이<br>없습니다.",
+          "유튜브 수집이 붙거나 아침 브리핑이 올라오면 이 자리에 영상이 쌓입니다.","")+
+        "</div></section>";
+      return;
+    }
+
+    var kick = [];
+    if (j) kick.push("유튜브 검색", "뉴스·바이브코딩");
+    if (briefs.length) kick.push("브리핑 " + briefs.length + "일치");
+    kick.push((news.length + vibe.length + total) + "편");
+    setKicker(kick);
+    setFacts([
+      [j ? String(news.length) : "—", "AI 뉴스"],
+      [j ? String(vibe.length) : "—", "바이브코딩"],
+      [String(total), "브리핑 수집"]
+    ]);
+
+    /* 배경은 섹션이 나올 때마다 paper·dark 를 번갈아 쓴다 — 이 사이트의 기존 규칙 */
+    var alt = 0;
+    function bg(){ return (alt++ % 2) ? "dark" : "paper"; }
+
+    var html = "";
+    if (j){
+      html += videoSection(bg(),"News","AI 소식을<br>영상으로.", news, (j.queries||{}).news, j.generated)+
+              videoSection(bg(),"Vibe Coding","바이브코딩<br>지금 뭐가 되나.", vibe, (j.queries||{}).vibe, j.generated);
+    }
+    if (briefs.length){
+      var top = briefs[0];
+      html += "<section class='section "+bg()+"'><div class='inner'>"+
+        sectionHead("Briefing","아침 브리핑이<br>고른 영상.",
+          "브리핑이 그날 고른 영상입니다. 썸네일을 누르면 유튜브로 갑니다.",
+          "<b>"+counts[0]+"</b>편 · "+esc(String(top.report_date||"").slice(0,10)))+
+        "<div class='brief-body'>"+richReport(ytSectionOf(top.content))+"</div>"+
+        "</div></section>";
+      if (briefs.length > 1){
+        var body = briefs.slice(1).map(function(r,i){
+          return "<div style='margin-bottom:34px'>"+
+            "<p class='count' style='margin:0 0 12px'><b>"+esc(String(r.report_date||"").slice(0,10))+"</b> · "+counts[i+1]+"편</p>"+
+            "<div class='brief-body'>"+richReport(ytSectionOf(r.content))+"</div></div>";
+        }).join("");
+        html += foldSection(bg(),"Archive","지난 날짜", (briefs.length-1)+"일치", body);
+      }
+    }
+    C.innerHTML = html;
+    bindFold(C);
     observeReveal();
-  }).catch(function(){
-    if (curRoute()!=="youtube") return;
-    setKicker(["연결 준비 중"]);
-    setFacts([["—","AI 뉴스"],["—","바이브코딩"],["—","최고 조회수"]]);
-    C.innerHTML = "<section class='section paper'><div class='inner'>"+
-      sectionHead("Watch","아직 영상 수집이<br>연결되지 않았습니다.",
-        "유튜브 검색 수집이 붙으면 이 자리에 AI 뉴스와 바이브코딩 영상이 올라옵니다.","")+
-      "</div></section>";
   });
 }
 
@@ -1233,7 +1285,7 @@ function renderContests(){
     "<section class='section paper'><div class='inner'>"+
       "<div class='section-head'><div><p class='eyebrow'>Open calls</p>"+
       "<h2>마감이 가까운<br>순서로.</h2></div>"+
-      "<div><p class='section-intro'>출처는 <a href='"+esc(CONTEST_BOARD)+"' target='_blank' rel='noopener noreferrer' style='text-decoration:underline'>AI 공모전 보드</a>이고 하루에 여러 번 갱신됩니다. 카드를 누르면 원문 공고로 갑니다.</p>"+
+      "<div><p class='section-intro'>이 목록은 <a href='"+esc(CONTEST_BOARD)+"' target='_blank' rel='noopener noreferrer' style='text-decoration:underline'>AI 공모전 보드</a>에서 가져오며 하루에 여러 번 갱신됩니다. 카드를 누르면 원문 공고로 갑니다.</p>"+
       /* .count 는 기본이 nowrap 이다. 전체 탭에서는 국내·해외 갱신 시각을 둘 다 적어서
          375px 를 넘겼다 — 이 한 줄만 접히게 풀어 준다 (전역 규칙은 그대로 둔다). */
       "<p class='count' style='margin:14px 0 0;white-space:normal' data-gen>불러오는 중</p></div></div>"+
@@ -1588,8 +1640,11 @@ var ROUTES = {
   contests:renderContests, festivals:renderFestivals, gov:renderGov,
   newsrep:renderReports, youtube:renderYoutube, aivideo:renderAiVideo
 };
-/* 공개 목록 API(action=pub) 데이터가 반드시 필요한 화면 */
-var NEEDS_PUB = { newsrep:1 };
+/* 공개 목록 API(action=pub) 데이터가 필요한 화면 */
+var NEEDS_PUB = { newsrep:1, youtube:1 };
+/* 그중 youtube 는 브리핑이 없어도 유튜브 수집분만으로 그려진다 —
+   로딩은 기다리되 실패했다고 화면 전체를 에러로 덮지 않는다. */
+var PUB_OPTIONAL = { youtube:1 };
 
 function render(){
   var route = curRoute();
@@ -1606,7 +1661,7 @@ function render(){
         emptyNote("데이터를 불러오는 중입니다.")+"</div></section>";
       return;
     }
-    if (state.error){
+    if (state.error && !PUB_OPTIONAL[route]){
       setKicker(["연결 실패"]);
       setFacts([["—",""],["—",""],["—",""]]);
       C.innerHTML = "<section class='section paper'><div class='inner'>"+failBox(state.error)+"</div></section>";
