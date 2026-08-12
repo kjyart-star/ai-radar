@@ -379,10 +379,10 @@ function readEndpoints() {
 }
 
 /* 응답이 valid() 를 통과할 때까지만 다시 부른다. 404 는 HTTP 404 라 get() 이 던진다 */
-async function fetchSnapshot(label, url, valid) {
+async function fetchSnapshot(label, url, valid, timeout = 90000) {
   for (let i = 1; i <= SNAP_TRIES; i++) {
     try {
-      const j = await get(url, { json: true, timeout: 90000 });
+      const j = await get(url, { json: true, timeout });
       if (!valid(j)) throw new Error("기대한 키가 없다");
       log(`  · ${label} ${i}번째 시도에서 받음`);
       return j;
@@ -411,6 +411,23 @@ async function collectSnapshots() {
       log("  ! pub: 끝내 못 받음 — 기존 data/pub.json 을 유지한다");
     }
   } catch (e) { log(`  ! pub 실패: ${e.message}`); }
+
+  /* pubgov 는 K-Startup 공고 전체를 훑어 오느라 pub 보다도 느리다 —
+     대표 curl 실측에서 2분 타임아웃까지 응답이 없던 적도 있다(2026-08-12). 그 단계만 120초를 준다.
+     파일명이 gov.json 이 아니라 gov-pub.json 인 이유: 화면이 부르는 건 action=pubgov 응답이고,
+     gov.json 은 쓰는 데가 없다(grep 확인). 나중에 다른 수집이 gov.json 을 쓰더라도 겹치지 않는다. */
+  try {
+    if (!ep.pub) throw new Error("index.html 에서 API 주소를 못 읽었다");
+    const sep = ep.pub.indexOf("?") >= 0 ? "&" : "?";
+    const j = await fetchSnapshot("pubgov", ep.pub + sep + "action=pubgov",
+      (x) => x && x.ok === true && Array.isArray(x.items) && x.items.length > 0, 120000);
+    if (j) {
+      wrote = save("gov-pub.json", j, j.items.length, { compact: true }) || wrote;
+      log(`  · pubgov: 공고 ${j.items.length}건 · total ${j.total ?? "미확인"} · generated ${j.generated || "미확인"}`);
+    } else {
+      log("  ! pubgov: 끝내 못 받음 — 기존 data/gov-pub.json 을 유지한다");
+    }
+  } catch (e) { log(`  ! pubgov 실패: ${e.message}`); }
 
   try {
     if (!ep.aivideos) throw new Error("index.html 에서 AIVIDEO_API 주소를 못 읽었다");

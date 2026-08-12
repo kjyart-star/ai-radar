@@ -1466,13 +1466,45 @@ function renderContests(){
 var GOV_TTL = 10*60*1000, govCache = null;
 var govAiOnly = true, govCls = "전체", govSearch = "";
 var GOV_AI_RE = /AI|인공지능|생성형|딥테크|디지털|데이터/i;
-function fetchGov(force){
-  if (!force && govCache && (Date.now()-govCache.t) < GOV_TTL) return Promise.resolve(govCache.data);
+/* pub·aivideos 와 같은 구조다 — data/gov-pub.json 스냅샷으로 먼저 그리고, 라이브가 늦게 와서
+   다르면 화면을 다시 세우지 않고 제자리에서 갱신한다. ?action=pubgov 는 K-Startup 공고를
+   전부 훑어 오느라 pub 보다도 느려서 2분 타임아웃까지 응답이 없던 적도 있다(2026-08-12 실측). */
+var GOV_SNAPSHOT = "data/gov-pub.json";
+var govOnLive = null;   /* 지금 그려져 있는 지원사업 화면을 제자리에서 갱신하는 함수 (renderGov 가 채운다) */
+
+function validGov(j){ return !!(j && j.ok && (j.items||[]).length); }
+/* 다시 그릴지 판단하는 최소 지문 — 공고 수 + 첫 공고명 */
+function govSig(j){ var it = (j && j.items) || []; return it.length + "/" + String((it[0]||{}).nm || ""); }
+
+function govLiveFetch(force){
   var u = API + "?action=pubgov" + (force?"&reload=1":"") + "&t=" + Date.now();
   return fetch(u, { cache:"no-store" }).then(function(r){
     if (!r.ok) throw new Error("HTTP "+r.status);
     return r.json();
-  }).then(function(j){ govCache = { t:Date.now(), data:j }; return j; });
+  }).then(function(j){ govCache = { t:Date.now(), data:j, live:true }; return j; });
+}
+function fetchGov(force){
+  if (force) return govLiveFetch(true);   /* 수동 새로고침은 라이브 직행 — 그게 이 버튼의 용도다 */
+  if (govCache && (Date.now()-govCache.t) < GOV_TTL) return Promise.resolve(govCache.data);
+  var live = govLiveFetch(false);
+  live.catch(function(){});   /* 스냅샷으로 끝난 경우의 미처리 거부를 막는다 */
+  return fetch(GOV_SNAPSHOT, { cache:"no-store" }).then(function(r){
+    if (!r.ok) throw new Error("HTTP "+r.status);
+    return r.json();
+  }).then(function(j){
+    if (!validGov(j)) throw new Error("bad-snapshot");
+    if (govCache && govCache.live) return govCache.data;   /* 라이브가 먼저 왔으면 그쪽을 쓴다 */
+    govCache = { t:Date.now(), data:j, live:false };
+    live.then(function(k){
+      if (curRoute()!=="gov" || !govOnLive) return;
+      /* 200 인데 내용이 망가진 응답({ok:false}·빈 목록)으로 멀쩡한 스냅샷 화면을 덮지 않는다.
+         이 엔드포인트는 실제로 404 HTML 을 내는 일이 있다 — 그때 에러 박스가 뜨면 손해다 */
+      if (!validGov(k)) return;
+      if (govSig(k) === govSig(j)) return;   /* 같으면 다시 그리지 않는다 */
+      govOnLive(k);
+    }, function(){});
+    return j;
+  }).catch(function(){ return live; });    /* 스냅샷이 없으면 지금처럼 라이브를 기다린다 */
 }
 function renderGov(){
   var today = todaySeoul();
@@ -1573,19 +1605,26 @@ function renderGov(){
       : "";
     bindFold(restEl);
   }
+  /* 스냅샷으로 먼저 그리고, 라이브가 다르게 오면 이 함수로 제자리 갱신한다.
+     renderGov 를 다시 부르지 않는 이유: 검색어 입력칸과 스크롤을 건드리지 않으려고. */
+  function show(j){
+    cur = j;
+    if (!j || !j.ok){
+      genEl.textContent = "";
+      bodyEl.innerHTML = failBox(j && j.error ? String(j.error) : "잠시 뒤 다시 시도해 주세요.",
+        "<a class='btn' href='https://www.k-startup.go.kr' target='_blank' rel='noopener noreferrer'>K-Startup 열기 ↗</a>");
+      return;
+    }
+    /* 갱신 시각은 응답에 든 서버 값 그대로다 — 스냅샷으로 그렸으면 스냅샷 시각이 보인다 */
+    genEl.textContent = "공고 갱신 " + (j.generated||"") + " · 총 " + (j.total||0) + "건";
+    drawChips(); drawBody();
+  }
+  govOnLive = show;
   function load(force){
     bodyEl.innerHTML = emptyNote("지원사업 공고를 불러오는 중입니다.");
     fetchGov(force).then(function(j){
       if (curRoute()!=="gov") return;
-      cur = j;
-      if (!j || !j.ok){
-        genEl.textContent = "";
-        bodyEl.innerHTML = failBox(j && j.error ? String(j.error) : "잠시 뒤 다시 시도해 주세요.",
-          "<a class='btn' href='https://www.k-startup.go.kr' target='_blank' rel='noopener noreferrer'>K-Startup 열기 ↗</a>");
-        return;
-      }
-      genEl.textContent = "공고 갱신 " + (j.generated||"") + " · 총 " + (j.total||0) + "건";
-      drawChips(); drawBody();
+      show(j);
     }).catch(function(e){
       if (curRoute()!=="gov") return;
       genEl.textContent = "";
