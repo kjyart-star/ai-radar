@@ -457,7 +457,7 @@ function loadFeed(key){
   return feedCache[key];
 }
 
-/* ============ 인기 AI 영상 API ============
+/* ============ AI 영상 작품 API ============
    유튜브 전역 검색은 YouTube Data API 키가 필요하다. 키를 이 공개 저장소에 둘 수 없으므로
    수집은 수신부(Apps Script)가 하고 여기서는 결과만 읽는다.
    응답에 키는 실리지 않는다 — 키는 유튜브 API 주소를 만들 때만 쓰인다.
@@ -653,7 +653,7 @@ function dueWithin(list, key, days, today){
    지시 그대로다 — 폭이 줄어 375px 에 다섯 개를 넣기가 오히려 수월하다.
    문서 제목에는 히어로의 전체 이름(HERO[route].ko)을 쓴다.
 
-   여섯 번째로 "AI인기영상"이 붙었다 (대표 지시 2026-08-12). AI유튜브정보 바로 옆이다 —
+   여섯 번째로 "AI작품소개"가 붙었다 (대표 지시 2026-08-12). AI유튜브정보 바로 옆이다 —
    둘 다 영상이라 붙어 있어야 비교가 된다. 다만 다섯 개도 375px 에 빠듯했으므로
    모바일 내비는 두 줄로 접힌다(아래 @media 760px). 가로 스크롤은 쓰지 않는다.
    여섯 번째 메뉴가 있는 줄 모르는 사람이 생기면 안 붙인 것과 같다. */
@@ -663,7 +663,7 @@ var MENU = [
   ["festivals","AI영화제","FESTIVALS"],
   ["gov","AI지원사업","FUNDING"],
   ["youtube","AI유튜브정보","WATCH"],
-  ["aivideo","AI인기영상","POPULAR"]
+  ["aivideo","AI작품소개","SHOWCASE"]
 ];
 var TITLES = {};
 MENU.forEach(function(it){ TITLES[it[0]] = it[1]; });
@@ -697,11 +697,12 @@ var HERO = {
   newsrep:{ latin:"BRIEFING", ko:"뉴스리포트",
     copy:"밤사이 나온 AI 소식을 아침에 한 번 정리합니다. 요약 옆에 기사 원문 링크를 그대로 답니다." },
   /* 두 영상 화면이 어떻게 다른지 각자의 첫 문장에서 바로 말한다.
+     작품소개는 AI로 만든 영상 작품, AI유튜브는 소식과 개발이다.
      "왜 메뉴가 두 개지"가 나오면 둘 중 하나는 안 쓰이게 된다. */
   youtube:{ latin:"WATCH", ko:"AI 유튜브",
     copy:"AI 뉴스와 바이브코딩 영상을 유튜브에서 모으고, 아침 브리핑이 그날 고른 영상도 날짜별로 쌓아 둡니다." },
-  aivideo:{ latin:"POPULAR", ko:"AI 인기영상",
-    copy:"유튜브에서 AI 영상을 찾아 조회수가 높은 순으로 세웁니다. 국내와 해외를 나눠서 봅니다." }
+  aivideo:{ latin:"SHOWCASE", ko:"AI 작품소개",
+    copy:"AI로 만든 영상 작품을 모읍니다. 강의나 도구 소개는 빼고, 작품만 국내와 해외로 나눠 봅니다." }
 };
 function drawHero(route){
   var h = HERO[route] || HERO[DEFAULT_ROUTE];
@@ -980,8 +981,8 @@ function stripYtSection(content){
 }
 /* ============ AI 유튜브 (수집 2섹션 + 브리핑 아카이브 1섹션) ============
    자료가 두 갈래다.
-   (1) 유튜브 수집 — AI 인기영상과 같은 엔드포인트(action=aivideos)를 쓰고 aivideoCache 를
-       공유한다. 저쪽은 조회수 높은 AI 영상, 이쪽은 뉴스와 바이브코딩이다.
+   (1) 유튜브 수집 — AI 작품소개와 같은 엔드포인트(action=aivideos)를 쓰고 aivideoCache 를
+       공유한다. 저쪽은 AI로 만든 영상 작품, 이쪽은 뉴스와 바이브코딩이다.
    (2) 아침 브리핑이 그날 고른 영상 — 브리핑 본문의 [유튜브 최신 영상] 섹션을 날짜별로 쌓아 둔다.
    한쪽이 없어도 다른 쪽은 그린다. 둘 다 없을 때만 안내 문구를 낸다. */
 function renderYoutube(){
@@ -1567,9 +1568,11 @@ function renderGov(){
   load(false);
 }
 
-/* ============ AI 인기영상 (유튜브 검색 — 조회수순) ============
+/* ============ AI 작품소개 (유튜브 검색 — AI로 만든 영상 작품) ============
    AI유튜브정보와 같은 엔드포인트를 쓰지만 보는 목록이 다르다. 저쪽은 news·vibe(AI 뉴스·바이브코딩),
-   이쪽은 domestic·overseas(조회수 높은 AI 영상)다. 두 화면 설명에 각각 그렇게 적었다.
+   이쪽은 domestic·overseas(AI로 만든 영상 작품)다. 두 화면 설명에 각각 그렇게 적었다.
+   순위표가 아니라 소개 화면이다 — 강의·도구 소개·리뷰는 수집에서 걸러지고, 순서도 조회수
+   단독이 아니라 화제성·반응·신선도를 함께 본다. 화면 문구에 "조회수순"이라 적으면 안 된다.
 
    수집은 관리시스템(Apps Script)이 한다 — 유튜브 전역 검색에는 API 키가 필요하고
    키는 이 공개 저장소에 둘 수 없다. 주소가 정해지면 AIVIDEO_API 한 줄만 채우면 된다.
@@ -1602,35 +1605,33 @@ function videoCards(list){
 function videoSection(cls, eyebrow, h2, list, queries, generated){
   var q = (queries||[]).length ? "검색어 "+esc(queries.join(" · "))+" · " : "";
   return "<section class='section "+cls+"'><div class='inner'>"+
-    sectionHead(eyebrow, h2, q+"수집 "+esc(fmtGen(generated))+". 조회수가 높은 순입니다.",
+    sectionHead(eyebrow, h2, q+"수집 "+esc(fmtGen(generated))+".",
       "<b>"+(list||[]).length+"</b>편")+
     ((list||[]).length ? videoCards(list) : emptyNote("아직 모인 영상이 없습니다."))+
     "</div></section>";
 }
 function renderAiVideo(){
-  setKicker(["유튜브 검색", "조회수순"]);
-  setFacts([["—","국내"],["—","해외"],["—","최고 조회수"]]);
+  setKicker(["유튜브 검색", "작품만"]);
+  setFacts([["—","국내"],["—","해외"],["—","합계"]]);
   C.innerHTML = "<section class='section paper'><div class='inner'>"+
-    emptyNote("인기 영상을 불러오는 중입니다.")+"</div></section>";
+    emptyNote("작품을 불러오는 중입니다.")+"</div></section>";
 
   fetchAiVideos().then(function(j){
     if (curRoute()!=="aivideo") return;
     var dom = j.domestic||[], ovs = j.overseas||[];
-    var top = 0;
-    dom.concat(ovs).forEach(function(v){ if (Number(v.views) > top) top = Number(v.views); });
-    setKicker(["유튜브 검색", "조회수순", (dom.length+ovs.length)+"편"]);
-    setFacts([[String(dom.length),"국내"],[String(ovs.length),"해외"],[kfmt(top)||"—","최고 조회수"]]);
+    setKicker(["유튜브 검색", "작품만", (dom.length+ovs.length)+"편"]);
+    setFacts([[String(dom.length),"국내"],[String(ovs.length),"해외"],[String(dom.length+ovs.length),"합계"]]);
     C.innerHTML =
-      videoSection("paper","Domestic","국내에서<br>많이 본 AI 영상.", dom, (j.queries||{}).domestic, j.generated)+
-      videoSection("dark","Overseas","해외에서<br>많이 본 AI 영상.", ovs, (j.queries||{}).overseas, j.generated);
+      videoSection("paper","Domestic","국내에서 만든<br>AI 작품.", dom, (j.queries||{}).domestic, j.generated)+
+      videoSection("dark","Overseas","해외에서 만든<br>AI 작품.", ovs, (j.queries||{}).overseas, j.generated);
     observeReveal();
   }).catch(function(){
     if (curRoute()!=="aivideo") return;
     setKicker(["연결 준비 중"]);
-    setFacts([["—","국내"],["—","해외"],["—","최고 조회수"]]);
+    setFacts([["—","국내"],["—","해외"],["—","합계"]]);
     C.innerHTML = "<section class='section paper'><div class='inner'>"+
-      sectionHead("Popular","아직 영상 수집이<br>연결되지 않았습니다.",
-        "유튜브 검색 수집이 붙으면 이 자리에 국내·해외 인기 AI 영상이 조회수순으로 올라옵니다.","")+
+      sectionHead("Showcase","아직 영상 수집이<br>연결되지 않았습니다.",
+        "유튜브 검색 수집이 붙으면 이 자리에 국내·해외 AI 영상 작품이 올라옵니다.","")+
       "</div></section>";
   });
 }
