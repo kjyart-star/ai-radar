@@ -474,7 +474,7 @@ var C = document.getElementById("view");
 
 /* ============ 유틸 ============ */
 function esc(s){ s = (s==null?"":String(s));
-  return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+  return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;"); }
 
 /* 본문 속 URL을 새 탭으로 열리는 링크로 변환 (이스케이프 후 치환 — 괄호·따옴표는 URL에서 제외).
    유튜브 링크는 썸네일 카드로 렌더링 */
@@ -531,7 +531,7 @@ function richReport(s){
       /* 사진 로드 실패 시 파비콘으로 대체 (깨진 이미지 방지) */
       var onerr = photo ? " onerror=\"this.onerror=null;this.src='https://www.google.com/s2/favicons?domain="+esc(hst)+"&sz=128';this.closest('.item-card').classList.remove('photo')\"" : "";
       cardBuf.push("<a class='item-card "+cls+"' href='"+esc(url)+"' target='_blank' rel='noopener noreferrer'>"+
-        "<img src='"+img+"' alt='' loading='lazy'"+onerr+">"+
+        "<img src='"+esc(ctSafeUrl(img))+"' alt='' loading='lazy'"+onerr+">"+
         "<span class='ic-body'><span class='ic-title'>"+esc(title)+"</span>"+
         (desc ? "<span class='ic-desc'>"+esc(desc)+"</span>" : "")+
         "<span class='ic-url'>"+esc(go)+"</span></span></a>");
@@ -577,7 +577,7 @@ function bindFold(root){
     };
   });
 }
-function ctSafeUrl(u){ return /^https?:\/\//i.test(String(u||"")) ? String(u) : ""; }
+function ctSafeUrl(u){ try { var p = new URL(String(u||"")); return (p.protocol === "http:" || p.protocol === "https:") ? p.href : ""; } catch(e){ return ""; } }
 function todaySeoul(){ var n = seoulNow(); return new Date(n.getFullYear(), n.getMonth(), n.getDate()); }
 /* ---- 수집물 공용 포맷 ----
    뉴스·커뮤니티·기술동향은 마감이 없어 D-day 를 쓸 수 없다. 대신 왼쪽 큰 칸에
