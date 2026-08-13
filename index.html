@@ -261,6 +261,15 @@
   .item-card img{ width:184px; height:104px; object-fit:cover; background:var(--ink-2); }
   .item-card:not(.photo):not(.yt) img{ width:38px; height:38px; object-fit:contain;
                                        background:none; }
+  /* 원문에 아이콘이 없을 때 쓰는 우리 마크. 구글 파비콘 서비스는 아이콘이 없으면
+     404 를 주므로(2026-08-13 실측: k-startup.go.kr) onerror 로 이 자리로 떨어진다.
+     그림 대신 타이포로 간다 — 소스마다 그림을 만들면 아이덴티티가 흩어진다 */
+  .ic-mark{ width:38px; height:38px; display:grid; place-items:center;
+            background:var(--ink); color:var(--lime);
+            font-size:13px; font-weight:900; letter-spacing:.02em; }
+  .dark .ic-mark{ background:var(--lime); color:var(--ink); }
+  .item-card:hover .ic-mark{ background:var(--lime); color:var(--ink); }
+  .dark .item-card:hover .ic-mark{ background:var(--ink); color:var(--lime); }
   @media (hover:hover){
     .item-card:hover{ background:var(--ink); color:#fff; }
     .dark .item-card:hover{ background:var(--lime); color:var(--ink); }
@@ -529,8 +538,14 @@ function richReport(s){
       if (ym){ img = "https://i.ytimg.com/vi/"+ym[1]+"/mqdefault.jpg"; cls = "yt"; go = "youtube.com · 영상 보기"; }
       else if (photo){ img = photo; cls = "news photo"; go = hst+" · 기사 보기 ↗"; }
       else { img = "https://www.google.com/s2/favicons?domain="+hst+"&sz=128"; cls = "news"; go = hst+" · 기사 보기 ↗"; }
-      /* 사진 로드 실패 시 파비콘으로 대체 (깨진 이미지 방지) */
-      var onerr = photo ? " onerror=\"this.onerror=null;this.src='https://www.google.com/s2/favicons?domain="+esc(hst)+"&sz=128';this.closest('.item-card').classList.remove('photo')\"" : "";
+      /* 사진 → 파비콘 → 우리 마크 순으로 떨어진다.
+         원문 이미지를 최대한 쓰되, 없으면 지구본 대신 우리 것을 세운다 (대표 지시 2026-08-13) */
+      var mk = " onerror=\"icMark(this,'"+esc(hst)+"')\" onload=\"icCheck(this,'"+esc(hst)+"')\"";
+      var onerr = photo
+        ? " onerror=\"this.onerror=null;this.src='https://www.google.com/s2/favicons?domain="+esc(hst)+"&sz=128';"+
+          "this.closest('.item-card').classList.remove('photo');"+
+          "this.onerror=function(){icMark(this,'"+esc(hst)+"')};this.onload=function(){icCheck(this,'"+esc(hst)+"')}\""
+        : mk;
       cardBuf.push("<a class='item-card "+cls+"' href='"+esc(url)+"' target='_blank' rel='noopener noreferrer'>"+
         "<img src='"+esc(ctSafeUrl(img))+"' alt='' loading='lazy'"+onerr+">"+
         "<span class='ic-body'><span class='ic-title'>"+esc(title)+"</span>"+
@@ -561,6 +576,20 @@ function seoulNow(){
 }
 function parseDate(s){ if(!s) return null; var p=String(s).slice(0,10).split("-"); if(p.length<3) return null;
   return new Date(+p[0], +p[1]-1, +p[2]); }
+/* 수집물의 date 는 RSS 원문 그대로라 UTC 다. 앞 10자만 자르면 9시간이 밀려
+   오늘 아침 7시 기사가 어제 날짜로 찍힌다 (2026-08-13 실측: 07:26 KST → "2026-08-12").
+   회사 규칙이 "날짜는 절대 표기"이므로 보이는 날짜는 KST 로 맞춘다.
+   날짜만 있고 시각이 없는 값(2026-08-12)은 변환하지 않고 그대로 쓴다 — 이미 날짜다. */
+function ymdKST(s){
+  var v = String(s||"");
+  if (!v) return "";
+  if (v.length <= 10) return v.slice(0,10);
+  var d = new Date(v);
+  if (isNaN(d)) return v.slice(0,10);
+  try {
+    return d.toLocaleDateString("sv-SE", { timeZone:"Asia/Seoul" });  /* sv-SE → YYYY-MM-DD */
+  } catch(e){ return v.slice(0,10); }
+}
 function ddayInfo(due, today){
   var dd = parseDate(due), cls="far", txt="—";
   if (dd){ var diff = Math.round((dd-today)/86400000);
@@ -579,6 +608,29 @@ function bindFold(root){
   });
 }
 function ctSafeUrl(u){ try { var p = new URL(String(u||"")); return (p.protocol === "http:" || p.protocol === "https:") ? p.href : ""; } catch(e){ return ""; } }
+/* 원문 아이콘이 없을 때 <img> 를 우리 마크로 바꾼다.
+   도메인의 알파벳·숫자 앞 두 글자를 쓴다 — k-startup.go.kr → KS, arxiv.org → AR.
+   window 에 붙이는 이유: onerror 는 인라인 속성이라 IIFE 안의 이름을 못 본다.
+
+   ⚠️ onerror 만으로는 못 잡는다. 구글 파비콘 서비스는 아이콘이 없는 도메인에
+   curl 에는 404 를 주지만 브라우저에는 **16×16 기본 지구본을 200 으로** 내려준다
+   (2026-08-13 실측, k-startup.go.kr). 정상 파비콘은 sz=128 요청에 64px 이상으로 온다.
+   그래서 로드 성공 뒤에도 크기를 보고 판정한다. */
+window.icMark = function(img, host){
+  if (!img || !img.parentNode) return;
+  img.onerror = null;
+  var s = String(host||"").replace(/^www\./,"").replace(/[^a-z0-9]/gi,"").toUpperCase();
+  var span = document.createElement("span");
+  span.className = "ic-mark";
+  span.setAttribute("aria-hidden","true");
+  span.textContent = s.slice(0,2) || "AI";
+  img.parentNode.replaceChild(span, img);
+};
+/* 로드가 "성공"해도 기본 지구본이면 우리 마크로 바꾼다 */
+window.icCheck = function(img, host){
+  if (!img) return;
+  if (img.naturalWidth && img.naturalWidth <= 24) window.icMark(img, host);
+};
 function todaySeoul(){ var n = seoulNow(); return new Date(n.getFullYear(), n.getMonth(), n.getDate()); }
 /* ---- 수집물 공용 포맷 ----
    뉴스·커뮤니티·기술동향은 마감이 없어 D-day 를 쓸 수 없다. 대신 왼쪽 큰 칸에
@@ -833,7 +885,7 @@ function newsSection(){
     var rows = items.map(function(it){
       var meta = [];
       if (it.source && it.source !== it.feed) meta.push("<b>"+esc(it.source)+"</b>");
-      if (it.date) meta.push(esc(String(it.date).slice(0,10)));
+      if (it.date) meta.push(esc(ymdKST(it.date)));
       return row({ dd:agoText(it.date), ddCls:"tbd",
                    title:it.titleKo || it.title, titleEn:it.titleKo ? it.title : "",
                    tags:[it.feed], meta:meta, sum:it.summary, url:it.url });
@@ -855,7 +907,7 @@ function communitySection(){
       var meta = [];
       if (it.points != null) meta.push("<b>"+nfmt(it.points)+"점</b>");
       if (it.comments != null) meta.push("댓글 "+nfmt(it.comments));
-      if (it.date) meta.push(esc(String(it.date).slice(0,10)));
+      if (it.date) meta.push(esc(ymdKST(it.date)));
       return row({ dd:agoText(it.date), ddCls:"tbd",
                    title:it.titleKo || it.title, titleEn:it.titleKo ? it.title : "",
                    tags:[it.source], meta:meta, sum:it.summary, url:it.url });
@@ -885,13 +937,13 @@ function techSection(){
       ax.map(function(it){
         return row({ dd:agoText(it.date), ddCls:"tbd",
                      title:it.titleKo || it.title, titleEn:it.titleKo ? it.title : "",
-                     tags:["논문"], meta:[esc(String(it.date).slice(0,10))], sum:it.summary, url:it.url });
+                     tags:["논문"], meta:[esc(ymdKST(it.date))], sum:it.summary, url:it.url });
       }).join(""));
     if (gh.length) body += group("GitHub", gh.length+"곳 · 최근 7일 안에 갱신된 ai 토픽 저장소를 별 많은 순으로",
       gh.map(function(it){
         var meta = [];
         if (it.language) meta.push(esc(it.language));
-        if (it.date) meta.push("갱신 "+esc(String(it.date).slice(0,10)));
+        if (it.date) meta.push("갱신 "+esc(ymdKST(it.date)));
         return row({ dd:kfmt(it.stars), ddCls:"far", title:it.title,
                      tags:["별 "+nfmt(it.stars)], meta:meta, sum:it.summary, url:it.url });
       }).join(""));
@@ -900,7 +952,7 @@ function techSection(){
         var meta = [];
         if (it.task) meta.push(esc(it.task));
         if (it.downloads != null) meta.push("내려받기 "+nfmt(it.downloads));
-        if (it.date) meta.push(esc(String(it.date).slice(0,10)));
+        if (it.date) meta.push(esc(ymdKST(it.date)));
         return row({ dd:it.likes != null ? kfmt(it.likes) : "—", ddCls:"far", title:it.title,
                      tags:["좋아요"], meta:meta, url:it.url });
       }).join(""));
@@ -1137,7 +1189,7 @@ function renderFestivals(){
   var served = state.data && state.data.festivals && state.data.festivals.length;
   var list = served ? state.data.festivals : FESTIVALS;
   var updated = FESTIVALS_UPDATED;
-  for (var u=0; u<list.length; u++){ if (list[u].updated){ updated = String(list[u].updated).slice(0,10); break; } }
+  for (var u=0; u<list.length; u++){ if (list[u].updated){ updated = ymdKST(list[u].updated); break; } }
 
   if (state.loading){
     setKicker(["불러오는 중"]);
