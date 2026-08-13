@@ -922,6 +922,10 @@ function fillNewsExtra(){
 }
 
 /* ============ 뉴스리포트 ============ */
+/* reportSelId 는 "사람이 지난 브리핑을 눌러서 고른 것"만 담는다.
+   자동으로 채우면 스냅샷(어제)으로 먼저 그릴 때 어제 것이 고정되고,
+   라이브(오늘)가 와서 다시 그려도 어제 것이 목록에 남아 있어 그대로 머문다.
+   2026-08-13 실측 — 지표는 21호인데 본문은 8/12 였다. */
 var reportSelId = null;
 function sortedReports(){
   return ((state.data && state.data.reports) || []).slice()
@@ -939,7 +943,9 @@ function renderReports(){
     fillNewsExtra();
     return;
   }
-  if (!findById(all, reportSelId)) reportSelId = all[0].id;
+  /* 고른 것이 목록에서 사라졌으면 선택을 버리고 최신으로 돌아간다.
+     남아 있으면 그대로 둔다 — 사람이 지난 브리핑을 보는 중일 수 있다 */
+  if (reportSelId && !findById(all, reportSelId)) reportSelId = null;
   var latest = String(all[0].report_date||"").slice(0,10);
   setKicker(["매일 아침 발행", latest + " 발행", all.length + "호"]);
 
