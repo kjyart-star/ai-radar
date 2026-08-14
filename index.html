@@ -744,20 +744,20 @@ function buildNav(){
 /* ============ 히어로 ============ */
 var HERO = {
   contests:{ latin:"CONTESTS", ko:"AI 공모전",
-    copy:"국내와 해외 AI 공모전을 마감이 가까운 순으로 세웁니다. 카드를 누르면 원문 공고로 갑니다." },
+    copy:"국내와 해외 AI 공모전을 마감이 가까운 순으로 세웁니다. 상금과 남은 기간을 한눈에 봅니다." },
   festivals:{ latin:"FESTIVALS", ko:"AI 영화제",
-    copy:"AI로 만든 영화를 받는 영화제를 전 세계에서 모읍니다. 목록은 매일 아침 다시 조사합니다." },
+    copy:"AI로 만든 영화를 받는 영화제를 전 세계에서 모읍니다. 접수 기간과 상금 규모까지 함께 봅니다." },
   gov:{ latin:"FUNDING", ko:"AI 지원사업",
-    copy:"K-Startup에 올라온 창업지원 공고 가운데 AI와 관련된 것을 골라 둡니다. 필터를 끄면 전체가 보입니다." },
+    copy:"지금 신청할 수 있는 창업지원 공고 가운데 AI와 관련된 것을 모읍니다. 마감이 임박한 것부터 보입니다." },
   newsrep:{ latin:"BRIEFING", ko:"뉴스리포트",
-    copy:"밤사이 나온 AI 소식을 아침에 한 번 정리합니다. 요약 옆에 기사 원문 링크를 그대로 답니다." },
+    copy:"밤사이 나온 AI 소식을 아침에 한 번 정리합니다. 요약으로 훑고, 필요한 기사만 원문으로 넘어갑니다." },
   /* 두 영상 화면이 어떻게 다른지 각자의 첫 문장에서 바로 말한다.
      작품소개는 AI로 만든 영상 작품, AI유튜브는 소식과 개발이다.
      "왜 메뉴가 두 개지"가 나오면 둘 중 하나는 안 쓰이게 된다. */
   youtube:{ latin:"WATCH", ko:"AI 유튜브",
-    copy:"AI 뉴스와 바이브코딩 영상을 유튜브에서 모으고, 아침 브리핑이 그날 고른 영상도 날짜별로 쌓아 둡니다." },
+    copy:"AI 소식과 바이브코딩 영상을 한자리에 모읍니다. 오늘 것이 위에, 지난 날짜는 아래로 쌓입니다." },
   aivideo:{ latin:"SHOWCASE", ko:"AI 작품소개",
-    copy:"AI로 만든 영상 작품을 모읍니다. 강의나 도구 소개는 넣지 않습니다." }
+    copy:"AI로 만든 영상 작품을 봅니다. 단편영화·뮤직비디오·애니메이션을 골라 모았습니다." }
 };
 function drawHero(route){
   var h = HERO[route] || HERO[DEFAULT_ROUTE];
@@ -1777,7 +1777,7 @@ function videoSection(cls, eyebrow, h2, list, queries, generated){
     "</div></section>";
 }
 function renderAiVideo(){
-  setKicker(["유튜브 검색", "작품만"]);
+  setKicker(["AI 작품"]);
   setFacts([["—","작품"],["—","최고 조회수"],["—","수집"]]);
   C.innerHTML = "<section class='section paper'><div class='inner'>"+
     emptyNote("작품을 불러오는 중입니다.")+"</div></section>";
@@ -1787,7 +1787,7 @@ function renderAiVideo(){
     var works = j.works || (j.domestic||[]).concat(j.overseas||[]);
     var top = 0;
     for (var w = 0; w < works.length; w++) if ((works[w].views||0) > top) top = works[w].views;
-    setKicker(["유튜브 검색", "작품만", works.length+"편"]);
+    setKicker(["AI 작품", works.length+"편"]);
     setFacts([[String(works.length),"작품"],[top ? kfmt(top) : "—","최고 조회수"],
               [fmtGen(j.generated).slice(0,10)||"—","수집"]]);
     C.innerHTML =
