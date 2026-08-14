@@ -1245,6 +1245,13 @@ var CONTEST_URLS = {
   domestic: "https://junyeo217.github.io/ai-contest-board/data/contests.json",
   overseas: "https://junyeo217.github.io/ai-contest-board/data/overseas-contests.json"
 };
+/* junyeo217 은 남의 저장소다. 사라지거나 죽으면 위 주소가 통째로 실패한다 —
+   그때 우리 저장소가 매일 아침 떠 둔 미러로 폴백한다(scripts/collect-feeds.mjs collectContests).
+   같은 JSON 을 가공 없이 저장하므로 아래 파싱 코드가 그대로 읽는다. */
+var CONTEST_SNAP = {
+  domestic: "data/contests.json",
+  overseas: "data/overseas-contests.json"
+};
 var CONTEST_BOARD = "https://junyeo217.github.io/ai-contest-board/";
 var CONTEST_TTL = 10*60*1000; /* 10분 모듈 캐시 (두 파일 각각) */
 var contestCache = {};
@@ -1269,18 +1276,30 @@ function fetchContests(kind, force){
   }
   var c = contestCache[kind];
   if (!force && c && (Date.now()-c.t) < CONTEST_TTL) return Promise.resolve(c.data);
-  return fetch(CONTEST_URLS[kind], { cache:"no-store" }).then(function(r){
-    if (!r.ok) throw new Error("HTTP "+r.status);
-    return r.json();
-  }).then(function(j){
-    /* 국내 파일에는 country 가 없다(전부 null). 합쳤을 때 어느 쪽인지 알 수 있게
-       어느 파일에서 왔는지를 여기서 새겨 둔다 — 나중에 추측할 수 없는 정보다. */
+  /* 국내 파일에는 country 가 없다(전부 null). 합쳤을 때 어느 쪽인지 알 수 있게
+     어느 파일에서 왔는지를 여기서 새겨 둔다 — 나중에 추측할 수 없는 정보다. */
+  function useContest(j){
     var reg = kind === "domestic" ? "국내" : "해외";
     CONTEST_SECS.forEach(function(k){
       (((j.sections||{})[k])||[]).forEach(function(it){ it._region = reg; });
     });
     contestCache[kind] = { t:Date.now(), data:j };
     return j;
+  }
+  function grab(url){
+    return fetch(url, { cache:"no-store" }).then(function(r){
+      if (!r.ok) throw new Error("HTTP "+r.status);
+      return r.json();
+    });
+  }
+  /* 우리 스냅샷(자체 수집)을 먼저 읽는다. sections 가 있어야 쓸 수 있는 값으로 본다 —
+     형식이 깨졌거나(스냅샷에 sections 없음) 못 읽으면 junyeo217 라이브로 폴백한다. */
+  function validSnap(j){ return j && j.sections && typeof j.sections === "object"; }
+  return grab(CONTEST_SNAP[kind]).then(function(j){
+    if (!validSnap(j)) throw new Error("스냅샷에 sections 가 없다");
+    return useContest(j);
+  }).catch(function(){
+    return grab(CONTEST_URLS[kind]).then(useContest);
   });
 }
 function ctFmtGen(g){ if(!g) return ""; return String(g).replace("T"," ").replace(/(:\d\d)(\.\d+)?(Z|[+-]\d\d:?\d\d)?$/,"$1").slice(0,16); }

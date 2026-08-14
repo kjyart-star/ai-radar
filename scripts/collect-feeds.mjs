@@ -446,10 +446,256 @@ async function collectSnapshots() {
   return wrote;
 }
 
+/* ---------- AI 공모전 (자체 수집: wevity·devpost·higgsfield 병합) ----------
+ * 예전엔 junyeo217/ai-contest-board(남의 저장소)를 그대로 떠 오는 미러였다. 그 저장소 하나가
+ * 멈추면 공모전 메뉴 전체가 죽는 단일 장애점이었다. 이제는 우리가 직접 세 소스를 긁는다:
+ * 국내는 wevity 목록 스크래핑, 해외는 devpost API 실시간 크롤 + higgsfield 스냅샷.
+ * junyeo217 은 살아 있으면 합치고 죽어도 무방한 안전망으로만 쓴다 — 그 독립성이 핵심이다.
+ * 소스 하나가 죽어도(try/catch) 나머지로 목록을 채운다.
+ */
+
+/* KST(Asia/Seoul) 날짜 헬퍼 — Actions 러너는 UTC 라 +9h 로 옮겨 계산한다 */
+function kstToday() {
+  return new Date(Date.now() + 9 * 3600 * 1000).toISOString().slice(0, 10);
+}
+function kstNowIso() {
+  return new Date(Date.now() + 9 * 3600 * 1000).toISOString().slice(0, 19) + "+09:00";
+}
+function addDaysKst(days) {
+  return new Date(Date.parse(kstToday() + "T00:00:00+09:00") + days * 86400000).toISOString().slice(0, 10);
+}
+
+/* ---- wevity 스크래핑 (proto.mjs 에서 이식, 실측 검증됨) ---- */
+const CT_UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36";
+const KW = ["AI", "인공지능", "생성형", "LLM", "챗봇", "데이터", "머신러닝", "딥러닝",
+  "영상", "UCC", "숏폼", "쇼츠", "영화", "다큐", "광고", "마케팅",
+  "디자인", "캐릭터", "웹툰", "일러스트", "브랜드", "BI", "포스터",
+  "콘텐츠", "웹/모바일/IT", "게임", "메타버스", "사진"];
+const decodeEnt = (s) => String(s ?? "").replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, " ");
+const strip = (s) => decodeEnt(String(s).replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim());
+const matchKW = (item) => {
+  const hay = (item.title + " " + item.categories);
+  return KW.some((k) => hay.toLowerCase().includes(k.toLowerCase()));
+};
+
+function parseWevity(html) {
+  const out = [];
+  const ulStart = html.indexOf('class="list"');
+  if (ulStart < 0) return out;
+  const seg = html.slice(ulStart, html.indexOf("</ul>", ulStart));
+  const liBlocks = seg.split(/<li\b/).slice(1);
+  for (const b of liBlocks) {
+    if (/class="top"/.test(b)) continue;          // header row
+    const aMatch = b.match(/<a href="(\?c=find[^"]*ix=(\d+))"[^>]*>([\s\S]*?)<\/a>/);
+    if (!aMatch) continue;
+    const href = decodeEnt(aMatch[1]);
+    const ix = aMatch[2];
+    let title = strip(aMatch[3]).replace(/\s*SPECIAL\s*$/i, "").trim();
+    const subM = b.match(/class="sub-tit">([\s\S]*?)<\/div>/);
+    const cats = subM ? strip(subM[1]).replace(/^분야\s*:\s*/, "") : "";
+    const organM = b.match(/class="organ">([\s\S]*?)<\/div>/);
+    const organ = organM ? strip(organM[1]) : "";
+    const dayM = b.match(/class="day">([\s\S]*?)<\/div>/);
+    const dayRaw = dayM ? strip(dayM[1]) : "";
+    const ddayM = dayRaw.match(/D-\d+|D-DAY|마감/i);
+    out.push({
+      title, url: "https://www.wevity.com/" + href, ix,
+      organizer: organ, categories: cats,
+      deadline_dday: ddayM ? ddayM[0] : dayRaw,
+      status: /접수중/.test(dayRaw) ? "ongoing" : (/마감|D-DAY/.test(dayRaw) ? "closing" : "unknown"),
+    });
+  }
+  return out;
+}
+
+async function collectWevity(pages) {
+  let all = [];
+  for (let gp = 1; gp <= pages; gp++) {
+    const url = `https://www.wevity.com/?c=find&s=1&gp=${gp}`;
+    const html = await get(url, { headers: { "user-agent": CT_UA, "accept-language": "ko" } });
+    const rows = parseWevity(html);
+    if (!rows.length) break;                       // 목록이 비면 마지막 페이지를 지난 것
+    all = all.concat(rows);
+  }
+  const seen = new Set(); const dedup = [];
+  for (const r of all) { if (!seen.has(r.ix)) { seen.add(r.ix); dedup.push(r); } }
+  return dedup.filter(matchKW);
+}
+
+async function collectContests() {
+  log("[공모전 자체수집]");
+  const today = kstToday();
+  const domestic = [];   // 국내 pool (우리 소스)
+  const overseas = [];   // 해외 pool (우리 소스)
+  const contrib = { wevity: 0, devpost: 0, higgsfield: 0, junyeoDom: 0, junyeoOvr: 0 };
+  let junyeoDomOk = false, junyeoOvrOk = false;
+
+  /* 1. 국내 = wevity 스크래핑 */
+  try {
+    const rows = await collectWevity(40);
+    for (const r of rows) {
+      const m = String(r.deadline_dday || "").match(/D-?(\d+)/i);
+      const end = m ? addDaysKst(parseInt(m[1], 10)) : today;   // 숫자 없으면(마감/D-DAY) 오늘
+      domestic.push({
+        title: r.title,
+        category: r.categories || "AI",
+        organizer: r.organizer,
+        submission_start: "",
+        submission_end: end,
+        result_date: "미정",
+        url: r.url,
+        source_type: "aggregator",
+        discovery_source: "wevity",
+        summary: r.categories || "",
+        status: r.status === "ongoing" ? "진행중" : "마감임박",
+      });
+    }
+    contrib.wevity = rows.length;
+    log(`  · wevity ${rows.length}건`);
+  } catch (e) { log(`  ! wevity 실패: ${e.message}`); }
+
+  /* 2. 해외 = devpost 실시간 크롤 */
+  try {
+    const seenUrl = new Set();
+    let n = 0;
+    for (let page = 1; page <= 8; page++) {
+      const j = await get(`https://devpost.com/api/hackathons?search=ai&page=${page}`, { json: true });
+      const list = j.hackathons || [];
+      if (!list.length) break;
+      for (const h of list) {
+        const url = String(h.url || "");
+        if (!url || seenUrl.has(url)) continue;
+        const themes = (h.themes || []).map((t) => t.name).filter(Boolean);
+        const isAI = themes.some((t) => /AI|Machine Learning/i.test(t));
+        const state = h.open_state || "";
+        if (!isAI || !(state === "open" || state === "upcoming")) continue;
+        seenUrl.add(url);
+        const parts = String(h.submission_period_dates || "").split(" - ");
+        const ds = new Date(parts[0]);
+        const de = new Date(parts[parts.length - 1]);
+        const prize = String(h.prize_amount || "").replace(/<[^>]+>/g, "").trim();
+        overseas.push({
+          title: String(h.title || "").trim(),
+          category: "AI 해커톤",
+          organizer: "Devpost",
+          country: h.displayed_location?.location || "Global",
+          submission_start: isNaN(ds) ? "" : ds.toISOString().slice(0, 10),
+          submission_end: isNaN(de) ? "" : de.toISOString().slice(0, 10),
+          result_date: "미정",
+          url,
+          source_type: "hackathon",
+          discovery_source: "devpost",
+          summary: prize ? ("상금 " + prize) : String(h.title || "").trim(),
+          status: state === "open" ? "진행중" : "예정",
+        });
+        n++;
+      }
+    }
+    contrib.devpost = n;
+    log(`  · devpost ${n}건`);
+  } catch (e) { log(`  ! devpost 실패: ${e.message}`); }
+
+  /* higgsfield 스냅샷 병합 (data/higgsfield.json 은 다른 수집기가 떠 둔다) */
+  try {
+    const hf = JSON.parse(readFileSync(join(DATA, "higgsfield.json"), "utf8"));
+    let n = 0;
+    for (const it of hf.items || []) {
+      overseas.push({
+        title: it.title,
+        category: "AI 영상",
+        organizer: "Higgsfield",
+        country: "Global",
+        submission_start: "",
+        submission_end: "",                        // "Jul 27 – Aug 24" 처럼 연도가 없어 추측 안 함
+        result_date: "미정",
+        url: it.url,
+        source_type: "hackathon",
+        discovery_source: "higgsfield",
+        summary: it.desc || it.prize || "",
+        status: /open/i.test(it.status || "") ? "진행중" : "예정",
+      });
+      n++;
+    }
+    contrib.higgsfield = n;
+    log(`  · higgsfield ${n}건`);
+  } catch (e) { log(`  ! higgsfield 실패: ${e.message}`); }
+
+  /* 3. junyeo217 안전망 — 성공하면 합치고, 실패(404/네트워크)해도 우리 소스로 계속한다 */
+  const junyeoDom = [], junyeoOvr = [];
+  const pullJunyeo = (j, pool) => {
+    for (const k of ["starting_today", "ongoing", "awaiting_results"]) {
+      for (const it of (j.sections && j.sections[k]) || []) pool.push(it);
+    }
+  };
+  try {
+    const j = await get("https://junyeo217.github.io/ai-contest-board/data/contests.json", { json: true });
+    pullJunyeo(j, junyeoDom);
+    junyeoDomOk = true; contrib.junyeoDom = junyeoDom.length;
+    log(`  · junyeo217 국내 성공 ${junyeoDom.length}건`);
+  } catch (e) { log(`  ! junyeo217 국내 실패(무시): ${e.message}`); }
+  try {
+    const j = await get("https://junyeo217.github.io/ai-contest-board/data/overseas-contests.json", { json: true });
+    pullJunyeo(j, junyeoOvr);
+    junyeoOvrOk = true; contrib.junyeoOvr = junyeoOvr.length;
+    log(`  · junyeo217 해외 성공 ${junyeoOvr.length}건`);
+  } catch (e) { log(`  ! junyeo217 해외 실패(무시): ${e.message}`); }
+
+  /* 4. 지역별 중복 제거 — junyeo217 원본을 먼저 넣어 우선 보존하고, 우리 소스는 키가 겹치면 버린다 */
+  const dedup = (junyeo, ours) => {
+    /* 제목 정규화: 공백·구두점·밑줄만 지우고 글자/숫자는 유지한다. \W 는 유니코드를 몰라
+       한글을 전부 지워 버려서(예: "2026년 남원 숏폼…" → "2026") 서로 다른 국내 공모전이
+       무더기로 같은 키가 돼 잘못 제거됐다. \p{L}\p{N} 로 한글을 살려 진짜 중복만 잡는다. */
+    const normTitle = (s) => String(s || "").toLowerCase().replace(/[^\p{L}\p{N}]+/gu, "");
+    /* host+path 만 쓰면 쿼리로 id 를 넘기는 wevity(?...&ix=110051)가 전부 "www.wevity.com"
+       한 키로 뭉쳐 1건만 남는다. search 까지 넣어 항목을 구분한다. 서로 다른 소스는 host 가
+       달라 어차피 url 로는 안 겹치므로(교차 중복은 제목으로 잡는다) search 를 넣어도 안전하다. */
+    const normUrl = (u) => {
+      try { const x = new URL(u); return (x.host + x.pathname + x.search).toLowerCase().replace(/\/+$/, ""); }
+      catch { return String(u || "").toLowerCase(); }
+    };
+    const titles = new Set(), urls = new Set(), out = [];
+    for (const it of junyeo) { titles.add(normTitle(it.title)); urls.add(normUrl(it.url)); out.push(it); }
+    for (const it of ours) {
+      const tk = normTitle(it.title), uk = normUrl(it.url);
+      if (titles.has(tk) || urls.has(uk)) continue;
+      titles.add(tk); urls.add(uk); out.push(it);
+    }
+    return out;
+  };
+  const domPool = dedup(junyeoDom, domestic);
+  const ovrPool = dedup(junyeoOvr, overseas);
+
+  /* 5. KST 오늘 기준 버킷팅 — 모든 항목에 동일 적용 */
+  const bucket = (items) => {
+    const sec = { starting_today: [], ongoing: [], awaiting_results: [] };
+    for (const it of items) {
+      const s = it.submission_start, e = it.submission_end;
+      if (s && s === today) sec.starting_today.push(it);
+      else if (!e) sec.ongoing.push(it);            // 마감일 불명은 보이게 유지
+      else if (e >= today) sec.ongoing.push(it);    // YYYY-MM-DD 문자열 비교로 충분
+      else sec.awaiting_results.push(it);
+    }
+    return sec;
+  };
+
+  /* 6. 저장 */
+  const notice = "AI 레이더 자체 수집 (wevity·devpost·higgsfield 병합)";
+  const genAt = kstNowIso();
+  const domCount = domPool.length, ovrCount = ovrPool.length;
+  let wrote = false;
+  wrote = save("contests.json", { generated_at: genAt, notice, sections: bucket(domPool) }, domCount, { compact: true }) || wrote;
+  wrote = save("overseas-contests.json", { generated_at: genAt, notice, sections: bucket(ovrPool) }, ovrCount, { compact: true }) || wrote;
+  log(`  · 국내 합계 ${domCount} (wevity ${contrib.wevity} + junyeo217 ${contrib.junyeoDom}${junyeoDomOk ? "" : "[실패]"}, 중복 제거 후)`);
+  log(`  · 해외 합계 ${ovrCount} (devpost ${contrib.devpost} + higgsfield ${contrib.higgsfield} + junyeo217 ${contrib.junyeoOvr}${junyeoOvrOk ? "" : "[실패]"}, 중복 제거 후)`);
+  return wrote;
+}
+
 /* ---------- 실행 ---------- */
 
+const only = process.argv[2];   // 인자를 주면 그 수집기만 돈다 (예: node collect-feeds.mjs contests)
 const results = [];
-for (const [name, fn] of [["news", collectNews], ["community", collectCommunity], ["tech", collectTech], ["devpost", collectDevpost], ["snapshots", collectSnapshots]]) {
+for (const [name, fn] of [["news", collectNews], ["community", collectCommunity], ["tech", collectTech], ["devpost", collectDevpost], ["contests", collectContests], ["snapshots", collectSnapshots]]) {
+  if (only && name !== only) continue;
   try {
     results.push([name, await fn()]);
   } catch (e) {
