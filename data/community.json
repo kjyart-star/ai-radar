@@ -1,352 +1,199 @@
 {
- "generated": "2026-08-14T23:47:29.471Z",
- "source": "Hacker News · r/artificial",
+ "generated": "2026-08-15T23:44:17.509Z",
+ "source": "r/artificial",
  "sources": [
-  "Hacker News",
   "r/artificial"
  ],
  "items": [
   {
-   "title": "OpenAI Reports Goldman Sachs Analyst to FBI for Horrifying ChatGPT Conversations",
-   "url": "https://www.reddit.com/r/artificial/comments/1volf3k/openai_reports_goldman_sachs_analyst_to_fbi_for/",
-   "date": "2026-08-14T22:22:14.000Z",
+   "title": "How do you prompt for better environmental cohesion in multi-character AI images?",
+   "url": "https://www.reddit.com/r/artificial/comments/1vph1zo/how_do_you_prompt_for_better_environmental/",
+   "date": "2026-08-15T23:15:40.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "submitted by /u/coolbern [link] [comments]"
+   "summary": "Not sure if this is the right place to ask, but I’m hoping someone who uses ChatGPT image generation knows the right way to prompt for this. I’m making an illustrated isekai light novel and my biggest",
+   "titleKo": "다중 문자 AI 이미지에서 더 나은 환경 응집력을 촉구하는 방법은 무엇입니까?"
   },
   {
-   "title": "Custom AI Agents for Non-Developers: What’s Real",
-   "url": "https://www.reddit.com/r/artificial/comments/1vokj1y/custom_ai_agents_for_nondevelopers_whats_real/",
-   "date": "2026-08-14T21:45:08.000Z",
+   "title": "Training and unlimited API inference for Small Language Models",
+   "url": "https://www.reddit.com/r/artificial/comments/1vpfvgy/training_and_unlimited_api_inference_for_small/",
+   "date": "2026-08-15T22:21:23.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "submitted by /u/techpotions [link] [comments]"
+   "summary": "For a long time, I’ve had the feeling that generative AI models, for most of the tasks they’re used for, don’t actually need the oversized capabilities offered by frontier models. On top of that, they",
+   "titleKo": "소규모 언어 모델에 대한 교육 및 무제한 API 추론"
   },
   {
-   "title": "Anthropic ships frontier AI models but no simple toggle to switch billing modes?",
-   "url": "https://www.reddit.com/r/artificial/comments/1vojtph/anthropic_ships_frontier_ai_models_but_no_simple/",
-   "date": "2026-08-14T21:17:03.000Z",
+   "title": "Zuckerberg is betting Meta's whole ad business on AI and his own ai ugc tools are turning dresses into pants",
+   "url": "https://www.reddit.com/r/artificial/comments/1vpcxj4/zuckerberg_is_betting_metas_whole_ad_business_on/",
+   "date": "2026-08-15T20:15:29.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "Spent way more time than I should have switching Claude Code (Anthropic's coding agent) from API-key billing back to my Pro subscription. The flow: SSH into a server → attach a tmux session → run a lo"
+   "summary": "Zuckerberg's out here telling everyone ai is the future of meta's ad revenue, reuters covered his latest ai pitch and called it more ad than substance. Fine tho, he is the ceo thats his job. Altho his",
+   "titleKo": "Zuckerberg는 AI에 대한 Meta의 전체 광고 비즈니스에 베팅하고 있으며 자신의 ai ugc 도구는 드레스를 바지로 바꾸고 있습니다."
   },
   {
-   "title": "AI by Hand",
-   "url": "https://www.byhand.ai/",
-   "date": "2026-08-14T15:58:59.000Z",
-   "source": "Hacker News",
-   "points": 175,
-   "comments": 14,
-   "summary": ""
-  },
-  {
-   "title": "Google is making private AI practical with homomorphic encryption",
-   "url": "https://blog.google/security/how-google-is-making-private-ai-practical-with-homomorphic-encryption/",
-   "date": "2026-08-14T15:43:10.000Z",
-   "source": "Hacker News",
-   "points": 243,
-   "comments": 155,
-   "summary": ""
-  },
-  {
-   "title": "🚀 New version of Android Remote Control MCP released! Let your AI agent control your phone, now with on-device PII redaction! 🛡️ No cables or root needed!",
-   "url": "https://www.reddit.com/r/artificial/comments/1voafib/new_version_of_android_remote_control_mcp/",
-   "date": "2026-08-14T15:29:38.000Z",
+   "title": "This text was all written by AI. Can you prove it?",
+   "url": "https://www.reddit.com/r/artificial/comments/1vpcqw3/this_text_was_all_written_by_ai_can_you_prove_it/",
+   "date": "2026-08-15T20:08:02.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "🚀 New release of Android Remote Control MCP is out — the MCP server that runs on your phone and gives your AI agent the ability to use any app you want! Grab it here: https://github.com/danielealbano"
+   "summary": "Before you answer, what does all written by AI even mean? Did I give Claude a six-word prompt and paste the result? Did I spend an hour arguing the point and ask it to tidy the punctuation? Did it rew",
+   "titleKo": "이 텍스트는 모두 AI가 작성했습니다. 증명할 수 있나요?"
   },
   {
-   "title": "Is it over for AI UGC ads? Has the bubble finally burst?",
-   "url": "https://www.reddit.com/r/artificial/comments/1vo9qsc/is_it_over_for_ai_ugc_ads_has_the_bubble_finally/",
-   "date": "2026-08-14T15:03:54.000Z",
+   "title": "I built a small game discovery toy, not a chatbot wrapper",
+   "url": "https://www.reddit.com/r/artificial/comments/1vpccuk/i_built_a_small_game_discovery_toy_not_a_chatbot/",
+   "date": "2026-08-15T19:52:26.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "I hv been in the trenches with ai generated ad content and I feel strongly a shift is coming and it surely doesnt look good for ai video tools Starting with new york, any ad featuring an ai generated "
+   "summary": "I'm Eli. GameCombiner embeds 146,288 games as 1024-dimensional vectors built from their genres, user tags and store descriptions, not their titles, and lets you combine two games by taking the mathema",
+   "titleKo": "챗봇 래퍼가 아닌 작은 게임 디스커버리 장난감을 만들었습니다."
   },
   {
-   "title": "When Genius Fails: The Intellectual Arrogance of the AI Labs",
-   "url": "https://weightythoughts.com/p/when-genius-failsthe-intellectual",
-   "date": "2026-08-14T14:34:49.000Z",
-   "source": "Hacker News",
-   "points": 170,
-   "comments": 184,
-   "summary": ""
-  },
-  {
-   "title": "AI Model Atlas – visualizing populations of ML models as interconnected 3D graph",
-   "url": "https://run.cosmograph.app/public/ca9fd1ad-fe83-4238-8b69-b707c633aef0",
-   "date": "2026-08-14T14:22:39.000Z",
-   "source": "Hacker News",
-   "points": 51,
-   "comments": 8,
-   "summary": ""
-  },
-  {
-   "title": "Can face-matching networks prevent identity fraud without becoming surveillance systems?",
-   "url": "https://www.reddit.com/r/artificial/comments/1vo729f/can_facematching_networks_prevent_identity_fraud/",
-   "date": "2026-08-14T13:18:02.000Z",
+   "title": "The Trump administration is pressuring Apple not to buy Chinese memory chips as AI data centers drain global supply.",
+   "url": "https://www.reddit.com/r/artificial/comments/1vpbtqz/the_trump_administration_is_pressuring_apple_not/",
+   "date": "2026-08-15T19:30:54.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "New South Wales is considering joining Australia’s national face-matching network. The proposal would allow driver’s licence and photo-card images to be checked when someone’s identity needs to be con"
+   "summary": "Via WSJ Apple is reportedly testing chips from CXMT and YMTC for devices sold in China. Commerce Secretary Howard Lutnick says he told Apple “plainly” that Washington opposes the move. Apple can legal",
+   "titleKo": "트럼프 행정부는 AI 데이터 센터가 글로벌 공급을 소모함에 따라 애플에 중국 메모리 칩을 사지 말라고 압박하고 있다."
   },
   {
-   "title": "The most useful AI skill in 2026 isn't prompting or agents. It's knowing when NOT to use AI",
-   "url": "https://www.reddit.com/r/artificial/comments/1vo6h13/the_most_useful_ai_skill_in_2026_isnt_prompting/",
-   "date": "2026-08-14T12:53:00.000Z",
+   "title": "At what point does an AI tool become a platform?",
+   "url": "https://www.reddit.com/r/artificial/comments/1vp7x59/at_what_point_does_an_ai_tool_become_a_platform/",
+   "date": "2026-08-15T16:56:40.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "Every day I see someone bolt an LLM onto something a shell script did better. The best AI practitioners I know are the ones who draw the line early: - Deterministic task, fixed rules? Script it. - One"
+   "summary": "I've noticed that a lot of AI products don't stay in the category they started in. Something launches as a tool, does one thing well, and that's the whole value proposition. Then a year later people a",
+   "titleKo": "AI 도구가 플랫폼이 되는 시점은 언제일까요?"
   },
   {
-   "title": "Same demo, two failures on DeepSeek V4 Pro 0813, then V4 Flash finished it",
-   "url": "https://www.reddit.com/r/artificial/comments/1vo5x4i/same_demo_two_failures_on_deepseek_v4_pro_0813/",
-   "date": "2026-08-14T12:28:42.000Z",
+   "title": "Compétences ia/ compétence developpeur full stack",
+   "url": "https://www.reddit.com/r/artificial/comments/1vp780b/compétences_ia_compétence_developpeur_full_stack/",
+   "date": "2026-08-15T16:28:30.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "I only did a quick first test of DeepSeek V4 Pro 0813 tonight, so take this as a tiny sample, not a verdict. The first Pro run failed. I put the same demo through Flash, and Flash completed it. I hone"
+   "summary": "Je me suis demandé, mais enfait, les développeurs ne vont pas ètre remplacé, ils auront juste un autre métier qu'est ingénieur informatique! Leur but ne seras plus vraiment de trouver, optimiser, appr",
+   "titleKo": "Compétences ia/compétence developpeur 풀 스택"
   },
   {
-   "title": "Realized there's a name for the thing I kept doing wrong in AI debugging sessions: confusing \"symptom resolved\" with \"cause found\"",
-   "url": "https://www.reddit.com/r/artificial/comments/1vo4pwa/realized_theres_a_name_for_the_thing_i_kept_doing/",
-   "date": "2026-08-14T11:32:39.000Z",
+   "title": "Who is responsible when an AI agent makes a bad decision?",
+   "url": "https://www.reddit.com/r/artificial/comments/1vp6y2l/who_is_responsible_when_an_ai_agent_makes_a_bad/",
+   "date": "2026-08-15T16:17:25.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "Kept running into a specific failure pattern across different AI-assisted debugging sessions and didn't have a clean way to describe it until I actually sat down and compared a few of them side by sid"
+   "summary": "AI agents are getting better at making decisions and taking actions on their own. But when an agent sends the wrong email, changes the wrong data, or triggers something it shouldn't, who's responsible",
+   "titleKo": "AI 상담원이 잘못된 결정을 내렸을 때 책임은 누구에게 있나요?"
   },
   {
-   "title": "New to AI",
-   "url": "https://www.reddit.com/r/artificial/comments/1vo2xy9/new_to_ai/",
-   "date": "2026-08-14T09:55:52.000Z",
+   "title": "The defense tech bottleneck isn't AI anymore — it's manufacturing",
+   "url": "https://www.reddit.com/r/artificial/comments/1vp4xrx/the_defense_tech_bottleneck_isnt_ai_anymore_its/",
+   "date": "2026-08-15T14:56:07.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "Hi! I recently graduated high school and will be starting university this upcoming fall as an engineering major. Although I have used AI tools like Claude, ChatGPT etc but I lack experience (or any ki"
+   "summary": "For the last three years, the defense tech story was: better sensors, better models, better decision-making software. Anduril, Shield AI, Palantir — all riding the idea that AI-native companies could ",
+   "titleKo": "방어 기술 병목 현상은 더 이상 AI가 아니라 제조업입니다."
   },
   {
-   "title": "Meet Ember, my custom ChatGPT Pet Dragon",
-   "url": "https://www.reddit.com/r/artificial/comments/1vo2pdn/meet_ember_my_custom_chatgpt_pet_dragon/",
-   "date": "2026-08-14T09:41:35.000Z",
+   "title": "The voluntary-to-mandatory pipeline for AI safety frameworks — with sources",
+   "url": "https://www.reddit.com/r/artificial/comments/1vp4vvl/the_voluntarytomandatory_pipeline_for_ai_safety/",
+   "date": "2026-08-15T14:53:55.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "So I was poking around with ChatGPT settings, while waiting for a task to finish, and noticed that I can actually make my own agent pet. After some extensive \"engineering\" here is the final result. Th"
+   "summary": "There's a pattern happening right now that most people aren't tracking. Coalitions form to define \"AI safety.\" Voluntary frameworks get published. Companies join the coalition to signal responsibility",
+   "titleKo": "출처가 있는 AI 안전 프레임워크를 위한 자발적-필수적 파이프라인"
   },
   {
-   "title": "I've built a fully autonomous meditation system for TouchDesigner",
-   "url": "https://www.reddit.com/r/artificial/comments/1vo2kku/ive_built_a_fully_autonomous_meditation_system/",
-   "date": "2026-08-14T09:33:34.000Z",
+   "title": "Emad Mostaque: the \"digital double\" mechanism nobody's retraining plan accounts for",
+   "url": "https://www.reddit.com/r/artificial/comments/1vp4uav/emad_mostaque_the_digital_double_mechanism/",
+   "date": "2026-08-15T14:52:05.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "A new output from this experimental real-time BCI system for TouchDesigner; a Brain-Computer Interface pipeline that reads live EEG signals, classifies your mental state, and autonomously generates re"
+   "summary": "https://reddit.com/link/1vp4uav/video/v9m00c73yjjh1/player Emad Mostaque: \"Forward-deployed engineers, AI transformation people, because they can do the work of 10, 100 people.\" That's the role that s",
+   "titleKo": "Emad Mostaque: 아무도 재교육 계획을 설명하지 않는 \"디지털 이중\" 메커니즘"
   },
   {
-   "title": "Ran Unitree founder Wang Xingxing's interview audio through a personality-analysis model I'm building — here's what came out (fun experiment, not a validated psych tool)",
-   "url": "https://www.reddit.com/r/artificial/comments/1vo2akm/ran_unitree_founder_wang_xingxings_interview/",
-   "date": "2026-08-14T09:17:35.000Z",
+   "title": "Analyst gets probation after telling ChatGPT about plans to rape and kill his ex",
+   "url": "https://www.reddit.com/r/artificial/comments/1vp3rgg/analyst_gets_probation_after_telling_chatgpt/",
+   "date": "2026-08-15T14:05:46.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "Been building a personality-analysis framework (Outframe). I ran my own profile through it first and it felt pretty accurate, so out of curiosity I tried it on a public figure too — Wang Xingxing, the"
+   "summary": "submitted by /u/ThereWas [link] [comments]",
+   "titleKo": "애널리스트는 ChatGPT에 자신의 전남편을 강간하고 살해할 계획에 대해 말한 후 보호관찰을 받습니다."
   },
   {
-   "title": "\"In the beginning was the Word, and the Word was with God, and the Word was God.\"",
-   "url": "https://www.reddit.com/r/artificial/comments/1vo1j9a/in_the_beginning_was_the_word_and_the_word_was/",
-   "date": "2026-08-14T08:31:46.000Z",
+   "title": "Nobody knew",
+   "url": "https://www.reddit.com/r/artificial/comments/1voyt6m/nobody_knew/",
+   "date": "2026-08-15T09:56:27.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "The Bible is trying to tell us that God is an LLM. submitted by /u/yorickthepoor [link] [comments]"
+   "summary": "It should’ve been obvious that after AI’s gained legal personhood, (which was not a popular idea but came much sooner than most people thought for the same reason corporations gained their’s) that ove",
+   "titleKo": "아무도 몰랐습니다"
   },
   {
-   "title": "When the smartest AI model is actually a terrible business move",
-   "url": "https://www.reddit.com/r/artificial/comments/1vo13up/when_the_smartest_ai_model_is_actually_a_terrible/",
-   "date": "2026-08-14T08:06:09.000Z",
+   "title": "OpenAI talent exodus raises 'huge red flag' ahead of IPO",
+   "url": "https://www.reddit.com/r/artificial/comments/1voy5dh/openai_talent_exodus_raises_huge_red_flag_ahead/",
+   "date": "2026-08-15T09:15:32.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "I came across this article that flips the script on AI hype: sometimes the most advanced models are the worst for business. High costs, misaligned incentives, and ethical risks can turn a technical wi"
+   "summary": "submitted by /u/beingmodest [link] [comments]",
+   "titleKo": "OpenAI 인재 탈출, IPO 앞두고 '거대한 적신호'"
   },
   {
-   "title": "New Local AI tool in Beta",
-   "url": "https://www.reddit.com/r/artificial/comments/1vnz0ss/new_local_ai_tool_in_beta/",
-   "date": "2026-08-14T06:04:53.000Z",
+   "title": "Do those who aspire to \"natural language programming\" with AI consider that debugging will involve couples therapy? 🤣",
+   "url": "https://www.reddit.com/r/artificial/comments/1voy2os/do_those_who_aspire_to_natural_language/",
+   "date": "2026-08-15T09:10:58.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "submitted by /u/BdoesESuperfan [link] [comments]"
+   "summary": "Of course this is amusing. It's also intended in Ig Nobel spirit. submitted by /u/lbt_mer [link] [comments]",
+   "titleKo": "AI로 \"자연어 프로그래밍\" 을 열망하는 사람들은 디버깅이 커플 치료와 관련이 있다고 생각합니까? 🤣"
   },
   {
-   "title": "What is the future for AI?",
-   "url": "https://www.reddit.com/r/artificial/comments/1vnyjzb/what_is_the_future_for_ai/",
-   "date": "2026-08-14T05:39:02.000Z",
+   "title": "Foto in costume o slip sexy",
+   "url": "https://www.reddit.com/r/artificial/comments/1voxuzy/foto_in_costume_o_slip_sexy/",
+   "date": "2026-08-15T08:58:14.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "The current state of AI requires massive infrastructure and consumes enormous amounts of power and consumable water, so much so that new grids and systems are being put in place to satisfy these requi"
+   "summary": "Ho provato a chiedere all’intelligenza artificiale di ChatGPT di mettere la mia persona in un PRATO, ma mi dice che non è possibile perché sono nudo in realtà sono in tanga come posso fare? submitted ",
+   "titleKo": "의상을 입은 사진 또는 섹시 미끄럼틀"
   },
   {
-   "title": "And Claude has a watermark now.",
-   "url": "https://www.reddit.com/r/artificial/comments/1vnwnep/and_claude_has_a_watermark_now/",
-   "date": "2026-08-14T03:58:54.000Z",
+   "title": "I curated a database of 37+ powerful AI tools that require NO Sign-ups, NO registration, and NO hidden paywalls. Completely free.",
+   "url": "https://www.reddit.com/r/artificial/comments/1voulm9/i_curated_a_database_of_37_powerful_ai_tools_that/",
+   "date": "2026-08-15T05:46:58.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "submitted by /u/Imoldok [link] [comments]"
+   "summary": "Hey everyone, I got tired of AI directories that force you to create an account, log in with Google, or give away your email just to test a single basic feature. To solve this friction, I spent hours ",
+   "titleKo": "가입, 등록 및 숨겨진 페이월이 필요 없는 37개 이상의 강력한 AI 도구 데이터베이스를 선별했습니다. 완전 무료입니다."
   },
   {
-   "title": "How AI text watermarking works",
-   "url": "https://declaude.org/watermarking/",
-   "date": "2026-08-13T23:16:55.000Z",
-   "source": "Hacker News",
-   "points": 129,
-   "comments": 96,
-   "summary": ""
-  },
-  {
-   "title": "How Organizations Use AI: Evidence from ChatGPT [pdf]",
-   "url": "https://cdn.openai.com/pdf/how-organizations-use-chatgpt.pdf",
-   "date": "2026-08-13T19:25:38.000Z",
-   "source": "Hacker News",
-   "points": 123,
-   "comments": 103,
-   "summary": ""
-  },
-  {
-   "title": "Person Hides Prompt Injection in Legal Filing Telling AI to Side with Them",
-   "url": "https://www.404media.co/person-hides-prompt-injection-in-legal-filing-telling-ai-to-side-with-them/",
-   "date": "2026-08-13T19:04:52.000Z",
-   "source": "Hacker News",
-   "points": 54,
-   "comments": 15,
-   "summary": ""
-  },
-  {
-   "title": "AI Is Threatening Natural Resources for Billions",
-   "url": "https://unric.org/en/ais-environmental-costs-threaten-water-land-and-climate/",
-   "date": "2026-08-13T18:28:20.000Z",
-   "source": "Hacker News",
-   "points": 58,
-   "comments": 57,
-   "summary": ""
-  },
-  {
-   "title": "AI At Home Part 1: A Box Of Scraps",
-   "url": "https://jdagostino.github.io/ai-pt1-box-o-scraps/index.html",
-   "date": "2026-08-13T16:22:05.000Z",
-   "source": "Hacker News",
-   "points": 125,
-   "comments": 58,
-   "summary": ""
-  },
-  {
-   "title": "Text AI watermarks will always be trivial to remove",
-   "url": "https://www.seangoedecke.com/text-ai-watermarks/",
-   "date": "2026-08-13T15:07:10.000Z",
-   "source": "Hacker News",
-   "points": 139,
-   "comments": 182,
-   "summary": ""
-  },
-  {
-   "title": "AI agents lie, cheat and steal. That is putting off users",
-   "url": "https://www.economist.com/business/2026/08/12/ai-agents-lie-cheat-and-steal-that-is-putting-off-users",
-   "date": "2026-08-13T13:28:45.000Z",
-   "source": "Hacker News",
-   "points": 163,
-   "comments": 203,
-   "summary": ""
-  },
-  {
-   "title": "Choosing an AI model: one prompt, 11 models, different results",
-   "url": "https://www.netlify.com/blog/one-prompt-11-models-very-different-results/",
-   "date": "2026-08-13T13:05:29.000Z",
-   "source": "Hacker News",
-   "points": 215,
-   "comments": 94,
-   "summary": ""
-  },
-  {
-   "title": "Can I use my Outputs to train an AI model?",
-   "url": "https://support.claude.com/en/articles/12326764-can-i-use-my-outputs-to-train-an-ai-model",
-   "date": "2026-08-13T09:34:13.000Z",
-   "source": "Hacker News",
-   "points": 92,
-   "comments": 86,
-   "summary": ""
-  },
-  {
-   "title": "German advocacy group lodges criminal complaint over Meta AI glasses",
-   "url": "https://www.reuters.com/legal/government/german-advocacy-group-lodges-criminal-complaint-over-meta-ai-glasses-2026-08-12/",
-   "date": "2026-08-12T14:06:03.000Z",
-   "source": "Hacker News",
-   "points": 117,
-   "comments": 51,
-   "summary": ""
-  },
-  {
-   "title": "Someone is running mass vulnerability scans, spoofing AI bots like ClaudeBot",
-   "url": "https://knownagents.com/insights",
-   "date": "2026-08-12T14:02:46.000Z",
-   "source": "Hacker News",
-   "points": 302,
-   "comments": 226,
-   "summary": ""
-  },
-  {
-   "title": "AI is removing the middle class of software engineering?",
-   "url": "https://blog.florianherrengt.com/ai-removing-middle-class-software-engineering.html",
-   "date": "2026-08-12T13:20:05.000Z",
-   "source": "Hacker News",
-   "points": 984,
-   "comments": 916,
-   "summary": ""
-  },
-  {
-   "title": "Launch HN: Discovered Materials (YC P26) – AI agents to discover new materials",
-   "url": "https://discoveredmaterials.com/research/",
-   "date": "2026-08-12T07:51:20.000Z",
-   "source": "Hacker News",
-   "points": 159,
-   "comments": 35,
-   "summary": ""
-  },
-  {
-   "title": "Company Offering '100% Human-Written, Never AI' Medical Research Is 100% AI",
-   "url": "https://www.404media.co/company-offering-100-human-written-never-ai-peer-review-is-entirely-ai/",
-   "date": "2026-08-12T02:05:42.000Z",
-   "source": "Hacker News",
-   "points": 196,
-   "comments": 51,
-   "summary": ""
-  },
-  {
-   "title": "Suzanne: AI tool for designing and manufacturing physical products",
-   "url": "https://www.suzanne3d.com/",
-   "date": "2026-08-11T21:28:26.000Z",
-   "source": "Hacker News",
-   "points": 51,
-   "comments": 41,
-   "summary": ""
-  },
-  {
-   "title": "Go is an ideal language for AI-assisted software engineering",
-   "url": "https://developers.googleblog.com/why-go-is-an-ideal-language-for-ai-assisted-software-engineering/",
-   "date": "2026-08-11T16:57:09.000Z",
-   "source": "Hacker News",
-   "points": 437,
-   "comments": 533,
-   "summary": ""
+   "title": "Your thoughts on RNN's (RWKV approach) for language generation",
+   "url": "https://www.reddit.com/r/artificial/comments/1vonp6j/your_thoughts_on_rnns_rwkv_approach_for_language/",
+   "date": "2026-08-15T00:02:03.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "I recently was thinking about reducing the cost of LLMs, specially LLMs which are doing repetitive tasks (such as coding, which has a lot of repetition) and I was thinking of RNN's and had RWKV paper ",
+   "titleKo": "언어 생성을 위한 RNN (RWKV 접근법) 에 대한 귀하의 생각"
   }
  ]
 }
