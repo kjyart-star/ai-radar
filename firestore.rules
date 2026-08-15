@@ -139,11 +139,14 @@ service cloud.firestore {
                     && (request.resource.data.link == ''
                         || request.resource.data.link.matches('^https://.*'))
                     && request.resource.data.photoURL is string
-                    && request.resource.data.photoURL.size() <= 500
-                    /* photoURL 은 https 만 — javascript:·data: 가 src 로 들어가지 못하게(제안).
-                       화면(wpPhotoError)에서 이미 막고 있고, 여기서 서버로 한 번 더 막습니다. */
+                    && request.resource.data.photoURL.size() <= 50000
+                    /* photoURL 은 https 주소이거나 업로드한 이미지(data:image;base64)만 허용합니다.
+                       javascript:·data:text/html 은 못 들어옵니다 — 이미지 data URL 은 <img src>
+                       에서 스크립트가 돌지 않아 안전합니다. 화면(wpPhotoError)도 같은 조건입니다.
+                       50000 은 축소한 아바타(캔버스 256px JPEG) data URL 을 담을 크기입니다. */
                     && (request.resource.data.photoURL == ''
-                        || request.resource.data.photoURL.matches('^https://.*'))
+                        || request.resource.data.photoURL.matches('^https://.*')
+                        || request.resource.data.photoURL.matches('^data:image/(png|jpeg|webp);base64,[A-Za-z0-9+/=]+$'))
                     && (!('interests' in request.resource.data)
                         || (request.resource.data.interests is list
                             && request.resource.data.interests.size() <= 6
@@ -167,9 +170,10 @@ service cloud.firestore {
                     && (request.resource.data.link == ''
                         || request.resource.data.link.matches('^https://.*'))
                     && request.resource.data.photoURL is string
-                    && request.resource.data.photoURL.size() <= 500
+                    && request.resource.data.photoURL.size() <= 50000
                     && (request.resource.data.photoURL == ''
-                        || request.resource.data.photoURL.matches('^https://.*'))
+                        || request.resource.data.photoURL.matches('^https://.*')
+                        || request.resource.data.photoURL.matches('^data:image/(png|jpeg|webp);base64,[A-Za-z0-9+/=]+$'))
                     && (!('interests' in request.resource.data)
                         || (request.resource.data.interests is list
                             && request.resource.data.interests.size() <= 6

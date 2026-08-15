@@ -3755,7 +3755,7 @@ C.addEventListener("click", function(e){
 var WP_NICK_MAX = 20;      /* rules: nick 2~20 */
 var WP_BIO_MAX = 80;       /* rules: bio <= 80 */
 var WP_LINK_MAX = 200;     /* rules: link <= 200 */
-var WP_PHOTO_MAX = 500;    /* rules: photoURL <= 500 */
+var WP_PHOTO_MAX = 50000;  /* rules: photoURL <= 50000 — 업로드한 아바타(축소 data URL)를 담을 크기 */
 var WK_TITLE_MAX = 60;     /* rules: title <= 60 */
 var WK_DAY_MAX = 3;        /* 하루 등록 상한 — 화면에서 센다(아래 wkCountToday 주석) */
 var WK_PAGE = 12;
@@ -3792,8 +3792,16 @@ function wpIni(nick){
   var c = String(nick||"").trim().charAt(0);
   return /[0-9A-Za-z가-힣]/.test(c) ? c : "?";
 }
+/* 아바타에 쓸 수 있는 주소만 통과시킨다. 일반 http(s) 는 ctSafeUrl 로,
+   업로드한 사진은 data:image 만 — 이미지 한정이라 <img src> 에서 스크립트가 못 돈다.
+   ctSafeUrl 은 공모전 링크 등 곳곳에 쓰이므로 거기엔 data: 를 열지 않는다. */
+function wpSafePhoto(u){
+  u = String(u||"");
+  if (/^data:image\/(png|jpe?g|webp);base64,[A-Za-z0-9+/=]+$/.test(u)) return u;
+  return ctSafeUrl(u);
+}
 function wpAva(cls, photo, nick){
-  var u = ctSafeUrl(photo||"");
+  var u = wpSafePhoto(photo||"");
   var ini = wpIni(nick);
   if (!u) return "<span class='"+cls+" bd-ava-x' aria-hidden='true'>"+esc(ini)+"</span>";
   /* 지연 로딩(loading=lazy)을 쓰지 않는다. 화면 밖에 있으면 아예 받지 않아
@@ -3953,9 +3961,41 @@ function wpFieldError(nick, bio, link){
 function wpPhotoError(u){
   u = String(u||"").trim();
   if (!u) return "";
-  if (!/^https:\/\/\S+$/.test(u)) return "프로필 사진은 https:// 로 시작하는 주소만 넣을 수 있습니다.";
-  if (u.length > WP_PHOTO_MAX) return "프로필 사진 주소가 너무 깁니다.";
+  var ok = /^https:\/\/\S+$/.test(u)
+        || /^data:image\/(png|jpe?g|webp);base64,[A-Za-z0-9+/=]+$/.test(u);
+  if (!ok) return "프로필 사진은 https:// 주소이거나 올린 이미지여야 합니다.";
+  if (u.length > WP_PHOTO_MAX) return "사진 용량이 너무 큽니다. 더 작은 이미지를 올려 주세요.";
   return "";
+}
+/* 기기 사진을 캔버스로 작게 줄여 data URL 로 만든다. Storage(유료) 없이 Firestore 에
+   바로 담기 위해서다 — 아바타라 작아도 된다. 용량이 넘으면 화질을 낮춰 다시 뽑는다. */
+function wpResizePhoto(file, cb){
+  if (!file || !/^image\//.test(file.type||"")){ cb("이미지 파일만 올릴 수 있습니다."); return; }
+  var fr = new FileReader();
+  fr.onerror = function(){ cb("사진을 읽지 못했습니다."); };
+  fr.onload = function(){
+    var img = new Image();
+    img.onerror = function(){ cb("사진을 열지 못했습니다."); };
+    img.onload = function(){
+      var max = 256, w = img.width, h = img.height;
+      if (!w || !h){ cb("사진을 열지 못했습니다."); return; }
+      if (w > h){ if (w > max){ h = Math.round(h * max / w); w = max; } }
+      else { if (h > max){ w = Math.round(w * max / h); h = max; } }
+      var cv = document.createElement("canvas");
+      cv.width = w; cv.height = h;
+      var cx = cv.getContext("2d");
+      cx.fillStyle = "#fff"; cx.fillRect(0, 0, w, h);  /* 투명 PNG 가 검게 나오지 않게 */
+      cx.drawImage(img, 0, 0, w, h);
+      var q = 0.82, out;
+      try { out = cv.toDataURL("image/jpeg", q); }
+      catch(e){ cb("사진을 처리하지 못했습니다."); return; }
+      while (out.length > WP_PHOTO_MAX && q > 0.4){ q -= 0.15; out = cv.toDataURL("image/jpeg", q); }
+      if (out.length > WP_PHOTO_MAX){ cb("사진 용량이 너무 큽니다. 더 작은 이미지를 올려 주세요."); return; }
+      cb(null, out);
+    };
+    img.src = fr.result;
+  };
+  fr.readAsDataURL(file);
 }
 function wpShell(inner){
   return "<section class='section paper'><div class='inner'><div class='bd-wrap bd-wide'>"+
@@ -4097,16 +4137,18 @@ function wpEditView(el){
       "<label class='pf-lab'>대표 링크"+
         "<input class='bd-in' type='url' inputmode='url' maxlength='"+WP_LINK_MAX+"' data-plink"+
           " placeholder='선택 · https://' aria-label='대표 링크'></label>"+
-      /* 사진은 주소만 받는다. 파일 업로드는 열지 않는다 —
-         올린 파일을 우리가 보관하고 검수해야 하는 책임이 따라온다. */
+      /* 사진: 기기에서 올리거나(캔버스로 축소해 data URL) · 구글 사진 · 주소 붙여넣기.
+         파일은 우리 서버에 두지 않는다 — 축소한 이미지를 프로필 문서에 바로 담는다. */
       "<div class='pf-lab'>프로필 사진"+
         "<div class='pf-photo'>"+
           "<span data-ppreview></span>"+
           "<input class='bd-in' type='url' inputmode='url' maxlength='"+WP_PHOTO_MAX+"' data-pphoto"+
             " placeholder='사진 주소 · https://' aria-label='프로필 사진 주소'>"+
+          "<label class='chip' style='cursor:pointer'>사진 올리기"+
+            "<input type='file' accept='image/*' data-pfile style='display:none'></label>"+
           "<button type='button' class='chip' data-pgoogle>구글 사진으로</button>"+
         "</div>"+
-        "<span class='pf-help'>사진 주소를 넣으면 바로 위 원에 미리 보입니다. "+
+        "<span class='pf-help'>기기에서 올리거나 사진 주소를 넣으면 바로 위 원에 미리 보입니다. "+
           "비워 두면 닉네임 첫 글자가 대신 들어갑니다.</span>"+
       "</div>"+
       /* 관심 분야 — 고른 분야의 마감이 홈 맨 위(관심 분야 마감 임박)에 모인다 */
@@ -4173,6 +4215,17 @@ function wpEditView(el){
     photoEl.value = String((bdUser && bdUser.photoURL) || "");
     drawPreview();
     msg.textContent = photoEl.value ? "" : "구글 계정에 사진이 없습니다.";
+  };
+  var fileEl = el.querySelector("[data-pfile]");
+  if (fileEl) fileEl.onchange = function(){
+    var f = fileEl.files && fileEl.files[0];
+    if (!f) return;
+    msg.textContent = "사진을 줄이는 중입니다.";
+    wpResizePhoto(f, function(err, url){
+      fileEl.value = "";   /* 같은 파일을 다시 고를 수 있게 비운다 */
+      if (err){ msg.textContent = err; return; }
+      photoEl.value = url; drawPreview(); msg.textContent = "사진을 올렸습니다. [저장]을 눌러 주세요.";
+    });
   };
   save.onclick = function(){
     var nick = String(nickEl.value||"").trim();
