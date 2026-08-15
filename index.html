@@ -158,8 +158,13 @@
   /* 86vh/900px: 메뉴가 히어로 안으로 들어온 뒤 상단이 눌려 보였다(대표 실보고 2026-08-15
      "너무 좁아 보임"). 사진이 주인공인 화면이라 세로를 거의 채워도 된다 —
      메뉴 첫 줄이 첫 화면에 걸리는 것은 포기해도 좋다고 대표가 정했다. */
-  .hero{ position:relative; min-height:max(min(86vh, 900px), 28vw); display:flex; align-items:flex-end;
+  /* 높이는 여기 한 곳에서만 갈린다 (대표 지시 2026-08-15).
+     홈은 사진이 주인공이라 크게 쓰고(.has-photo), 사진이 없는 나머지 화면은
+     같은 높이를 물려받으면 검은 여백만 커진다 — 예전 값(576px 계열)으로 되돌린다.
+     브레이크포인트마다 흩뿌리지 않는다. 아래 반응형은 사진 있는 홈만 따로 손댄다. */
+  .hero{ position:relative; min-height:max(min(58vh, 576px), 22vw); display:flex; align-items:flex-end;
          overflow:hidden; border-bottom:1px solid var(--line-dark); }
+  .hero.has-photo{ min-height:max(min(86vh, 900px), 28vw); }
   /* 아래에 더 있다는 표시. 화살표는 쓰지 않는다 — 1px 선으로만 말하는 화면에
      아이콘이 하나 들어오면 그것만 튄다. 히어로 아래쪽 빈 여백 안에 두어
      제목·본문·숫자 줄 어느 것과도 겹치지 않는다. */
@@ -255,8 +260,11 @@
   .hero.has-photo{ border-bottom-color:transparent; }
   /* 상단 패딩 44→110px: 헤드라인이 더 아래서 시작해 사진 위쪽(얼굴 구역)이 비어 보인다.
      모바일(680px 이하)은 아래 반응형이 따로 잡으므로 여기 값이 새지 않는다. */
+  /* 상단 여백도 홈만 크다. 110px 은 사진 위쪽(얼굴 구역)을 비우려고 준 값이라
+     사진이 없는 화면에서는 그냥 빈 검정이 된다 — 예전 값 44px 로 둔다. */
   .hero-content{ position:relative; z-index:3; width:min(var(--max), calc(100% - 64px));
-                 margin:0 auto; padding:calc(var(--navh) + 110px) 0 42px; }
+                 margin:0 auto; padding:calc(var(--navh) + 44px) 0 42px; }
+  .hero.has-photo .hero-content{ padding-top:calc(var(--navh) + 110px); }
   .kicker{ display:flex; gap:9px; flex-wrap:wrap; margin-bottom:22px; }
   .pill{ border:1px solid rgba(255,255,255,.35); border-radius:999px; padding:7px 12px;
          font-size:10px; letter-spacing:.14em; text-transform:uppercase; font-weight:700; }
@@ -569,6 +577,15 @@
      기존 토큰만 쓴다. 여기 새로 생긴 건 목록에 없던 것(입력창·아바타·액션)뿐이다.
      한 줄로 읽히게 폭을 720px 로 묶는다 — 피드는 표가 아니라 대화다. */
   .bd-wrap{ max-width:720px; }
+  /* 게시판은 다른 화면과 같은 폭을 쓴다(대표 지시 2026-08-15 "좌우가 좁다").
+     다만 글줄까지 1320px 로 늘리면 한 줄이 너무 길어 읽기 어려워지므로,
+     글은 760px 로 잡고 남는 오른쪽을 오늘의 브리핑이 사이드로 쓴다.
+     960px 아래에서는 한 단으로 접히고, 그때 브리핑이 위로 올라간다(order:-1) —
+     좁은 화면에서 빈 피드를 먼저 만나지 않게 하려던 원래 의도 그대로다. */
+  .bd-wide{ max-width:none; }
+  .bd-cols{ display:grid; grid-template-columns:minmax(0,760px) minmax(240px,320px);
+            justify-content:space-between; gap:56px; align-items:start; }
+  .bd-thread{ max-width:760px; }
   .bd-back{ display:inline-block; margin-bottom:20px; font-family:var(--display); font-size:11px;
             font-weight:800; letter-spacing:.12em; text-transform:uppercase;
             color:var(--muted-light); }
@@ -634,6 +651,10 @@
   .bd-more{ display:flex; justify-content:center; padding:22px 0; }
   .bd-loading{ font-size:12px; color:var(--muted-light); }
   .bd-sentinel{ display:block; width:1px; height:1px; }
+  /* 인라인 답글 자리. 비어 있을 때는 아무 자리도 차지하지 않는다 */
+  .bd-inbox:not(:empty){ margin-top:14px; padding-left:14px;
+                         border-left:2px solid var(--line-light); }
+  .bd-inbox .bd-composer{ margin-bottom:0; }
   .bd-edit{ margin-top:12px; }
   .bd-editacts{ display:flex; flex-wrap:wrap; gap:9px; margin-top:10px; }
   .bd-toast{ position:fixed; left:50%; bottom:26px; translate:-50% 0; z-index:120;
@@ -658,8 +679,31 @@
   .pf-bio{ margin:14px 0 0; font-size:14.5px; line-height:1.75; color:var(--muted-light);
            word-break:keep-all; }
   .pf-form{ display:grid; gap:10px; max-width:440px; margin-top:16px; }
-  /* 공모전 이름표. 카드 바깥(액션 줄)에 둔다 — 카드 전체가 링크라 안에 넣으면
-     링크 안의 링크가 된다. */
+  /* ---------- 작품 갤러리 ----------
+     썸네일이 먼저 오고 정보는 그 아래 두 줄이다(제목 / 만든 사람 · 메타).
+     영상 목록에서는 이 배치가 표준이라 처음 온 사람도 설명 없이 읽는다.
+     칸 최소폭 300px — 1320px 안쪽에서 네 칸, 태블릿에서 두 칸, 모바일에서 한 칸이 된다. */
+  .wk-bar{ display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-bottom:8px; }
+  .wk-bar .btn{ margin-left:auto; display:inline-flex; align-items:center; min-height:46px; }
+  .wk-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+            gap:30px 22px; margin-top:22px; }
+  .wk-thumb{ display:block; aspect-ratio:16/9; overflow:hidden; background:var(--ink-2); }
+  .wk-thumb img{ display:block; width:100%; height:100%; object-fit:cover; }
+  .wk-noimg{ display:grid; place-items:center; width:100%; height:100%;
+             background:var(--ink); color:var(--lime); font-family:var(--display);
+             font-size:12px; font-weight:800; letter-spacing:.16em; }
+  @media (hover:hover){ .wk-card:hover .wk-title{ color:var(--coral); } }
+  .dark .wk-card:hover .wk-title{ color:var(--lime); }
+  .wk-info{ margin-top:12px; }
+  /* 제목은 두 줄까지만. 세 줄이 되면 칸마다 높이가 달라져 격자가 흔들린다 */
+  .wk-title{ display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;
+             overflow:hidden; font-size:14.5px; font-weight:800; line-height:1.45;
+             letter-spacing:-.015em; word-break:keep-all; }
+  .wk-by{ display:flex; align-items:center; gap:8px; margin-top:10px; min-width:0; }
+  .wk-by .bd-ava{ width:24px; height:24px; }
+  .wk-meta{ display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:8px;
+            font-size:11.5px; color:var(--muted-light); }
+  .dark .wk-meta{ color:var(--muted-dark); }
   .wk-badge{ display:inline-block; border:1px solid var(--line-light); border-radius:999px;
              padding:3px 10px; max-width:100%; font-size:10.5px; font-weight:800;
              color:var(--muted-light); overflow:hidden; text-overflow:ellipsis;
@@ -683,13 +727,18 @@
     /* 두 단으로 두면 한 칸이 460px 밑으로 내려가는데, 왼쪽 D-day 칸 96px 을 빼면
        제목에 남는 폭이 모자라 공고명이 서너 줄로 접힌다. 한 단으로 되돌린다. */
     .rows.two{ grid-template-columns:1fr; column-gap:0; }
+    /* 게시판 두 단이 한 단으로 접힌다. 브리핑은 위로 올린다 —
+       좁은 화면에서 빈 피드를 먼저 만나지 않게 하려던 원래 의도 그대로다. */
+    .bd-cols{ grid-template-columns:1fr; gap:0; }
+    .bd-cols aside{ order:-1; margin-bottom:8px; }
   }
-  /* 980px 아래에서는 검색을 돋보기 하나로 접는다. 실측(2026-08-15): 800px 에서
-     입력칸을 펴 둔 채로는 메뉴 여덟 개 중 220px 이 스크롤 뒤로 숨었다 —
+  /* 1040px 아래에서는 검색을 돋보기 하나로 접는다. 실측(2026-08-15): 900px 에서
+     입력칸을 펴 둔 채로는 메뉴 아홉 개 중 121px 이 스크롤 뒤로 숨었다 —
      붙여 둔 기능 때문에 원래 있던 메뉴가 안 보이면 바꾼 쪽이 잘못한 것이다.
+     버튼을 하나로 줄여 84px 을 벌었지만 메뉴가 아홉이 되어 기준은 오히려 올라갔다.
      돋보기는 오버레이 위(z-index)에 남아 닫기 버튼을 겸한다 — 닫기를 따로 세우면
      375px 위 줄이 로고·돋보기·닫기·로그인 넷이 되어 로고가 밀린다. */
-  @media (max-width:980px){
+  @media (max-width:1040px){
     .nav-icon{ display:grid; position:relative; z-index:97; }
     .nav-search{ position:static; }
     .nav-search .search{ display:none; }
@@ -710,7 +759,10 @@
     .nav .btn{ padding:10px 12px; }
   }
   @media (max-width:760px){
-    :root{ --navh:124px; }
+    /* 메뉴가 아홉이 되면서(작품 갤러리) 네 개씩은 4+4+1 세 줄이 되고 72px 을 2px 넘겨
+       마지막 줄이 잘렸다(2026-08-15 실측). 세 개씩 3+3+3 으로 바꾸고 줄 높이를 80px 로
+       올린다 — --navh 도 132(52+80)로 함께 올려야 히어로가 잘리거나 뜨지 않는다. */
+    :root{ --navh:132px; }
     /* 두 줄로 접는다: 위 줄(52px)이 로고와 검색·로그인, 아래 줄(72px)이 메뉴다.
        column 대신 wrap 을 쓰는 이유는 위 줄에 두 덩어리를 양끝으로 놓기 위해서다. */
     .nav{ flex-wrap:wrap; align-items:center; justify-content:space-between; gap:0;
@@ -725,7 +777,7 @@
        모르는 사람이 생기고, 그건 안 붙인 것과 같다.
        높이를 72px 로 고정해 두는 이유: --navh(124 = 52+72)가 히어로 상단 여백을
        계산하는 값이라, 내비가 늘었다 줄었다 하면 히어로가 잘리거나 뜬다. */
-    .nav-links{ height:72px; flex-wrap:wrap; align-items:center; align-content:center;
+    .nav-links{ height:80px; flex-wrap:wrap; align-items:center; align-content:center;
                 row-gap:7px; column-gap:13px; font-size:10px; letter-spacing:.085em;
                 overflow:hidden;
                 border-top:1px solid var(--line-dark); margin:0 -18px; padding:0 14px; }
@@ -733,15 +785,12 @@
        메뉴가 일곱이 되면서 3개씩(3+3+1)은 세 줄이 되어 72px 를 2px 넘겼고,
        하필 잘리는 자리가 현재 메뉴를 알려 주는 라임 밑줄이었다. 4개씩으로 바꿔
        4 + 3 두 줄로 되돌린다 — 높이(--navh)는 그대로 두어 히어로가 밀리지 않는다. */
-    .nav-links a{ padding:3px 0; flex:0 0 calc(25% - 10px); }
+    .nav-links a{ padding:3px 0; flex:0 0 calc(33.333% - 10px); }
   }
   @media (max-width:680px){
     /* 위 줄이 52px 이라 오버레이 높이도 그만큼으로 낮춘다(위 980 규칙을 덮는다) */
     .nav-search.open .search{ height:52px; padding:0 58px 0 18px; }
     .nav-res{ top:52px; }
-    /* 가입하기는 감춘다. 어차피 로그인 흐름 안에서 닉네임을 묻게 되어 있어
-       버튼 둘이 나란히 설 자리를 쓸 이유가 없다. */
-    .nav-auth .btn.solid{ display:none; }
     /* 손가락으로 누르는 것들은 46px 아래로 내려가지 않게 한다 */
     .nav-me{ max-width:124px; padding-right:9px; min-height:46px; }
     .nav-menu a,.nav-menu button{ padding:15px 14px; }
@@ -1239,6 +1288,10 @@ var MENU = [
   ["gov","AI지원사업","FUNDING"],
   ["youtube","AI유튜브정보","WATCH"],
   ["aivideo","AI작품소개","SHOWCASE"],
+  /* 아홉 번째. 작품소개(우리가 고른 것)와 갤러리(여기 사람들이 올린 것)를 갈랐다
+     (대표 지시 2026-08-15). 한 화면에 탭으로 묶었더니 "기존 것을 없앤 것"으로 읽혔다 —
+     성격이 다른 둘은 메뉴에서부터 갈라 두어야 각자가 무엇인지 분명해진다. */
+  ["gallery","작품 갤러리","GALLERY"],
   /* 일곱 번째. 앞의 여섯은 우리가 모아다 보여주는 곳이고 여기만 사람이 쓴다 —
      성격이 달라 맨 끝에 둔다. 모바일에서는 세 줄로 접힌다(아래 @media 760px). */
   ["board","자유게시판","BOARD"]
@@ -1294,6 +1347,8 @@ var HERO = {
     copy:"AI 소식과 바이브코딩 영상을 한자리에 모았습니다. 오늘 것이 위에, 지난 날짜는 아래에서 보실 수 있습니다." },
   aivideo:{ latin:"SHOWCASE", ko:"AI 작품소개",
     copy:"AI로 만든 영상 작품을 모았습니다. 단편영화·뮤직비디오·애니메이션을 골라 담았습니다." },
+  gallery:{ latin:"GALLERY", ko:"작품 갤러리",
+    copy:"여기 사람들이 만들어 올린 작품입니다. 유튜브·비메오 링크만 있으면 바로 올리실 수 있습니다." },
   board:{ latin:"BOARD", ko:"자유게시판",
     copy:"AI를 쓰면서 알게 된 것을 짧게 남기고 이어 가는 곳입니다. 읽는 건 누구나, 남기는 건 로그인 후에 하실 수 있습니다." },
   /* 프로필은 메뉴에 없다 — 주소(/u/{슬러그})로만 들어온다. 그래도 히어로는 있어야
@@ -2364,9 +2419,7 @@ function fetchAiVideosLive(){
     aivideoCache = j;
     if (!had) return;                                                   /* 첫 표시는 부른 쪽이 그린다 */
     if (String(had.generated||"") === String(j.generated||"")) return;   /* 같으면 다시 그리지 않는다 */
-    /* 보고 있는 화면만. 커뮤니티 탭일 때는 손대지 않는다 —
-       늦게 온 수집 결과가 사람이 채우던 등록 폼을 지워 버리면 안 된다. */
-    if (curRoute()==="aivideo" && avTab==="pick") renderAiVideo();
+    if (curRoute()==="aivideo") renderAiVideo();                         /* 보고 있는 화면만 */
     else if (curRoute()==="youtube") renderYoutube();
   }, function(){});
   return aivideoLivePromise;
@@ -2406,27 +2459,18 @@ function videoSection(cls, eyebrow, h2, list, queries, generated){
     ((list||[]).length ? videoCards(list) : emptyNote("아직 모인 영상이 없습니다."))+
     "</div></section>";
 }
-/* 탭 둘. 기본은 커뮤니티다 — 우리가 고른 것보다 여기 사람들이 올린 것이 먼저 보여야
-   "올려도 되는 곳"으로 읽힌다. 추천(기존 큐레이션)은 그 옆에 그대로 둔다. */
-var AV_TABS = [["comm","커뮤니티"],["pick","추천"]];
+/* 우리가 고른 작품만 있는 화면이다. 사용자가 올린 것은 「작품 갤러리」가 따로 맡는다
+   (대표 지시 2026-08-15 — 한때 여기 탭으로 묶었다가 되돌렸다). */
 function renderAiVideo(){
   setKicker(["AI 작품"]);
   setFacts([["—","작품"],["—","최고 조회수"],["—","수집"]]);
   C.innerHTML = "<section class='section paper'><div class='inner'>"+
-    "<div class='controls'><div class='chips'>"+
-      AV_TABS.map(function(t){
-        return "<button type='button' class='chip"+(t[0]===avTab?" on":"")+"'"+
-          " data-avtab='"+esc(t[0])+"' aria-pressed='"+(t[0]===avTab)+"'>"+esc(t[1])+"</button>";
-      }).join("")+
-    "</div></div>"+
-    "<div data-avbody>"+emptyNote("불러오는 중입니다.")+"</div>"+
+    "<div data-avbody>"+emptyNote("작품을 불러오는 중입니다.")+"</div>"+
     "</div></section>";
-  var body = C.querySelector("[data-avbody]");
-  if (avTab === "pick") avPickView(body);
-  else wkListView(body);
+  avPickView(C.querySelector("[data-avbody]"));
 }
-/* 기존 큐레이션. 탭 안으로 들어가면서 바깥 <section> 만 벗었다 —
-   내용과 숫자 계산은 그대로다. */
+/* 화면 안쪽만 그린다 — 바깥 <section> 은 부른 쪽이 세운다.
+   내용과 숫자 계산은 처음 만들었을 때 그대로다. */
 function avPickView(host){
   fetchAiVideos().then(function(j){
     if (curRoute()!=="aivideo" || !C.contains(host)) return;
@@ -2481,6 +2525,7 @@ var bdRef = null;                       /* 다른 화면의 "이야기하기"가
 var bdReplyTo = null;
 var bdRedrawComposer = null;
 var bdBodyCache = {}, bdTagCache = {};  /* 카드에서 수정창을 열 때 원문을 되살리기 위한 값 */
+var bdInline = null;                    /* 인라인 답글창을 연 글 id (한 번에 하나) */
 
 /* ---- SDK 지연 로딩 ----
    <head> 에 정적으로 넣지 않는다. gstatic 이 느리거나 막히면 사이트 전체가 같이 죽는데,
@@ -2525,7 +2570,7 @@ function fbInit(){
           var r = curRoute();                        /* 로그인이 보이는 화면만 다시 그린다 */
           if (r==="board") renderBoard();
           else if (r==="prof") renderProfile();
-          else if (r==="aivideo") renderAiVideo();
+          else if (r==="gallery") renderGallery();
         });
         res(true);
       } catch(e){ rej(e); }
@@ -2741,7 +2786,7 @@ function bdCard(p, opt){
   var refUrl = (p.ref && p.ref.url) ? ctSafeUrl(p.ref.url) : "";
   var root = p.rootId || p.id;
   var h = "<article class='bd-card"+(opt.depth?" d"+Math.min(opt.depth,2):"")+
-          "' data-post='"+esc(p.id)+"'>";
+          "' data-post='"+esc(p.id)+"' data-root='"+esc(root)+"'>";
   h += "<div class='bd-head'>"+
        (ph ? "<img class='bd-ava' src='"+esc(ph)+"' alt='' loading='lazy' referrerpolicy='no-referrer'>"
            : "<span class='bd-ava bd-ava-x' aria-hidden='true'></span>")+
@@ -2763,9 +2808,13 @@ function bdCard(p, opt){
       return "<span class='tag'>"+esc(t)+"</span>"; }).join("")+"</div>";
   }
   h += "<div class='bd-acts'>";
+  /* 피드에서도 누른 자리에서 바로 답글을 쓴다. 예전에는 글 화면으로 넘어갔고,
+     넘어가면서 맨 위로 올라가 읽던 자리를 잃었다(대표 지적 2026-08-15).
+     답글을 "읽으러" 가는 길은 아래 인라인 상자 안에 둔다. */
   h += opt.thread
-    ? "<span class='bd-act'>답글 <b class='tnum'>"+nfmt(p.replyCount||0)+"</b></span>"
-    : "<a class='bd-act' href='"+esc(boardUrl(root))+"'>답글 <b class='tnum'>"+nfmt(p.replyCount||0)+"</b></a>";
+    ? "<span class='bd-act'>답글 <b class='tnum' data-rc>"+nfmt(p.replyCount||0)+"</b></span>"
+    : "<button type='button' class='bd-act' data-reply='"+esc(p.id)+"'>답글 "+
+      "<b class='tnum' data-rc>"+nfmt(p.replyCount||0)+"</b></button>";
   h += "<button type='button' class='bd-act"+(bdLiked[p.id]?" on":"")+"' data-like='"+esc(p.id)+"'"+
        " aria-pressed='"+(!!bdLiked[p.id])+"'>♥ <b class='tnum'>"+nfmt(p.likeCount||0)+"</b></button>";
   if (opt.thread) h += "<button type='button' class='bd-act' data-reply='"+esc(p.id)+"'>답글 쓰기</button>";
@@ -2774,7 +2823,9 @@ function bdCard(p, opt){
     h += "<button type='button' class='bd-act' data-edit='"+esc(p.id)+"'>수정</button>";
     h += "<button type='button' class='bd-act' data-del='"+esc(p.id)+"'>삭제</button>";
   }
-  h += "</div></article>";
+  h += "</div>";
+  h += "<div class='bd-inbox' data-inbox></div>";
+  h += "</article>";
   return h;
 }
 
@@ -2877,17 +2928,48 @@ function bdEditCard(el){
     });
   };
 }
+/* 답글 쓰기 — 누른 글 바로 아래에서 연다. 화면은 한 픽셀도 움직이지 않는다.
+   예전에는 피드에서 글 화면으로 넘어가며 맨 위로 올라갔고, 글 화면에서는 맨 아래
+   입력창까지 스크롤했다. 둘 다 읽던 자리를 잃는다 — 대표 지적 2026-08-15. */
 function bdOpenReply(el){
+  var id = el.getAttribute("data-reply");
   var card = el.closest(".bd-card");
-  var nameEl = card ? card.querySelector(".bd-name") : null;
-  bdReplyTo = { id: el.getAttribute("data-reply"),
-                name: nameEl ? String(nameEl.textContent||"") : "" };
-  if (bdRedrawComposer) bdRedrawComposer();
-  var host = C.querySelector("[data-replycomp]");
-  if (!host) return;
-  var ta = host.querySelector("[data-cbody]");
-  if (ta) ta.focus();
-  host.scrollIntoView({ behavior:"smooth", block:"center" });
+  var box = card ? card.querySelector("[data-inbox]") : null;
+  if (!box) return;
+  if (bdInline === id){ bdInline = null; box.innerHTML = ""; return; }   /* 다시 누르면 접는다 */
+  /* 입력창이 둘이면 어디에 쓰는지 알 수 없다 — 열려 있던 것은 닫는다 */
+  var all = C.querySelectorAll("[data-inbox]");
+  for (var i=0; i<all.length; i++) all[i].innerHTML = "";
+  bdInline = id;
+  var root = card.getAttribute("data-root") || id;
+  var nameEl = card.querySelector(".bd-name");
+  var n = Number(String((card.querySelector("[data-rc]")||{}).textContent||"0").replace(/[^\d]/g,"")) || 0;
+  /* 답글을 "읽으러" 가는 길은 여기 둔다 — 액션 줄에 두면 쓰려던 사람이 또 넘어간다 */
+  box.innerHTML = (n && !bdInThread(card)
+      ? "<a class='bd-act' href='"+esc(boardUrl(root))+"'>답글 "+nfmt(n)+"개 모두 보기 →</a>"
+      : "")+
+    "<div data-inreply></div>";
+  bdComposer(box.querySelector("[data-inreply]"), {
+    parentId: id,
+    rootId: root,
+    tags: (bdTagCache[root] || []),
+    toName: nameEl ? String(nameEl.textContent||"") : "",
+    done: function(){ bdInlineDone(box, root); }
+  });
+  var ta = box.querySelector("[data-cbody]");
+  /* preventScroll — 포커스만으로도 브라우저가 화면을 끌어당긴다 */
+  if (ta){ try { ta.focus({ preventScroll:true }); } catch(e){} }
+}
+/* 스레드 화면에서는 이미 그 글의 답글을 다 보고 있으므로 "모두 보기"를 붙이지 않는다 */
+function bdInThread(card){ return !!card.closest("[data-thread]"); }
+function bdInlineDone(box, root){
+  bdInline = null;
+  box.innerHTML = "";
+  bdToast("답글을 올렸습니다");
+  /* 숫자만 올린다. 목록을 다시 그리면 읽던 자리가 그대로 사라진다 */
+  var card = C.querySelector("[data-post='"+root+"']");
+  var el = card ? card.querySelector("[data-rc]") : null;
+  if (el) el.textContent = nfmt((Number(String(el.textContent||"0").replace(/[^\d]/g,""))||0) + 1);
 }
 /* 목록 화면의 "이야기하기" — 인용 대상만 들고 게시판으로 건너간다.
    해시나 주소에 제목·URL 을 실어 나르지 않는다. 주소가 길어지고 공유도 어려워진다. */
@@ -3041,7 +3123,10 @@ function bdComposer(host, opt){
         return fbDb.collection("posts").doc(opt.rootId)
           .update({ replyCount: firebase.firestore.FieldValue.increment(1) })["catch"](function(){});
       }).then(function(){
-        bdReplyTo = null; render();
+        bdReplyTo = null;
+        /* 인라인 답글은 자리를 지켜야 하므로 부른 쪽이 뒷정리를 한다 */
+        if (opt.done) opt.done();
+        else render();
       }, fail);
       return;
     }
@@ -3096,12 +3181,18 @@ function bdFacts(){
 /* ---- 피드 ---- */
 function bdFeedView(el){
   bdRedrawComposer = null;
+  /* 두 단이다 — 왼쪽이 글, 오른쪽이 오늘의 브리핑.
+     좁아지면 한 단으로 접히고 브리핑이 위로 간다(위 @media 960px). */
   el.innerHTML =
-    "<div data-brief></div>"+
-    "<div class='controls'><div class='chips' data-filter></div></div>"+
-    "<div data-comp></div>"+
-    "<div data-rows></div>"+
-    "<div class='bd-more' data-more></div>";
+    "<div class='bd-cols'>"+
+      "<div>"+
+        "<div class='controls'><div class='chips' data-filter></div></div>"+
+        "<div data-comp></div>"+
+        "<div data-rows></div>"+
+        "<div class='bd-more' data-more></div>"+
+      "</div>"+
+      "<aside data-brief></aside>"+
+    "</div>";
   bdBriefCard(el.querySelector("[data-brief]"));
   bdComposer(el.querySelector("[data-comp]"), {});
   var filterEl = el.querySelector("[data-filter]");
@@ -3293,6 +3384,13 @@ function renderBoard(){
 C.addEventListener("click", function(e){
   var t = e.target, el;
   if (!t || !t.closest) return;
+  /* 안전망. 갈 곳이 없는 앵커(href="#")는 눌러도 맨 위로 튀지 않게 한다 —
+     지금은 그런 앵커가 없지만, 나중에 하나만 새로 생겨도 읽던 자리가 날아간다 */
+  var anc = t.closest("a[href]");
+  if (anc){
+    var hv = anc.getAttribute("href");
+    if (!hv || hv === "#") e.preventDefault();
+  }
   if ((el = t.closest("[data-talk]"))){ e.preventDefault(); bdTalk(el); return; }
   if ((el = t.closest("[data-unfold]"))){
     var card = el.closest(".bd-card");
@@ -3306,8 +3404,8 @@ C.addEventListener("click", function(e){
   if ((el = t.closest("[data-del]"))){ bdDelete(el); return; }
   if ((el = t.closest("[data-edit]"))){ bdEditCard(el); return; }
   if ((el = t.closest("[data-reply]"))){ bdOpenReply(el); return; }
-  /* 작품 화면의 것들도 같은 자리에서 받는다 — 탭을 갈아 끼워도 끊기지 않는다 */
-  if ((el = t.closest("[data-avtab]"))){ avTab = el.getAttribute("data-avtab"); renderAiVideo(); return; }
+  /* 갤러리의 것들도 같은 자리에서 받는다 — 다시 그려도 끊기지 않는다 */
+  if ((el = t.closest("[data-wkopen]"))){ wkFormOpen = !wkFormOpen; renderGallery(); return; }
   if ((el = t.closest("[data-wklike]"))){ wkToggleLike(el); return; }
   if ((el = t.closest("[data-wkdel]"))){ wkDelete(el); return; }
   if ((el = t.closest("[data-login]"))){ bdLogin(); return; }
@@ -3342,7 +3440,7 @@ var wpFactW = "—", wpFactP = "—";
 var wpSlugName = {};       /* 공모전 슬러그 → 이름 */
 var wpSlugPromise = null;
 var wkFeed = [], wkLiked = {};
-var avTab = "comm";        /* AI작품소개 탭 — comm(커뮤니티) · pick(추천) */
+var wkFormOpen = false;    /* 「작품 올리기」를 눌렀을 때만 폼을 편다 */
 
 /* 프로필 안에서의 이동. 게시판의 bdGo 와 같은 방식이다 */
 function wpGo(slug){
@@ -3671,12 +3769,18 @@ function wkThumb(w){
 /* 공모전 이름표는 data/slugs.json 에서 온다(슬러그 ↔ 제목). 파일이 커서 작품 화면을
    열 때만 한 번 받고, 실패하면 이름표만 빠진다.
    상대 경로로 적으면 /u/xxx 에서 /u/data/... 로 풀려 404 다 — 베이스를 붙인다. */
-function wpContestMap(){
+function wpSlugRaw(){
   if (wpSlugPromise) return wpSlugPromise;
   wpSlugPromise = fetch(BASE + "data/slugs.json", { cache:"no-store" })
     .then(function(r){ if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); })
-    .then(function(j){
-      var e = (j && j.entries) || {}, out = {};
+    .then(function(j){ return (j && j.entries) || {}; });
+  wpSlugPromise["catch"](function(){ wpSlugPromise = null; });
+  return wpSlugPromise;
+}
+function wpContestMap(){
+  return wpSlugRaw()
+    .then(function(e){
+      var out = {};
       Object.keys(e).forEach(function(k){
         if (k.indexOf("contest|") !== 0) return;   /* 키는 "contest|제목|주최" 꼴이다 */
         var s = (e[k]||{}).slug;
@@ -3685,8 +3789,6 @@ function wpContestMap(){
       wpSlugName = out;
       return out;
     });
-  wpSlugPromise["catch"](function(){ wpSlugPromise = null; });
-  return wpSlugPromise;
 }
 
 /* ---- 작품 카드 ----
@@ -3700,32 +3802,37 @@ function wkCard(w){
   var pf = wpCache[w.uid] || null;
   var mine = !!(bdUser && w.uid && w.uid === bdUser.uid);
   var ct = w.contestSlug ? (wpSlugName[w.contestSlug] || "") : "";
+  var ph = pf ? ctSafeUrl(pf.photoURL||"") : "";
+  var open = " href='"+esc(url)+"' target='_blank' rel='noopener noreferrer'";
   var h = "<article class='wk-card' data-work='"+esc(w.id)+"'>";
-  h += "<a class='item-card"+(vim ? "" : " yt")+"' href='"+esc(url)+"'"+
-       " target='_blank' rel='noopener noreferrer'>"+
-       (vim ? "<span class='ic-mark'>V</span>"
+  /* 썸네일이 먼저, 정보는 그 아래 두 줄 — 영상 목록은 이 배치가 표준이다 */
+  h += "<a class='wk-thumb'"+open+">"+
+       (vim ? "<span class='wk-noimg'>VIMEO</span>"
             : "<img src='"+esc(wkThumb(w))+"' alt='' loading='lazy'>")+
-       "<span class='ic-body'>"+
-         "<span class='ic-title'>"+esc(w.title||"(제목 없음)")+"</span>"+
-         "<span class='ic-url'>"+(vim ? "vimeo.com" : "youtube.com")+" · "+
-           esc(bdWhen(w.createdAt))+"</span>"+
-       "</span></a>";
-  h += "<div class='bd-acts'>";
-  h += (pf && pf.slug)
-    ? "<a class='bd-name' href='"+esc(profUrl(pf.slug))+"'>"+esc(pf.nick||"익명")+"</a>"
-    : "<span class='bd-name'>"+esc((pf && pf.nick) || "익명")+"</span>";
+       "</a>";
+  h += "<div class='wk-info'>";
+  h += "<a class='wk-title'"+open+">"+esc(w.title||"(제목 없음)")+"</a>";
+  h += "<div class='wk-by'>"+
+       (ph ? "<img class='bd-ava' src='"+esc(ph)+"' alt='' loading='lazy' referrerpolicy='no-referrer'>"
+           : "<span class='bd-ava bd-ava-x' aria-hidden='true'></span>")+
+       ((pf && pf.slug)
+         ? "<a class='bd-name' href='"+esc(profUrl(pf.slug))+"'>"+esc(pf.nick||"익명")+"</a>"
+         : "<span class='bd-name'>"+esc((pf && pf.nick) || "익명")+"</span>")+
+       "</div>";
+  h += "<div class='wk-meta'>";
   if (ct) h += "<span class='wk-badge'>"+esc(ct)+"</span>";
   h += "<button type='button' class='bd-act"+(wkLiked[w.id]?" on":"")+"'"+
        " data-wklike='"+esc(w.id)+"' aria-pressed='"+(!!wkLiked[w.id])+"'>"+
        "♥ <b class='tnum'>"+nfmt(w.likeCount||0)+"</b></button>";
+  h += "<span>"+esc(bdWhen(w.createdAt))+"</span>";
   /* 신고는 조용히 둔다. 크게 세우면 서로를 감시하는 화면이 된다 */
   h += "<a class='bd-act' href='"+homeMail("[AI 레이더] 작품 신고: "+w.id)+"'>신고</a>";
   if (mine) h += "<button type='button' class='bd-act' data-wkdel='"+esc(w.id)+"'>삭제</button>";
-  h += "</div></article>";
+  h += "</div></div></article>";
   return h;
 }
 function wkGrid(list){
-  return "<div class='card-grid'>"+(list||[]).map(wkCard).join("")+"</div>";
+  return "<div class='wk-grid'>"+(list||[]).map(wkCard).join("")+"</div>";
 }
 /* 좋아요는 게시판과 같은 구조다 — works/{id}/likes/{uid} 문서가 진실이고 숫자는 따로 센다 */
 function wkPrefetchLikes(list){
@@ -3878,16 +3985,31 @@ function wkCountToday(){
     .then(function(sn){ return sn.size; }, function(){ return 0; });
 }
 
-/* ---- 커뮤니티 탭 ---- */
-function wkListView(host){
-  if (!fbReady()){ host.innerHTML = emptyNote("작품 등록 준비 중입니다."); return; }
-  host.innerHTML = "<div class='bd-wrap' data-wkform></div>"+
-    "<div data-wkrows>"+emptyNote("작품을 불러오는 중입니다.")+"</div>";
-  var formEl = host.querySelector("[data-wkform]");
-  var rows = host.querySelector("[data-wkrows]");
+/* ---- 작품 갤러리 화면 ----
+   격자가 주인공이고 올리는 문은 오른쪽 위 버튼 하나다. 게시판처럼 입력창을 늘
+   펼쳐 두지 않는다 — 여기는 읽으러(보러) 오는 사람이 훨씬 많은 화면이다. */
+function renderGallery(){
+  setKicker(["작품 갤러리"]);
+  setFacts([["—","작품"],["—","만든 사람"],["—","최근 등록"]]);
+  C.innerHTML = "<section class='section paper'><div class='inner'>"+
+    sectionHead("Gallery","여기 사람들이<br>만든 것.",
+      "유튜브·비메오 링크만 있으면 바로 올리실 수 있습니다.","")+
+    "<div class='wk-bar'>"+
+      "<button type='button' class='btn' data-wkopen>"+
+        (wkFormOpen ? "닫기" : "작품 올리기")+"</button>"+
+    "</div>"+
+    "<div data-wkform></div>"+
+    "<div data-wkrows>"+emptyNote("작품을 불러오는 중입니다.")+"</div>"+
+    "</div></section>";
+  wkListView(C.querySelector("[data-wkform]"), C.querySelector("[data-wkrows]"));
+}
+function wkListView(formEl, rows){
+  if (!rows) return;
+  if (!fbReady()){ rows.innerHTML = emptyNote("작품 등록 준비 중입니다."); return; }
   fbInit().then(function(){
-    if (curRoute()!=="aivideo" || !C.contains(rows)) return;
-    wkForm(formEl, function(){ wkLoad(rows); });
+    if (curRoute()!=="gallery" || !C.contains(rows)) return;
+    if (wkFormOpen) wkForm(formEl, function(){ wkLoad(rows); });
+    else if (formEl) formEl.innerHTML = "";
     wkLoad(rows);
   }, function(e){
     if (!C.contains(rows)) return;
@@ -3900,7 +4022,7 @@ function wkLoad(rows){
     fbDb.collection("works").orderBy("createdAt","desc").limit(WK_PAGE).get(),
     wpContestMap()["catch"](function(){ return {}; })
   ]).then(function(r){
-    if (curRoute()!=="aivideo" || !C.contains(rows)) return;
+    if (curRoute()!=="gallery" || !C.contains(rows)) return;
     var got = [], who = {};
     r[0].forEach(function(d){ var o = d.data()||{}; o.id = d.id; got.push(o); });
     got.forEach(function(w){ if (w.uid) who[w.uid] = 1; });
@@ -3942,9 +4064,12 @@ function nvAuth(){
   if (!el) return;
   if (!bdUser){
     nvMenuOn = false;
+    /* 버튼은 하나다. 구글 하나뿐인 인증에서 [로그인]과 [가입하기]는 같은 일을 하고,
+       같은 일을 하는 버튼 둘은 하나보다 나쁘다 — 무엇이 다른지 고민하게 만든다.
+       처음 온 사람에게는 가입 권유로, 돌아온 사람에게는 로그인으로 읽힌다.
+       실제로 갈리는 곳은 로그인 뒤 프로필 유무다(nvAfterLogin). */
     el.innerHTML =
-      "<button type='button' class='btn' data-nvlogin='login'>로그인</button>"+
-      "<button type='button' class='btn solid' data-nvlogin='signup'>가입하기</button>";
+      "<button type='button' class='btn solid' data-nvlogin>시작하기</button>";
     return;
   }
   /* 닉네임은 프로필에만 있다(구글 이름은 쓰지 않는다). 아직 모르면 받아 와서 다시 그린다 */
@@ -3978,26 +4103,21 @@ function nvMenu(on){
   box.hidden = !nvMenuOn;
   pill.setAttribute("aria-expanded", String(nvMenuOn));
 }
-/* 두 버튼이 같은 함수로 들어온다. kind 는 로그인 뒤 무엇을 안내할지에만 쓴다 */
-function nvLoginGo(kind){
+function nvLoginGo(){
   if (!fbReady()){ bdToast("로그인은 준비 중입니다."); return; }
-  nvIntent = kind || "login";
+  nvIntent = "go";   /* 이번 클릭으로 들어왔다는 표시 — 아래 nvAfterLogin 이 쓴다 */
   bdLogin();
 }
 /* 로그인 직후. 프로필이 없으면 닉네임 화면으로 바로 데려간다 —
    가입하기로 들어온 사람에게는 그것이 곧 가입 절차다. */
 function nvAfterLogin(){
   if (!bdUser || !nvIntent) return;
-  var kind = nvIntent;
   nvIntent = "";
+  /* 가입과 로그인이 갈리는 곳은 여기 하나다 — 프로필이 없으면 닉네임을 만들러 가고,
+     있으면 보던 화면에 그대로 머문다. */
   wpMineLoad().then(function(o){
     nvAuth();
-    if (!o){
-      bdToast(kind === "signup" ? "닉네임만 정하면 끝납니다" : "닉네임을 정해 주세요");
-      wpGo("");
-    } else if (kind === "signup"){
-      bdToast("이미 프로필이 있습니다");
-    }
+    if (!o){ bdToast("닉네임만 정하면 끝납니다"); wpGo(""); }
   }, function(){});
 }
 
@@ -4183,7 +4303,7 @@ function nvBind(){
   auth.onclick = function(e){
     var t = e.target, el;
     if (!t || !t.closest) return;
-    if ((el = t.closest("[data-nvlogin]"))){ nvLoginGo(el.getAttribute("data-nvlogin")); return; }
+    if ((el = t.closest("[data-nvlogin]"))){ nvLoginGo(); return; }
     if ((el = t.closest("[data-nvmenu]"))){ nvMenu(!nvMenuOn); return; }
     if ((el = t.closest("[data-nvlogout]"))){ nvMenu(false); bdLogout(); return; }
     if (t.closest("a")) nvMenu(false);   /* 내 프로필 — 이동은 전역 링크 처리가 맡는다 */
@@ -4456,6 +4576,7 @@ function homeFillDue(){
     el.innerHTML = top.length
       ? top.map(function(it){ return homeDueRow(it, today); }).join("")
       : emptyNote("지금 접수 중인 공고가 없습니다.");
+    homeLinkInner(top);
     homeFillMenu();
     observeReveal();
   });
@@ -4473,6 +4594,28 @@ function homeFillDue(){
    ⚠️ 화면에 "마감 3일 전에 알려드립니다"라고 적었다. 발송을 붙이는 쪽은 이 약속대로
    만들어야 한다 — 마감 사흘 전(D-3)에 그날 걸리는 공고를 보낸다. 문구를 먼저 걸어 두고
    발송이 다르게 나가면 그때부터는 거짓말이 된다. */
+/* ---- 마감 행을 우리 상세 페이지로 ----
+   slugs.json 의 키가 "종류|제목|주최" 라 항목에서 그대로 만들어 찾는다.
+   ⚠️ 177KB 라 첫 그리기에는 얹지 않는다 — 원문 링크로 먼저 보여 주고, 파일이 도착하면
+   찾아진 행만 조용히 우리 페이지로 바꾼다. 못 찾은 행은 원문 그대로 둔다. */
+var HOME_SLUG_DIR = { "공모전":["contest","contests"], "영화제":["festival","festivals"],
+                      "지원사업":["funding","funding"] };
+function homeLinkInner(list){
+  var el = document.getElementById("homeDue");
+  if (!el || !(list||[]).length) return;
+  wpSlugRaw().then(function(map){
+    if (curRoute() !== "home" || !C.contains(el)) return;
+    var rows = el.querySelectorAll(".row");
+    for (var i=0; i<rows.length && i<list.length; i++){
+      if (rows[i].tagName !== "A") continue;          /* 원문 주소가 없던 행은 그대로 둔다 */
+      var it = list[i], d = HOME_SLUG_DIR[it.kind];
+      if (!d) continue;
+      var e = map[d[0] + "|" + String(it.title||"") + "|" + String(it.org||"")];
+      if (!e || !e.slug) continue;
+      rows[i].setAttribute("href", BASE + d[1] + "/" + encodeURIComponent(e.slug) + ".html");
+    }
+  }, function(){});
+}
 function homeCanSubscribe(){ return fbReady(); }
 function homeSubscribe(email){
   return fbInit().then(function(){
@@ -4631,12 +4774,14 @@ var HOME_MENU_CARDS = [
   ["newsrep", "뉴스리포트", ""],
   ["youtube", "AI 유튜브", ""],
   ["aivideo", "AI 작품소개", ""],
+  ["gallery", "작품 갤러리", ""],
   ["board", "자유게시판", ""]
 ];
 var HOME_MENU_DESC = {
   newsrep:"매일 아침 정리한 AI 소식",
   youtube:"AI 소식과 바이브코딩 영상",
   aivideo:"AI로 만든 영상 작품",
+  gallery:"내 작품을 올리고 알리는 곳",
   board:"쓰면서 알게 된 것을 나누는 곳"
 };
 function homeFillMenu(){
@@ -4649,7 +4794,9 @@ function homeFillMenu(){
       var n = sortedReports().length;
       if (n) sub = "브리핑 " + n + "회분";
     }
-    return "<a class='" + (m[0] === "board" ? "wide" : "") + "' href='" + esc(menuHref(m[0])) +
+    /* 카드가 여덟이 되면서 네 칸 그리드에 4 + 4 로 딱 맞는다.
+       자유게시판을 두 칸으로 늘려 빈칸을 메우던 처리는 이제 필요 없다(오히려 9칸이 된다) */
+    return "<a href='" + esc(menuHref(m[0])) +
       "'><span class='a-date'>" + esc(m[1]) + "</span>" +
       "<span class='a-title'>" + esc(sub) + "</span></a>";
   }).join("");
@@ -4667,6 +4814,11 @@ function renderHome(){
       sectionHead("Deadlines", HOME_COPY.dueH, "", "") +
       "<div class='rows two' id='homeDue' style='min-height:520px'>" +
       emptyNote("마감 목록을 불러오는 중입니다.") + "</div>" +
+      /* 목록에서 관심이 생긴 사람이 갈 곳이 없었다(대표 지적 2026-08-15).
+         2026-08-15 실측 기준 스무 건의 구성은 공모전 16 · 영화제 3 · 지원사업 1 이라
+         버튼은 공모전 하나로 둔다 — 셋을 다 세우면 고르는 일이 하나 더 생긴다. */
+      "<p class='cta-row' style='margin-top:26px'><a class='btn' href='" +
+        esc(menuHref("contests")) + "'>공모전 전체 보기</a></p>" +
     "</div></section>" +
 
     "<section class='section paper-alt'><div class='inner'>" +
@@ -4728,7 +4880,7 @@ var ROUTES = {
   home:renderHome,
   contests:renderContests, festivals:renderFestivals, gov:renderGov,
   newsrep:renderReports, youtube:renderYoutube, aivideo:renderAiVideo,
-  board:renderBoard, prof:renderProfile
+  gallery:renderGallery, board:renderBoard, prof:renderProfile
 };
 /* 공개 목록 API(action=pub) 데이터가 필요한 화면 */
 var NEEDS_PUB = { newsrep:1, youtube:1 };
