@@ -83,13 +83,67 @@
   .brand svg{ width:34px; height:34px; display:block; }
   /* 한글 라벨이라 uppercase 와 넓은 자간을 뺐다 — 한글에는 대문자가 없고,
      자간을 벌리면 낱자가 흩어져 읽기 더 어려워진다. 크기는 13px 로 올렸다(로고 17px 대비). */
-  .nav-links{ display:flex; gap:24px; font-size:13px; letter-spacing:.01em;
+  /* 오른쪽에 검색·로그인이 붙으면서 가운데 몫이 줄었다. min-width:0 이 있어야
+     좁은 창에서 메뉴 칸이 실제로 줄어들고, 넘치는 만큼은 이미 있던 overflow-x 가
+     안에서 흘린다 — 페이지 자체에는 가로 스크롤이 생기지 않는다. */
+  .nav-links{ display:flex; flex:1 1 auto; min-width:0; gap:24px;
+              font-size:13px; letter-spacing:.01em;
               color:var(--muted-dark); font-weight:700;
               overflow-x:auto; scrollbar-width:none; }
   .nav-links::-webkit-scrollbar{ display:none; }
   .nav-links a{ white-space:nowrap; padding:6px 0; border-bottom:2px solid transparent; }
   .nav-links a:hover{ color:#fff; }
   .nav-links a.on{ color:var(--lime); border-bottom-color:var(--lime); }
+
+  /* ---------- 상단바 오른쪽: 검색 · 로그인 ----------
+     새 디자인 언어를 만들지 않는다 — 입력칸은 목록 화면이 쓰는 .search,
+     버튼은 .btn, 사진은 게시판의 .bd-ava 를 그대로 쓰고 어두운 바탕에 맞는
+     색만 여기서 덮는다(.btn 은 페이퍼 섹션 기준이라 그대로 두면 검정 위 검정이다). */
+  .nav-right{ display:flex; align-items:center; gap:9px; flex:none; }
+  .nav-search{ position:relative; }
+  /* 메뉴 여덟 개와 한 줄을 나눠 써야 해서 평소에는 좁게 두고 포커스에서만 넓힌다 */
+  .nav-search .search{ width:152px; min-height:38px; padding:8px 12px; font-size:12.5px;
+                       border-color:var(--line-dark); color:#fff;
+                       transition:width .18s ease; }
+  .nav-search .search::placeholder{ color:var(--muted-dark); }
+  .nav-search .search:focus{ width:236px; outline:none; border-color:var(--lime); }
+  .nav-icon{ display:none; width:46px; height:46px; place-items:center; color:#fff; }
+  .nav-icon svg{ width:19px; height:19px; display:block; }
+  .nav-res{ position:absolute; top:calc(100% + 9px); right:0; width:min(380px,86vw);
+            max-height:60vh; overflow-y:auto; z-index:95;
+            background:var(--ink-2); border:1px solid var(--line-dark); }
+  .nav-res[hidden]{ display:none; }
+  .nav-res a,.nav-res p{ display:flex; align-items:baseline; gap:10px; margin:0;
+                         padding:11px 13px; font-size:13px; line-height:1.5; color:#fff;
+                         border-bottom:1px solid var(--line-dark); }
+  .nav-res a:last-child{ border-bottom:0; }
+  .nav-res a:hover,.nav-res a.on{ background:var(--lime); color:var(--ink); }
+  .nav-res b{ flex:none; font-family:var(--display); font-size:9.5px; font-weight:800;
+              letter-spacing:.1em; color:var(--lime); }
+  .nav-res a:hover b,.nav-res a.on b{ color:var(--ink); }
+  .nav-res span{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .nav-res p{ color:var(--muted-dark); }
+  /* 로그인=테두리 · 가입하기=라임 채움. 둘 다 .btn 이고 색만 다르다 */
+  .nav .btn{ display:inline-flex; align-items:center; min-height:40px; padding:10px 15px;
+             border-color:var(--line-dark); color:#fff; white-space:nowrap; }
+  .nav .btn:hover{ background:#fff; border-color:#fff; color:var(--ink); }
+  .nav .btn.solid{ background:var(--lime); border-color:var(--lime); color:var(--ink); }
+  .nav .btn.solid:hover{ background:#fff; border-color:#fff; }
+  .nav-auth{ position:relative; display:flex; align-items:center; gap:9px; }
+  .nav-me{ display:flex; align-items:center; gap:8px; max-width:176px; min-height:40px;
+           padding:4px 11px 4px 4px; border:1px solid var(--line-dark); border-radius:999px;
+           color:#fff; font-size:12.5px; font-weight:700; }
+  .nav-me:hover{ border-color:var(--lime); }
+  .nav-me .bd-ava{ width:28px; height:28px; }
+  .nav-me span{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .nav-menu{ position:absolute; top:calc(100% + 9px); right:0; min-width:154px; z-index:95;
+             background:var(--ink-2); border:1px solid var(--line-dark); }
+  .nav-menu[hidden]{ display:none; }
+  .nav-menu a,.nav-menu button{ display:block; width:100%; text-align:left; padding:13px 14px;
+                                font-size:13px; font-weight:700; color:#fff;
+                                border-bottom:1px solid var(--line-dark); }
+  .nav-menu button{ border-bottom:0; }
+  .nav-menu a:hover,.nav-menu button:hover{ background:var(--lime); color:var(--ink); }
 
   /* ---------- hero ---------- */
   /* 한동안 "메뉴 카드가 첫 화면에 걸치게" 히어로를 58vh 까지 눌러 뒀는데, 그렇게 하니
@@ -586,10 +640,14 @@
   /* ---------- 프로필 · 작품 ----------
      새로 만든 것은 아래 여섯 줄뿐이다. 나머지(카드·칩·버튼·액션 줄)는
      게시판과 브리핑이 쓰던 클래스를 그대로 쓴다 — 같은 사이트로 보이게. */
+  /* min-width:0 · overflow-wrap 은 375px 에서 가로 스크롤을 막는 장치다 —
+     끊기지 않는 20자 닉네임이 들어와도 칸을 밀어내지 못한다 */
   .pf-head{ display:flex; align-items:center; gap:15px; }
+  .pf-head > div{ min-width:0; }
   .pf-ava{ width:64px; height:64px; border-radius:50%; object-fit:cover; flex:none;
            border:1px solid var(--line-light); }
-  .pf-nick{ margin:0; font-size:23px; font-weight:800; letter-spacing:-.025em; }
+  .pf-nick{ margin:0; font-size:23px; font-weight:800; letter-spacing:-.025em;
+            word-break:keep-all; overflow-wrap:anywhere; }
   .pf-link{ display:inline-block; margin-top:7px; font-size:12.5px; font-weight:700;
             color:var(--muted-light); text-decoration:underline; text-underline-offset:3px;
             overflow-wrap:anywhere; }
@@ -622,11 +680,42 @@
        제목에 남는 폭이 모자라 공고명이 서너 줄로 접힌다. 한 단으로 되돌린다. */
     .rows.two{ grid-template-columns:1fr; column-gap:0; }
   }
+  /* 980px 아래에서는 검색을 돋보기 하나로 접는다. 실측(2026-08-15): 800px 에서
+     입력칸을 펴 둔 채로는 메뉴 여덟 개 중 220px 이 스크롤 뒤로 숨었다 —
+     붙여 둔 기능 때문에 원래 있던 메뉴가 안 보이면 바꾼 쪽이 잘못한 것이다.
+     돋보기는 오버레이 위(z-index)에 남아 닫기 버튼을 겸한다 — 닫기를 따로 세우면
+     375px 위 줄이 로고·돋보기·닫기·로그인 넷이 되어 로고가 밀린다. */
+  @media (max-width:980px){
+    .nav-icon{ display:grid; position:relative; z-index:97; }
+    .nav-search{ position:static; }
+    .nav-search .search{ display:none; }
+    .nav-search.open .search{ display:block; position:fixed; top:0; left:0; right:0;
+                              width:auto; height:70px; z-index:96; font-size:15px;
+                              padding:0 62px 0 32px; background:var(--ink);
+                              border:0; border-bottom:1px solid var(--line-dark); }
+    .nav-res{ position:fixed; top:70px; left:0; right:0; width:auto; max-height:56vh; }
+  }
+  /* 노트북 폭(1280 안팎)에서 로고+메뉴 여덟+검색+버튼 둘이 한 줄에 겨우 들어간다.
+     메뉴 간격과 검색창을 먼저 줄인다 — 줄이는 순서를 정해 두지 않으면
+     제일 중요한 메뉴가 먼저 잘린다. */
+  @media (max-width:1180px){
+    .nav{ padding:0 20px; gap:14px; }
+    .nav-links{ gap:16px; font-size:12.5px; }
+    .nav-search .search{ width:118px; }
+    .nav-search .search:focus{ width:200px; }
+    .nav .btn{ padding:10px 12px; }
+  }
   @media (max-width:760px){
     :root{ --navh:124px; }
-    .nav{ flex-direction:column; align-items:stretch; justify-content:center; gap:0;
+    /* 두 줄로 접는다: 위 줄(52px)이 로고와 검색·로그인, 아래 줄(72px)이 메뉴다.
+       column 대신 wrap 을 쓰는 이유는 위 줄에 두 덩어리를 양끝으로 놓기 위해서다. */
+    .nav{ flex-wrap:wrap; align-items:center; justify-content:space-between; gap:0;
           padding:0 18px; }
     .brand{ height:52px; }
+    .nav-right{ height:52px; }
+    /* 아래 줄로 내린다. flex-basis 를 100%+36px 로 잡아야 아래 음수 마진(-18px)과
+       합쳐져 내비 폭에 정확히 맞는다 — 100% 로 두면 36px 만큼 삐져나온다. */
+    .nav-links{ order:3; flex:0 0 calc(100% + 36px); }
     /* 메뉴가 여섯 개가 되면서 375px 한 줄에 더는 안 들어간다 (다섯 개일 때 이미 348px 였다).
        가로 스크롤로 밀지 않고 두 줄로 접는다 — 밀어 두면 마지막 메뉴가 있는 줄
        모르는 사람이 생기고, 그건 안 붙인 것과 같다.
@@ -643,6 +732,13 @@
     .nav-links a{ padding:3px 0; flex:0 0 calc(25% - 10px); }
   }
   @media (max-width:680px){
+    /* 위 줄이 52px 이라 오버레이 높이도 그만큼으로 낮춘다(위 980 규칙을 덮는다) */
+    .nav-search.open .search{ height:52px; padding:0 58px 0 18px; }
+    .nav-res{ top:52px; }
+    /* 가입하기는 감춘다. 어차피 로그인 흐름 안에서 닉네임을 묻게 되어 있어
+       버튼 둘이 나란히 설 자리를 쓸 이유가 없다. */
+    .nav-auth .btn.solid{ display:none; }
+    .nav-me{ max-width:124px; padding-right:9px; }
     .hero{ min-height:0; }
     /* 모바일 전용 object-position 오버라이드를 두지 않는다 — 위의 초점 고정 값(67% 8%)이
        화면비와 무관하게 얼굴을 같은 비율 지점에 놓는다. 값이 갈라지면 그 사이 폭에서 어긋난다. */
@@ -701,6 +797,24 @@
     AI RADAR
   </a>
   <div class="nav-links" id="navLinks"></div>
+  <!-- 오른쪽 세 요소: 검색 · 로그인 · 가입하기.
+       로그인하면 두 버튼 자리에 사진+닉네임이 들어오고, 그 안에 프로필과 로그아웃이 있다
+       (navAuth 를 자바스크립트가 채운다). 680px 아래에서는 검색이 돋보기로 접힌다. -->
+  <div class="nav-right">
+    <div class="nav-search" id="navSearch">
+      <button type="button" class="nav-icon" id="navSearchBtn"
+              aria-label="검색 열기" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+          <path d="M16.5 16.5 L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <input class="search" type="search" id="navSearchIn" autocomplete="off"
+             placeholder="공모전·소식 검색" aria-label="사이트 검색">
+      <div class="nav-res" id="navRes" hidden></div>
+    </div>
+    <div class="nav-auth" id="navAuth"></div>
+  </div>
 </nav>
 
 <header class="hero" id="top">
@@ -850,8 +964,12 @@ function fbReady(){ return !!(FB_CONFIG.apiKey && FB_CONFIG.projectId); }
    관리시스템(Apps Script) 할당량을 쓰지 않는 것도 이 구조를 고른 이유다.
    파일이 없거나 실패하면 그 섹션만 조용히 빠진다 — 다른 화면은 영향을 받지 않는다. */
 var FEED_FILES = {
-  news:"data/news.json", community:"data/community.json", tech:"data/tech.json",
-  devpost:"data/devpost.json", higgsfield:"data/higgsfield.json"
+  /* ⚠️ 스냅샷 주소에는 반드시 BASE 를 붙인다. 상대 경로로 두면 실제 경로를 쓰는 화면
+     (/board/{슬러그} · /u/{슬러그})에서 /board/data/... 로 풀려 전부 404 다.
+     아래 PUB_SNAPSHOT · CONTEST_SNAP · GOV_SNAPSHOT · AIVIDEO_SNAPSHOT 도 같은 이유로
+     BASE 를 붙여 둔다 — 상단바 검색이 어느 화면에서든 같은 파일을 읽어야 한다. */
+  news:BASE+"data/news.json", community:BASE+"data/community.json", tech:BASE+"data/tech.json",
+  devpost:BASE+"data/devpost.json", higgsfield:BASE+"data/higgsfield.json"
 };
 var feedCache = {};
 function loadFeed(key){
@@ -1311,7 +1429,7 @@ function bindRetry(root){
        멀쩡한 화면을 다시 세우면 그게 깜빡임이다
    라이브가 끝내 실패해도 스냅샷이 있으면 화면은 정상이다. 그때 stamp() 가 보여주는 시각은
    스냅샷 안에 든 서버 생성 시각이다 — 없는 신선도를 지어내지 않는다. */
-var PUB_SNAPSHOT = "data/pub.json";
+var PUB_SNAPSHOT = BASE + "data/pub.json";
 
 function validPub(j){ return !!(j && (j.reports || j.festivals)); }
 /* 다시 그릴지 판단하는 최소 지문 — 리포트 수 · 최신 발행일 · 영화제 수.
@@ -1729,8 +1847,8 @@ var CONTEST_URLS = {
    그때 우리 저장소가 매일 아침 떠 둔 미러로 폴백한다(scripts/collect-feeds.mjs collectContests).
    같은 JSON 을 가공 없이 저장하므로 아래 파싱 코드가 그대로 읽는다. */
 var CONTEST_SNAP = {
-  domestic: "data/contests.json",
-  overseas: "data/overseas-contests.json"
+  domestic: BASE + "data/contests.json",
+  overseas: BASE + "data/overseas-contests.json"
 };
 var CONTEST_BOARD = "https://junyeo217.github.io/ai-contest-board/";
 var CONTEST_TTL = 10*60*1000; /* 10분 모듈 캐시 (두 파일 각각) */
@@ -2028,7 +2146,7 @@ var GOV_AI_RE = /AI|인공지능|생성형|딥테크|디지털|데이터/i;
 /* pub·aivideos 와 같은 구조다 — data/gov-pub.json 스냅샷으로 먼저 그리고, 라이브가 늦게 와서
    다르면 화면을 다시 세우지 않고 제자리에서 갱신한다. ?action=pubgov 는 K-Startup 공고를
    전부 훑어 오느라 pub 보다도 느려서 2분 타임아웃까지 응답이 없던 적도 있다(2026-08-12 실측). */
-var GOV_SNAPSHOT = "data/gov-pub.json";
+var GOV_SNAPSHOT = BASE + "data/gov-pub.json";
 var govOnLive = null;   /* 지금 그려져 있는 지원사업 화면을 제자리에서 갱신하는 함수 (renderGov 가 채운다) */
 
 function validGov(j){ return !!(j && j.ok && (j.items||[]).length); }
@@ -2222,7 +2340,7 @@ function renderGov(){
 /* 목록과 같은 구조다 — data/aivideos.json 스냅샷으로 먼저 그리고, 라이브가 늦게 와서
    다르면 조용히 다시 그린다. 라이브(?action=aivideos)는 2026-08-12 실측 6.3~37.7초에
    404 도 잦았다. 스냅샷은 0.05초대이고, 화면에 찍히는 "수집" 시각은 스냅샷 안의 generated 다. */
-var AIVIDEO_SNAPSHOT = "data/aivideos.json";
+var AIVIDEO_SNAPSHOT = BASE + "data/aivideos.json";
 var aivideoCache = null;        /* 화면이 지금 쓰는 값 (스냅샷이거나 라이브) */
 var aivideoLivePromise = null;  /* 라이브는 한 번만 부른다 */
 
@@ -2240,7 +2358,9 @@ function fetchAiVideosLive(){
     aivideoCache = j;
     if (!had) return;                                                   /* 첫 표시는 부른 쪽이 그린다 */
     if (String(had.generated||"") === String(j.generated||"")) return;   /* 같으면 다시 그리지 않는다 */
-    if (curRoute()==="aivideo") renderAiVideo();                         /* 보고 있는 화면만 */
+    /* 보고 있는 화면만. 커뮤니티 탭일 때는 손대지 않는다 —
+       늦게 온 수집 결과가 사람이 채우던 등록 폼을 지워 버리면 안 된다. */
+    if (curRoute()==="aivideo" && avTab==="pick") renderAiVideo();
     else if (curRoute()==="youtube") renderYoutube();
   }, function(){});
   return aivideoLivePromise;
@@ -2280,31 +2400,47 @@ function videoSection(cls, eyebrow, h2, list, queries, generated){
     ((list||[]).length ? videoCards(list) : emptyNote("아직 모인 영상이 없습니다."))+
     "</div></section>";
 }
+/* 탭 둘. 기본은 커뮤니티다 — 우리가 고른 것보다 여기 사람들이 올린 것이 먼저 보여야
+   "올려도 되는 곳"으로 읽힌다. 추천(기존 큐레이션)은 그 옆에 그대로 둔다. */
+var AV_TABS = [["comm","커뮤니티"],["pick","추천"]];
 function renderAiVideo(){
   setKicker(["AI 작품"]);
   setFacts([["—","작품"],["—","최고 조회수"],["—","수집"]]);
   C.innerHTML = "<section class='section paper'><div class='inner'>"+
-    emptyNote("작품을 불러오는 중입니다.")+"</div></section>";
-
+    "<div class='controls'><div class='chips'>"+
+      AV_TABS.map(function(t){
+        return "<button type='button' class='chip"+(t[0]===avTab?" on":"")+"'"+
+          " data-avtab='"+esc(t[0])+"' aria-pressed='"+(t[0]===avTab)+"'>"+esc(t[1])+"</button>";
+      }).join("")+
+    "</div></div>"+
+    "<div data-avbody>"+emptyNote("불러오는 중입니다.")+"</div>"+
+    "</div></section>";
+  var body = C.querySelector("[data-avbody]");
+  if (avTab === "pick") avPickView(body);
+  else wkListView(body);
+}
+/* 기존 큐레이션. 탭 안으로 들어가면서 바깥 <section> 만 벗었다 —
+   내용과 숫자 계산은 그대로다. */
+function avPickView(host){
   fetchAiVideos().then(function(j){
-    if (curRoute()!=="aivideo") return;
+    if (curRoute()!=="aivideo" || !C.contains(host)) return;
     var works = j.works || (j.domestic||[]).concat(j.overseas||[]);
     var top = 0;
     for (var w = 0; w < works.length; w++) if ((works[w].views||0) > top) top = works[w].views;
     setKicker(["AI 작품", works.length+"편"]);
     setFacts([[String(works.length),"작품"],[top ? kfmt(top) : "—","최고 조회수"],
               [fmtGen(j.generated).slice(0,10)||"—","수집"]]);
-    C.innerHTML =
-      videoSection("paper","Showcase","AI로 만든<br>영상 작품.", works, (j.queries||{}).works, j.generated);
+    host.innerHTML =
+      sectionHead("Showcase","AI로 만든<br>영상 작품.", esc(fmtGen(j.generated))+" 기준.",
+        "<b>"+works.length+"</b>편")+
+      (works.length ? videoCards(works) : emptyNote("아직 모인 영상이 없습니다."));
     observeReveal();
   }).catch(function(){
-    if (curRoute()!=="aivideo") return;
+    if (curRoute()!=="aivideo" || !C.contains(host)) return;
     setKicker(["연결 준비 중"]);
     setFacts([["—","작품"],["—","최고 조회수"],["—","수집"]]);
-    C.innerHTML = "<section class='section paper'><div class='inner'>"+
-      sectionHead("Showcase","아직 영상 수집이<br>연결되지 않았습니다.",
-        "유튜브 검색 수집이 붙으면 이 자리에 AI 영상 작품이 올라옵니다.","")+
-      "</div></section>";
+    host.innerHTML = sectionHead("Showcase","아직 영상 수집이<br>연결되지 않았습니다.",
+      "유튜브 검색 수집이 붙으면 이 자리에 AI 영상 작품이 올라옵니다.","");
   });
 }
 
@@ -2378,6 +2514,8 @@ function fbInit(){
           bdLiked = {};
           /* 내 프로필은 사람이 바뀌면 다시 확인해야 한다(undefined = 아직 모름) */
           wpMine = undefined; wkLiked = {};
+          nvAuth();                                  /* 상단바는 어느 화면에서나 바뀐다 */
+          nvAfterLogin();
           var r = curRoute();                        /* 로그인이 보이는 화면만 다시 그린다 */
           if (r==="board") renderBoard();
           else if (r==="prof") renderProfile();
@@ -2572,7 +2710,11 @@ function bdLogin(){
       /* 팝업 차단·취소는 누른 사람이 이미 아는 일이라 화면을 어지럽히지 않는다 */
       fbAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider())["catch"](function(){});
     } catch(e){}
-  }, function(){});
+  }, function(){
+    /* SDK 를 못 받았을 때 아무 일도 안 일어나면 버튼이 고장 난 것처럼 보인다.
+       조용히 한 줄만 알린다 — 상단바 버튼도 이 경로를 쓴다. */
+    bdToast("지금은 로그인할 수 없습니다.");
+  });
 }
 function bdLogout(){
   if (!fbAuth) return;
@@ -2782,9 +2924,8 @@ function bdComposer(host, opt){
               ? "<img class='bd-ava' src='"+esc(ctSafeUrl(bdUser.photoURL))+"' alt='' referrerpolicy='no-referrer'>"
               : "<span class='bd-ava bd-ava-x' aria-hidden='true'></span>")+
             "<span class='bd-name'>"+esc(bdUser.displayName || "익명")+"</span></span>"+
-          /* 프로필로 들어가는 문. 로그인한 사람에게만 보인다 —
-             프로필이 아직 없으면 그 화면이 닉네임 하나만 물어본다. */
-          "<a class='bd-act' href='"+esc(profUrl(""))+"'>내 프로필</a>"+
+          /* 프로필로 들어가는 문은 상단바 하나로 모았다(대표 지시 2026-08-15).
+             여기에도 두면 같은 것이 두 군데가 된다. */
           "<button type='button' class='bd-act' data-logout>로그아웃</button>"+
           "<span class='bd-count tnum' data-ccount></span>"+
           "<button type='button' class='btn' data-csend>"+(isReply?"답글 올리기":"올리기")+"</button>"
@@ -3159,9 +3300,908 @@ C.addEventListener("click", function(e){
   if ((el = t.closest("[data-del]"))){ bdDelete(el); return; }
   if ((el = t.closest("[data-edit]"))){ bdEditCard(el); return; }
   if ((el = t.closest("[data-reply]"))){ bdOpenReply(el); return; }
+  /* 작품 화면의 것들도 같은 자리에서 받는다 — 탭을 갈아 끼워도 끊기지 않는다 */
+  if ((el = t.closest("[data-avtab]"))){ avTab = el.getAttribute("data-avtab"); renderAiVideo(); return; }
+  if ((el = t.closest("[data-wklike]"))){ wkToggleLike(el); return; }
+  if ((el = t.closest("[data-wkdel]"))){ wkDelete(el); return; }
   if ((el = t.closest("[data-login]"))){ bdLogin(); return; }
   if ((el = t.closest("[data-logout]"))){ bdLogout(); return; }
 });
+
+/* ============================================================================
+   프로필(공개 포트폴리오) · 작품 등록
+
+   프로필은 설정 화면이 아니라 남에게 보여줄 주소다(/u/{슬러그}). 보여줄 주소가 생기면
+   본인이 그 주소를 알린다 — 그것이 이 기능을 만든 이유이고, 그래서 화면은
+   "고치는 곳"이 아니라 "보이는 곳"이 먼저다.
+
+   ⚠️ 메일 주소는 어느 문서에도 넣지 않는다. 구글 로그인은 메일과 실명을 함께 주지만
+   우리가 쓰는 것은 uid 와 프로필 사진뿐이고, 이름도 구글의 것 대신 직접 받은 닉네임을
+   쓴다. firestore.rules 의 profiles 규칙이 키 목록을 못박아 한 번 더 막는다.
+
+   ⚠️ 아래 길이 제한은 rules 와 같은 값이어야 한다 — 어긋나면 화면에서 통과한 것이
+   서버에서 조용히 거부된다.
+   ============================================================================ */
+var WP_NICK_MAX = 20;      /* rules: nick 2~20 */
+var WP_BIO_MAX = 80;       /* rules: bio <= 80 */
+var WP_LINK_MAX = 200;     /* rules: link <= 200 */
+var WK_TITLE_MAX = 60;     /* rules: title <= 60 */
+var WK_DAY_MAX = 3;        /* 하루 등록 상한 — 화면에서 센다(아래 wkCountToday 주석) */
+var WK_PAGE = 12;
+var WK_HOME = 4;           /* 홈에 보여줄 최근 작품 수 */
+
+var wpMine;                /* 내 프로필 — undefined: 아직 모름 · null: 없음 */
+var wpCache = {};          /* uid → 프로필(없으면 null). 한 사람을 두 번 읽지 않는다 */
+var wpFactW = "—", wpFactP = "—";
+var wpSlugName = {};       /* 공모전 슬러그 → 이름 */
+var wpSlugPromise = null;
+var wkFeed = [], wkLiked = {};
+var avTab = "comm";        /* AI작품소개 탭 — comm(커뮤니티) · pick(추천) */
+
+/* 프로필 안에서의 이동. 게시판의 bdGo 와 같은 방식이다 */
+function wpGo(slug){
+  var url = profUrl(slug);
+  if (location.pathname === url && !location.hash){
+    render(); window.scrollTo({ top:0, behavior:"auto" });
+    return;
+  }
+  history.pushState(null, "", url);
+  onNav();
+}
+function wpAlive(el){ return curRoute()==="prof" && C.contains(el); }
+
+/* ---- 프로필 읽기 ----
+   문서 ID 가 곧 uid 라 색인 없이 바로 읽는다. 없는 사람은 null 로 기억해 다시 묻지 않는다.
+   실패는 기억하지 않는다 — 네트워크가 잠깐 끊긴 것을 "프로필 없음"으로 굳히면 안 된다. */
+function wpFetch(uid){
+  if (!uid || !fbDb) return Promise.resolve(null);
+  if (wpCache[uid] !== undefined) return Promise.resolve(wpCache[uid]);
+  return fbDb.collection("profiles").doc(uid).get().then(function(d){
+    var o = d.exists ? (d.data()||{}) : null;
+    if (o) o.uid = uid;
+    wpCache[uid] = o;
+    return o;
+  }, function(){ return null; });
+}
+function wpFetchMany(list){
+  var seen = {}, jobs = [];
+  (list||[]).forEach(function(o){
+    var uid = o && o.uid;
+    if (!uid || seen[uid]) return;
+    seen[uid] = 1;
+    jobs.push(wpFetch(uid));
+  });
+  return Promise.all(jobs);
+}
+function wpMineLoad(){
+  if (!bdUser){ wpMine = null; return Promise.resolve(null); }
+  if (wpMine !== undefined) return Promise.resolve(wpMine);
+  return wpFetch(bdUser.uid).then(function(o){ wpMine = o; return o; });
+}
+
+/* 게시판 글의 작성자 이름을 프로필로 잇는다.
+   예전 글에는 프로필을 가리키는 값이 없다 — 남은 것은 uid 뿐이라 그것으로 찾는다.
+   프로필이 없는 사람은 이름을 그대로 둔다. 글을 다시 그리지 않고 이름만 바꾸는 이유는
+   좋아요 채우기(bdPrefetchLikes)와 같다 — 펼쳐 둔 글이 도로 접히면 안 된다. */
+function wpLinkNames(list){
+  if (!fbDb) return;
+  var seen = {};
+  (list||[]).forEach(function(p){
+    var uid = p && p.uid;
+    if (!uid || seen[uid] || !/^[A-Za-z0-9]+$/.test(uid)) return;
+    seen[uid] = 1;
+    wpFetch(uid).then(function(o){
+      if (!o || !o.slug) return;
+      C.querySelectorAll("[data-pu='"+uid+"']").forEach(function(el){
+        el.innerHTML = "<a href='"+esc(profUrl(o.slug))+"'>"+esc(o.nick || el.textContent)+"</a>";
+      });
+    });
+  });
+}
+
+/* ---- 슬러그 ----
+   게시판 글과 같은 방식으로 만든다(bdSlugify 재사용). 이미 쓰이는 이름이면 뒤에
+   네 글자를 붙여 다시 시도한다. 한 번 정해지면 바뀌지 않는다 —
+   주소가 바뀌면 본인이 알려 둔 링크가 전부 죽는다. 그래서 규칙도 slug 수정을 막는다. */
+function wpSlugify(nick){
+  var s = bdSlugify(nick);
+  if (!s || s === "." || s === ".." || /^__.*__$/.test(s) || s.length < 2) s = "user";
+  if (s.length > 24) s = s.slice(0,24).replace(/-+$/,"");
+  return s;
+}
+function wpClaimSlug(nick, tries){
+  var slug = wpSlugify(nick);
+  if (tries < 3) slug = slug + "-" + bdRandHex();
+  return fbDb.collection("slugs").doc(slug).get().then(function(d){
+    if (!d.exists) return slug;
+    if (tries <= 1) return null;
+    return wpClaimSlug(nick, tries-1);
+  });
+}
+function wpFieldError(nick, bio, link){
+  nick = String(nick||"").trim();
+  if (nick.length < 2 || nick.length > WP_NICK_MAX)
+    return "닉네임은 2자 이상 "+WP_NICK_MAX+"자 이하로 적어 주세요.";
+  if (String(bio||"").length > WP_BIO_MAX)
+    return "한 줄 소개는 "+WP_BIO_MAX+"자까지 적을 수 있습니다.";
+  link = String(link||"").trim();
+  if (link && !/^https:\/\/\S+$/.test(link))
+    return "대표 링크는 https:// 로 시작하는 주소만 넣을 수 있습니다.";
+  if (link.length > WP_LINK_MAX) return "대표 링크가 너무 깁니다.";
+  return "";
+}
+
+/* ---- 프로필 화면 ---- */
+function wpShell(inner){
+  return "<section class='section paper'><div class='inner'><div class='bd-wrap'>"+
+    inner+"</div></div></section>";
+}
+function wpFacts(pf){
+  var t = bdMs(pf && pf.createdAt);
+  setFacts([[wpFactW,"작품"],[wpFactP,"글"],
+            [isNaN(t) ? "—" : ymdKST(new Date(t).toISOString()), "시작"]]);
+}
+function renderProfile(){
+  var slug = profPath();
+  setKicker(["프로필"]);
+  wpFactW = "—"; wpFactP = "—";
+  wpFacts(null);
+  if (!fbReady()){ C.innerHTML = wpShell(emptyNote("프로필 준비 중입니다.")); return; }
+  C.innerHTML = wpShell("<div data-pf>"+emptyNote("불러오는 중입니다.")+"</div>");
+  var el = C.querySelector("[data-pf]");
+  fbInit().then(function(){
+    if (!wpAlive(el)) return;
+    if (slug === "") wpEditView(el);
+    else wpPublicView(el, slug);
+  }, function(e){
+    if (!wpAlive(el)) return;
+    if (window.console && console.error) console.error("[프로필]", e);
+    el.innerHTML = emptyNote("지금은 열 수 없습니다. 잠시 후 다시 시도해 주세요.");
+  });
+}
+/* 주소(슬러그) → uid → 프로필. 문서 두 번을 읽을 뿐 색인은 필요 없다 */
+function wpPublicView(el, slug){
+  fbDb.collection("slugs").doc(slug).get().then(function(d){
+    if (!wpAlive(el)) return;
+    var uid = d.exists ? (d.data()||{}).uid : "";
+    if (!uid){ el.innerHTML = emptyNote("이 주소의 프로필을 찾을 수 없습니다."); return; }
+    return wpFetch(uid);
+  }).then(function(pf){
+    if (!wpAlive(el) || pf === undefined) return;   /* undefined = 위에서 이미 안내를 그렸다 */
+    if (!pf){ el.innerHTML = emptyNote("이 주소의 프로필을 찾을 수 없습니다."); return; }
+    wpDraw(el, pf);
+  }, function(e){
+    if (!wpAlive(el)) return;
+    if (window.console && console.error) console.error("[프로필]", e);
+    el.innerHTML = emptyNote("프로필을 불러오지 못했습니다.");
+  });
+}
+function wpDraw(el, pf){
+  var mine = !!(bdUser && pf.uid && pf.uid === bdUser.uid);
+  var ph = ctSafeUrl(pf.photoURL||"");
+  var link = ctSafeUrl(pf.link||"");
+  wpCache[pf.uid] = pf;                /* 아래 작품 카드가 작성자를 여기서 읽는다 */
+  document.title = (pf.nick || "프로필") + " — AI 레이더";
+  setKicker(["프로필", pf.nick || ""]);
+  el.innerHTML =
+    "<div class='pf-head'>"+
+      (ph ? "<img class='pf-ava' src='"+esc(ph)+"' alt='' loading='lazy' referrerpolicy='no-referrer'>"
+          : "<span class='pf-ava bd-ava-x' aria-hidden='true'></span>")+
+      "<div><h2 class='pf-nick'>"+esc(pf.nick||"")+"</h2>"+
+      (link ? "<a class='pf-link' href='"+esc(link)+"' target='_blank' rel='noopener noreferrer nofollow'>"+
+              esc(link.replace(/^https?:\/\//,""))+"</a>" : "")+
+      "</div></div>"+
+    (pf.bio ? "<p class='pf-bio'>"+esc(pf.bio)+"</p>" : "")+
+    (mine ? "<p style='margin:18px 0 0'><a class='btn' href='"+esc(profUrl(""))+"'>프로필 수정</a></p>" : "")+
+    "<p class='bd-lead'>작품</p><div data-pfw>"+emptyNote("불러오는 중입니다.")+"</div>"+
+    "<p class='bd-lead'>게시판 글</p><div class='rows' data-pfp>"+emptyNote("불러오는 중입니다.")+"</div>";
+  wpFillWorks(el.querySelector("[data-pfw]"), pf);
+  wpFillPosts(el.querySelector("[data-pfp]"), pf);
+}
+function wpFillWorks(host, pf){
+  if (!host) return;
+  Promise.all([
+    fbDb.collection("works").where("uid","==",pf.uid).orderBy("createdAt","desc").limit(24).get(),
+    wpContestMap()["catch"](function(){ return {}; })
+  ]).then(function(r){
+    if (!wpAlive(host)) return;
+    var got = [];
+    r[0].forEach(function(d){ var o = d.data()||{}; o.id = d.id; got.push(o); });
+    wpFactW = String(got.length); wpFacts(pf);
+    host.innerHTML = got.length ? wkGrid(got) : emptyNote("아직 등록한 작품이 없습니다.");
+    wkPrefetchLikes(got);
+    observeReveal();
+  }, function(e){
+    if (!wpAlive(host)) return;
+    if (window.console && console.error) console.error("[프로필]", e);
+    host.innerHTML = emptyNote("작품을 불러오지 못했습니다.");
+  });
+}
+function wpFillPosts(host, pf){
+  if (!host) return;
+  /* 원글만 본다 — 답글까지 섞으면 남의 글에 단 한 줄이 이 사람의 포트폴리오처럼 보인다 */
+  fbDb.collection("posts").where("uid","==",pf.uid).where("parentId","==",null)
+    .orderBy("createdAt","desc").limit(10).get().then(function(sn){
+    if (!wpAlive(host)) return;
+    var got = [];
+    sn.forEach(function(d){ var o = d.data()||{}; o.id = d.id; got.push(o); });
+    wpFactP = String(got.length); wpFacts(pf);
+    host.innerHTML = got.length ? got.map(homeCommRow).join("")
+                                : emptyNote("아직 남긴 글이 없습니다.");
+  }, function(e){
+    if (!wpAlive(host)) return;
+    if (window.console && console.error) console.error("[프로필]", e);
+    host.innerHTML = emptyNote("글을 불러오지 못했습니다.");
+  });
+}
+/* ---- 내 프로필 편집 ----
+   처음이면 닉네임 하나만 묻는다. 한 줄 소개·대표 링크를 함께 물으면 만들기 전에
+   생각할 것이 셋이 되고, 거기서 반은 그냥 나간다. 나머지는 만든 뒤에 채운다. */
+function wpEditView(el){
+  if (!bdUser){
+    el.innerHTML = "<div class='bd-composer'><p class='bd-lead' style='margin-top:0'>내 프로필</p>"+
+      "<p class='bd-hint'>로그인하면 내 프로필 주소가 생깁니다.</p>"+
+      "<div class='bd-cfoot'><span class='bd-hint'>구글 계정으로 3초면 시작합니다</span>"+
+      "<button type='button' class='btn' data-login>Google로 시작하기</button></div></div>";
+    return;
+  }
+  if (wpMine === undefined){
+    el.innerHTML = emptyNote("확인하는 중입니다.");
+    wpMineLoad().then(function(){ if (wpAlive(el)) wpEditView(el); });
+    return;
+  }
+  var pf = wpMine;
+  var isNew = !pf;
+  el.innerHTML = "<div class='bd-composer'>"+
+    "<p class='bd-lead' style='margin-top:0'>"+(isNew ? "프로필 만들기" : "내 프로필")+"</p>"+
+    (isNew ? "<p class='bd-hint'>닉네임 하나면 시작합니다. 소개와 링크는 나중에 채우셔도 됩니다.</p>"
+           : "<p class='bd-hint'>내 주소: "+esc(SITE_URL+"/u/"+encodeURIComponent(pf.slug||""))+"</p>")+
+    "<div class='pf-form'>"+
+      "<input class='bd-in' type='text' maxlength='"+WP_NICK_MAX+"' data-pnick"+
+        " placeholder='닉네임' aria-label='닉네임'>"+
+      (isNew ? "" :
+        "<input class='bd-in' type='text' maxlength='"+WP_BIO_MAX+"' data-pbio"+
+          " placeholder='한 줄 소개 (선택)' aria-label='한 줄 소개'>"+
+        "<input class='bd-in' type='url' inputmode='url' maxlength='"+WP_LINK_MAX+"' data-plink"+
+          " placeholder='대표 링크 (선택 · https://)' aria-label='대표 링크'>")+
+    "</div>"+
+    "<p class='bd-msg' data-pmsg></p>"+
+    "<div class='bd-cfoot'>"+
+      (isNew ? "" : "<a class='bd-act' href='"+esc(profUrl(pf.slug))+"'>내 프로필 보기</a>")+
+      "<button type='button' class='bd-act' data-logout>로그아웃</button>"+
+      "<button type='button' class='btn' data-psave>"+(isNew ? "프로필 만들기" : "저장")+"</button>"+
+    "</div></div>";
+  var nickEl = el.querySelector("[data-pnick]");
+  var bioEl = el.querySelector("[data-pbio]");
+  var linkEl = el.querySelector("[data-plink]");
+  var msg = el.querySelector("[data-pmsg]");
+  var save = el.querySelector("[data-psave]");
+  if (!isNew){
+    nickEl.value = String(pf.nick||"");
+    bioEl.value = String(pf.bio||"");
+    linkEl.value = String(pf.link||"");
+  }
+  save.onclick = function(){
+    var nick = String(nickEl.value||"").trim();
+    var bio = bioEl ? String(bioEl.value||"").trim() : "";
+    var link = linkEl ? String(linkEl.value||"").trim() : "";
+    var err = wpFieldError(nick, bio, link);
+    if (err){ msg.textContent = err; return; }
+    save.disabled = true; msg.textContent = "저장하는 중입니다.";
+    function fail(e){
+      save.disabled = false;
+      if (window.console && console.error) console.error("[프로필]", e);
+      msg.textContent = "저장하지 못했습니다. 잠시 후 다시 시도해 주세요.";
+    }
+    if (!isNew){
+      /* 슬러그는 손대지 않는다 — 규칙도 바뀌면 거부한다 */
+      fbDb.collection("profiles").doc(bdUser.uid)
+        .update({ nick:nick, bio:bio, link:link }).then(function(){
+          wpCache[bdUser.uid] = undefined; wpMine = undefined;
+          wpGo(pf.slug);
+        }, fail);
+      return;
+    }
+    /* 주소를 먼저 선점하고 프로필을 쓴다. 순서를 바꾸면 같은 주소를 가진 프로필이
+       둘 생길 수 있다 — slugs 문서가 주소의 주인을 가리는 유일한 기록이다. */
+    wpClaimSlug(nick, 3).then(function(slug){
+      if (!slug){ save.disabled = false; msg.textContent = "잠시 후 다시 시도해 주세요."; return; }
+      var now = firebase.firestore.FieldValue.serverTimestamp();
+      return fbDb.collection("slugs").doc(slug).set({ uid:bdUser.uid, createdAt:now })
+        .then(function(){
+          return fbDb.collection("profiles").doc(bdUser.uid).set({
+            nick: nick,
+            slug: slug,
+            bio: "",
+            link: "",
+            photoURL: bdUser.photoURL || "",   /* 구글 사진만 쓴다 — 이름·메일은 쓰지 않는다 */
+            createdAt: now
+          });
+        })
+        .then(function(){
+          wpCache[bdUser.uid] = undefined; wpMine = undefined;
+          wpGo(slug);
+        });
+    })["catch"](fail);
+  };
+}
+
+/* ---- 작품 주소 ----
+   유튜브·비메오만 받는다. 받은 주소를 그대로 저장하지 않고 영상 ID 만 뽑아 우리가 다시
+   만든다 — 추적 파라미터가 딸려 오지 않고, 규칙에서 한 줄로 검사할 수 있다. */
+function wkParse(u){
+  var s = String(u||"").trim(), p, m, v;
+  if (!/^https?:\/\//i.test(s)) return null;
+  try { p = new URL(s); } catch(e){ return null; }
+  var host = p.hostname.toLowerCase().replace(/^www\./,"");
+  if (host === "youtu.be"){
+    m = p.pathname.match(/^\/([A-Za-z0-9_-]{6,20})/);
+    return m ? { kind:"youtube", id:m[1] } : null;
+  }
+  if (host === "youtube.com" || host === "m.youtube.com" || host === "music.youtube.com"){
+    v = p.searchParams ? p.searchParams.get("v") : "";
+    if (v && /^[A-Za-z0-9_-]{6,20}$/.test(v)) return { kind:"youtube", id:v };
+    m = p.pathname.match(/^\/(?:shorts|embed|live|v)\/([A-Za-z0-9_-]{6,20})/);
+    return m ? { kind:"youtube", id:m[1] } : null;
+  }
+  if (host === "vimeo.com" || host === "player.vimeo.com"){
+    m = p.pathname.match(/\/(\d{6,12})/);
+    return m ? { kind:"vimeo", id:m[1] } : null;
+  }
+  return null;
+}
+function wkCanon(kind, id){
+  return kind === "vimeo" ? "https://vimeo.com/"+id : "https://www.youtube.com/watch?v="+id;
+}
+/* 저장한 주소가 곧 어디 것인지 말해 준다 — 문서에 종류를 따로 두지 않는다 */
+function wkIsVimeo(w){ return String((w && w.url) || "").indexOf("//vimeo.com/") >= 0; }
+/* 유튜브 썸네일은 ID 로 주소가 정해져 있다. 비메오는 서버에 물어야 알 수 있어 쓰지 않는다 */
+function wkThumb(w){
+  return wkIsVimeo(w) ? ""
+    : "https://i.ytimg.com/vi/"+encodeURIComponent(String((w && w.videoId) || ""))+"/hqdefault.jpg";
+}
+/* 공모전 이름표는 data/slugs.json 에서 온다(슬러그 ↔ 제목). 파일이 커서 작품 화면을
+   열 때만 한 번 받고, 실패하면 이름표만 빠진다.
+   상대 경로로 적으면 /u/xxx 에서 /u/data/... 로 풀려 404 다 — 베이스를 붙인다. */
+function wpContestMap(){
+  if (wpSlugPromise) return wpSlugPromise;
+  wpSlugPromise = fetch(BASE + "data/slugs.json", { cache:"no-store" })
+    .then(function(r){ if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); })
+    .then(function(j){
+      var e = (j && j.entries) || {}, out = {};
+      Object.keys(e).forEach(function(k){
+        if (k.indexOf("contest|") !== 0) return;   /* 키는 "contest|제목|주최" 꼴이다 */
+        var s = (e[k]||{}).slug;
+        if (s && !out[s]) out[s] = k.split("|")[1] || s;
+      });
+      wpSlugName = out;
+      return out;
+    });
+  wpSlugPromise["catch"](function(){ wpSlugPromise = null; });
+  return wpSlugPromise;
+}
+
+/* ---- 작품 카드 ----
+   썸네일을 누르면 원본으로 나간다. 여기서 재생하지 않는다 — 우리가 플레이어를 만들면
+   조회수도 저작자 표시도 원저작자에게 가지 않는다.
+   작성자·좋아요·신고는 카드 바깥 줄에 둔다. 카드 전체가 링크라 안에 넣으면 링크 안의
+   링크가 된다. */
+function wkCard(w){
+  var url = ctSafeUrl(w.url||"");
+  var vim = wkIsVimeo(w);
+  var pf = wpCache[w.uid] || null;
+  var mine = !!(bdUser && w.uid && w.uid === bdUser.uid);
+  var ct = w.contestSlug ? (wpSlugName[w.contestSlug] || "") : "";
+  var h = "<article class='wk-card' data-work='"+esc(w.id)+"'>";
+  h += "<a class='item-card"+(vim ? "" : " yt")+"' href='"+esc(url)+"'"+
+       " target='_blank' rel='noopener noreferrer'>"+
+       (vim ? "<span class='ic-mark'>V</span>"
+            : "<img src='"+esc(wkThumb(w))+"' alt='' loading='lazy'>")+
+       "<span class='ic-body'>"+
+         "<span class='ic-title'>"+esc(w.title||"(제목 없음)")+"</span>"+
+         "<span class='ic-url'>"+(vim ? "vimeo.com" : "youtube.com")+" · "+
+           esc(bdWhen(w.createdAt))+"</span>"+
+       "</span></a>";
+  h += "<div class='bd-acts'>";
+  h += (pf && pf.slug)
+    ? "<a class='bd-name' href='"+esc(profUrl(pf.slug))+"'>"+esc(pf.nick||"익명")+"</a>"
+    : "<span class='bd-name'>"+esc((pf && pf.nick) || "익명")+"</span>";
+  if (ct) h += "<span class='wk-badge'>"+esc(ct)+"</span>";
+  h += "<button type='button' class='bd-act"+(wkLiked[w.id]?" on":"")+"'"+
+       " data-wklike='"+esc(w.id)+"' aria-pressed='"+(!!wkLiked[w.id])+"'>"+
+       "♥ <b class='tnum'>"+nfmt(w.likeCount||0)+"</b></button>";
+  /* 신고는 조용히 둔다. 크게 세우면 서로를 감시하는 화면이 된다 */
+  h += "<a class='bd-act' href='"+homeMail("[AI 레이더] 작품 신고: "+w.id)+"'>신고</a>";
+  if (mine) h += "<button type='button' class='bd-act' data-wkdel='"+esc(w.id)+"'>삭제</button>";
+  h += "</div></article>";
+  return h;
+}
+function wkGrid(list){
+  return "<div class='card-grid'>"+(list||[]).map(wkCard).join("")+"</div>";
+}
+/* 좋아요는 게시판과 같은 구조다 — works/{id}/likes/{uid} 문서가 진실이고 숫자는 따로 센다 */
+function wkPrefetchLikes(list){
+  if (!bdUser || !fbDb || !(list||[]).length) return;
+  list.forEach(function(w){
+    fbDb.collection("works").doc(w.id).collection("likes").doc(bdUser.uid).get()
+      .then(function(d){
+        if (!d.exists) return;
+        wkLiked[w.id] = true;
+        var b = C.querySelector("[data-wklike='"+w.id+"']");
+        if (b){ b.classList.add("on"); b.setAttribute("aria-pressed","true"); }
+      }, function(){});
+  });
+}
+function wkToggleLike(el){
+  if (!bdUser){ bdToast("로그인하면 좋아요를 누를 수 있습니다."); return; }
+  if (!fbDb) return;
+  var id = el.getAttribute("data-wklike");
+  var on = !wkLiked[id];
+  var numEl = el.querySelector("b");
+  var n = Number(String(numEl.textContent||"0").replace(/[^\d]/g,"")) || 0;
+  wkLiked[id] = on;
+  el.classList.toggle("on", on);
+  el.setAttribute("aria-pressed", String(on));
+  numEl.textContent = nfmt(Math.max(0, n + (on?1:-1)));
+  var doc = fbDb.collection("works").doc(id);
+  var like = doc.collection("likes").doc(bdUser.uid);
+  var w = on
+    ? like.set({ uid:bdUser.uid, createdAt:firebase.firestore.FieldValue.serverTimestamp() })
+    : like["delete"]();
+  w.then(function(){
+    return doc.update({ likeCount: firebase.firestore.FieldValue.increment(on?1:-1) });
+  })["catch"](function(){});
+}
+function wkDelete(el){
+  if (!fbDb) return;
+  var id = el.getAttribute("data-wkdel");
+  if (!window.confirm("이 작품을 내릴까요? 되돌릴 수 없습니다.")) return;
+  el.disabled = true;
+  fbDb.collection("works").doc(id)["delete"]().then(function(){
+    var card = el.closest(".wk-card");
+    if (card && card.parentNode) card.parentNode.removeChild(card);
+  }, function(){
+    el.disabled = false;
+    bdToast("지우지 못했습니다.");
+  });
+}
+
+/* ---- 등록 폼 ----
+   칸은 셋(주소·제목·관련 공모전)뿐이고 공모전은 선택이다. 본인 작품 확인은 체크 하나.
+   프로필이 없으면 등록 대신 프로필부터 만들게 한다 — 작품에 이름을 걸 곳이 프로필뿐이라
+   (구글 이름·메일은 쓰지 않는다) 순서가 이렇게 된다. */
+function wkForm(host, done){
+  if (!host) return;
+  if (!bdUser){
+    host.innerHTML = "<div class='bd-composer'>"+
+      "<p class='bd-lead' style='margin-top:0'>내 작품 올리기</p>"+
+      "<div class='bd-cfoot'><span class='bd-hint'>구글 계정으로 3초면 시작합니다</span>"+
+      "<button type='button' class='btn' data-login>Google로 시작하기</button></div></div>";
+    return;
+  }
+  if (wpMine === undefined){
+    host.innerHTML = "<div class='bd-composer'>"+emptyNote("확인하는 중입니다.")+"</div>";
+    wpMineLoad().then(function(){ if (C.contains(host)) wkForm(host, done); });
+    return;
+  }
+  if (!wpMine){
+    host.innerHTML = "<div class='bd-composer'>"+
+      "<p class='bd-lead' style='margin-top:0'>내 작품 올리기</p>"+
+      "<p class='bd-hint'>먼저 프로필을 만들어 주세요. 닉네임 하나면 됩니다.</p>"+
+      "<div class='bd-cfoot'><a class='btn' href='"+esc(profUrl(""))+"'>프로필 만들기</a></div></div>";
+    return;
+  }
+  host.innerHTML = "<div class='bd-composer'>"+
+    "<p class='bd-lead' style='margin-top:0'>내 작품 올리기</p>"+
+    "<div class='pf-form'>"+
+      "<input class='bd-in' type='url' inputmode='url' maxlength='300' data-wkurl"+
+        " placeholder='유튜브 · 비메오 주소' aria-label='작품 주소'>"+
+      "<input class='bd-in' type='text' maxlength='"+WK_TITLE_MAX+"' data-wktitle"+
+        " placeholder='작품 제목' aria-label='작품 제목'>"+
+      "<select class='bd-in' data-wkct aria-label='관련 공모전(선택)'>"+
+        "<option value=''>관련 공모전 (선택)</option></select>"+
+    "</div>"+
+    "<p class='bd-msg' data-wkmsg></p>"+
+    "<div class='bd-cfoot'>"+
+      "<label class='bd-hint'><input type='checkbox' data-wkown> 본인이 만든 작품입니다</label>"+
+      "<button type='button' class='btn' data-wksend>등록</button>"+
+    "</div></div>";
+  var urlEl = host.querySelector("[data-wkurl]");
+  var titleEl = host.querySelector("[data-wktitle]");
+  var ctEl = host.querySelector("[data-wkct]");
+  var ownEl = host.querySelector("[data-wkown]");
+  var msg = host.querySelector("[data-wkmsg]");
+  var send = host.querySelector("[data-wksend]");
+
+  /* 공모전 목록은 늦게 채운다 — 목록이 아직 없어도 나머지 칸은 바로 쓸 수 있어야 한다 */
+  wpContestMap().then(function(map){
+    if (!C.contains(ctEl)) return;
+    var keys = Object.keys(map).sort(function(a,b){ return map[a] < map[b] ? -1 : 1; });
+    ctEl.innerHTML = "<option value=''>관련 공모전 (선택)</option>"+
+      keys.map(function(s){
+        return "<option value='"+esc(s)+"'>"+esc(map[s])+"</option>";
+      }).join("");
+  }, function(){});
+
+  send.onclick = function(){
+    var v = wkParse(urlEl.value);
+    if (!v){ msg.textContent = "유튜브 또는 비메오 주소만 등록할 수 있습니다."; return; }
+    var title = String(titleEl.value||"").trim();
+    if (title.length < 1 || title.length > WK_TITLE_MAX){
+      msg.textContent = "제목은 1자 이상 "+WK_TITLE_MAX+"자 이하로 적어 주세요."; return;
+    }
+    if (!ownEl.checked){ msg.textContent = "본인이 만든 작품인지 확인해 주세요."; return; }
+    send.disabled = true; msg.textContent = "등록하는 중입니다.";
+    wkCountToday().then(function(n){
+      if (n >= WK_DAY_MAX){
+        send.disabled = false;
+        msg.textContent = "하루에 "+WK_DAY_MAX+"건까지 등록하실 수 있습니다.";
+        return;
+      }
+      return fbDb.collection("works").add({
+        uid: bdUser.uid,
+        title: title,
+        url: wkCanon(v.kind, v.id),
+        videoId: v.id,
+        contestSlug: String(ctEl.value||""),
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        likeCount: 0   /* 규칙이 0 을 요구한다 — 처음부터 부풀린 값으로 만들 수 없게 */
+      }).then(function(){
+        urlEl.value = ""; titleEl.value = ""; ctEl.value = ""; ownEl.checked = false;
+        send.disabled = false; msg.textContent = "";
+        bdToast("등록했습니다");
+        if (done) done();
+      });
+    })["catch"](function(e){
+      send.disabled = false;
+      if (window.console && console.error) console.error("[작품]", e);
+      msg.textContent = "등록하지 못했습니다. 잠시 후 다시 시도해 주세요.";
+    });
+  };
+}
+/* 하루 상한은 화면에서 센다. Firestore 규칙은 "이 사람이 오늘 몇 건 올렸나"를 셀 수 없다 —
+   규칙이 막을 수 있는 것은 createdAt 위조까지다(반드시 서버 시각이어야 한다).
+   그러니 이 숫자는 실수 방지선이지 마지막 방어선이 아니다. */
+function wkCountToday(){
+  if (!bdUser || !fbDb) return Promise.resolve(0);
+  var d = new Date(); d.setHours(0,0,0,0);
+  return fbDb.collection("works").where("uid","==",bdUser.uid)
+    .where("createdAt",">=",d).get()
+    .then(function(sn){ return sn.size; }, function(){ return 0; });
+}
+
+/* ---- 커뮤니티 탭 ---- */
+function wkListView(host){
+  if (!fbReady()){ host.innerHTML = emptyNote("작품 등록 준비 중입니다."); return; }
+  host.innerHTML = "<div class='bd-wrap' data-wkform></div>"+
+    "<div data-wkrows>"+emptyNote("작품을 불러오는 중입니다.")+"</div>";
+  var formEl = host.querySelector("[data-wkform]");
+  var rows = host.querySelector("[data-wkrows]");
+  fbInit().then(function(){
+    if (curRoute()!=="aivideo" || !C.contains(rows)) return;
+    wkForm(formEl, function(){ wkLoad(rows); });
+    wkLoad(rows);
+  }, function(e){
+    if (!C.contains(rows)) return;
+    if (window.console && console.error) console.error("[작품]", e);
+    rows.innerHTML = emptyNote("지금은 열 수 없습니다. 잠시 후 다시 시도해 주세요.");
+  });
+}
+function wkLoad(rows){
+  Promise.all([
+    fbDb.collection("works").orderBy("createdAt","desc").limit(WK_PAGE).get(),
+    wpContestMap()["catch"](function(){ return {}; })
+  ]).then(function(r){
+    if (curRoute()!=="aivideo" || !C.contains(rows)) return;
+    var got = [], who = {};
+    r[0].forEach(function(d){ var o = d.data()||{}; o.id = d.id; got.push(o); });
+    got.forEach(function(w){ if (w.uid) who[w.uid] = 1; });
+    wkFeed = got;
+    setKicker(["AI 작품", got.length+"편"]);
+    setFacts([[String(got.length),"작품"],[String(Object.keys(who).length),"만든 사람"],
+              [got.length ? bdWhen(got[0].createdAt) : "—","최근 등록"]]);
+    /* 작성자 이름은 프로필에만 있다. 먼저 다 받아 두고 한 번에 그린다 —
+       카드를 그린 뒤에 이름을 끼워 넣으면 글자가 늦게 튀어 들어온다. */
+    return wpFetchMany(got).then(function(){
+      if (!C.contains(rows)) return;
+      rows.innerHTML = got.length ? wkGrid(got)
+        : "<div class='bd-empty'><p>아직 올라온 작품이 없습니다. 첫 작품을 올려 보세요.</p></div>";
+      wkPrefetchLikes(got);
+      observeReveal();
+    });
+  }, function(e){
+    if (!C.contains(rows)) return;
+    bdQueryFail(rows, e, function(){ wkLoad(rows); });
+  });
+}
+/* ============================================================================
+   상단바 오른쪽 — 검색 · 로그인/가입
+
+   인증은 구글 하나뿐이라 [로그인]과 [가입하기]는 같은 길로 간다. 다른 것은 문구와
+   로그인 뒤 안내뿐이다 — 둘을 따로 만들면 언젠가 한쪽만 고치게 된다.
+   로그인하면 두 버튼 자리에 사진+닉네임이 들어오고, 프로필로 가는 문은 여기 하나다.
+
+   검색은 이미 화면들이 쓰는 데이터를 그대로 뒤진다. 서버를 부르지 않는다.
+   ⚠️ 색인은 검색창을 처음 열 때 만든다 — 첫 화면 로딩에 파일 세 개를 얹지 않는다.
+   ============================================================================ */
+var nvIntent = "";        /* 로그인 뒤 할 일 — "signup" 이면 가입 흐름으로 안내 */
+var nvIdx = null, nvIdxPromise = null;
+var nvHits = [], nvSel = -1, nvMenuOn = false;
+
+/* ---- 로그인 · 가입 ---- */
+function nvAuth(){
+  var el = document.getElementById("navAuth");
+  if (!el) return;
+  if (!bdUser){
+    nvMenuOn = false;
+    el.innerHTML =
+      "<button type='button' class='btn' data-nvlogin='login'>로그인</button>"+
+      "<button type='button' class='btn solid' data-nvlogin='signup'>가입하기</button>";
+    return;
+  }
+  /* 닉네임은 프로필에만 있다(구글 이름은 쓰지 않는다). 아직 모르면 받아 와서 다시 그린다 */
+  if (wpMine === undefined && fbDb) wpMineLoad().then(function(){ nvAuth(); }, function(){});
+  var pf = wpMine || null;
+  var ph = ctSafeUrl((pf && pf.photoURL) || bdUser.photoURL || "");
+  var nick = pf ? (pf.nick || "내 프로필") : "닉네임 정하기";
+  el.innerHTML =
+    "<button type='button' class='nav-me' data-nvmenu aria-haspopup='true'"+
+      " aria-expanded='"+nvMenuOn+"'>"+
+      (ph ? "<img class='bd-ava' src='"+esc(ph)+"' alt='' referrerpolicy='no-referrer'>"
+          : "<span class='bd-ava bd-ava-x' aria-hidden='true'></span>")+
+      "<span>"+esc(nick)+"</span></button>"+
+    "<div class='nav-menu'"+(nvMenuOn ? "" : " hidden")+">"+
+      "<a href='"+esc(profUrl(""))+"'>내 프로필</a>"+
+      "<button type='button' data-nvlogout>로그아웃</button>"+
+    "</div>";
+}
+function nvMenu(on){
+  nvMenuOn = !!on;
+  nvAuth();
+}
+/* 두 버튼이 같은 함수로 들어온다. kind 는 로그인 뒤 무엇을 안내할지에만 쓴다 */
+function nvLoginGo(kind){
+  if (!fbReady()){ bdToast("로그인은 준비 중입니다."); return; }
+  nvIntent = kind || "login";
+  bdLogin();
+}
+/* 로그인 직후. 프로필이 없으면 닉네임 화면으로 바로 데려간다 —
+   가입하기로 들어온 사람에게는 그것이 곧 가입 절차다. */
+function nvAfterLogin(){
+  if (!bdUser || !nvIntent) return;
+  var kind = nvIntent;
+  nvIntent = "";
+  wpMineLoad().then(function(o){
+    nvAuth();
+    if (!o){
+      bdToast(kind === "signup" ? "닉네임만 정하면 끝납니다" : "닉네임을 정해 주세요");
+      wpGo("");
+    } else if (kind === "signup"){
+      bdToast("이미 프로필이 있습니다");
+    }
+  }, function(){});
+}
+
+/* ---- 검색 색인 ----
+   공모전·지원사업·뉴스는 스냅샷을 지연 로드하고(이미 본 화면이면 캐시가 돌아온다),
+   영화제·브리핑은 첫 화면이 이미 받아 둔 pub 데이터에서 꺼낸다.
+   한 소스가 실패해도 그 몫만 빠진다. */
+function nvNorm(s){ return String(s||"").toLowerCase().replace(/\s+/g," ").trim(); }
+function nvAdd(out, type, route, title, extra, tab){
+  title = String(title||"").trim();
+  if (!title) return;
+  out.push({ t:type, r:route, q:title, tab:tab||"", s:nvNorm(title+" "+(extra||"")) });
+}
+function nvBuildIndex(){
+  if (nvIdxPromise) return nvIdxPromise;
+  function safe(p){ return p.then(function(j){ return j; }, function(){ return null; }); }
+  nvIdxPromise = Promise.all([
+    safe(fetchContests("all", false)),
+    safe(fetchGov(false)),
+    safe(loadFeed("news"))
+  ]).then(function(r){
+    var out = [];
+    if (r[0]) CONTEST_SECS.forEach(function(k){
+      ((((r[0].sections)||{})[k])||[]).forEach(function(it){
+        nvAdd(out, "공모전", "contests", it.title, it.organizer,
+              it._region === "해외" ? "overseas" : "domestic");
+      });
+    });
+    ((state.data && state.data.festivals) || []).forEach(function(f){
+      nvAdd(out, "영화제", "festivals", f.name, f.host);
+    });
+    if (r[1]) ((r[1].items)||[]).forEach(function(it){
+      nvAdd(out, "지원사업", "gov", it.nm, [it.org, it.inst].join(" "));
+    });
+    if (r[2]) ((r[2].items)||[]).forEach(function(it){
+      nvAdd(out, "뉴스", "newsrep", it.titleKo || it.title, it.source);
+    });
+    sortedReports().forEach(function(rp){ nvAdd(out, "브리핑", "newsrep", rp.title, ""); });
+    nvIdx = out;
+    return out;
+  });
+  nvIdxPromise["catch"](function(){ nvIdxPromise = null; });
+  return nvIdxPromise;
+}
+/* 띄어쓴 낱말을 모두 포함하는 것만 남긴다. 제목이 그 말로 시작하는 것이 먼저다 */
+function nvFind(q){
+  var n = nvNorm(q);
+  if (!n || !nvIdx) return [];
+  var terms = n.split(" "), hit = [];
+  for (var i=0; i<nvIdx.length; i++){
+    var it = nvIdx[i], ok = true;
+    for (var t=0; t<terms.length; t++){
+      if (it.s.indexOf(terms[t]) < 0){ ok = false; break; }
+    }
+    if (!ok) continue;
+    var pos = nvNorm(it.q).indexOf(n);
+    it.rank = pos === 0 ? 0 : (pos > 0 ? 1 : 2);
+    hit.push(it);
+    if (hit.length >= 60) break;
+  }
+  hit.sort(function(a,b){ return a.rank - b.rank; });
+  return hit.slice(0, 8);
+}
+function nvDrawRes(){
+  var box = document.getElementById("navRes");
+  var inEl = document.getElementById("navSearchIn");
+  if (!box || !inEl) return;
+  if (!String(inEl.value||"").trim()){ box.hidden = true; box.innerHTML = ""; return; }
+  box.hidden = false;
+  /* 색인이 아직 안 만들어졌는데 "없습니다"라고 하면 거짓말이다 — 그때는 기다리라고 한다 */
+  if (!nvHits.length){
+    box.innerHTML = "<p>"+(nvIdx ? "검색 결과가 없습니다." : "목록을 불러오는 중입니다.")+"</p>";
+    return;
+  }
+  box.innerHTML = nvHits.map(function(it, i){
+    /* href 를 진짜 주소로 둔다 — 새 탭·링크 복사가 평소대로 동작한다.
+       그냥 누르면 아래 nvPick 이 가로채 검색어까지 들고 넘어간다. */
+    return "<a class='"+(i===nvSel?"on":"")+"' href='"+esc(BASE+"#"+it.r)+"'"+
+      " data-nvhit='"+i+"'><b>"+esc(it.t)+"</b><span>"+esc(it.q)+"</span></a>";
+  }).join("");
+}
+function nvRun(){
+  var inEl = document.getElementById("navSearchIn");
+  if (!inEl) return;
+  nvHits = nvFind(inEl.value);
+  nvSel = -1;
+  nvDrawRes();
+}
+/* 고른 결과의 화면으로 간다. 그 화면에 검색칸이 있으면 제목을 넣어 걸러진 채로 도착한다 */
+function nvPick(i){
+  var it = nvHits[i];
+  if (!it) return;
+  if (it.r === "contests"){
+    contestTab = it.tab || contestTab;
+    contestCat = "전체";
+    contestSearch = it.q;
+  } else if (it.r === "gov"){
+    govCls = "전체";
+    /* AI 관련만 켜 둔 채로 보내면 찾은 공고가 그 필터에 걸려 빈 화면이 된다 */
+    govAiOnly = false;
+    govSearch = it.q;
+  }
+  nvClose();
+  nvNav(it.r);
+}
+/* 해시 화면으로의 이동. 게시판·프로필(실제 경로)에 있을 때 location.hash 만 바꾸면
+   /u/xxx#contests 가 되므로 베이스 기준으로 주소를 새로 만든다. */
+function nvNav(route){
+  var url = BASE + "#" + route;
+  if (location.pathname + location.hash === url){
+    render(); window.scrollTo({ top:0, behavior:"auto" });
+    return;
+  }
+  history.pushState(null, "", url);
+  onNav();
+}
+function nvClose(){
+  var wrap = document.getElementById("navSearch");
+  var inEl = document.getElementById("navSearchIn");
+  var btn = document.getElementById("navSearchBtn");
+  if (wrap) wrap.classList.remove("open");
+  if (btn) btn.setAttribute("aria-expanded","false");
+  if (inEl) inEl.value = "";
+  nvHits = []; nvSel = -1;
+  nvDrawRes();
+}
+/* 모바일의 돋보기. 열면 위 줄을 덮는 입력칸이 되고, 다시 누르면 닫힌다 */
+function nvToggle(){
+  var wrap = document.getElementById("navSearch");
+  var inEl = document.getElementById("navSearchIn");
+  var btn = document.getElementById("navSearchBtn");
+  if (!wrap) return;
+  var on = !wrap.classList.contains("open");
+  if (!on){ nvClose(); return; }
+  wrap.classList.add("open");
+  if (btn) btn.setAttribute("aria-expanded","true");
+  nvBuildIndex().then(function(){ nvRun(); }, function(){});
+  if (inEl) inEl.focus();
+}
+function nvBind(){
+  var inEl = document.getElementById("navSearchIn");
+  var btn = document.getElementById("navSearchBtn");
+  var box = document.getElementById("navRes");
+  var auth = document.getElementById("navAuth");
+  if (!inEl || !btn || !box || !auth) return;
+
+  btn.onclick = function(){ nvToggle(); };
+  /* 색인은 여기서 처음 만들어진다 — 검색할 마음이 생긴 다음이다 */
+  inEl.onfocus = function(){ nvBuildIndex().then(function(){ nvRun(); }, function(){}); };
+  inEl.oninput = function(){ nvRun(); };
+  inEl.onkeydown = function(e){
+    var k = e.key;
+    if (k === "Escape"){ nvClose(); inEl.blur(); return; }
+    if (!nvHits.length) return;
+    if (k === "ArrowDown" || k === "ArrowUp"){
+      e.preventDefault();
+      nvSel += (k === "ArrowDown" ? 1 : -1);
+      if (nvSel < 0) nvSel = nvHits.length - 1;
+      if (nvSel >= nvHits.length) nvSel = 0;
+      nvDrawRes();
+      return;
+    }
+    if (k === "Enter"){ e.preventDefault(); nvPick(nvSel < 0 ? 0 : nvSel); }
+  };
+  /* mousedown 을 막아 두어야 결과를 누르는 순간 입력칸이 포커스를 잃지 않는다 —
+     잃으면 아래 blur 가 목록을 먼저 닫아 click 이 오지 않는다 */
+  box.onmousedown = function(e){ e.preventDefault(); };
+  box.onclick = function(e){
+    var a = (e.target && e.target.closest) ? e.target.closest("[data-nvhit]") : null;
+    if (!a) return;
+    e.preventDefault();
+    nvPick(Number(a.getAttribute("data-nvhit")));
+  };
+  inEl.onblur = function(){
+    /* 모바일 오버레이는 돋보기로 닫는다 — 여기서 닫으면 자판이 내려갈 때 같이 사라진다 */
+    setTimeout(function(){
+      var wrap = document.getElementById("navSearch");
+      if (wrap && wrap.classList.contains("open")) return;
+      nvHits = []; nvSel = -1; nvDrawRes();
+    }, 160);
+  };
+
+  auth.onclick = function(e){
+    var t = e.target, el;
+    if (!t || !t.closest) return;
+    if ((el = t.closest("[data-nvlogin]"))){ nvLoginGo(el.getAttribute("data-nvlogin")); return; }
+    if ((el = t.closest("[data-nvmenu]"))){ nvMenu(!nvMenuOn); return; }
+    if ((el = t.closest("[data-nvlogout]"))){ nvMenu(false); bdLogout(); return; }
+    if (t.closest("a")) nvMenu(false);   /* 내 프로필 — 이동은 전역 링크 처리가 맡는다 */
+  };
+  /* 바깥을 누르면 닫는다 */
+  document.addEventListener("click", function(e){
+    if (!nvMenuOn) return;
+    var t = e.target;
+    if (t && t.closest && t.closest("#navAuth")) return;
+    nvMenu(false);
+  });
+}
+
+/* ---- 홈: 최근 작품 ----
+   커뮤니티 블록과 같은 방식이다 — 있을 때만 보이고, 없으면 섹션째 없는 것으로 둔다. */
+function homeFillWorks(){
+  var sec = document.getElementById("homeWorkSec");
+  var el = document.getElementById("homeWork");
+  if (!sec || !el || !fbReady()) return;
+  fbInit().then(function(){
+    return Promise.all([
+      fbDb.collection("works").orderBy("createdAt","desc").limit(WK_HOME).get(),
+      wpContestMap()["catch"](function(){ return {}; })
+    ]);
+  }).then(function(r){
+    if (curRoute() !== "home" || !C.contains(sec)) return;
+    var got = [];
+    r[0].forEach(function(d){ var o = d.data()||{}; o.id = d.id; got.push(o); });
+    if (!got.length) return;              /* 아직 없다 — 숨긴 채로 둔다 */
+    return wpFetchMany(got).then(function(){
+      if (!C.contains(sec)) return;
+      sec.style.display = "";
+      el.innerHTML = wkGrid(got);
+      observeReveal();
+    });
+  }, function(){});                        /* 색인 없음·네트워크 실패도 조용히 숨긴다 */
+}
 
 /* ============ 홈 (첫 화면) ============
    이 사이트가 시장에서 유일하게 가진 것은 "마감일 집계"다. AI 뉴스를 모으는 곳은 많지만
@@ -3196,6 +4236,7 @@ var HOME_COPY = {
   briefH:"밤사이 무슨 일이<br>있었나",
   briefIntro:"아침에 한 번 정리해 드립니다.",
   commH:"지금 사람들이<br>나누는 이야기",
+  workH:"여기 사람들이<br>만든 것",
   menuH:"무엇을<br>볼 수 있나",
   aboutH:"만들 줄 몰라서<br>못 나가시나요?",
   aboutBody:"애플시드는 광고·뮤직비디오 VFX를 해 온 회사입니다. " +
@@ -3632,6 +4673,13 @@ function renderHome(){
       "</picture>" +
     "</div></section>" +
 
+    /* 커뮤니티 바로 아래다 — 말한 사람들 다음에 만든 사람들이 온다.
+       작품이 하나도 없으면 섹션째 숨긴다(homeFillWorks). */
+    "<section class='section dark' id='homeWorkSec' style='display:none'><div class='inner'>" +
+      sectionHead("Works", HOME_COPY.workH, "", "") +
+      "<div id='homeWork'></div>" +
+    "</div></section>" +
+
     "<section class='section paper'><div class='inner'>" +
       sectionHead("Appleseed", HOME_COPY.aboutH, HOME_COPY.aboutBody, "") +
       /* edu-editing → edu-studio → edu-workshop 순으로 교체됐다(대표 지시 2026-08-15,
@@ -3651,6 +4699,7 @@ function renderHome(){
   homeFillBrief();
   homeFillMenu();
   homeFillCommunity();
+  homeFillWorks();
 }
 
 /* ============ 라우팅 ============ */
@@ -3658,7 +4707,7 @@ var ROUTES = {
   home:renderHome,
   contests:renderContests, festivals:renderFestivals, gov:renderGov,
   newsrep:renderReports, youtube:renderYoutube, aivideo:renderAiVideo,
-  board:renderBoard
+  board:renderBoard, prof:renderProfile
 };
 /* 공개 목록 API(action=pub) 데이터가 필요한 화면 */
 var NEEDS_PUB = { newsrep:1, youtube:1 };
@@ -3756,7 +4805,10 @@ document.addEventListener("click", function(e){
   try { u = new URL(a.href, location.href); } catch(err){ return; }
   if (u.origin !== location.origin) return;
   if (u.pathname === location.pathname) return;   /* 같은 문서 안의 해시 이동은 기본 동작대로 */
-  if (u.pathname !== BASE && u.pathname.indexOf(BASE + "board") !== 0) return;
+  if (u.pathname !== BASE
+      && u.pathname.indexOf(BASE + "board") !== 0
+      && u.pathname !== BASE + "u"
+      && u.pathname.indexOf(BASE + "u/") !== 0) return;
   e.preventDefault();
   history.pushState(null, "", u.pathname + u.search + u.hash);
   onNav();
@@ -3764,8 +4816,15 @@ document.addEventListener("click", function(e){
 
 /* ============ 초기화 ============ */
 (function init(){
-  if (boardPath() === null && !location.hash) location.replace("#" + DEFAULT_ROUTE);
+  if (boardPath() === null && profPath() === null && !location.hash)
+    location.replace("#" + DEFAULT_ROUTE);
   navKey = location.pathname + location.hash;
+  nvBind();
+  nvAuth();
+  /* 상단바는 어느 화면에서나 로그인 상태를 말해야 하므로 여기서 한 번 깨워 둔다.
+     첫 그리기가 끝난 뒤에 붙는 스크립트라 화면을 막지 않고, 실패하면 로그아웃 상태로
+     남을 뿐이다 — 게시판을 열 때 다시 시도한다. */
+  if (fbReady()) fbInit()["catch"](function(){});
   render();
   onScroll();
   /* 스냅샷 먼저 그리고(0.3초), 라이브는 뒤에서 받아 다를 때만 다시 그린다(6~68초) */

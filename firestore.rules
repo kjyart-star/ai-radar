@@ -104,6 +104,136 @@ service cloud.firestore {
       allow update, delete: if false;
     }
 
+    /* ---------------- 프로필 ----------------
+       공개 포트폴리오입니다(/u/{슬러그}). 문서 ID 가 곧 uid 라 남의 자리에 쓸 수 없습니다.
+
+       ⚠️ 이 컬렉션에서 가장 중요한 것은 hasOnly 한 줄입니다.
+       받는 키를 여기서 못박아 **메일 주소가 들어올 자리를 아예 없앱니다**.
+       구글 로그인은 메일과 실명을 함께 주지만 우리가 쓰는 것은 uid 와 사진뿐이고,
+       이름도 구글의 것 대신 직접 받은 닉네임입니다. 나중에 화면 쪽에서 실수로
+       email 을 담아 보내도 이 규칙이 거부합니다.
+
+       slug 는 만들 때 한 번 정해지고 바뀌지 않습니다 — update 가 건드릴 수 있는 키
+       목록에서 빠져 있습니다. 주소가 바뀌면 본인이 알려 둔 링크가 전부 죽습니다.
+       delete 도 막습니다. 프로필만 지우면 slugs 의 주소 예약이 주인 없이 남습니다. */
+    match /profiles/{uid} {
+
+      allow read: if true;
+
+      allow create: if request.auth != null && request.auth.uid == uid
+                    && request.resource.data.keys()
+                         .hasOnly(['nick','slug','bio','link','photoURL','createdAt'])
+                    && request.resource.data.nick is string
+                    && request.resource.data.nick.size() >= 2
+                    && request.resource.data.nick.size() <= 20
+                    && request.resource.data.slug is string
+                    && request.resource.data.slug.size() >= 2
+                    && request.resource.data.slug.size() <= 40
+                    && request.resource.data.bio is string
+                    && request.resource.data.bio.size() <= 80
+                    && request.resource.data.link is string
+                    && request.resource.data.link.size() <= 200
+                    && (request.resource.data.link == ''
+                        || request.resource.data.link.matches('^https://.*'))
+                    && request.resource.data.photoURL is string
+                    && request.resource.data.photoURL.size() <= 500
+                    /* 만든 시각은 서버 시각이어야 합니다 — 날짜를 지어낼 수 없게 */
+                    && request.resource.data.createdAt == request.time;
+
+      /* 고칠 수 있는 것은 네 가지뿐입니다. slug·createdAt 은 물론이고
+         목록에 없는 새 키(email 같은 것)를 끼워 넣는 것도 affectedKeys 에 잡혀 거부됩니다. */
+      allow update: if request.auth != null && request.auth.uid == uid
+                    && request.resource.data.diff(resource.data).affectedKeys()
+                         .hasOnly(['nick','bio','link','photoURL'])
+                    && request.resource.data.nick is string
+                    && request.resource.data.nick.size() >= 2
+                    && request.resource.data.nick.size() <= 20
+                    && request.resource.data.bio is string
+                    && request.resource.data.bio.size() <= 80
+                    && request.resource.data.link is string
+                    && request.resource.data.link.size() <= 200
+                    && (request.resource.data.link == ''
+                        || request.resource.data.link.matches('^https://.*'))
+                    && request.resource.data.photoURL is string
+                    && request.resource.data.photoURL.size() <= 500;
+
+      allow delete: if false;
+    }
+
+    /* ---------------- 프로필 주소 예약 ----------------
+       문서 ID 가 곧 주소(/u/{슬러그})이고 값은 그 주소의 주인 uid 입니다.
+       태그와 같은 방식입니다 — 이미 있는 이름에 쓰면 update 로 취급되고 update 는
+       막혀 있어, 같은 주소를 두 사람이 가질 수 없습니다.
+       한 번 예약한 주소는 바꾸거나 지울 수 없습니다. */
+    match /slugs/{slug} {
+      allow read: if true;
+      allow create: if request.auth != null
+                    && request.resource.data.keys().hasOnly(['uid','createdAt'])
+                    && request.resource.data.uid == request.auth.uid
+                    && request.resource.data.createdAt == request.time;
+      allow update, delete: if false;
+    }
+
+    /* ---------------- 작품 ----------------
+       유튜브·비메오 주소만 받습니다. 화면이 영상 ID 를 뽑아 주소를 다시 만들어 보내므로
+       여기서는 그 두 모양만 통과시킵니다 — 도메인 이름만 보는 것보다 좁습니다.
+       (youtube.com/redirect?q=... 같은 것으로 아무 데나 보내지 못합니다.)
+
+       ⚠️ 하루 등록 상한(3건)은 여기서 막을 수 없습니다. 규칙은 "이 사람이 오늘 몇 건
+       올렸나"를 셀 수 없습니다. 규칙이 할 수 있는 것은 createdAt 을 서버 시각으로
+       못박아 날짜 위조를 막는 데까지이고, 세는 일은 화면(wkCountToday)이 합니다.
+       상한을 진짜로 강제하려면 카운터 문서나 서버 함수가 필요합니다 — 지금은 두지 않습니다. */
+    match /works/{id} {
+
+      allow read: if true;
+
+      allow create: if request.auth != null
+                    && request.resource.data.keys()
+                         .hasOnly(['uid','title','url','videoId','contestSlug','createdAt','likeCount'])
+                    && request.resource.data.uid == request.auth.uid
+                    && request.resource.data.title is string
+                    && request.resource.data.title.size() > 0
+                    && request.resource.data.title.size() <= 60
+                    && request.resource.data.url is string
+                    && (request.resource.data.url
+                          .matches('^https://www\\.youtube\\.com/watch\\?v=[A-Za-z0-9_-]{6,20}$')
+                     || request.resource.data.url
+                          .matches('^https://vimeo\\.com/[0-9]{6,12}$'))
+                    && request.resource.data.videoId is string
+                    && request.resource.data.videoId.matches('^[A-Za-z0-9_-]{6,20}$')
+                    && request.resource.data.contestSlug is string
+                    && request.resource.data.contestSlug.size() <= 120
+                    && request.resource.data.likeCount == 0
+                    && request.resource.data.createdAt == request.time;
+
+      /* 두 가지만 허용합니다.
+         1) 올린 본인 — 제목·관련 공모전만. 주소와 영상 ID 는 바꿀 수 없습니다.
+            (바꿀 수 있으면 좋아요를 모은 뒤 내용만 갈아끼우는 일이 가능해집니다.)
+         2) 다른 사람의 좋아요 — likeCount 만, 정확히 ±1.
+         1 에 likeCount 가 없으므로 올린 본인도 자기 숫자를 부풀릴 수 없습니다. */
+      allow update: if request.auth != null && (
+           (resource.data.uid == request.auth.uid
+            && request.resource.data.diff(resource.data).affectedKeys()
+                 .hasOnly(['title','contestSlug'])
+            && request.resource.data.title is string
+            && request.resource.data.title.size() > 0
+            && request.resource.data.title.size() <= 60
+            && request.resource.data.contestSlug is string
+            && request.resource.data.contestSlug.size() <= 120)
+        || (request.resource.data.diff(resource.data).affectedKeys().hasOnly(['likeCount'])
+            && (request.resource.data.likeCount == resource.data.likeCount + 1
+             || request.resource.data.likeCount == resource.data.likeCount - 1))
+      );
+
+      allow delete: if request.auth != null && resource.data.uid == request.auth.uid;
+
+      /* 게시판 좋아요와 같습니다 — 문서 ID 가 곧 uid 라 남의 좋아요를 대신 누를 수 없습니다. */
+      match /likes/{uid} {
+        allow read: if true;
+        allow create, delete: if request.auth != null && request.auth.uid == uid;
+      }
+    }
+
     /* 그 밖의 모든 경로는 막습니다. */
     match /{document=**} {
       allow read, write: if false;
