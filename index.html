@@ -371,9 +371,13 @@
   .r-title-en{ margin-top:6px; font-size:12.5px; font-weight:600; letter-spacing:0;
                line-height:1.45; color:var(--muted-light); overflow-wrap:break-word; }
   .dark .r-title-en{ color:var(--muted-dark); }
+  /* 태그 값은 외부 JSON 에서 그대로 온다(공모전 category, Devpost kind 등).
+     카테고리 여러 개가 콤마로 이어진 긴 값이 오면 nowrap 때문에 375px 를 넘겨
+     문서에 가로 스크롤이 생긴다 — max-width 로 잘라 말줄임한다. */
   .tag{ display:inline-block; margin-left:8px; border:1px solid var(--line-light);
         border-radius:999px; padding:3px 9px; font-size:10px; font-weight:700;
-        letter-spacing:.08em; vertical-align:middle; white-space:nowrap; }
+        letter-spacing:.08em; vertical-align:middle; white-space:nowrap;
+        max-width:100%; overflow:hidden; text-overflow:ellipsis; box-sizing:border-box; }
   .dark .tag{ border-color:var(--line-dark); }
   .r-meta{ margin-top:9px; color:var(--muted-light); font-size:12.5px; line-height:1.6;
            word-break:keep-all; }
@@ -738,7 +742,9 @@
     /* 가입하기는 감춘다. 어차피 로그인 흐름 안에서 닉네임을 묻게 되어 있어
        버튼 둘이 나란히 설 자리를 쓸 이유가 없다. */
     .nav-auth .btn.solid{ display:none; }
-    .nav-me{ max-width:124px; padding-right:9px; }
+    /* 손가락으로 누르는 것들은 46px 아래로 내려가지 않게 한다 */
+    .nav-me{ max-width:124px; padding-right:9px; min-height:46px; }
+    .nav-menu a,.nav-menu button{ padding:15px 14px; }
     .hero{ min-height:0; }
     /* 모바일 전용 object-position 오버라이드를 두지 않는다 — 위의 초점 고정 값(67% 8%)이
        화면비와 무관하게 얼굴을 같은 비율 지점에 놓는다. 값이 갈라지면 그 사이 폭에서 어긋난다. */
@@ -3598,6 +3604,7 @@ function wpEditView(el){
       fbDb.collection("profiles").doc(bdUser.uid)
         .update({ nick:nick, bio:bio, link:link }).then(function(){
           wpCache[bdUser.uid] = undefined; wpMine = undefined;
+          nvAuth();            /* 상단바 이름도 같이 바뀌어야 한다 */
           wpGo(pf.slug);
         }, fail);
       return;
@@ -3620,6 +3627,7 @@ function wpEditView(el){
         })
         .then(function(){
           wpCache[bdUser.uid] = undefined; wpMine = undefined;
+          nvAuth();            /* "닉네임 정하기" 로 남아 있던 상단바를 방금 정한 이름으로 */
           wpGo(slug);
         });
     })["catch"](fail);
@@ -3955,9 +3963,20 @@ function nvAuth(){
       "<button type='button' data-nvlogout>로그아웃</button>"+
     "</div>";
 }
+/* ⚠️ 여는·닫는 것만으로 상단바를 다시 그리지 않는다. 다시 그리면 방금 누른 그 노드가
+   DOM 에서 떨어져 나가고, 이어서 버블링으로 도착한 바깥클릭 감시가 "바깥을 눌렀다"고
+   잘못 읽어(떨어진 노드의 closest 는 null 이다) 열리자마자 도로 닫는다.
+   2026-08-15 대표 실사용에서 이것 때문에 프로필도 로그아웃도 누를 수 없었다.
+   그래서 여기서는 이미 있는 요소의 상태만 바꾼다. */
 function nvMenu(on){
   nvMenuOn = !!on;
-  nvAuth();
+  var el = document.getElementById("navAuth");
+  if (!el) return;
+  var box = el.querySelector(".nav-menu");
+  var pill = el.querySelector("[data-nvmenu]");
+  if (!box || !pill){ nvAuth(); return; }   /* 아직 안 그려진 경우에만 그린다 */
+  box.hidden = !nvMenuOn;
+  pill.setAttribute("aria-expanded", String(nvMenuOn));
 }
 /* 두 버튼이 같은 함수로 들어온다. kind 는 로그인 뒤 무엇을 안내할지에만 쓴다 */
 function nvLoginGo(kind){
@@ -4169,13 +4188,15 @@ function nvBind(){
     if ((el = t.closest("[data-nvlogout]"))){ nvMenu(false); bdLogout(); return; }
     if (t.closest("a")) nvMenu(false);   /* 내 프로필 — 이동은 전역 링크 처리가 맡는다 */
   };
-  /* 바깥을 누르면 닫는다 */
+  /* 바깥을 누르면 닫는다.
+     캡처 단계(true)에서 본다 — 버블 단계에서 보면 위 핸들러가 먼저 돌아 화면을 바꾼 뒤라
+     누른 노드가 이미 제자리에 없을 수 있고, 그러면 안을 눌렀는데도 바깥으로 읽힌다. */
   document.addEventListener("click", function(e){
     if (!nvMenuOn) return;
     var t = e.target;
     if (t && t.closest && t.closest("#navAuth")) return;
     nvMenu(false);
-  });
+  }, true);
 }
 
 /* ---- 홈: 최근 작품 ----
