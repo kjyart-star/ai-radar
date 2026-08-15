@@ -18,7 +18,7 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = join(ROOT, "data");
-const UA = "Mozilla/5.0 (compatible; ai-radar-bot/1.0; +https://kjyart-star.github.io/ai-radar/)";
+const UA = "Mozilla/5.0 (compatible; ai-radar-bot/1.0; +https://ai-radar.kr/)";
 const NOW = new Date().toISOString();
 
 const log = (...a) => console.log(...a);
