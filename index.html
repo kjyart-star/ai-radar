@@ -2156,6 +2156,17 @@ function renderContests(){
       (ongoing.length ? ongoing.map(contestRow).join("")
                       : emptyNote("조건에 맞는 진행 중 공모전이 없습니다."))+"</div>";
 
+    /* 검색어가 있으면 힉스필드·Devpost 는 감춘다.
+       이 둘은 공모전 보드와 무관한 별도 큐레이션이라 검색어로 걸러지지 않는다.
+       상단바 검색으로 한 건을 찾아 들어와도 그 아래 58행이 그대로 남아 있어서
+       "검색이 안 먹었다"로 읽혔다 (대표 지적 2026-08-15).
+       발표 대기 칸도 걸린 것이 없으면 같이 감춘다 — 빈 접이칸만 남기지 않는다.
+       검색어를 지우면 셋 다 그대로 돌아온다. */
+    var q = String(contestSearch||"").trim();
+    if (hfEl) hfEl.style.display = q ? "none" : "";
+    if (dpEl) dpEl.style.display = q ? "none" : "";
+    if (awaitEl) awaitEl.style.display = (q && !awaiting.length) ? "none" : "";
+
     /* 다크였다가 페이퍼로 바꿨다. 이 화면에 힉스필드(다크)·Devpost(페이퍼)·
        Devpost 예정(다크) 세 섹션이 앞에 붙으면서 다크가 두 번 연달아 왔다 —
        다크↔페이퍼 교차가 이 디자인의 리듬이라 마지막 칸을 페이퍼로 넘긴다. */
