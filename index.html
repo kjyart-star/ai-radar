@@ -439,6 +439,10 @@
   /* 썸네일을 112 → 184px 로 키웠다 (대표 지시 2026-08-12, "썸네일이 잘 보이게").
      16:9 는 그대로 두고 칸만 넓혔다. 카드가 한 칸에 580px 가까이 되므로 제목 자리는
      380px 넘게 남는다 — 제목이 더 접히지 않는 선에서 최대로 키운 값이다. */
+  /* 영상 카드는 <a> 였다가 모달을 여는 <button> 이 되었다 — 생김새는 같아야 한다.
+     .yt-thumb 는 글 속에 인라인으로 놓이므로 폭을 100% 로 늘리지 않는다 */
+  button.item-card{ width:100%; text-align:left; }
+  button.yt-thumb{ text-align:left; }
   .item-card{ display:grid; grid-template-columns:184px 1fr; gap:15px; align-items:start;
               border:1px solid var(--line-light); padding:13px;
               transition:background .18s ease, color .18s ease; }
@@ -694,6 +698,34 @@
   .pf-photo{ display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:7px; }
   .pf-photo .bd-in{ flex:1 1 200px; width:auto; }
   .pf-photo .pf-ava{ width:44px; height:44px; font-size:17px; }
+  /* ---------- 그 자리에서 재생하는 모달 ---------- */
+  .wk-modal{ position:fixed; inset:0; z-index:200; display:none; align-items:center;
+             justify-content:center; padding:24px; background:rgba(7,17,13,.94); }
+  .wk-modal.on{ display:flex; }
+  .wk-box{ width:min(1080px,100%); }
+  .wk-mhead{ display:flex; align-items:flex-start; gap:14px; margin-bottom:12px; color:#fff; }
+  .wk-mtitle{ margin:0; font-size:17px; font-weight:800; letter-spacing:-.02em; line-height:1.45;
+              word-break:keep-all; }
+  .wk-mby{ margin:5px 0 0; font-size:12.5px; color:var(--muted-dark); }
+  .wk-x{ margin-left:auto; flex:none; width:44px; height:44px; display:grid; place-items:center;
+         font-size:23px; line-height:1; color:#fff; border:1px solid var(--line-dark); }
+  .wk-x:hover{ background:var(--lime); border-color:var(--lime); color:var(--ink); }
+  /* 16:9 를 지키는 자리. iframe 은 열 때 만들어 여기에 채운다 */
+  .wk-frame{ position:relative; width:100%; aspect-ratio:16/9; background:#000; }
+  .wk-frame iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .wk-mfoot{ margin:12px 0 0; font-size:12px; }
+  .wk-mfoot a{ color:var(--muted-dark); text-decoration:underline; text-underline-offset:3px; }
+  .wk-mfoot a:hover{ color:var(--lime); }
+  /* 움직임을 줄이라고 한 사람에게는 등장 효과를 주지 않는다 */
+  @media (prefers-reduced-motion: no-preference){
+    .wk-modal.on .wk-box{ animation:wkIn .18s ease; }
+  }
+  @keyframes wkIn{ from{ opacity:0; transform:translateY(10px); } to{ opacity:1; transform:none; } }
+  @media (max-width:680px){
+    .wk-modal{ padding:14px; }
+    .wk-mtitle{ font-size:15px; }
+  }
+
   /* ---------- 가입 안내(/join) ---------- */
   .join-cols{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr);
               gap:56px; align-items:center; }
@@ -1103,6 +1135,13 @@ function linkify(s){
   return esc(s).replace(/(https?:\/\/[^\s)<>"'　]+)/g, function(u){
     var m = u.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([A-Za-z0-9_-]{6,20})/);
     if (m) {
+      /* 글 속 영상도 같은 모달에서 연다 — 화면마다 다르게 열리면 그때부터 헷갈린다 */
+      var k = wkReg({ url:u, title:"영상", by:"" });
+      if (k){
+        return "<button type='button' class='yt-thumb' data-wkplay='"+esc(k)+"'>"+
+          "<img src='https://i.ytimg.com/vi/"+m[1]+"/mqdefault.jpg' alt='유튜브 썸네일' loading='lazy'>"+
+          "<span>영상 보기</span></button>";
+      }
       return "<a class='yt-thumb' href='"+u+"' target='_blank' rel='noopener noreferrer'>"+
         "<img src='https://i.ytimg.com/vi/"+m[1]+"/mqdefault.jpg' alt='유튜브 썸네일' loading='lazy'>"+
         "<span>영상 보기</span></a>";
@@ -1157,11 +1196,16 @@ function richReport(s){
           "this.closest('.item-card').classList.remove('photo');"+
           "this.onerror=function(){icMark(this,'"+esc(hst)+"')};this.onload=function(){icCheck(this,'"+esc(hst)+"')}\""
         : mk;
-      cardBuf.push("<a class='item-card "+cls+"' href='"+esc(url)+"' target='_blank' rel='noopener noreferrer'>"+
+      /* 유튜브 카드만 모달로 연다. 기사 카드는 원문으로 나가는 것이 맞다 */
+      var vk = ym ? wkReg({ url:url, title:title, by:"" }) : "";
+      var ch = vk
+        ? "<button type='button' class='item-card "+cls+"' data-wkplay='"+esc(vk)+"'>"
+        : "<a class='item-card "+cls+"' href='"+esc(url)+"' target='_blank' rel='noopener noreferrer'>";
+      cardBuf.push(ch+
         "<img src='"+esc(ctSafeUrl(img))+"' alt='' loading='lazy'"+onerr+">"+
         "<span class='ic-body'><span class='ic-title'>"+esc(title)+"</span>"+
         (desc ? "<span class='ic-desc'>"+esc(desc)+"</span>" : "")+
-        "<span class='ic-url'>"+esc(go)+"</span></span></a>");
+        "<span class='ic-url'>"+esc(go)+"</span></span>"+(vk ? "</button>" : "</a>"));
     } else {
       if (t === "" && cardBuf.length){ continue; } /* 카드 사이 빈 줄로 그리드가 끊기지 않게 */
       flushCards();
@@ -2517,14 +2561,20 @@ function videoCards(list){
   return "<span class='card-grid'>"+(list||[]).map(function(v){
     var sub = v.subscribers != null ? " · 구독 "+kfmt(v.subscribers) : "";
     var when = v.published ? " · "+String(v.published).slice(0,10) : "";
-    return "<a class='item-card yt' href='"+esc(ctSafeUrl(v.url))+"' target='_blank' rel='noopener noreferrer'>"+
+    /* 갤러리와 같은 모달로 연다(대표 지시 2026-08-15 "같은 창에서 플레이되게").
+       주소에서 영상 ID 를 못 뽑으면 예전처럼 새 탭으로 둔다. */
+    var key = wkReg({ url:v.url, title:v.title, by:v.channel });
+    var head = key
+      ? "<button type='button' class='item-card yt' data-wkplay='"+esc(key)+"'>"
+      : "<a class='item-card yt' href='"+esc(ctSafeUrl(v.url))+"' target='_blank' rel='noopener noreferrer'>";
+    return head+
       /* 썸네일 주소도 http(s) 인지 보고 넣는다. 바깥에서 온 값이 그대로 src 로 들어가는 자리다 */
       "<img src='"+esc(ctSafeUrl(v.thumbnail))+"' alt='' loading='lazy'>"+
       "<span class='ic-body'>"+
         "<span class='ic-title'>"+esc(v.title||"(제목 없음)")+"</span>"+
         "<span class='ic-desc'>"+esc(v.channel||"")+esc(sub)+"</span>"+
         "<span class='ic-url'>조회수 "+esc(nfmt(v.views))+esc(when)+"</span>"+
-      "</span></a>";
+      "</span>"+(key ? "</button>" : "</a>");
   }).join("")+"</span>";
 }
 function videoSection(cls, eyebrow, h2, list, queries, generated){
@@ -3492,6 +3542,7 @@ C.addEventListener("click", function(e){
   /* 가입 화면의 로그인 버튼은 본문 안에 있다 — 상단바 위임만으로는 안 먹는다 */
   if ((el = t.closest("[data-nvlogin]"))){ nvLoginGo(); return; }
   if ((el = t.closest("[data-festall]"))){ festSearch = ""; renderFestivals(); return; }
+  if ((el = t.closest("[data-wkplay]"))){ wkOpen(el.getAttribute("data-wkplay")); return; }
   if ((el = t.closest("[data-wklike]"))){ wkToggleLike(el); return; }
   if ((el = t.closest("[data-wkdel]"))){ wkDelete(el); return; }
   if ((el = t.closest("[data-login]"))){ bdLogin(); return; }
@@ -3529,6 +3580,8 @@ var wpSlugName = {};       /* 공모전 슬러그 → 이름 */
 var wpSlugPromise = null;
 var wkFeed = [], wkLiked = {};
 var wkFormOpen = false;    /* 「작품 올리기」를 눌렀을 때만 폼을 편다 */
+var wkById = {};           /* 카드에 그려진 작품 — 모달이 여기서 값을 꺼낸다 */
+var wkModal = null, wkLastFocus = null, wkPrevOverflow = "";
 
 /* 프로필 안에서의 이동. 게시판의 bdGo 와 같은 방식이다 */
 function wpGo(slug){
@@ -4010,21 +4063,25 @@ function wpContestMap(){
    작성자·좋아요·신고는 카드 바깥 줄에 둔다. 카드 전체가 링크라 안에 넣으면 링크 안의
    링크가 된다. */
 function wkCard(w){
-  var url = ctSafeUrl(w.url||"");
   var vim = wkIsVimeo(w);
   var pf = wpCache[w.uid] || null;
   var mine = !!(bdUser && w.uid && w.uid === bdUser.uid);
   var ct = w.contestSlug ? (wpSlugName[w.contestSlug] || "") : "";
   var ph = pf ? ctSafeUrl(pf.photoURL||"") : "";
-  var open = " href='"+esc(url)+"' target='_blank' rel='noopener noreferrer'";
+  /* 모달이 값을 꺼내 쓴다. 카드를 그릴 때 채워 두면 어느 화면에서 눌러도 같게 열린다 */
+  wkById[w.id] = w;
+  w.by = (pf && pf.nick) || "";
+  /* 새 탭으로 내보내지 않고 이 자리에서 연다(대표 지시 2026-08-15).
+     그래서 링크가 아니라 버튼이다 — 하는 일이 "이동"이 아니라 "창 열기"다. */
+  var play = " type='button' data-wkplay='"+esc(w.id)+"'";
   var h = "<article class='wk-card' data-work='"+esc(w.id)+"'>";
   /* 썸네일이 먼저, 정보는 그 아래 두 줄 — 영상 목록은 이 배치가 표준이다 */
-  h += "<a class='wk-thumb'"+open+">"+
+  h += "<button class='wk-thumb'"+play+" aria-label='"+esc(w.title||"작품")+" 재생'>"+
        (vim ? "<span class='wk-noimg'>VIMEO</span>"
             : "<img src='"+esc(wkThumb(w))+"' alt='' loading='lazy'>")+
-       "</a>";
+       "</button>";
   h += "<div class='wk-info'>";
-  h += "<a class='wk-title'"+open+">"+esc(w.title||"(제목 없음)")+"</a>";
+  h += "<button class='wk-title'"+play+">"+esc(w.title||"(제목 없음)")+"</button>";
   h += "<div class='wk-by'>"+
        wpAva("bd-ava", ph, (pf && pf.nick) || "")+
        ((pf && pf.slug)
@@ -4042,6 +4099,105 @@ function wkCard(w){
   if (mine) h += "<button type='button' class='bd-act' data-wkdel='"+esc(w.id)+"'>삭제</button>";
   h += "</div></div></article>";
   return h;
+}
+/* 영상을 모달에 등록하고 열쇠를 돌려준다. 추출에 실패하면 빈 문자열이고,
+   그때 부르는 쪽은 예전처럼 새 탭 링크로 둔다 — 깨진 모달보다 낫다.
+   갤러리 작품은 videoId 를 저장해 두지만 수집된 영상(유튜브정보·작품소개)은
+   전체 주소만 있다. 그래서 추출은 wkParse 한 곳으로 모은다. */
+function wkReg(o){
+  o = o || {};
+  var v = null;
+  if (o.videoId && /^[A-Za-z0-9_-]{6,20}$/.test(String(o.videoId))){
+    v = { kind: (String(o.url||"").indexOf("//vimeo.com/") >= 0 ? "vimeo" : "youtube"),
+          id: String(o.videoId) };
+  } else {
+    v = wkParse(o.url);
+  }
+  if (!v) return "";
+  var key = "v-" + v.kind + "-" + v.id;
+  wkById[key] = { id:key, videoId:v.id, url:wkCanon(v.kind, v.id),
+                  title:o.title || "", by:o.by || "", orig:ctSafeUrl(o.url||"") };
+  return key;
+}
+
+/* ---- 그 자리에서 재생 (모달) ----
+   격자가 3열이라 카드 안에서 그대로 틀면 플레이어가 너무 작다. 어두운 바탕 위에
+   16:9 큰 화면으로 띄운다.
+   ⚠️ iframe 은 열 때 만들고 닫을 때 지운다. 카드마다 미리 깔아 두면 화면이 무거워지고,
+   닫아도 소리가 남는다. 지우는 것이 소리를 끊는 가장 확실한 방법이다.
+   ⚠️ youtube-nocookie 를 쓴다 — 일반 도메인은 재생 전부터 쿠키를 심는다. */
+function wkPlayUrl(w){
+  var id = String((w && w.videoId) || "");
+  /* 규칙에서 이미 막지만 화면에서도 한 번 더 본다 — 주소를 문자열로 잇는 자리다 */
+  if (!/^[A-Za-z0-9_-]{6,20}$/.test(id)) return "";
+  id = encodeURIComponent(id);
+  return wkIsVimeo(w)
+    ? "https://player.vimeo.com/video/"+id+"?autoplay=1"
+    : "https://www.youtube-nocookie.com/embed/"+id+"?autoplay=1&rel=0";
+}
+function wkClose(){
+  if (!wkModal) return;
+  wkModal.classList.remove("on");
+  wkModal.innerHTML = "";                       /* iframe 제거 = 소리 정지 */
+  document.documentElement.style.overflow = wkPrevOverflow;
+  document.removeEventListener("keydown", wkKey);
+  if (wkLastFocus && wkLastFocus.focus){ try { wkLastFocus.focus({ preventScroll:true }); } catch(e){} }
+  wkLastFocus = null;
+}
+function wkKey(e){
+  if (e.key === "Escape"){ e.preventDefault(); wkClose(); }
+}
+function wkOpen(id){
+  var w = wkById[id];
+  if (!w) return;
+  var src = wkPlayUrl(w);
+  var orig = ctSafeUrl(w.url||"");
+  var pf = wpCache[w.uid] || null;
+  var vim = wkIsVimeo(w);
+  var by = w.by || (pf && pf.nick) || "익명";
+  if (w.orig) orig = w.orig;                    /* 수집 영상은 원래 주소를 그대로 둔다 */
+  if (!src){ if (orig) window.open(orig, "_blank", "noopener"); return; }
+  wkLastFocus = document.activeElement;
+  if (!wkModal){
+    wkModal = document.createElement("div");
+    wkModal.className = "wk-modal";
+    wkModal.setAttribute("role", "dialog");
+    wkModal.setAttribute("aria-modal", "true");
+    wkModal.setAttribute("aria-label", "작품 재생");
+    /* 바깥(어두운 바탕)을 누르거나 × 를 누르면 닫는다 */
+    wkModal.onclick = function(e){
+      var t = e.target;
+      if (t === wkModal){ wkClose(); return; }
+      if (t && t.closest && t.closest("[data-wkclose]")) wkClose();
+    };
+    document.body.appendChild(wkModal);
+  }
+  wkModal.innerHTML =
+    "<div class='wk-box'>"+
+      "<div class='wk-mhead'>"+
+        "<div>"+
+          "<h2 class='wk-mtitle'>"+esc(w.title||"(제목 없음)")+"</h2>"+
+          "<p class='wk-mby'>"+esc(by)+"</p>"+
+        "</div>"+
+        "<button type='button' class='wk-x' data-wkclose aria-label='닫기'>×</button>"+
+      "</div>"+
+      "<div class='wk-frame'>"+
+        "<iframe src='"+esc(src)+"' title='"+esc(w.title||"작품")+"'"+
+          " allow='autoplay; fullscreen; picture-in-picture' allowfullscreen"+
+          " referrerpolicy='strict-origin-when-cross-origin'></iframe>"+
+      "</div>"+
+      /* 임베드를 막아 둔 영상은 여기서 재생되지 않는다 — 나갈 문을 남긴다 */
+      "<p class='wk-mfoot'>"+
+        (orig ? "<a href='"+esc(orig)+"' target='_blank' rel='noopener noreferrer'>"+
+                (vim ? "비메오" : "유튜브")+"에서 보기 ↗</a>" : "")+
+      "</p>"+
+    "</div>";
+  wkPrevOverflow = document.documentElement.style.overflow || "";
+  document.documentElement.style.overflow = "hidden";   /* 배경 스크롤 잠금(위치는 그대로) */
+  wkModal.classList.add("on");
+  document.addEventListener("keydown", wkKey);
+  var x = wkModal.querySelector("[data-wkclose]");
+  if (x){ try { x.focus({ preventScroll:true }); } catch(e){ x.focus(); } }
 }
 function wkGrid(list){
   return "<div class='wk-grid'>"+(list||[]).map(wkCard).join("")+"</div>";
