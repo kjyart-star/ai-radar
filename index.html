@@ -929,13 +929,9 @@ function techSection(){
       return "<p class='count' style='margin:0 0 14px'><b>"+esc(label)+"</b> · "+esc(note)+"</p>"+
              "<div class='rows' style='margin-bottom:38px'>"+rows+"</div>";
     }
+    /* 바로 써 볼 수 있는 것을 위에 둔다 — 코드(GitHub) → 모델(Hugging Face) → 논문(arXiv) 순.
+       논문은 읽고 이해하는 데 시간이 들어 맨 아래가 맞다. */
     var body = "";
-    if (ax.length) body += group("arXiv cs.AI", ax.length+"편 · 최근 등록순",
-      ax.map(function(it){
-        return row({ dd:agoText(it.date), ddCls:"tbd",
-                     title:it.titleKo || it.title, titleEn:it.titleKo ? it.title : "",
-                     tags:["논문"], meta:[esc(ymdKST(it.date))], sum:it.summary, url:it.url });
-      }).join(""));
     if (gh.length) body += group("GitHub", gh.length+"곳 · 최근 7일 안에 갱신된 ai 토픽 저장소를 별 많은 순으로",
       gh.map(function(it){
         var meta = [];
@@ -952,6 +948,12 @@ function techSection(){
         if (it.date) meta.push(esc(ymdKST(it.date)));
         return row({ dd:it.likes != null ? kfmt(it.likes) : "—", ddCls:"far", title:it.title,
                      tags:["좋아요"], meta:meta, url:it.url });
+      }).join(""));
+    if (ax.length) body += group("arXiv cs.AI", ax.length+"편 · 최근 등록순",
+      ax.map(function(it){
+        return row({ dd:agoText(it.date), ddCls:"tbd",
+                     title:it.titleKo || it.title, titleEn:it.titleKo ? it.title : "",
+                     tags:["논문"], meta:[esc(ymdKST(it.date))], sum:it.summary, url:it.url });
       }).join(""));
     body = "<p class='section-intro' style='margin:0 0 30px'>"+
       "새 논문과 모델이 어디로 향하는지 봅니다. "+
