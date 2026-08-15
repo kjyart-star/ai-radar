@@ -163,10 +163,13 @@
      색은 순검정이 아니라 --ink(7,17,13) 다. 순검정을 쓰면 이 화면만 색이 튄다. */
   .hero.has-photo::after{
     background:
-      /* 아래→위 한 장은 숫자 줄이 앉는 히어로 하단을 누른다. 초점을 위로 올리면서(67% 8%)
-         책상의 밝은 면이 하단 중앙으로 내려왔고, 2560 실측에서 라벨 대비가 4.31:1 로
-         기준(4.5)에 못 미쳤다. 26% 위로는 걷혀서 얼굴(상단)에는 닿지 않는다. */
-      linear-gradient(0deg, rgba(7,17,13,.6) 0%, rgba(7,17,13,.3) 14%,
+      /* 아래→위 한 장은 두 가지 일을 한다.
+         ① 숫자 줄이 앉는 하단을 눌러 대비를 확보한다(2560 실측 4.31:1 → 기준 통과).
+         ② 맨 바닥을 --ink 100% 로 끌어올려 다음 섹션과 같은 색으로 녹인다 —
+            사진의 어두운 하단과 순수 --ink 배경이 만나며 생기던 "검정 밑에 검정 띠"
+            이음새(대표 실보고 2026-08-15)가 이걸로 사라진다. 26% 위로는 걷혀서
+            얼굴(상단)에는 닿지 않는다. */
+      linear-gradient(0deg, rgba(7,17,13,1) 0%, rgba(7,17,13,.45) 13%,
         rgba(7,17,13,0) 26%),
       linear-gradient(180deg, rgba(7,17,13,.74) 0%, rgba(7,17,13,.34) 32%,
         rgba(7,17,13,0) 60%),
@@ -187,6 +190,9 @@
       rgba(182,255,63,.18) 0deg, rgba(182,255,63,0) 40deg,
       rgba(182,255,63,0) 360deg); }
   .hero.has-photo .hero-sweep::before{ background:rgba(182,255,63,.72); }
+  /* 사진 히어로에서는 하단 경계선을 지운다 — 바닥이 이미 --ink 100% 로 녹아
+     다음 섹션과 한 면이 되는데, 1px 선이 남으면 그 자리에 다시 이음새가 생긴다. */
+  .hero.has-photo{ border-bottom-color:transparent; }
   .hero-content{ position:relative; z-index:3; width:min(var(--max), calc(100% - 64px));
                  margin:0 auto; padding:calc(var(--navh) + 44px) 0 42px; }
   .kicker{ display:flex; gap:9px; flex-wrap:wrap; margin-bottom:22px; }
@@ -3520,22 +3526,25 @@ function renderHome(){
     "<section class='section paper-alt' id='homeCommSec' style='display:none'><div class='inner'>" +
       sectionHead("Community", HOME_COPY.commH, "", "") +
       "<div class='rows' id='homeComm'></div>" +
-      "<picture>" +
-        "<source type='image/webp' srcset='" + BASE + "assets/edu-workshop.webp'>" +
-        "<img class='home-photo' src='" + BASE + "assets/edu-workshop.jpg' " +
-          "width='1280' height='858' loading='lazy' decoding='async' " +
-          "alt='책상에 둘러앉아 노트북을 보며 이야기하는 사람들'>" +
-      "</picture>" +
-    "</div></section>" +
-
-    "<section class='section paper'><div class='inner'>" +
-      sectionHead("Appleseed", HOME_COPY.aboutH, HOME_COPY.aboutBody, "") +
-      /* edu-editing(편집실 측면 컷)에서 교체했다(대표 지시 2026-08-15). 파일은 대체안으로 남겨 둔다 */
+      /* 애플시드 섹션과 사진을 맞바꿨다(대표 지시 2026-08-15) — 교육 자리엔 여럿이 함께,
+         커뮤니티 자리엔 혼자 만드는 사람. 같은 사진이 두 섹션에 나오는 것도 피한다. */
       "<picture>" +
         "<source type='image/webp' srcset='" + BASE + "assets/edu-studio.webp'>" +
         "<img class='home-photo' src='" + BASE + "assets/edu-studio.jpg' " +
           "width='1280' height='714' loading='lazy' decoding='async' " +
           "alt='어두운 스튜디오 책상에서 턱을 괴고 모니터를 보는 사람'>" +
+      "</picture>" +
+    "</div></section>" +
+
+    "<section class='section paper'><div class='inner'>" +
+      sectionHead("Appleseed", HOME_COPY.aboutH, HOME_COPY.aboutBody, "") +
+      /* edu-editing → edu-studio → edu-workshop 순으로 교체됐다(대표 지시 2026-08-15,
+         "팀 작업 느낌"). 앞의 두 파일은 대체안으로 남겨 둔다 */
+      "<picture>" +
+        "<source type='image/webp' srcset='" + BASE + "assets/edu-workshop.webp'>" +
+        "<img class='home-photo' src='" + BASE + "assets/edu-workshop.jpg' " +
+          "width='1280' height='858' loading='lazy' decoding='async' " +
+          "alt='어두운 스튜디오에서 여러 사람이 큰 모니터를 보며 함께 작업하는 모습'>" +
       "</picture>" +
       "<p class='cta-row' style='margin-top:26px'><a class='btn' href='" + HOME_MAIL_EDU + "'>교육 문의</a>" +
       "<a class='btn' href='" + HOME_MAIL_WORK + "'>제작 문의</a></p>" +
