@@ -569,6 +569,19 @@
   .row-wrap{ border-bottom:1px solid var(--line-light); }
   .dark .row-wrap{ border-bottom-color:var(--line-dark); }
   .row-wrap > .row{ border-bottom:0; padding-bottom:8px; }
+  /* 담기·이야기하기가 나란히 선다. 예전에는 이야기하기 하나뿐이라 margin auto 로
+     밀어 두었는데, 둘이 되면서 줄로 묶었다 — 안쪽 margin 은 아래에서 지운다 */
+  .row-acts{ display:flex; flex-wrap:wrap; justify-content:flex-end; align-items:center;
+             gap:8px; padding:0 16px 16px; }
+  .row-acts .row-talk{ margin:0; }
+  .row-save{ border:1px solid var(--line-light); border-radius:999px; padding:6px 12px;
+             font-size:10.5px; font-weight:800; letter-spacing:.04em; color:var(--muted-light);
+             white-space:nowrap; }
+  .row-save:hover{ border-color:var(--ink); color:var(--ink); }
+  .row-save.on{ background:var(--ink); border-color:var(--ink); color:var(--lime); }
+  .dark .row-save{ border-color:var(--line-dark); color:var(--muted-dark); }
+  .dark .row-save:hover{ border-color:var(--lime); color:var(--lime); }
+  .dark .row-save.on{ background:var(--lime); border-color:var(--lime); color:var(--ink); }
   .row-talk{ display:block; margin:0 16px 16px auto; border:1px solid var(--line-light);
              border-radius:999px; padding:6px 12px; font-size:10px; font-weight:800;
              letter-spacing:.08em; text-transform:uppercase; color:var(--muted-light); }
@@ -894,6 +907,10 @@
     .arch{ grid-template-columns:1fr; }
     .menu-cards a.wide{ grid-column:auto; }
     .row-talk{ margin:0 0 14px auto; }
+    /* 손가락으로 누르는 줄이라 높이를 키운다 — 담기가 이 화면의 주된 행동이다 */
+    .row-acts{ padding:0 0 14px; }
+    .row-acts .row-save,.row-acts .row-talk{ display:inline-flex; align-items:center;
+                                             min-height:44px; padding:6px 14px; margin:0; }
     .bd-card.d1{ padding-left:13px; }
     .bd-card.d2{ padding-left:26px; }
     .bd-acts{ gap:12px; }
@@ -1387,6 +1404,9 @@ var MENU = [
 ];
 var TITLES = {};
 MENU.forEach(function(it){ TITLES[it[0]] = it[1]; });
+/* 내 계획은 내비에 세우지 않는다 — 로그인한 사람에게만 뜻이 있는 개인 화면이라
+   상단바 드롭다운과 홈에서만 들어간다. 주소(#plan)는 살아 있어야 하므로 여기에만 넣는다. */
+TITLES.plan = "내 계획";
 var DEFAULT_ROUTE = "home";
 
 /* ============ 구조 판단 ============
@@ -1446,7 +1466,9 @@ var HERO = {
   prof:{ latin:"PROFILE", ko:"프로필",
     copy:"만든 작품과 남긴 글을 한 주소에 모아 둔 곳입니다." },
   join:{ latin:"JOIN", ko:"시작하기",
-    copy:"구글 계정 하나면 됩니다. 따로 적을 것도, 외울 비밀번호도 없습니다." }
+    copy:"구글 계정 하나면 됩니다. 따로 적을 것도, 외울 비밀번호도 없습니다." },
+  plan:{ latin:"MY PLAN", ko:"내 계획",
+    copy:"담아 두신 공모전·영화제·지원사업을 마감이 가까운 순으로 보여 드립니다." }
 };
 /* 히어로 마크업의 assets/... 는 상대 경로다. 게시판은 /board/{슬러그} 라는 실제 경로를
    쓰므로 거기서는 /board/assets/... 로 풀려 사진이 깨진다. 그 화면에서는 숨겨져 있어
@@ -1553,11 +1575,131 @@ function row(o){
   /* o.talk 가 있으면 게시판으로 건너가는 버튼을 붙인다. 목록에서 본 것을 두고
      바로 이야기할 자리가 없으면, 게시판은 늘 빈 채로 남는다.
      버튼을 <a class='row'> 안에 넣지 않는 이유는 CSS 주석(.row-wrap)에 적어 뒀다. */
-  if (!o.talk) return el;
-  return "<div class='row-wrap'>"+el+
-    "<button type='button' class='row-talk' data-talk='"+esc(o.talk.type||"")+"'"+
-    " data-talk-title='"+esc(o.talk.title||"")+"'"+
-    " data-talk-url='"+esc(ctSafeUrl(o.talk.url||""))+"'>이야기하기</button></div>";
+  if (!o.talk && !o.save) return el;
+  /* 담기와 이야기하기는 둘 다 행(링크) 바깥에 둔다 — 안에 넣으면 누를 때마다
+     원문으로 튀어 나간다. 바깥에 두면 클릭이 섞이지 않아 stopPropagation 도 필요 없다. */
+  var acts = "";
+  if (o.save) acts += saveBtn(o.save);
+  if (o.talk){
+    acts += "<button type='button' class='row-talk' data-talk='"+esc(o.talk.type||"")+"'"+
+      " data-talk-title='"+esc(o.talk.title||"")+"'"+
+      " data-talk-url='"+esc(ctSafeUrl(o.talk.url||""))+"'>이야기하기</button>";
+  }
+  return "<div class='row-wrap'>"+el+"<div class='row-acts'>"+acts+"</div></div>";
+}
+
+/* ============ 담기(북마크) ============
+   메인에 "마감 3일 전에 알려드립니다"라고 적어 두었는데 무엇의 마감을 보낼지가
+   정해져 있지 않았다. 담은 것이 그 답이다 — 담긴 것만 알려 준다.
+   그래서 이것은 편의 기능이 아니라 알림과 재방문의 축이다.
+
+   ⚠️ 식별자는 매일 수집이 갱신돼도 같은 항목이 같은 값이어야 한다. 그래서 제목·주최에서
+   계산한다(FNV-1a 32비트). data/slugs.json 의 슬러그를 쓰지 않는 이유는 그 파일이
+   177KB 라 목록을 그리는 시점에 없을 수 있고, 있을 때와 없을 때 키가 달라지면
+   같은 항목이 두 번 담기기 때문이다 — 그건 이 기능의 생명을 끊는다. */
+var SV_MAX = 300;
+var svMine = {}, svLoaded = false, svPending = null;
+function svHash(str){
+  var h = 2166136261, i;
+  str = String(str||"");
+  for (i = 0; i < str.length; i++){
+    h ^= str.charCodeAt(i);
+    /* FNV 곱셈을 시프트로 편다 — 그냥 곱하면 2^53 을 넘겨 값이 틀어진다 */
+    h = (h + ((h<<1) + (h<<4) + (h<<7) + (h<<8) + (h<<24))) >>> 0;
+  }
+  return h.toString(36);
+}
+function svKey(kind, title, org){
+  return String(kind||"x") + "-" + svHash(String(title||"") + "|" + String(org||""));
+}
+function saveBtn(sv){
+  /* 이미 담긴 항목은 그때 만든 키를 그대로 쓴다. 여기서 다시 계산하면 주최를 모르는
+     화면(내 계획)에서 다른 키가 나와, 빼려던 버튼이 새로 담아 버린다. */
+  var k = sv.key || svKey(sv.kind, sv.title, sv.org);
+  var on = !!svMine[k];
+  return "<button type='button' class='row-save"+(on?" on":"")+"' data-save='"+esc(k)+"'"+
+    " data-sv-kind='"+esc(sv.kind||"")+"' data-sv-title='"+esc(sv.title||"")+"'"+
+    " data-sv-due='"+esc(sv.deadline||"")+"' data-sv-url='"+esc(ctSafeUrl(sv.url||""))+"'"+
+    " aria-pressed='"+on+"' title='"+(on?"담은 것에서 빼기":"내 계획에 담기")+"'>"+
+    (on ? "♥ 담음" : "♡ 담기")+"</button>";
+}
+function svLoad(){
+  if (!bdUser || !fbDb){ svMine = {}; svLoaded = false; return Promise.resolve({}); }
+  if (svLoaded) return Promise.resolve(svMine);
+  return fbDb.collection("saves").doc(bdUser.uid).collection("items").limit(SV_MAX).get()
+    .then(function(sn){
+      var m = {};
+      sn.forEach(function(d){ var o = d.data()||{}; o.id = d.id; m[d.id] = o; });
+      svMine = m; svLoaded = true;
+      return m;
+    }, function(e){
+      if (window.console && console.warn) console.warn("[담기] 목록을 읽지 못했습니다", e);
+      return svMine;
+    });
+}
+/* 화면을 다시 그리지 않고 그 버튼만 바꾼다 — 목록 스크롤을 잃지 않게 */
+function svPaint(key){
+  var on = !!svMine[key];
+  C.querySelectorAll("[data-save='"+key+"']").forEach(function(b){
+    b.classList.toggle("on", on);
+    b.setAttribute("aria-pressed", String(on));
+    b.textContent = on ? "♥ 담음" : "♡ 담기";
+  });
+}
+function svFromEl(el){
+  return { key: el.getAttribute("data-save"),
+           kind: el.getAttribute("data-sv-kind") || "",
+           title: el.getAttribute("data-sv-title") || "",
+           deadline: el.getAttribute("data-sv-due") || "",
+           url: el.getAttribute("data-sv-url") || "" };
+}
+function svWrite(o){
+  var doc = fbDb.collection("saves").doc(bdUser.uid).collection("items").doc(o.key);
+  return doc.set({
+    kind: String(o.kind||"").slice(0,10),
+    key: String(o.key||"").slice(0,60),
+    title: String(o.title||"").slice(0,200),
+    deadline: String(o.deadline||"").slice(0,10),
+    url: String(o.url||"").slice(0,500),
+    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+  });
+}
+function svToggle(el){
+  var o = svFromEl(el);
+  if (!o.key) return;
+  if (!bdUser){
+    /* 담으려던 것을 기억해 두었다가 로그인하면 자동으로 담는다 */
+    svPending = o;
+    bdToast("로그인하면 담을 수 있습니다");
+    nvLoginGo();
+    return;
+  }
+  if (!fbDb) return;
+  var had = !!svMine[o.key];
+  /* 먼저 화면을 바꾸고 뒤에서 쓴다. 실패하면 되돌린다 */
+  if (had) delete svMine[o.key]; else svMine[o.key] = o;
+  svPaint(o.key);
+  var w = had
+    ? fbDb.collection("saves").doc(bdUser.uid).collection("items").doc(o.key)["delete"]()
+    : svWrite(o);
+  w.then(function(){
+    if (!had) bdToast("내 계획에 담았습니다");
+  }, function(e){
+    if (had) svMine[o.key] = o; else delete svMine[o.key];
+    svPaint(o.key);
+    if (window.console && console.error) console.error("[담기]", e);
+    bdToast(had ? "빼지 못했습니다" : "담지 못했습니다");
+  });
+}
+/* 로그인 직후, 담으려다 만 것이 있으면 그때 담는다 */
+function svFlush(){
+  if (!svPending || !bdUser || !fbDb) return;
+  var o = svPending; svPending = null;
+  svWrite(o).then(function(){
+    svMine[o.key] = o;
+    svPaint(o.key);
+    bdToast("내 계획에 담았습니다");
+  }, function(){});
 }
 function emptyNote(msg){ return "<p class='note'>"+esc(msg)+"</p>"; }
 function failBox(msg, extra){
@@ -1929,7 +2071,9 @@ function festRow(f, today){
   if (f.place) meta.push(esc(f.place));
   if (isD) meta.push("마감 "+esc(f.deadline));
   if (f.event && f.event!=="미정") meta.push("개최 "+esc(f.event));
-  return row({ dd:di.txt, ddCls:di.cls, title:f.name||"(이름 없음)", tags:[f.region],
+  return row({ save:{ kind:"festival", title:f.name, org:f.host,
+                      deadline:isD ? f.deadline : "", url:f.url },
+               dd:di.txt, ddCls:di.cls, title:f.name||"(이름 없음)", tags:[f.region],
                meta:meta, sum:f.note, url:f.url,
                talk:{ type:"영화제", title:f.name, url:f.url } });
 }
@@ -2231,7 +2375,9 @@ function renderContests(){
     if (rd && rd!=="미정") meta.push("발표 "+esc(rd.slice(0,10)));
     /* 전체 탭에서는 국내인지 해외인지가 가장 먼저 알고 싶은 것이라 그걸 태그로 세운다.
        국내·해외 탭에서는 이미 아는 사실이므로 원래대로 나라 이름을 보여준다. */
-    return row({ dd:di.txt, ddCls:di.cls, title:it.title||"(제목 없음)",
+    return row({ save:{ kind:"contest", title:it.title, org:it.organizer,
+                        deadline:it.submission_end||"", url:it.url },
+                 dd:di.txt, ddCls:di.cls, title:it.title||"(제목 없음)",
                  tags:[it.category, contestTab==="all" ? it._region : it.country],
                  meta:meta, sum:it.summary, url:it.url,
                  talk:{ type:"공모전", title:it.title, url:it.url } });
@@ -2436,7 +2582,9 @@ function renderGov(){
     var meta = [];
     if (orgTxt) meta.push("<b>"+esc(orgTxt)+"</b>");
     meta.push("접수 "+esc(it.bgng||"미정")+" ~ "+esc(it.end||"미정"));
-    return row({ dd:di.txt, ddCls:di.cls, title:it.nm||"(공고명 없음)",
+    return row({ save:{ kind:"gov", title:it.nm, org:it.org || it.inst,
+                        deadline:it.end||"", url:it.url },
+                 dd:di.txt, ddCls:di.cls, title:it.nm||"(공고명 없음)",
                  tags:[it.cls, it.regin], meta:meta,
                  sum:it.trgt ? "대상 " + String(it.trgt).slice(0,120) : "", url:it.url,
                  talk:{ type:"지원사업", title:it.nm, url:it.url } });
@@ -2692,7 +2840,14 @@ function fbInit(){
           wpMine = undefined; wkLiked = {};
           nvAuth();                                  /* 상단바는 어느 화면에서나 바뀐다 */
           if (bdUser) wpAutoProfile();               /* 프로필은 로그인과 함께 저절로 생긴다 */
-          else wpAuto = false;
+          else { wpAuto = false; svMine = {}; svLoaded = false; }
+          svLoaded = false;
+          if (bdUser) svLoad().then(function(){
+            svFlush();                                /* 담으려다 로그인한 것이 있으면 지금 담는다 */
+            var rr = curRoute();
+            /* 담기 버튼이 있는 화면이면 상태가 보이게 다시 그린다 */
+            if (rr==="contests"||rr==="festivals"||rr==="gov"||rr==="home"||rr==="plan") render();
+          });
           nvAfterLogin();
           var r = curRoute();                        /* 로그인이 보이는 화면만 다시 그린다 */
           if (r==="board") renderBoard();
@@ -3542,6 +3697,7 @@ C.addEventListener("click", function(e){
   /* 가입 화면의 로그인 버튼은 본문 안에 있다 — 상단바 위임만으로는 안 먹는다 */
   if ((el = t.closest("[data-nvlogin]"))){ nvLoginGo(); return; }
   if ((el = t.closest("[data-festall]"))){ festSearch = ""; renderFestivals(); return; }
+  if ((el = t.closest("[data-save]"))){ svToggle(el); return; }
   if ((el = t.closest("[data-wkplay]"))){ wkOpen(el.getAttribute("data-wkplay")); return; }
   if ((el = t.closest("[data-wklike]"))){ wkToggleLike(el); return; }
   if ((el = t.closest("[data-wkdel]"))){ wkDelete(el); return; }
@@ -4353,6 +4509,78 @@ function wkCountToday(){
     .then(function(sn){ return sn.size; }, function(){ return 0; });
 }
 
+/* ---- 내 계획 ----
+   담아 둔 것을 마감 가까운 순으로 보여 준다. 목록 하나로 끝낸다 —
+   연간 타임라인 같은 것은 담긴 게 쌓인 다음에 생각할 일이다. */
+var SV_LABEL = { contest:"공모전", festival:"영화제", gov:"지원사업" };
+function svRow(o, today){
+  var due = String(o.deadline||"");
+  var has = /^\d{4}-\d{2}-\d{2}$/.test(due);
+  var di = has ? ddayInfo(due, today) : { cls:"tbd", txt:"미정" };
+  var meta = [];
+  meta.push("<b>"+esc(SV_LABEL[o.kind] || "항목")+"</b>");
+  meta.push(has ? "마감 "+esc(due) : "마감일 미정");
+  return row({ dd:di.txt, ddCls:di.cls, title:o.title || "(제목 없음)",
+               meta:meta, url:o.url,
+               save:{ key:o.key || o.id, kind:o.kind, title:o.title,
+                      deadline:due, url:o.url } });
+}
+function renderPlan(){
+  setKicker(["내 계획"]);
+  setFacts([["—","담은 것"],["—","이번 주 마감"],["—","지난 것"]]);
+  if (!bdUser){
+    C.innerHTML = "<section class='section paper'><div class='inner'><div class='bd-wrap'>"+
+      sectionHead("My plan","담아 둔 것을<br>한자리에.",
+        "마음에 드는 공모전·영화제·지원사업에서 담기를 누르면 여기 모입니다.","")+
+      "<p class='cta-row'><a class='btn solid' href='"+esc(joinUrl())+"'>로그인하고 시작하기</a></p>"+
+      "</div></div></section>";
+    return;
+  }
+  C.innerHTML = "<section class='section paper'><div class='inner'>"+
+    sectionHead("My plan","담아 둔 것을<br>한자리에.","마감이 가까운 순입니다.","")+
+    "<div data-planbody>"+emptyNote("불러오는 중입니다.")+"</div>"+
+    "</div></section>";
+  var host = C.querySelector("[data-planbody]");
+  svLoaded = false;                       /* 이 화면에서는 늘 새로 읽는다 */
+  svLoad().then(function(m){
+    if (curRoute()!=="plan" || !C.contains(host)) return;
+    var today = todaySeoul();
+    var all = [], k;
+    for (k in m){ if (m.hasOwnProperty(k)) all.push(m[k]); }
+    function ms(o){
+      var d = String(o.deadline||"");
+      return /^\d{4}-\d{2}-\d{2}$/.test(d) ? d : "9999-99-99";   /* 미정은 뒤로 */
+    }
+    var live = [], past = [];
+    all.forEach(function(o){
+      var d = String(o.deadline||"");
+      var p = /^\d{4}-\d{2}-\d{2}$/.test(d) ? parseDate(d) : null;
+      (p && p < today ? past : live).push(o);
+    });
+    live.sort(function(a,b){ return ms(a).localeCompare(ms(b)); });
+    past.sort(function(a,b){ return ms(b).localeCompare(ms(a)); });
+    setFacts([[String(all.length),"담은 것"],
+              [String(dueWithin(live,"deadline",7,today)),"이번 주 마감"],
+              [String(past.length),"지난 것"]]);
+    if (!all.length){
+      host.innerHTML = "<div class='bd-empty'><p>아직 담은 것이 없습니다. "+
+        "마음에 드는 공모전에서 담기를 눌러 보세요.</p>"+
+        "<a class='btn' href='"+esc(menuHref("contests"))+"'>AI 공모전 보기</a></div>";
+      return;
+    }
+    host.innerHTML = "<div class='rows'>"+
+      (live.length ? live.map(function(o){ return svRow(o, today); }).join("")
+                   : emptyNote("마감이 남은 것이 없습니다."))+"</div>"+
+      (past.length ? foldSection("paper-alt","Passed","지난 것", past.length+"건",
+        "<div class='rows'>"+past.map(function(o){ return svRow(o, today); }).join("")+"</div>") : "");
+    bindFold(C);
+    observeReveal();
+  }, function(){
+    if (!C.contains(host)) return;
+    host.innerHTML = emptyNote("목록을 불러오지 못했습니다. 잠시 후 다시 열어 주세요.");
+  });
+}
+
 /* ---- 가입·로그인 안내 화면 (/join) ----
    좌우 두 칸이다. 왼쪽은 사진과 "여기서 무엇을 할 수 있는지" 셋, 오른쪽은 버튼 하나.
    ⚠️ 이메일·비밀번호 칸을 만들지 않는다 — 인증은 구글 하나뿐이고, 칸을 만들면
@@ -4504,6 +4732,7 @@ function nvAuth(){
       wpAva("bd-ava", ph, nick)+
       "<span>"+esc(nick)+"</span></button>"+
     "<div class='nav-menu'"+(nvMenuOn ? "" : " hidden")+">"+
+      "<a href='"+esc(BASE+"#plan")+"'>내 계획</a>"+
       "<a href='"+esc(profUrl(""))+"'>프로필 설정</a>"+
       "<button type='button' data-nvlogout>로그아웃</button>"+
     "</div>";
@@ -4875,7 +5104,10 @@ function homeDueRow(it, today){
   var meta = [];
   if (it.org) meta.push("<b>" + esc(it.org) + "</b>");
   meta.push(n === 0 ? "오늘 마감" : "마감 " + esc(it.due));
-  return row({ dd:(n === 0 ? "오늘" : di.txt), ddCls:di.cls, title:it.title || "(제목 없음)",
+  var d = HOME_SLUG_DIR[it.kind];
+  return row({ save:{ kind:(d ? d[0] : "contest"), title:it.title, org:it.org,
+                      deadline:it.due||"", url:it.url },
+               dd:(n === 0 ? "오늘" : di.txt), ddCls:di.cls, title:it.title || "(제목 없음)",
                tags:[it.kind, it.extra], meta:meta, url:it.url });
 }
 
@@ -5299,7 +5531,8 @@ var ROUTES = {
   home:renderHome,
   contests:renderContests, festivals:renderFestivals, gov:renderGov,
   newsrep:renderReports, youtube:renderYoutube, aivideo:renderAiVideo,
-  gallery:renderGallery, board:renderBoard, prof:renderProfile, join:renderJoin
+  gallery:renderGallery, board:renderBoard, prof:renderProfile, join:renderJoin,
+  plan:renderPlan
 };
 /* 공개 목록 API(action=pub) 데이터가 필요한 화면 */
 var NEEDS_PUB = { newsrep:1, youtube:1 };
