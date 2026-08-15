@@ -3970,7 +3970,8 @@ function renderProfile(){
   var slug = profPath();
   setKicker(["프로필"]);
   wpFactW = "—"; wpFactP = "—";
-  wpFacts(null);
+  /* 편집(/#profile) 은 값이 없어서 지표바가 대시만 남는다 — 공개 프로필에서만 보여준다. */
+  if (slug === "") setFacts([]); else wpFacts(null);
   if (!fbReady()){ C.innerHTML = wpShell(emptyNote("프로필 준비 중입니다.")); return; }
   C.innerHTML = wpShell("<div data-pf>"+emptyNote("불러오는 중입니다.")+"</div>");
   var el = C.querySelector("[data-pf]");
