@@ -746,11 +746,11 @@ var HERO = {
   contests:{ latin:"CONTESTS", ko:"AI 공모전",
     copy:"국내외 AI 공모전을 마감이 가까운 순으로 모았습니다. 상금과 남은 기간을 한눈에 보실 수 있습니다." },
   festivals:{ latin:"FESTIVALS", ko:"AI 영화제",
-    copy:"AI로 만든 영화를 받는 영화제를 전 세계에서 모았습니다. 접수 기간과 상금 규모까지 함께 보실 수 있습니다." },
+    copy:"AI 영화제를 전 세계에서 모았습니다. 접수 기간과 상금 규모까지 함께 보실 수 있습니다." },
   gov:{ latin:"FUNDING", ko:"AI 지원사업",
     copy:"지금 신청할 수 있는 AI 관련 창업지원 공고를 모았습니다. 마감이 임박한 것부터 보실 수 있습니다." },
   newsrep:{ latin:"BRIEFING", ko:"뉴스리포트",
-    copy:"밤사이 나온 AI 소식을 아침에 한 번 정리했습니다. 요약으로 훑고 필요한 기사만 원문으로 넘어가실 수 있습니다." },
+    copy:"밤사이 나온 AI 소식을 아침에 한 번 정리했습니다. 요약만 훑어도 하루 흐름이 잡힙니다." },
   /* 두 영상 화면이 어떻게 다른지 각자의 첫 문장에서 바로 말한다.
      작품소개는 AI로 만든 영상 작품, AI유튜브는 소식과 개발이다.
      "왜 메뉴가 두 개지"가 나오면 둘 중 하나는 안 쓰이게 된다. */
@@ -1096,7 +1096,7 @@ function renderYoutube(){
       setFacts([["—","AI 뉴스"],["—","바이브코딩"],["0","브리핑 수집"]]);
       C.innerHTML = "<section class='section paper'><div class='inner'>"+
         sectionHead("Watch","아직 모인 영상이<br>없습니다.",
-          "유튜브 수집이 붙거나 아침 브리핑이 올라오면 이 자리에 영상이 쌓입니다.","")+
+          "아직 모인 영상이 없습니다. 내일 아침에 다시 확인해 주세요.","")+
         "</div></section>";
       return;
     }
@@ -1664,7 +1664,7 @@ function renderGov(){
     ]);
     bodyEl.innerHTML = "<div class='rows'>"+
       (list.length ? list.map(govRow).join("")
-                   : emptyNote("조건에 맞는 공고가 없습니다. 'AI 관련만'을 끄면 전체 공고가 보입니다."))+
+                   : emptyNote("조건에 맞는 공고가 없습니다. 'AI 관련만'을 끄면 전체 공고를 보실 수 있습니다."))+
       "</div>";
 
     /* AI 필터가 걸러낸 나머지. 히어로가 263건이라고 말해 놓고 23건만 보이면
