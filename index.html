@@ -97,7 +97,11 @@
      정한다 — 히어로의 존재감이 먼저다 (대표 지시 2026-08-15).
      메뉴가 아래에 걸쳐 보이는 건 있으면 좋은 것이지, 그걸 위해 히어로를 납작하게
      만들 이유는 되지 않는다. 대신 아래쪽에 .hero::before 로 "더 있다"는 표시만 남긴다. */
-  .hero{ position:relative; min-height:min(72vh, 660px); display:flex; align-items:flex-end;
+  /* 26vw 항은 와이드 화면 보정이다. 높이가 vh 에만 묶이면 화면이 넓어질수록
+     사진 세로가 더 많이 잘려 인물 얼굴이 프레임을 벗어난다(대표 실보고 2026-08-15,
+     전체화면에서 눈 위가 잘림). 폭에 비례해 하한을 올리면 어느 화면비에서도
+     사진 세로의 46% 이상이 보인다 — 26/55.8(사진 세로÷가로 비 57.8%…의 근사) 계산값. */
+  .hero{ position:relative; min-height:max(min(72vh, 660px), 26vw); display:flex; align-items:flex-end;
          overflow:hidden; border-bottom:1px solid var(--line-dark); }
   /* 아래에 더 있다는 표시. 화살표는 쓰지 않는다 — 1px 선으로만 말하는 화면에
      아이콘이 하나 들어오면 그것만 튄다. 히어로 아래쪽 빈 여백 안에 두어
@@ -112,8 +116,15 @@
      video 로 갈아끼울 자리라 이 블록만 통째로 바꾸면 되게 따로 떼어 뒀다. */
   .hero-bg{ position:absolute; inset:0; z-index:0; display:none; }
   .hero.has-photo .hero-bg{ display:block; }
-  /* object-position 은 인물이 오른쪽에 남게 잡은 값이다 — 가운데로 두면 왼쪽 글자와 겹친다 */
-  .hero-bg img{ width:100%; height:100%; object-fit:cover; object-position:64% 42%;
+  /* object-position 은 브레이크포인트마다 따로 두지 않는다 — 사이 크기에서 다시 어긋난다.
+     퍼센트는 "이미지의 p% 지점을 프레임의 p% 지점에 놓는다"는 뜻이라, 사진 속 좌표를
+     그대로 적으면 어떤 화면비로 잘려도 그 지점이 비율대로 남는다(초점 고정).
+     실측(5% 격자, 2026-08-15): 얼굴 가로 63.6~70.9%(중심 67%) · 머리끝 y=6.5% · 턱 y=41.5%.
+     세로는 얼굴 중심(24%)이 아니라 8% 다 — 중심을 앵커로 쓰면 세로가 낮은 와이드 화면에서
+     보이는 창이 이미지 13% 지점부터 시작해 머리가 잘린다(대표가 본 증상 그대로).
+     창 시작점 = y × (1 − 보이는비율) 이므로, 최소 보이는비율 46%(위 26vw 하한)에서도
+     시작점이 머리끝 6.5% 위에 오려면 y ≤ 9% 여야 한다. */
+  .hero-bg img{ width:100%; height:100%; object-fit:cover; object-position:67% 8%;
                 display:block; }
   .hero-radar{ position:absolute; inset:0; z-index:2; pointer-events:none; }
   .hero-radar i{ position:absolute; left:76%; top:46%; translate:-50% -50%;
@@ -152,6 +163,11 @@
      색은 순검정이 아니라 --ink(7,17,13) 다. 순검정을 쓰면 이 화면만 색이 튄다. */
   .hero.has-photo::after{
     background:
+      /* 아래→위 한 장은 숫자 줄이 앉는 히어로 하단을 누른다. 초점을 위로 올리면서(67% 8%)
+         책상의 밝은 면이 하단 중앙으로 내려왔고, 2560 실측에서 라벨 대비가 4.31:1 로
+         기준(4.5)에 못 미쳤다. 26% 위로는 걷혀서 얼굴(상단)에는 닿지 않는다. */
+      linear-gradient(0deg, rgba(7,17,13,.6) 0%, rgba(7,17,13,.3) 14%,
+        rgba(7,17,13,0) 26%),
       linear-gradient(180deg, rgba(7,17,13,.74) 0%, rgba(7,17,13,.34) 32%,
         rgba(7,17,13,0) 60%),
       linear-gradient(90deg, rgba(7,17,13,.96) 0%, rgba(7,17,13,.88) 34%,
@@ -591,9 +607,8 @@
   }
   @media (max-width:680px){
     .hero{ min-height:0; }
-    /* 좁은 화면에서는 같은 사진을 세로로 잘라 쓰게 되어 인물이 오른쪽 밖으로 밀린다.
-       사진을 빼지 않고 자르는 자리만 옮긴다 — 사진이 사라지면 홈이 다시 띠배너가 된다. */
-    .hero.has-photo .hero-bg img{ object-position:70% 38%; }
+    /* 모바일 전용 object-position 오버라이드를 두지 않는다 — 위의 초점 고정 값(67% 8%)이
+       화면비와 무관하게 얼굴을 같은 비율 지점에 놓는다. 값이 갈라지면 그 사이 폭에서 어긋난다. */
     .hero-content{ width:calc(100% - 36px); padding:calc(var(--navh) + 40px) 0 40px; }
     .hero h1{ font-size:clamp(52px,17vw,92px); }
     .hero-facts{ grid-template-columns:1fr 1fr 1fr; }
@@ -3515,11 +3530,12 @@ function renderHome(){
 
     "<section class='section paper'><div class='inner'>" +
       sectionHead("Appleseed", HOME_COPY.aboutH, HOME_COPY.aboutBody, "") +
+      /* edu-editing(편집실 측면 컷)에서 교체했다(대표 지시 2026-08-15). 파일은 대체안으로 남겨 둔다 */
       "<picture>" +
-        "<source type='image/webp' srcset='" + BASE + "assets/edu-editing.webp'>" +
-        "<img class='home-photo' src='" + BASE + "assets/edu-editing.jpg' " +
-          "width='1280' height='858' loading='lazy' decoding='async' " +
-          "alt='어두운 편집실에서 모니터를 보며 작업하는 사람'>" +
+        "<source type='image/webp' srcset='" + BASE + "assets/edu-studio.webp'>" +
+        "<img class='home-photo' src='" + BASE + "assets/edu-studio.jpg' " +
+          "width='1280' height='714' loading='lazy' decoding='async' " +
+          "alt='어두운 스튜디오 책상에서 턱을 괴고 모니터를 보는 사람'>" +
       "</picture>" +
       "<p class='cta-row' style='margin-top:26px'><a class='btn' href='" + HOME_MAIL_EDU + "'>교육 문의</a>" +
       "<a class='btn' href='" + HOME_MAIL_WORK + "'>제작 문의</a></p>" +
