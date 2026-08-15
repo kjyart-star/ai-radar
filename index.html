@@ -5443,7 +5443,9 @@ function homeSubNote(txt){
    자리(min-height 520px)에서 스무 줄로 늘면 구독 칸이 더 아래로 밀린다. 한 번만 내리면
    그 뒤 재그리기에 지워지거나 위가 늘어나 어긋난다. 그래서 「의도」를 켜 두고, 그리기와
    마감 목록 채우기(homeFillDue)가 끝날 때마다 다시 안착시킨다 — 마지막 데이터가 그려진
-   뒤의 안착이 남는다. 안전장치로 8초가 지나면 의도를 내린다(그 뒤 재그리기는 거의 없다).
+   뒤의 안착이 남는다. 라이브(Apps Script)는 loadData 재그리기가 8~9초에 오므로 창은
+   그보다 넉넉히 15초로 둔다. loadData 뒤로는 10분간 홈 재그리기가 없으니 창이 남아 있어도
+   더 스크롤될 일이 없다(재그리기가 없으면 homeScrollSub 이 호출되지 않는다).
    주소의 파라미터는 처음 볼 때 바로 지운다 — 새로고침·공유에서 다시 튀지 않게. */
 var homeSubPending = false, homeSubArmed = false;
 function homeWantsSub(){
@@ -5451,7 +5453,7 @@ function homeWantsSub(){
     if (/(?:^|[?&])to=sub(?:&|$)/.test(location.search)){
       history.replaceState(null, "", location.pathname + location.hash);
       homeSubPending = true;
-      if (!homeSubArmed){ homeSubArmed = true; setTimeout(function(){ homeSubPending = false; }, 8000); }
+      if (!homeSubArmed){ homeSubArmed = true; setTimeout(function(){ homeSubPending = false; }, 15000); }
     }
   } catch(e){}
   return homeSubPending;
@@ -5727,7 +5729,8 @@ function renderHome(){
 
   homeFillDue();
   homeFillSub();
-  if (homeWantsSub()) homeScrollSub();   /* 정적 페이지의 「마감 알림」이 보낸 착지 */
+  homeWantsSub();   /* 「마감 알림」 착지 신호를 켜 둔다. 실제 스크롤은 마감 목록이
+                       채워진 뒤(homeFillDue 완료) 한다 — 로딩 중 빈 상태로 내리면 어긋난다 */
   homeFillBrief();
   homeIntPaint();                         /* 로그인·미선택 안내는 마감 데이터를 안 기다린다 */
   homeFillMenu();
