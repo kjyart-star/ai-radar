@@ -4088,30 +4088,32 @@ function wpEditView(el){
       "<label class='pf-lab'>닉네임"+
         "<input class='bd-in' type='text' maxlength='"+WP_NICK_MAX+"' data-pnick"+
           " placeholder='예: 레이더장인' aria-label='닉네임'></label>"+
-      (isNew ? "" :
-        "<label class='pf-lab'>한 줄 소개"+
-          "<input class='bd-in' type='text' maxlength='"+WP_BIO_MAX+"' data-pbio"+
-            " placeholder='선택 · 무엇을 만드는 사람인지' aria-label='한 줄 소개'></label>"+
-        "<label class='pf-lab'>대표 링크"+
-          "<input class='bd-in' type='url' inputmode='url' maxlength='"+WP_LINK_MAX+"' data-plink"+
-            " placeholder='선택 · https://' aria-label='대표 링크'></label>"+
-        /* 사진은 주소만 받는다. 파일 업로드는 열지 않는다 —
-           올린 파일을 우리가 보관하고 검수해야 하는 책임이 따라온다. */
-        "<div class='pf-lab'>프로필 사진"+
-          "<div class='pf-photo'>"+
-            "<span data-ppreview></span>"+
-            "<input class='bd-in' type='url' inputmode='url' maxlength='"+WP_PHOTO_MAX+"' data-pphoto"+
-              " placeholder='사진 주소 · https://' aria-label='프로필 사진 주소'>"+
-            "<button type='button' class='chip' data-pgoogle>구글 사진으로</button>"+
-          "</div>"+
-          "<span class='pf-help'>사진 주소를 넣으면 바로 위 원에 미리 보입니다. "+
-            "비워 두면 닉네임 첫 글자가 대신 들어갑니다.</span>"+
+      /* 소개·링크·사진·관심분야는 항상 보여준다. isNew 뒤에 숨겨 두면 프로필 로드가
+         한 번 어긋나 wpMine 이 비었을 때 사진 편집칸이 통째로 사라진다 — 대표가 "프로필
+         사진 편집 기능 없어짐"이라 한 것이 이 경우였다(2026-08-16). 신규도 처음부터 채운다. */
+      "<label class='pf-lab'>한 줄 소개"+
+        "<input class='bd-in' type='text' maxlength='"+WP_BIO_MAX+"' data-pbio"+
+          " placeholder='선택 · 무엇을 만드는 사람인지' aria-label='한 줄 소개'></label>"+
+      "<label class='pf-lab'>대표 링크"+
+        "<input class='bd-in' type='url' inputmode='url' maxlength='"+WP_LINK_MAX+"' data-plink"+
+          " placeholder='선택 · https://' aria-label='대표 링크'></label>"+
+      /* 사진은 주소만 받는다. 파일 업로드는 열지 않는다 —
+         올린 파일을 우리가 보관하고 검수해야 하는 책임이 따라온다. */
+      "<div class='pf-lab'>프로필 사진"+
+        "<div class='pf-photo'>"+
+          "<span data-ppreview></span>"+
+          "<input class='bd-in' type='url' inputmode='url' maxlength='"+WP_PHOTO_MAX+"' data-pphoto"+
+            " placeholder='사진 주소 · https://' aria-label='프로필 사진 주소'>"+
+          "<button type='button' class='chip' data-pgoogle>구글 사진으로</button>"+
         "</div>"+
-        /* 관심 분야 — 고른 분야의 마감이 홈 맨 위(관심 분야 마감 임박)에 모인다 */
-        "<div class='pf-lab'>관심 분야"+
-          "<div class='chips pf-int' data-pint></div>"+
-          "<span class='pf-help'>고른 분야의 마감이 홈 맨 위에 모입니다. 여러 개 고를 수 있어요.</span>"+
-        "</div>")+
+        "<span class='pf-help'>사진 주소를 넣으면 바로 위 원에 미리 보입니다. "+
+          "비워 두면 닉네임 첫 글자가 대신 들어갑니다.</span>"+
+      "</div>"+
+      /* 관심 분야 — 고른 분야의 마감이 홈 맨 위(관심 분야 마감 임박)에 모인다 */
+      "<div class='pf-lab'>관심 분야"+
+        "<div class='chips pf-int' data-pint></div>"+
+        "<span class='pf-help'>고른 분야의 마감이 홈 맨 위에 모입니다. 여러 개 고를 수 있어요.</span>"+
+      "</div>"+
     "</div>"+
     "<p class='bd-msg' data-pmsg></p>"+
     "<div class='bd-cfoot'>"+
@@ -4152,21 +4154,26 @@ function wpEditView(el){
       };
     });
   }
-  if (!isNew){
+  if (pf){
     nickEl.value = String(pf.nick||"");
     bioEl.value = String(pf.bio||"");
     linkEl.value = String(pf.link||"");
     photoEl.value = String(pf.photoURL||"");
-    drawPreview();
-    drawInt();
-    photoEl.oninput = drawPreview;
-    nickEl.oninput = drawPreview;
-    el.querySelector("[data-pgoogle]").onclick = function(){
-      photoEl.value = String((bdUser && bdUser.photoURL) || "");
-      drawPreview();
-      msg.textContent = photoEl.value ? "" : "구글 계정에 사진이 없습니다.";
-    };
+  } else {
+    /* 신규도 구글 사진을 기본으로 채워 둔다 — 비워 두면 첫 글자 아바타가 대신 들어간다 */
+    photoEl.value = String((bdUser && bdUser.photoURL) || "");
   }
+  /* 배선은 신규·기존 모두 건다. 예전에는 !isNew 안에만 있어서, 프로필이 아직 없거나
+     로드가 어긋난 순간에는 미리보기·구글사진·관심분야 칩이 죽어 있었다(2026-08-16). */
+  drawPreview();
+  drawInt();
+  photoEl.oninput = drawPreview;
+  nickEl.oninput = drawPreview;
+  el.querySelector("[data-pgoogle]").onclick = function(){
+    photoEl.value = String((bdUser && bdUser.photoURL) || "");
+    drawPreview();
+    msg.textContent = photoEl.value ? "" : "구글 계정에 사진이 없습니다.";
+  };
   save.onclick = function(){
     var nick = String(nickEl.value||"").trim();
     var bio = bioEl ? String(bioEl.value||"").trim() : "";
@@ -4201,9 +4208,10 @@ function wpEditView(el){
           return fbDb.collection("profiles").doc(bdUser.uid).set({
             nick: nick,
             slug: slug,
-            bio: "",
-            link: "",
-            photoURL: bdUser.photoURL || "",   /* 구글 사진만 쓴다 — 이름·메일은 쓰지 않는다 */
+            bio: bio,
+            link: link,
+            photoURL: photo,   /* 칸에 채운 값을 그대로 쓴다(기본은 구글 사진, 비우면 빈 값) */
+            interests: intSel.slice(0, WP_INT_MAX),
             createdAt: now
           });
         })
