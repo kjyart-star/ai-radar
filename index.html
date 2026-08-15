@@ -694,6 +694,26 @@
   .pf-photo{ display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:7px; }
   .pf-photo .bd-in{ flex:1 1 200px; width:auto; }
   .pf-photo .pf-ava{ width:44px; height:44px; font-size:17px; }
+  /* ---------- 가입 안내(/join) ---------- */
+  .join-cols{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+              gap:56px; align-items:center; }
+  .join-art img{ display:block; width:100%; height:auto; }
+  .join-list{ list-style:none; margin:26px 0 0; padding:0; }
+  .join-list li{ padding:16px 0; border-top:1px solid var(--line-light); }
+  .join-list li:last-child{ border-bottom:1px solid var(--line-light); }
+  .join-list b{ display:block; font-size:15px; font-weight:800; letter-spacing:-.015em; }
+  .join-list span{ display:block; margin-top:5px; font-size:13.5px; line-height:1.7;
+                   color:var(--muted-light); word-break:keep-all; }
+  .join-act .section-head{ grid-template-columns:1fr; gap:18px; margin-bottom:26px; }
+  .join-act .btn{ display:inline-flex; align-items:center; min-height:46px; }
+  .join-note{ margin:18px 0 0; font-size:12.5px; line-height:1.8; color:var(--muted-light);
+              word-break:keep-all; }
+  .join-note a{ text-decoration:underline; text-underline-offset:3px; }
+  @media (max-width:860px){
+    .join-cols{ grid-template-columns:1fr; gap:34px; }
+    .join-art{ order:2; }
+  }
+
   /* ---------- 작품 갤러리 ----------
      썸네일이 먼저 오고 정보는 그 아래 두 줄이다(제목 / 만든 사람 · 메타).
      영상 목록에서는 이 배치가 표준이라 처음 온 사람도 설명 없이 읽는다.
@@ -928,6 +948,7 @@
     <div class="footer-brand">AI<br>RADAR</div>
     <div class="footer-meta">
       AI 공모전 · 영화제 · 지원사업 · 뉴스<br>
+      <a href="/terms/">이용약관</a> · <a href="/privacy/">개인정보 처리방침</a><br>
       <span id="footStamp">데이터 확인 중</span><br>
       <button type="button" id="refreshBtn">↻ 새로 불러오기</button>
     </div>
@@ -966,7 +987,7 @@
    둘 다 앞부분을 잘라 베이스를 구한다. 404.html 의 정규식도 같은 모양이어야 한다. */
 var BASE = (function(){
   var p = location.pathname;
-  var m = p.match(/^(.*\/)(?:board|u)(?:\/|$)/);
+  var m = p.match(/^(.*\/)(?:board|u|join)(?:\/|$)/);
   if (m) return m[1];
   return p.replace(/[^\/]*$/, "");
 })();
@@ -996,6 +1017,15 @@ function profPath(){
   return null;
 }
 function profUrl(slug){ return BASE + "u/" + (slug ? encodeURIComponent(slug) : ""); }
+
+/* 가입·로그인 안내 화면. 상단바 버튼 하나로도 로그인은 되지만, 밖에서 이 주소만
+   받아 들어오는 사람에게는 "여기가 무엇을 하는 곳이고 왜 로그인하는지"를 보여 줄
+   자리가 필요하다. 이미 로그인한 사람에게는 볼 것이 없으므로 홈으로 보낸다. */
+function joinPath(){
+  var p = location.pathname;
+  return (p === BASE + "join" || p === BASE + "join/") ? "" : null;
+}
+function joinUrl(){ return BASE + "join"; }
 
 /* ============ 공개 API (키 불필요·읽기 전용) ============
    ⚠️ 2026-08-12: 옛 주소가 404 로 죽어 다섯 메뉴가 전부 "데이터를 불러오지 못했습니다" 였다.
@@ -1322,8 +1352,9 @@ var DEFAULT_ROUTE = "home";
    대신 다섯 화면 각각이 히어로 → 페이퍼 → 다크 → 페이퍼 리듬을 그대로 갖는다.
    데이터는 메모리에 캐시되므로 메뉴 이동은 네트워크 없이 즉시 끝난다. */
 function curRoute(){
-  if (boardPath() !== null) return "board";   /* 게시판·프로필만 경로로 다닌다 */
+  if (boardPath() !== null) return "board";   /* 게시판·프로필·가입만 경로로 다닌다 */
   if (profPath() !== null) return "prof";
+  if (joinPath() !== null) return "join";
   var h = location.hash.replace(/^#/,"").split("/")[0]; return TITLES[h] ? h : DEFAULT_ROUTE;
 }
 /* 메뉴 주소는 항상 베이스 기준 절대 주소로 적는다. 게시판(/board/xxx)에 있을 때
@@ -1369,7 +1400,9 @@ var HERO = {
   /* 프로필은 메뉴에 없다 — 주소(/u/{슬러그})로만 들어온다. 그래도 히어로는 있어야
      다른 화면에서 넘어왔을 때 제목이 앞 화면의 것으로 남지 않는다. */
   prof:{ latin:"PROFILE", ko:"프로필",
-    copy:"만든 작품과 남긴 글을 한 주소에 모아 둔 곳입니다." }
+    copy:"만든 작품과 남긴 글을 한 주소에 모아 둔 곳입니다." },
+  join:{ latin:"JOIN", ko:"시작하기",
+    copy:"구글 계정 하나면 됩니다. 따로 적을 것도, 외울 비밀번호도 없습니다." }
 };
 /* 히어로 마크업의 assets/... 는 상대 경로다. 게시판은 /board/{슬러그} 라는 실제 경로를
    쓰므로 거기서는 /board/assets/... 로 풀려 사진이 깨진다. 그 화면에서는 숨겨져 있어
@@ -2615,6 +2648,7 @@ function fbInit(){
           if (r==="board") renderBoard();
           else if (r==="prof") renderProfile();
           else if (r==="gallery") renderGallery();
+          else if (r==="join") renderJoin();          /* 로그인했으면 홈으로 비켜 준다 */
         });
         res(true);
       } catch(e){ rej(e); }
@@ -3455,6 +3489,8 @@ C.addEventListener("click", function(e){
   if ((el = t.closest("[data-reply]"))){ bdOpenReply(el); return; }
   /* 갤러리의 것들도 같은 자리에서 받는다 — 다시 그려도 끊기지 않는다 */
   if ((el = t.closest("[data-wkopen]"))){ wkFormOpen = !wkFormOpen; renderGallery(); return; }
+  /* 가입 화면의 로그인 버튼은 본문 안에 있다 — 상단바 위임만으로는 안 먹는다 */
+  if ((el = t.closest("[data-nvlogin]"))){ nvLoginGo(); return; }
   if ((el = t.closest("[data-festall]"))){ festSearch = ""; renderFestivals(); return; }
   if ((el = t.closest("[data-wklike]"))){ wkToggleLike(el); return; }
   if ((el = t.closest("[data-wkdel]"))){ wkDelete(el); return; }
@@ -4159,6 +4195,57 @@ function wkCountToday(){
   return fbDb.collection("works").where("uid","==",bdUser.uid)
     .where("createdAt",">=",d).get()
     .then(function(sn){ return sn.size; }, function(){ return 0; });
+}
+
+/* ---- 가입·로그인 안내 화면 (/join) ----
+   좌우 두 칸이다. 왼쪽은 사진과 "여기서 무엇을 할 수 있는지" 셋, 오른쪽은 버튼 하나.
+   ⚠️ 이메일·비밀번호 칸을 만들지 않는다 — 인증은 구글 하나뿐이고, 칸을 만들면
+   있지도 않은 회원가입 절차가 있는 것처럼 보인다. */
+var JOIN_POINTS = [
+  ["작품을 알린다", "만든 영상을 갤러리에 올리면 내 프로필 주소 하나로 모아 보여 드립니다."],
+  ["마감을 놓치지 않는다", "공모전·영화제·지원사업 마감을 한자리에서 보고, 관심 있는 것을 이야기할 수 있습니다."],
+  ["알게 된 것을 나눈다", "AI를 쓰면서 알게 된 것을 짧게 남기고 서로 이어 갑니다."]
+];
+function renderJoin(){
+  /* 이미 로그인했으면 볼 것이 없다 */
+  if (bdUser){
+    history.replaceState(null, "", BASE + "#" + DEFAULT_ROUTE);
+    /* 주소를 바꿨으면 onNav 가 기억하는 값도 같이 바꾼다 — 안 그러면 다음에 /join 으로
+       들어올 때 "이미 그 주소"로 보여 아무것도 그리지 않고, 홈 내용에 /join 주소가 남는다 */
+    navKey = location.pathname + location.hash;
+    render();
+    return;
+  }
+  setKicker(["시작하기"]);
+  setFacts([]);
+  C.innerHTML = "<section class='section paper'><div class='inner'>"+
+    "<div class='join-cols'>"+
+      "<div class='join-art'>"+
+        "<picture>"+
+          "<source type='image/webp' srcset='"+BASE+"assets/edu-studio.webp'>"+
+          "<img src='"+BASE+"assets/edu-studio.jpg' width='1280' height='714'"+
+            " loading='lazy' decoding='async'"+
+            " alt='어두운 스튜디오 책상에서 모니터를 보는 사람'>"+
+        "</picture>"+
+        "<ul class='join-list'>"+
+          JOIN_POINTS.map(function(p){
+            return "<li><b>"+esc(p[0])+"</b><span>"+esc(p[1])+"</span></li>";
+          }).join("")+
+        "</ul>"+
+      "</div>"+
+      "<div class='join-act'>"+
+        sectionHead("Join","구글 계정 하나면<br>시작합니다.",
+          "따로 적으실 것도, 외우실 비밀번호도 없습니다. 보는 것은 로그인 없이도 됩니다.","")+
+        "<p class='cta-row'><button type='button' class='btn solid' data-nvlogin>"+
+          "구글 계정으로 로그인</button></p>"+
+        "<p class='join-note'>로그인하시면 "+
+          "<a href='"+BASE+"terms/'>이용약관</a>과 "+
+          "<a href='"+BASE+"privacy/'>개인정보 처리방침</a>에 동의하신 것으로 봅니다. "+
+          "이메일 주소는 저장하지 않습니다.</p>"+
+      "</div>"+
+    "</div>"+
+    "</div></section>";
+  observeReveal();
 }
 
 /* ---- 작품 갤러리 화면 ----
@@ -5056,7 +5143,7 @@ var ROUTES = {
   home:renderHome,
   contests:renderContests, festivals:renderFestivals, gov:renderGov,
   newsrep:renderReports, youtube:renderYoutube, aivideo:renderAiVideo,
-  gallery:renderGallery, board:renderBoard, prof:renderProfile
+  gallery:renderGallery, board:renderBoard, prof:renderProfile, join:renderJoin
 };
 /* 공개 목록 API(action=pub) 데이터가 필요한 화면 */
 var NEEDS_PUB = { newsrep:1, youtube:1 };
@@ -5157,7 +5244,9 @@ document.addEventListener("click", function(e){
   if (u.pathname !== BASE
       && u.pathname.indexOf(BASE + "board") !== 0
       && u.pathname !== BASE + "u"
-      && u.pathname.indexOf(BASE + "u/") !== 0) return;
+      && u.pathname.indexOf(BASE + "u/") !== 0
+      && u.pathname !== BASE + "join"
+      && u.pathname !== BASE + "join/") return;
   e.preventDefault();
   history.pushState(null, "", u.pathname + u.search + u.hash);
   onNav();
@@ -5165,7 +5254,7 @@ document.addEventListener("click", function(e){
 
 /* ============ 초기화 ============ */
 (function init(){
-  if (boardPath() === null && profPath() === null && !location.hash)
+  if (boardPath() === null && profPath() === null && joinPath() === null && !location.hash)
     location.replace("#" + DEFAULT_ROUTE);
   navKey = location.pathname + location.hash;
   nvBind();
