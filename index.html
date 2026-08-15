@@ -4157,10 +4157,12 @@ function wpEditView(el){
         "<span class='pf-help'>기기에서 올리거나 사진 주소를 넣으면 바로 위 원에 미리 보입니다. "+
           "비워 두면 닉네임 첫 글자가 대신 들어갑니다.</span>"+
       "</div>"+
-      /* 관심 분야 — 고른 분야의 마감이 홈 맨 위(관심 분야 마감 임박)에 모인다 */
+      /* 관심 분야 — 고른 분야의 마감이 홈 맨 위(관심 분야 마감 임박)에 모인다.
+         '내 계획'(카드마다 ♡로 직접 담는 것)과 헷갈린다는 지적이 있어 차이를 적어 둔다. */
       "<div class='pf-lab'>관심 분야"+
         "<div class='chips pf-int' data-pint></div>"+
-        "<span class='pf-help'>고른 분야의 마감이 홈 맨 위에 모입니다. 여러 개 고를 수 있어요.</span>"+
+        "<span class='pf-help'>고르면 그 분야에 <b>접수 중인 공고의 마감</b>이 홈 맨 위 '관심 분야 마감 임박'에 자동으로 모입니다. "+
+          "카드마다 ♡로 직접 담는 '내 계획'과는 다릅니다 — 이건 분야만 정해 두면 저절로 채워지는 맞춤 추천이에요. 여러 개 고를 수 있어요.</span>"+
       "</div>"+
     "</div>"+
     "<p class='bd-msg' data-pmsg></p>"+
@@ -5259,12 +5261,11 @@ function homeDueRow(it, today){
   var di = ddayInfo(it.due, today);
   var meta = [];
   if (it.org) meta.push("<b>" + esc(it.org) + "</b>");
-  /* 담은 항목 중 마감일 없는 것(힉스필드 등)도 홈에 뜬다 — "마감 " 뒤가 비면 안 되니 미정으로 */
-  meta.push(!it.due ? "마감일 미정" : (n === 0 ? "오늘 마감" : "마감 " + esc(it.due)));
+  meta.push(n === 0 ? "오늘 마감" : "마감 " + esc(it.due));
   var d = HOME_SLUG_DIR[it.kind];
   return row({ save:{ kind:(d ? d[0] : "contest"), title:it.title, org:it.org,
                       deadline:it.due||"", url:it.url },
-               dd:(!it.due ? "미정" : (n === 0 ? "오늘" : di.txt)), ddCls:di.cls, title:it.title || "(제목 없음)",
+               dd:(n === 0 ? "오늘" : di.txt), ddCls:di.cls, title:it.title || "(제목 없음)",
                tags:[it.kind, it.extra], meta:meta, url:it.url });
 }
 
@@ -5393,33 +5394,6 @@ function homeFillDue(){
   });
 }
 
-/* ---- 담은 것을 홈 줄 형식으로 ----
-   svMine 의 kind 는 영어(contest…)라 홈 표시용 한글로 되돌린다. 담은 것은 마감 유무와
-   상관없이 홈에 보여야 하므로 마감일 없는 항목도 그대로 넣는다(due=""). */
-var SV_KIND_KO = { contest:"공모전", festival:"영화제", gov:"지원사업" };
-function homeFromSaved(){
-  var out = [];
-  for (var k in svMine){
-    if (!Object.prototype.hasOwnProperty.call(svMine, k)) continue;
-    var o = svMine[k] || {};
-    out.push({ kind: SV_KIND_KO[o.kind] || "공모전", title:o.title, due:o.deadline || "",
-               org:"", url:o.url, extra:"담음", _saved:true });
-  }
-  return out;
-}
-/* 담은 것을 앞에 두고 관심분야 추천을 합쳐 중복(제목)만 없앤 뒤 마감일 순. 마감일 없는 건 맨 뒤. */
-function homeMergeSaved(list){
-  var seen = {}, out = [];
-  (list || []).forEach(function(it){
-    if (!it || !it.title) return;
-    var key = String(it.title).replace(/\s+/g, "").toLowerCase();
-    if (seen[key]) return; seen[key] = 1; out.push(it);
-  });
-  out.sort(function(a, b){ var ad = a.due || "￿", bd = b.due || "￿";
-    return ad < bd ? -1 : ad > bd ? 1 : 0; });
-  return out;
-}
-
 /* ---- 관심 분야 마감 임박 ----
    로그인 + 관심 분야가 있을 때만 홈 맨 위에 뜬다. homeFillDue 가 이미 만든
    접수 중 목록(open)을 그대로 받아 다시 받아오지 않는다. 프로필(wpMine)이 아직
@@ -5438,28 +5412,25 @@ function homeIntPaint(){
     wpMineLoad().then(function(){ homeIntPaint(); }, function(){});
     return;
   }
-  /* 담은 것(svMine)은 로그인 직후 svLoad().then(render) 이 홈을 다시 그릴 때 채워진다(위 onAuthStateChanged).
-     여기서 다시 부르지 않는다 — svLoad 는 실패 시 svLoaded 를 세우지 않아, 가드로 삼으면 무한 재호출이 된다. */
   var interests = (wpMine && wpMine.interests) || [];
-  var saved = homeFromSaved();
-  if (!saved.length && !interests.length){
-    /* 담은 것도 관심 분야도 없으면 카드 대신 한 줄 안내만 */
+  if (!interests.length){
+    /* 미선택이면 카드 대신 안내만. 이 기능이 무엇인지, '내 계획'과 어떻게 다른지 분명히 적는다
+       — 프로필에 나란히 있어 헷갈린다는 지적(대표 2026-08-16)이 있었다. */
     sec.style.display = "";
-    el.innerHTML = "<p class='note'>관심 분야를 정해 두거나 마음에 드는 공고를 담아 두면 여기에 모입니다. "+
-      "<a href='"+esc(profUrl(""))+"'>프로필에서 설정하기</a></p>";
+    el.innerHTML = "<p class='note'><b>관심 분야 맞춤 추천</b>입니다. 프로필에서 관심 분야(예: 영상·영화, 창업·지원사업)를 "+
+      "고르면, 그 분야에 지금 접수 중인 공고의 마감이 이 자리에 자동으로 모입니다. "+
+      "내가 카드마다 ♡로 하나씩 담는 <a href='"+esc(BASE+"#plan")+"'>내 계획</a>과는 다릅니다 — 이쪽은 "+
+      "고른 분야에 맞춰 <b>저절로</b> 채워집니다. "+
+      "<a href='"+esc(profUrl(""))+"'>프로필에서 관심 분야 정하기</a></p>";
     observeReveal();
     return;
   }
-  /* 관심 분야가 있는데 보드가 아직 없고 담은 것도 없으면, 성급한 "없음" 대신 잠시 감춘다 */
-  if (interests.length && !homeIntOpen && !saved.length){ sec.style.display = "none"; return; }
-  var matched = (interests.length && homeIntOpen)
-    ? homeIntOpen.filter(function(it){ return homeIntMatch(it, interests); }) : [];
-  /* 담은 것을 앞에 두고 관심분야 추천을 합친다 — 담은 것이 홈에 뜨는 자리다 */
-  var merged = homeMergeSaved(saved.concat(matched)).slice(0, 8);
+  if (!homeIntOpen){ sec.style.display = "none"; return; }    /* 아직 목록이 없다 */
+  var hit = homeIntOpen.filter(function(it){ return homeIntMatch(it, interests); }).slice(0, 5);
   sec.style.display = "";
-  el.innerHTML = merged.length
-    ? merged.map(function(it){ return homeDueRow(it, homeIntToday || todaySeoul()); }).join("")
-    : "<p class='note'>고른 분야에 지금 접수 중인 공고가 없고, 담은 것도 없습니다. "+
+  el.innerHTML = hit.length
+    ? hit.map(function(it){ return homeDueRow(it, homeIntToday); }).join("")
+    : "<p class='note'>고른 분야에 지금 접수 중인 공고가 없습니다. "+
       "<a href='"+esc(profUrl(""))+"'>관심 분야 바꾸기</a></p>";
   observeReveal();
 }
