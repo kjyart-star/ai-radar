@@ -34,6 +34,9 @@ const SITE_BASE = SITE_ORIGIN;
 const SITE_NAME = "AI 레이더";
 const OG_IMAGE = `${SITE_BASE}/assets/og-cover.png`; // 1200×630 공용 대표 이미지
 
+// GA4 측정 ID 도 주소와 같은 규칙 — 여기 한 줄에만 두고 나머지는 조립해 쓴다.
+const GA_ID = "G-9FBZV3FKFK";
+
 const today = new Date().toLocaleDateString("en-CA", { timeZone: "Asia/Seoul" });
 
 /* ── 문자열 유틸 ─────────────────────────────────────────────── */
@@ -93,6 +96,28 @@ const dateOf = (stamp) => {
   return m ? m[0] : today;
 };
 
+// today → iso 까지 남은 일수. 날짜 문자열을 그대로 Date 에 넣으면 실행 서버의
+// 표준시대·서머타임에 따라 하루가 밀린다. 연·월·일을 떼어 Date.UTC 로만 계산한다.
+const dday = (iso) => {
+  const [y, m, d] = iso.split("-").map(Number);
+  const [ty, tm, td] = today.split("-").map(Number);
+  return Math.round((Date.UTC(y, m - 1, d) - Date.UTC(ty, tm - 1, td)) / 86400000);
+};
+
+// 남은 일수 표시. 이미 지난 날짜는 null — 지난 마감을 "D--3" 으로 보여줄 이유가 없다.
+const ddayLabel = (v) => {
+  const iso = isoDate(v);
+  if (!iso) return null;
+  const n = dday(iso);
+  return n === 0 ? "오늘 마감" : n > 0 ? `D-${n}` : null;
+};
+
+// 아직 접수 중인가 — ISO 문자열은 사전순 비교가 곧 날짜 비교다
+const stillOpen = (v) => {
+  const iso = isoDate(v);
+  return iso && iso >= today ? iso : null;
+};
+
 /* ── 슬러그 대장 ─────────────────────────────────────────────── */
 
 const SLUGS_PATH = join(ROOT, "data", "slugs.json");
@@ -132,9 +157,13 @@ function slugFor(kind, identityKey, title) {
 
 /* ── 페이지 껍데기 ───────────────────────────────────────────── */
 
+// 주석은 CSS 문자열이 아니라 여기에 둔다 — 문자열 안에 쓰면 458장에 그대로 실려 나간다.
+//   .go       원문으로 넘어가는 버튼이 이 페이지의 1순위 행동이다. 눌러야 할 것처럼 채운다(.sec 는 보조)
+//   .nx-*     다음 행동 블록. 카드 열은 minmax(0,1fr) 이라야 긴 제목이 375px 를 밀어내지 않는다
+//   420px 이하  dl 의 7.5rem 라벨 열은 좁은 화면에서 값 자리를 다 먹는다 — 한 열로 편다
 function styles() {
-  return `:root{color-scheme:light dark;--bg:#fff;--fg:#16181d;--muted:#5b616e;--line:#e3e5ea;--link:#1a56c4;--card:#f7f8fa;--warn-bg:#fff4e5;--warn-fg:#8a4b00;--warn-line:#f0c48a}
-@media (prefers-color-scheme:dark){:root{--bg:#111318;--fg:#e8eaef;--muted:#9aa1b0;--line:#2a2e37;--link:#7fb0ff;--card:#181b21;--warn-bg:#2e2109;--warn-fg:#f6c37a;--warn-line:#5c4415}}
+  return `:root{color-scheme:light dark;--bg:#fff;--fg:#16181d;--muted:#5b616e;--line:#e3e5ea;--link:#1a56c4;--card:#f7f8fa;--warn-bg:#fff4e5;--warn-fg:#8a4b00;--warn-line:#f0c48a;--accent:#1a56c4}
+@media (prefers-color-scheme:dark){:root{--bg:#111318;--fg:#e8eaef;--muted:#9aa1b0;--line:#2a2e37;--link:#7fb0ff;--card:#181b21;--warn-bg:#2e2109;--warn-fg:#f6c37a;--warn-line:#5c4415;--accent:#2563eb}}
 *{box-sizing:border-box}
 body{margin:0;padding:2rem 1.25rem 4rem;background:var(--bg);color:var(--fg);line-height:1.7;
 font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Malgun Gothic",system-ui,sans-serif;
@@ -156,10 +185,21 @@ li{margin:.5rem 0}
 .closed{margin:0 0 1.2rem;padding:.85rem 1rem;border:1px solid var(--warn-line);border-radius:8px;
 background:var(--warn-bg);color:var(--warn-fg);line-height:1.6}
 .closed a{color:var(--warn-fg);font-weight:600}
-.go{display:inline-block;margin:1.2rem 0;padding:.6rem 1.1rem;border:1px solid var(--line);border-radius:8px;
-background:var(--card);text-decoration:none;font-weight:600}
+.go{display:inline-flex;align-items:center;max-width:100%;min-height:44px;margin:1.1rem 0;padding:.55rem 1.15rem;
+border:1px solid var(--accent);border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700}
+.go.sec{background:var(--card);border-color:var(--line);color:var(--link);font-weight:600}
+.nx-top h2{margin-top:1.2rem}
+.nx-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6rem;margin:.9rem 0}
+.nx-card{display:block;min-width:0;max-width:100%;padding:.7rem .8rem;border:1px solid var(--line);
+border-radius:10px;background:var(--card);text-decoration:none}
+.nx-card b{display:block;color:var(--link);font-size:.92rem;line-height:1.45}
+.nx-card .dd{display:inline-block;margin-top:.45rem;padding:0 .4rem;border-radius:5px;
+background:var(--warn-bg);color:var(--warn-fg);font-size:.8rem;font-weight:700}
+.nx-card .mt{display:block;margin-top:.25rem;color:var(--muted);font-size:.8rem}
 nav.back{margin-top:2.6rem;padding-top:1rem;border-top:1px solid var(--line);font-size:.92rem}
-nav.back a{margin-right:1rem}`;
+nav.back a{margin-right:1rem}
+@media (max-width:640px){.nx-grid{grid-template-columns:1fr}}
+@media (max-width:420px){dl{grid-template-columns:1fr;gap:.2rem}dd{margin-bottom:.5rem}}`;
 }
 
 function jsonLd(obj) {
@@ -168,6 +208,11 @@ function jsonLd(obj) {
     .replace(/>/g, "\\u003e")
     .replace(/&/g, "\\u0026");
 }
+
+// 방문 측정. async 라 첫 페인트를 막지 않는다.
+const gaSnippet = () =>
+  `<script async src="https://www.googletagmanager.com/gtag/js?id=${GA_ID}"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${GA_ID}')</script>`;
 
 // path: "contests/foo.html" 또는 "contests/" (허브)
 function page({ path, title, description, ogType = "website", ld, body }) {
@@ -191,6 +236,7 @@ function page({ path, title, description, ogType = "website", ld, body }) {
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="${esc(OG_IMAGE)}">
+${gaSnippet()}
 <style>${styles()}</style>
 <script type="application/ld+json">${jsonLd(ld)}</script>
 </head>
@@ -211,6 +257,12 @@ function emit(path, html) {
   written.push(path);
 }
 
+// 항목 페이지는 루프 안에서 바로 찍지 않고 모아둔다.
+// "마감이 가까운 다른 항목 3개"를 고르려면 전체 목록이 다 모인 뒤여야 하기 때문이다.
+// body 를 문자열이 아니라 함수로 받아, 루프가 다 끝난 뒤 한 번에 펼친다.
+const deferred = [];
+const defer = (path, meta, bodyFn) => deferred.push({ path, meta, bodyFn });
+
 function dl(rows) {
   const items = rows.filter(([, v]) => norm(v)).map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`);
   return items.length ? `<dl>\n${items.join("\n")}\n</dl>` : "";
@@ -228,10 +280,10 @@ function backNav(spaHash, hubPath, hubLabel) {
 // 진짜 http(s) 주소일 때만 주소로 취급하고, 아니면 링크를 아예 만들지 않는다.
 const httpUrl = (v) => (/^https?:\/\//i.test(norm(v)) ? norm(v) : "");
 
-function outbound(url, label) {
+function outbound(url, label, cls = "") {
   const href = httpUrl(url);
   if (!href) return "";
-  return `<p><a class="go" href="${esc(href)}" target="_blank" rel="noopener">${esc(label)} →</a></p>`;
+  return `<p><a class="go${cls ? " " + cls : ""}" href="${esc(href)}" target="_blank" rel="noopener">${esc(label)} →</a></p>`;
 }
 
 // 제목 = 항목명 + 핵심사실. 60자를 넘으면 사실이 아니라 항목명을 줄인다.
@@ -385,13 +437,19 @@ for (const [data, isOverseas, scopeLabel, lastmod] of [
 
       // 마감된 공모전도 이름으로 검색해 들어온다. 페이지는 남기되,
       // 들어온 사람이 헛걸음하지 않도록 상태를 먼저 알리고 접수 중인 목록으로 보낸다.
+      // 목록으로 보내는 링크는 바로 아래 nextActions 가 건수까지 붙여 내보낸다.
+      // 같은 곳으로 가는 버튼을 두 번 쌓지 않는다.
       const closedNotice = closed
-        ? `<p class="closed"><strong>접수가 마감되었습니다.</strong> 현재 결과 발표를 기다리는 공모전입니다.<br>
-<a href="${SITE_BASE}/contests/#ongoing">지금 접수 중인 AI 공모전 보기 →</a></p>`
+        ? `<p class="closed"><strong>접수가 마감되었습니다.</strong> 현재 결과 발표를 기다리는 공모전입니다.</p>`
         : "";
 
-      const body = `<h1>${esc(title)}</h1>
+      // 마감된 페이지는 그냥 두면 100% 이탈이다 — 다음 행동을 아래가 아니라 안내문 바로 밑에 둔다.
+      defer(
+        path,
+        { path, title: pageTitle, description, ogType: "website", ld },
+        () => `<h1>${esc(title)}</h1>
 ${closedNotice}
+${closed ? nextActions({ kind: "contest", selfUrl: url, emphasis: "top" }) : ""}
 <p class="lede">${esc([norm(item.category), isOverseas ? norm(item.country) : "국내", statusText].filter(Boolean).join(" · "))}</p>
 ${dl([
   ["접수 마감", item.submission_end],
@@ -402,12 +460,12 @@ ${dl([
   ["국가", isOverseas ? item.country : ""],
   ["진행 상태", statusText],
 ])}
+${closed ? outbound(item.url, "공모 요강 원문 보기", "sec") : outbound(item.url, "신청하기 · 공모 요강 원문")}
 ${summary ? `<p>${esc(summary)}</p>` : ""}
 ${norm(item.evidence) ? `<p class="src">${esc(norm(item.evidence))}</p>` : ""}
-${outbound(item.url, "공모 요강 원문 보기")}
-${backNav("contests", "contests/", "공모전 전체 보기")}`;
-
-      emit(path, page({ path, title: pageTitle, description, ogType: "website", ld, body }));
+${nextActions({ kind: "contest", selfUrl: url, emphasis: closed ? "bottom" : "all" })}
+${backNav("contests", "contests/", "공모전 전체 보기")}`
+      );
       addUrl(path, lastmod, closed ? "0.4" : "0.8");
       group.items.push({
         name: title,
@@ -468,7 +526,10 @@ for (const f of pubData && Array.isArray(pubData.festivals) ? pubData.festivals 
         }
       : { "@context": "https://schema.org", "@type": "WebPage", name, description, url };
 
-  const body = `<h1>${esc(name)}</h1>
+  defer(
+    path,
+    { path, title: pageTitle, description, ogType: "website", ld },
+    () => `<h1>${esc(name)}</h1>
 <p class="lede">${esc([norm(f.region), norm(f.place)].filter(Boolean).join(" · "))}</p>
 ${dl([
   ["출품 마감", f.deadline],
@@ -477,11 +538,11 @@ ${dl([
   ["장소", f.place],
   ["지역", f.region],
 ])}
+${outbound(f.url, "출품 신청 · 공식 페이지")}
 ${norm(f.note) ? `<p>${esc(norm(f.note))}</p>` : ""}
-${outbound(f.url, "공식 페이지 보기")}
-${backNav("festivals", "festivals/", "영화제 전체 보기")}`;
-
-  emit(path, page({ path, title: pageTitle, description, ogType: "website", ld, body }));
+${nextActions({ kind: "festival", selfUrl: url })}
+${backNav("festivals", "festivals/", "영화제 전체 보기")}`
+  );
   addUrl(path, pubLastmod);
   festivalList.push({ name, url, deadline: norm(f.deadline) || "미정", host: norm(f.host) });
 }
@@ -544,7 +605,10 @@ for (const g of govAiItems) {
       : { "@context": "https://schema.org", "@type": "WebPage", name: nm, description, url };
 
   const period = norm(g.bgng) && norm(g.end) ? `${norm(g.bgng)} ~ ${norm(g.end)}` : "";
-  const body = `<h1>${esc(nm)}</h1>
+  defer(
+    path,
+    { path, title: pageTitle, description, ogType: "website", ld },
+    () => `<h1>${esc(nm)}</h1>
 <p class="lede">${esc([norm(g.cls), norm(g.inst), norm(g.regin)].filter(Boolean).join(" · "))}</p>
 ${dl([
   ["접수 마감", g.end],
@@ -555,11 +619,11 @@ ${dl([
   ["지역", g.regin],
   ["신청 대상", g.trgt],
 ])}
+${outbound(g.url, "신청하기 · K-Startup 공고 원문")}
 <p>${esc(`${nm} 공고입니다. ${norm(g.org) ? norm(g.org) + "이(가) 주관하며 " : ""}${norm(g.end) ? "접수 마감은 " + norm(g.end) + "입니다." : "접수 일정은 공고를 확인하세요."}`)}</p>
-${outbound(g.url, "K-Startup 공고 원문 보기")}
-${backNav("gov", "funding/", "지원사업 전체 보기")}`;
-
-  emit(path, page({ path, title: pageTitle, description, ogType: "website", ld, body }));
+${nextActions({ kind: "funding", selfUrl: url })}
+${backNav("gov", "funding/", "지원사업 전체 보기")}`
+  );
   addUrl(path, govLastmod);
   fundingList.push({ name: nm, url, deadline: norm(g.end) || "미정", host: norm(g.org) });
 }
@@ -682,17 +746,112 @@ for (const r of pubData && Array.isArray(pubData.reports) ? pubData.reports : []
     description,
   };
 
-  const body = `<h1>${esc(pageTitle)}</h1>
+  defer(
+    path,
+    { path, title: pageTitle, description, ogType: "article", ld },
+    () => `<h1>${esc(pageTitle)}</h1>
 <p class="lede">생성형 AI·바이브코딩·AI VFX 업계에서 그날 나온 소식을 한 자리에 모았습니다.</p>
 ${renderBriefingBody(r.content)}
-${backNav("newsrep", "briefing/", "브리핑 전체 보기")}`;
-
-  emit(path, page({ path, title: pageTitle, description, ogType: "article", ld, body }));
+${nextActions({ kind: "briefing", selfUrl: url })}
+${backNav("newsrep", "briefing/", "브리핑 전체 보기")}`
+  );
   addUrl(path, pubLastmod);
   briefingList.push({ date, url, title: pageTitle });
 }
 
 briefingList.sort((a, b) => (a.date < b.date ? 1 : -1));
+
+/* ── 다음 행동 ───────────────────────────────────────────────── */
+
+// 검색으로 들어온 사람에게 권할 수 있는 건 "아직 접수 중인" 항목뿐이다.
+// 지난 항목을 권하면 막다른 길을 하나 더 만드는 셈이다. 마감이 가까운 순으로 둔다.
+const openPool = (list) =>
+  list
+    .map((it) => ({ ...it, iso: stillOpen(it.deadline) }))
+    .filter((it) => it.iso)
+    .sort((a, b) => (a.iso < b.iso ? -1 : 1));
+
+// ongoing / ongoing-overseas 둘 다 "접수 중" 이다
+const contestPool = openPool(
+  contestGroups.filter((g) => g.id.startsWith("ongoing")).flatMap((g) => g.items)
+);
+const festivalPool = openPool(festivalList);
+const fundingPool = openPool(fundingList);
+
+const NEXT = {
+  contest: {
+    head: "마감이 가까운 다른 AI 공모전",
+    pool: contestPool,
+    href: `${SITE_BASE}/contests/#ongoing`,
+    all: (n) => `지금 접수 중인 AI 공모전 ${n}건 보기`,
+    hub: "AI 공모전 전체 보기",
+    talk: "이 공모전 준비하시는 분들과 이야기 나누기 →",
+  },
+  festival: {
+    head: "출품 마감이 가까운 다른 영화제",
+    pool: festivalPool,
+    href: `${SITE_BASE}/festivals/`,
+    all: (n) => `출품 접수 중인 AI 영화제 ${n}곳 보기`,
+    hub: "AI 영화제 전체 보기",
+    talk: "이 영화제 출품 준비하시는 분들과 이야기 나누기 →",
+  },
+  funding: {
+    head: "접수 마감이 가까운 다른 지원사업",
+    pool: fundingPool,
+    href: `${SITE_BASE}/funding/`,
+    all: (n) => `모집 중인 지원사업 ${n}건 보기`,
+    hub: "지원사업 전체 보기",
+    talk: "이 지원사업 준비하시는 분들과 이야기 나누기 →",
+  },
+  briefing: {
+    head: "최근 브리핑",
+    pool: briefingList, // 이미 최신순 — 브리핑에는 마감이라는 개념이 없다
+    href: `${SITE_BASE}/briefing/`,
+    all: (n) => `AI 업계 브리핑 ${n}일치 보기`,
+    hub: "AI 업계 브리핑 보기",
+    talk: "AI 소식 나누는 커뮤니티 →",
+  },
+};
+
+function nxCard(it, kind) {
+  const title = kind === "briefing" ? it.title : it.name;
+  const meta =
+    kind === "briefing"
+      ? `<span class="mt">${esc(it.date)}</span>`
+      : `<span class="dd">${esc(ddayLabel(it.iso))}</span><span class="mt">마감 ${esc(it.iso)}</span>`;
+  return `<a class="nx-card" href="${esc(it.url)}"><b>${esc(clip(title, 40))}</b>${meta}</a>`;
+}
+
+// ① 비슷한 항목 ② 마감 알림 ③ 전체 목록 ④ 커뮤니티.
+// emphasis "top" = ①③만(마감 페이지 위쪽), "bottom" = ②④만, 기본 = 넷 다.
+// ② 는 메일 주소를 여기서 받지 않는다 — 이 정적 페이지에는 받아줄 곳이 없어서,
+//    입력칸을 놓으면 주소를 삼키고 알림은 오지 않는 약속이 된다. 홈 구독 블록으로 보낸다.
+function nextActions({ kind, selfUrl, emphasis = "all" }) {
+  const c = NEXT[kind];
+  const rel = c.pool.filter((it) => it.url !== selfUrl).slice(0, 3);
+  const n = c.pool.length;
+  const out = [];
+
+  if (emphasis !== "bottom" && rel.length)
+    out.push(
+      `<h2>${esc(c.head)}</h2>\n<div class="nx-grid">\n${rel.map((it) => nxCard(it, kind)).join("\n")}\n</div>`
+    );
+  if (emphasis !== "top")
+    out.push(`<h2>마감 알림 구독</h2>
+<p>마감 3일 전에 메일로 알려드립니다.</p>
+<p><a class="go" href="${SITE_BASE}/#home">마감 알림 받기 →</a></p>`);
+  // 접수 중인 게 하나도 없으면 "0건"을 적지 않는다 — 숫자 없이 허브로만 보낸다
+  if (emphasis !== "bottom")
+    out.push(`<p><a class="go sec" href="${esc(c.href)}">${esc(n ? c.all(n) : c.hub)} →</a></p>`);
+  if (emphasis !== "top")
+    out.push(`<p><a href="${SITE_BASE}/board/">${esc(c.talk)}</a></p>`);
+
+  if (!out.length) return "";
+  return `<section class="nx${emphasis === "top" ? " nx-top" : ""}">\n${out.join("\n")}\n</section>`;
+}
+
+// 목록이 다 모였으니 이제 항목 페이지를 찍는다
+for (const d of deferred) emit(d.path, page({ ...d.meta, body: d.bodyFn() }));
 
 /* ── 허브 ────────────────────────────────────────────────────── */
 
