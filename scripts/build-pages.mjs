@@ -25,9 +25,11 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
-// 자체 도메인으로 옮길 수 있으므로 주소는 이 두 줄에만 둔다. 나머지는 전부 여기서 조립한다.
-const SITE_ORIGIN = "https://kjyart-star.github.io";
-const SITE_BASE = `${SITE_ORIGIN}/ai-radar`;
+// 주소는 이 두 줄에만 둔다. 나머지는 전부 여기서 조립한다.
+// 자체 도메인(CNAME)이라 저장소가 도메인 루트에 서빙된다 — 프로젝트 경로 접두어가 없다.
+// github.io 프로젝트 사이트로 되돌릴 일이 있으면 SITE_BASE 를 `${SITE_ORIGIN}/저장소이름` 으로 바꾼다.
+const SITE_ORIGIN = "https://ai-radar.kr";
+const SITE_BASE = SITE_ORIGIN;
 
 const SITE_NAME = "AI 레이더";
 const OG_IMAGE = `${SITE_BASE}/assets/og-cover.png`; // 1200×630 공용 대표 이미지
