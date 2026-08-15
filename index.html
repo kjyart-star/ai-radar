@@ -3635,12 +3635,16 @@ function bdThreadView(el, slug){
   load();
 }
 
-/* ---- 게시판 진입 ---- */
-function bdShell(inner){
+/* ---- 게시판 진입 ----
+   wide=true 면 720px 제한을 풀어 다른 화면과 같은 폭을 쓴다(대표 지시 2026-08-15).
+   피드는 2단(글+브리핑)이라 720px 안에 가두면 글 칸이 400px 남짓으로 쪼그라들고
+   화면 오른쪽 절반이 통째로 빈다 — 폭을 넓히라고 했는데 오히려 좁아 보이던 원인이다.
+   글 한 줄이 너무 길어지는 것은 .bd-cols 의 글 칸 자체에서 잡는다. */
+function bdShell(inner, wide){
   return "<section class='section paper'><div class='inner'>"+
     sectionHead("Board","오늘 알게 된 것,<br>한 줄이면 충분합니다.",
       "AI를 쓰면서 알게 된 것을 짧게 남기고 이어 가는 곳입니다.","")+
-    "<div class='bd-wrap'>"+inner+"</div></div></section>";
+    "<div class='bd-wrap"+(wide?" bd-wide":"")+"'>"+inner+"</div></div></section>";
 }
 function renderBoard(){
   setKicker(["자유게시판"]);
@@ -3652,7 +3656,9 @@ function renderBoard(){
     bdBriefCard(C.querySelector("[data-brief]"));
     return;
   }
-  C.innerHTML = bdShell("<div data-bd>"+emptyNote("게시판을 여는 중입니다.")+"</div>");
+  /* 피드·스레드 모두 이 껍데기 안에서 그려진다. 넓게 쓴다 — 안쪽 .bd-cols 와
+     .bd-thread 가 각자 읽기 좋은 폭을 잡으므로 여기서 묶을 필요가 없다. */
+  C.innerHTML = bdShell("<div data-bd>"+emptyNote("게시판을 여는 중입니다.")+"</div>", true);
   var el = C.querySelector("[data-bd]");
   fbInit().then(function(){
     if (!bdAlive(el)) return;
