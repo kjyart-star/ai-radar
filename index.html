@@ -5,15 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>AI 레이더 — AI 공모전·영화제·지원사업·뉴스</title>
 <meta name="description" content="AI 공모전, AI 영화제, AI 지원사업, 아침 뉴스 브리핑과 유튜브 영상을 한 화면에서 봅니다. 로그인 없이 열립니다.">
+<!-- ===== 사이트 절대 주소 — 도메인 이전 시 여기만 고친다 =====
+     도메인 이전 예정(ai-radar.kr). 지금은 https://kjyart-star.github.io/ai-radar/ 이고
+     옮기면 https://ai-radar.kr/ 이 되면서 /ai-radar/ 경로가 사라진다.
+     절대 주소가 필요한 곳은 아래 세 줄(og:url · og:image · canonical)뿐이므로
+     주소를 바꿀 때 이 블록만 고치면 된다. 스크립트로 만들어 넣지 않는 이유는
+     카카오톡·페이스북·슬랙 미리보기 수집기가 자바스크립트를 실행하지 않아서다 —
+     JS 로 넣은 og 태그는 공유 카드에 잡히지 않는다.
+     본문 링크는 BASE(location.pathname 에서 런타임 계산)를 쓰므로 손댈 것이 없다. -->
+<meta property="og:url" content="https://kjyart-star.github.io/ai-radar/">
+<meta property="og:image" content="https://kjyart-star.github.io/ai-radar/assets/og-cover.png">
+<link rel="canonical" href="https://kjyart-star.github.io/ai-radar/">
+<!-- ===== 여기까지 ===== -->
 <meta property="og:title" content="AI 레이더">
 <meta property="og:description" content="AI 공모전·영화제·지원사업·뉴스를 한 화면에서. 마감이 가까운 순으로.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="AI 레이더">
-<meta property="og:url" content="https://kjyart-star.github.io/ai-radar/">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<!-- og:image 는 아직 없습니다. 1200x630 대표 이미지가 준비되면 여기에 추가합니다.
-     이미지가 없는 동안 twitter:card 는 큰 그림 없이 제목·설명만 보여줍니다. -->
-<!-- <meta property="og:image" content="…"> -->
 <link rel="icon" type="image/svg+xml" sizes="any" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2048%2048'%3E%3Crect%20width='48'%20height='48'%20fill='%2307110d'/%3E%3Ccircle%20cx='24'%20cy='24'%20r='17'%20fill='none'%20stroke='%23b6ff3f'%20stroke-width='2.4'%20opacity='.55'/%3E%3Ccircle%20cx='24'%20cy='24'%20r='9'%20fill='none'%20stroke='%23b6ff3f'%20stroke-width='2.4'%20opacity='.85'/%3E%3Cpath%20d='M24%2024%20L40%2015'%20stroke='%23b6ff3f'%20stroke-width='3'%20stroke-linecap='round'/%3E%3Ccircle%20cx='33'%20cy='15'%20r='4'%20fill='%23b6ff3f'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <!-- 게시판을 열 때만 여기서 firebase SDK 를 내려받는다. 연결만 미리 열어 둔다 -->
@@ -303,15 +313,42 @@
   /* ---------- archive ---------- */
   .arch{ display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:0;
          border-top:1px solid var(--line-dark); }
-  .arch button{ text-align:left; padding:20px 18px; border-bottom:1px solid var(--line-dark);
+  /* 브리핑 아카이브는 button, 홈의 메뉴 안내는 a 다 — 생김새는 같은 칸이다 */
+  .arch button,.arch a{ text-align:left; padding:20px 18px; border-bottom:1px solid var(--line-dark);
                 border-right:1px solid var(--line-dark); display:block; width:100%;
                 transition:background .18s ease, color .18s ease; }
-  .arch button:hover{ background:var(--lime); color:var(--ink); }
+  .arch button:hover,.arch a:hover{ background:var(--lime); color:var(--ink); }
   .arch button.on{ background:var(--lime); color:var(--ink); }
   .arch .a-date{ display:block; font-family:var(--display); font-size:21px; font-weight:800;
                  letter-spacing:-.04em; }
   .arch .a-title{ display:block; margin-top:7px; font-size:12px; opacity:.62;
                   word-break:keep-all; }
+
+  /* ---------- 홈 ----------
+     홈의 제목만 한글 문장이다. 위 .hero h1 은 라틴 대문자 전용이라(-.075em·uppercase)
+     한글을 그대로 넣으면 자간이 뭉개진다. 크기를 낮추고 자간을 -.02em 까지만 준다.
+     min-height 는 숫자가 오기 전 빈 자리를 잡아 두는 값이다 — 두 줄분이라
+     문장이 채워져도 화면이 밀리지 않는다. */
+  .hero h1.h-home{ font-family:var(--body); font-weight:800; text-transform:none;
+                   font-size:clamp(33px, 5.4vw, 72px); letter-spacing:-.02em;
+                   line-height:1.24; min-height:2.48em; max-width:900px;
+                   word-break:keep-all; }
+  .hero h1.h-home b{ font-family:var(--display); font-weight:900; color:var(--lime);
+                     letter-spacing:-.05em; }
+  /* 오늘 마감이 있는 날만 그 칸을 경고색으로 둔다 (setFacts 의 "hot") */
+  .hero-fact.hot b{ color:var(--coral); }
+  .hero-fact.hot span{ color:var(--coral); opacity:.9; }
+
+  /* 마감 알림 구독 — 칸 하나와 버튼 하나. 둘 다 손가락으로 누를 수 있는 크기(44px 이상) */
+  .sub-form{ display:flex; flex-wrap:wrap; gap:10px; align-items:center; max-width:560px; }
+  .sub-input{ flex:1 1 260px; min-height:46px; }
+  .sub-form .btn{ display:inline-flex; align-items:center; min-height:46px; }
+  .sub-note{ margin:14px 0 0; max-width:560px; color:var(--muted-light);
+             font-size:12px; line-height:1.7; word-break:keep-all; }
+  .sub-msg{ margin:0; font-size:clamp(17px,1.6vw,21px); font-weight:800;
+            letter-spacing:-.02em; word-break:keep-all; }
+  .cta-row{ display:flex; flex-wrap:wrap; gap:10px; margin:0; }
+  .cta-row .btn{ display:inline-flex; align-items:center; min-height:44px; }
 
   /* ---------- states ---------- */
   .note{ padding:52px 16px; text-align:center; color:var(--muted-light);
@@ -876,6 +913,9 @@ function dueWithin(list, key, days, today){
    모바일 내비는 두 줄로 접힌다(아래 @media 760px). 가로 스크롤은 쓰지 않는다.
    여섯 번째 메뉴가 있는 줄 모르는 사람이 생기면 안 붙인 것과 같다. */
 var MENU = [
+  /* 첫 화면. 마감·브리핑·커뮤니티를 한 장으로 요약해 "여기가 무엇을 하는 곳인지"를
+     3초 안에 말하는 자리다. 나머지 일곱은 각자 깊게 보는 화면이다. */
+  ["home","홈","RADAR"],
   ["newsrep","뉴스리포트","BRIEFING"],
   ["contests","AI공모전","CONTESTS"],
   ["festivals","AI영화제","FESTIVALS"],
@@ -888,7 +928,7 @@ var MENU = [
 ];
 var TITLES = {};
 MENU.forEach(function(it){ TITLES[it[0]] = it[1]; });
-var DEFAULT_ROUTE = "newsrep";
+var DEFAULT_ROUTE = "home";
 
 /* ============ 구조 판단 ============
    메뉴별 해시 라우팅이고, 한 번에 한 화면만 그린다. 한 페이지 스크롤로 합치지
@@ -917,6 +957,10 @@ function buildNav(){
 
 /* ============ 히어로 ============ */
 var HERO = {
+  /* 홈의 제목은 라틴 대문자가 아니라 숫자가 든 한 문장이다(homeHeadline).
+     여기 copy 는 그 아래 부제로만 쓰인다 — 숫자가 오기 전에도 이 줄은 바로 보인다. */
+  home:{ latin:"RADAR", ko:"AI 레이더",
+    copy:"AI 공모전 · 지원사업 · 영화제 마감을 한곳에서 봅니다." },
   contests:{ latin:"CONTESTS", ko:"AI 공모전",
     copy:"국내외 AI 공모전을 마감이 가까운 순으로 모았습니다. 상금과 남은 기간을 한눈에 보실 수 있습니다." },
   festivals:{ latin:"FESTIVALS", ko:"AI 영화제",
@@ -937,8 +981,15 @@ var HERO = {
 };
 function drawHero(route){
   var h = HERO[route] || HERO[DEFAULT_ROUTE];
-  document.getElementById("heroTitle").innerHTML =
-    esc(h.latin) + "<em>" + esc(h.ko) + "</em>";
+  var t = document.getElementById("heroTitle");
+  /* 홈만 한글 문장 제목이라 라틴 대문자 조판(-.075em·uppercase)을 쓰면 글자가 뭉개진다.
+     자리만 먼저 잡아 두고 숫자가 도착하면 homeHeadline 이 채운다. */
+  if (route === "home"){
+    homeHeadline(null);
+  } else {
+    t.className = "";
+    t.innerHTML = esc(h.latin) + "<em>" + esc(h.ko) + "</em>";
+  }
   document.getElementById("heroCopy").textContent = h.copy;
 }
 /* 히어로 상단 pill — 첫 개는 라임 채움 */
@@ -948,9 +999,12 @@ function setKicker(list){
   }).join("");
 }
 /* 히어로 숫자 세 칸. 데이터가 늦게 오는 화면은 로드 후 다시 부른다. */
+/* 세 번째 값은 선택이다 — 한 칸만 강조하고 싶을 때 "hot" 을 준다(홈의 "오늘 마감").
+   기존 화면들은 두 칸짜리 배열을 그대로 넘기므로 영향이 없다. */
 function setFacts(list){
   document.getElementById("heroFacts").innerHTML = (list||[]).map(function(f){
-    return "<div class='hero-fact'><b class='tnum'>"+esc(f[0])+"</b><span>"+esc(f[1])+"</span></div>";
+    return "<div class='hero-fact"+(f[2]?" "+esc(f[2]):"")+"'>"+
+      "<b class='tnum'>"+esc(f[0])+"</b><span>"+esc(f[1])+"</span></div>";
   }).join("");
 }
 
@@ -2847,8 +2901,425 @@ C.addEventListener("click", function(e){
   if ((el = t.closest("[data-logout]"))){ bdLogout(); return; }
 });
 
+/* ============ 홈 (첫 화면) ============
+   이 사이트가 시장에서 유일하게 가진 것은 "마감일 집계"다. AI 뉴스를 모으는 곳은 많지만
+   공모전·지원사업·영화제 마감을 한곳에 모은 곳은 없다. 뉴스는 안 봐도 그만이지만
+   마감은 놓치면 다음 기회까지 1년이다. 그래서 첫 화면 맨 위가 마감이고 브리핑은 그 아래다 —
+   순서를 뒤집는 순간 이 사이트는 흔한 뉴스 모음이 된다.
+
+   공모전·영화제·지원사업을 한 목록으로 합친다. 보는 사람에게는 셋 다 "언제까지 내야 하는 것"이라
+   세 화면을 오가며 날짜를 비교하게 만들 이유가 없다. 마감일이 없는 항목(미정·연중)은 뺀다 —
+   순서를 매길 수 없는 것을 마감 순 목록에 끼우면 목록 전체가 못 믿을 것이 된다.
+
+   문구는 우리가 한 일이 아니라 보는 사람이 잃을 것을 말한다. "모았습니다"는 우리 사정이고
+   "이번 주 48건이 마감됩니다"는 그 사람 사정이다. 느낌표는 쓰지 않는다 —
+   숫자가 실제 값이라 담담하게 적을 때 더 무겁다. */
+
+/* 문구를 한곳에 모아 둔다. 나중에 바꿔 볼 때 코드를 뒤지지 않아도 된다. */
+var HOME_COPY = {
+  dueH:"놓치면 다음은<br>내년입니다",
+  alertH:"마감 3일 전에<br>알려드립니다",
+  alertIntro:"메일 주소만 남겨 두시면 됩니다.",
+  alertBtn:"알림 받기",
+  alertNote:"마감 알림 발송에만 사용하며, 언제든 수신을 중단하실 수 있습니다.",
+  alertDone:"등록되었습니다. 마감이 가까워지면 메일을 보내드리겠습니다.",
+  alertDup:"이미 등록되어 있습니다. 마감이 가까워지면 메일을 보내드리겠습니다.",
+  alertBad:"메일 주소를 다시 확인해 주세요.",
+  alertFail:"지금은 등록이 되지 않았습니다. 잠시 뒤 다시 시도해 주세요.",
+  briefH:"밤사이 무슨 일이<br>있었나",
+  briefIntro:"아침에 한 번 정리해 드립니다.",
+  commH:"지금 사람들이<br>나누는 이야기",
+  menuH:"무엇을<br>볼 수 있나",
+  aboutH:"만들 줄 몰라서<br>못 나가시나요?",
+  aboutBody:"애플시드는 광고·뮤직비디오 VFX를 해 온 회사입니다. " +
+            "그 위에 생성형 AI를 얹어 콘텐츠를 만들고, 만드는 법을 가르칩니다."
+};
+
+function homeMail(subject){
+  return "mailto:kjyart@gmail.com?subject=" + encodeURIComponent(subject);
+}
+var HOME_MAIL_EDU = homeMail("[AI 레이더] 교육 문의");
+var HOME_MAIL_WORK = homeMail("[AI 레이더] 제작 문의");
+var HOME_MAIL_ALERT = homeMail("[AI 레이더] 마감 알림 신청");
+
+function homeIsDate(s){ return /^\d{4}-\d{2}-\d{2}$/.test(String(s||"")); }
+
+/* 세 소스는 마감 필드 이름이 전부 다르다(submission_end · deadline · end).
+   한 목록에 세우려면 여기서 한 번만 같은 모양으로 바꾼다. */
+function homeFromContests(j){
+  var out = [];
+  CONTEST_SECS.forEach(function(k){
+    (((j && j.sections || {})[k]) || []).forEach(function(it){
+      if (!homeIsDate(it.submission_end)) return;
+      out.push({ kind:"공모전", title:it.title, due:it.submission_end,
+                 org:it.organizer, url:it.url, extra:it._region || it.country || "" });
+    });
+  });
+  return out;
+}
+function homeFromFestivals(list){
+  var out = [];
+  (list || []).forEach(function(f){
+    if (!homeIsDate(f.deadline)) return;
+    out.push({ kind:"영화제", title:f.name, due:f.deadline,
+               org:f.host, url:f.url, extra:f.region || "" });
+  });
+  return out;
+}
+/* 지원사업은 AI 지원사업 화면과 같은 기준으로 거른다 — 저쪽 기본값이 "AI 관련만"인데
+   여기서만 전체를 세면 같은 데이터에서 다른 숫자가 나온다(274 대 29). */
+function homeFromGov(j){
+  var out = [];
+  ((j && j.items) || []).forEach(function(it){
+    if (!homeIsDate(it.end)) return;
+    if (!GOV_AI_RE.test((it.nm||"") + " " + (it.trgt||"") + " " + (it.cls||""))) return;
+    out.push({ kind:"지원사업", title:it.nm, due:it.end,
+               org:it.org, url:it.url, extra:it.regin || "" });
+  });
+  return out;
+}
+
+/* 같은 공고가 두 소스에 들어 있는 경우가 있다(영화제이면서 해외 공모전으로도 수집된 건).
+   제목과 마감일이 같으면 한 줄로 본다. */
+function homeMerge(list){
+  var seen = {}, out = [];
+  (list || []).forEach(function(it){
+    if (!it || !it.title) return;
+    var key = String(it.title).replace(/\s+/g, "").toLowerCase() + "|" + it.due;
+    if (seen[key]) return;
+    seen[key] = 1;
+    out.push(it);
+  });
+  out.sort(function(a, b){ return a.due < b.due ? -1 : a.due > b.due ? 1 : 0; });
+  return out;
+}
+function homeDays(due, today){
+  var d = parseDate(due);
+  if (!d) return null;
+  return Math.round((d - today) / 86400000);
+}
+/* 오늘 마감은 "D-DAY"가 아니라 "오늘"이라고 쓴다. 남은 날짜를 세는 칸에서 오늘만은
+   셀 것이 없다 — 지금 넣어야 한다는 말이 더 빨리 읽힌다. 칸이 좁아(모바일 62px)
+   큰 글씨로는 두 글자까지이므로 나머지 한마디는 아래 meta 줄이 받는다. */
+function homeDueRow(it, today){
+  var n = homeDays(it.due, today);
+  var di = ddayInfo(it.due, today);
+  var meta = [];
+  if (it.org) meta.push("<b>" + esc(it.org) + "</b>");
+  meta.push(n === 0 ? "오늘 마감" : "마감 " + esc(it.due));
+  return row({ dd:(n === 0 ? "오늘" : di.txt), ddCls:di.cls, title:it.title || "(제목 없음)",
+               tags:[it.kind, it.extra], meta:meta, url:it.url });
+}
+
+/* 영화제는 pub 데이터에 들어 있다. 이미 받아 둔 것이 있으면 그걸 쓰고, 없으면 저장소
+   스냅샷을, 그것도 안 되면 파일에 박아 둔 목록을 쓴다 — 영화제 화면과 같은 순서다. */
+function homeFestList(){
+  if (state.data && state.data.festivals && state.data.festivals.length) {
+    return Promise.resolve(state.data.festivals);
+  }
+  return fetch(PUB_SNAPSHOT, { cache:"no-store" })
+    .then(function(r){ if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+    .then(function(j){ return (j && j.festivals) || []; })
+    .catch(function(){ return FESTIVALS || []; });
+}
+
+/* ---- 히어로 헤드라인 ----
+   숫자가 오기 전에는 문장을 만들지 않는다. "이번 주, 건이 마감됩니다" 같은 문장이
+   0.3초라도 보이면 그 화면은 고장난 것으로 읽힌다. 자리만 잡아 두고(h1 의 min-height)
+   숫자가 도착하면 채운다. 그동안 여기가 어디인지는 부제가 이미 말하고 있다.
+
+   이번 주가 0건인 주가 있다(연휴·연초). 그때는 문장이 무너지므로 접수 중 건수로 바꾼다.
+   그것도 0이면 숫자를 아예 쓰지 않는다 — 없는 긴장을 지어내지 않는다. */
+function homeHeadlineText(week, open){
+  if (week == null) return "";
+  if (week > 0) return "이번 주, <b class='tnum'>" + week + "</b>건이 마감됩니다.";
+  if (open > 0) return "지금 <b class='tnum'>" + open + "</b>건이 접수 중입니다.";
+  return "다음 공고를 기다리는 중입니다.";
+}
+function homeHeadline(week, open){
+  var el = document.getElementById("heroTitle");
+  if (!el) return;
+  el.className = "h-home";
+  el.innerHTML = homeHeadlineText(week, open);
+}
+
+/* 세 소스를 각각 붙잡는다. 하나가 죽어도 나머지 두 종류는 그대로 나온다 —
+   목록 전체가 사라지는 것보다 낫다. */
+function homeFillDue(){
+  var el = document.getElementById("homeDue");
+  if (!el) return;
+  var today = todaySeoul();
+  var pC = fetchContests("all", false).then(homeFromContests, function(){ return []; });
+  var pF = homeFestList().then(homeFromFestivals, function(){ return []; });
+  var pG = fetchGov(false).then(homeFromGov, function(){ return []; });
+
+  Promise.all([pC, pF, pG]).then(function(res){
+    if (curRoute() !== "home") return;
+    var all = homeMerge(res[0].concat(res[1]).concat(res[2]));
+    var open = [], today0 = 0, week = 0, per = { "공모전":0, "영화제":0, "지원사업":0 };
+    all.forEach(function(it){
+      var n = homeDays(it.due, today);
+      if (n === null || n < 0) return;
+      open.push(it);
+      if (n === 0) today0++;
+      if (n <= 7) week++;
+      if (per[it.kind] != null) per[it.kind]++;
+    });
+    homeCounts = per;
+    homeHeadline(week, open.length);
+    /* 오늘 마감이 있는 날에만 그 칸을 경고색으로 둔다. 셋이 같은 색이면
+       "오늘"과 "이번 달"이 같은 무게로 읽힌다. */
+    setFacts([[String(today0), "오늘 마감", today0 > 0 ? "hot" : ""],
+              [String(week), "이번 주"],
+              [String(open.length), "접수 중"]]);
+    var top = open.slice(0, 20);
+    el.innerHTML = top.length
+      ? top.map(function(it){ return homeDueRow(it, today); }).join("")
+      : emptyNote("지금 접수 중인 공고가 없습니다.");
+    homeFillMenu();
+    observeReveal();
+  });
+}
+
+/* ---- 마감 알림 구독 ----
+   마감 목록 바로 아래에 둔다. "놓치면 안 되겠다"고 느낀 그 자리에서 받아야 한다.
+   페이지 맨 아래로 내리면 아무도 보지 않는다.
+
+   받는 값은 이메일 하나다. 이름·전화를 같이 물으면 칸이 늘어난 만큼 사람이 준다.
+   로그인도 시키지 않는다 — 마감 알림 하나 받자고 계정을 만들 사람은 없다.
+   명단은 화면·공개 JSON·로그 어디에도 내보내지 않는다. firestore.rules 에서
+   subscribers 는 create 만 열려 있고 read 는 아무에게도 열려 있지 않다.
+
+   ⚠️ 화면에 "마감 3일 전에 알려드립니다"라고 적었다. 발송을 붙이는 쪽은 이 약속대로
+   만들어야 한다 — 마감 사흘 전(D-3)에 그날 걸리는 공고를 보낸다. 문구를 먼저 걸어 두고
+   발송이 다르게 나가면 그때부터는 거짓말이 된다. */
+function homeCanSubscribe(){ return fbReady(); }
+function homeSubscribe(email){
+  return fbInit().then(function(){
+    /* 메일 주소를 문서 ID 로 쓴다 — 같은 사람이 두 번 눌러도 줄이 하나만 생긴다 */
+    var write = fbDb.collection("subscribers").doc(email).set({
+      email: email,
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      source: "home"
+    });
+    /* ⚠️ Firestore 는 서버에 닿지 못하면 쓰기를 대기열에 넣고 약속을 계속 붙잡고 있는다.
+       거절하지 않으므로 버튼이 "등록 중…"에서 영영 멈춘다 (2026-08-15 실측: 21초까지
+       아무 반응 없음). 그러면 누른 사람은 고장으로 읽고 떠난다.
+       10초까지만 기다리고 실패로 돌린다. 문서 ID 가 메일 주소라서 밀렸던 쓰기가 나중에
+       도착하든 그 사람이 다시 누르든 줄은 하나뿐이다 — 재시도가 안전하다. */
+    return new Promise(function(resolve, reject){
+      var done = false;
+      var timer = setTimeout(function(){
+        if (done) return;
+        done = true;
+        reject(new Error("시간이 초과되었습니다"));
+      }, 10000);
+      write.then(function(v){
+        if (done) return;
+        done = true; clearTimeout(timer); resolve(v);
+      }, function(e){
+        if (done) return;
+        done = true; clearTimeout(timer); reject(e);
+      });
+    });
+  });
+}
+function homeValidEmail(s){
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(String(s || "").trim());
+}
+function homeSubNote(txt){
+  var el = document.querySelector("#homeSubBox .sub-note");
+  if (el) el.textContent = txt;
+}
+function homeFillSub(){
+  var wrap = document.getElementById("homeSubBox");
+  if (!wrap) return;
+  /* Firebase 가 아직 안 붙었으면 폼 대신 메일 링크를 둔다 —
+     받을 방법이 없다고 신청 의사까지 버릴 이유는 없다 */
+  if (!homeCanSubscribe()){
+    wrap.innerHTML = "<p style='margin:0'><a class='btn' href='" + HOME_MAIL_ALERT +
+      "'>메일로 신청하기</a></p>";
+    return;
+  }
+  wrap.innerHTML =
+    "<form class='sub-form' id='homeSubForm' novalidate>" +
+      "<label class='sr' for='homeSubEmail'>이메일 주소</label>" +
+      "<input class='search sub-input' id='homeSubEmail' type='email' name='email' " +
+        "inputmode='email' autocomplete='email' placeholder='이메일 주소'>" +
+      "<button class='btn' type='submit' id='homeSubBtn'>" + esc(HOME_COPY.alertBtn) + "</button>" +
+    "</form>" +
+    "<p class='sub-note'>" + esc(HOME_COPY.alertNote) + "</p>";
+
+  document.getElementById("homeSubForm").onsubmit = function(e){
+    e.preventDefault();
+    var input = document.getElementById("homeSubEmail");
+    var btn = document.getElementById("homeSubBtn");
+    var email = String(input.value || "").trim().toLowerCase();
+    if (!homeValidEmail(email)){
+      homeSubNote(HOME_COPY.alertBad);
+      input.focus();
+      return;
+    }
+    homeSubNote(HOME_COPY.alertNote);   /* 앞서 뜬 오류 안내를 지우고 시작한다 */
+    btn.disabled = true;
+    btn.textContent = "등록 중…";
+    homeSubscribe(email).then(function(){
+      wrap.innerHTML = "<p class='sub-msg'>" + esc(HOME_COPY.alertDone) + "</p>";
+    }, function(err){
+      /* 규칙이 create 만 허용하므로 이미 있는 주소를 다시 넣으면 거절당한다.
+         그 사람 입장에서는 이미 등록된 것이 맞다 — 실패라고 말할 일이 아니다. */
+      if (err && err.code === "permission-denied"){
+        wrap.innerHTML = "<p class='sub-msg'>" + esc(HOME_COPY.alertDup) + "</p>";
+        return;
+      }
+      btn.disabled = false;
+      btn.textContent = HOME_COPY.alertBtn;
+      homeSubNote(HOME_COPY.alertFail);
+    });
+  };
+}
+
+/* ---- 오늘의 브리핑 ----
+   뉴스리포트 화면이 쓰는 데이터를 그대로 읽는다. 본문에서 출처·이미지 주소를 걷어내고
+   앞 네 줄만 보여준다 — 첫 화면에서 브리핑을 다 읽게 할 생각이 없다. */
+function homeBriefLines(content, n){
+  var lines = String(content || "").split("\n"), out = [];
+  for (var i = 0; i < lines.length && out.length < n; i++){
+    var s = lines[i].replace(/\s*\(img:[^)]*\)/g, "").replace(/\s*\(출처:[^)]*\)/g, "").trim();
+    if (s.indexOf("•") !== 0) continue;
+    out.push(s);
+  }
+  return out;
+}
+function homeFillBrief(){
+  var sec = document.getElementById("homeBriefSec");
+  var el = document.getElementById("homeBrief");
+  if (!sec || !el) return;
+  var all = sortedReports();
+  if (!all.length){ sec.style.display = "none"; return; }
+  var r = all[0];
+  var lines = homeBriefLines(stripYtSection(r.content || ""), 4);
+  if (!lines.length){ sec.style.display = "none"; return; }
+  sec.style.display = "";
+  el.innerHTML =
+    "<div class='brief-head'><h3>" + esc(r.title || "(제목 없음)") + "</h3>" +
+    "<div class='brief-date tnum'>" + esc(String(r.report_date || "").slice(0, 10)) + "</div></div>" +
+    "<div class='brief-body'>" + esc(lines.join("\n")) + "</div>" +
+    "<p style='margin:26px 0 0'><a class='btn' href='" + esc(menuHref("newsrep")) + "'>전체 보기</a></p>";
+}
+
+/* ---- 커뮤니티 최근 글 ----
+   자유게시판이 쓰는 질의를 그대로 쓴다(원글만·최신순). 색인도 같은 것을 쓰므로
+   게시판이 뜨는 환경이면 여기도 뜬다.
+   Firebase 설정 전이거나 글이 없으면 이 블록은 조용히 없는 채로 둔다 —
+   "준비 중"이라고 적힌 빈 껍데기는 안 만든 것만 못하다. */
+function homeCommRow(p){
+  /* row() 를 쓰지 않는 이유는 링크 하나뿐이다. row() 는 바깥 링크용이라 새 탭으로 열지만
+     게시판은 우리 사이트 안이라 그대로 이동해야 한다. 생김새는 같은 클래스를 쓴다. */
+  var tags = (p.tags || []).slice(0, 2).map(function(t){
+    return "<span class='tag'>" + esc(t) + "</span>"; }).join("");
+  return "<a class='row' href='" + esc(boardUrl(p.id)) + "'>" +
+    "<div class='dd tnum tbd'>" + esc(bdWhen(p.createdAt)) + "</div>" +
+    "<div class='r-main'><div class='r-title'>" + esc(bdExcerpt(p.body) || "(내용 없음)") + tags + "</div>" +
+    "<div class='r-meta'><b>" + esc(p.author || "익명") + "</b></div></div></a>";
+}
+function homeFillCommunity(){
+  var sec = document.getElementById("homeCommSec");
+  var el = document.getElementById("homeComm");
+  if (!sec || !el || !fbReady()) return;
+  fbInit().then(function(){
+    return fbDb.collection("posts").where("parentId", "==", null)
+      .orderBy("createdAt", "desc").limit(5).get();
+  }).then(function(sn){
+    if (curRoute() !== "home" || !C.contains(sec)) return;
+    var got = [];
+    sn.forEach(function(d){ var o = d.data() || {}; o.id = d.id; got.push(o); });
+    if (!got.length) return;              /* 아직 글이 없다 — 숨긴 채로 둔다 */
+    sec.style.display = "";
+    el.innerHTML = got.map(homeCommRow).join("");
+    observeReveal();
+  }, function(){});                        /* 색인 없음·네트워크 실패도 조용히 숨긴다 */
+}
+
+/* ---- 메뉴 안내 ----
+   숫자는 위 마감 목록과 같은 계산에서 나온다. 한 화면에서 다른 숫자가 보이면 둘 다 못 믿는다. */
+var homeCounts = null;
+var HOME_MENU_CARDS = [
+  ["contests", "AI 공모전", "공모전"],
+  ["festivals", "AI 영화제", "영화제"],
+  ["gov", "AI 지원사업", "지원사업"],
+  ["newsrep", "뉴스리포트", ""],
+  ["youtube", "AI 유튜브", ""],
+  ["aivideo", "AI 작품소개", ""],
+  ["board", "자유게시판", ""]
+];
+var HOME_MENU_DESC = {
+  newsrep:"매일 아침 정리한 AI 소식",
+  youtube:"AI 소식과 바이브코딩 영상",
+  aivideo:"AI로 만든 영상 작품",
+  board:"쓰면서 알게 된 것을 나누는 곳"
+};
+function homeFillMenu(){
+  var el = document.getElementById("homeMenu");
+  if (!el) return;
+  el.innerHTML = HOME_MENU_CARDS.map(function(m){
+    var sub = HOME_MENU_DESC[m[0]] || "";
+    if (m[2] && homeCounts && homeCounts[m[2]] != null) sub = "접수 중 " + homeCounts[m[2]] + "건";
+    if (m[0] === "newsrep"){
+      var n = sortedReports().length;
+      if (n) sub = "브리핑 " + n + "회분";
+    }
+    return "<a href='" + esc(menuHref(m[0])) + "'><span class='a-date'>" + esc(m[1]) + "</span>" +
+      "<span class='a-title'>" + esc(sub) + "</span></a>";
+  }).join("");
+}
+
+function renderHome(){
+  setKicker(["AI 레이더"]);
+  setFacts([["—", "오늘 마감"], ["—", "이번 주"], ["—", "접수 중"]]);
+  C.innerHTML =
+    "<section class='section paper'><div class='inner'>" +
+      sectionHead("Deadlines", HOME_COPY.dueH, "", "") +
+      "<div class='rows' id='homeDue' style='min-height:520px'>" +
+      emptyNote("마감 목록을 불러오는 중입니다.") + "</div>" +
+    "</div></section>" +
+
+    "<section class='section paper-alt'><div class='inner'>" +
+      sectionHead("Alert", HOME_COPY.alertH, HOME_COPY.alertIntro, "") +
+      "<div id='homeSubBox'></div>" +
+    "</div></section>" +
+
+    "<section class='section dark' id='homeBriefSec'><div class='inner'>" +
+      sectionHead("Briefing", HOME_COPY.briefH, HOME_COPY.briefIntro, "") +
+      "<div id='homeBrief'></div>" +
+    "</div></section>" +
+
+    "<section class='section paper-alt' id='homeCommSec' style='display:none'><div class='inner'>" +
+      sectionHead("Community", HOME_COPY.commH, "", "") +
+      "<div class='rows' id='homeComm'></div>" +
+    "</div></section>" +
+
+    "<section class='section dark'><div class='inner'>" +
+      sectionHead("Menu", HOME_COPY.menuH, "", "") +
+      "<div class='arch' id='homeMenu'></div>" +
+    "</div></section>" +
+
+    "<section class='section paper'><div class='inner'>" +
+      sectionHead("Appleseed", HOME_COPY.aboutH, HOME_COPY.aboutBody, "") +
+      "<p class='cta-row'><a class='btn' href='" + HOME_MAIL_EDU + "'>교육 문의</a>" +
+      "<a class='btn' href='" + HOME_MAIL_WORK + "'>제작 문의</a></p>" +
+    "</div></section>";
+
+  homeFillDue();
+  homeFillSub();
+  homeFillBrief();
+  homeFillMenu();
+  homeFillCommunity();
+}
+
 /* ============ 라우팅 ============ */
 var ROUTES = {
+  home:renderHome,
   contests:renderContests, festivals:renderFestivals, gov:renderGov,
   newsrep:renderReports, youtube:renderYoutube, aivideo:renderAiVideo,
   board:renderBoard
@@ -2865,7 +3336,10 @@ function render(){
   drawHero(route);
   /* 제목은 내비의 짧은 라벨이 아니라 전체 이름을 쓴다 — 브라우저 탭·검색 결과·
      공유 링크에서는 "공모전"보다 "AI 공모전"이 무엇인지 분명하다. */
-  document.title = ((HERO[route] || {}).ko || TITLES[route]) + " — AI 레이더";
+  /* 홈만 "AI 레이더 — AI 레이더"가 되므로 무엇을 보는 곳인지로 뒤를 채운다 */
+  document.title = route === "home"
+    ? "AI 레이더 — AI 공모전 · 지원사업 · 영화제 마감"
+    : ((HERO[route] || {}).ko || TITLES[route]) + " — AI 레이더";
   if (NEEDS_PUB[route]){
     if (state.loading){
       setKicker(["불러오는 중"]);
