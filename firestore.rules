@@ -1,0 +1,87 @@
+rules_version = '2';
+
+/* ============================================================================
+   AI 레이더 자유게시판 — Firestore 보안 규칙
+
+   Firebase 콘솔 > Firestore Database > 규칙 에 이 파일 내용을 그대로 붙여넣고
+   [게시]를 누릅니다.
+
+   기본 방침
+     읽기  : 누구나 (로그인 없이 글과 답글을 다 볼 수 있어야 공유 링크가 의미가 있다)
+     쓰기  : 로그인한 사람만
+     수정·삭제 : 본인이 쓴 글만
+
+   ⚠️ 이 규칙이 유일한 보안 장치입니다.
+   index.html 의 Firebase config(apiKey 등)는 비밀이 아니라 프로젝트 주소에 가까워
+   공개 저장소에 있어도 정상입니다. 실제로 막는 것은 여기입니다.
+
+   ⚠️ 이 프로젝트는 회사 관리시스템과 **분리된 AI 레이더 전용 프로젝트**여야 합니다.
+   공개 서비스와 사내 데이터가 한 프로젝트에 있으면 규칙 실수 한 번에 회사 자료가 샙니다.
+   ============================================================================ */
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    /* ---------------- 글 · 답글 ----------------
+       답글도 같은 컬렉션에 들어가고 parentId 로 구분합니다(null 이면 원글). */
+    match /posts/{id} {
+
+      allow read: if true;
+
+      /* 본인 uid 로만 쓸 수 있고, 본문·태그 길이를 서버에서 다시 확인합니다.
+         카운터는 반드시 0 에서 시작해야 합니다 — 처음부터 부풀린 값으로 만들 수 없게. */
+      allow create: if request.auth != null
+                    && request.resource.data.uid == request.auth.uid
+                    && request.resource.data.body is string
+                    && request.resource.data.body.size() > 0
+                    && request.resource.data.body.size() <= 2000
+                    && request.resource.data.tags is list
+                    && request.resource.data.tags.size() <= 3
+                    && request.resource.data.replyCount == 0
+                    && request.resource.data.likeCount == 0;
+
+      /* 세 가지 경우만 허용합니다.
+         1) 글쓴이 본인 — 본문·태그 수정
+         2) 다른 사람의 좋아요   — likeCount 만, 정확히 ±1
+         3) 다른 사람의 답글     — replyCount 만, 정확히 +1
+         2·3 이 필요한 이유: 좋아요와 답글은 남의 글에 다는 것이라
+         본인만 수정 가능하게 두면 카운터를 올릴 방법이 없습니다.
+         두 카운터를 한 번의 update 에 같이 담으면 거부됩니다 — 코드도 따로 씁니다. */
+      allow update: if request.auth != null && (
+           resource.data.uid == request.auth.uid
+        || (request.resource.data.diff(resource.data).affectedKeys().hasOnly(['likeCount'])
+            && (request.resource.data.likeCount == resource.data.likeCount + 1
+             || request.resource.data.likeCount == resource.data.likeCount - 1))
+        || (request.resource.data.diff(resource.data).affectedKeys().hasOnly(['replyCount'])
+            && request.resource.data.replyCount == resource.data.replyCount + 1)
+      );
+
+      allow delete: if request.auth != null && resource.data.uid == request.auth.uid;
+
+      /* 좋아요는 사람당 문서 하나. 문서 ID 가 곧 uid 라
+         남의 좋아요를 대신 누르거나 지울 수 없습니다. */
+      match /likes/{uid} {
+        allow read: if true;
+        allow create, delete: if request.auth != null && request.auth.uid == uid;
+      }
+    }
+
+    /* ---------------- 태그 ----------------
+       문서 ID 를 태그 이름으로 쓰기 때문에 같은 이름이 두 번 만들어지지 않습니다
+       (이미 있는 이름에 쓰면 update 로 취급되고, update 는 아래에서 막혀 있습니다).
+       한 번 만든 태그는 이름을 바꾸거나 지울 수 없습니다. */
+    match /tags/{id} {
+      allow read: if true;
+      allow create: if request.auth != null
+                    && request.resource.data.name is string
+                    && request.resource.data.name.size() > 0
+                    && request.resource.data.name.size() <= 20;
+      allow update, delete: if false;
+    }
+
+    /* 그 밖의 모든 경로는 막습니다. */
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

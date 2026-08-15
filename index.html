@@ -7,9 +7,17 @@
 <meta name="description" content="AI 공모전, AI 영화제, AI 지원사업, 아침 뉴스 브리핑과 유튜브 영상을 한 화면에서 봅니다. 로그인 없이 열립니다.">
 <meta property="og:title" content="AI 레이더">
 <meta property="og:description" content="AI 공모전·영화제·지원사업·뉴스를 한 화면에서. 마감이 가까운 순으로.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AI 레이더">
+<meta property="og:url" content="https://kjyart-star.github.io/ai-radar/">
 <meta name="twitter:card" content="summary_large_image">
+<!-- og:image 는 아직 없습니다. 1200x630 대표 이미지가 준비되면 여기에 추가합니다.
+     이미지가 없는 동안 twitter:card 는 큰 그림 없이 제목·설명만 보여줍니다. -->
+<!-- <meta property="og:image" content="…"> -->
 <link rel="icon" type="image/svg+xml" sizes="any" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2048%2048'%3E%3Crect%20width='48'%20height='48'%20fill='%2307110d'/%3E%3Ccircle%20cx='24'%20cy='24'%20r='17'%20fill='none'%20stroke='%23b6ff3f'%20stroke-width='2.4'%20opacity='.55'/%3E%3Ccircle%20cx='24'%20cy='24'%20r='9'%20fill='none'%20stroke='%23b6ff3f'%20stroke-width='2.4'%20opacity='.85'/%3E%3Cpath%20d='M24%2024%20L40%2015'%20stroke='%23b6ff3f'%20stroke-width='3'%20stroke-linecap='round'/%3E%3Ccircle%20cx='33'%20cy='15'%20r='4'%20fill='%23b6ff3f'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<!-- 게시판을 열 때만 여기서 firebase SDK 를 내려받는다. 연결만 미리 열어 둔다 -->
+<link rel="preconnect" href="https://www.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css">
 <style>
@@ -333,6 +341,96 @@
   .footer-meta button{ color:var(--lime); font-size:11px; font-weight:800;
                        letter-spacing:.1em; text-transform:uppercase; }
 
+  /* ---------- 목록 → 게시판 건너가는 버튼 ---------- */
+  /* .row 는 통째로 <a> 다. 그 안에 <button> 을 넣으면 링크 안의 버튼이 되어
+     브라우저마다 다르게 동작한다 — 형제로 두고 테두리만 감싼 쪽에 넘긴다. */
+  .row-wrap{ border-bottom:1px solid var(--line-light); }
+  .dark .row-wrap{ border-bottom-color:var(--line-dark); }
+  .row-wrap > .row{ border-bottom:0; padding-bottom:8px; }
+  .row-talk{ display:block; margin:0 16px 16px auto; border:1px solid var(--line-light);
+             border-radius:999px; padding:6px 12px; font-size:10px; font-weight:800;
+             letter-spacing:.08em; text-transform:uppercase; color:var(--muted-light); }
+  .row-talk:hover{ background:var(--ink); color:var(--paper); border-color:var(--ink); }
+  .dark .row-talk{ border-color:var(--line-dark); color:var(--muted-dark); }
+  .dark .row-talk:hover{ background:var(--lime); color:var(--ink); border-color:var(--lime); }
+
+  /* ---------- board — 스레드형 피드 ---------- */
+  /* 새 디자인 언어를 만들지 않는다. 카드는 .row 와 같은 1px 선 문법을 쓰고 색은
+     기존 토큰만 쓴다. 여기 새로 생긴 건 목록에 없던 것(입력창·아바타·액션)뿐이다.
+     한 줄로 읽히게 폭을 720px 로 묶는다 — 피드는 표가 아니라 대화다. */
+  .bd-wrap{ max-width:720px; }
+  .bd-back{ display:inline-block; margin-bottom:20px; font-family:var(--display); font-size:11px;
+            font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+            color:var(--muted-light); }
+  .bd-brief{ border:1px solid var(--line-light); padding:20px; margin-bottom:24px; }
+  .bd-brief h3{ margin:0 0 12px; font-size:19px; font-weight:800; letter-spacing:-.02em;
+                line-height:1.35; word-break:keep-all; }
+  .bd-brief ul{ margin:0 0 18px; padding-left:17px; color:var(--muted-light);
+                font-size:13.5px; line-height:1.7; word-break:keep-all; }
+  .bd-brief li{ margin-bottom:6px; }
+  .bd-composer{ border:1px solid var(--line-light); padding:15px 16px; margin-bottom:6px; }
+  .bd-in{ width:100%; padding:10px 12px; border:1px solid var(--line-light);
+          background:transparent; font-size:15px; line-height:1.6; }
+  /* 한 줄로 시작해 입력한 만큼만 늘어난다(스크립트가 scrollHeight 로 잰다).
+     처음부터 큰 상자를 세워 두면 "길게 써야 하나" 싶어져서 아무도 안 쓴다. */
+  .bd-grow{ min-height:44px; max-height:420px; border:0; padding:6px 0; resize:none;
+            overflow-y:auto; }
+  .bd-taglane{ display:flex; flex-wrap:wrap; gap:7px; align-items:center; margin-top:12px; }
+  .bd-newtagbox{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+  .bd-newtagbox[hidden]{ display:none; }
+  .bd-newtagbox .bd-in{ flex:1 1 180px; width:auto; font-size:13px; }
+  .bd-cfoot{ display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:13px;
+             padding-top:12px; border-top:1px solid var(--line-light); }
+  .bd-cfoot .btn{ margin-left:auto; }
+  .bd-hint,.bd-count{ font-size:12px; color:var(--muted-light); }
+  .bd-me{ display:flex; align-items:center; gap:8px; min-width:0; font-size:13px; font-weight:700; }
+  .bd-ava{ width:30px; height:30px; border-radius:50%; object-fit:cover; flex:none;
+           background:var(--paper-2); }
+  .bd-ava-x{ display:block; background:var(--ink); }
+  .bd-name{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+            max-width:min(42vw,220px); }
+  .bd-card{ border-bottom:1px solid var(--line-light); padding:19px 0; }
+  /* 답글 들여쓰기는 2단계까지만이다. 더 깊어지면 375px 에서 본문 자리가 사라진다 */
+  .bd-card.d1{ padding-left:19px; border-left:1px solid var(--line-light); }
+  .bd-card.d2{ padding-left:38px; border-left:1px solid var(--line-light); }
+  .bd-head{ display:flex; align-items:center; gap:9px; min-width:0; margin-bottom:10px; }
+  .bd-time{ font-size:11.5px; color:var(--muted-light); white-space:nowrap; }
+  .bd-ref{ display:flex; flex-wrap:wrap; align-items:baseline; gap:8px; margin:0 0 11px;
+           border-left:2px solid var(--coral); padding:5px 0 5px 11px; font-size:13px;
+           line-height:1.55; word-break:keep-all; overflow-wrap:anywhere; }
+  .bd-ref-k{ font-size:10px; font-weight:800; letter-spacing:.1em; text-transform:uppercase;
+             color:var(--coral); }
+  .bd-ref a{ text-decoration:underline; text-underline-offset:3px; }
+  /* 본문은 사용자가 쓴 값이라 길이를 예측할 수 없다 — 375px 에서 가로 스크롤이
+     생기지 않게 anywhere 로 끊는다 */
+  .bd-text{ font-size:15px; line-height:1.75; word-break:keep-all; overflow-wrap:anywhere; }
+  .bd-text.fold{ display:-webkit-box; -webkit-line-clamp:6; -webkit-box-orient:vertical;
+                 overflow:hidden; }
+  .bd-unfold{ margin-top:8px; font-size:12px; font-weight:800; color:var(--muted-light);
+              text-decoration:underline; text-underline-offset:3px; }
+  .bd-tags{ display:flex; flex-wrap:wrap; gap:6px; margin-top:11px; }
+  .bd-acts{ display:flex; flex-wrap:wrap; align-items:center; gap:14px; margin-top:13px; }
+  .bd-act{ font-size:12px; font-weight:700; color:var(--muted-light); white-space:nowrap; }
+  .bd-act:hover{ color:var(--ink); }
+  .bd-act.on{ color:var(--coral); }
+  .bd-act b{ font-weight:800; }
+  .bd-lead{ margin:22px 0 2px; font-family:var(--display); font-size:11px; font-weight:800;
+            letter-spacing:.14em; text-transform:uppercase; color:var(--muted-light); }
+  .bd-empty{ padding:44px 12px; text-align:center; color:var(--muted-light); font-size:14px; }
+  .bd-empty p{ margin:0 0 16px; word-break:keep-all; }
+  .bd-msg{ margin:10px 0 0; font-size:12.5px; line-height:1.6; color:var(--coral);
+           word-break:keep-all; }
+  .bd-msg:empty{ margin:0; }
+  .bd-more{ display:flex; justify-content:center; padding:22px 0; }
+  .bd-loading{ font-size:12px; color:var(--muted-light); }
+  .bd-sentinel{ display:block; width:1px; height:1px; }
+  .bd-edit{ margin-top:12px; }
+  .bd-editacts{ display:flex; flex-wrap:wrap; gap:9px; margin-top:10px; }
+  .bd-toast{ position:fixed; left:50%; bottom:26px; translate:-50% 0; z-index:120;
+             padding:11px 18px; background:var(--ink); color:var(--paper); font-size:13px;
+             font-weight:700; opacity:0; pointer-events:none; transition:opacity .2s ease; }
+  .bd-toast.on{ opacity:1; }
+
   /* ---------- motion ---------- */
   .reveal{ opacity:0; transform:translateY(24px);
            transition:opacity .7s ease, transform .7s ease; }
@@ -362,9 +460,11 @@
                 row-gap:7px; column-gap:13px; font-size:10px; letter-spacing:.085em;
                 overflow:hidden;
                 border-top:1px solid var(--line-dark); margin:0 -18px; padding:0 14px; }
-    /* 자연스럽게 흘리면 5 + 1 로 끊겨 마지막 메뉴가 딸려 나온 것처럼 보인다.
-       3 + 3 으로 고정해 두 줄이 같은 무게가 되게 한다. */
-    .nav-links a{ padding:3px 0; flex:0 0 calc(33.333% - 9px); }
+    /* 자연스럽게 흘리면 마지막 메뉴가 딸려 나온 것처럼 보인다. 한 줄 개수를 고정한다.
+       메뉴가 일곱이 되면서 3개씩(3+3+1)은 세 줄이 되어 72px 를 2px 넘겼고,
+       하필 잘리는 자리가 현재 메뉴를 알려 주는 라임 밑줄이었다. 4개씩으로 바꿔
+       4 + 3 두 줄로 되돌린다 — 높이(--navh)는 그대로 두어 히어로가 밀리지 않는다. */
+    .nav-links a{ padding:3px 0; flex:0 0 calc(25% - 10px); }
   }
   @media (max-width:680px){
     .hero{ min-height:0; }
@@ -386,6 +486,12 @@
     .item-card:not(.photo):not(.yt){ grid-template-columns:38px 1fr; gap:11px; }
     .item-card:not(.photo):not(.yt) img{ width:38px; height:38px; aspect-ratio:auto; }
     .arch{ grid-template-columns:1fr; }
+    .row-talk{ margin:0 0 14px auto; }
+    .bd-card.d1{ padding-left:13px; }
+    .bd-card.d2{ padding-left:26px; }
+    .bd-acts{ gap:12px; }
+    .bd-composer{ padding:13px; }
+    .bd-brief{ padding:16px; }
     .footer-inner{ display:block; }
     .footer-meta{ text-align:left; margin-top:22px; }
   }
@@ -442,6 +548,47 @@
 (function(){
 "use strict";
 
+/* ============ 주소 체계 ============
+   메뉴 다섯은 예전부터 해시(#contests)로 다녔고 그 링크가 이미 밖에 나가 있다.
+   게시판만 실제 경로(/board/{slug})를 쓴다 — 나중에 글마다 정적 페이지를 만들 때
+   주소가 그대로여야 이미 공유된 링크가 살아남는다.
+   그래서 라우터는 두 방식을 함께 본다: 경로가 board 면 게시판, 아니면 기존 해시 그대로.
+
+   GitHub Pages 프로젝트 페이지라 실제 베이스는 "/ai-radar/" 이고 로컬은 "/" 다.
+   하드코딩하면 한쪽이 반드시 깨지므로 실행 중에 구한다. */
+
+/* GitHub Pages 는 /board/{slug} 에 해당하는 파일이 없으면 404.html 을 준다.
+   404.html 이 원래 주소를 sessionStorage 에 담아 사이트 루트로 보내고, 여기서 되돌린다.
+   BASE 를 계산하기 전에 되돌려야 한다 — 순서가 바뀌면 베이스가 루트로 잡힌다. */
+(function restorePath(){
+  try {
+    var p = sessionStorage.getItem("airadar_path");
+    if (!p) return;
+    sessionStorage.removeItem("airadar_path");
+    /* 저장된 값을 그대로 믿지 않는다. 같은 출처의 절대 경로만 통과시킨다 */
+    if (p.charAt(0) === "/" && p.charAt(1) !== "/") history.replaceState(null, "", p);
+  } catch(e){}
+})();
+
+var BASE = (function(){
+  var p = location.pathname;
+  var m = p.match(/^(.*\/)board(?:\/|$)/);
+  if (m) return m[1];
+  return p.replace(/[^\/]*$/, "");
+})();
+
+/* 지금 주소가 게시판이면 슬러그("" = 피드)를, 아니면 null 을 준다 */
+function boardPath(){
+  var p = location.pathname;
+  if (p === BASE + "board" || p === BASE + "board/") return "";
+  if (p.indexOf(BASE + "board/") === 0){
+    var rest = p.slice((BASE + "board/").length).replace(/\/+$/, "");
+    try { return decodeURIComponent(rest); } catch(e){ return rest; }
+  }
+  return null;
+}
+function boardUrl(slug){ return BASE + "board/" + (slug ? encodeURIComponent(slug) : ""); }
+
 /* ============ 공개 API (키 불필요·읽기 전용) ============
    ⚠️ 2026-08-12: 옛 주소가 404 로 죽어 다섯 메뉴가 전부 "데이터를 불러오지 못했습니다" 였다.
    관리시스템 웹앱에 **새 배포**를 만들면 URL 이 바뀌는데, 이 파일은 그걸 모른 채 옛 주소를
@@ -449,6 +596,22 @@
    주소를 바꿀 일이 생기면 반드시 살아 있는지 먼저 확인한다:
      curl -sL "<주소>?action=pub" | head -c 80     → {"generated": … 가 나와야 한다 */
 var API = "https://script.google.com/macros/s/AKfycbxqPn36E8gpmKp3RzUR60XTaNL7G4wY_-xyUMXszOUUj8mQh3OoSOcWCzFZ-rkxdHU5/exec";
+
+/* ============ 자유게시판 Firebase 설정 ============
+   Firebase 콘솔 > 프로젝트 설정 > 웹앱에서 복사한 값을 아래에 붙여넣습니다.
+   ⚠️ 이 값들은 공개되어도 되는 값입니다 — 비밀키가 아니라 프로젝트 주소에 가깝고,
+   실제 보안은 Firestore 보안 규칙(firestore.rules)이 담당합니다. 공개 저장소에 있어도 정상입니다.
+   ⚠️ 관리시스템과 다른 **AI 레이더 전용 프로젝트**를 써야 합니다.
+   비어 있으면 게시판은 "준비 중" 안내만 나오고, 나머지 메뉴는 아무 영향 없이 동작합니다. */
+var FB_CONFIG = {
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: ""
+};
+function fbReady(){ return !!(FB_CONFIG.apiKey && FB_CONFIG.projectId); }
 
 /* ============ 자기 저장소 JSON (같은 출처 — CORS 없음) ============
    Google News·TechCrunch·Reddit·Devpost·힉스필드는 CORS 헤더를 주지 않아 브라우저에서
@@ -718,7 +881,10 @@ var MENU = [
   ["festivals","AI영화제","FESTIVALS"],
   ["gov","AI지원사업","FUNDING"],
   ["youtube","AI유튜브정보","WATCH"],
-  ["aivideo","AI작품소개","SHOWCASE"]
+  ["aivideo","AI작품소개","SHOWCASE"],
+  /* 일곱 번째. 앞의 여섯은 우리가 모아다 보여주는 곳이고 여기만 사람이 쓴다 —
+     성격이 달라 맨 끝에 둔다. 모바일에서는 세 줄로 접힌다(아래 @media 760px). */
+  ["board","자유게시판","BOARD"]
 ];
 var TITLES = {};
 MENU.forEach(function(it){ TITLES[it[0]] = it[1]; });
@@ -730,15 +896,23 @@ var DEFAULT_ROUTE = "newsrep";
    에디토리얼 스크롤 서사는 "빨리 찾아야 하는 정보"에서는 스크롤 감옥이 된다.
    대신 다섯 화면 각각이 히어로 → 페이퍼 → 다크 → 페이퍼 리듬을 그대로 갖는다.
    데이터는 메모리에 캐시되므로 메뉴 이동은 네트워크 없이 즉시 끝난다. */
-function curRoute(){ var h = location.hash.replace(/^#/,"").split("/")[0]; return TITLES[h] ? h : DEFAULT_ROUTE; }
-
+function curRoute(){
+  if (boardPath() !== null) return "board";   /* 게시판만 경로로 다닌다 */
+  var h = location.hash.replace(/^#/,"").split("/")[0]; return TITLES[h] ? h : DEFAULT_ROUTE;
+}
+/* 메뉴 주소는 항상 베이스 기준 절대 주소로 적는다. 게시판(/board/xxx)에 있을 때
+   "#contests" 만 쓰면 경로가 남아 /board/xxx#contests 가 되어 주소가 어긋난다.
+   실제 이동은 아래 링크 가로채기가 새로고침 없이 처리한다. */
+function menuHref(route){ return route==="board" ? boardUrl("") : BASE + "#" + route; }
 function buildNav(){
   var cur = curRoute();
   document.getElementById("navLinks").innerHTML = MENU.map(function(it){
     /* it[1] = 한글 라벨. it[2](영문)는 히어로 제목 전용이다 */
-    return "<a class='"+(it[0]===cur?"on":"")+"' href='#"+it[0]+"'"+
+    return "<a class='"+(it[0]===cur?"on":"")+"' href='"+esc(menuHref(it[0]))+"'"+
       (it[0]===cur?" aria-current='page'":"")+">"+esc(it[1])+"</a>";
   }).join("");
+  var brand = document.querySelector(".brand");
+  if (brand) brand.setAttribute("href", menuHref(DEFAULT_ROUTE));
 }
 
 /* ============ 히어로 ============ */
@@ -757,7 +931,9 @@ var HERO = {
   youtube:{ latin:"WATCH", ko:"AI 유튜브",
     copy:"AI 소식과 바이브코딩 영상을 한자리에 모았습니다. 오늘 것이 위에, 지난 날짜는 아래에서 보실 수 있습니다." },
   aivideo:{ latin:"SHOWCASE", ko:"AI 작품소개",
-    copy:"AI로 만든 영상 작품을 모았습니다. 단편영화·뮤직비디오·애니메이션을 골라 담았습니다." }
+    copy:"AI로 만든 영상 작품을 모았습니다. 단편영화·뮤직비디오·애니메이션을 골라 담았습니다." },
+  board:{ latin:"BOARD", ko:"자유게시판",
+    copy:"AI를 쓰면서 알게 된 것을 짧게 남기고 이어 가는 곳입니다. 읽는 건 누구나, 남기는 건 로그인 후에 하실 수 있습니다." }
 };
 function drawHero(route){
   var h = HERO[route] || HERO[DEFAULT_ROUTE];
@@ -808,8 +984,16 @@ function row(o){
     (o.meta && o.meta.length ? "<div class='r-meta'>"+o.meta.filter(Boolean).join("<i>·</i>")+"</div>" : "")+
     (o.sum ? "<div class='r-sum'>"+esc(o.sum)+"</div>" : "")+"</div>";
   var url = ctSafeUrl(o.url);
-  if (url) return "<a class='row' href='"+esc(url)+"' target='_blank' rel='noopener noreferrer'>"+inner+"</a>";
-  return "<div class='row'>"+inner+"</div>";
+  var el = url ? "<a class='row' href='"+esc(url)+"' target='_blank' rel='noopener noreferrer'>"+inner+"</a>"
+               : "<div class='row'>"+inner+"</div>";
+  /* o.talk 가 있으면 게시판으로 건너가는 버튼을 붙인다. 목록에서 본 것을 두고
+     바로 이야기할 자리가 없으면, 게시판은 늘 빈 채로 남는다.
+     버튼을 <a class='row'> 안에 넣지 않는 이유는 CSS 주석(.row-wrap)에 적어 뒀다. */
+  if (!o.talk) return el;
+  return "<div class='row-wrap'>"+el+
+    "<button type='button' class='row-talk' data-talk='"+esc(o.talk.type||"")+"'"+
+    " data-talk-title='"+esc(o.talk.title||"")+"'"+
+    " data-talk-url='"+esc(ctSafeUrl(o.talk.url||""))+"'>이야기하기</button></div>";
 }
 function emptyNote(msg){ return "<p class='note'>"+esc(msg)+"</p>"; }
 function failBox(msg, extra){
@@ -1182,7 +1366,8 @@ function festRow(f, today){
   if (isD) meta.push("마감 "+esc(f.deadline));
   if (f.event && f.event!=="미정") meta.push("개최 "+esc(f.event));
   return row({ dd:di.txt, ddCls:di.cls, title:f.name||"(이름 없음)", tags:[f.region],
-               meta:meta, sum:f.note, url:f.url });
+               meta:meta, sum:f.note, url:f.url,
+               talk:{ type:"영화제", title:f.name, url:f.url } });
 }
 function renderFestivals(){
   var served = state.data && state.data.festivals && state.data.festivals.length;
@@ -1326,7 +1511,8 @@ function hfSection(){
       var tag = open ? "접수 중" : (/winners?/i.test(it.status||"") ? "발표 완료" :
                 /announced$/i.test(it.status||"") ? "예고" : "");
       return row({ dd: short || "—", ddCls: open ? "soon" : (short ? "far" : "tbd"),
-                   title: it.title, tags:[tag], meta:meta, sum:it.desc, url:it.url });
+                   title: it.title, tags:[tag], meta:meta, sum:it.desc, url:it.url,
+                   talk:{ type:"공모전", title:it.title, url:it.url } });
     }).join("");
     return "<section class='section dark'><div class='inner'>"+
       sectionHead("Higgsfield","상금이 가장 큰<br>AI 영상 공모전.",
@@ -1361,7 +1547,8 @@ function dpRow(it, today){
   if (it.location) meta.push(esc(it.location));
   if (it.registrations) meta.push(nfmt(it.registrations)+"명 등록");
   return row({ dd:di.txt, ddCls:di.cls, title:it.title||"(제목 없음)",
-               tags:(it.themes||[]).slice(0,2), meta:meta, url:it.url });
+               tags:(it.themes||[]).slice(0,2), meta:meta, url:it.url,
+               talk:{ type:"공모전", title:it.title, url:it.url } });
 }
 function dpSection(){
   return loadFeed("devpost").then(function(j){
@@ -1463,7 +1650,8 @@ function renderContests(){
        국내·해외 탭에서는 이미 아는 사실이므로 원래대로 나라 이름을 보여준다. */
     return row({ dd:di.txt, ddCls:di.cls, title:it.title||"(제목 없음)",
                  tags:[it.category, contestTab==="all" ? it._region : it.country],
-                 meta:meta, sum:it.summary, url:it.url });
+                 meta:meta, sum:it.summary, url:it.url,
+                 talk:{ type:"공모전", title:it.title, url:it.url } });
   }
   function drawBody(){
     if (!curData) return;
@@ -1654,7 +1842,8 @@ function renderGov(){
     meta.push("접수 "+esc(it.bgng||"미정")+" ~ "+esc(it.end||"미정"));
     return row({ dd:di.txt, ddCls:di.cls, title:it.nm||"(공고명 없음)",
                  tags:[it.cls, it.regin], meta:meta,
-                 sum:it.trgt ? "대상 " + String(it.trgt).slice(0,120) : "", url:it.url });
+                 sum:it.trgt ? "대상 " + String(it.trgt).slice(0,120) : "", url:it.url,
+                 talk:{ type:"지원사업", title:it.nm, url:it.url } });
   }
   function drawBody(){
     if (!cur || !cur.ok) return;
@@ -1818,10 +2007,851 @@ function renderAiVideo(){
   });
 }
 
+/* ============================================================================
+   자유게시판 — 스레드형 피드
+   제목 없이 본문 한 덩어리로 올리고, 답글이 같은 컬렉션에 parentId 로 붙는다.
+   읽기는 누구나, 쓰기만 로그인이다 — 공유 링크로 들어온 사람이 로그인 벽을 먼저
+   만나면 그 링크는 아무도 안 누른 것과 같다.
+
+   ⚠️ 여기 있는 길이·개수 검증은 사람이 실수를 덜 하게 하는 것뿐이다.
+   실제로 막는 것은 firestore.rules 다. 아래 상수는 그 파일과 같은 값이어야 한다 —
+   어긋나면 화면에서는 통과한 글이 서버에서 조용히 거부된다.
+   ============================================================================ */
+var BD_TAGS = ["생성형AI","바이브코딩","AI정보"];   /* Firestore 가 비어도 늘 보이는 기본 태그 */
+var BD_PAGE = 20;
+var BD_BODY_MAX = 2000;    /* rules: body.size() <= 2000 */
+var BD_TAG_MAX = 3;        /* rules: tags.size() <= 3 */
+var BD_FOLD = 300;         /* 이 길이를 넘으면 카드에서 접는다 */
+
+var FB_SDK = [
+  "https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js",
+  "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js",
+  "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"
+];
+var fbAuth = null, fbDb = null, fbPromise = null, fbScripts = {};
+var bdUser = null;
+var bdTagsDb = [], bdTag = "전체";
+var bdFeed = [], bdCursor = null, bdMore = false, bdBusy = false;
+var bdLiked = {};                       /* 내가 하트를 누른 글 (likes 문서로 확인한 값) */
+var bdDraft = { body:"", tags:[] };     /* 로그인하러 다녀와도 쓰던 글이 남아 있어야 한다 */
+var bdRef = null;                       /* 다른 화면의 "이야기하기"가 넘겨준 인용 대상 */
+var bdReplyTo = null;
+var bdRedrawComposer = null;
+var bdBodyCache = {}, bdTagCache = {};  /* 카드에서 수정창을 열 때 원문을 되살리기 위한 값 */
+
+/* ---- SDK 지연 로딩 ----
+   <head> 에 정적으로 넣지 않는다. gstatic 이 느리거나 막히면 사이트 전체가 같이 죽는데,
+   게시판 하나 때문에 나머지 여섯 메뉴가 안 뜨는 건 말이 안 된다.
+   게시판을 처음 열 때만 세 파일을 순서대로 받고, 15초 안에 못 받으면 게시판만 포기한다. */
+function bdLoadScript(src){
+  if (fbScripts[src]) return fbScripts[src];
+  fbScripts[src] = new Promise(function(res, rej){
+    var s = document.createElement("script");
+    s.src = src;
+    s.async = false;
+    s.onload = function(){ res(true); };
+    s.onerror = function(){ rej(new Error("SDK 를 내려받지 못했습니다: " + src)); };
+    document.head.appendChild(s);
+  });
+  return fbScripts[src];
+}
+function fbInit(){
+  if (fbPromise) return fbPromise;
+  fbPromise = new Promise(function(res, rej){
+    var settled = false;
+    var timer = setTimeout(function(){
+      if (settled) return;
+      settled = true; rej(new Error("시간이 초과되었습니다"));
+    }, 15000);
+    var chain = Promise.resolve();
+    FB_SDK.forEach(function(src){ chain = chain.then(function(){ return bdLoadScript(src); }); });
+    chain.then(function(){
+      if (settled) return;
+      settled = true; clearTimeout(timer);
+      try {
+        if (!firebase.apps.length) firebase.initializeApp(FB_CONFIG);
+        fbAuth = firebase.auth();
+        fbDb = firebase.firestore();
+        fbAuth.onAuthStateChanged(function(u){
+          bdUser = u || null;
+          bdLiked = {};
+          if (curRoute()==="board") renderBoard();   /* 게시판 화면만 다시 그린다 */
+        });
+        res(true);
+      } catch(e){ rej(e); }
+    }, function(e){
+      if (settled) return;
+      settled = true; clearTimeout(timer); rej(e);
+    });
+  });
+  /* 실패한 약속을 캐시에 남기면 "다시 시도"가 영영 같은 실패를 되돌려준다 */
+  fbPromise["catch"](function(){ fbPromise = null; fbScripts = {}; });
+  return fbPromise;
+}
+
+/* ---- 공용 조각 ---- */
+function bdAlive(el){ return curRoute()==="board" && C.contains(el); }
+function bdReset(){ bdFeed = []; bdCursor = null; bdMore = false; }
+function bdText(s){ return esc(String(s==null?"":s)).replace(/\r?\n/g, "<br>"); }
+function bdMs(ts){ return (ts && ts.toDate) ? ts.toDate().getTime() : NaN; }
+/* serverTimestamp 는 쓰기 직후 잠깐 비어 있다 — 그때는 "방금"이 사실에 가깝다 */
+function bdWhen(ts){
+  var t = bdMs(ts);
+  if (isNaN(t)) return "방금";
+  var m = Math.floor((Date.now()-t)/60000);
+  if (m < 1) return "방금";
+  if (m < 60) return m+"분 전";
+  var h = Math.floor(m/60);
+  if (h < 24) return h+"시간 전";
+  var d = Math.floor(h/24);
+  if (d === 1) return "어제";
+  if (d <= 7) return d+"일 전";
+  return ymdKST(new Date(t).toISOString());
+}
+function bdExcerpt(body){
+  var s = String(body||"").replace(/\s+/g," ").trim();
+  return s.length > 160 ? s.slice(0,160) : s;
+}
+/* ---- 슬러그 ----
+   한 번 만들면 바뀌지 않는다. 글을 고쳐도 그대로다 — 주소가 바뀌면 이미 공유된
+   링크가 전부 죽는다. 원글은 이 값을 Firestore 문서 ID 로 그대로 쓴다.
+   그래야 주소만으로 doc(slug).get() 이라 조회 색인도 필요 없다. */
+function bdSlugify(body){
+  var s = String(body||"")
+    .replace(/https?:\/\/\S+/g, " ")
+    .replace(/[^0-9A-Za-z가-힣ㄱ-ㅎㅏ-ㅣ\s-]/g, " ")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .toLowerCase();
+  if (s.length > 48) s = s.slice(0,48).replace(/-+$/,"");
+  return s;
+}
+function bdRandHex(){
+  var c = "0123456789abcdef", s = "";
+  for (var i=0;i<4;i++) s += c.charAt(Math.floor(Math.random()*16));
+  return s;
+}
+function bdMakeSlug(body){
+  var base = bdSlugify(body);
+  /* 문서 ID 로 못 쓰는 이름들. 위 필터가 대부분 걸러내지만 한 겹 더 둔다 */
+  if (!base || base === "." || base === ".." || /^__.*__$/.test(base)) base = "post";
+  return base + "-" + bdRandHex();
+}
+/* set() 은 같은 ID 가 있으면 덮어쓴다. 같은 사람이 같은 슬러그를 두 번 만들면
+   규칙상 update 로 허용되어 먼저 쓴 글이 조용히 사라진다 — 쓰기 전에 반드시 확인한다. */
+function bdClaimSlug(body, tries){
+  var slug = bdMakeSlug(body);
+  return fbDb.collection("posts").doc(slug).get().then(function(d){
+    if (!d.exists) return slug;
+    if (tries <= 1) return null;
+    return bdClaimSlug(body, tries-1);
+  });
+}
+
+/* ---- 태그 ---- */
+function bdTagList(){
+  var out = [], seen = {};
+  BD_TAGS.concat(bdTagsDb).forEach(function(t){
+    t = String(t||"").trim();
+    if (t && !seen[t]){ seen[t]=1; out.push(t); }
+  });
+  return out;
+}
+function bdFetchTags(){
+  if (!fbDb) return Promise.resolve([]);
+  return fbDb.collection("tags").get().then(function(sn){
+    var out = [];
+    sn.forEach(function(d){ var n = (d.data()||{}).name || d.id; if (n) out.push(String(n)); });
+    bdTagsDb = out;
+    return out;
+  }, function(){ return []; });
+}
+function bdTagError(n){
+  n = String(n||"").trim();
+  if (n.length < 1 || n.length > 20) return "태그 이름은 1자 이상 20자 이하입니다.";
+  if (n.indexOf("/") >= 0) return "태그 이름에 / 는 넣을 수 없습니다.";
+  if (n === "." || n === "..") return "쓸 수 없는 이름입니다.";
+  if (/^__.*__$/.test(n)) return "쓸 수 없는 이름입니다.";
+  if (bdTagList().indexOf(n) >= 0) return "이미 있는 태그입니다.";
+  return "";
+}
+/* 칩을 눌러 고르는 태그 목록. sel 배열을 제자리에서 고치고 다시 그리는 함수를 돌려준다 */
+function bdTagPicker(host, sel){
+  function draw(){
+    host.innerHTML = bdTagList().map(function(t){
+      var on = sel.indexOf(t) >= 0;
+      return "<button type='button' class='chip"+(on?" on":"")+"' data-tpick='"+esc(t)+"'"+
+        " aria-pressed='"+on+"'>"+esc(t)+"</button>";
+    }).join("");
+    host.querySelectorAll("[data-tpick]").forEach(function(b){
+      b.onclick = function(){
+        var t = b.getAttribute("data-tpick"), i = sel.indexOf(t);
+        if (i >= 0) sel.splice(i,1);
+        else {
+          if (sel.length >= BD_TAG_MAX){ bdToast("태그는 "+BD_TAG_MAX+"개까지 고를 수 있습니다."); return; }
+          sel.push(t);
+        }
+        draw();
+      };
+    });
+  }
+  draw();
+  return draw;
+}
+
+/* ---- 오류 안내 ----
+   Firestore 는 복합 색인이 없으면 failed-precondition 을 주고, 그 메시지 안에
+   "색인 만들기" 링크를 넣어 준다. 그 링크를 삼키면 대표가 누를 것이 없어진다 —
+   화면에는 짧게 안내하고 원본은 콘솔에 그대로 남긴다. */
+function bdIsIndexErr(e){
+  var c = (e && e.code) ? String(e.code) : "";
+  var m = (e && e.message) ? String(e.message) : String(e||"");
+  return c === "failed-precondition" || /index/i.test(m);
+}
+function bdQueryFail(host, e, retry){
+  if (window.console && console.error) console.error("[자유게시판]", e);
+  if (bdIsIndexErr(e)){
+    host.innerHTML = emptyNote("게시판 준비를 마무리하는 중입니다. 잠시 후 다시 열어 주세요.");
+    return;
+  }
+  host.innerHTML = "<div class='fail'><h3>글을 불러오지 못했습니다</h3>"+
+    "<p>네트워크 상태를 확인한 뒤 다시 시도해 주세요.</p>"+
+    "<button type='button' class='btn' data-bdretry>다시 시도</button></div>";
+  var b = host.querySelector("[data-bdretry]");
+  if (b && retry) b.onclick = retry;
+}
+
+/* ---- 토스트 · 공유 ---- */
+function bdToast(msg){
+  var el = document.getElementById("bdToast");
+  if (!el){
+    el = document.createElement("div");
+    el.id = "bdToast";
+    el.className = "bd-toast";
+    el.setAttribute("role","status");
+    document.body.appendChild(el);
+  }
+  el.textContent = msg;
+  el.classList.add("on");
+  clearTimeout(el.hideTimer);
+  el.hideTimer = setTimeout(function(){ el.classList.remove("on"); }, 1800);
+}
+function bdCanShare(){
+  return !!(navigator.share || (navigator.clipboard && navigator.clipboard.writeText));
+}
+function bdShare(slug, text){
+  var url = location.origin + boardUrl(slug);
+  if (navigator.share){
+    try {
+      navigator.share({ title:"AI 레이더 자유게시판", text:String(text||"").slice(0,80), url:url })
+        ["catch"](function(){});
+      return;
+    } catch(e){}
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(url).then(function(){ bdToast("복사했습니다"); }, function(){});
+  }
+}
+
+/* ---- 로그인 ---- */
+function bdLogin(){
+  if (!fbReady()) return;
+  fbInit().then(function(){
+    try {
+      /* 팝업 차단·취소는 누른 사람이 이미 아는 일이라 화면을 어지럽히지 않는다 */
+      fbAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider())["catch"](function(){});
+    } catch(e){}
+  }, function(){});
+}
+function bdLogout(){
+  if (!fbAuth) return;
+  try { fbAuth.signOut()["catch"](function(){}); } catch(e){}
+}
+
+/* ---- 카드 ----
+   피드와 스레드가 같은 카드를 쓴다. 같은 글이 자리마다 달라 보이면 어디서 본
+   글인지 매번 다시 읽게 된다. opt.depth 는 답글 들여쓰기(0·1·2)다. */
+function bdCard(p, opt){
+  opt = opt || {};
+  var body = String(p.body||"");
+  bdBodyCache[p.id] = body;
+  bdTagCache[p.id] = (p.tags||[]).slice();
+  var folded = !opt.full && (body.length > BD_FOLD || body.split(/\r?\n/).length > 6);
+  var ph = ctSafeUrl(p.photo||"");
+  var mine = !!(bdUser && p.uid && p.uid === bdUser.uid);
+  var refUrl = (p.ref && p.ref.url) ? ctSafeUrl(p.ref.url) : "";
+  var root = p.rootId || p.id;
+  var h = "<article class='bd-card"+(opt.depth?" d"+Math.min(opt.depth,2):"")+
+          "' data-post='"+esc(p.id)+"'>";
+  h += "<div class='bd-head'>"+
+       (ph ? "<img class='bd-ava' src='"+esc(ph)+"' alt='' loading='lazy' referrerpolicy='no-referrer'>"
+           : "<span class='bd-ava bd-ava-x' aria-hidden='true'></span>")+
+       "<b class='bd-name'>"+esc(p.author||"익명")+"</b>"+
+       "<span class='bd-time'>"+esc(bdWhen(p.createdAt))+"</span></div>";
+  if (p.ref && (p.ref.title || refUrl)){
+    h += "<div class='bd-ref'><span class='bd-ref-k'>"+esc(p.ref.type||"링크")+"</span>"+
+      (refUrl
+        ? "<a href='"+esc(refUrl)+"' target='_blank' rel='noopener noreferrer nofollow'>"+
+          esc(p.ref.title||refUrl)+"</a>"
+        : "<span>"+esc(p.ref.title||"")+"</span>")+"</div>";
+  }
+  h += "<div class='bd-text"+(folded?" fold":"")+"' data-text>"+bdText(body)+"</div>";
+  if (folded) h += "<button type='button' class='bd-unfold' data-unfold>더 보기</button>";
+  if ((p.tags||[]).length){
+    h += "<div class='bd-tags'>"+(p.tags||[]).map(function(t){
+      return "<span class='tag'>"+esc(t)+"</span>"; }).join("")+"</div>";
+  }
+  h += "<div class='bd-acts'>";
+  h += opt.thread
+    ? "<span class='bd-act'>답글 <b class='tnum'>"+nfmt(p.replyCount||0)+"</b></span>"
+    : "<a class='bd-act' href='"+esc(boardUrl(root))+"'>답글 <b class='tnum'>"+nfmt(p.replyCount||0)+"</b></a>";
+  h += "<button type='button' class='bd-act"+(bdLiked[p.id]?" on":"")+"' data-like='"+esc(p.id)+"'"+
+       " aria-pressed='"+(!!bdLiked[p.id])+"'>♥ <b class='tnum'>"+nfmt(p.likeCount||0)+"</b></button>";
+  if (opt.thread) h += "<button type='button' class='bd-act' data-reply='"+esc(p.id)+"'>답글 쓰기</button>";
+  if (bdCanShare() && !p.parentId) h += "<button type='button' class='bd-act' data-share='"+esc(p.id)+"'>공유</button>";
+  if (mine){
+    h += "<button type='button' class='bd-act' data-edit='"+esc(p.id)+"'>수정</button>";
+    h += "<button type='button' class='bd-act' data-del='"+esc(p.id)+"'>삭제</button>";
+  }
+  h += "</div></article>";
+  return h;
+}
+
+/* 내가 하트를 눌렀는지는 likes/{uid} 문서가 진실이다. 화면을 그린 뒤 조용히 확인해
+   하트만 채운다 — 전체를 다시 그리면 펼쳐 둔 글이 도로 접힌다. */
+function bdPrefetchLikes(list){
+  if (!bdUser || !fbDb || !list.length) return;
+  list.forEach(function(p){
+    fbDb.collection("posts").doc(p.id).collection("likes").doc(bdUser.uid).get()
+      .then(function(d){
+        if (!d.exists) return;
+        bdLiked[p.id] = true;
+        var b = C.querySelector("[data-like='"+p.id+"']");
+        if (b){ b.classList.add("on"); b.setAttribute("aria-pressed","true"); }
+      }, function(){});
+  });
+}
+
+/* ---- 카드 액션 ---- */
+function bdToggleLike(el){
+  if (!bdUser){ bdToast("로그인하면 좋아요를 누를 수 있습니다."); return; }
+  if (!fbDb) return;
+  var id = el.getAttribute("data-like");
+  var on = !bdLiked[id];
+  var numEl = el.querySelector("b");
+  var n = Number(String(numEl.textContent||"0").replace(/[^\d]/g,"")) || 0;
+  bdLiked[id] = on;
+  el.classList.toggle("on", on);
+  el.setAttribute("aria-pressed", String(on));
+  numEl.textContent = nfmt(Math.max(0, n + (on?1:-1)));
+  var doc = fbDb.collection("posts").doc(id);
+  var like = doc.collection("likes").doc(bdUser.uid);
+  var w = on
+    ? like.set({ uid:bdUser.uid, createdAt:firebase.firestore.FieldValue.serverTimestamp() })
+    : like["delete"]();
+  /* likeCount 는 규칙이 "likeCount 만 ±1" 인 별도 쓰기로만 허용한다. replyCount 와
+     같은 update 에 담으면 통째로 거부된다. 숫자 갱신 실패는 조용히 넘긴다 —
+     하트의 진실은 likes 문서고, 숫자 하나 때문에 화면을 막지 않는다. */
+  w.then(function(){
+    return doc.update({ likeCount: firebase.firestore.FieldValue.increment(on?1:-1) });
+  })["catch"](function(){});
+}
+function bdShareFrom(el){
+  var card = el.closest(".bd-card");
+  var t = card ? card.querySelector("[data-text]") : null;
+  bdShare(el.getAttribute("data-share"), t ? t.textContent : "");
+}
+function bdDelete(el){
+  if (!fbDb) return;
+  var id = el.getAttribute("data-del");
+  if (!window.confirm("이 글을 지울까요? 되돌릴 수 없습니다.")) return;
+  el.disabled = true;
+  fbDb.collection("posts").doc(id)["delete"]().then(function(){
+    bdReset();
+    if (boardPath() === id) bdGo("");   /* 보고 있던 글이 사라졌으면 피드로 */
+    else render();
+  }, function(e){
+    el.disabled = false;
+    if (window.console && console.error) console.error("[자유게시판]", e);
+    bdToast("지우지 못했습니다.");
+  });
+}
+/* 수정은 카드 자리에서 연다. 별도 화면으로 보내면 주소가 하나 더 생기고,
+   슬러그를 안 바꾸기로 한 이상 그 주소는 아무 의미가 없다. */
+function bdEditCard(el){
+  var card = el.closest(".bd-card");
+  if (!card || card.querySelector("[data-editbox]")) return;
+  var id = card.getAttribute("data-post");
+  var sel = (bdTagCache[id] || []).slice();
+  var box = document.createElement("div");
+  box.className = "bd-edit";
+  box.setAttribute("data-editbox","1");
+  box.innerHTML =
+    "<textarea class='bd-in' maxlength='"+BD_BODY_MAX+"' rows='5' data-ebody></textarea>"+
+    "<div class='bd-taglane'><div class='chips' data-etags></div></div>"+
+    "<p class='bd-msg' data-emsg></p>"+
+    "<div class='bd-editacts'><button type='button' class='btn' data-esave>저장</button>"+
+    "<button type='button' class='chip' data-ecancel>취소</button></div>";
+  card.appendChild(box);
+  var ta = box.querySelector("[data-ebody]");
+  ta.value = bdBodyCache[id] || "";
+  bdTagPicker(box.querySelector("[data-etags]"), sel);
+  var msg = box.querySelector("[data-emsg]");
+  box.querySelector("[data-ecancel]").onclick = function(){ card.removeChild(box); };
+  box.querySelector("[data-esave]").onclick = function(){
+    var b = this;
+    var body = String(ta.value||"").trim();
+    if (body.length < 1 || body.length > BD_BODY_MAX){
+      msg.textContent = "내용은 1자 이상 "+nfmt(BD_BODY_MAX)+"자 이하로 남겨 주세요."; return;
+    }
+    b.disabled = true; msg.textContent = "저장하는 중입니다.";
+    /* 본인 글이라 규칙의 첫 절이 허용한다 — slug 는 건드리지 않는다 */
+    fbDb.collection("posts").doc(id).update({
+      body: body, tags: sel.slice(0,BD_TAG_MAX), excerpt: bdExcerpt(body),
+      updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+    }).then(function(){ bdReset(); render(); }, function(e){
+      b.disabled = false;
+      if (window.console && console.error) console.error("[자유게시판]", e);
+      msg.textContent = "저장하지 못했습니다. 잠시 후 다시 시도해 주세요.";
+    });
+  };
+}
+function bdOpenReply(el){
+  var card = el.closest(".bd-card");
+  var nameEl = card ? card.querySelector(".bd-name") : null;
+  bdReplyTo = { id: el.getAttribute("data-reply"),
+                name: nameEl ? String(nameEl.textContent||"") : "" };
+  if (bdRedrawComposer) bdRedrawComposer();
+  var host = C.querySelector("[data-replycomp]");
+  if (!host) return;
+  var ta = host.querySelector("[data-cbody]");
+  if (ta) ta.focus();
+  host.scrollIntoView({ behavior:"smooth", block:"center" });
+}
+/* 목록 화면의 "이야기하기" — 인용 대상만 들고 게시판으로 건너간다.
+   해시나 주소에 제목·URL 을 실어 나르지 않는다. 주소가 길어지고 공유도 어려워진다. */
+function bdTalk(el){
+  bdRef = { type: el.getAttribute("data-talk") || "",
+            title: el.getAttribute("data-talk-title") || "",
+            url: ctSafeUrl(el.getAttribute("data-talk-url") || "") };
+  bdGo("");
+}
+
+/* ---- 입력창 ----
+   비로그인에게도 보인다. 로그인 벽을 먼저 세우면 대부분은 거기서 돌아간다 —
+   쓰려고 마음먹은 다음에 물어보는 편이 훨씬 적게 잃는다.
+   opt.parentId 가 있으면 답글, 없으면 원글이다. */
+function bdComposer(host, opt){
+  if (!host) return;
+  opt = opt || {};
+  var isReply = !!opt.parentId;
+  var sel = isReply ? [] : bdDraft.tags;
+  var toName = isReply ? String(opt.toName||"") : "";
+  var ph = isReply ? "답글을 남겨 보세요" : "AI를 쓰면서 알게 된 것을 남겨 보세요";
+
+  host.innerHTML = "<div class='bd-composer'>"+
+    (isReply ? (toName ? "<p class='bd-lead' style='margin-top:0'>"+esc(toName)+" 님에게</p>" : "")
+             : "<div data-refbox></div>")+
+    "<textarea class='bd-in bd-grow' rows='1' maxlength='"+BD_BODY_MAX+"' data-cbody"+
+      " placeholder='"+esc(ph)+"' aria-label='"+esc(ph)+"'></textarea>"+
+    (isReply ? "" :
+      "<div class='bd-taglane'><div class='chips' data-ctags></div>"+
+        "<button type='button' class='chip' data-newtag>+ 태그</button></div>"+
+      "<div class='bd-newtagbox' data-newtagbox hidden>"+
+        "<input class='bd-in' type='text' maxlength='20' placeholder='새 태그 이름'"+
+          " data-newtagname aria-label='새 태그 이름'>"+
+        "<button type='button' class='chip' data-newtagadd>추가</button></div>")+
+    "<p class='bd-msg' data-cmsg></p>"+
+    "<div class='bd-cfoot'>"+
+      (bdUser
+        ? "<span class='bd-me'>"+
+            (ctSafeUrl(bdUser.photoURL||"")
+              ? "<img class='bd-ava' src='"+esc(ctSafeUrl(bdUser.photoURL))+"' alt='' referrerpolicy='no-referrer'>"
+              : "<span class='bd-ava bd-ava-x' aria-hidden='true'></span>")+
+            "<span class='bd-name'>"+esc(bdUser.displayName || "익명")+"</span></span>"+
+          "<button type='button' class='bd-act' data-logout>로그아웃</button>"+
+          "<span class='bd-count tnum' data-ccount></span>"+
+          "<button type='button' class='btn' data-csend>"+(isReply?"답글 올리기":"올리기")+"</button>"
+        : "<span class='bd-hint'>구글 계정으로 3초면 시작합니다</span>"+
+          "<button type='button' class='btn' data-login>Google로 시작하기</button>")+
+    "</div></div>";
+
+  var ta = host.querySelector("[data-cbody]");
+  var msg = host.querySelector("[data-cmsg]");
+  var countEl = host.querySelector("[data-ccount]");
+  var drawTags = null;
+
+  function grow(){ ta.style.height = "auto"; ta.style.height = Math.min(ta.scrollHeight, 420) + "px"; }
+  function count(){ if (countEl) countEl.textContent = ta.value.length + " / " + nfmt(BD_BODY_MAX); }
+  ta.value = isReply ? "" : String(bdDraft.body||"");
+  ta.oninput = function(){
+    grow(); count();
+    if (!isReply) bdDraft.body = ta.value;   /* 로그인하러 다녀와도 남아 있게 */
+  };
+  grow(); count();
+
+  /* 인용 블록 — "이야기하기"로 건너온 항목 */
+  function drawRef(){
+    var box = host.querySelector("[data-refbox]");
+    if (!box) return;
+    if (!bdRef || (!bdRef.title && !bdRef.url)){ box.innerHTML = ""; return; }
+    box.innerHTML = "<div class='bd-ref'><span class='bd-ref-k'>"+esc(bdRef.type||"링크")+"</span>"+
+      (bdRef.url
+        ? "<a href='"+esc(bdRef.url)+"' target='_blank' rel='noopener noreferrer nofollow'>"+
+          esc(bdRef.title||bdRef.url)+"</a>"
+        : "<span>"+esc(bdRef.title||"")+"</span>")+
+      "<button type='button' class='bd-act' data-refclear>인용 빼기</button></div>";
+    box.querySelector("[data-refclear]").onclick = function(){ bdRef = null; drawRef(); };
+  }
+  drawRef();
+
+  if (!isReply){
+    drawTags = bdTagPicker(host.querySelector("[data-ctags]"), sel);
+    var ntBtn = host.querySelector("[data-newtag]");
+    var ntBox = host.querySelector("[data-newtagbox]");
+    ntBtn.onclick = function(){
+      if (!bdUser){ bdToast("로그인하면 태그를 만들 수 있습니다."); return; }
+      ntBox.hidden = !ntBox.hidden;
+      if (!ntBox.hidden) host.querySelector("[data-newtagname]").focus();
+    };
+    host.querySelector("[data-newtagadd]").onclick = function(){
+      var b = this, nameEl = host.querySelector("[data-newtagname]");
+      var n = String(nameEl.value||"").trim();
+      var err = bdTagError(n);
+      if (err){ msg.textContent = err; return; }
+      b.disabled = true;
+      /* 문서 ID 가 곧 태그 이름이라, 같은 이름이 이미 있으면 규칙이 거부한다 —
+         중복은 화면이 아니라 DB 가 막는다 */
+      fbDb.collection("tags").doc(n).set({
+        name:n, uid:bdUser.uid, createdAt:firebase.firestore.FieldValue.serverTimestamp()
+      }).then(function(){
+        bdTagsDb = bdTagsDb.concat([n]);
+        if (sel.length < BD_TAG_MAX) sel.push(n);
+        nameEl.value = ""; ntBox.hidden = true; msg.textContent = ""; b.disabled = false;
+        if (drawTags) drawTags();
+      }, function(){
+        b.disabled = false;
+        msg.textContent = "이미 있는 태그이거나 만들지 못했습니다.";
+      });
+    };
+  }
+
+  var send = host.querySelector("[data-csend]");
+  if (!send) return;
+  send.onclick = function(){
+    var body = String(ta.value||"").trim();
+    if (body.length < 1 || body.length > BD_BODY_MAX){
+      msg.textContent = "내용은 1자 이상 "+nfmt(BD_BODY_MAX)+"자 이하로 남겨 주세요."; return;
+    }
+    var tags = (isReply ? (opt.tags||[]) : sel).slice(0, BD_TAG_MAX);
+    if (!isReply && tags.length < 1){ msg.textContent = "태그를 하나 이상 골라 주세요."; return; }
+    send.disabled = true; msg.textContent = "올리는 중입니다.";
+    var now = firebase.firestore.FieldValue.serverTimestamp();
+    var doc = {
+      uid: bdUser.uid,
+      author: bdUser.displayName || "익명",
+      photo: bdUser.photoURL || "",
+      body: body,
+      tags: tags,
+      excerpt: bdExcerpt(body),
+      parentId: isReply ? opt.parentId : null,
+      ref: (!isReply && bdRef && (bdRef.title || bdRef.url))
+             ? { type:String(bdRef.type||""), title:String(bdRef.title||""), url:String(bdRef.url||"") }
+             : null,
+      replyCount: 0,   /* 규칙이 0 을 요구한다 — 처음부터 부풀린 값으로 만들 수 없게 */
+      likeCount: 0,
+      createdAt: now,
+      updatedAt: now
+    };
+    function fail(e){
+      send.disabled = false;
+      if (window.console && console.error) console.error("[자유게시판]", e);
+      msg.textContent = "올리지 못했습니다. 잠시 후 다시 시도해 주세요.";
+    }
+    if (isReply){
+      /* 답글은 슬러그가 필요 없다 — 주소를 갖지 않는다. rootId 는 원글의 슬러그다 */
+      doc.slug = null;
+      doc.rootId = opt.rootId;
+      fbDb.collection("posts").add(doc).then(function(){
+        /* 답글 수는 "replyCount 만 +1" 인 별도 쓰기로만 허용된다. 실패해도 답글 자체는
+           이미 올라갔으므로 조용히 넘긴다 */
+        return fbDb.collection("posts").doc(opt.rootId)
+          .update({ replyCount: firebase.firestore.FieldValue.increment(1) })["catch"](function(){});
+      }).then(function(){
+        bdReplyTo = null; render();
+      }, fail);
+      return;
+    }
+    bdClaimSlug(body, 3).then(function(slug){
+      if (!slug){ send.disabled = false; msg.textContent = "잠시 후 다시 시도해 주세요."; return; }
+      doc.slug = slug;
+      doc.rootId = slug;   /* 원글의 rootId 는 자기 자신이다 — 쓰기 한 번으로 끝난다 */
+      return fbDb.collection("posts").doc(slug).set(doc).then(function(){
+        bdDraft.body = ""; bdDraft.tags = []; bdRef = null;
+        bdReset();
+        bdGo(slug);   /* 방금 올린 글로 — 공유할 주소가 바로 손에 들어온다 */
+      });
+    })["catch"](fail);
+  };
+}
+
+/* ---- ③ 빈 피드 방지: 오늘의 브리핑 카드 ----
+   이미 쓰고 있는 공개 데이터에서 가져오고 여기서는 아무것도 쓰지 않는다.
+   Firebase 가 비어 있어도 이 카드는 뜬다 — 처음 온 사람이 빈 화면을 보지 않게. */
+function bdBriefCard(host){
+  if (!host) return;
+  var r = sortedReports()[0];
+  if (!r){ host.innerHTML = ""; return; }
+  var lines = String(r.content||"").split(/\r?\n/), picked = [];
+  for (var i=0; i<lines.length && picked.length<4; i++){
+    var t = lines[i].replace(/\*\*/g,"").trim();
+    if (!t || /^#{1,6}\s/.test(t)) continue;
+    t = t.replace(/^[•\-*]+\s*/,"")
+         .replace(/[\(（]\s*(?:출처|링크|img)\s*:?\s*https?:\/\/[^\s)）]+\s*[\)）]?/gi,"")
+         .replace(/https?:\/\/[^\s)<>"'　]+/g,"")
+         .replace(/[\(（]\s*[\)）]/g,"").trim();
+    if (t.length < 8) continue;
+    picked.push(t.length > 120 ? t.slice(0,120)+"…" : t);
+  }
+  if (!picked.length){ host.innerHTML = ""; return; }
+  host.innerHTML = "<div class='bd-brief'><p class='eyebrow'>오늘의 브리핑</p>"+
+    "<h3>"+esc(r.title||"AI 브리핑")+"</h3>"+
+    "<ul>"+picked.map(function(t){ return "<li>"+esc(t)+"</li>"; }).join("")+"</ul>"+
+    "<a class='btn' href='"+esc(menuHref("newsrep"))+"'>전체 보기</a></div>";
+}
+
+/* ---- 히어로 숫자 ---- */
+function bdFacts(){
+  var n = bdFeed.length;
+  setFacts([
+    [bdMore ? n+"+" : String(n), "글"],
+    [String(bdTagList().length), "태그"],
+    [bdFeed.length ? bdWhen(bdFeed[0].createdAt) : "—", "최근 글"]
+  ]);
+}
+
+/* ---- 피드 ---- */
+function bdFeedView(el){
+  bdRedrawComposer = null;
+  el.innerHTML =
+    "<div data-brief></div>"+
+    "<div class='controls'><div class='chips' data-filter></div></div>"+
+    "<div data-comp></div>"+
+    "<div data-rows></div>"+
+    "<div class='bd-more' data-more></div>";
+  bdBriefCard(el.querySelector("[data-brief]"));
+  bdComposer(el.querySelector("[data-comp]"), {});
+  var filterEl = el.querySelector("[data-filter]");
+  var rowsEl = el.querySelector("[data-rows]");
+  var moreEl = el.querySelector("[data-more]");
+  var sentIo = null;
+  var hasIo = ("IntersectionObserver" in window);
+
+  function drawFilter(){
+    var list = ["전체"].concat(bdTagList());
+    if (list.indexOf(bdTag) < 0) bdTag = "전체";
+    filterEl.innerHTML = list.map(function(t){
+      return "<button type='button' class='chip"+(t===bdTag?" on":"")+"' data-f='"+esc(t)+"'"+
+        " aria-pressed='"+(t===bdTag)+"'>"+esc(t)+"</button>";
+    }).join("");
+    filterEl.querySelectorAll("[data-f]").forEach(function(b){
+      b.onclick = function(){ bdTag = b.getAttribute("data-f"); drawFilter(); load(true); };
+    });
+  }
+  function watchSentinel(){
+    if (sentIo){ sentIo.disconnect(); sentIo = null; }
+    if (!bdMore || !hasIo) return;
+    var s = moreEl.querySelector("[data-sentinel]");
+    if (!s) return;
+    sentIo = new IntersectionObserver(function(en){
+      if (en[0] && en[0].isIntersecting) load(false);
+    }, { rootMargin:"400px" });
+    sentIo.observe(s);
+  }
+  function paint(){
+    rowsEl.innerHTML = bdFeed.length
+      ? bdFeed.map(function(p){ return bdCard(p, {}); }).join("")
+      : "<div class='bd-empty'><p>아직 글이 없습니다. 첫 글을 남겨 보세요.</p>"+
+        (bdUser ? "" : "<button type='button' class='btn' data-login>Google로 시작하기</button>")+"</div>";
+    /* 무한 스크롤이 기본이고, IntersectionObserver 가 없는 브라우저에서만 버튼이 남는다 */
+    moreEl.innerHTML = !bdMore ? ""
+      : (hasIo ? "<span class='bd-sentinel' data-sentinel></span><span class='bd-loading'>더 불러오는 중…</span>"
+               : "<button type='button' class='btn' data-loadmore>더 보기</button>");
+    var mb = moreEl.querySelector("[data-loadmore]");
+    if (mb) mb.onclick = function(){ load(false); };
+    watchSentinel();
+  }
+  function load(first){
+    if (bdBusy) return;
+    bdBusy = true;
+    if (first){
+      if (!bdFeed.length) rowsEl.innerHTML = emptyNote("글을 불러오는 중입니다.");
+      bdCursor = null;
+    }
+    /* 원글만 본다. 태그 필터는 서버에서 건다 — 클라이언트에서 거르면 무한 스크롤이
+       20개를 받아 3개만 보여주는 일이 생긴다. 대신 복합 색인이 하나 더 필요하다. */
+    var q = fbDb.collection("posts").where("parentId","==",null);
+    if (bdTag !== "전체") q = q.where("tags","array-contains",bdTag);
+    q = q.orderBy("createdAt","desc");
+    if (!first && bdCursor) q = q.startAfter(bdCursor);
+    q.limit(BD_PAGE).get().then(function(sn){
+      bdBusy = false;
+      if (!bdAlive(el)) return;
+      var got = [];
+      sn.forEach(function(d){ var o = d.data()||{}; o.id = d.id; got.push(o); });
+      if (sn.docs && sn.docs.length) bdCursor = sn.docs[sn.docs.length-1];
+      bdMore = got.length === BD_PAGE;
+      bdFeed = first ? got : bdFeed.concat(got);
+      paint(); bdFacts(); bdPrefetchLikes(got);
+    }, function(e){
+      bdBusy = false;
+      if (!bdAlive(el)) return;
+      moreEl.innerHTML = "";
+      bdQueryFail(rowsEl, e, function(){ bdReset(); load(true); });
+    });
+  }
+  drawFilter();
+  if (bdFeed.length){ paint(); bdFacts(); }   /* 캐시가 있으면 먼저 보여주고 뒤에서 새로 받는다 */
+  load(true);
+}
+
+/* ---- 스레드 ---- */
+function bdThreadView(el, slug){
+  bdReplyTo = null;
+  el.innerHTML = "<a class='bd-back' href='"+esc(boardUrl(""))+"'>← 피드</a>"+
+    "<div data-thread>"+emptyNote("글을 불러오는 중입니다.")+"</div>";
+  var te = el.querySelector("[data-thread]");
+  var rootP = null;
+
+  function draw(root, replies){
+    var byId = {};
+    replies.forEach(function(r){ byId[r.id] = r; });
+    /* 3단계 이상 답글도 2단계로 눕힌다 — 375px 에서 더 들여쓰면 본문 자리가 사라진다 */
+    function depthOf(p){
+      var n = 1, cur = p, guard = 0;
+      while (cur && cur.parentId && cur.parentId !== root.id && guard < 12){
+        cur = byId[cur.parentId]; n++; guard++;
+        if (!cur) break;
+      }
+      return Math.min(n, 2);
+    }
+    te.innerHTML = bdCard(root, { full:true, thread:true })+
+      "<p class='bd-lead'>답글 <b class='tnum'>"+nfmt(replies.length)+"</b></p>"+
+      (replies.length
+        ? replies.map(function(r){ return bdCard(r, { full:true, thread:true, depth:depthOf(r) }); }).join("")
+        : emptyNote("아직 답글이 없습니다. 먼저 이어 보세요."))+
+      "<div data-replycomp></div>";
+    bdRedrawComposer = function(){
+      var to = (bdReplyTo && (bdReplyTo.id === root.id || byId[bdReplyTo.id])) ? bdReplyTo : null;
+      bdComposer(te.querySelector("[data-replycomp]"), {
+        parentId: to ? to.id : root.id,
+        rootId: root.id,
+        tags: (root.tags||[]),
+        toName: to ? to.name : ""
+      });
+    };
+    bdRedrawComposer();
+    setFacts([[nfmt(replies.length),"답글"], [nfmt(root.likeCount||0),"좋아요"],
+              [bdWhen(root.createdAt),"올린 때"]]);
+    /* 크롤러는 JS 를 안 돌려 og 태그는 그대로지만, 탭 제목·북마크·방문 기록에는 남는다 */
+    var head = String(root.excerpt || root.body || "").slice(0,40);
+    document.title = (head || "글") + " — AI 레이더";
+    bdPrefetchLikes([root].concat(replies));
+  }
+
+  function load(){
+    fbDb.collection("posts").doc(slug).get().then(function(d){
+      if (!bdAlive(el)) return null;
+      if (!d.exists){
+        te.innerHTML = emptyNote("글을 찾을 수 없습니다. 지워졌거나 주소가 잘못되었을 수 있습니다.");
+        return null;
+      }
+      rootP = d.data()||{}; rootP.id = d.id;
+      var root = rootP.rootId || rootP.id;
+      /* 답글 주소로 들어왔으면 그 스레드의 원글로 옮겨 준다 */
+      if (root !== rootP.id){ bdGo(root); return null; }
+      return fbDb.collection("posts").where("rootId","==",root).orderBy("createdAt","asc").get();
+    }).then(function(sn){
+      if (!sn || !bdAlive(el)) return;
+      var replies = [];
+      sn.forEach(function(d){
+        if (d.id === rootP.id) return;   /* 원글은 rootId 가 자기 자신이라 같이 딸려 온다 */
+        var o = d.data()||{}; o.id = d.id; replies.push(o);
+      });
+      draw(rootP, replies);
+    }, function(e){
+      if (!bdAlive(el)) return;
+      bdQueryFail(te, e, load);
+    });
+  }
+  load();
+}
+
+/* ---- 게시판 진입 ---- */
+function bdShell(inner){
+  return "<section class='section paper'><div class='inner'>"+
+    sectionHead("Board","오늘 알게 된 것,<br>한 줄이면 충분합니다.",
+      "AI를 쓰면서 알게 된 것을 짧게 남기고 이어 가는 곳입니다.","")+
+    "<div class='bd-wrap'>"+inner+"</div></div></section>";
+}
+function renderBoard(){
+  setKicker(["자유게시판"]);
+  setFacts([["—","글"],[String(bdTagList().length),"태그"],["—","최근 글"]]);
+
+  /* config 가 비면 SDK 를 아예 부르지 않는다. 브리핑 카드는 Firebase 와 무관하므로 그대로 뜬다 */
+  if (!fbReady()){
+    C.innerHTML = bdShell("<div data-brief></div>"+emptyNote("게시판 준비 중입니다."));
+    bdBriefCard(C.querySelector("[data-brief]"));
+    return;
+  }
+  C.innerHTML = bdShell("<div data-bd>"+emptyNote("게시판을 여는 중입니다.")+"</div>");
+  var el = C.querySelector("[data-bd]");
+  fbInit().then(function(){
+    if (!bdAlive(el)) return;
+    return bdFetchTags().then(function(){
+      if (!bdAlive(el)) return;
+      var slug = boardPath();
+      if (slug) bdThreadView(el, slug);
+      else bdFeedView(el);
+    });
+  }, function(e){
+    if (!bdAlive(el)) return;
+    if (window.console && console.error) console.error("[자유게시판]", e);
+    el.innerHTML = "<div class='fail'><h3>게시판을 불러오지 못했습니다</h3>"+
+      "<p>잠시 후 다시 열어 주세요.</p>"+
+      "<button type='button' class='btn' data-bdreload>다시 시도</button></div>";
+    el.querySelector("[data-bdreload]").onclick = function(){ renderBoard(); };
+  });
+}
+
+/* 카드 액션은 한 곳에서 위임으로 받는다. 화면을 다시 그릴 때마다 버튼마다
+   onclick 을 다시 매다는 대신 여기 하나만 둔다 — 다시 그려도 끊기지 않는다. */
+C.addEventListener("click", function(e){
+  var t = e.target, el;
+  if (!t || !t.closest) return;
+  if ((el = t.closest("[data-talk]"))){ e.preventDefault(); bdTalk(el); return; }
+  if ((el = t.closest("[data-unfold]"))){
+    var card = el.closest(".bd-card");
+    var tx = card ? card.querySelector("[data-text]") : null;
+    if (tx) tx.classList.remove("fold");
+    if (el.parentNode) el.parentNode.removeChild(el);
+    return;
+  }
+  if ((el = t.closest("[data-share]"))){ bdShareFrom(el); return; }
+  if ((el = t.closest("[data-like]"))){ bdToggleLike(el); return; }
+  if ((el = t.closest("[data-del]"))){ bdDelete(el); return; }
+  if ((el = t.closest("[data-edit]"))){ bdEditCard(el); return; }
+  if ((el = t.closest("[data-reply]"))){ bdOpenReply(el); return; }
+  if ((el = t.closest("[data-login]"))){ bdLogin(); return; }
+  if ((el = t.closest("[data-logout]"))){ bdLogout(); return; }
+});
+
 /* ============ 라우팅 ============ */
 var ROUTES = {
   contests:renderContests, festivals:renderFestivals, gov:renderGov,
-  newsrep:renderReports, youtube:renderYoutube, aivideo:renderAiVideo
+  newsrep:renderReports, youtube:renderYoutube, aivideo:renderAiVideo,
+  board:renderBoard
 };
 /* 공개 목록 API(action=pub) 데이터가 필요한 화면 */
 var NEEDS_PUB = { newsrep:1, youtube:1 };
@@ -1881,14 +2911,51 @@ document.getElementById("refreshBtn").onclick = function(){
   loadData().catch(function(e){ state.loading=false; state.error=e.message||String(e); })
     .then(function(){ render(); btn.textContent = label; });
 };
-window.addEventListener("hashchange", function(){
+/* ============ 이동 ============
+   해시 이동(hashchange)과 경로 이동(popstate)이 같은 곳으로 모인다.
+   해시만 바뀔 때는 두 이벤트가 같이 울리기도 해서, 주소가 실제로 달라졌을 때만 그린다. */
+var navKey = "";
+function onNav(){
+  var k = location.pathname + location.hash;
+  if (k === navKey) return;
+  navKey = k;
   render();
   window.scrollTo({ top:0, behavior:"auto" });
+}
+/* 게시판 안에서의 이동. 주소를 바꾸고 그린다 — 브라우저 뒤로가기는 popstate 가 받는다 */
+function bdGo(slug){
+  var url = boardUrl(slug);
+  if (location.pathname === url && !location.hash){
+    /* 이미 그 주소다 — 주소를 또 쌓지 않고 화면만 다시 그린다 (예: 인용을 들고 피드로) */
+    render(); window.scrollTo({ top:0, behavior:"auto" });
+    return;
+  }
+  history.pushState(null, "", url);
+  onNav();
+}
+window.addEventListener("hashchange", onNav);
+window.addEventListener("popstate", onNav);
+
+/* 같은 사이트 안에서 경로가 바뀌는 링크는 새로고침 없이 처리한다.
+   href 는 그대로 진짜 주소로 두므로 새 탭·링크 복사·크롤러는 평소대로 동작한다. */
+document.addEventListener("click", function(e){
+  if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  var a = (e.target && e.target.closest) ? e.target.closest("a[href]") : null;
+  if (!a || (a.target && a.target !== "_self") || a.hasAttribute("download")) return;
+  var u;
+  try { u = new URL(a.href, location.href); } catch(err){ return; }
+  if (u.origin !== location.origin) return;
+  if (u.pathname === location.pathname) return;   /* 같은 문서 안의 해시 이동은 기본 동작대로 */
+  if (u.pathname !== BASE && u.pathname.indexOf(BASE + "board") !== 0) return;
+  e.preventDefault();
+  history.pushState(null, "", u.pathname + u.search + u.hash);
+  onNav();
 });
 
 /* ============ 초기화 ============ */
 (function init(){
-  if (!location.hash) location.replace("#" + DEFAULT_ROUTE);
+  if (boardPath() === null && !location.hash) location.replace("#" + DEFAULT_ROUTE);
+  navKey = location.pathname + location.hash;
   render();
   onScroll();
   /* 스냅샷 먼저 그리고(0.3초), 라이브는 뒤에서 받아 다를 때만 다시 그린다(6~68초) */
