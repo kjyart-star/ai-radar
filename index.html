@@ -1860,6 +1860,15 @@ function renderFestivals(){
     C.innerHTML = "<section class='section paper'><div class='inner'>"+emptyNote("영화제 목록을 불러오는 중입니다.")+"</div></section>";
     return;
   }
+  /* 상단바 검색으로 들어왔으면 그 한 건만 보여 준다. 예전에는 한 곳을 찾아 눌렀는데
+     89곳이 그대로 나와서 "검색이 안 먹었다"로 읽혔다 (대표 지적 2026-08-15). */
+  var fq = String(festSearch||"").trim().toLowerCase();
+  festSearch = "";
+  if (fq){
+    list = list.filter(function(f){
+      return (String(f.name||"")+" "+String(f.host||"")).toLowerCase().indexOf(fq) >= 0;
+    });
+  }
   var today = todaySeoul();
   var isD = function(s){ return /^\d{4}-\d{2}-\d{2}$/.test(String(s||"")); };
   var open = [], closed = [], tbd = [];
@@ -1884,14 +1893,18 @@ function renderFestivals(){
 
   var intro = "국내외 AI 영화제를 마감이 가까운 순으로 모았습니다. 매일 아침 다시 확인합니다 ("+esc(updated)+" 기준).";
   if (!served) intro += " 최신 목록을 불러오지 못해 마지막으로 저장된 목록을 보여드립니다.";
+  if (fq) intro = "검색해서 들어오신 결과입니다. 아래 「전체 보기」를 누르면 다시 다 보실 수 있습니다.";
 
   var html = "<section class='section paper'><div class='inner'>"+
     sectionHead("Open calls","지금 출품할 수<br>있는 곳.", intro,
       "<b>"+open.length+"</b>곳 · 마감 임박순")+
     "<div class='rows'>"+
     (open.length ? open.map(function(f){ return festRow(f, today); }).join("")
-                 : emptyNote("지금 접수 중인 영화제가 없습니다."))+
-    "</div></div></section>";
+                 : emptyNote(fq ? "검색어와 맞는 영화제가 없습니다." : "지금 접수 중인 영화제가 없습니다."))+
+    "</div>"+
+    (fq ? "<p class='cta-row' style='margin-top:26px'>"+
+          "<button type='button' class='btn' data-festall>전체 보기</button></p>" : "")+
+    "</div></section>";
 
   if (tbd.length){
     html += foldSection("dark","Not announced","차기 일정 미공고", tbd.length+"곳",
@@ -1927,6 +1940,9 @@ var CONTEST_SECS = ["starting_today","ongoing","awaiting_results"];
    쪽은 국내다. 전체는 한 번 눌러 보는 자리지 매번 여는 자리가 아니다. */
 var CONTEST_TABS = [["all","전체"],["domestic","국내"],["overseas","해외"]];
 var contestTab = "domestic", contestCat = "전체", contestSearch = "";
+/* 영화제 화면에는 검색칸이 없다. 상단바 검색으로 들어온 그 한 번만 걸러 보여 주고
+   바로 비운다 — 남겨 두면 나중에 메뉴로 들어왔을 때 이유 모를 짧은 목록이 된다. */
+var festSearch = "";
 /* 전체 탭은 두 파일을 합친다. 각 파일 캐시를 그대로 쓰므로 탭을 오가도 새 요청이 없다. */
 function mergeContests(a, b){
   var out = { generated_at:a.generated_at, generated_pair:[a.generated_at, b.generated_at], sections:{} };
@@ -3426,6 +3442,7 @@ C.addEventListener("click", function(e){
   if ((el = t.closest("[data-reply]"))){ bdOpenReply(el); return; }
   /* 갤러리의 것들도 같은 자리에서 받는다 — 다시 그려도 끊기지 않는다 */
   if ((el = t.closest("[data-wkopen]"))){ wkFormOpen = !wkFormOpen; renderGallery(); return; }
+  if ((el = t.closest("[data-festall]"))){ festSearch = ""; renderFestivals(); return; }
   if ((el = t.closest("[data-wklike]"))){ wkToggleLike(el); return; }
   if ((el = t.closest("[data-wkdel]"))){ wkDelete(el); return; }
   if ((el = t.closest("[data-login]"))){ bdLogin(); return; }
@@ -4295,6 +4312,8 @@ function nvPick(i){
     contestTab = it.tab || contestTab;
     contestCat = "전체";
     contestSearch = it.q;
+  } else if (it.r === "festivals"){
+    festSearch = it.q;
   } else if (it.r === "gov"){
     govCls = "전체";
     /* AI 관련만 켜 둔 채로 보내면 찾은 공고가 그 필터에 걸려 빈 화면이 된다 */
