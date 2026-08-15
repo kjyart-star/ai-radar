@@ -613,7 +613,11 @@
   .bd-me{ display:flex; align-items:center; gap:8px; min-width:0; font-size:13px; font-weight:700; }
   .bd-ava{ width:30px; height:30px; border-radius:50%; object-fit:cover; flex:none;
            background:var(--paper-2); }
-  .bd-ava-x{ display:block; background:var(--ink); }
+  /* 사진이 없거나 깨졌을 때의 자리. 빈 원 대신 닉네임 첫 글자를 넣는다 —
+     바깥 주소를 쓰는 사진은 핫링크 차단으로 깨지는 일이 흔하다. */
+  .bd-ava-x{ display:grid; place-items:center; background:var(--ink); color:var(--lime);
+             font-family:var(--display); font-weight:800; font-size:12px; letter-spacing:0; }
+  .pf-ava.bd-ava-x{ font-size:26px; }
   .bd-name{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
             max-width:min(42vw,220px); }
   .bd-card{ border-bottom:1px solid var(--line-light); padding:19px 0; }
@@ -679,6 +683,9 @@
   .pf-bio{ margin:14px 0 0; font-size:14.5px; line-height:1.75; color:var(--muted-light);
            word-break:keep-all; }
   .pf-form{ display:grid; gap:10px; max-width:440px; margin-top:16px; }
+  .pf-photo{ display:flex; flex-wrap:wrap; align-items:center; gap:10px; }
+  .pf-photo .bd-in{ flex:1 1 200px; width:auto; }
+  .pf-photo .pf-ava{ width:44px; height:44px; font-size:17px; }
   /* ---------- 작품 갤러리 ----------
      썸네일이 먼저 오고 정보는 그 아래 두 줄이다(제목 / 만든 사람 · 메타).
      영상 목록에서는 이 배치가 표준이라 처음 온 사람도 설명 없이 읽는다.
@@ -2788,8 +2795,7 @@ function bdCard(p, opt){
   var h = "<article class='bd-card"+(opt.depth?" d"+Math.min(opt.depth,2):"")+
           "' data-post='"+esc(p.id)+"' data-root='"+esc(root)+"'>";
   h += "<div class='bd-head'>"+
-       (ph ? "<img class='bd-ava' src='"+esc(ph)+"' alt='' loading='lazy' referrerpolicy='no-referrer'>"
-           : "<span class='bd-ava bd-ava-x' aria-hidden='true'></span>")+
+       wpAva("bd-ava", ph, p.author)+
        /* data-pu 는 프로필로 잇기 위한 표시다. 예전 글에는 프로필 정보가 없으므로
           uid 로 찾아 나중에 이름만 링크로 바꾼다(wpLinkNames) — 없으면 그대로 둔다 */
        "<b class='bd-name' data-pu='"+esc(p.uid||"")+"'>"+esc(p.author||"익명")+"</b>"+
@@ -2980,6 +2986,10 @@ function bdTalk(el){
   bdGo("");
 }
 
+/* 게시판 입력창에 보일 이름. 프로필이 있으면 닉네임을, 없으면 익명이다 —
+   구글 실명을 화면에 세우지 않는다. */
+function bdName(){ return (wpMine && wpMine.nick) || "익명"; }
+
 /* ---- 입력창 ----
    비로그인에게도 보인다. 로그인 벽을 먼저 세우면 대부분은 거기서 돌아간다 —
    쓰려고 마음먹은 다음에 물어보는 편이 훨씬 적게 잃는다.
@@ -3008,10 +3018,9 @@ function bdComposer(host, opt){
     "<div class='bd-cfoot'>"+
       (bdUser
         ? "<span class='bd-me'>"+
-            (ctSafeUrl(bdUser.photoURL||"")
-              ? "<img class='bd-ava' src='"+esc(ctSafeUrl(bdUser.photoURL))+"' alt='' referrerpolicy='no-referrer'>"
-              : "<span class='bd-ava bd-ava-x' aria-hidden='true'></span>")+
-            "<span class='bd-name'>"+esc(bdUser.displayName || "익명")+"</span></span>"+
+            /* 프로필이 있으면 그 사진·닉네임을 쓴다 — 구글 실명은 화면에 세우지 않는다 */
+            wpAva("bd-ava", (wpMine && wpMine.photoURL) || bdUser.photoURL, bdName())+
+            "<span class='bd-name'>"+esc(bdName())+"</span></span>"+
           /* 프로필로 들어가는 문은 상단바 하나로 모았다(대표 지시 2026-08-15).
              여기에도 두면 같은 것이 두 군데가 된다. */
           "<button type='button' class='bd-act' data-logout>로그아웃</button>"+
@@ -3429,6 +3438,7 @@ C.addEventListener("click", function(e){
 var WP_NICK_MAX = 20;      /* rules: nick 2~20 */
 var WP_BIO_MAX = 80;       /* rules: bio <= 80 */
 var WP_LINK_MAX = 200;     /* rules: link <= 200 */
+var WP_PHOTO_MAX = 500;    /* rules: photoURL <= 500 */
 var WK_TITLE_MAX = 60;     /* rules: title <= 60 */
 var WK_DAY_MAX = 3;        /* 하루 등록 상한 — 화면에서 센다(아래 wkCountToday 주석) */
 var WK_PAGE = 12;
@@ -3453,6 +3463,33 @@ function wpGo(slug){
   onNav();
 }
 function wpAlive(el){ return curRoute()==="prof" && C.contains(el); }
+
+/* ---- 프로필 사진 ----
+   상단바·게시판·작품 카드·공개 프로필 네 자리가 모두 이 함수를 쓴다.
+   한 곳만 고치면 다른 데서 깨진 그림이 남기 때문이다.
+   주소는 바깥 것이라 자주 깨진다(핫링크 차단·삭제) — 깨지면 닉네임 첫 글자로 떨어진다. */
+function wpIni(nick){
+  var c = String(nick||"").trim().charAt(0);
+  return /[0-9A-Za-z가-힣]/.test(c) ? c : "?";
+}
+function wpAva(cls, photo, nick){
+  var u = ctSafeUrl(photo||"");
+  var ini = wpIni(nick);
+  if (!u) return "<span class='"+cls+" bd-ava-x' aria-hidden='true'>"+esc(ini)+"</span>";
+  /* 지연 로딩(loading=lazy)을 쓰지 않는다. 화면 밖에 있으면 아예 받지 않아
+     onerror 도 오지 않고, 깨진 사진이 깨진 채로 남는다. 아바타는 작아서 아껴도 얼마 안 된다. */
+  return "<img class='"+cls+"' src='"+esc(u)+"' alt=''"+
+         " referrerpolicy='no-referrer' onerror=\"avaFail(this,'"+esc(ini)+"')\">";
+}
+/* onerror 속성에서 부르므로 전역이어야 한다(위 icMark 와 같은 방식) */
+window.avaFail = function(img, ini){
+  if (!img || !img.parentNode) return;
+  var sp = document.createElement("span");
+  sp.className = img.className + " bd-ava-x";
+  sp.setAttribute("aria-hidden", "true");
+  sp.textContent = ini || "?";
+  img.parentNode.replaceChild(sp, img);
+};
 
 /* ---- 프로필 읽기 ----
    문서 ID 가 곧 uid 라 색인 없이 바로 읽는다. 없는 사람은 null 로 기억해 다시 묻지 않는다.
@@ -3536,6 +3573,15 @@ function wpFieldError(nick, bio, link){
 }
 
 /* ---- 프로필 화면 ---- */
+/* 사진 주소는 https 만 받는다. javascript:·data: 가 그대로 src 로 들어가면 안 된다 —
+   화면에서 먼저 막고, 규칙에도 같은 조건을 넣는 것이 좋다(아래 보고 참조). */
+function wpPhotoError(u){
+  u = String(u||"").trim();
+  if (!u) return "";
+  if (!/^https:\/\/\S+$/.test(u)) return "프로필 사진은 https:// 로 시작하는 주소만 넣을 수 있습니다.";
+  if (u.length > WP_PHOTO_MAX) return "프로필 사진 주소가 너무 깁니다.";
+  return "";
+}
 function wpShell(inner){
   return "<section class='section paper'><div class='inner'><div class='bd-wrap'>"+
     inner+"</div></div></section>";
@@ -3589,8 +3635,7 @@ function wpDraw(el, pf){
   setKicker(["프로필", pf.nick || ""]);
   el.innerHTML =
     "<div class='pf-head'>"+
-      (ph ? "<img class='pf-ava' src='"+esc(ph)+"' alt='' loading='lazy' referrerpolicy='no-referrer'>"
-          : "<span class='pf-ava bd-ava-x' aria-hidden='true'></span>")+
+      wpAva("pf-ava", ph, pf.nick)+
       "<div><h2 class='pf-nick'>"+esc(pf.nick||"")+"</h2>"+
       (link ? "<a class='pf-link' href='"+esc(link)+"' target='_blank' rel='noopener noreferrer nofollow'>"+
               esc(link.replace(/^https?:\/\//,""))+"</a>" : "")+
@@ -3667,7 +3712,15 @@ function wpEditView(el){
         "<input class='bd-in' type='text' maxlength='"+WP_BIO_MAX+"' data-pbio"+
           " placeholder='한 줄 소개 (선택)' aria-label='한 줄 소개'>"+
         "<input class='bd-in' type='url' inputmode='url' maxlength='"+WP_LINK_MAX+"' data-plink"+
-          " placeholder='대표 링크 (선택 · https://)' aria-label='대표 링크'>")+
+          " placeholder='대표 링크 (선택 · https://)' aria-label='대표 링크'>"+
+        /* 사진은 주소만 받는다. 파일 업로드는 열지 않는다 —
+           올린 파일을 우리가 보관하고 검수해야 하는 책임이 따라온다. */
+        "<div class='pf-photo'>"+
+          "<span data-ppreview></span>"+
+          "<input class='bd-in' type='url' inputmode='url' maxlength='"+WP_PHOTO_MAX+"' data-pphoto"+
+            " placeholder='프로필 사진 주소 (선택 · https://)' aria-label='프로필 사진 주소'>"+
+          "<button type='button' class='chip' data-pgoogle>구글 사진으로</button>"+
+        "</div>")+
     "</div>"+
     "<p class='bd-msg' data-pmsg></p>"+
     "<div class='bd-cfoot'>"+
@@ -3680,16 +3733,33 @@ function wpEditView(el){
   var linkEl = el.querySelector("[data-plink]");
   var msg = el.querySelector("[data-pmsg]");
   var save = el.querySelector("[data-psave]");
+  var photoEl = el.querySelector("[data-pphoto]");
+  var prevEl = el.querySelector("[data-ppreview]");
+  function drawPreview(){
+    if (!prevEl) return;
+    /* 넣는 즉시 보여 준다 — 저장하고 나서야 깨진 걸 아는 것이 제일 나쁘다 */
+    prevEl.innerHTML = wpAva("pf-ava", photoEl.value, nickEl.value || (pf && pf.nick));
+  }
   if (!isNew){
     nickEl.value = String(pf.nick||"");
     bioEl.value = String(pf.bio||"");
     linkEl.value = String(pf.link||"");
+    photoEl.value = String(pf.photoURL||"");
+    drawPreview();
+    photoEl.oninput = drawPreview;
+    nickEl.oninput = drawPreview;
+    el.querySelector("[data-pgoogle]").onclick = function(){
+      photoEl.value = String((bdUser && bdUser.photoURL) || "");
+      drawPreview();
+      msg.textContent = photoEl.value ? "" : "구글 계정에 사진이 없습니다.";
+    };
   }
   save.onclick = function(){
     var nick = String(nickEl.value||"").trim();
     var bio = bioEl ? String(bioEl.value||"").trim() : "";
     var link = linkEl ? String(linkEl.value||"").trim() : "";
-    var err = wpFieldError(nick, bio, link);
+    var photo = photoEl ? String(photoEl.value||"").trim() : "";
+    var err = wpFieldError(nick, bio, link) || wpPhotoError(photo);
     if (err){ msg.textContent = err; return; }
     save.disabled = true; msg.textContent = "저장하는 중입니다.";
     function fail(e){
@@ -3700,7 +3770,7 @@ function wpEditView(el){
     if (!isNew){
       /* 슬러그는 손대지 않는다 — 규칙도 바뀌면 거부한다 */
       fbDb.collection("profiles").doc(bdUser.uid)
-        .update({ nick:nick, bio:bio, link:link }).then(function(){
+        .update({ nick:nick, bio:bio, link:link, photoURL:photo }).then(function(){
           wpCache[bdUser.uid] = undefined; wpMine = undefined;
           nvAuth();            /* 상단바 이름도 같이 바뀌어야 한다 */
           wpGo(pf.slug);
@@ -3813,8 +3883,7 @@ function wkCard(w){
   h += "<div class='wk-info'>";
   h += "<a class='wk-title'"+open+">"+esc(w.title||"(제목 없음)")+"</a>";
   h += "<div class='wk-by'>"+
-       (ph ? "<img class='bd-ava' src='"+esc(ph)+"' alt='' loading='lazy' referrerpolicy='no-referrer'>"
-           : "<span class='bd-ava bd-ava-x' aria-hidden='true'></span>")+
+       wpAva("bd-ava", ph, (pf && pf.nick) || "")+
        ((pf && pf.slug)
          ? "<a class='bd-name' href='"+esc(profUrl(pf.slug))+"'>"+esc(pf.nick||"익명")+"</a>"
          : "<span class='bd-name'>"+esc((pf && pf.nick) || "익명")+"</span>")+
@@ -4080,8 +4149,7 @@ function nvAuth(){
   el.innerHTML =
     "<button type='button' class='nav-me' data-nvmenu aria-haspopup='true'"+
       " aria-expanded='"+nvMenuOn+"'>"+
-      (ph ? "<img class='bd-ava' src='"+esc(ph)+"' alt='' referrerpolicy='no-referrer'>"
-          : "<span class='bd-ava bd-ava-x' aria-hidden='true'></span>")+
+      wpAva("bd-ava", ph, nick)+
       "<span>"+esc(nick)+"</span></button>"+
     "<div class='nav-menu'"+(nvMenuOn ? "" : " hidden")+">"+
       "<a href='"+esc(profUrl(""))+"'>내 프로필</a>"+
