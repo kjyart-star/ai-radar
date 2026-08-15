@@ -169,8 +169,11 @@
             사진의 어두운 하단과 순수 --ink 배경이 만나며 생기던 "검정 밑에 검정 띠"
             이음새(대표 실보고 2026-08-15)가 이걸로 사라진다. 26% 위로는 걷혀서
             얼굴(상단)에는 닿지 않는다. */
-      linear-gradient(0deg, rgba(7,17,13,1) 0%, rgba(7,17,13,.45) 13%,
-        rgba(7,17,13,0) 26%),
+      /* 메뉴 카드가 히어로 하단으로 들어오면서 이 층이 카드 글자의 바탕이 됐다.
+         하단 44% 까지 짙게 눌러 카드 대비를 확보한다 — 얼굴은 상단이라 닿지 않는다.
+         맨 바닥 --ink 100% 는 다음 섹션과 녹는 이음새 처리(그대로). */
+      linear-gradient(0deg, rgba(7,17,13,1) 0%, rgba(7,17,13,.86) 24%,
+        rgba(7,17,13,.5) 44%, rgba(7,17,13,0) 64%),
       linear-gradient(180deg, rgba(7,17,13,.74) 0%, rgba(7,17,13,.34) 32%,
         rgba(7,17,13,0) 60%),
       linear-gradient(90deg, rgba(7,17,13,.96) 0%, rgba(7,17,13,.88) 34%,
@@ -208,6 +211,11 @@
   .hero h1 em{ display:block; margin-top:20px; color:var(--lime); font-style:normal;
                font-family:var(--body); font-weight:800; font-size:.26em;
                letter-spacing:-.02em; line-height:1.15; text-transform:none; }
+  /* 히어로 속 메뉴 자리. 홈에서만 drawHero 가 채운다 — 다른 화면은 빈 div 하나라
+     자리도 차지하지 않는다(margin 은 :empty 로 걷는다). */
+  #heroMenuWrap{ margin-top:56px; }
+  #heroMenuWrap:empty{ margin-top:0; }
+  #heroMenuWrap .eyebrow{ color:var(--lime); }
   .hero-bottom{ margin-top:36px; display:grid;
                 grid-template-columns:minmax(0,600px) 1fr; gap:60px; align-items:end; }
   .hero-copy{ margin:0; color:rgba(255,255,255,.8); font-size:clamp(16px, 1.7vw, 21px);
@@ -226,9 +234,6 @@
 
   /* ---------- section shell ---------- */
   .section{ padding:104px 32px; scroll-margin-top:var(--navh); }
-  /* 히어로 바로 다음 블록만 위 여백을 줄인다 — 메뉴 카드 첫 줄이 첫 화면에 걸려야
-     "여기 뭐가 있는지"가 스크롤 전에 보인다. 아래 블록들은 원래 리듬 그대로다. */
-  .section.tight{ padding-top:72px; }
   .inner{ width:min(var(--max),100%); margin:0 auto; }
   .paper{ background:var(--paper); color:var(--ink); }
   .paper-alt{ background:var(--paper-2); color:var(--ink); }
@@ -615,6 +620,14 @@
     .hero{ min-height:0; }
     /* 모바일 전용 object-position 오버라이드를 두지 않는다 — 위의 초점 고정 값(67% 8%)이
        화면비와 무관하게 얼굴을 같은 비율 지점에 놓는다. 값이 갈라지면 그 사이 폭에서 어긋난다. */
+    /* 메뉴가 히어로 안으로 들어오며 모바일 히어로가 1300px 가까이 길어졌다.
+       cover 로 그 높이를 다 채우면 가로 창이 16% 까지 좁아져 얼굴이 화면을 통째로
+       채우는 극단 클로즈업이 된다(2026-08-15 실측). 사진을 상단부(헤드라인~숫자 줄)에만
+       걸고 아래는 마스크로 --ink 에 녹인다 — 메뉴는 잉크 위에 앉지만 페이드가 이어 줘
+       "사진 따로 메뉴 따로" 경계는 생기지 않는다. */
+    .hero.has-photo .hero-bg{ bottom:auto; height:700px;
+      -webkit-mask-image:linear-gradient(180deg, #000 58%, rgba(0,0,0,0) 96%);
+      mask-image:linear-gradient(180deg, #000 58%, rgba(0,0,0,0) 96%); }
     .hero-content{ width:calc(100% - 36px); padding:calc(var(--navh) + 40px) 0 40px; }
     .hero h1{ font-size:clamp(52px,17vw,92px); }
     .hero-facts{ grid-template-columns:1fr 1fr 1fr; }
@@ -689,6 +702,12 @@
       <p class="hero-copy" id="heroCopy"></p>
       <div class="hero-facts" id="heroFacts"></div>
     </div>
+    <!-- 홈의 메뉴 카드가 여기 들어온다(drawHero 가 채우고 비운다). 메뉴를 히어로 안에
+         두는 이유: 사진 한 장이 히어로와 메뉴를 통으로 덮어야 "사진 따로 메뉴 따로"의
+         경계가 사라진다(대표 지시 2026-08-15 "이미지도 하나로 연결"). 히어로는
+         align-items:flex-end 라 내용이 커지면 같이 자라고, 사진은 inset:0 cover 라
+         자동으로 전체를 덮는다. -->
+    <div id="heroMenuWrap"></div>
   </div>
 </header>
 
@@ -1133,17 +1152,26 @@ function drawHero(route){
   /* 홈만 한글 문장 제목이라 라틴 대문자 조판(-.075em·uppercase)을 쓰면 글자가 뭉개진다.
      문구에 든 <br> 은 한글 줄바꿈을 손으로 잡아 둔 것이라 그대로 넣는다 —
      상수이고 바깥에서 들어온 값이 아니다. */
+  var mw = document.getElementById("heroMenuWrap");
   if (route === "home"){
     t.className = "h-home";
     t.innerHTML = HOME_COPY.h1;
     document.getElementById("heroCopy").textContent = HOME_COPY.sub;
+    /* 메뉴 카드 자리를 만든다. 채우는 것은 homeFillMenu — 여기는 그릇만 놓는다.
+       헤딩(무엇을 볼 수 있나)은 넣지 않는다: 히어로에는 이미 h1 이 있어서
+       큰 제목이 둘이 되면 서로 싸운다. eyebrow 한 줄이면 구역 표시로 충분하다. */
+    if (mw && !document.getElementById("homeMenu")){
+      mw.innerHTML = "<p class='eyebrow'>Menu</p>" +
+        "<div class='arch menu-cards' id='homeMenu'></div>";
+    }
     return;
   }
   t.className = "";
   t.innerHTML = esc(h.latin) + "<em>" + esc(h.ko) + "</em>";
-  /* 마감 점은 홈의 것이다 — 다른 화면까지 따라다니면 무엇을 가리키는 점인지 알 수 없다 */
+  /* 마감 점·메뉴 카드는 홈의 것이다 — 다른 화면까지 따라다니면 안 된다 */
   var dots = document.getElementById("heroDots");
   if (dots) dots.innerHTML = "";
+  if (mw) mw.innerHTML = "";
   document.getElementById("heroCopy").textContent = h.copy;
 }
 /* 히어로 상단 pill — 첫 개는 라임 채움 */
@@ -3498,13 +3526,10 @@ function renderHome(){
   setKicker(["AI 레이더"]);
   setFacts([["—", "접수 중"], ["—", "오늘 마감"], ["—", "오늘 새 소식"], ["—", "기술 동향"]]);
   C.innerHTML =
-    /* 메뉴 안내가 마감 목록보다 위다. 처음 온 사람은 마감 스무 건을 다 지나야
-       "여기에 뭐가 더 있는지"를 알게 되는데, 그 전에 떠난다. */
-    "<section class='section dark tight'><div class='inner'>" +
-      sectionHead("Menu", HOME_COPY.menuH, "", "") +
-      "<div class='arch menu-cards' id='homeMenu'></div>" +
-    "</div></section>" +
-
+    /* 메뉴 카드는 여기 없다 — 히어로 안(#heroMenuWrap, drawHero 가 만든다)에 있다.
+       사진 한 장이 히어로와 메뉴를 통으로 덮어야 하기 때문이다(대표 지시 2026-08-15).
+       처음 온 사람이 마감 스무 건을 지나기 전에 "여기 뭐가 있는지"를 보게 한다는
+       원래 목적도 그대로다 — 오히려 더 위로 올라갔다. */
     "<section class='section paper'><div class='inner'>" +
       sectionHead("Deadlines", HOME_COPY.dueH, "", "") +
       "<div class='rows two' id='homeDue' style='min-height:520px'>" +
