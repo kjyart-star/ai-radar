@@ -583,8 +583,11 @@
      960px 아래에서는 한 단으로 접히고, 그때 브리핑이 위로 올라간다(order:-1) —
      좁은 화면에서 빈 피드를 먼저 만나지 않게 하려던 원래 의도 그대로다. */
   .bd-wide{ max-width:none; }
-  .bd-cols{ display:grid; grid-template-columns:minmax(0,760px) minmax(240px,320px);
-            justify-content:space-between; gap:56px; align-items:start; }
+  /* 1fr 이어야 한다. minmax(0,760px) + justify-content 로 두면 트랙이 내용 크기로
+     줄어들어(글이 짧으면 400px 남짓) 오른쪽 절반이 통째로 비었다 — 대표 실보고
+     2026-08-15 "게시판이 더 좁아짐". 1fr 은 남는 폭을 글이 다 쓰게 한다. */
+  .bd-cols{ display:grid; grid-template-columns:minmax(0,1fr) minmax(280px,340px);
+            gap:56px; align-items:start; }
   .bd-thread{ max-width:760px; }
   .bd-back{ display:inline-block; margin-bottom:20px; font-family:var(--display); font-size:11px;
             font-weight:800; letter-spacing:.12em; text-transform:uppercase;
