@@ -2,7 +2,7 @@
 
 AI 공모전 · 영화제 · 지원사업 · 뉴스 브리핑 · 유튜브 · AI 작품을 한 화면에서 봅니다.
 
-- 사이트: https://kjyart-star.github.io/ai-radar/
+- 사이트: https://ai-radar.kr
 - 구성: 정적 사이트 한 장(`index.html`) + 매일 아침 수집하는 GitHub Actions(`.github/workflows/collect.yml`) + 수집 결과(`data/*.json`)
 
 ---
@@ -180,8 +180,8 @@ const firebaseConfig = {
 글 하나하나가 고유 주소를 가집니다.
 
 ```
-https://kjyart-star.github.io/ai-radar/board/            피드
-https://kjyart-star.github.io/ai-radar/board/{슬러그}     글 하나
+https://ai-radar.kr/board/            피드
+https://ai-radar.kr/board/{슬러그}     글 하나
 ```
 
 슬러그는 본문 앞부분에서 만든 한글 주소입니다(예: `ai-영상-공모전-후기-7f3a`).
