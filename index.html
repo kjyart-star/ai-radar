@@ -3027,7 +3027,7 @@ function bdComposer(host, opt){
           "<span class='bd-count tnum' data-ccount></span>"+
           "<button type='button' class='btn' data-csend>"+(isReply?"답글 올리기":"올리기")+"</button>"
         : "<span class='bd-hint'>구글 계정으로 3초면 시작합니다</span>"+
-          "<button type='button' class='btn' data-login>Google로 시작하기</button>")+
+          "<button type='button' class='btn' data-login>구글 계정으로 로그인</button>")+
     "</div></div>";
 
   var ta = host.querySelector("[data-cbody]");
@@ -3235,7 +3235,7 @@ function bdFeedView(el){
     rowsEl.innerHTML = bdFeed.length
       ? bdFeed.map(function(p){ return bdCard(p, {}); }).join("")
       : "<div class='bd-empty'><p>아직 글이 없습니다. 첫 글을 남겨 보세요.</p>"+
-        (bdUser ? "" : "<button type='button' class='btn' data-login>Google로 시작하기</button>")+"</div>";
+        (bdUser ? "" : "<button type='button' class='btn' data-login>구글 계정으로 로그인</button>")+"</div>";
     /* 무한 스크롤이 기본이고, IntersectionObserver 가 없는 브라우저에서만 버튼이 남는다 */
     moreEl.innerHTML = !bdMore ? ""
       : (hasIo ? "<span class='bd-sentinel' data-sentinel></span><span class='bd-loading'>더 불러오는 중…</span>"
@@ -3691,7 +3691,7 @@ function wpEditView(el){
     el.innerHTML = "<div class='bd-composer'><p class='bd-lead' style='margin-top:0'>내 프로필</p>"+
       "<p class='bd-hint'>로그인하면 내 프로필 주소가 생깁니다.</p>"+
       "<div class='bd-cfoot'><span class='bd-hint'>구글 계정으로 3초면 시작합니다</span>"+
-      "<button type='button' class='btn' data-login>Google로 시작하기</button></div></div>";
+      "<button type='button' class='btn' data-login>구글 계정으로 로그인</button></div></div>";
     return;
   }
   if (wpMine === undefined){
@@ -3960,7 +3960,7 @@ function wkForm(host, done){
     host.innerHTML = "<div class='bd-composer'>"+
       "<p class='bd-lead' style='margin-top:0'>내 작품 올리기</p>"+
       "<div class='bd-cfoot'><span class='bd-hint'>구글 계정으로 3초면 시작합니다</span>"+
-      "<button type='button' class='btn' data-login>Google로 시작하기</button></div></div>";
+      "<button type='button' class='btn' data-login>구글 계정으로 로그인</button></div></div>";
     return;
   }
   if (wpMine === undefined){
@@ -4138,7 +4138,9 @@ function nvAuth(){
        처음 온 사람에게는 가입 권유로, 돌아온 사람에게는 로그인으로 읽힌다.
        실제로 갈리는 곳은 로그인 뒤 프로필 유무다(nvAfterLogin). */
     el.innerHTML =
-      "<button type='button' class='btn solid' data-nvlogin>시작하기</button>";
+      /* 문구는 '로그인' 이다(대표 지시 2026-08-15). 구글 인증 하나뿐이라 가입·로그인이
+         같은 동작이므로 버튼도 하나다 — 처음 온 사람은 로그인 뒤 닉네임 만들기로 이어진다. */
+      "<button type='button' class='btn solid' data-nvlogin>로그인</button>";
     return;
   }
   /* 닉네임은 프로필에만 있다(구글 이름은 쓰지 않는다). 아직 모르면 받아 와서 다시 그린다 */
