@@ -839,7 +839,7 @@ function nextActions({ kind, selfUrl, emphasis = "all" }) {
   if (emphasis !== "top")
     out.push(`<h2>마감 알림 구독</h2>
 <p>마감 3일 전에 메일로 알려드립니다.</p>
-<p><a class="go" href="${SITE_BASE}/#home">마감 알림 받기 →</a></p>`);
+<p><a class="go" href="${SITE_BASE}/?to=sub">마감 알림 받기 →</a></p>`);
   // 접수 중인 게 하나도 없으면 "0건"을 적지 않는다 — 숫자 없이 허브로만 보낸다
   if (emphasis !== "bottom")
     out.push(`<p><a class="go sec" href="${esc(c.href)}">${esc(n ? c.all(n) : c.hub)} →</a></p>`);
