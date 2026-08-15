@@ -742,7 +742,11 @@
   .wk-modal{ position:fixed; inset:0; z-index:200; display:none; align-items:center;
              justify-content:center; padding:24px; background:rgba(7,17,13,.94); }
   .wk-modal.on{ display:flex; }
-  .wk-box{ width:min(1080px,100%); }
+  /* 16:9 영상이 화면 안에서 최대한 크게. 폭만 제한하면 세로로 넘치거나(넓은 화면) 작게
+     남는다(높은 화면). 세 가지 중 가장 작은 값 — 가로 96vw · 상한 1920px · 세로에 맞춘 폭
+     ((가용높이)*16/9) — 으로 잡으면 어떤 해상도에서도 넘치지 않고 꽉 찬다.
+     160px 는 제목·출처·닫기·여백(위아래)이 쓰는 세로 높이의 넉넉한 어림값이다. */
+  .wk-box{ width:min(96vw, 1920px, calc((100vh - 160px) * 16 / 9)); }
   .wk-mhead{ display:flex; align-items:flex-start; gap:14px; margin-bottom:12px; color:#fff; }
   .wk-mtitle{ margin:0; font-size:17px; font-weight:800; letter-spacing:-.02em; line-height:1.45;
               word-break:keep-all; }
