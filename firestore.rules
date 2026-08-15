@@ -120,9 +120,12 @@ service cloud.firestore {
 
       allow read: if true;
 
+      /* interests 는 홈 맞춤 추천용 관심 분야입니다(선택). 값은 index.html 의
+         INTEREST_CATS 다섯 갈래를 그대로 씁니다 — hasOnly 로 그 목록만 허용해
+         개수(<=5)와 각 항목(짧은 고정 문자열)을 함께 묶습니다. 없어도 됩니다. */
       allow create: if request.auth != null && request.auth.uid == uid
                     && request.resource.data.keys()
-                         .hasOnly(['nick','slug','bio','link','photoURL','createdAt'])
+                         .hasOnly(['nick','slug','bio','link','photoURL','createdAt','interests'])
                     && request.resource.data.nick is string
                     && request.resource.data.nick.size() >= 2
                     && request.resource.data.nick.size() <= 20
@@ -137,14 +140,23 @@ service cloud.firestore {
                         || request.resource.data.link.matches('^https://.*'))
                     && request.resource.data.photoURL is string
                     && request.resource.data.photoURL.size() <= 500
+                    /* photoURL 은 https 만 — javascript:·data: 가 src 로 들어가지 못하게(제안).
+                       화면(wpPhotoError)에서 이미 막고 있고, 여기서 서버로 한 번 더 막습니다. */
+                    && (request.resource.data.photoURL == ''
+                        || request.resource.data.photoURL.matches('^https://.*'))
+                    && (!('interests' in request.resource.data)
+                        || (request.resource.data.interests is list
+                            && request.resource.data.interests.size() <= 6
+                            && request.resource.data.interests.hasOnly(
+                                 ['영상·영화','이미지·디자인','개발·바이브코딩','음악·사운드','창업·지원사업'])))
                     /* 만든 시각은 서버 시각이어야 합니다 — 날짜를 지어낼 수 없게 */
                     && request.resource.data.createdAt == request.time;
 
-      /* 고칠 수 있는 것은 네 가지뿐입니다. slug·createdAt 은 물론이고
+      /* 고칠 수 있는 것은 다섯 가지뿐입니다. slug·createdAt 은 물론이고
          목록에 없는 새 키(email 같은 것)를 끼워 넣는 것도 affectedKeys 에 잡혀 거부됩니다. */
       allow update: if request.auth != null && request.auth.uid == uid
                     && request.resource.data.diff(resource.data).affectedKeys()
-                         .hasOnly(['nick','bio','link','photoURL'])
+                         .hasOnly(['nick','bio','link','photoURL','interests'])
                     && request.resource.data.nick is string
                     && request.resource.data.nick.size() >= 2
                     && request.resource.data.nick.size() <= 20
@@ -155,7 +167,14 @@ service cloud.firestore {
                     && (request.resource.data.link == ''
                         || request.resource.data.link.matches('^https://.*'))
                     && request.resource.data.photoURL is string
-                    && request.resource.data.photoURL.size() <= 500;
+                    && request.resource.data.photoURL.size() <= 500
+                    && (request.resource.data.photoURL == ''
+                        || request.resource.data.photoURL.matches('^https://.*'))
+                    && (!('interests' in request.resource.data)
+                        || (request.resource.data.interests is list
+                            && request.resource.data.interests.size() <= 6
+                            && request.resource.data.interests.hasOnly(
+                                 ['영상·영화','이미지·디자인','개발·바이브코딩','음악·사운드','창업·지원사업'])));
 
       allow delete: if false;
     }
