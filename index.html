@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>AI 레이더 — AI 공모전·영화제·지원사업·뉴스</title>
 <meta name="description" content="AI 공모전, AI 영화제, AI 지원사업, 아침 뉴스 브리핑과 유튜브 영상을 한 화면에서 봅니다. 로그인 없이 열립니다.">
-<!-- ===== 사이트 절대 주소 — 도메인 이전 시 여기만 고친다 =====
-     도메인 이전 예정(ai-radar.kr). 지금은 https://kjyart-star.github.io/ai-radar/ 이고
-     옮기면 https://ai-radar.kr/ 이 되면서 /ai-radar/ 경로가 사라진다.
-     절대 주소가 필요한 곳은 아래 세 줄(og:url · og:image · canonical)뿐이므로
-     주소를 바꿀 때 이 블록만 고치면 된다. 스크립트로 만들어 넣지 않는 이유는
-     카카오톡·페이스북·슬랙 미리보기 수집기가 자바스크립트를 실행하지 않아서다 —
-     JS 로 넣은 og 태그는 공유 카드에 잡히지 않는다.
+<!-- ===== 사이트 절대 주소 — 주소가 바뀌면 여기만 고친다 =====
+     자체 도메인 ai-radar.kr 을 쓴다(2026-08-15 연결). 커스텀 도메인을 붙이면 저장소가
+     도메인 루트에 서빙되므로 옛 프로젝트 경로 /ai-radar/ 는 붙이지 않는다 — 붙이면 404 다.
+     아래 세 줄(og:url · og:image · canonical)이 절대 주소가 필요한 전부다.
+     스크립트로 만들어 넣지 않는 이유는 카카오톡·페이스북·슬랙 미리보기 수집기가
+     자바스크립트를 실행하지 않아서다 — JS 로 넣은 og 태그는 공유 카드에 잡히지 않는다.
+     아래 JS 의 SITE_URL 은 같은 주소를 실행 중에 쓰는 자리(공유 링크)를 위한 것이다.
      본문 링크는 BASE(location.pathname 에서 런타임 계산)를 쓰므로 손댈 것이 없다. -->
-<meta property="og:url" content="https://kjyart-star.github.io/ai-radar/">
-<meta property="og:image" content="https://kjyart-star.github.io/ai-radar/assets/og-cover.png">
-<link rel="canonical" href="https://kjyart-star.github.io/ai-radar/">
+<meta property="og:url" content="https://ai-radar.kr/">
+<meta property="og:image" content="https://ai-radar.kr/assets/og-cover.png">
+<link rel="canonical" href="https://ai-radar.kr/">
 <!-- ===== 여기까지 ===== -->
 <meta property="og:title" content="AI 레이더">
 <meta property="og:description" content="AI 공모전·영화제·지원사업·뉴스를 한 화면에서. 마감이 가까운 순으로.">
@@ -591,8 +591,10 @@
    주소가 그대로여야 이미 공유된 링크가 살아남는다.
    그래서 라우터는 두 방식을 함께 본다: 경로가 board 면 게시판, 아니면 기존 해시 그대로.
 
-   GitHub Pages 프로젝트 페이지라 실제 베이스는 "/ai-radar/" 이고 로컬은 "/" 다.
-   하드코딩하면 한쪽이 반드시 깨지므로 실행 중에 구한다. */
+   베이스는 실행 중에 구한다. 하드코딩하면 어느 한쪽이 반드시 깨지기 때문이다 —
+   지금은 자체 도메인 루트("/")이고 로컬도 "/" 지만, 옛 프로젝트 주소
+   (kjyart-star.github.io/ai-radar/)로 들어오는 링크에서는 "/ai-radar/" 다.
+   이 계산 덕분에 도메인을 옮겨도 아래 라우팅은 손댈 것이 없었다. */
 
 /* GitHub Pages 는 /board/{slug} 에 해당하는 파일이 없으면 404.html 을 준다.
    404.html 이 원래 주소를 sessionStorage 에 담아 사이트 루트로 보내고, 여기서 되돌린다.
@@ -632,6 +634,12 @@ function boardUrl(slug){ return BASE + "board/" + (slug ? encodeURIComponent(slu
    계속 불렀다. 화면 자체는 떠서 겉으로는 멀쩡해 보인다 — 조용히 죽는 부류다.
    주소를 바꿀 일이 생기면 반드시 살아 있는지 먼저 확인한다:
      curl -sL "<주소>?action=pub" | head -c 80     → {"generated": … 가 나와야 한다 */
+/* 자체 도메인. 주소는 이 상수 한 곳만 고치면 되게 둔다.
+   실행 중에 절대 주소를 만들어야 하는 곳(공유 링크)이 쓴다. <head> 의 og·canonical 은
+   미리보기 수집기가 자바스크립트를 실행하지 않아 이 값을 쓸 수 없다 —
+   그쪽은 같은 주소를 문자열로 적어 두었고, 바꿀 때 두 곳을 함께 고친다. */
+var SITE_URL = "https://ai-radar.kr";
+
 var API = "https://script.google.com/macros/s/AKfycbxqPn36E8gpmKp3RzUR60XTaNL7G4wY_-xyUMXszOUUj8mQh3OoSOcWCzFZ-rkxdHU5/exec";
 
 /* ============ 자유게시판 Firebase 설정 ============
@@ -2295,7 +2303,11 @@ function bdCanShare(){
   return !!(navigator.share || (navigator.clipboard && navigator.clipboard.writeText));
 }
 function bdShare(slug, text){
-  var url = location.origin + boardUrl(slug);
+  /* 공유는 언제나 자체 도메인으로 나간다. location.origin + boardUrl() 을 쓰면
+     옛 프로젝트 주소(github.io/ai-radar/)로 들어온 사람이 그 경로째 복사해 가고,
+     SITE_URL 에 그 경로를 붙이면 ai-radar.kr/ai-radar/... 가 되어 깨진다.
+     그래서 베이스를 섞지 않고 도메인 루트 기준으로 새로 만든다. */
+  var url = SITE_URL + "/board/" + (slug ? encodeURIComponent(slug) : "");
   if (navigator.share){
     try {
       navigator.share({ title:"AI 레이더 자유게시판", text:String(text||"").slice(0,80), url:url })
