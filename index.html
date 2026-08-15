@@ -92,17 +92,45 @@
   .nav-links a.on{ color:var(--lime); border-bottom-color:var(--lime); }
 
   /* ---------- hero ---------- */
-  /* 히어로를 96vh 가 아니라 74vh 로 낮췄다. 이건 리스팅 서비스라 목록이
-     첫 화면 안에 걸쳐 보여야 스크롤할 이유가 생긴다. */
-  .hero{ position:relative; min-height:min(74vh, 700px); display:flex; align-items:flex-end;
+  /* 한동안 "메뉴 카드가 첫 화면에 걸치게" 히어로를 58vh 까지 눌러 뒀는데, 그렇게 하니
+     첫 화면이 메인 페이지가 아니라 띠배너 한 줄로 보였다. 첫인상은 이 화면 하나가
+     정한다 — 히어로의 존재감이 먼저다 (대표 지시 2026-08-15).
+     메뉴가 아래에 걸쳐 보이는 건 있으면 좋은 것이지, 그걸 위해 히어로를 납작하게
+     만들 이유는 되지 않는다. 대신 아래쪽에 .hero::before 로 "더 있다"는 표시만 남긴다. */
+  .hero{ position:relative; min-height:min(72vh, 660px); display:flex; align-items:flex-end;
          overflow:hidden; border-bottom:1px solid var(--line-dark); }
-  .hero-radar{ position:absolute; inset:0; pointer-events:none; }
+  /* 아래에 더 있다는 표시. 화살표는 쓰지 않는다 — 1px 선으로만 말하는 화면에
+     아이콘이 하나 들어오면 그것만 튄다. 히어로 아래쪽 빈 여백 안에 두어
+     제목·본문·숫자 줄 어느 것과도 겹치지 않는다. */
+  .hero::before{ content:""; position:absolute; z-index:3; left:50%; bottom:12px;
+                 width:1px; height:20px; pointer-events:none;
+                 background:linear-gradient(180deg, rgba(182,255,63,0) 0%,
+                   rgba(182,255,63,.55) 100%); }
+  /* 배경 사진은 홈에서만 켠다(.has-photo 는 drawHero 가 붙인다). 다른 화면은
+     지금처럼 검은 바탕 위 레이더 그대로다.
+     쌓임 순서는 아래에서 위로 사진 → 어둠막(::after) → 레이더 → 글이다.
+     video 로 갈아끼울 자리라 이 블록만 통째로 바꾸면 되게 따로 떼어 뒀다. */
+  .hero-bg{ position:absolute; inset:0; z-index:0; display:none; }
+  .hero.has-photo .hero-bg{ display:block; }
+  /* object-position 은 인물이 오른쪽에 남게 잡은 값이다 — 가운데로 두면 왼쪽 글자와 겹친다 */
+  .hero-bg img{ width:100%; height:100%; object-fit:cover; object-position:64% 42%;
+                display:block; }
+  .hero-radar{ position:absolute; inset:0; z-index:2; pointer-events:none; }
   .hero-radar i{ position:absolute; left:76%; top:46%; translate:-50% -50%;
                  border:1px solid rgba(182,255,63,.24); border-radius:50%; }
   .hero-radar i:nth-child(1){ width:26vw; height:26vw; }
   .hero-radar i:nth-child(2){ width:52vw; height:52vw; }
   .hero-radar i:nth-child(3){ width:78vw; height:78vw; }
   .hero-radar i:nth-child(4){ width:104vw; height:104vw; opacity:.6; }
+  /* 링 위에 찍히는 실제 마감. 안쪽일수록 임박했고 사흘 안쪽은 붉다.
+     margin 으로 반 칸 당겨 점의 중심을 좌표에 맞춘다. */
+  .hero-dots{ position:absolute; inset:0; }
+  .hero-dots .dot{ position:absolute; width:7px; height:7px; margin:-3.5px 0 0 -3.5px;
+                   border-radius:50%; background:var(--lime); opacity:.42; }
+  .hero-dots .dot.warm{ opacity:.8; }
+  /* 테두리는 1px 링이다 — 흐릿한 글로우를 쓰면 레이더가 아니라 조명이 된다 */
+  .hero-dots .dot.hot{ background:var(--coral); opacity:1;
+                       box-shadow:0 0 0 3px rgba(255,115,88,.2); }
   .hero-sweep{ position:absolute; left:76%; top:46%; width:104vw; height:104vw;
                translate:-50% -50%; border-radius:50%;
                background:conic-gradient(from 0deg,
@@ -114,11 +142,37 @@
   .hero-sweep::before{ content:""; position:absolute; left:50%; top:0; width:1px;
                        height:50%; background:rgba(182,255,63,.55); }
   @keyframes sweep{ to{ rotate:360deg; } }
-  .hero::after{ content:""; position:absolute; inset:0; pointer-events:none;
+  .hero::after{ content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
                 background:linear-gradient(90deg, rgba(7,17,13,.96) 0%,
                   rgba(7,17,13,.72) 46%, rgba(7,17,13,.30) 100%); }
-  .hero-content{ position:relative; z-index:2; width:min(var(--max), calc(100% - 64px));
-                 margin:0 auto; padding:calc(var(--navh) + 62px) 0 58px; }
+  /* 사진 위에서는 어둠막을 두 장 겹친다.
+     위→아래 한 장은 사진 왼쪽 위의 소프트박스가 너무 밝아 pill 글자가 떠 보이는 것을 누른다.
+     왼→오른쪽 한 장은 글이 앉는 왼쪽을 가장 어둡게, 인물이 있는 오른쪽을 가장 밝게 남긴다 —
+     오른쪽까지 덮어 버리면 사진을 넣은 이유가 없어진다.
+     색은 순검정이 아니라 --ink(7,17,13) 다. 순검정을 쓰면 이 화면만 색이 튄다. */
+  .hero.has-photo::after{
+    background:
+      linear-gradient(180deg, rgba(7,17,13,.74) 0%, rgba(7,17,13,.34) 32%,
+        rgba(7,17,13,0) 60%),
+      linear-gradient(90deg, rgba(7,17,13,.96) 0%, rgba(7,17,13,.88) 34%,
+        rgba(7,17,13,.58) 64%, rgba(7,17,13,.28) 100%); }
+  /* 레이더는 남긴다(대표 지시) — 이 서비스의 시그니처라 사진이 깔렸다고 뺄 것이 아니다.
+     다만 스위프가 오른쪽 인물 위를 가로지르면 얼굴에 선이 걸리므로,
+     오른쪽으로 갈수록 사라지게 마스크한다. */
+  .hero.has-photo .hero-radar{
+    -webkit-mask-image:linear-gradient(90deg, #000 0%, #000 44%, transparent 76%);
+    mask-image:linear-gradient(90deg, #000 0%, #000 44%, transparent 76%); }
+  /* 사진 위에서는 스위프가 그림에 묻혀 도는 게 안 보인다. 라임 농도만 조금 올리고
+     (.10 → .18, 앞날 1px 선 .55 → .72) 속도를 늦춘다 — 사진 위에서 9초는 부산스럽다.
+     전역 9s 는 그대로 둔다. 다른 화면은 지금 속도가 맞다.
+     평면 그라디언트와 1px 실선은 그대로다. 글로우·블러는 여기서도 쓰지 않는다. */
+  .hero.has-photo .hero-sweep{ animation-duration:26s;
+    background:conic-gradient(from 0deg,
+      rgba(182,255,63,.18) 0deg, rgba(182,255,63,0) 40deg,
+      rgba(182,255,63,0) 360deg); }
+  .hero.has-photo .hero-sweep::before{ background:rgba(182,255,63,.72); }
+  .hero-content{ position:relative; z-index:3; width:min(var(--max), calc(100% - 64px));
+                 margin:0 auto; padding:calc(var(--navh) + 44px) 0 42px; }
   .kicker{ display:flex; gap:9px; flex-wrap:wrap; margin-bottom:22px; }
   .pill{ border:1px solid rgba(255,255,255,.35); border-radius:999px; padding:7px 12px;
          font-size:10px; letter-spacing:.14em; text-transform:uppercase; font-weight:700; }
@@ -136,6 +190,9 @@
                 grid-template-columns:minmax(0,600px) 1fr; gap:60px; align-items:end; }
   .hero-copy{ margin:0; color:rgba(255,255,255,.8); font-size:clamp(16px, 1.7vw, 21px);
               line-height:1.65; word-break:keep-all; }
+  /* 홈은 성격이 다른 네 칸을 쓴다(마감 둘 + 소식 + 기술) — 숫자만 보고도
+     여기가 마감만 다루는 곳이 아니라는 것이 보이게 하기 위해서다 */
+  .hero-facts.four{ grid-template-columns:repeat(4,1fr); }
   .hero-facts{ display:grid; grid-template-columns:repeat(3,1fr);
                border-top:1px solid var(--line-dark); }
   .hero-fact{ padding:15px 12px 0 0; min-width:0; }
@@ -147,6 +204,9 @@
 
   /* ---------- section shell ---------- */
   .section{ padding:104px 32px; scroll-margin-top:var(--navh); }
+  /* 히어로 바로 다음 블록만 위 여백을 줄인다 — 메뉴 카드 첫 줄이 첫 화면에 걸려야
+     "여기 뭐가 있는지"가 스크롤 전에 보인다. 아래 블록들은 원래 리듬 그대로다. */
+  .section.tight{ padding-top:72px; }
   .inner{ width:min(var(--max),100%); margin:0 auto; }
   .paper{ background:var(--paper); color:var(--ink); }
   .paper-alt{ background:var(--paper-2); color:var(--ink); }
@@ -186,6 +246,12 @@
   /* ---------- list rows (핵심 반복 단위) ---------- */
   .rows{ border-top:1px solid var(--line-light); }
   .dark .rows{ border-top-color:var(--line-dark); }
+  /* 홈의 마감 목록만 두 단이다. 스무 건을 한 줄로 세우면 화면이 지나치게 길어져
+     아래 블록(구독·브리핑)까지 내려오는 사람이 줄어든다.
+     기본 grid 흐름 그대로라 왼쪽에서 오른쪽으로 한 줄씩 채운다 — 위아래로 먼저
+     내려가면 D-day 순서를 눈으로 따라갈 수 없다.
+     좁은 화면은 아래 반응형(960px)에서 한 단으로 되돌린다. */
+  .rows.two{ display:grid; grid-template-columns:1fr 1fr; column-gap:40px; }
   .row{ display:grid; grid-template-columns:96px 1fr; gap:26px; align-items:start;
         padding:22px 16px 24px; border-bottom:1px solid var(--line-light);
         transition:background .18s ease, color .18s ease; }
@@ -326,6 +392,18 @@
                  letter-spacing:-.04em; }
   .arch .a-title{ display:block; margin-top:7px; font-size:12px; opacity:.62;
                   word-break:keep-all; }
+  /* 홈의 메뉴 카드는 여덟 개다. auto-fill 에 230px 만 주면 넓은 화면에서 다섯 칸이 되어
+     5 + 3 으로 떨어지고 마지막 줄이 반쯤 비어 보인다. 한 칸이 최소 1/4 이 되게 해서
+     4 + 4 로 맞춘다. 좁아지면 230px 규칙이 다시 살아나 세 칸·두 칸으로 줄고,
+     680px 아래에서는 아래 반응형의 .arch 규칙이 한 칸으로 만든다.
+     (클래스를 .arch 와 겹쳐 쓰지 않고 따로 둔 이유: .arch.menu-cards 로 쓰면
+      특정도가 높아져 모바일 1칸 규칙을 이겨 버린다) */
+  .menu-cards{ grid-template-columns:repeat(auto-fill,minmax(max(230px,25%),1fr)); }
+  /* 카드는 일곱이다(지금 보고 있는 홈은 카드로 만들지 않는다). 네 칸 그리드에서
+     4 + 3 이 되어 오른쪽 아래 한 칸이 빈다. 자유게시판 카드를 두 칸으로 늘려 채운다 —
+     앞의 여섯은 우리가 모아다 보여주는 곳이고 이곳만 사람이 쓰는 곳이라
+     넓게 두는 편이 뜻에도 맞는다. 680px 아래에서는 한 칸씩 흐르므로 되돌린다. */
+  .menu-cards a.wide{ grid-column:span 2; }
 
   /* ---------- 홈 ----------
      홈의 제목만 한글 문장이다. 위 .hero h1 은 라틴 대문자 전용이라(-.075em·uppercase)
@@ -333,11 +411,13 @@
      min-height 는 숫자가 오기 전 빈 자리를 잡아 두는 값이다 — 두 줄분이라
      문장이 채워져도 화면이 밀리지 않는다. */
   .hero h1.h-home{ font-family:var(--body); font-weight:800; text-transform:none;
-                   font-size:clamp(33px, 5.4vw, 72px); letter-spacing:-.02em;
-                   line-height:1.24; min-height:2.48em; max-width:900px;
-                   word-break:keep-all; }
+                   font-size:clamp(36px, 6.1vw, 86px); letter-spacing:-.025em;
+                   line-height:1.18; max-width:1000px; word-break:keep-all; }
   .hero h1.h-home b{ font-family:var(--display); font-weight:900; color:var(--lime);
                      letter-spacing:-.05em; }
+  /* 홈 본문에 들어가는 사진. 모서리는 각지게 둔다 — 이 화면에서 둥근 것은
+     pill 과 점뿐이고, 블록에 라운드를 주면 여기만 다른 디자인이 된다. */
+  .home-photo{ display:block; width:100%; max-width:100%; height:auto; margin-top:30px; }
   /* 오늘 마감이 있는 날만 그 칸을 경고색으로 둔다 (setFacts 의 "hot") */
   .hero-fact.hot b{ color:var(--coral); }
   .hero-fact.hot span{ color:var(--coral); opacity:.9; }
@@ -485,6 +565,9 @@
   @media (max-width:960px){
     .hero-bottom,.section-head{ grid-template-columns:1fr; gap:26px; }
     .card-grid{ grid-template-columns:1fr; }
+    /* 두 단으로 두면 한 칸이 460px 밑으로 내려가는데, 왼쪽 D-day 칸 96px 을 빼면
+       제목에 남는 폭이 모자라 공고명이 서너 줄로 접힌다. 한 단으로 되돌린다. */
+    .rows.two{ grid-template-columns:1fr; column-gap:0; }
   }
   @media (max-width:760px){
     :root{ --navh:124px; }
@@ -508,9 +591,14 @@
   }
   @media (max-width:680px){
     .hero{ min-height:0; }
+    /* 좁은 화면에서는 같은 사진을 세로로 잘라 쓰게 되어 인물이 오른쪽 밖으로 밀린다.
+       사진을 빼지 않고 자르는 자리만 옮긴다 — 사진이 사라지면 홈이 다시 띠배너가 된다. */
+    .hero.has-photo .hero-bg img{ object-position:70% 38%; }
     .hero-content{ width:calc(100% - 36px); padding:calc(var(--navh) + 40px) 0 40px; }
     .hero h1{ font-size:clamp(52px,17vw,92px); }
     .hero-facts{ grid-template-columns:1fr 1fr 1fr; }
+    /* 네 칸을 375px 에 한 줄로 세우면 한 칸이 80px 밑으로 내려가 라벨이 세 줄로 접힌다 */
+    .hero-facts.four{ grid-template-columns:1fr 1fr; row-gap:14px; }
     .section{ padding:74px 18px; }
     .row{ grid-template-columns:62px 1fr; gap:14px; padding:18px 0 20px; }
     .dd{ font-size:21px; }
@@ -526,6 +614,7 @@
     .item-card:not(.photo):not(.yt){ grid-template-columns:38px 1fr; gap:11px; }
     .item-card:not(.photo):not(.yt) img{ width:38px; height:38px; aspect-ratio:auto; }
     .arch{ grid-template-columns:1fr; }
+    .menu-cards a.wide{ grid-column:auto; }
     .row-talk{ margin:0 0 14px auto; }
     .bd-card.d1{ padding-left:13px; }
     .bd-card.d2{ padding-left:26px; }
@@ -555,10 +644,21 @@
 </nav>
 
 <header class="hero" id="top">
+  <!-- 히어로 배경. 나중에 <video> 로 교체할 수 있게 이 블록만 갈아끼우면 되도록 둔다. 영상으로 바꾸면 자동재생·무음·루프·prefers-reduced-motion·모바일 데이터 소모를 함께 처리해야 한다. -->
+  <div class="hero-bg">
+    <picture>
+      <source id="heroBgSrc" type="image/webp" srcset="assets/hero-studio.webp">
+      <img id="heroBgImg" src="assets/hero-studio.jpg" width="1920" height="1071"
+           fetchpriority="high" decoding="async" loading="eager"
+           alt="어두운 촬영 스튜디오 책상에서 태블릿을 쥐고 모니터를 보는 사람">
+    </picture>
+  </div>
   <!-- 시그니처 요소: 동심원 + 스위프. 주제(레이더)에서 나왔고 1px 선과
        평면 그라디언트만 쓴다 — 글로우나 블러는 넣지 않는다. -->
   <div class="hero-radar" aria-hidden="true">
     <i></i><i></i><i></i><i></i>
+    <!-- 홈에서만 채운다. 링 위에 실제 마감이 점으로 찍힌다(homeRadarDots) -->
+    <div class="hero-dots" id="heroDots"></div>
     <div class="hero-sweep"></div>
   </div>
   <div class="hero-content">
@@ -968,10 +1068,10 @@ function buildNav(){
 
 /* ============ 히어로 ============ */
 var HERO = {
-  /* 홈의 제목은 라틴 대문자가 아니라 숫자가 든 한 문장이다(homeHeadline).
-     여기 copy 는 그 아래 부제로만 쓰인다 — 숫자가 오기 전에도 이 줄은 바로 보인다. */
-  home:{ latin:"RADAR", ko:"AI 레이더",
-    copy:"AI 공모전 · 지원사업 · 영화제 마감을 한곳에서 봅니다." },
+  /* 홈의 제목·부제는 HOME_COPY 에 있다(아래 홈 블록). 여기서 그 값을 바로 꺼내 쓰면
+     HOME_COPY 가 아직 만들어지기 전이라 로드 시점에 터진다 — drawHero 가 실행 중에 읽는다.
+     latin·ko 는 문서 제목 계산에 쓰이므로 남겨 둔다. */
+  home:{ latin:"RADAR", ko:"AI 레이더", copy:"" },
   contests:{ latin:"CONTESTS", ko:"AI 공모전",
     copy:"국내외 AI 공모전을 마감이 가까운 순으로 모았습니다. 상금과 남은 기간을 한눈에 보실 수 있습니다." },
   festivals:{ latin:"FESTIVALS", ko:"AI 영화제",
@@ -990,17 +1090,39 @@ var HERO = {
   board:{ latin:"BOARD", ko:"자유게시판",
     copy:"AI를 쓰면서 알게 된 것을 짧게 남기고 이어 가는 곳입니다. 읽는 건 누구나, 남기는 건 로그인 후에 하실 수 있습니다." }
 };
+/* 히어로 마크업의 assets/... 는 상대 경로다. 게시판은 /board/{슬러그} 라는 실제 경로를
+   쓰므로 거기서는 /board/assets/... 로 풀려 사진이 깨진다. 그 화면에서는 숨겨져 있어
+   보이지 않지만, 거기서 홈으로 넘어오면(새로고침 없는 이동) 깨진 채로 남는다.
+   홈을 그릴 때 BASE 기준으로 한 번만 바로잡는다. */
+function fixHeroBg(){
+  var im = document.getElementById("heroBgImg"), so = document.getElementById("heroBgSrc");
+  if (!im || String(im.getAttribute("src")).indexOf(BASE) === 0) return;
+  if (so) so.setAttribute("srcset", BASE + "assets/hero-studio.webp");
+  im.setAttribute("src", BASE + "assets/hero-studio.jpg");
+}
 function drawHero(route){
   var h = HERO[route] || HERO[DEFAULT_ROUTE];
   var t = document.getElementById("heroTitle");
-  /* 홈만 한글 문장 제목이라 라틴 대문자 조판(-.075em·uppercase)을 쓰면 글자가 뭉개진다.
-     자리만 먼저 잡아 두고 숫자가 도착하면 homeHeadline 이 채운다. */
-  if (route === "home"){
-    homeHeadline(null);
-  } else {
-    t.className = "";
-    t.innerHTML = esc(h.latin) + "<em>" + esc(h.ko) + "</em>";
+  /* 배경 사진은 홈에서만 켠다. 다른 화면은 지금 그대로 검은 바탕 위 레이더다. */
+  var hero = document.getElementById("top");
+  if (hero){
+    if (route === "home"){ hero.classList.add("has-photo"); fixHeroBg(); }
+    else hero.classList.remove("has-photo");
   }
+  /* 홈만 한글 문장 제목이라 라틴 대문자 조판(-.075em·uppercase)을 쓰면 글자가 뭉개진다.
+     문구에 든 <br> 은 한글 줄바꿈을 손으로 잡아 둔 것이라 그대로 넣는다 —
+     상수이고 바깥에서 들어온 값이 아니다. */
+  if (route === "home"){
+    t.className = "h-home";
+    t.innerHTML = HOME_COPY.h1;
+    document.getElementById("heroCopy").textContent = HOME_COPY.sub;
+    return;
+  }
+  t.className = "";
+  t.innerHTML = esc(h.latin) + "<em>" + esc(h.ko) + "</em>";
+  /* 마감 점은 홈의 것이다 — 다른 화면까지 따라다니면 무엇을 가리키는 점인지 알 수 없다 */
+  var dots = document.getElementById("heroDots");
+  if (dots) dots.innerHTML = "";
   document.getElementById("heroCopy").textContent = h.copy;
 }
 /* 히어로 상단 pill — 첫 개는 라임 채움 */
@@ -1011,9 +1133,19 @@ function setKicker(list){
 }
 /* 히어로 숫자 세 칸. 데이터가 늦게 오는 화면은 로드 후 다시 부른다. */
 /* 세 번째 값은 선택이다 — 한 칸만 강조하고 싶을 때 "hot" 을 준다(홈의 "오늘 마감").
-   기존 화면들은 두 칸짜리 배열을 그대로 넘기므로 영향이 없다. */
+   기존 화면들은 두 칸짜리 배열을 그대로 넘기므로 영향이 없다.
+   칸이 넷이면(홈) 열 수를 넷으로 바꾼다. 화면마다 따로 손대지 않게 여기서 판단한다. */
 function setFacts(list){
-  document.getElementById("heroFacts").innerHTML = (list||[]).map(function(f){
+  list = list || [];
+  /* 값이 0 인 칸은 뺀다. "오늘 마감 0"은 알려주는 게 없으면서 자리는 제일 크게 차지한다.
+     "—" 는 지우지 않는다 — 아직 데이터가 오기 전이라는 뜻이고, 그 자리를 잡아 두어야
+     숫자가 채워질 때 화면이 밀리지 않는다. */
+  list = list.filter(function(f){ return String(f[0]) !== "0"; });
+  var el = document.getElementById("heroFacts");
+  /* 남는 칸이 하나도 없으면 줄째로 감춘다. 빈 테두리 한 줄만 남는 것보다 낫다. */
+  el.style.display = list.length ? "" : "none";
+  el.className = "hero-facts" + (list.length > 3 ? " four" : "");
+  el.innerHTML = list.map(function(f){
     return "<div class='hero-fact"+(f[2]?" "+esc(f[2]):"")+"'>"+
       "<b class='tnum'>"+esc(f[0])+"</b><span>"+esc(f[1])+"</span></div>";
   }).join("");
@@ -1442,7 +1574,7 @@ function renderFestivals(){
 
   if (state.loading){
     setKicker(["불러오는 중"]);
-    setFacts([["—","접수 중"],["—","전체 등록"],["—","7일 내 마감"]]);
+    setFacts([["—","이번 주 마감"],["—","접수 중"],["—","마감일 미정"]]);
     C.innerHTML = "<section class='section paper'><div class='inner'>"+emptyNote("영화제 목록을 불러오는 중입니다.")+"</div></section>";
     return;
   }
@@ -1459,10 +1591,13 @@ function renderFestivals(){
 
   setKicker(served ? ["매일 재조사", "갱신 "+updated, list.length+"곳 등록"]
                    : ["저장된 기본 목록", "갱신 "+updated]);
+  /* 이 화면만 "오늘 마감"을 세지 않는다. 영화제는 차기 회차 마감을 아직 안 알린 곳이
+     많아 오늘 마감이 거의 늘 0 이고, 미정을 접수 중에 섞으면 그 숫자가 거짓이 된다 —
+     미정은 미정대로 따로 센다. 그게 이 화면에서 가장 알고 싶은 것이기도 하다. */
   setFacts([
-    [String(open.length), "지금 낼 수 있는 곳"],
-    [String(list.length), "등록된 영화제"],
-    [String(dueWithin(open,"deadline",7,today)), "7일 안에 마감"]
+    [String(dueWithin(open,"deadline",7,today)), "이번 주 마감"],
+    [String(open.length), "접수 중"],
+    [String(tbd.length), "마감일 미정"]
   ]);
 
   var intro = "국내외 AI 영화제를 마감이 가까운 순으로 모았습니다. 매일 아침 다시 확인합니다 ("+esc(updated)+" 기준).";
@@ -1640,7 +1775,7 @@ function dpSection(){
 function renderContests(){
   var today = todaySeoul();
   setKicker(["AI 공모전 보드", "자동 갱신"]);
-  setFacts([["—","진행 중"],["—","7일 안에 마감"],["—","발표 대기"]]);
+  setFacts([["—","오늘 마감"],["—","이번 주 마감"],["—","접수 중"]]);
 
   C.innerHTML =
     "<section class='section paper'><div class='inner'>"+
@@ -1725,12 +1860,14 @@ function renderContests(){
       .sort(function(a,b){ return String(a.submission_end||"9999").localeCompare(String(b.submission_end||"9999")); });
     var awaiting = (sec.awaiting_results||[]).filter(match);
 
-    /* 숫자가 어느 범위인지 라벨에 박는다. "진행 중 37"만 있으면 국내인지 전체인지 모른다. */
+    /* 숫자가 어느 범위인지 라벨에 박는다. "접수 중 37"만 있으면 국내인지 전체인지 모른다.
+       마감 두 칸은 접수 중인 것만 세므로 범위를 또 적지 않는다 — 같은 목록에서 나온 값이다. */
     var scope = contestTab==="all" ? "전체" : contestTab==="domestic" ? "국내" : "해외";
+    var dueToday = dueWithin(ongoing,"submission_end",0,today);
     setFacts([
-      [String(ongoing.length), scope+" 진행 중"],
-      [String(dueWithin(ongoing,"submission_end",7,today)), "7일 안에 마감"],
-      [String(awaiting.length), "발표 대기"]
+      [String(dueToday), "오늘 마감", dueToday > 0 ? "hot" : ""],
+      [String(dueWithin(ongoing,"submission_end",7,today)), "이번 주 마감"],
+      [String(ongoing.length), scope+" 접수 중"]
     ]);
 
     bodyEl.innerHTML = "<div class='rows'>"+
@@ -1835,7 +1972,7 @@ function fetchGov(force){
 function renderGov(){
   var today = todaySeoul();
   setKicker(["창업지원 공고", "매일 갱신"]);
-  setFacts([["—","조건 일치"],["—","전체 공고"],["—","7일 안에 마감"]]);
+  setFacts([["—","오늘 마감"],["—","이번 주 마감"],["—","접수 중"]]);
 
   C.innerHTML =
     "<section class='section paper'><div class='inner'>"+
@@ -1913,10 +2050,13 @@ function renderGov(){
   function drawBody(){
     if (!cur || !cur.ok) return;
     var list = (cur.items||[]).filter(match);
+    /* 세 숫자 모두 지금 화면에 깔린 목록에서 나온다 — "AI 관련만"을 끄면 셋 다 같이 늘어난다.
+       전체 건수는 위 .count 줄이 이미 말하고 있으니 여기서는 마감만 본다. */
+    var dueToday = dueWithin(list,"end",0,today);
     setFacts([
-      [String(list.length), govAiOnly ? "AI 관련 공고" : "조건 일치"],
-      [String(cur.total||(cur.items||[]).length), "전체 공고"],
-      [String(dueWithin(list,"end",7,today)), "7일 안에 마감"]
+      [String(dueToday), "오늘 마감", dueToday > 0 ? "hot" : ""],
+      [String(dueWithin(list,"end",7,today)), "이번 주 마감"],
+      [String(list.length), "접수 중"]
     ]);
     bodyEl.innerHTML = "<div class='rows'>"+
       (list.length ? list.map(govRow).join("")
@@ -2932,6 +3072,11 @@ C.addEventListener("click", function(e){
 
 /* 문구를 한곳에 모아 둔다. 나중에 바꿔 볼 때 코드를 뒤지지 않아도 된다. */
 var HOME_COPY = {
+  /* 첫 문장이 이 서비스를 규정한다. 마감 건수를 제목에 걸었더니 공모전 사이트로 읽혔다 —
+     마감은 여기 있는 것 중 하나이지 정체성이 아니다. "매일 여는 곳"이 재방문과
+     커뮤니티를 함께 말하고, 마감은 부제의 첫 항목으로 살려 둔다. */
+  h1:"AI로 만드는 사람들이<br>매일 여는 곳",
+  sub:"공모전 마감부터 밤사이 소식, 새로 나온 도구까지. 오늘 필요한 것만 모아 둡니다.",
   dueH:"놓치면 다음은<br>내년입니다",
   alertH:"마감 3일 전에<br>알려드립니다",
   alertIntro:"메일 주소만 남겨 두시면 됩니다.",
@@ -3038,24 +3183,54 @@ function homeFestList(){
     .catch(function(){ return FESTIVALS || []; });
 }
 
-/* ---- 히어로 헤드라인 ----
-   숫자가 오기 전에는 문장을 만들지 않는다. "이번 주, 건이 마감됩니다" 같은 문장이
-   0.3초라도 보이면 그 화면은 고장난 것으로 읽힌다. 자리만 잡아 두고(h1 의 min-height)
-   숫자가 도착하면 채운다. 그동안 여기가 어디인지는 부제가 이미 말하고 있다.
+/* ---- 히어로 레이더 ----
+   배경의 동심원에 실제 마감을 점으로 찍는다. 장식이 아니라 이 서비스가 하는 일의 그림이다 —
+   가운데에 가까울수록 마감이 임박했고, 사흘 안쪽은 붉다. 링을 한 바퀴 도는 스윕과 합쳐
+   "지금 무엇이 잡히고 있는지"가 한 장으로 보인다.
 
-   이번 주가 0건인 주가 있다(연휴·연초). 그때는 문장이 무너지므로 접수 중 건수로 바꾼다.
-   그것도 0이면 숫자를 아예 쓰지 않는다 — 없는 긴장을 지어내지 않는다. */
-function homeHeadlineText(week, open){
-  if (week == null) return "";
-  if (week > 0) return "이번 주, <b class='tnum'>" + week + "</b>건이 마감됩니다.";
-  if (open > 0) return "지금 <b class='tnum'>" + open + "</b>건이 접수 중입니다.";
-  return "다음 공고를 기다리는 중입니다.";
-}
-function homeHeadline(week, open){
-  var el = document.getElementById("heroTitle");
+   이미지를 쓰지 않는다. 첫 화면에 그림 파일을 물리면 그만큼 늦게 뜨는데, 여기서 필요한 건
+   원 몇 개와 점 몇십 개라 CSS 로 충분하다. 링과 같은 중심(76%,46%)에 좌표만 맞추면 되므로
+   SVG 도 필요 없다 — 점 하나가 요소 하나다. */
+function homeRadarDots(list, today){
+  var el = document.getElementById("heroDots");
   if (!el) return;
-  el.className = "h-home";
-  el.innerHTML = homeHeadlineText(week, open);
+  list = list || [];
+  /* 앞에서부터 서른 개를 찍으면 전부 사흘 안쪽이라 화면이 온통 붉어진다(실측 30개 중 28개).
+     그러면 "임박한 것이 붉다"는 뜻이 사라진다. 목록 전체에서 고르게 건너뛰며 뽑아
+     오늘부터 한 달 넘게까지가 안에서 바깥으로 퍼지게 한다. */
+  var out = [], n = Math.min(list.length, 30);
+  var step = Math.max(1, Math.floor(list.length / n));
+  for (var i = 0; i < n; i++){
+    var it = list[i * step];
+    if (!it) break;
+    var d = homeDays(it.due, today);
+    if (d === null || d < 0) continue;
+    /* 반지름은 남은 날짜다. 가장 안쪽 링이 13vw 이므로 오늘 마감이 그 안에 들어온다 */
+    var r = 9 + Math.min(d, 45) * 0.92;
+    /* 황금각으로 흩는다 — 규칙적으로 놓으면 눈금처럼 보이고, 난수를 쓰면 그릴 때마다 달라진다 */
+    var a = i * 2.39996;
+    var cls = d <= 3 ? " hot" : (d <= 7 ? " warm" : "");
+    /* i 가 아니라 span 이다 — 링을 그리는 .hero-radar i 규칙이 자손 i 를 전부 잡아
+       점까지 26vw~104vw 짜리 원으로 만들어 버린다(2026-08-15 실측). */
+    out.push("<span class='dot" + cls + "' style='left:calc(76% + " + (r * Math.cos(a)).toFixed(2) +
+      "vw); top:calc(46% + " + (r * Math.sin(a)).toFixed(2) + "vw)'></span>");
+  }
+  el.innerHTML = out.join("");
+}
+
+/* 오늘 들어온 뉴스 개수. 수집물의 date 는 UTC 라 앞 10자만 자르면 하루가 밀린다 */
+function homeYmd(d){
+  var m = d.getMonth() + 1, dd = d.getDate();
+  return d.getFullYear() + "-" + (m < 10 ? "0" + m : m) + "-" + (dd < 10 ? "0" + dd : dd);
+}
+function homeTodayNews(j, today){
+  var ymd = homeYmd(today), n = 0;
+  ((j && j.items) || []).forEach(function(it){ if (ymdKST(it.date) === ymd) n++; });
+  return n;
+}
+function homeTechCount(j){
+  if (!j) return 0;
+  return ((j.github || []).length) + ((j.huggingface || []).length) + ((j.arxiv || []).length);
 }
 
 /* 세 소스를 각각 붙잡는다. 하나가 죽어도 나머지 두 종류는 그대로 나온다 —
@@ -3067,26 +3242,34 @@ function homeFillDue(){
   var pC = fetchContests("all", false).then(homeFromContests, function(){ return []; });
   var pF = homeFestList().then(homeFromFestivals, function(){ return []; });
   var pG = fetchGov(false).then(homeFromGov, function(){ return []; });
+  /* 숫자 줄이 마감 일색이면 공모전 사이트로 읽힌다. 성격이 다른 두 칸을 붙여
+     여기가 무엇을 다루는 곳인지 숫자만 보고도 알게 한다. 둘 다 실패하면 그 칸이 빠질 뿐이다 */
+  var pN = loadFeed("news").then(function(j){ return j; }, function(){ return null; });
+  var pT = loadFeed("tech").then(function(j){ return j; }, function(){ return null; });
 
-  Promise.all([pC, pF, pG]).then(function(res){
+  Promise.all([pC, pF, pG, pN, pT]).then(function(res){
     if (curRoute() !== "home") return;
     var all = homeMerge(res[0].concat(res[1]).concat(res[2]));
-    var open = [], today0 = 0, week = 0, per = { "공모전":0, "영화제":0, "지원사업":0 };
+    var open = [], today0 = 0, per = { "공모전":0, "영화제":0, "지원사업":0 };
     all.forEach(function(it){
       var n = homeDays(it.due, today);
       if (n === null || n < 0) return;
       open.push(it);
       if (n === 0) today0++;
-      if (n <= 7) week++;
       if (per[it.kind] != null) per[it.kind]++;
     });
     homeCounts = per;
-    homeHeadline(week, open.length);
-    /* 오늘 마감이 있는 날에만 그 칸을 경고색으로 둔다. 셋이 같은 색이면
-       "오늘"과 "이번 달"이 같은 무게로 읽힌다. */
-    setFacts([[String(today0), "오늘 마감", today0 > 0 ? "hot" : ""],
-              [String(week), "이번 주"],
-              [String(open.length), "접수 중"]]);
+    homeRadarDots(open, today);
+    /* 오늘 마감이 있는 날에만 그 칸을 경고색으로 둔다. 전부 같은 색이면
+       "오늘"과 "이번 달"이 같은 무게로 읽힌다.
+       뉴스·기술 동향은 0이면 칸을 빼 버린다 — 0 을 보여 주면 비어 있는 서비스로 읽힌다. */
+    var facts = [[String(open.length), "접수 중"],
+                 [String(today0), "오늘 마감", today0 > 0 ? "hot" : ""]];
+    var newsN = homeTodayNews(res[3], today);
+    var techN = homeTechCount(res[4]);
+    if (newsN > 0) facts.push([String(newsN), "오늘 새 소식"]);
+    if (techN > 0) facts.push([String(techN), "기술 동향"]);
+    setFacts(facts);
     var top = open.slice(0, 20);
     el.innerHTML = top.length
       ? top.map(function(it){ return homeDueRow(it, today); }).join("")
@@ -3284,18 +3467,26 @@ function homeFillMenu(){
       var n = sortedReports().length;
       if (n) sub = "브리핑 " + n + "회분";
     }
-    return "<a href='" + esc(menuHref(m[0])) + "'><span class='a-date'>" + esc(m[1]) + "</span>" +
+    return "<a class='" + (m[0] === "board" ? "wide" : "") + "' href='" + esc(menuHref(m[0])) +
+      "'><span class='a-date'>" + esc(m[1]) + "</span>" +
       "<span class='a-title'>" + esc(sub) + "</span></a>";
   }).join("");
 }
 
 function renderHome(){
   setKicker(["AI 레이더"]);
-  setFacts([["—", "오늘 마감"], ["—", "이번 주"], ["—", "접수 중"]]);
+  setFacts([["—", "접수 중"], ["—", "오늘 마감"], ["—", "오늘 새 소식"], ["—", "기술 동향"]]);
   C.innerHTML =
+    /* 메뉴 안내가 마감 목록보다 위다. 처음 온 사람은 마감 스무 건을 다 지나야
+       "여기에 뭐가 더 있는지"를 알게 되는데, 그 전에 떠난다. */
+    "<section class='section dark tight'><div class='inner'>" +
+      sectionHead("Menu", HOME_COPY.menuH, "", "") +
+      "<div class='arch menu-cards' id='homeMenu'></div>" +
+    "</div></section>" +
+
     "<section class='section paper'><div class='inner'>" +
       sectionHead("Deadlines", HOME_COPY.dueH, "", "") +
-      "<div class='rows' id='homeDue' style='min-height:520px'>" +
+      "<div class='rows two' id='homeDue' style='min-height:520px'>" +
       emptyNote("마감 목록을 불러오는 중입니다.") + "</div>" +
     "</div></section>" +
 
@@ -3309,19 +3500,28 @@ function renderHome(){
       "<div id='homeBrief'></div>" +
     "</div></section>" +
 
+    /* 사진은 이 섹션 안에 둔다 — 파이어베이스가 없으면 섹션째 display:none 이라
+       사진도 같이 사라진다. 밖에 두면 이야기가 하나도 없는데 사진만 떠 있게 된다. */
     "<section class='section paper-alt' id='homeCommSec' style='display:none'><div class='inner'>" +
       sectionHead("Community", HOME_COPY.commH, "", "") +
       "<div class='rows' id='homeComm'></div>" +
-    "</div></section>" +
-
-    "<section class='section dark'><div class='inner'>" +
-      sectionHead("Menu", HOME_COPY.menuH, "", "") +
-      "<div class='arch' id='homeMenu'></div>" +
+      "<picture>" +
+        "<source type='image/webp' srcset='" + BASE + "assets/edu-workshop.webp'>" +
+        "<img class='home-photo' src='" + BASE + "assets/edu-workshop.jpg' " +
+          "width='1280' height='858' loading='lazy' decoding='async' " +
+          "alt='책상에 둘러앉아 노트북을 보며 이야기하는 사람들'>" +
+      "</picture>" +
     "</div></section>" +
 
     "<section class='section paper'><div class='inner'>" +
       sectionHead("Appleseed", HOME_COPY.aboutH, HOME_COPY.aboutBody, "") +
-      "<p class='cta-row'><a class='btn' href='" + HOME_MAIL_EDU + "'>교육 문의</a>" +
+      "<picture>" +
+        "<source type='image/webp' srcset='" + BASE + "assets/edu-editing.webp'>" +
+        "<img class='home-photo' src='" + BASE + "assets/edu-editing.jpg' " +
+          "width='1280' height='858' loading='lazy' decoding='async' " +
+          "alt='어두운 편집실에서 모니터를 보며 작업하는 사람'>" +
+      "</picture>" +
+      "<p class='cta-row' style='margin-top:26px'><a class='btn' href='" + HOME_MAIL_EDU + "'>교육 문의</a>" +
       "<a class='btn' href='" + HOME_MAIL_WORK + "'>제작 문의</a></p>" +
     "</div></section>";
 
