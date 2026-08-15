@@ -467,15 +467,25 @@ function addDaysKst(days) {
 
 /* ---- wevity 스크래핑 (proto.mjs 에서 이식, 실측 검증됨) ---- */
 const CT_UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36";
-const KW = ["AI", "인공지능", "생성형", "LLM", "챗봇", "데이터", "머신러닝", "딥러닝",
-  "영상", "UCC", "숏폼", "쇼츠", "영화", "다큐", "광고", "마케팅",
-  "디자인", "캐릭터", "웹툰", "일러스트", "브랜드", "BI", "포스터",
-  "콘텐츠", "웹/모바일/IT", "게임", "메타버스", "사진"];
+/* AI 전문 서비스이므로 AI 관련성이 필수 조건이다.
+   이전에는 "영상·디자인·사진" 같은 일반 분야 키워드만 맞아도 통과해서,
+   2026-08-15 기준 국내 진행중 280건 중 192건(69%)이 AI 와 무관한 일반 공모전이었다.
+   정밀도를 재현율보다 우선한다 — 몇 건 놓치는 편이, 일반 공모전이 섞여 서비스 정체성을 해치는 것보다 낫다.
+   "데이터"는 뺐다 — 공공데이터·데이터분석 공모전이 대거 들어온다. */
+const KW = ["인공지능", "생성형", "제너레이티브", "Generative", "GenAI", "LLM",
+  "챗봇", "챗GPT", "ChatGPT", "GPT", "머신러닝", "딥러닝",
+  "미드저니", "Midjourney", "Stable Diffusion", "스테이블디퓨전",
+  "프롬프트", "디지털휴먼", "버추얼휴먼", "A.I"];
+/* 맨 "AI" 는 영문 단어 경계를 지킨다 — email·detail·said·Cairo·AIDS 오탐 차단.
+   한글은 [^A-Za-z] 에 포함되므로 "AI영상"·"AI아트" 는 그대로 통과한다. */
+const RE_AI = /(^|[^A-Za-z])AI([^A-Za-z]|$)/i;
 const decodeEnt = (s) => String(s ?? "").replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, " ");
 const strip = (s) => decodeEnt(String(s).replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim());
 const matchKW = (item) => {
-  const hay = (item.title + " " + item.categories);
-  return KW.some((k) => hay.toLowerCase().includes(k.toLowerCase()));
+  const hay = item.title + " " + item.categories + " " + (item.organizer || "");
+  if (RE_AI.test(hay)) return true;
+  const low = hay.toLowerCase();
+  return KW.some((k) => low.includes(k.toLowerCase()));
 };
 
 function parseWevity(html) {
