@@ -744,20 +744,20 @@ function buildNav(){
 /* ============ 히어로 ============ */
 var HERO = {
   contests:{ latin:"CONTESTS", ko:"AI 공모전",
-    copy:"국내와 해외 AI 공모전을 마감이 가까운 순으로 세웁니다. 상금과 남은 기간을 한눈에 봅니다." },
+    copy:"국내외 AI 공모전을 마감이 가까운 순으로 모았습니다. 상금과 남은 기간을 한눈에 보실 수 있습니다." },
   festivals:{ latin:"FESTIVALS", ko:"AI 영화제",
-    copy:"AI로 만든 영화를 받는 영화제를 전 세계에서 모읍니다. 접수 기간과 상금 규모까지 함께 봅니다." },
+    copy:"AI로 만든 영화를 받는 영화제를 전 세계에서 모았습니다. 접수 기간과 상금 규모까지 함께 보실 수 있습니다." },
   gov:{ latin:"FUNDING", ko:"AI 지원사업",
-    copy:"지금 신청할 수 있는 창업지원 공고 가운데 AI와 관련된 것을 모읍니다. 마감이 임박한 것부터 보입니다." },
+    copy:"지금 신청할 수 있는 AI 관련 창업지원 공고를 모았습니다. 마감이 임박한 것부터 보실 수 있습니다." },
   newsrep:{ latin:"BRIEFING", ko:"뉴스리포트",
-    copy:"밤사이 나온 AI 소식을 아침에 한 번 정리합니다. 요약으로 훑고, 필요한 기사만 원문으로 넘어갑니다." },
+    copy:"밤사이 나온 AI 소식을 아침에 한 번 정리했습니다. 요약으로 훑고 필요한 기사만 원문으로 넘어가실 수 있습니다." },
   /* 두 영상 화면이 어떻게 다른지 각자의 첫 문장에서 바로 말한다.
      작품소개는 AI로 만든 영상 작품, AI유튜브는 소식과 개발이다.
      "왜 메뉴가 두 개지"가 나오면 둘 중 하나는 안 쓰이게 된다. */
   youtube:{ latin:"WATCH", ko:"AI 유튜브",
-    copy:"AI 소식과 바이브코딩 영상을 한자리에 모읍니다. 오늘 것이 위에, 지난 날짜는 아래로 쌓입니다." },
+    copy:"AI 소식과 바이브코딩 영상을 한자리에 모았습니다. 오늘 것이 위에, 지난 날짜는 아래에서 보실 수 있습니다." },
   aivideo:{ latin:"SHOWCASE", ko:"AI 작품소개",
-    copy:"AI로 만든 영상 작품을 봅니다. 단편영화·뮤직비디오·애니메이션을 골라 모았습니다." }
+    copy:"AI로 만든 영상 작품을 모았습니다. 단편영화·뮤직비디오·애니메이션을 골라 담았습니다." }
 };
 function drawHero(route){
   var h = HERO[route] || HERO[DEFAULT_ROUTE];
@@ -892,9 +892,7 @@ function newsSection(){
     }).join("");
     return "<section class='section paper-alt'><div class='inner'>"+
       sectionHead("Newswire","오늘의<br>AI 뉴스.",
-        "Google News(한국어)·TechCrunch·MIT Technology Review·The Verge 의 AI 지면을 합쳐 최신순으로 세웁니다. "+
-        "요약은 원문 매체가 쓴 것이고, 제목을 누르면 그 매체로 갑니다. "+
-        "영문 제목은 기계번역을 붙였습니다 — 틀릴 수 있어 원문을 바로 아래 함께 둡니다. 수집 "+esc(fmtGen(j.generated)),
+        "국내외 AI 뉴스를 최신순으로 모았습니다. "+esc(fmtGen(j.generated))+" 기준.",
         "<b>"+items.length+"</b>건")+
       "<div class='rows'>"+rows+"</div></div></section>";
   }).catch(function(){ return ""; });
@@ -914,8 +912,7 @@ function communitySection(){
     }).join("");
     return "<section class='section dark'><div class='inner'>"+
       sectionHead("Community","커뮤니티에서<br>도는 이야기.",
-        "Hacker News(50점 이상)와 Reddit r/artificial 의 하루 인기글입니다. "+
-        "기사가 되기 전 단계의 이야기라 방향을 먼저 읽는 데 씁니다. 수집 "+esc(fmtGen(j.generated)),
+        "기사가 되기 전에 개발자들 사이에서 먼저 도는 이야기입니다. "+esc(fmtGen(j.generated))+" 기준.",
         "<b>"+items.length+"</b>건")+
       "<div class='rows'>"+rows+"</div></div></section>";
   }).catch(function(){ return ""; });
@@ -957,8 +954,8 @@ function techSection(){
                      tags:["좋아요"], meta:meta, url:it.url });
       }).join(""));
     body = "<p class='section-intro' style='margin:0 0 30px'>"+
-      "논문·오픈소스·모델이 어디로 가는지 보는 자리입니다. 수집 "+
-      esc(fmtGen(j.generated))+"</p>" + body;
+      "새 논문과 모델이 어디로 향하는지 봅니다. "+
+      esc(fmtGen(j.generated))+" 기준.</p>" + body;
     return foldSection("paper-alt","Research","기술 동향", n+"건", body);
   }).catch(function(){ return ""; });
 }
@@ -1005,7 +1002,7 @@ function renderReports(){
     "<section class='section paper' id='brief'><div class='inner'>"+
       "<div class='section-head'><div><p class='eyebrow'>Today</p>"+
       "<h2>오늘 아침의<br>AI 브리핑.</h2></div>"+
-      "<p class='section-intro'>기사 요약 아래에 원문 링크를 그대로 답니다. 카드를 누르면 해당 매체로 바로 갑니다.</p></div>"+
+      "<p class='section-intro'>밤사이 나온 AI 소식을 매일 아침 한 장으로 정리합니다.</p></div>"+
       "<div data-brief></div>"+
     "</div></section>"+
     /* 바깥 소스 세 섹션은 브리핑 바로 아래에 온다. 보관함(지난 브리핑)은 다시 찾아볼 때
@@ -1216,8 +1213,8 @@ function renderFestivals(){
     [String(dueWithin(open,"deadline",7,today)), "7일 안에 마감"]
   ]);
 
-  var intro = "국내와 해외를 함께 봅니다. 마감이 가까운 순으로 세웠고, 목록은 매일 아침 다시 조사합니다 (마지막 갱신 "+esc(updated)+").";
-  if (!served) intro += " 지금은 서버 목록을 받지 못해 저장된 기본 목록을 보여 주는 중입니다.";
+  var intro = "국내외 AI 영화제를 마감이 가까운 순으로 모았습니다. 매일 아침 다시 확인합니다 ("+esc(updated)+" 기준).";
+  if (!served) intro += " 최신 목록을 불러오지 못해 마지막으로 저장된 목록을 보여드립니다.";
 
   var html = "<section class='section paper'><div class='inner'>"+
     sectionHead("Open calls","지금 출품할 수<br>있는 곳.", intro,
@@ -1331,8 +1328,7 @@ function hfSection(){
     }).join("");
     return "<section class='section dark'><div class='inner'>"+
       sectionHead("Higgsfield","상금이 가장 큰<br>AI 영상 공모전.",
-        "힉스필드가 여는 공모전입니다. 전부 AI 영상·앱 제작 부문이라 우리 작업과 바로 닿습니다. "+
-        "수집 "+esc(fmtGen(j.generated)),
+        "힉스필드가 직접 여는 AI 영상·앱 제작 공모전입니다. "+esc(fmtGen(j.generated))+" 기준.",
         "<b>"+items.length+"</b>건")+
       "<div class='rows'>"+rows+"</div></div></section>";
   }).catch(function(){ return ""; });
@@ -1374,9 +1370,7 @@ function dpSection(){
     var soon = items.filter(function(i){ return i.state === "upcoming"; });
     var html = "<section class='section paper-alt'><div class='inner'>"+
       sectionHead("Devpost","해외 해커톤과<br>AI 챌린지.",
-        "Devpost 에 등록된 AI 관련 공모전 가운데 접수 중인 것을 상금이 큰 순으로 모았습니다. "+
-        "전체 "+nfmt(j.total_on_devpost||0)+"건 중 "+items.length+"건입니다. "+
-        "수집 "+esc(fmtGen(j.generated)),
+        "지금 접수 중인 해외 AI 해커톤과 챌린지를 상금이 큰 순으로 모았습니다. "+esc(fmtGen(j.generated))+" 기준.",
         "<b>"+open.length+"</b>건 접수 중")+
       "<div class='rows'>"+
       (open.length ? open.map(function(i){ return dpRow(i, today); }).join("")
@@ -1585,7 +1579,7 @@ function fetchGov(force){
 }
 function renderGov(){
   var today = todaySeoul();
-  setKicker(["K-Startup 공고", "공공데이터포털"]);
+  setKicker(["창업지원 공고", "매일 갱신"]);
   setFacts([["—","조건 일치"],["—","전체 공고"],["—","7일 안에 마감"]]);
 
   C.innerHTML =
@@ -1597,7 +1591,7 @@ function renderGov(){
          action=pubgov 응답 263건이 전부 마감 전이었다(2026-08-12 실측). */
       "<div class='section-head'><div><p class='eyebrow'>Funding</p>"+
       "<h2>지금 신청할 수<br>있는 지원사업.</h2></div>"+
-      "<div><p class='section-intro'>K-Startup 창업지원 공고를 그대로 가져와 AI와 관련된 것만 먼저 보여 줍니다. 필터를 끄면 전체 공고가 나옵니다.</p>"+
+      "<div><p class='section-intro'>지금 신청할 수 있는 AI 관련 창업지원 공고를 모았습니다.</p>"+
       "<p class='count' style='margin:14px 0 0' data-gen>불러오는 중</p></div></div>"+
       "<div class='controls'>"+
         "<button type='button' class='chip"+(govAiOnly?" on":"")+"' data-ai aria-pressed='"+govAiOnly+"'>AI 관련만</button>"+
@@ -1689,11 +1683,11 @@ function renderGov(){
     if (!j || !j.ok){
       genEl.textContent = "";
       bodyEl.innerHTML = failBox(j && j.error ? String(j.error) : "잠시 뒤 다시 시도해 주세요.",
-        "<a class='btn' href='https://www.k-startup.go.kr' target='_blank' rel='noopener noreferrer'>K-Startup 열기 ↗</a>");
+        "<a class='btn' href='https://www.k-startup.go.kr' target='_blank' rel='noopener noreferrer'>공고 사이트 열기 ↗</a>");
       return;
     }
     /* 갱신 시각은 응답에 든 서버 값 그대로다 — 스냅샷으로 그렸으면 스냅샷 시각이 보인다 */
-    genEl.textContent = "공고 갱신 " + (j.generated||"") + " · 총 " + (j.total||0) + "건";
+    genEl.textContent = "총 " + (j.total||0) + "건 · " + (j.generated||"") + " 기준";
     drawChips(); drawBody();
   }
   govOnLive = show;
@@ -1706,7 +1700,7 @@ function renderGov(){
       if (curRoute()!=="gov") return;
       genEl.textContent = "";
       bodyEl.innerHTML = failBox(String(e && e.message || e),
-        "<a class='btn' href='https://www.k-startup.go.kr' target='_blank' rel='noopener noreferrer'>K-Startup 열기 ↗</a>");
+        "<a class='btn' href='https://www.k-startup.go.kr' target='_blank' rel='noopener noreferrer'>공고 사이트 열기 ↗</a>");
     });
   }
   aiBtn.onclick = function(){
@@ -1788,9 +1782,8 @@ function videoCards(list){
   }).join("")+"</span>";
 }
 function videoSection(cls, eyebrow, h2, list, queries, generated){
-  var q = (queries||[]).length ? "검색어 "+esc(queries.join(" · "))+" · " : "";
   return "<section class='section "+cls+"'><div class='inner'>"+
-    sectionHead(eyebrow, h2, q+"수집 "+esc(fmtGen(generated))+".",
+    sectionHead(eyebrow, h2, esc(fmtGen(generated))+" 기준.",
       "<b>"+(list||[]).length+"</b>편")+
     ((list||[]).length ? videoCards(list) : emptyNote("아직 모인 영상이 없습니다."))+
     "</div></section>";
