@@ -3022,7 +3022,25 @@ function bdText(s){
   parts.push(esc(s.slice(last)));
   return parts.join("").replace(/\r?\n/g, "<br>");
 }
-function bdMs(ts){ return (ts && ts.toDate) ? ts.toDate().getTime() : NaN; }
+var bdSnsList = [];
+function bdLoadSnsPosts(){
+  return fetch("data/sns-posts.json?v="+Date.now()).then(function(r){
+    if (!r.ok) return [];
+    return r.json();
+  }).then(function(arr){
+    bdSnsList = Array.isArray(arr) ? arr : [];
+    return bdSnsList;
+  })["catch"](function(){ bdSnsList = []; return []; });
+}
+function bdMs(ts){
+  if (!ts) return NaN;
+  if (ts.toDate) return ts.toDate().getTime();
+  if (typeof ts === "string" || typeof ts === "number"){
+    var t = new Date(ts).getTime();
+    if (!isNaN(t)) return t;
+  }
+  return NaN;
+}
 /* serverTimestamp 는 쓰기 직후 잠깐 비어 있다 — 그때는 "방금"이 사실에 가깝다 */
 function bdWhen(ts){
   var t = bdMs(ts);
@@ -3769,8 +3787,20 @@ function bdFeedView(el){
       if (!bdAlive(el)) return;
       var got = [];
       sn.forEach(function(d){ var o = d.data()||{}; o.id = d.id; got.push(o); });
+      /* SNS 자동 수집 글 병합 (첫 페이지일 때) */
+      if (first && bdSnsList && bdSnsList.length){
+        var seen = {};
+        got.forEach(function(p){ seen[p.id] = true; });
+        var filteredSns = bdSnsList.filter(function(s){
+          if (seen[s.id]) return false;
+          if (bdTag !== "전체" && (!s.tags || s.tags.indexOf(bdTag) === -1)) return false;
+          return true;
+        });
+        got = got.concat(filteredSns);
+        got.sort(function(a,b){ return (bdMs(b.createdAt)||0) - (bdMs(a.createdAt)||0); });
+      }
       if (sn.docs && sn.docs.length) bdCursor = sn.docs[sn.docs.length-1];
-      bdMore = got.length === BD_PAGE;
+      bdMore = got.length >= BD_PAGE && sn.docs && sn.docs.length === BD_PAGE;
       bdFeed = first ? got : bdFeed.concat(got);
       paint(); bdFacts(); bdPrefetchLikes(got); wpLinkNames(got);
     }, function(e){
@@ -3883,6 +3913,7 @@ function renderBoard(){
      .bd-thread 가 각자 읽기 좋은 폭을 잡으므로 여기서 묶을 필요가 없다. */
   C.innerHTML = bdShell("<div data-bd>"+emptyNote("게시판을 여는 중입니다.")+"</div>", true);
   var el = C.querySelector("[data-bd]");
+  bdLoadSnsPosts();
   fbInit().then(function(){
     if (!bdAlive(el)) return;
     return bdFetchTags().then(function(){

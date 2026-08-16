@@ -54,6 +54,10 @@ jobs:
         continue-on-error: true
         run: node scripts/collect-higgsfield.mjs
 
+      - name: SNS 소스 자동 수집
+        continue-on-error: true
+        run: node scripts/collect-sns.mjs
+
       - name: 검색용 정적 페이지 생성
         continue-on-error: true
         run: node scripts/build-pages.mjs
