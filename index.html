@@ -1692,6 +1692,7 @@ function svPaint(key){
     b.setAttribute("aria-pressed", String(on));
     b.textContent = on ? "♥ 담음" : "♡ 담기";
   });
+  if (curRoute() === "home") homeFillSub();
 }
 function svFromEl(el){
   return { key: el.getAttribute("data-save"),
@@ -5571,13 +5572,31 @@ function homeScrollSub(){
 function homeFillSub(){
   var wrap = document.getElementById("homeSubBox");
   if (!wrap) return;
-  /* 이메일을 받지 않는다. 로그인했으면 「내 계획」으로, 아니면 로그인 안내로 보낸다 —
-     마감은 담아 둔 것을 「내 계획」에서 직접 챙긴다. */
-  var href = bdUser ? (BASE + "#plan") : joinUrl();
-  wrap.innerHTML =
-    "<p class='sub-note'>" + esc(HOME_COPY.alertNote) + "</p>" +
-    "<p class='cta-row'><a class='btn solid' href='" + esc(href) + "'>" +
-      esc(HOME_COPY.alertBtn) + " →</a></p>";
+  if (bdUser){
+    if (!svLoaded){
+      svLoad().then(function(){ if (curRoute() === "home") homeFillSub(); }, function(){});
+    }
+    var count = 0;
+    if (svMine){
+      for (var k in svMine){
+        if (svMine.hasOwnProperty(k)) count++;
+      }
+    }
+    var note = count > 0
+      ? "현재 <b>" + count + "개</b>의 관심 공고를 담아 두셨습니다. 담은 것은 나만 볼 수 있습니다."
+      : "공모전이나 지원사업에서 <b>[♡ 담기]</b>를 누르면 내 계획에 마감 순으로 모입니다.";
+    var btnText = count > 0
+      ? "내 계획 확인하기 (" + count + "개) →"
+      : "내 계획 보기 →";
+    wrap.innerHTML =
+      "<p class='sub-note'>" + note + "</p>" +
+      "<p class='cta-row'><a class='btn solid' href='" + esc(BASE + "#plan") + "'>" +
+        esc(btnText) + "</a></p>";
+  } else {
+    wrap.innerHTML =
+      "<p class='sub-note'>로그인하시면 관심 공모전을 담아 두고 마감 순서대로 한눈에 모아볼 수 있습니다.</p>" +
+      "<p class='cta-row'><button type='button' class='btn solid' data-nvlogin>구글 계정으로 로그인 →</button></p>";
+  }
 }
 
 /* ---- 오늘의 브리핑 ----
