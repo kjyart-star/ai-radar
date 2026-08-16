@@ -2883,26 +2883,34 @@ function fbInit(){
         fbAuth = firebase.auth();
         fbDb = firebase.firestore();
         fbAuth.onAuthStateChanged(function(u){
+          var wasUser = !!bdUser;
           bdUser = u || null;
           bdLiked = {};
           /* 내 프로필은 사람이 바뀌면 다시 확인해야 한다(undefined = 아직 모름) */
           wpMine = undefined; wkLiked = {};
           nvAuth();                                  /* 상단바는 어느 화면에서나 바뀐다 */
-          if (bdUser) wpAutoProfile();               /* 프로필은 로그인과 함께 저절로 생긴다 */
-          else { wpAuto = false; svMine = {}; svLoaded = false; }
-          svLoaded = false;
-          if (bdUser) svLoad().then(function(){
-            svFlush();                                /* 담으려다 로그인한 것이 있으면 지금 담는다 */
-            var rr = curRoute();
-            /* 담기 버튼이 있는 화면이면 상태가 보이게 다시 그린다 */
-            if (rr==="contests"||rr==="festivals"||rr==="gov"||rr==="home"||rr==="plan") render();
-          });
-          nvAfterLogin();
-          var r = curRoute();                        /* 로그인이 보이는 화면만 다시 그린다 */
-          if (r==="board") renderBoard();
-          else if (r==="prof") renderProfile();
-          else if (r==="gallery") renderGallery();
-          else if (r==="join") renderJoin();          /* 로그인했으면 홈으로 비켜 준다 */
+          if (bdUser){
+            wpAutoProfile();                         /* 프로필은 로그인과 함께 저절로 생긴다 */
+            svLoaded = false;
+            svLoad().then(function(){
+              svFlush();                              /* 담으려다 로그인한 것이 있으면 지금 담는다 */
+              var rr = curRoute();
+              /* 담기 버튼이 있는 화면이면 상태가 보이게 다시 그린다 */
+              if (rr==="contests"||rr==="festivals"||rr==="gov"||rr==="home"||rr==="plan") render();
+            });
+            nvAfterLogin();
+            var r = curRoute();                      /* 로그인이 보이는 화면만 다시 그린다 */
+            if (r==="board") renderBoard();
+            else if (r==="prof") renderProfile();
+            else if (r==="gallery") renderGallery();
+            else if (r==="join") renderJoin();        /* 로그인했으면 홈으로 비켜 준다 */
+          } else {
+            wpAuto = false; svMine = {}; svLoaded = false;
+            if (wasUser){
+              bdToast("로그아웃했습니다");
+              render();                               /* 로그아웃 시 현재 화면을 즉시 다시 그려 상태 반영 */
+            }
+          }
         });
         res(true);
       } catch(e){ rej(e); }
@@ -3100,6 +3108,7 @@ function bdLogin(){
   });
 }
 function bdLogout(){
+  nvMenu(false);
   if (!fbAuth) return;
   try { fbAuth.signOut()["catch"](function(){}); } catch(e){}
 }
