@@ -3176,6 +3176,9 @@ function bdOpenVideo(url, title){
     window.open(url, "_blank", "noopener,noreferrer");
   }
 }
+window.bdOpenImg = bdOpenImg;
+window.bdOpenVideo = bdOpenVideo;
+window.bdCloseImg = bdCloseImg;
 function bdMs(ts){
   if (!ts) return NaN;
   if (ts.toDate) return ts.toDate().getTime();
@@ -3405,7 +3408,8 @@ function bdCard(p, opt){
     var imgUrl = ctSafeUrl(p.image) || (String(p.image).indexOf("data:image/") === 0 ? p.image : "");
     if (imgUrl){
       h += "<div class='bd-img-wrap'><img class='bd-img' src='"+esc(imgUrl)+
-           "' loading='lazy' alt='첨부 이미지' data-bdimgpop='"+esc(imgUrl)+"'></div>";
+           "' loading='lazy' alt='첨부 이미지' data-bdimgpop='"+esc(imgUrl)+
+           "' onclick='bdOpenImg(this.src, this.alt); return false;'></div>";
     }
   }
   if (folded) h += "<button type='button' class='bd-unfold' data-unfold>더 보기</button>";
