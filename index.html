@@ -764,7 +764,7 @@
   /* 애플시드 풀배경 스튜디오 섹션 */
   #homeAppleseedSec{
     position:relative;
-    background-image:url('assets/appleseed-studio-1.webp'), url('assets/appleseed-studio-1.jpg');
+    background-image:url('assets/appleseed-studio-1.webp?v=2'), url('assets/appleseed-studio-1.jpg?v=2');
     background-size:cover;
     background-position:center center;
     background-repeat:no-repeat;
@@ -6337,8 +6337,8 @@ function renderHome(){
       sectionHead("Appleseed Studio", "상상을 완성형 영상으로,<br>AI와 정통 VFX의 결합",
         "광고·뮤직비디오 VFX 15년 이상의 전문 노하우와 최신 생성형 AI 파이프라인으로 상업 영화급 완성도를 만듭니다.", "") +
       "<div class='apple-bg-toggle'>" +
-        "<button type='button' class='apple-bg-btn on' onclick='setAppleBg(1)'>🎬 VFX & 컬러 그레이딩 룸</button>" +
-        "<button type='button' class='apple-bg-btn' onclick='setAppleBg(2)'>🎥 기획 & 시네마 프로덕션</button>" +
+        "<button type='button' class='apple-bg-btn on' onclick='setAppleBg(1)'>🎬 AI 비디오 & VFX 스튜디오</button>" +
+        "<button type='button' class='apple-bg-btn' onclick='setAppleBg(2)'>🎥 AI 기획 & 시네마 프로덕션</button>" +
       "</div>" +
       "<div class='apple-studio-wrap'>" +
         "<div class='apple-badges'>" +
@@ -6353,9 +6353,9 @@ function renderHome(){
             "<div class='abi-sub'>생성형 AI + 3D 트래킹 + 정밀 합성</div>" +
           "</div>" +
           "<div class='apple-badge-item'>" +
-            "<div class='abi-num'>4K Master</div>" +
-            "<div class='abi-label'>시네마 퀄리티 마스터링</div>" +
-            "<div class='abi-sub'>DI 컬러 그레이딩 및 5.1ch 사운드 믹싱</div>" +
+            "<div class='abi-num'>AI + 8K</div>" +
+            "<div class='abi-label'>하이퍼 리얼 AI 마스터링</div>" +
+            "<div class='abi-sub'>생성형 AI 모델 튜닝 & 초고화질 업스케일링</div>" +
           "</div>" +
         "</div>" +
         "<div class='apple-sol-grid'>" +
@@ -6369,7 +6369,7 @@ function renderHome(){
             "<div class='asc-icon'>✨</div>" +
             "<h3 class='asc-title'>하이엔드 VFX & 일관성 제어</h3>" +
             "<p class='asc-desc'>단순 생성을 넘어 정밀한 3D 카메라 트래킹, 얼굴/캐릭터 일관성(LoRA/ControlNet) 보정, 로토스코핑, 시네마틱 합성으로 상용화 품질을 완성합니다.</p>" +
-            "<div class='asc-tags'><span>#캐릭터일관성</span><span>#3D합성</span><span>#컬러그레이딩</span></div>" +
+            "<div class='asc-tags'><span>#캐릭터일관성</span><span>#3D합성</span><span>#AI업스케일링</span></div>" +
           "</div>" +
           "<div class='apple-sol-card'>" +
             "<div class='asc-icon'>🏆</div>" +
@@ -6394,7 +6394,7 @@ function renderHome(){
 function setAppleBg(idx){
   var sec = document.getElementById("homeAppleseedSec");
   if (!sec) return;
-  var bgUrl = idx === 2 ? (BASE + "assets/appleseed-studio-2.webp") : (BASE + "assets/appleseed-studio-1.webp");
+  var bgUrl = idx === 2 ? (BASE + "assets/appleseed-studio-2.webp?v=2") : (BASE + "assets/appleseed-studio-1.webp?v=2");
   sec.style.backgroundImage = "url('" + bgUrl + "')";
   var btns = sec.querySelectorAll(".apple-bg-btn");
   for (var i = 0; i < btns.length; i++){
