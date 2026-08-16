@@ -187,16 +187,14 @@
      video 로 갈아끼울 자리라 이 블록만 통째로 바꾸면 되게 따로 떼어 뒀다. */
   .hero-bg{ position:absolute; inset:0; z-index:0; display:none; }
   .hero.has-photo .hero-bg{ display:block; }
-  /* object-position 은 브레이크포인트마다 따로 두지 않는다 — 사이 크기에서 다시 어긋난다.
-     퍼센트는 "이미지의 p% 지점을 프레임의 p% 지점에 놓는다"는 뜻이라, 사진 속 좌표를
-     그대로 적으면 어떤 화면비로 잘려도 그 지점이 비율대로 남는다(초점 고정).
-     실측(5% 격자, 2026-08-15): 얼굴 가로 63.6~70.9%(중심 67%) · 머리끝 y=6.5% · 턱 y=41.5%.
-     세로는 얼굴 중심(24%)이 아니라 8% 다 — 중심을 앵커로 쓰면 세로가 낮은 와이드 화면에서
-     보이는 창이 이미지 13% 지점부터 시작해 머리가 잘린다(대표가 본 증상 그대로).
-     창 시작점 = y × (1 − 보이는비율) 이므로, 최소 보이는비율 46%(위 26vw 하한)에서도
-     시작점이 머리끝 6.5% 위에 오려면 y ≤ 9% 여야 한다. */
-  .hero-bg img{ width:100%; height:100%; object-fit:cover; object-position:58% 12%;
-                display:block; }
+  /* 슬라이드쇼: img 여러 장을 겹쳐 두고 opacity 로 전환한다.
+     active 클래스가 있는 한 장만 보이고 나머지는 투명하다.
+     transition 은 1초 — 3초 노출 + 1초 페이드 = 체감 4초 주기.
+     object-position: 58% 12% — 얼굴이 잘리지 않도록 초점 고정. */
+  .hero-bg img{ position:absolute; inset:0; width:100%; height:100%;
+                object-fit:cover; object-position:58% 12%;
+                display:block; opacity:0; transition:opacity 1s ease; }
+  .hero-bg img.active{ opacity:1; }
   .hero-radar{ position:absolute; inset:0; z-index:2; pointer-events:none; }
   .hero-radar i{ position:absolute; left:76%; top:46%; translate:-50% -50%;
                  border:1px solid rgba(182,255,63,.24); border-radius:50%; }
@@ -1123,13 +1121,21 @@
 
 <header class="hero" id="top">
   <!-- 히어로 배경. 나중에 <video> 로 교체할 수 있게 이 블록만 갈아끼우면 되도록 둔다. 영상으로 바꾸면 자동재생·무음·루프·prefers-reduced-motion·모바일 데이터 소모를 함께 처리해야 한다. -->
-  <div class="hero-bg">
-    <picture>
-      <source id="heroBgSrc" type="image/webp" srcset="assets/a001.webp?v=hq2">
-      <img id="heroBgImg" src="assets/a001.png?v=hq2" width="2560" height="1427"
-           fetchpriority="high" decoding="async" loading="eager"
-           alt="AI 레이더 메인 히어로 배경">
-    </picture>
+  <div class="hero-bg" id="heroBg">
+    <!-- 슬라이드쇼: image/a001~a004.png 를 3초마다 크로스페이드로 전환한다.
+         첫 번째 img 는 fetchpriority=high 로 먼저 불러오고, 나머지는 lazy 로 미룬다. -->
+    <img class="active" src="image/a001.png" width="2560" height="1427"
+         fetchpriority="high" decoding="async" loading="eager"
+         alt="AI 레이더 메인 히어로 배경 1">
+    <img src="image/a002.png" width="2560" height="1427"
+         decoding="async" loading="lazy"
+         alt="AI 레이더 메인 히어로 배경 2">
+    <img src="image/a003.png" width="2560" height="1427"
+         decoding="async" loading="lazy"
+         alt="AI 레이더 메인 히어로 배경 3">
+    <img src="image/a004.png" width="2560" height="1427"
+         decoding="async" loading="lazy"
+         alt="AI 레이더 메인 히어로 배경 4">
   </div>
   <!-- 시그니처 요소: 동심원 + 스위프. 주제(레이더)에서 나왔고 1px 선과
        평면 그라디언트만 쓴다 — 글로우나 블러는 넣지 않는다. -->
@@ -1639,15 +1645,45 @@ var HERO = {
   plan:{ latin:"MY PLAN", ko:"내 계획",
     copy:"담아 두신 공모전·영화제·지원사업을 마감이 가까운 순으로 보여 드립니다." }
 };
-/* 히어로 마크업의 assets/... 는 상대 경로다. 게시판은 /board/{슬러그} 라는 실제 경로를
-   쓰므로 거기서는 /board/assets/... 로 풀려 사진이 깨진다. 그 화면에서는 숨겨져 있어
-   보이지 않지만, 거기서 홈으로 넘어오면(새로고침 없는 이동) 깨진 채로 남는다.
-   홈을 그릴 때 BASE 기준으로 한 번만 바로잡는다. */
-function fixHeroBg(){
-  var im = document.getElementById("heroBgImg"), so = document.getElementById("heroBgSrc");
-  if (!im || String(im.getAttribute("src")).indexOf(BASE) === 0) return;
-  if (so) so.setAttribute("srcset", BASE + "assets/hero-studio.webp");
-  im.setAttribute("src", BASE + "assets/hero-studio.jpg");
+/* 히어로 슬라이드쇼.
+   image/a001~a004.png 를 3초마다 크로스페이드로 전환한다.
+   홈에서만 동작하고 다른 화면으로 이동하면 타이머를 멈춘다.
+   마크업의 img.src 는 상대 경로라 /board/{slug} 같은 경로에서 깨질 수 있어
+   홈 진입 시 BASE 기준으로 보정한다. */
+var heroBgTimer = null;
+var heroBgIdx = 0;
+function startHeroSlide(){
+  var bg = document.getElementById("heroBg");
+  if (!bg) return;
+  var imgs = bg.querySelectorAll("img");
+  if (!imgs.length) return;
+  /* src 상대 경로를 BASE 기준으로 한 번 보정한다 */
+  if (String(imgs[0].getAttribute("src")).indexOf(BASE) !== 0){
+    for (var k = 0; k < imgs.length; k++){
+      var orig = imgs[k].getAttribute("src");
+      /* 이미 BASE 로 시작하거나 http 절대경로이면 건드리지 않는다 */
+      if (orig && orig.indexOf("http") !== 0 && orig.indexOf(BASE) !== 0){
+        imgs[k].setAttribute("src", BASE + orig);
+      }
+    }
+  }
+  /* 이미 실행 중이면 중복 시작하지 않는다 */
+  if (heroBgTimer) return;
+  function next(){
+    var bg2 = document.getElementById("heroBg");
+    if (!bg2) { heroBgTimer = null; return; }
+    var imgs2 = bg2.querySelectorAll("img");
+    if (!imgs2.length) { heroBgTimer = null; return; }
+    /* 현재 active 해제 */
+    imgs2[heroBgIdx % imgs2.length].classList.remove("active");
+    heroBgIdx = (heroBgIdx + 1) % imgs2.length;
+    imgs2[heroBgIdx].classList.add("active");
+    heroBgTimer = setTimeout(next, 3000);
+  }
+  heroBgTimer = setTimeout(next, 3000);
+}
+function stopHeroSlide(){
+  if (heroBgTimer){ clearTimeout(heroBgTimer); heroBgTimer = null; }
 }
 function drawHero(route){
   var h = HERO[route] || HERO[DEFAULT_ROUTE];
@@ -1655,8 +1691,13 @@ function drawHero(route){
   /* 배경 사진은 홈에서만 켠다. 다른 화면은 지금 그대로 검은 바탕 위 레이더다. */
   var hero = document.getElementById("top");
   if (hero){
-    if (route === "home"){ hero.classList.add("has-photo"); fixHeroBg(); }
-    else hero.classList.remove("has-photo");
+    if (route === "home"){
+      hero.classList.add("has-photo");
+      startHeroSlide();
+    } else {
+      hero.classList.remove("has-photo");
+      stopHeroSlide();
+    }
   }
   /* 홈만 한글 문장 제목이라 라틴 대문자 조판(-.075em·uppercase)을 쓰면 글자가 뭉개진다.
      문구에 든 <br> 은 한글 줄바꿈을 손으로 잡아 둔 것이라 그대로 넣는다 —
