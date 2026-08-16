@@ -5996,6 +5996,48 @@ document.addEventListener("click", function(e){
   onNav();
 });
 
+/* ---- 방문 집계 (자체 · 개인정보 없음) ----
+   apple-seed 처럼 방문 시 카운터를 +1 한다. 관리시스템 「AI 레이더」 화면이 이 숫자를 읽는다.
+   한 페이지 로드당 1회만. 규칙이 +1 만 허용하므로 부풀리기는 막혀 있다. */
+var airTracked = false;
+function airVisitSource(){
+  try {
+    var qs = new URLSearchParams(location.search);
+    var utm = (qs.get("utm_source") || "").toLowerCase().replace(/[^a-z0-9._-]/g,"").slice(0,30);
+    if (utm) return "utm:" + utm;
+    var ref = document.referrer || "";
+    if (!ref) return "direct";
+    var h = "";
+    try { h = new URL(ref).hostname.toLowerCase().replace(/^www\./,""); } catch(e){ return "other"; }
+    if (h === "ai-radar.kr" || h.indexOf(".ai-radar.kr") > -1) return "";   /* 내부 이동은 제외 */
+    if (h.indexOf("google.") > -1) return "google";
+    if (h.indexOf("naver.") > -1) return "naver";
+    if (h.indexOf("chatgpt.com") > -1 || h.indexOf("openai.com") > -1) return "chatgpt";
+    if (h.indexOf("youtube.") > -1 || h === "youtu.be") return "youtube";
+    if (h.indexOf("instagram.") > -1) return "instagram";
+    if (h.indexOf("facebook.") > -1 || h === "t.co") return "sns";
+    return "other";
+  } catch(e){ return "other"; }
+}
+function airTrackVisit(){
+  if (airTracked) return;
+  airTracked = true;
+  try {
+    var day = new Date().toLocaleDateString("en-CA", { timeZone: "Asia/Seoul" });   /* YYYY-MM-DD (KST) */
+    var isNew = 0;
+    try { if (!localStorage.getItem("air_seen_" + day)){ isNew = 1; localStorage.setItem("air_seen_" + day, "1"); } } catch(e){}
+    var src = airVisitSource();
+    fbInit().then(function(){
+      if (!fbDb) return;
+      var inc = firebase.firestore.FieldValue.increment;
+      fbDb.collection("analytics_daily").doc(day).set(
+        { pageviews: inc(1), visitors: inc(isNew), date: day }, { merge: true }
+      )["catch"](function(){});
+      if (src) fbDb.collection("analytics_src").doc(src).set({ count: inc(1) }, { merge: true })["catch"](function(){});
+    }, function(){});
+  } catch(e){}
+}
+
 /* ============ 초기화 ============ */
 (function init(){
   if (boardPath() === null && profPath() === null && joinPath() === null && !location.hash)
@@ -6009,6 +6051,7 @@ document.addEventListener("click", function(e){
   if (fbReady()) fbInit()["catch"](function(){});
   render();
   onScroll();
+  airTrackVisit();   /* 방문 집계 — 로드당 1회, fbInit 은 함수 안에서 부른다 */
   /* 스냅샷 먼저 그리고(0.3초), 라이브는 뒤에서 받아 다를 때만 다시 그린다(6~68초) */
   var drawn = false;
   loadPubSnapshot().then(function(j){ if (!j) return; drawn = true; render(); }, function(){});

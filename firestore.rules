@@ -289,6 +289,40 @@ service cloud.firestore {
                     && request.resource.data.createdAt == request.time;
     }
 
+    /* ---------------- 방문 통계 (익명 집계) ----------------
+       홈페이지 활성화를 관리시스템에서 보기 위한 자체 방문 집계다. apple-seed 처럼
+       방문 시 브라우저가 카운터를 +1 한다. 로그인 불필요, 개인정보 없음 — 날짜별
+       방문/페이지뷰 숫자와 유입경로 집계뿐이다. 증가는 정확히 +1(방문자는 +0/+1)만
+       허용해 URL 을 아는 사람이 한 번에 부풀리지 못하게 한다(게시판 likeCount 와 같은 방식).
+       감소·다른 필드·건너뛰기는 거부. 삭제 불가. */
+    match /analytics_daily/{day} {
+      allow read: if true;
+      allow create: if day.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+                    && request.resource.data.keys().hasOnly(['pageviews','visitors','date'])
+                    && request.resource.data.date == day
+                    && request.resource.data.pageviews == 1
+                    && (request.resource.data.visitors == 0 || request.resource.data.visitors == 1);
+      allow update: if day.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+                    && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['pageviews','visitors','date'])
+                    && (!('date' in request.resource.data.diff(resource.data).affectedKeys()) || request.resource.data.date == day)
+                    && request.resource.data.pageviews == resource.data.pageviews + 1
+                    && (request.resource.data.visitors == resource.data.visitors
+                     || request.resource.data.visitors == resource.data.visitors + 1);
+      allow delete: if false;
+    }
+
+    /* 유입경로 집계 — 문서 ID 가 곧 출처 키(direct·google·naver·chatgpt·utm:xxx …). 누적 count 만 +1. */
+    match /analytics_src/{src} {
+      allow read: if true;
+      allow create: if src.matches('^[a-z0-9:._-]{1,40}$')
+                    && request.resource.data.keys().hasOnly(['count'])
+                    && request.resource.data.count == 1;
+      allow update: if src.matches('^[a-z0-9:._-]{1,40}$')
+                    && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['count'])
+                    && request.resource.data.count == resource.data.count + 1;
+      allow delete: if false;
+    }
+
     /* 그 밖의 모든 경로는 막습니다. */
     match /{document=**} {
       allow read, write: if false;
