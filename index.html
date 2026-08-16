@@ -372,6 +372,11 @@
   .dd.over{ opacity:.38; }
   .dd.tbd{ font-size:11px; letter-spacing:.12em; text-transform:uppercase; opacity:.55;
            padding-top:9px; }
+  /* 내 계획에서는 D-day 가 주인공이다 — 마감 관리 허브라 크게 세운다.
+     칸을 함께 넓혀 D-DAY(다섯 글자)까지 넘치지 않게 한다. */
+  .plan-rows .row{ grid-template-columns:128px 1fr; }
+  .plan-rows .dd{ font-size:clamp(28px,6vw,44px); }
+  .plan-rows .dd.tbd{ font-size:11px; }
   .r-main{ min-width:0; }
   /* keep-all 은 한글 어절을 지키려고 남긴다. 다만 그것만 있으면 공백 없는 긴 문자열
      (HF 모델 ID, GitHub owner/repo)이 375px 에서 안 끊겨 문서에 가로 스크롤이 생긴다.
@@ -925,6 +930,8 @@
     .row{ grid-template-columns:62px 1fr; gap:14px; padding:18px 0 20px; }
     .dd{ font-size:21px; }
     .dd.tbd{ font-size:9px; padding-top:6px; }
+    .plan-rows .row{ grid-template-columns:90px 1fr; }
+    .plan-rows .dd.tbd{ font-size:9px; }
     .brief-head{ grid-template-columns:1fr; gap:12px; align-items:start; }
     /* 모바일에서는 옆에 붙이지 않고 위로 올린다. 375px 에서 썸네일을 키우면서
        가로로 나란히 두면 제목 자리가 150px 밖에 안 남아 글자가 잘게 접힌다.
@@ -4699,7 +4706,7 @@ function renderPlan(){
         "<a class='btn' href='"+esc(menuHref("contests"))+"'>AI 공모전 보기</a></div>";
       return;
     }
-    host.innerHTML = "<div class='rows'>"+
+    host.innerHTML = "<div class='rows plan-rows'>"+
       (live.length ? live.map(function(o){ return svRow(o, today); }).join("")
                    : emptyNote("마감이 남은 것이 없습니다."))+"</div>"+
       (past.length ? foldSection("paper-alt","Passed","지난 것", past.length+"건",
@@ -5145,10 +5152,10 @@ var HOME_COPY = {
   h1:"AI로 만드는 사람들이<br>매일 여는 곳",
   sub:"공모전 마감부터 밤사이 소식, 새로 나온 도구까지. 오늘 필요한 것만 모아 둡니다.",
   dueH:"놓치면 다음은<br>내년입니다",
-  alertH:"마감 3일 전에<br>알려드립니다",
-  alertIntro:"메일 주소만 남겨 두시면 됩니다.",
-  alertBtn:"알림 받기",
-  alertNote:"마감 알림 발송에만 사용하며, 언제든 수신을 중단하실 수 있습니다.",
+  alertH:"마감은 여기서<br>직접 챙기세요",
+  alertIntro:"이메일도, 알림 설정도 필요 없습니다. 관심 공모전을 담아 두면 '내 계획'에서 마감이 가까운 순으로 한눈에 봅니다.",
+  alertBtn:"내 계획 보기",
+  alertNote:"로그인만 하면 됩니다. 담은 것은 나만 볼 수 있습니다.",
   alertDone:"등록되었습니다. 마감이 가까워지면 메일을 보내드리겠습니다.",
   alertDup:"이미 등록되어 있습니다. 마감이 가까워지면 메일을 보내드리겠습니다.",
   alertBad:"메일 주소를 다시 확인해 주세요.",
@@ -5546,49 +5553,13 @@ function homeScrollSub(){
 function homeFillSub(){
   var wrap = document.getElementById("homeSubBox");
   if (!wrap) return;
-  /* Firebase 가 아직 안 붙었으면 폼 대신 메일 링크를 둔다 —
-     받을 방법이 없다고 신청 의사까지 버릴 이유는 없다 */
-  if (!homeCanSubscribe()){
-    wrap.innerHTML = "<p style='margin:0'><a class='btn' href='" + HOME_MAIL_ALERT +
-      "'>메일로 신청하기</a></p>";
-    return;
-  }
+  /* 이메일을 받지 않는다. 로그인했으면 「내 계획」으로, 아니면 로그인 안내로 보낸다 —
+     마감은 담아 둔 것을 「내 계획」에서 직접 챙긴다. */
+  var href = bdUser ? (BASE + "#plan") : joinUrl();
   wrap.innerHTML =
-    "<form class='sub-form' id='homeSubForm' novalidate>" +
-      "<label class='sr' for='homeSubEmail'>이메일 주소</label>" +
-      "<input class='search sub-input' id='homeSubEmail' type='email' name='email' " +
-        "inputmode='email' autocomplete='email' placeholder='이메일 주소'>" +
-      "<button class='btn' type='submit' id='homeSubBtn'>" + esc(HOME_COPY.alertBtn) + "</button>" +
-    "</form>" +
-    "<p class='sub-note'>" + esc(HOME_COPY.alertNote) + "</p>";
-
-  document.getElementById("homeSubForm").onsubmit = function(e){
-    e.preventDefault();
-    var input = document.getElementById("homeSubEmail");
-    var btn = document.getElementById("homeSubBtn");
-    var email = String(input.value || "").trim().toLowerCase();
-    if (!homeValidEmail(email)){
-      homeSubNote(HOME_COPY.alertBad);
-      input.focus();
-      return;
-    }
-    homeSubNote(HOME_COPY.alertNote);   /* 앞서 뜬 오류 안내를 지우고 시작한다 */
-    btn.disabled = true;
-    btn.textContent = "등록 중…";
-    homeSubscribe(email).then(function(){
-      wrap.innerHTML = "<p class='sub-msg'>" + esc(HOME_COPY.alertDone) + "</p>";
-    }, function(err){
-      /* 규칙이 create 만 허용하므로 이미 있는 주소를 다시 넣으면 거절당한다.
-         그 사람 입장에서는 이미 등록된 것이 맞다 — 실패라고 말할 일이 아니다. */
-      if (err && err.code === "permission-denied"){
-        wrap.innerHTML = "<p class='sub-msg'>" + esc(HOME_COPY.alertDup) + "</p>";
-        return;
-      }
-      btn.disabled = false;
-      btn.textContent = HOME_COPY.alertBtn;
-      homeSubNote(HOME_COPY.alertFail);
-    });
-  };
+    "<p class='sub-note'>" + esc(HOME_COPY.alertNote) + "</p>" +
+    "<p class='cta-row'><a class='btn solid' href='" + esc(href) + "'>" +
+      esc(HOME_COPY.alertBtn) + " →</a></p>";
 }
 
 /* ---- 오늘의 브리핑 ----
