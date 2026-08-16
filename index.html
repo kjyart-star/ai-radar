@@ -851,6 +851,16 @@
   .pf-lab{ display:block; font-size:11.5px; font-weight:800; letter-spacing:.04em;
            color:var(--muted-light); }
   .pf-lab .bd-in{ margin-top:7px; }
+  .pf-nick-row{ display:flex; gap:8px; align-items:center; margin-top:7px; }
+  .pf-nick-row .bd-in{ flex:1; min-width:0; margin-top:0 !important; }
+  .btn-check{ padding:10px 16px; font-size:12px; font-weight:800; white-space:nowrap; border-radius:6px; flex:none; cursor:pointer; }
+  .btn-check:disabled{ opacity:.6; cursor:not-allowed; }
+  .pf-nick-msg{ margin:6px 0 0; font-size:12px; line-height:1.4; font-weight:700; min-height:16px; word-break:keep-all; }
+  .pf-nick-msg.ok{ color:var(--lime-dark, #4d7c0f); }
+  .dark .pf-nick-msg.ok{ color:var(--lime); }
+  .pf-nick-msg.err{ color:var(--coral); }
+  .pf-nick-msg.hint{ color:var(--muted-light); }
+  .dark .pf-nick-msg.hint{ color:var(--muted-dark); }
   .pf-help{ display:block; margin-top:7px; font-size:11.5px; font-weight:400;
             line-height:1.6; color:var(--muted-light); word-break:keep-all; }
   .pf-photo{ display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:7px; }
@@ -4413,6 +4423,27 @@ function wpAutoProfile(){
     if (window.console && console.warn) console.warn("[프로필] 자동 생성 실패", e);
   });
 }
+/* 닉네임 중복 확인 (Firestore profiles 조회) */
+function wpCheckNickDuplicate(nick, myUid){
+  nick = String(nick||"").trim();
+  if (nick.length < 2 || nick.length > WP_NICK_MAX) {
+    return Promise.resolve({ ok:false, msg:"닉네임은 2자 이상 "+WP_NICK_MAX+"자 이하로 입력해 주세요." });
+  }
+  if (!fbDb) return Promise.resolve({ ok:false, msg:"데이터베이스 연결 준비 중입니다." });
+  return fbDb.collection("profiles").where("nick", "==", nick).limit(2).get().then(function(snap){
+    var dup = false;
+    snap.forEach(function(d){
+      if (d.id !== myUid) dup = true;
+    });
+    if (dup) {
+      return { ok:false, msg:"이미 사용 중인 닉네임입니다. 다른 닉네임을 입력해 주세요." };
+    }
+    return { ok:true, msg:"사용 가능한 닉네임입니다. ✓" };
+  }, function(e){
+    if (window.console && console.error) console.error("[중복확인]", e);
+    return { ok:false, msg:"중복 확인 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요." };
+  });
+}
 function wpFieldError(nick, bio, link){
   nick = String(nick||"").trim();
   if (nick.length < 2 || nick.length > WP_NICK_MAX)
@@ -4596,9 +4627,14 @@ function wpEditView(el){
        어느 칸이 무엇인지 알 수 없었다 — 대표가 "프로필 사진 기능이 없다"고 한 것이
        기능이 없어서가 아니라 그 칸이 무슨 칸인지 보이지 않아서였다(2026-08-15). */
     "<div class='pf-form'>"+
-      "<label class='pf-lab'>닉네임"+
-        "<input class='bd-in' type='text' maxlength='"+WP_NICK_MAX+"' data-pnick"+
-          " placeholder='예: 레이더장인' aria-label='닉네임'></label>"+
+      "<div class='pf-lab'>닉네임 <span style='color:var(--coral)'>*</span>"+
+        "<div class='pf-nick-row'>"+
+          "<input class='bd-in' type='text' maxlength='"+WP_NICK_MAX+"' data-pnick"+
+            " placeholder='예: 레이더장인' aria-label='닉네임'>"+
+          "<button type='button' class='btn btn-check' data-pnick-check>중복 확인</button>"+
+        "</div>"+
+        "<p class='pf-nick-msg' data-pnick-msg></p>"+
+      "</div>"+
       /* 소개·링크·사진·관심분야는 항상 보여준다. isNew 뒤에 숨겨 두면 프로필 로드가
          한 번 어긋나 wpMine 이 비었을 때 사진 편집칸이 통째로 사라진다 — 대표가 "프로필
          사진 편집 기능 없어짐"이라 한 것이 이 경우였다(2026-08-16). 신규도 처음부터 채운다. */
@@ -4637,6 +4673,8 @@ function wpEditView(el){
       "<button type='button' class='btn' data-psave>"+(isNew ? "프로필 만들기" : "저장")+"</button>"+
     "</div></div>";
   var nickEl = el.querySelector("[data-pnick]");
+  var nickCheckBtn = el.querySelector("[data-pnick-check]");
+  var nickMsg = el.querySelector("[data-pnick-msg]");
   var bioEl = el.querySelector("[data-pbio]");
   var linkEl = el.querySelector("[data-plink]");
   var msg = el.querySelector("[data-pmsg]");
@@ -4645,6 +4683,11 @@ function wpEditView(el){
   var prevEl = el.querySelector("[data-ppreview]");
   var intSel = ((pf && pf.interests) || []).slice();
   var intBox = el.querySelector("[data-pint]");
+
+  var initialNick = (pf && pf.nick) ? String(pf.nick).trim() : "";
+  var isNickChecked = !isNew && !!initialNick;
+  var lastCheckedNick = initialNick;
+
   function drawPreview(){
     if (!prevEl) return;
     /* 넣는 즉시 보여 준다 — 저장하고 나서야 깨진 걸 아는 것이 제일 나쁘다 */
@@ -4674,6 +4717,10 @@ function wpEditView(el){
     bioEl.value = String(pf.bio||"");
     linkEl.value = String(pf.link||"");
     photoEl.value = String(pf.photoURL||"");
+    if (nickMsg){
+      nickMsg.className = "pf-nick-msg ok";
+      nickMsg.textContent = "현재 사용 중인 닉네임입니다.";
+    }
   } else {
     /* 신규도 구글 사진을 기본으로 채워 둔다 — 비워 두면 첫 글자 아바타가 대신 들어간다 */
     photoEl.value = String((bdUser && bdUser.photoURL) || "");
@@ -4683,7 +4730,76 @@ function wpEditView(el){
   drawPreview();
   drawInt();
   photoEl.oninput = drawPreview;
-  nickEl.oninput = drawPreview;
+
+  function onNickInput(){
+    var cur = String(nickEl.value||"").trim();
+    if (initialNick && cur === initialNick){
+      isNickChecked = true;
+      lastCheckedNick = cur;
+      if (nickMsg){
+        nickMsg.className = "pf-nick-msg ok";
+        nickMsg.textContent = "현재 사용 중인 닉네임입니다.";
+      }
+    } else if (lastCheckedNick && cur === lastCheckedNick){
+      isNickChecked = true;
+      if (nickMsg){
+        nickMsg.className = "pf-nick-msg ok";
+        nickMsg.textContent = "사용 가능한 닉네임입니다. ✓";
+      }
+    } else {
+      isNickChecked = false;
+      if (nickMsg){
+        if (cur.length >= 2){
+          nickMsg.className = "pf-nick-msg hint";
+          nickMsg.textContent = "닉네임이 변경되었습니다. [중복 확인]을 눌러주세요.";
+        } else {
+          nickMsg.className = "pf-nick-msg";
+          nickMsg.textContent = "";
+        }
+      }
+    }
+    drawPreview();
+  }
+  nickEl.oninput = onNickInput;
+
+  function doCheckNick(){
+    var cur = String(nickEl.value||"").trim();
+    if (!cur){
+      if (nickMsg){ nickMsg.className = "pf-nick-msg err"; nickMsg.textContent = "닉네임을 입력해 주세요."; }
+      nickEl.focus();
+      return Promise.resolve(false);
+    }
+    if (cur.length < 2 || cur.length > WP_NICK_MAX){
+      if (nickMsg){ nickMsg.className = "pf-nick-msg err"; nickMsg.textContent = "닉네임은 2자 이상 " + WP_NICK_MAX + "자 이하로 입력해 주세요."; }
+      nickEl.focus();
+      return Promise.resolve(false);
+    }
+    if (initialNick && cur === initialNick){
+      isNickChecked = true;
+      lastCheckedNick = cur;
+      if (nickMsg){ nickMsg.className = "pf-nick-msg ok"; nickMsg.textContent = "현재 회원님이 사용 중인 닉네임입니다."; }
+      return Promise.resolve(true);
+    }
+    if (nickCheckBtn) nickCheckBtn.disabled = true;
+    if (nickMsg){ nickMsg.className = "pf-nick-msg hint"; nickMsg.textContent = "중복 확인 중입니다..."; }
+
+    return wpCheckNickDuplicate(cur, bdUser ? bdUser.uid : "").then(function(res){
+      if (nickCheckBtn) nickCheckBtn.disabled = false;
+      if (res.ok){
+        isNickChecked = true;
+        lastCheckedNick = cur;
+        if (nickMsg){ nickMsg.className = "pf-nick-msg ok"; nickMsg.textContent = res.msg; }
+        return true;
+      } else {
+        isNickChecked = false;
+        if (nickMsg){ nickMsg.className = "pf-nick-msg err"; nickMsg.textContent = res.msg; }
+        nickEl.focus();
+        return false;
+      }
+    });
+  }
+  if (nickCheckBtn) nickCheckBtn.onclick = function(){ doCheckNick(); };
+
   el.querySelector("[data-pgoogle]").onclick = function(){
     photoEl.value = String((bdUser && bdUser.photoURL) || "");
     drawPreview();
@@ -4707,46 +4823,63 @@ function wpEditView(el){
     var photo = photoEl ? String(photoEl.value||"").trim() : "";
     var err = wpFieldError(nick, bio, link) || wpPhotoError(photo);
     if (err){ msg.textContent = err; return; }
-    save.disabled = true; msg.textContent = "저장하는 중입니다.";
-    function fail(e){
-      save.disabled = false;
-      if (window.console && console.error) console.error("[프로필]", e);
-      msg.textContent = "저장하지 못했습니다. 잠시 후 다시 시도해 주세요.";
+
+    function proceedSave(){
+      save.disabled = true; msg.textContent = "저장하는 중입니다.";
+      function fail(e){
+        save.disabled = false;
+        if (window.console && console.error) console.error("[프로필]", e);
+        msg.textContent = "저장하지 못했습니다. 잠시 후 다시 시도해 주세요.";
+      }
+      if (!isNew){
+        /* 슬러그는 손대지 않는다 — 규칙도 바뀌면 거부한다 */
+        fbDb.collection("profiles").doc(bdUser.uid)
+          .update({ nick:nick, bio:bio, link:link, photoURL:photo,
+                    interests:intSel.slice(0, WP_INT_MAX) }).then(function(){
+            wpCache[bdUser.uid] = undefined; wpMine = undefined;
+            nvAuth();            /* 상단바 이름도 같이 바뀌어야 한다 */
+            wpGo(pf.slug);
+          }, fail);
+        return;
+      }
+      /* 주소를 먼저 선점하고 프로필을 쓴다. 순서를 바꾸면 같은 주소를 가진 프로필이
+         둘 생길 수 있다 — slugs 문서가 주소의 주인을 가리는 유일한 기록이다. */
+      wpClaimSlug(nick, 3).then(function(slug){
+        if (!slug){ save.disabled = false; msg.textContent = "잠시 후 다시 시도해 주세요."; return; }
+        var now = firebase.firestore.FieldValue.serverTimestamp();
+        return fbDb.collection("slugs").doc(slug).set({ uid:bdUser.uid, createdAt:now })
+          .then(function(){
+            return fbDb.collection("profiles").doc(bdUser.uid).set({
+              nick: nick,
+              slug: slug,
+              bio: bio,
+              link: link,
+              photoURL: photo,   /* 칸에 채운 값을 그대로 쓴다(기본은 구글 사진, 비우면 빈 값) */
+              interests: intSel.slice(0, WP_INT_MAX),
+              createdAt: now
+            });
+          })
+          .then(function(){
+            wpCache[bdUser.uid] = undefined; wpMine = undefined;
+            nvAuth();            /* "닉네임 정하기" 로 남아 있던 상단바를 방금 정한 이름으로 */
+            wpGo(slug);
+          });
+      })["catch"](fail);
     }
-    if (!isNew){
-      /* 슬러그는 손대지 않는다 — 규칙도 바뀌면 거부한다 */
-      fbDb.collection("profiles").doc(bdUser.uid)
-        .update({ nick:nick, bio:bio, link:link, photoURL:photo,
-                  interests:intSel.slice(0, WP_INT_MAX) }).then(function(){
-          wpCache[bdUser.uid] = undefined; wpMine = undefined;
-          nvAuth();            /* 상단바 이름도 같이 바뀌어야 한다 */
-          wpGo(pf.slug);
-        }, fail);
+
+    if (!isNickChecked || lastCheckedNick !== nick){
+      save.disabled = true; msg.textContent = "닉네임 중복 확인 중입니다...";
+      doCheckNick().then(function(ok){
+        save.disabled = false;
+        if (!ok){
+          msg.textContent = "닉네임 중복 확인을 먼저 완료해 주세요.";
+          return;
+        }
+        proceedSave();
+      });
       return;
     }
-    /* 주소를 먼저 선점하고 프로필을 쓴다. 순서를 바꾸면 같은 주소를 가진 프로필이
-       둘 생길 수 있다 — slugs 문서가 주소의 주인을 가리는 유일한 기록이다. */
-    wpClaimSlug(nick, 3).then(function(slug){
-      if (!slug){ save.disabled = false; msg.textContent = "잠시 후 다시 시도해 주세요."; return; }
-      var now = firebase.firestore.FieldValue.serverTimestamp();
-      return fbDb.collection("slugs").doc(slug).set({ uid:bdUser.uid, createdAt:now })
-        .then(function(){
-          return fbDb.collection("profiles").doc(bdUser.uid).set({
-            nick: nick,
-            slug: slug,
-            bio: bio,
-            link: link,
-            photoURL: photo,   /* 칸에 채운 값을 그대로 쓴다(기본은 구글 사진, 비우면 빈 값) */
-            interests: intSel.slice(0, WP_INT_MAX),
-            createdAt: now
-          });
-        })
-        .then(function(){
-          wpCache[bdUser.uid] = undefined; wpMine = undefined;
-          nvAuth();            /* "닉네임 정하기" 로 남아 있던 상단바를 방금 정한 이름으로 */
-          wpGo(slug);
-        });
-    })["catch"](fail);
+    proceedSave();
   };
 }
 
