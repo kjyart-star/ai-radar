@@ -1184,7 +1184,8 @@ var FEED_FILES = {
      아래 PUB_SNAPSHOT · CONTEST_SNAP · GOV_SNAPSHOT · AIVIDEO_SNAPSHOT 도 같은 이유로
      BASE 를 붙여 둔다 — 상단바 검색이 어느 화면에서든 같은 파일을 읽어야 한다. */
   news:BASE+"data/news.json", community:BASE+"data/community.json", tech:BASE+"data/tech.json",
-  devpost:BASE+"data/devpost.json", higgsfield:BASE+"data/higgsfield.json"
+  devpost:BASE+"data/devpost.json", higgsfield:BASE+"data/higgsfield.json",
+  sns:BASE+"data/sns-posts.json"
 };
 var feedCache = {};
 function loadFeed(key){
@@ -3024,7 +3025,7 @@ function bdText(s){
 }
 var bdSnsList = [];
 function bdLoadSnsPosts(){
-  return fetch("data/sns-posts.json?v="+Date.now()).then(function(r){
+  return fetch(BASE + "data/sns-posts.json?v=" + Date.now()).then(function(r){
     if (!r.ok) return [];
     return r.json();
   }).then(function(arr){
@@ -3099,7 +3100,9 @@ function bdClaimSlug(body, tries){
 /* ---- 태그 ---- */
 function bdTagList(){
   var out = [], seen = {};
-  BD_TAGS.concat(bdTagsDb).forEach(function(t){
+  var snsTags = [];
+  (bdSnsList||[]).forEach(function(s){ (s.tags||[]).forEach(function(t){ if (t) snsTags.push(t); }); });
+  BD_TAGS.concat(bdTagsDb).concat(snsTags).forEach(function(t){
     t = String(t||"").trim();
     if (t && !seen[t]){ seen[t]=1; out.push(t); }
   });
@@ -3913,15 +3916,11 @@ function renderBoard(){
      .bd-thread 가 각자 읽기 좋은 폭을 잡으므로 여기서 묶을 필요가 없다. */
   C.innerHTML = bdShell("<div data-bd>"+emptyNote("게시판을 여는 중입니다.")+"</div>", true);
   var el = C.querySelector("[data-bd]");
-  bdLoadSnsPosts();
-  fbInit().then(function(){
+  Promise.all([fbInit(), bdFetchTags(), bdLoadSnsPosts()]).then(function(){
     if (!bdAlive(el)) return;
-    return bdFetchTags().then(function(){
-      if (!bdAlive(el)) return;
-      var slug = boardPath();
-      if (slug) bdThreadView(el, slug);
-      else bdFeedView(el);
-    });
+    var slug = boardPath();
+    if (slug) bdThreadView(el, slug);
+    else bdFeedView(el);
   }, function(e){
     if (!bdAlive(el)) return;
     if (window.console && console.error) console.error("[자유게시판]", e);
