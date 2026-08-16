@@ -4685,6 +4685,8 @@ function wpEditView(el){
   var intBox = el.querySelector("[data-pint]");
 
   var initialNick = (pf && pf.nick) ? String(pf.nick).trim() : "";
+  /* 기존 사용자는 현재 닉네임을 이미 쓰고 있으므로 확인된 것으로 본다.
+     신규 사용자는 닉네임을 새로 정해야 하므로 미확인 상태다. */
   var isNickChecked = !isNew && !!initialNick;
   var lastCheckedNick = initialNick;
 
@@ -4867,16 +4869,13 @@ function wpEditView(el){
       })["catch"](fail);
     }
 
+    /* 닉네임이 변경됐거나 아직 중복확인을 하지 않은 경우 저장을 막는다.
+       자동으로 확인하지 않고 사용자가 직접 [중복 확인]을 누르도록 안내한다 —
+       본인 의사 없이 닉네임이 바뀌는 것을 방지하기 위해서다. */
     if (!isNickChecked || lastCheckedNick !== nick){
-      save.disabled = true; msg.textContent = "닉네임 중복 확인 중입니다...";
-      doCheckNick().then(function(ok){
-        save.disabled = false;
-        if (!ok){
-          msg.textContent = "닉네임 중복 확인을 먼저 완료해 주세요.";
-          return;
-        }
-        proceedSave();
-      });
+      if (nickMsg){ nickMsg.className = "pf-nick-msg err"; nickMsg.textContent = "닉네임 [중복 확인]을 먼저 눌러 주세요."; }
+      if (nickCheckBtn){ nickCheckBtn.focus(); }
+      else { nickEl.focus(); }
       return;
     }
     proceedSave();
