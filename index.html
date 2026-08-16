@@ -5795,6 +5795,12 @@ function renderHome(){
        사진 한 장이 히어로와 메뉴를 통으로 덮어야 하기 때문이다(대표 지시 2026-08-15).
        처음 온 사람이 마감 스무 건을 지나기 전에 "여기 뭐가 있는지"를 보게 한다는
        원래 목적도 그대로다 — 오히려 더 위로 올라갔다. */
+    /* 마감 챙기기 (내 계획 / Alert) — 히어로 바로 아래에 두어 로그인 후 내가 담은 마감을 즉시 확인하게 한다 (대표 지시 2026-08-16). */
+    "<section class='section paper' id='homeAlertSec'><div class='inner'>" +
+      sectionHead("Alert", HOME_COPY.alertH, HOME_COPY.alertIntro, "") +
+      "<div id='homeSubBox'></div>" +
+    "</div></section>" +
+
     /* 관심 분야 마감 임박 — 로그인 + 관심 분야가 있을 때만 뜬다(homeIntPaint 이 결정).
        숨어 있을 때는 아래 마감(paper)이 첫 섹션이 되어 원래 리듬 그대로다.
        뜰 때는 paper-alt 라 paper 와 교차가 유지된다. */
@@ -5819,11 +5825,6 @@ function renderHome(){
          버튼은 공모전 하나로 둔다 — 셋을 다 세우면 고르는 일이 하나 더 생긴다. */
       "<p class='cta-row' style='margin-top:26px'><a class='btn' href='" +
         esc(menuHref("contests")) + "'>공모전 전체 보기</a></p>" +
-    "</div></section>" +
-
-    "<section class='section paper-alt'><div class='inner'>" +
-      sectionHead("Alert", HOME_COPY.alertH, HOME_COPY.alertIntro, "") +
-      "<div id='homeSubBox'></div>" +
     "</div></section>" +
 
     "<section class='section dark' id='homeBriefSec'><div class='inner'>" +
