@@ -734,23 +734,33 @@
   .home-board-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:16px; margin-top:20px; }
   @media(max-width:1024px){ .home-board-grid{ grid-template-columns:repeat(2, 1fr); } }
   @media(max-width:640px){ .home-board-grid{ grid-template-columns:1fr; } }
-  .home-board-card{ display:flex; flex-direction:column; background:rgba(255,255,255,.04);
-                    border:1px solid rgba(255,255,255,.12); border-radius:8px; overflow:hidden;
-                    text-decoration:none !important; color:inherit; transition:transform .2s, border-color .2s; }
-  .home-board-card:hover{ transform:translateY(-4px); border-color:var(--lime); }
-  .hbc-media{ width:100%; height:140px; background:#0b0d10; overflow:hidden; position:relative; }
+  .home-board-card{ display:flex; flex-direction:column; background:#ffffff;
+                    border:1px solid var(--line-light, #e0dfd5); border-radius:8px; overflow:hidden;
+                    text-decoration:none !important; color:inherit; box-shadow:0 2px 10px rgba(0,0,0,.03);
+                    transition:transform .2s, border-color .2s, box-shadow .2s; }
+  .dark .home-board-card{ background:rgba(255,255,255,.04); border-color:rgba(255,255,255,.12); }
+  .home-board-card:hover{ transform:translateY(-4px); border-color:var(--ink); box-shadow:0 8px 24px rgba(0,0,0,.08); }
+  .dark .home-board-card:hover{ border-color:var(--lime); }
+  .hbc-media{ width:100%; height:140px; background:#f0efe8; overflow:hidden; position:relative; }
+  .dark .hbc-media{ background:#0b0d10; }
   .hbc-img{ width:100%; height:100%; object-fit:cover; display:block; }
   .hbc-noimg{ width:100%; height:100%; display:flex; align-items:center; justify-content:center;
-              background:linear-gradient(135deg, rgba(204,255,0,.15), rgba(255,107,74,.15));
-              color:var(--lime); font-size:24px; font-weight:800; letter-spacing:.1em; }
+              background:linear-gradient(135deg, rgba(77,124,15,.12), rgba(255,107,74,.12));
+              color:var(--ink); font-size:20px; font-weight:800; letter-spacing:.05em; }
+  .dark .hbc-noimg{ background:linear-gradient(135deg, rgba(204,255,0,.15), rgba(255,107,74,.15)); color:var(--lime); }
   .hbc-body{ padding:16px; display:flex; flex-direction:column; flex:1; }
-  .hbc-tag{ font-size:11px; font-weight:800; color:var(--lime); margin-bottom:8px; }
-  .hbc-title{ font-size:14px; font-weight:700; color:#fff; line-height:1.5; margin-bottom:10px;
+  .hbc-tag{ font-size:11.5px; font-weight:800; color:var(--lime-dark, #4d7c0f); margin-bottom:8px; }
+  .dark .hbc-tag{ color:var(--lime); }
+  .hbc-title{ font-size:14.5px; font-weight:700; color:var(--ink, #07110d); line-height:1.5; margin-bottom:10px;
               display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
-  .hbc-meta{ margin-top:auto; padding-top:12px; border-top:1px solid rgba(255,255,255,.08);
-             display:flex; align-items:center; justify-content:space-between; font-size:12px; color:var(--muted-dark); }
-  .hbc-author{ display:flex; align-items:center; gap:6px; font-weight:700; color:#fff; }
-  .hbc-more{ color:var(--lime); font-weight:700; font-size:11.5px; }
+  .dark .hbc-title{ color:#fff; }
+  .hbc-meta{ margin-top:auto; padding-top:12px; border-top:1px solid var(--line-light, #e0dfd5);
+             display:flex; align-items:center; justify-content:space-between; font-size:12px; color:var(--muted-light); }
+  .dark .hbc-meta{ border-top-color:rgba(255,255,255,.08); color:var(--muted-dark); }
+  .hbc-author{ display:flex; align-items:center; gap:6px; font-weight:700; color:var(--ink); }
+  .dark .hbc-author{ color:#fff; }
+  .hbc-more{ color:var(--lime-dark, #4d7c0f); font-weight:800; font-size:12px; }
+  .dark .hbc-more{ color:var(--lime); }
   .bd-text.fold{ display:-webkit-box; -webkit-line-clamp:6; -webkit-box-orient:vertical;
                  overflow:hidden; }
   .bd-unfold{ margin-top:8px; font-size:12px; font-weight:800; color:var(--muted-light);
@@ -6241,8 +6251,8 @@ function renderHome(){
       "<div id='homeBrief'></div>" +
     "</div></section>" +
 
-    /* AI 업계 브리핑 바로 아래: 자유게시판 최신 4개 카드뉴스 섹션 */
-    "<section class='section dark' id='homeBoardSec'><div class='inner'>" +
+    /* AI 업계 브리핑 바로 아래: 자유게시판 최신 4개 카드뉴스 섹션 (참고색 paper #f2f1e9) */
+    "<section class='section paper' id='homeBoardSec'><div class='inner'>" +
       sectionHead("Board", "오늘 알게 된 것,<br>자유게시판 최신 소식",
         "AI를 쓰면서 알게 된 팁과 최신 AI 영상·기술 소식을 공유합니다.", "") +
       "<div class='home-board-grid' id='homeBoardCards'></div>" +
