@@ -4,8 +4,8 @@
     "sourceId": "won_wizard_fb",
     "author": "AI Radar",
     "photo": "https://ai-radar.kr/assets/icon.png",
-    "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1080&auto=format&fit=crop&q=80",
-    "body": "MINIMAX H3 Language conversion (X @seiiiiiiiiru)\n\nseiiiiiiiiru님이 MINIMAX H3 Omni Reference를 이용하여 언어 변환을 한 것 인데, 꽤 잘 되는 것 같네요.\n\nseiiiiiiiiru:\nOmni Reference에서 변환하고 싶은 영상을 참조해서, “○○어로 만들기”나 “아들들만 ○○어로 만들기” 같은 것만 적어서 생성한 결과입니다.\n\n한 번밖에 시도하지 않아서 잘 모르겠지만, 아마 위 내용에 더해 그 언어로 대사를 프롬프트에 넣어주면 정확도가 더 올라갈 것 같아요.\n\n1번째: 원본 영상의 일본어 버전\n2번째: H3로 영어 변환\n3번째: H3로 어머니 일본어, 아들들 중국어\n\n🎥 관련 영상 보기:\nhttps://www.youtube.com/watch?v=3g5Zz2X8H1k\n\n📌 원문 출처: https://www.facebook.com/won.wizard\n🔗 참조 링크: https://x.com/seiiiiiiiiru/status/2088549559853297842\n\n#MINIMAXH3 #aivideo #wonwizard",
+    "image": "https://i.ytimg.com/vi/3g5Zz2X8H1k/hqdefault.jpg",
+    "body": "MINIMAX H3 Language conversion (X @seiiiiiiiiru)\n\nseiiiiiiiiru님이 MINIMAX H3 Omni Reference를 이용하여 언어 변환을 한 것 인데, 꽤 잘 되는 것 같네요.\n\nseiiiiiiiiru:\nOmni Reference에서 변환하고 싶은 영상을 참조해서, “○○어로 만들기”나 “아들들만 ○○어로 만들기” 같은 것만 적어서 생성한 결과입니다.\n\n한 번밖에 시도하지 않아서 잘 모르겠지만, 아마 위 내용에 더해 그 언어로 대사를 프롬프트에 넣어주면 정확도가 더 올라갈 것 같아요.\n\n1번째: 원본 영상의 일본어 버전\n2번째: H3로 영어 변환\n3번째: H3로 어머니 일본어, 아들들 중국어\n\n🎥 관련 영상 데모:\nhttps://www.youtube.com/watch?v=3g5Zz2X8H1k\n\n📌 원문 출처: https://www.facebook.com/won.wizard\n🔗 참조 링크: https://x.com/seiiiiiiiiru/status/2088549559853297842\n\n#MINIMAXH3 #aivideo #wonwizard",
     "tags": [
       "생성형AI",
       "aivideo",
@@ -23,7 +23,7 @@
     "sourceId": "won_wizard_fb",
     "author": "AI Radar",
     "photo": "https://ai-radar.kr/assets/icon.png",
-    "image": "https://images.unsplash.com/photo-1633493106185-5b871c56fdf1?w=1080&auto=format&fit=crop&q=80",
+    "image": "https://github.com/user-attachments/assets/efb402a1-0b09-41e0-a6cb-259d442e76aa",
     "body": "Tencent Hunyuan3D 2.0 & HY-World 3D 생성 워크플로우 테스트\n\n텐센트에서 공개한 Hunyuan3D와 HY-World 모델을 활용한 3D 에셋 및 환경 생성 테스트입니다.\n\n단일 이미지 또는 텍스트 프롬프트로부터 매우 정교한 3D 메쉬와 텍스처를 고속으로 생성할 수 있으며, ComfyUI 커스텀 노드를 통해 파이프라인 연동이 가능합니다.\n\n주요 특징:\n1. 고해상도 메쉬 생성 속도 및 디테일 대폭 개선\n2. PBR 텍스처 맵 자동 베이킹 지원\n3. ComfyUI 연동 노드로 이미지-비디오-3D 파이프라인 구성 용이\n\n🎥 3D 생성 데모 영상:\nhttps://www.youtube.com/watch?v=Kz6K6rV4vN0\n\n📌 원문 출처: https://www.facebook.com/won.wizard\n🔗 프로젝트 깃허브: https://github.com/Tencent/Hunyuan3D-2\n\n#Hunyuan3D #3D #wonwizard",
     "tags": [
       "Hunyuan3D",
@@ -42,7 +42,7 @@
     "sourceId": "won_wizard_fb",
     "author": "AI Radar",
     "photo": "https://ai-radar.kr/assets/icon.png",
-    "image": "https://images.unsplash.com/photo-1614680376593-902f749f7ffc?w=1080&auto=format&fit=crop&q=80",
+    "image": "https://i.ytimg.com/vi/vVj2w3p1XbA/hqdefault.jpg",
     "body": "ByteDance Seedance 2.0 캐릭터 애니메이션 및 표정 제어 테스트\n\nSeedance 2.0 모델을 활용한 정밀한 캐릭터 표정 트래킹 및 카메라 모션 제어 결과입니다.\n\n오디오 싱크와 결합했을 때 자연스러운 립싱크와 미세한 눈 깜빡임, 감정 표현이 돋보입니다.\n\n주요 테스트 포인트:\n• 프롬프트를 통한 감정 강도(Emotional intensity) 조절\n• 카메라 Pan / Tilt 움직임 중 캐릭터 일관성 유지\n• 다각도 조명 변화 시 얼굴 디테일 보존\n\n🎥 모션 트래킹 데모 영상:\nhttps://www.youtube.com/watch?v=vVj2w3p1XbA\n\n📌 원문 출처: https://www.facebook.com/won.wizard\n\n#Seedance #AI영상 #wonwizard",
     "tags": [
       "Seedance",
@@ -61,7 +61,7 @@
     "sourceId": "won_wizard_fb",
     "author": "AI Radar",
     "photo": "https://ai-radar.kr/assets/icon.png",
-    "image": "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1080&auto=format&fit=crop&q=80",
+    "image": "https://i.ytimg.com/vi/YQHsXMglC9A/hqdefault.jpg",
     "body": "LTX-Video IC-LoRA를 활용한 조명 재구성(Relight) 및 고화질 복원 워크플로우\n\nLTX-Video 모델에 IC-LoRA를 적용하여 생성된 비디오의 조명 방향과 분위기를 실시간으로 변경하는 파이프라인입니다.\n\nComfyUI에서 경량화된 VRAM으로도 부드러운 4K 업스케일링과 디테일 향상이 가능합니다.\n\n🎥 릴라이트 워크플로우 영상:\nhttps://www.youtube.com/watch?v=YQHsXMglC9A\n\n📌 원문 출처: https://www.facebook.com/won.wizard\n🔗 프로젝트 깃허브: https://github.com/Lightricks/LTX-Video\n\n#LTXVideo #ComfyUI #wonwizard",
     "tags": [
       "LTXVideo",

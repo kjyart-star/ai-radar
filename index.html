@@ -703,7 +703,7 @@
                cursor:pointer; border:none; padding:0; }
   .bd-video-card{ display:inline-flex; align-items:center; gap:12px; margin:8px 0; padding:8px 12px;
                   background:rgba(0,0,0,.03); border:1px solid var(--line-light); border-radius:6px;
-                  text-decoration:none !important; color:inherit; max-width:100%; vertical-align:middle; }
+                  text-decoration:none !important; color:inherit; max-width:100%; vertical-align:middle; cursor:pointer; }
   .dark .bd-video-card{ background:rgba(255,255,255,.04); border-color:var(--line-dark); }
   .bd-video-thumb{ width:96px; height:54px; object-fit:cover; border-radius:4px; flex-shrink:0; }
   .bd-video-info{ display:flex; flex-direction:column; gap:3px; min-width:0; }
@@ -711,6 +711,25 @@
   .bd-video-title{ font-size:13px; font-weight:700; color:var(--ink); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
   .dark .bd-video-title{ color:#fff; }
   .bd-video-card:hover{ border-color:var(--lime); }
+  .bd-media-modal{ position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,.82);
+                   display:flex; align-items:center; justify-content:center; padding:16px;
+                   backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px); }
+  .bd-media-box{ background:var(--bg); border:1px solid var(--line-dark); border-radius:8px;
+                 max-width:920px; width:100%; max-height:92vh; display:flex; flex-direction:column;
+                 overflow:hidden; box-shadow:0 24px 64px rgba(0,0,0,.45); }
+  .dark .bd-media-box{ background:#16191d; }
+  .bd-media-head{ display:flex; align-items:center; justify-content:space-between; padding:12px 16px;
+                  border-bottom:1px solid var(--line-light); }
+  .dark .bd-media-head{ border-color:var(--line-dark); }
+  .bd-media-title{ font-size:14px; font-weight:700; color:var(--ink); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .dark .bd-media-title{ color:#fff; }
+  .bd-img-full{ display:flex; align-items:center; justify-content:center; padding:12px; background:#000;
+                overflow:auto; max-height:75vh; }
+  .bd-img-full img{ max-width:100%; max-height:72vh; width:auto; height:auto; object-fit:contain; border-radius:4px; }
+  .bd-media-foot{ padding:10px 16px; font-size:13px; font-weight:700; border-top:1px solid var(--line-light); text-align:right; }
+  .dark .bd-media-foot{ border-color:var(--line-dark); }
+  .bd-media-foot a{ color:var(--lime-dark, #4d7c0f); text-decoration:none; }
+  .bd-media-foot a:hover{ text-decoration:underline; }
   .bd-text.fold{ display:-webkit-box; -webkit-line-clamp:6; -webkit-box-orient:vertical;
                  overflow:hidden; }
   .bd-unfold{ margin-top:8px; font-size:12px; font-weight:800; color:var(--muted-light);
@@ -3005,12 +3024,12 @@ function bdText(s){
       if (ytm){
         var yId = ytm[1];
         parts.push(
-          "<a class='bd-video-card' href='" + esc(safe) + "' target='_blank' rel='noopener noreferrer'>" +
-            "<img class='bd-video-thumb' src='https://i.ytimg.com/vi/" + esc(yId) + "/mqdefault.jpg' alt='유튜브 영상' loading='lazy'>" +
-            "<span class='bd-video-info'>" +
-              "<span class='bd-video-badge'>▶ YOUTUBE</span>" +
-              "<span class='bd-video-title'>새 창에서 영상 보기 ↗</span>" +
-            "</span></a>" + esc(tail)
+          "<div class='bd-video-card' data-bdplay='" + esc(safe) + "' role='button' tabindex='0' aria-label='영상 재생'>"+
+            "<img class='bd-video-thumb' src='https://i.ytimg.com/vi/" + esc(yId) + "/mqdefault.jpg' alt='유튜브 영상' loading='lazy'>"+
+            "<span class='bd-video-info'>"+
+              "<span class='bd-video-badge'>▶ YOUTUBE 팝업 재생</span>"+
+              "<span class='bd-video-title'>영상 보기 (팝업) ↗</span>"+
+            "</span></div>" + esc(tail)
         );
       } else {
         parts.push("<a href='" + esc(safe) + "' target='_blank' rel='noopener noreferrer nofollow'>" + esc(rawUrl) + "</a>" + esc(tail));
@@ -3029,8 +3048,8 @@ var BD_DEFAULT_SNS = [
     sourceId: "won_wizard_fb",
     author: "AI Radar",
     photo: "https://ai-radar.kr/assets/icon.png",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1080&auto=format&fit=crop&q=80",
-    body: "MINIMAX H3 Language conversion (X @seiiiiiiiiru)\n\nseiiiiiiiiru님이 MINIMAX H3 Omni Reference를 이용하여 언어 변환을 한 것 인데, 꽤 잘 되는 것 같네요.\n\nseiiiiiiiiru:\nOmni Reference에서 변환하고 싶은 영상을 참조해서, “○○어로 만들기”나 “아들들만 ○○어로 만들기” 같은 것만 적어서 생성한 결과입니다.\n\n한 번밖에 시도하지 않아서 잘 모르겠지만, 아마 위 내용에 더해 그 언어로 대사를 프롬프트에 넣어주면 정확도가 더 올라갈 것 같아요.\n\n1번째: 원본 영상의 일본어 버전\n2번째: H3로 영어 변환\n3번째: H3로 어머니 일본어, 아들들 중국어\n\n🎥 관련 영상 보기:\nhttps://www.youtube.com/watch?v=3g5Zz2X8H1k\n\n📌 원문 출처: https://www.facebook.com/won.wizard\n🔗 참조 링크: https://x.com/seiiiiiiiiru/status/2088549559853297842\n\n#MINIMAXH3 #aivideo #wonwizard",
+    image: "https://i.ytimg.com/vi/3g5Zz2X8H1k/hqdefault.jpg",
+    body: "MINIMAX H3 Language conversion (X @seiiiiiiiiru)\n\nseiiiiiiiiru님이 MINIMAX H3 Omni Reference를 이용하여 언어 변환을 한 것 인데, 꽤 잘 되는 것 같네요.\n\nseiiiiiiiiru:\nOmni Reference에서 변환하고 싶은 영상을 참조해서, “○○어로 만들기”나 “아들들만 ○○어로 만들기” 같은 것만 적어서 생성한 결과입니다.\n\n한 번밖에 시도하지 않아서 잘 모르겠지만, 아마 위 내용에 더해 그 언어로 대사를 프롬프트에 넣어주면 정확도가 더 올라갈 것 같아요.\n\n1번째: 원본 영상의 일본어 버전\n2번째: H3로 영어 변환\n3번째: H3로 어머니 일본어, 아들들 중국어\n\n🎥 관련 영상 데모:\nhttps://www.youtube.com/watch?v=3g5Zz2X8H1k\n\n📌 원문 출처: https://www.facebook.com/won.wizard\n🔗 참조 링크: https://x.com/seiiiiiiiiru/status/2088549559853297842\n\n#MINIMAXH3 #aivideo #wonwizard",
     tags: ["생성형AI", "aivideo", "wonwizard"],
     ref: {
       type: "원문 출처",
@@ -3044,7 +3063,7 @@ var BD_DEFAULT_SNS = [
     sourceId: "won_wizard_fb",
     author: "AI Radar",
     photo: "https://ai-radar.kr/assets/icon.png",
-    image: "https://images.unsplash.com/photo-1633493106185-5b871c56fdf1?w=1080&auto=format&fit=crop&q=80",
+    image: "https://github.com/user-attachments/assets/efb402a1-0b09-41e0-a6cb-259d442e76aa",
     body: "Tencent Hunyuan3D 2.0 & HY-World 3D 생성 워크플로우 테스트\n\n텐센트에서 공개한 Hunyuan3D와 HY-World 모델을 활용한 3D 에셋 및 환경 생성 테스트입니다.\n\n단일 이미지 또는 텍스트 프롬프트로부터 매우 정교한 3D 메쉬와 텍스처를 고속으로 생성할 수 있으며, ComfyUI 커스텀 노드를 통해 파이프라인 연동이 가능합니다.\n\n주요 특징:\n1. 고해상도 메쉬 생성 속도 및 디테일 대폭 개선\n2. PBR 텍스처 맵 자동 베이킹 지원\n3. ComfyUI 연동 노드로 이미지-비디오-3D 파이프라인 구성 용이\n\n🎥 3D 생성 데모 영상:\nhttps://www.youtube.com/watch?v=Kz6K6rV4vN0\n\n📌 원문 출처: https://www.facebook.com/won.wizard\n🔗 프로젝트 깃허브: https://github.com/Tencent/Hunyuan3D-2\n\n#Hunyuan3D #3D #wonwizard",
     tags: ["Hunyuan3D", "3D", "wonwizard"],
     ref: {
@@ -3059,7 +3078,7 @@ var BD_DEFAULT_SNS = [
     sourceId: "won_wizard_fb",
     author: "AI Radar",
     photo: "https://ai-radar.kr/assets/icon.png",
-    image: "https://images.unsplash.com/photo-1614680376593-902f749f7ffc?w=1080&auto=format&fit=crop&q=80",
+    image: "https://i.ytimg.com/vi/vVj2w3p1XbA/hqdefault.jpg",
     body: "ByteDance Seedance 2.0 캐릭터 애니메이션 및 표정 제어 테스트\n\nSeedance 2.0 모델을 활용한 정밀한 캐릭터 표정 트래킹 및 카메라 모션 제어 결과입니다.\n\n오디오 싱크와 결합했을 때 자연스러운 립싱크와 미세한 눈 깜빡임, 감정 표현이 돋보입니다.\n\n주요 테스트 포인트:\n• 프롬프트를 통한 감정 강도(Emotional intensity) 조절\n• 카메라 Pan / Tilt 움직임 중 캐릭터 일관성 유지\n• 다각도 조명 변화 시 얼굴 디테일 보존\n\n🎥 모션 트래킹 데모 영상:\nhttps://www.youtube.com/watch?v=vVj2w3p1XbA\n\n📌 원문 출처: https://www.facebook.com/won.wizard\n\n#Seedance #AI영상 #wonwizard",
     tags: ["Seedance", "AI영상", "wonwizard"],
     ref: {
@@ -3074,7 +3093,7 @@ var BD_DEFAULT_SNS = [
     sourceId: "won_wizard_fb",
     author: "AI Radar",
     photo: "https://ai-radar.kr/assets/icon.png",
-    image: "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1080&auto=format&fit=crop&q=80",
+    image: "https://i.ytimg.com/vi/YQHsXMglC9A/hqdefault.jpg",
     body: "LTX-Video IC-LoRA를 활용한 조명 재구성(Relight) 및 고화질 복원 워크플로우\n\nLTX-Video 모델에 IC-LoRA를 적용하여 생성된 비디오의 조명 방향과 분위기를 실시간으로 변경하는 파이프라인입니다.\n\nComfyUI에서 경량화된 VRAM으로도 부드러운 4K 업스케일링과 디테일 향상이 가능합니다.\n\n🎥 릴라이트 워크플로우 영상:\nhttps://www.youtube.com/watch?v=YQHsXMglC9A\n\n📌 원문 출처: https://www.facebook.com/won.wizard\n🔗 프로젝트 깃허브: https://github.com/Lightricks/LTX-Video\n\n#LTXVideo #ComfyUI #wonwizard",
     tags: ["LTXVideo", "ComfyUI", "wonwizard"],
     ref: {
@@ -3094,6 +3113,71 @@ function bdLoadSnsPosts(){
     bdSnsList = (Array.isArray(arr) && arr.length) ? arr : BD_DEFAULT_SNS;
     return bdSnsList;
   })["catch"](function(){ bdSnsList = BD_DEFAULT_SNS; return BD_DEFAULT_SNS; });
+}
+var bdImgModal = null;
+function bdCloseImg(){
+  if (bdImgModal && bdImgModal.parentNode){
+    bdImgModal.parentNode.removeChild(bdImgModal);
+    bdImgModal = null;
+  }
+  document.documentElement.style.overflow = "";
+}
+function bdOpenImg(src, alt){
+  if (!src) return;
+  bdCloseImg();
+  bdImgModal = document.createElement("div");
+  bdImgModal.className = "bd-media-modal";
+  bdImgModal.onclick = function(e){
+    var t = e.target;
+    if (t === bdImgModal || (t && t.closest && t.closest("[data-bdclose]"))) bdCloseImg();
+  };
+  bdImgModal.innerHTML =
+    "<div class='bd-media-box'>"+
+      "<div class='bd-media-head'>"+
+        "<span class='bd-media-title'>"+esc(alt||"이미지 확대")+"</span>"+
+        "<button type='button' class='wk-x' data-bdclose aria-label='닫기'>×</button>"+
+      "</div>"+
+      "<div class='bd-img-full'>"+
+        "<img src='"+esc(src)+"' alt='"+esc(alt||"")+"'>"+
+      "</div>"+
+      "<div class='bd-media-foot'>"+
+        "<a href='"+esc(src)+"' target='_blank' rel='noopener noreferrer'>새 탭에서 원본 열기 ↗</a>"+
+      "</div>"+
+    "</div>";
+  document.documentElement.style.overflow = "hidden";
+  document.body.appendChild(bdImgModal);
+}
+function bdOpenVideo(url, title){
+  if (!url) return;
+  var ytm = url.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/|live\/)|youtu\.be\/)([A-Za-z0-9_-]{6,20})/);
+  if (ytm){
+    var yId = ytm[1];
+    var embedSrc = "https://www.youtube-nocookie.com/embed/" + yId + "?autoplay=1";
+    bdCloseImg();
+    bdImgModal = document.createElement("div");
+    bdImgModal.className = "bd-media-modal";
+    bdImgModal.onclick = function(e){
+      var t = e.target;
+      if (t === bdImgModal || (t && t.closest && t.closest("[data-bdclose]"))) bdCloseImg();
+    };
+    bdImgModal.innerHTML =
+      "<div class='bd-media-box'>"+
+        "<div class='bd-media-head'>"+
+          "<span class='bd-media-title'>"+esc(title||"영상 재생")+"</span>"+
+          "<button type='button' class='wk-x' data-bdclose aria-label='닫기'>×</button>"+
+        "</div>"+
+        "<div class='wk-frame'>"+
+          "<iframe src='"+esc(embedSrc)+"' allow='autoplay; fullscreen; picture-in-picture' allowfullscreen referrerpolicy='strict-origin-when-cross-origin'></iframe>"+
+        "</div>"+
+        "<div class='bd-media-foot'>"+
+          "<a href='"+esc(url)+"' target='_blank' rel='noopener noreferrer'>유튜브에서 보기 ↗</a>"+
+        "</div>"+
+      "</div>";
+    document.documentElement.style.overflow = "hidden";
+    document.body.appendChild(bdImgModal);
+  } else {
+    window.open(url, "_blank", "noopener,noreferrer");
+  }
 }
 function bdMs(ts){
   if (!ts) return NaN;
@@ -3324,7 +3408,7 @@ function bdCard(p, opt){
     var imgUrl = ctSafeUrl(p.image) || (String(p.image).indexOf("data:image/") === 0 ? p.image : "");
     if (imgUrl){
       h += "<div class='bd-img-wrap'><img class='bd-img' src='"+esc(imgUrl)+
-           "' loading='lazy' alt='첨부 이미지' onclick='window.open(this.src)'></div>";
+           "' loading='lazy' alt='첨부 이미지' data-bdimgpop='"+esc(imgUrl)+"'></div>";
     }
   }
   if (folded) h += "<button type='button' class='bd-unfold' data-unfold>더 보기</button>";
@@ -4028,8 +4112,13 @@ C.addEventListener("click", function(e){
   if ((el = t.closest("[data-wkplay]"))){ wkOpen(el.getAttribute("data-wkplay")); return; }
   if ((el = t.closest("[data-wklike]"))){ wkToggleLike(el); return; }
   if ((el = t.closest("[data-wkdel]"))){ wkDelete(el); return; }
+  if ((el = t.closest("[data-bdimgpop]"))){ bdOpenImg(el.getAttribute("data-bdimgpop"), "첨부 이미지"); return; }
+  if ((el = t.closest("[data-bdplay]"))){ bdOpenVideo(el.getAttribute("data-bdplay"), "영상 재생"); return; }
   if ((el = t.closest("[data-login]"))){ bdLogin(); return; }
   if ((el = t.closest("[data-logout]"))){ bdLogout(); return; }
+});
+window.addEventListener("keydown", function(e){
+  if (e.key === "Escape"){ bdCloseImg(); }
 });
 
 /* ============================================================================
