@@ -195,7 +195,7 @@
      보이는 창이 이미지 13% 지점부터 시작해 머리가 잘린다(대표가 본 증상 그대로).
      창 시작점 = y × (1 − 보이는비율) 이므로, 최소 보이는비율 46%(위 26vw 하한)에서도
      시작점이 머리끝 6.5% 위에 오려면 y ≤ 9% 여야 한다. */
-  .hero-bg img{ width:100%; height:100%; object-fit:cover; object-position:center center;
+  .hero-bg img{ width:100%; height:100%; object-fit:cover; object-position:58% 12%;
                 display:block; }
   .hero-radar{ position:absolute; inset:0; z-index:2; pointer-events:none; }
   .hero-radar i{ position:absolute; left:76%; top:46%; translate:-50% -50%;
@@ -227,28 +227,15 @@
   .hero::after{ content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
                 background:linear-gradient(90deg, rgba(7,17,13,.96) 0%,
                   rgba(7,17,13,.72) 46%, rgba(7,17,13,.30) 100%); }
-  /* 사진 위에서는 어둠막을 두 장 겹친다.
-     위→아래 한 장은 사진 왼쪽 위의 소프트박스가 너무 밝아 pill 글자가 떠 보이는 것을 누른다.
-     왼→오른쪽 한 장은 글이 앉는 왼쪽을 가장 어둡게, 인물이 있는 오른쪽을 가장 밝게 남긴다 —
-     오른쪽까지 덮어 버리면 사진을 넣은 이유가 없어진다.
-     색은 순검정이 아니라 --ink(7,17,13) 다. 순검정을 쓰면 이 화면만 색이 튄다. */
+  /* 사진 위 어둠막 — 인물 얼굴 구역(중앙 우측 상단)은 투명하게 비치고 텍스트 구역만 또렷하게 대비 확보 */
   .hero.has-photo::after{
     background:
-      /* 아래→위 한 장은 두 가지 일을 한다.
-         ① 숫자 줄이 앉는 하단을 눌러 대비를 확보한다(2560 실측 4.31:1 → 기준 통과).
-         ② 맨 바닥을 --ink 100% 로 끌어올려 다음 섹션과 같은 색으로 녹인다 —
-            사진의 어두운 하단과 순수 --ink 배경이 만나며 생기던 "검정 밑에 검정 띠"
-            이음새(대표 실보고 2026-08-15)가 이걸로 사라진다. 26% 위로는 걷혀서
-            얼굴(상단)에는 닿지 않는다. */
-      /* 메뉴 카드가 히어로 하단으로 들어오면서 이 층이 카드 글자의 바탕이 됐다.
-         하단 44% 까지 짙게 눌러 카드 대비를 확보한다 — 얼굴은 상단이라 닿지 않는다.
-         맨 바닥 --ink 100% 는 다음 섹션과 녹는 이음새 처리(그대로). */
-      linear-gradient(0deg, rgba(7,17,13,1) 0%, rgba(7,17,13,.86) 24%,
-        rgba(7,17,13,.5) 44%, rgba(7,17,13,0) 64%),
-      linear-gradient(180deg, rgba(7,17,13,.74) 0%, rgba(7,17,13,.34) 32%,
-        rgba(7,17,13,0) 60%),
-      linear-gradient(90deg, rgba(7,17,13,.96) 0%, rgba(7,17,13,.88) 34%,
-        rgba(7,17,13,.58) 64%, rgba(7,17,13,.28) 100%); }
+      linear-gradient(0deg, rgba(7,17,13,1) 0%, rgba(7,17,13,.82) 20%,
+        rgba(7,17,13,.4) 42%, rgba(7,17,13,0) 62%),
+      linear-gradient(180deg, rgba(7,17,13,.5) 0%, rgba(7,17,13,.15) 24%,
+        rgba(7,17,13,0) 50%),
+      linear-gradient(90deg, rgba(7,17,13,.94) 0%, rgba(7,17,13,.82) 34%,
+        rgba(7,17,13,.42) 58%, rgba(7,17,13,.08) 100%); }
   /* 레이더는 남긴다(대표 지시) — 이 서비스의 시그니처라 사진이 깔렸다고 뺄 것이 아니다.
      다만 스위프가 오른쪽 인물 위를 가로지르면 얼굴에 선이 걸리므로,
      오른쪽으로 갈수록 사라지게 마스크한다. */
@@ -273,7 +260,7 @@
      사진이 없는 화면에서는 그냥 빈 검정이 된다 — 예전 값 44px 로 둔다. */
   .hero-content{ position:relative; z-index:3; width:min(var(--max), calc(100% - 64px));
                  margin:0 auto; padding:calc(var(--navh) + 44px) 0 42px; }
-  .hero.has-photo .hero-content{ padding-top:calc(var(--navh) + 110px); }
+  .hero.has-photo .hero-content{ padding-top:calc(var(--navh) + 160px); }
   .kicker{ display:flex; gap:9px; flex-wrap:wrap; margin-bottom:22px; }
   .pill{ border:1px solid rgba(255,255,255,.35); border-radius:999px; padding:7px 12px;
          font-size:10px; letter-spacing:.14em; text-transform:uppercase; font-weight:700; }
@@ -1125,8 +1112,8 @@
   <!-- 히어로 배경. 나중에 <video> 로 교체할 수 있게 이 블록만 갈아끼우면 되도록 둔다. 영상으로 바꾸면 자동재생·무음·루프·prefers-reduced-motion·모바일 데이터 소모를 함께 처리해야 한다. -->
   <div class="hero-bg">
     <picture>
-      <source id="heroBgSrc" type="image/webp" srcset="assets/a001.webp?v=shibuya">
-      <img id="heroBgImg" src="assets/a001.png?v=shibuya" width="1024" height="571"
+      <source id="heroBgSrc" type="image/webp" srcset="assets/a001.webp?v=hq2">
+      <img id="heroBgImg" src="assets/a001.png?v=hq2" width="2560" height="1427"
            fetchpriority="high" decoding="async" loading="eager"
            alt="AI 레이더 메인 히어로 배경">
     </picture>
