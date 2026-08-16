@@ -195,7 +195,7 @@
      보이는 창이 이미지 13% 지점부터 시작해 머리가 잘린다(대표가 본 증상 그대로).
      창 시작점 = y × (1 − 보이는비율) 이므로, 최소 보이는비율 46%(위 26vw 하한)에서도
      시작점이 머리끝 6.5% 위에 오려면 y ≤ 9% 여야 한다. */
-  .hero-bg img{ width:100%; height:100%; object-fit:cover; object-position:67% 8%;
+  .hero-bg img{ width:100%; height:100%; object-fit:cover; object-position:center center;
                 display:block; }
   .hero-radar{ position:absolute; inset:0; z-index:2; pointer-events:none; }
   .hero-radar i{ position:absolute; left:76%; top:46%; translate:-50% -50%;
@@ -1125,10 +1125,10 @@
   <!-- 히어로 배경. 나중에 <video> 로 교체할 수 있게 이 블록만 갈아끼우면 되도록 둔다. 영상으로 바꾸면 자동재생·무음·루프·prefers-reduced-motion·모바일 데이터 소모를 함께 처리해야 한다. -->
   <div class="hero-bg">
     <picture>
-      <source id="heroBgSrc" type="image/webp" srcset="assets/hero-studio.webp">
-      <img id="heroBgImg" src="assets/hero-studio.jpg" width="1920" height="1071"
+      <source id="heroBgSrc" type="image/webp" srcset="assets/a001.webp?v=1">
+      <img id="heroBgImg" src="assets/a001.png?v=1" width="2752" height="1536"
            fetchpriority="high" decoding="async" loading="eager"
-           alt="어두운 촬영 스튜디오 책상에서 태블릿을 쥐고 모니터를 보는 사람">
+           alt="AI 레이더 메인 히어로 배경">
     </picture>
   </div>
   <!-- 시그니처 요소: 동심원 + 스위프. 주제(레이더)에서 나왔고 1px 선과
