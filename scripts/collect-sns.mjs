@@ -42,8 +42,7 @@ function writeJson(p, data) {
 
 async function collectFacebookSource(source, history) {
   console.log(`[SNS 수집] Facebook 소스 처리: ${source.name} (${source.url})`);
-  // Facebook은 비로그인 웹 접근 시 제한이 있을 수 있으므로
-  // 공개 데이터 및 기존 저장된 최신 피드를 안전하게 병합
+  // Facebook 소스에서 수집할 때는 반드시 원문 출처(source.url)와 인용 링크가 필수 포함됩니다.
   return [];
 }
 
