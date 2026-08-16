@@ -689,6 +689,8 @@
   /* 본문은 사용자가 쓴 값이라 길이를 예측할 수 없다 — 375px 에서 가로 스크롤이
      생기지 않게 anywhere 로 끊는다 */
   .bd-text{ font-size:15px; line-height:1.75; word-break:keep-all; overflow-wrap:anywhere; }
+  .bd-text a{ color:inherit; text-decoration:underline; text-underline-offset:3px; word-break:break-all; }
+  .bd-text a:hover{ color:var(--lime-dark, #4d7c0f); }
   .bd-text.fold{ display:-webkit-box; -webkit-line-clamp:6; -webkit-box-orient:vertical;
                  overflow:hidden; }
   .bd-unfold{ margin-top:8px; font-size:12px; font-weight:800; color:var(--muted-light);
@@ -2928,7 +2930,32 @@ function fbInit(){
 /* ---- 공용 조각 ---- */
 function bdAlive(el){ return curRoute()==="board" && C.contains(el); }
 function bdReset(){ bdFeed = []; bdCursor = null; bdMore = false; }
-function bdText(s){ return esc(String(s==null?"":s)).replace(/\r?\n/g, "<br>"); }
+function bdText(s){
+  s = String(s == null ? "" : s);
+  /* 본문 속 URL 을 새 창(_blank) 링크로 자동 변환 */
+  var re = /(https?:\/\/[^\s)<>"'　]+)/g;
+  var parts = [], last = 0, m;
+  while ((m = re.exec(s)) !== null){
+    var idx = m.index;
+    var rawUrl = m[1];
+    var tail = "";
+    var tm = rawUrl.match(/[.,;:!?)]+$/);
+    if (tm){
+      tail = tm[0];
+      rawUrl = rawUrl.slice(0, -tail.length);
+    }
+    parts.push(esc(s.slice(last, idx)));
+    var safe = ctSafeUrl(rawUrl);
+    if (safe){
+      parts.push("<a href='" + esc(safe) + "' target='_blank' rel='noopener noreferrer nofollow'>" + esc(rawUrl) + "</a>" + esc(tail));
+    } else {
+      parts.push(esc(m[1]));
+    }
+    last = idx + m[1].length;
+  }
+  parts.push(esc(s.slice(last)));
+  return parts.join("").replace(/\r?\n/g, "<br>");
+}
 function bdMs(ts){ return (ts && ts.toDate) ? ts.toDate().getTime() : NaN; }
 /* serverTimestamp 는 쓰기 직후 잠깐 비어 있다 — 그때는 "방금"이 사실에 가깝다 */
 function bdWhen(ts){
