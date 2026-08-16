@@ -730,6 +730,27 @@
   .dark .bd-media-foot{ border-color:var(--line-dark); }
   .bd-media-foot a{ color:var(--lime-dark, #4d7c0f); text-decoration:none; }
   .bd-media-foot a:hover{ text-decoration:underline; }
+  /* 메인페이지 자유게시판 카드뉴스 그리드 */
+  .home-board-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:16px; margin-top:20px; }
+  @media(max-width:1024px){ .home-board-grid{ grid-template-columns:repeat(2, 1fr); } }
+  @media(max-width:640px){ .home-board-grid{ grid-template-columns:1fr; } }
+  .home-board-card{ display:flex; flex-direction:column; background:rgba(255,255,255,.04);
+                    border:1px solid rgba(255,255,255,.12); border-radius:8px; overflow:hidden;
+                    text-decoration:none !important; color:inherit; transition:transform .2s, border-color .2s; }
+  .home-board-card:hover{ transform:translateY(-4px); border-color:var(--lime); }
+  .hbc-media{ width:100%; height:140px; background:#0b0d10; overflow:hidden; position:relative; }
+  .hbc-img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .hbc-noimg{ width:100%; height:100%; display:flex; align-items:center; justify-content:center;
+              background:linear-gradient(135deg, rgba(204,255,0,.15), rgba(255,107,74,.15));
+              color:var(--lime); font-size:24px; font-weight:800; letter-spacing:.1em; }
+  .hbc-body{ padding:16px; display:flex; flex-direction:column; flex:1; }
+  .hbc-tag{ font-size:11px; font-weight:800; color:var(--lime); margin-bottom:8px; }
+  .hbc-title{ font-size:14px; font-weight:700; color:#fff; line-height:1.5; margin-bottom:10px;
+              display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+  .hbc-meta{ margin-top:auto; padding-top:12px; border-top:1px solid rgba(255,255,255,.08);
+             display:flex; align-items:center; justify-content:space-between; font-size:12px; color:var(--muted-dark); }
+  .hbc-author{ display:flex; align-items:center; gap:6px; font-weight:700; color:#fff; }
+  .hbc-more{ color:var(--lime); font-weight:700; font-size:11.5px; }
   .bd-text.fold{ display:-webkit-box; -webkit-line-clamp:6; -webkit-box-orient:vertical;
                  overflow:hidden; }
   .bd-unfold{ margin-top:8px; font-size:12px; font-weight:800; color:var(--muted-light);
@@ -6079,37 +6100,62 @@ function homeFillCardNews(){
   }, function(){ sec.style.display = "none"; });
 }
 
-/* ---- 커뮤니티 최근 글 ----
-   자유게시판이 쓰는 질의를 그대로 쓴다(원글만·최신순). 색인도 같은 것을 쓰므로
-   게시판이 뜨는 환경이면 여기도 뜬다.
-   Firebase 설정 전이거나 글이 없으면 이 블록은 조용히 없는 채로 둔다 —
-   "준비 중"이라고 적힌 빈 껍데기는 안 만든 것만 못하다. */
-function homeCommRow(p){
-  /* row() 를 쓰지 않는 이유는 링크 하나뿐이다. row() 는 바깥 링크용이라 새 탭으로 열지만
-     게시판은 우리 사이트 안이라 그대로 이동해야 한다. 생김새는 같은 클래스를 쓴다. */
-  var tags = (p.tags || []).slice(0, 2).map(function(t){
-    return "<span class='tag'>" + esc(t) + "</span>"; }).join("");
-  return "<a class='row' href='" + esc(boardUrl(p.id)) + "'>" +
-    "<div class='dd tnum tbd'>" + esc(bdWhen(p.createdAt)) + "</div>" +
-    "<div class='r-main'><div class='r-title'>" + esc(bdExcerpt(p.body) || "(내용 없음)") + tags + "</div>" +
-    "<div class='r-meta'><b>" + esc(p.author || "익명") + "</b></div></div></a>";
-}
-function homeFillCommunity(){
-  var sec = document.getElementById("homeCommSec");
-  var el = document.getElementById("homeComm");
-  if (!sec || !el || !fbReady()) return;
-  fbInit().then(function(){
-    return fbDb.collection("posts").where("parentId", "==", null)
-      .orderBy("createdAt", "desc").limit(5).get();
-  }).then(function(sn){
-    if (curRoute() !== "home" || !C.contains(sec)) return;
-    var got = [];
-    sn.forEach(function(d){ var o = d.data() || {}; o.id = d.id; got.push(o); });
-    if (!got.length) return;              /* 아직 글이 없다 — 숨긴 채로 둔다 */
+/* ---- 자유게시판 메인 4개 카드뉴스 ---- */
+function homeFillBoardCards(){
+  var sec = document.getElementById("homeBoardSec");
+  var el = document.getElementById("homeBoardCards");
+  if (!sec || !el) return;
+
+  function renderCards(posts){
+    var list = (posts || []).slice(0, 4);
+    if (!list.length){ sec.style.display = "none"; return; }
     sec.style.display = "";
-    el.innerHTML = got.map(homeCommRow).join("");
-    observeReveal();
-  }, function(){});                        /* 색인 없음·네트워크 실패도 조용히 숨긴다 */
+    el.innerHTML = list.map(function(p){
+      var tag = (p.tags && p.tags.length) ? p.tags[0] : "AI레이더";
+      var body = String(p.body || "");
+      var firstLine = body.split(/\r?\n/)[0] || "";
+      var title = firstLine.slice(0, 45) || (p.ref && p.ref.title) || bdExcerpt(body) || "자유게시판 새 소식";
+      var img = p.image ? ctSafeUrl(p.image) : "";
+      var mediaHtml = img
+        ? "<div class='hbc-media'><img class='hbc-img' src='" + esc(img) + "' loading='lazy' alt='대표 이미지'></div>"
+        : "<div class='hbc-media'><div class='hbc-noimg'>#" + esc(tag) + "</div></div>";
+      return "<a class='home-board-card' href='" + esc(boardUrl(p.id)) + "'>" +
+        mediaHtml +
+        "<div class='hbc-body'>" +
+          "<span class='hbc-tag'>#" + esc(tag) + "</span>" +
+          "<h3 class='hbc-title'>" + esc(title) + "</h3>" +
+          "<div class='hbc-meta'>" +
+            "<span class='hbc-author'>" + esc(p.author || "AI Radar") + " · " + esc(bdWhen(p.createdAt)) + "</span>" +
+            "<span class='hbc-more'>보기 ↗</span>" +
+          "</div>" +
+        "</div>" +
+      "</a>";
+    }).join("");
+  }
+
+  /* 1. 기본 캐시(SNS posts + BD_DEFAULT_SNS)로 4개 즉시 렌더링 */
+  var initial = (bdSnsList && bdSnsList.length) ? bdSnsList : BD_DEFAULT_SNS;
+  renderCards(initial);
+
+  /* 2. Firestore 최신 글과 병합하여 최신화 */
+  if (fbReady()){
+    fbInit().then(function(){
+      return fbDb.collection("posts").where("parentId", "==", null)
+        .orderBy("createdAt", "desc").limit(4).get();
+    }).then(function(sn){
+      if (curRoute() !== "home" || !document.getElementById("homeBoardCards")) return;
+      var got = [];
+      sn.forEach(function(d){ var o = d.data() || {}; o.id = d.id; got.push(o); });
+      var seen = {};
+      got.forEach(function(p){ seen[p.id] = true; });
+      var snsList = (bdSnsList && bdSnsList.length) ? bdSnsList : BD_DEFAULT_SNS;
+      snsList.forEach(function(s){
+        if (!seen[s.id]) got.push(s);
+      });
+      got.sort(function(a, b){ return (bdMs(b.createdAt) || 0) - (bdMs(a.createdAt) || 0); });
+      renderCards(got);
+    })["catch"](function(){});
+  }
 }
 
 /* ---- 메뉴 안내 ----
@@ -6195,19 +6241,13 @@ function renderHome(){
       "<div id='homeBrief'></div>" +
     "</div></section>" +
 
-    /* 사진은 이 섹션 안에 둔다 — 파이어베이스가 없으면 섹션째 display:none 이라
-       사진도 같이 사라진다. 밖에 두면 이야기가 하나도 없는데 사진만 떠 있게 된다. */
-    "<section class='section paper-alt' id='homeCommSec' style='display:none'><div class='inner'>" +
-      sectionHead("Community", HOME_COPY.commH, "", "") +
-      "<div class='rows' id='homeComm'></div>" +
-      /* 애플시드 섹션과 사진을 맞바꿨다(대표 지시 2026-08-15) — 교육 자리엔 여럿이 함께,
-         커뮤니티 자리엔 혼자 만드는 사람. 같은 사진이 두 섹션에 나오는 것도 피한다. */
-      "<picture>" +
-        "<source type='image/webp' srcset='" + BASE + "assets/edu-studio.webp'>" +
-        "<img class='home-photo' src='" + BASE + "assets/edu-studio.jpg' " +
-          "width='1280' height='714' loading='lazy' decoding='async' " +
-          "alt='어두운 스튜디오 책상에서 턱을 괴고 모니터를 보는 사람'>" +
-      "</picture>" +
+    /* AI 업계 브리핑 바로 아래: 자유게시판 최신 4개 카드뉴스 섹션 */
+    "<section class='section dark' id='homeBoardSec'><div class='inner'>" +
+      sectionHead("Board", "오늘 알게 된 것,<br>자유게시판 최신 소식",
+        "AI를 쓰면서 알게 된 팁과 최신 AI 영상·기술 소식을 공유합니다.", "") +
+      "<div class='home-board-grid' id='homeBoardCards'></div>" +
+      "<p class='cta-row' style='margin-top:26px'>" +
+      "<a class='btn' href='" + esc(menuHref("board")) + "'>자유게시판 전체 보기 →</a></p>" +
     "</div></section>" +
 
     /* 커뮤니티 바로 아래다 — 말한 사람들 다음에 만든 사람들이 온다.
@@ -6237,10 +6277,10 @@ function renderHome(){
   homeWantsSub();   /* 「마감 알림」 착지 신호를 켜 둔다. 실제 스크롤은 마감 목록이
                        채워진 뒤(homeFillDue 완료) 한다 — 로딩 중 빈 상태로 내리면 어긋난다 */
   homeFillBrief();
+  homeFillBoardCards();                   /* AI 브리핑 바로 아래 자유게시판 카드뉴스 */
   homeFillCardNews();                     /* 카드뉴스 — 관심분야 마감임박 아래 볼거리 */
   homeIntPaint();                         /* 로그인·미선택 안내는 마감 데이터를 안 기다린다 */
   homeFillMenu();
-  homeFillCommunity();
   homeFillWorks();
 }
 
@@ -6385,6 +6425,14 @@ function airVisitSource(){
 function airTrackVisit(){
   if (airTracked) return;
   airTracked = true;
+  /* 대표·팀 작업 방문 제외: ?notrack=1 로 이 브라우저를 제외 표시, ?notrack=0 로 해제.
+     표시된 브라우저는 이후 방문을 세지 않는다(로그인 여부와 무관). */
+  try {
+    var _q = new URLSearchParams(location.search);
+    if (_q.get("notrack") === "1"){ try { localStorage.setItem("air_notrack","1"); } catch(e){} }
+    else if (_q.get("notrack") === "0"){ try { localStorage.removeItem("air_notrack"); } catch(e){} }
+    try { if (localStorage.getItem("air_notrack") === "1") return; } catch(e){}
+  } catch(e){}
   try {
     var day = new Date().toLocaleDateString("en-CA", { timeZone: "Asia/Seoul" });   /* YYYY-MM-DD (KST) */
     var isNew = 0;
