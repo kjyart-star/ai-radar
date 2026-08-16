@@ -4043,28 +4043,45 @@ function bdThreadView(el, slug){
   }
 
   function load(){
+    /* SNS 자동 수집 글(정적 데이터)인지 먼저 확인 */
+    var snsFound = null;
+    var list = (bdSnsList && bdSnsList.length) ? bdSnsList : BD_DEFAULT_SNS;
+    for (var i = 0; i < list.length; i++){
+      if (list[i].id === slug){ snsFound = list[i]; break; }
+    }
+
     fbDb.collection("posts").doc(slug).get().then(function(d){
       if (!bdAlive(el)) return null;
-      if (!d.exists){
+      if (d.exists){
+        rootP = d.data()||{}; rootP.id = d.id;
+      } else if (snsFound){
+        rootP = JSON.parse(JSON.stringify(snsFound));
+      } else {
         te.innerHTML = emptyNote("글을 찾을 수 없습니다. 지워졌거나 주소가 잘못되었을 수 있습니다.");
         return null;
       }
-      rootP = d.data()||{}; rootP.id = d.id;
       var root = rootP.rootId || rootP.id;
       /* 답글 주소로 들어왔으면 그 스레드의 원글로 옮겨 준다 */
       if (root !== rootP.id){ bdGo(root); return null; }
       return fbDb.collection("posts").where("rootId","==",root).orderBy("createdAt","asc").get();
     }).then(function(sn){
-      if (!sn || !bdAlive(el)) return;
+      if (!bdAlive(el)) return;
       var replies = [];
-      sn.forEach(function(d){
-        if (d.id === rootP.id) return;   /* 원글은 rootId 가 자기 자신이라 같이 딸려 온다 */
-        var o = d.data()||{}; o.id = d.id; replies.push(o);
-      });
+      if (sn && sn.forEach){
+        sn.forEach(function(d){
+          if (d.id === rootP.id) return;   /* 원글은 rootId 가 자기 자신이라 같이 딸려 온다 */
+          var o = d.data()||{}; o.id = d.id; replies.push(o);
+        });
+      }
       draw(rootP, replies);
     }, function(e){
       if (!bdAlive(el)) return;
-      bdQueryFail(te, e, load);
+      if (snsFound){
+        rootP = JSON.parse(JSON.stringify(snsFound));
+        draw(rootP, []);
+      } else {
+        bdQueryFail(te, e, load);
+      }
     });
   }
   load();
