@@ -691,6 +691,26 @@
   .bd-text{ font-size:15px; line-height:1.75; word-break:keep-all; overflow-wrap:anywhere; }
   .bd-text a{ color:inherit; text-decoration:underline; text-underline-offset:3px; word-break:break-all; }
   .bd-text a:hover{ color:var(--lime-dark, #4d7c0f); }
+  .bd-img-wrap{ margin:14px 0 8px; max-width:100%; border-radius:4px; overflow:hidden; }
+  .bd-img{ display:block; max-width:100%; max-height:500px; width:auto; height:auto; object-fit:contain;
+           border:1px solid var(--line-light); border-radius:4px; cursor:zoom-in; }
+  .dark .bd-img{ border-color:var(--line-dark); }
+  .bd-img-preview{ position:relative; display:inline-block; margin:10px 0 4px; }
+  .bd-img-preview img{ max-width:180px; max-height:130px; border-radius:4px; border:1px solid var(--line-light); }
+  .dark .bd-img-preview img{ border-color:var(--line-dark); }
+  .bd-img-del{ position:absolute; top:-6px; right:-6px; width:20px; height:20px; border-radius:50%;
+               background:var(--ink); color:#fff; font-size:11px; line-height:20px; text-align:center;
+               cursor:pointer; border:none; padding:0; }
+  .bd-video-card{ display:inline-flex; align-items:center; gap:12px; margin:8px 0; padding:8px 12px;
+                  background:rgba(0,0,0,.03); border:1px solid var(--line-light); border-radius:6px;
+                  text-decoration:none !important; color:inherit; max-width:100%; vertical-align:middle; }
+  .dark .bd-video-card{ background:rgba(255,255,255,.04); border-color:var(--line-dark); }
+  .bd-video-thumb{ width:96px; height:54px; object-fit:cover; border-radius:4px; flex-shrink:0; }
+  .bd-video-info{ display:flex; flex-direction:column; gap:3px; min-width:0; }
+  .bd-video-badge{ font-size:10px; font-weight:800; letter-spacing:.08em; color:var(--coral); }
+  .bd-video-title{ font-size:13px; font-weight:700; color:var(--ink); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .dark .bd-video-title{ color:#fff; }
+  .bd-video-card:hover{ border-color:var(--lime); }
   .bd-text.fold{ display:-webkit-box; -webkit-line-clamp:6; -webkit-box-orient:vertical;
                  overflow:hidden; }
   .bd-unfold{ margin-top:8px; font-size:12px; font-weight:800; color:var(--muted-light);
@@ -2845,12 +2865,45 @@ var bdUser = null;
 var bdTagsDb = [], bdTag = "전체";
 var bdFeed = [], bdCursor = null, bdMore = false, bdBusy = false;
 var bdLiked = {};                       /* 내가 하트를 누른 글 (likes 문서로 확인한 값) */
-var bdDraft = { body:"", tags:[] };     /* 로그인하러 다녀와도 쓰던 글이 남아 있어야 한다 */
+var bdDraft = { body:"", tags:[], image:null }; /* 로그인하러 다녀와도 쓰던 글이 남아 있어야 한다 */
 var bdRef = null;                       /* 다른 화면의 "이야기하기"가 넘겨준 인용 대상 */
 var bdReplyTo = null;
 var bdRedrawComposer = null;
-var bdBodyCache = {}, bdTagCache = {};  /* 카드에서 수정창을 열 때 원문을 되살리기 위한 값 */
+var bdBodyCache = {}, bdTagCache = {}, bdImgCache = {};  /* 카드에서 수정창을 열 때 원문을 되살리기 위한 값 */
 var bdInline = null;                    /* 인라인 답글창을 연 글 id (한 번에 하나) */
+var BD_IMG_MAX = 350000;                /* 첨부 이미지 용량 한도 (~350KB) */
+
+/* 기기 사진을 캔버스로 리사이즈해 data URL 로 만든다. Storage 없이 Firestore 에 바로 담기 위함 */
+function bdResizeImage(file, cb){
+  if (!file || !/^image\//.test(file.type||"")){ cb("이미지 파일만 올릴 수 있습니다."); return; }
+  var fr = new FileReader();
+  fr.onerror = function(){ cb("이미지를 읽지 못했습니다."); };
+  fr.onload = function(){
+    var img = new Image();
+    img.onerror = function(){ cb("이미지를 열지 못했습니다."); };
+    img.onload = function(){
+      var max = 1200, w = img.width, h = img.height;
+      if (!w || !h){ cb("이미지를 열지 못했습니다."); return; }
+      if (w > max || h > max){
+        if (w > h){ h = Math.round(h * max / w); w = max; }
+        else { w = Math.round(w * max / h); h = max; }
+      }
+      var cv = document.createElement("canvas");
+      cv.width = w; cv.height = h;
+      var cx = cv.getContext("2d");
+      cx.fillStyle = "#fff"; cx.fillRect(0, 0, w, h);
+      cx.drawImage(img, 0, 0, w, h);
+      var q = 0.82, out;
+      try { out = cv.toDataURL("image/jpeg", q); }
+      catch(e){ cb("이미지를 처리하지 못했습니다."); return; }
+      while (out.length > BD_IMG_MAX && q > 0.4){ q -= 0.15; out = cv.toDataURL("image/jpeg", q); }
+      if (out.length > BD_IMG_MAX){ cb("이미지 용량이 너무 큽니다. 더 작은 이미지를 올려 주세요."); return; }
+      cb(null, out);
+    };
+    img.src = fr.result;
+  };
+  fr.readAsDataURL(file);
+}
 
 /* ---- SDK 지연 로딩 ----
    <head> 에 정적으로 넣지 않는다. gstatic 이 느리거나 막히면 사이트 전체가 같이 죽는데,
@@ -2932,7 +2985,7 @@ function bdAlive(el){ return curRoute()==="board" && C.contains(el); }
 function bdReset(){ bdFeed = []; bdCursor = null; bdMore = false; }
 function bdText(s){
   s = String(s == null ? "" : s);
-  /* 본문 속 URL 을 새 창(_blank) 링크로 자동 변환 */
+  /* 본문 속 URL 을 새 창(_blank) 링크 또는 동영상 카드로 자동 변환 */
   var re = /(https?:\/\/[^\s)<>"'　]+)/g;
   var parts = [], last = 0, m;
   while ((m = re.exec(s)) !== null){
@@ -2947,7 +3000,20 @@ function bdText(s){
     parts.push(esc(s.slice(last, idx)));
     var safe = ctSafeUrl(rawUrl);
     if (safe){
-      parts.push("<a href='" + esc(safe) + "' target='_blank' rel='noopener noreferrer nofollow'>" + esc(rawUrl) + "</a>" + esc(tail));
+      var ytm = rawUrl.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/|live\/)|youtu\.be\/)([A-Za-z0-9_-]{6,20})/);
+      if (ytm){
+        var yId = ytm[1];
+        parts.push(
+          "<a class='bd-video-card' href='" + esc(safe) + "' target='_blank' rel='noopener noreferrer'>" +
+            "<img class='bd-video-thumb' src='https://i.ytimg.com/vi/" + esc(yId) + "/mqdefault.jpg' alt='유튜브 영상' loading='lazy'>" +
+            "<span class='bd-video-info'>" +
+              "<span class='bd-video-badge'>▶ YOUTUBE</span>" +
+              "<span class='bd-video-title'>새 창에서 영상 보기 ↗</span>" +
+            "</span></a>" + esc(tail)
+        );
+      } else {
+        parts.push("<a href='" + esc(safe) + "' target='_blank' rel='noopener noreferrer nofollow'>" + esc(rawUrl) + "</a>" + esc(tail));
+      }
     } else {
       parts.push(esc(m[1]));
     }
@@ -3149,6 +3215,7 @@ function bdCard(p, opt){
   var body = String(p.body||"");
   bdBodyCache[p.id] = body;
   bdTagCache[p.id] = (p.tags||[]).slice();
+  bdImgCache[p.id] = p.image || null;
   var folded = !opt.full && (body.length > BD_FOLD || body.split(/\r?\n/).length > 6);
   var ph = ctSafeUrl(p.photo||"");
   var mine = !!(bdUser && p.uid && p.uid === bdUser.uid);
@@ -3170,6 +3237,13 @@ function bdCard(p, opt){
         : "<span>"+esc(p.ref.title||"")+"</span>")+"</div>";
   }
   h += "<div class='bd-text"+(folded?" fold":"")+"' data-text>"+bdText(body)+"</div>";
+  if (p.image){
+    var imgUrl = ctSafeUrl(p.image) || (String(p.image).indexOf("data:image/") === 0 ? p.image : "");
+    if (imgUrl){
+      h += "<div class='bd-img-wrap'><img class='bd-img' src='"+esc(imgUrl)+
+           "' loading='lazy' alt='첨부 이미지' onclick='window.open(this.src)'></div>";
+    }
+  }
   if (folded) h += "<button type='button' class='bd-unfold' data-unfold>더 보기</button>";
   if ((p.tags||[]).length){
     h += "<div class='bd-tags'>"+(p.tags||[]).map(function(t){
@@ -3263,12 +3337,15 @@ function bdEditCard(el){
   if (!card || card.querySelector("[data-editbox]")) return;
   var id = card.getAttribute("data-post");
   var sel = (bdTagCache[id] || []).slice();
+  var editImg = bdImgCache[id] || null;
   var box = document.createElement("div");
   box.className = "bd-edit";
   box.setAttribute("data-editbox","1");
   box.innerHTML =
     "<textarea class='bd-in' maxlength='"+BD_BODY_MAX+"' rows='5' data-ebody></textarea>"+
-    "<div class='bd-taglane'><div class='chips' data-etags></div></div>"+
+    "<div data-eimgprev></div>"+
+    "<div class='bd-taglane'><div class='chips' data-etags></div>"+
+      "<label class='chip' style='cursor:pointer'>📷 사진<input type='file' accept='image/*' data-eimgfile style='display:none'></label></div>"+
     "<p class='bd-msg' data-emsg></p>"+
     "<div class='bd-editacts'><button type='button' class='btn' data-esave>저장</button>"+
     "<button type='button' class='chip' data-ecancel>취소</button></div>";
@@ -3277,6 +3354,32 @@ function bdEditCard(el){
   ta.value = bdBodyCache[id] || "";
   bdTagPicker(box.querySelector("[data-etags]"), sel);
   var msg = box.querySelector("[data-emsg]");
+  var imgPrev = box.querySelector("[data-eimgprev]");
+  var imgFile = box.querySelector("[data-eimgfile]");
+  function drawEditImg(){
+    if (!imgPrev) return;
+    if (!editImg){ imgPrev.innerHTML = ""; return; }
+    imgPrev.innerHTML = "<div class='bd-img-preview'>"+
+      "<img src='"+esc(editImg)+"' alt='미리보기'>"+
+      "<button type='button' class='bd-img-del' data-eimgdel title='삭제'>×</button></div>";
+    var del = imgPrev.querySelector("[data-eimgdel]");
+    if (del) del.onclick = function(){ editImg = null; drawEditImg(); };
+  }
+  if (imgFile){
+    imgFile.onchange = function(){
+      var f = this.files && this.files[0];
+      if (!f) return;
+      msg.textContent = "사진 처리 중…";
+      bdResizeImage(f, function(err, out){
+        if (err){ msg.textContent = err; return; }
+        msg.textContent = "";
+        editImg = out;
+        drawEditImg();
+      });
+      this.value = "";
+    };
+  }
+  drawEditImg();
   box.querySelector("[data-ecancel]").onclick = function(){ card.removeChild(box); };
   box.querySelector("[data-esave]").onclick = function(){
     var b = this;
@@ -3288,8 +3391,9 @@ function bdEditCard(el){
     /* 본인 글이라 규칙의 첫 절이 허용한다 — slug 는 건드리지 않는다 */
     fbDb.collection("posts").doc(id).update({
       body: body, tags: sel.slice(0,BD_TAG_MAX), excerpt: bdExcerpt(body),
+      image: editImg || null,
       updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-    }).then(function(){ bdReset(); render(); }, function(e){
+    }).then(function(){ bdImgCache[id] = editImg || null; bdReset(); render(); }, function(e){
       b.disabled = false;
       if (window.console && console.error) console.error("[자유게시판]", e);
       msg.textContent = "저장하지 못했습니다. 잠시 후 다시 시도해 주세요.";
@@ -3366,19 +3470,23 @@ function bdComposer(host, opt){
   var sel = isReply ? [] : bdDraft.tags;
   var toName = isReply ? String(opt.toName||"") : "";
   var ph = isReply ? "답글을 남겨 보세요" : "AI를 쓰면서 알게 된 것을 남겨 보세요";
+  var attachedImg = isReply ? null : (bdDraft.image || null);
 
   host.innerHTML = "<div class='bd-composer'>"+
     (isReply ? (toName ? "<p class='bd-lead' style='margin-top:0'>"+esc(toName)+" 님에게</p>" : "")
              : "<div data-refbox></div>")+
     "<textarea class='bd-in bd-grow' rows='1' maxlength='"+BD_BODY_MAX+"' data-cbody"+
       " placeholder='"+esc(ph)+"' aria-label='"+esc(ph)+"'></textarea>"+
-    (isReply ? "" :
-      "<div class='bd-taglane'><div class='chips' data-ctags></div>"+
-        "<button type='button' class='chip' data-newtag>+ 태그</button></div>"+
-      "<div class='bd-newtagbox' data-newtagbox hidden>"+
-        "<input class='bd-in' type='text' maxlength='20' placeholder='새 태그 이름'"+
-          " data-newtagname aria-label='새 태그 이름'>"+
-        "<button type='button' class='chip' data-newtagadd>추가</button></div>")+
+    "<div data-cimgprev></div>"+
+    (isReply
+      ? "<div class='bd-taglane'><label class='chip' style='cursor:pointer'>📷 사진 첨부<input type='file' accept='image/*' data-cimgfile style='display:none'></label></div>"
+      : "<div class='bd-taglane'><div class='chips' data-ctags></div>"+
+          "<button type='button' class='chip' data-newtag>+ 태그</button>"+
+          "<label class='chip' style='cursor:pointer'>📷 사진<input type='file' accept='image/*' data-cimgfile style='display:none'></label></div>"+
+        "<div class='bd-newtagbox' data-newtagbox hidden>"+
+          "<input class='bd-in' type='text' maxlength='20' placeholder='새 태그 이름'"+
+            " data-newtagname aria-label='새 태그 이름'>"+
+          "<button type='button' class='chip' data-newtagadd>추가</button></div>")+
     "<p class='bd-msg' data-cmsg></p>"+
     "<div class='bd-cfoot'>"+
       (bdUser
@@ -3398,7 +3506,40 @@ function bdComposer(host, opt){
   var ta = host.querySelector("[data-cbody]");
   var msg = host.querySelector("[data-cmsg]");
   var countEl = host.querySelector("[data-ccount]");
+  var imgPrev = host.querySelector("[data-cimgprev]");
+  var imgInput = host.querySelector("[data-cimgfile]");
   var drawTags = null;
+
+  function drawAttachedImg(){
+    if (!imgPrev) return;
+    if (!attachedImg){ imgPrev.innerHTML = ""; return; }
+    imgPrev.innerHTML = "<div class='bd-img-preview'>"+
+      "<img src='"+esc(attachedImg)+"' alt='미리보기'>"+
+      "<button type='button' class='bd-img-del' data-cimgdel title='삭제'>×</button></div>";
+    var del = imgPrev.querySelector("[data-cimgdel]");
+    if (del) del.onclick = function(){
+      attachedImg = null;
+      if (!isReply) bdDraft.image = null;
+      drawAttachedImg();
+    };
+  }
+  if (imgInput){
+    imgInput.onchange = function(){
+      if (!bdUser){ bdToast("로그인하면 사진을 올릴 수 있습니다."); return; }
+      var f = this.files && this.files[0];
+      if (!f) return;
+      msg.textContent = "사진 처리 중…";
+      bdResizeImage(f, function(err, out){
+        if (err){ msg.textContent = err; return; }
+        msg.textContent = "";
+        attachedImg = out;
+        if (!isReply) bdDraft.image = out;
+        drawAttachedImg();
+      });
+      this.value = "";
+    };
+  }
+  drawAttachedImg();
 
   function grow(){ ta.style.height = "auto"; ta.style.height = Math.min(ta.scrollHeight, 420) + "px"; }
   function count(){ if (countEl) countEl.textContent = ta.value.length + " / " + nfmt(BD_BODY_MAX); }
@@ -3471,6 +3612,7 @@ function bdComposer(host, opt){
       author: bdUser.displayName || "익명",
       photo: bdUser.photoURL || "",
       body: body,
+      image: attachedImg || null,
       tags: tags,
       excerpt: bdExcerpt(body),
       parentId: isReply ? opt.parentId : null,
@@ -3509,7 +3651,7 @@ function bdComposer(host, opt){
       doc.slug = slug;
       doc.rootId = slug;   /* 원글의 rootId 는 자기 자신이다 — 쓰기 한 번으로 끝난다 */
       return fbDb.collection("posts").doc(slug).set(doc).then(function(){
-        bdDraft.body = ""; bdDraft.tags = []; bdRef = null;
+        bdDraft.body = ""; bdDraft.tags = []; bdDraft.image = null; bdRef = null;
         bdReset();
         bdGo(slug);   /* 방금 올린 글로 — 공유할 주소가 바로 손에 들어온다 */
       });
