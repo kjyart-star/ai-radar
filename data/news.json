@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-15T23:44:17.509Z",
+ "generated": "2026-08-16T23:44:47.867Z",
  "source": "Google News · TechCrunch · MIT Technology Review · The Verge",
  "sources": [
   "Google News",
@@ -9,50 +9,208 @@
  ],
  "items": [
   {
-   "title": "\"불안한 청년들, 사주로 위로받는다\"…MZ 홀린 'AI 사주'의 정체 - 머니투데이",
-   "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFB5c2FIWTBxYWl3U1NxVXpITG4zcVJ6MVJIYnF2ZEt4OWRsUUVtalRiWnFma01sOEtqWWV5OWVlRDRPakVheDllOWxFeGFCTDZCci1Sa0FRWUZ4OWxBRTYzZ05HbTNMUzFtdnfSAW9BVV95cUxPNzI5eTZ4VzFPWGhyWUVIMF9xS1BBajV0NGh1V0VpNXFSZU9lXzhhLWV0NktiSkxyVGRZSEtwNGZ3LTBMMVhuWDBNZkdndVF5b0VLN2FaNXBfUjF6RVdHZ0xTMmNVTHdsWWJNbXRzSjA?oc=5",
-   "date": "2026-08-15T23:00:00.000Z",
-   "source": "머니투데이",
+   "title": "점술, 관상, 풍수에 파고든 AI",
+   "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBmS0ZJeE1rdnFfVThEUEdnTmM4X0N4N1FVSWJVdFB6THNubmd6RU5vdnJLU2dJeFp3WDh1SXFPbjdtc2hZbVd6TDQ4dVQ1UUp5WXdackFPT2JKZk1EVkFxaW83bkhzVjVuT3ZzdnhsQdIBZkFVX3lxTE5haTU3REZ1MHFBYjJEV1hLMThLTHA5MHRBUFJYZDNkNnF3ZXFRTjBzWGt1RXhoQ3FzM3pDc3J4bHFXWDh2RXNMUDRRMmN3OTR5Q0VxLVpWd2FfdUd0NDg5Q1RhU1BDdw?oc=5",
+   "date": "2026-08-16T23:06:00.000Z",
+   "source": "동아일보",
    "feed": "Google News",
    "summary": ""
   },
   {
-   "title": "AI도 집단지성…다수결 원칙 따른다",
-   "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE52a01XZ2VsQmtEemlNNU5TQzNicEZoQ3RsaDk2SlZ4bzM2ZnBGaEo2SWlnQnJWZ1RTTTJ4aHg1WWJzNVFqTmthLUhBbUJ2cVlIQXRFcQ?oc=5",
-   "date": "2026-08-15T23:00:00.000Z",
-   "source": "동아사이언스",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "'홀로서기' 펜리스 크리에이션스, AI 파트너십 총괄로 '아이슬란드 최연소 법무부 장관' 영입'",
-   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFB3aER2S3AtVGtVeElpS0VDYnJvLVNBRjBSX1RGUjFvNHRiSzN2c2RjMFJfd2gzSTdmLTZJcjJsdUlPNHVXUFVmVHByZ1QzZVVIN2JpRG9zeGlQSVlYU3o5Y29qdw?oc=5",
-   "date": "2026-08-15T22:50:23.000Z",
-   "source": "더구루",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "[만나보니] 블라인드 대표 \"AI발 효율화, 신입채용 축소로 먼저 나타나\"",
-   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1Ma1VHSUtiNm4wc0xWc2tGS21lQWNjYm5wdHQzcWJRdWlDV2xGTGVpOUpENG1fWnJuUExPWmE1TDdlNnNKV3pkYTZuYVhtakU?oc=5",
-   "date": "2026-08-15T22:02:00.000Z",
+   "title": "[소년중앙] 챗GPT·제미나이·클로드와 똑똑하게 대화하려면",
+   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9DN3VMWUdZaWNFS2NLbHd0S1h6VlgwX29JVlFLRUdjNWQtMVh4UTVIVWJ4bFpuTXo1T1hSLW9GSnNUdmRuMHdseWFDTmdaNDQ?oc=5",
+   "date": "2026-08-16T23:02:00.000Z",
    "source": "v.daum.net",
    "feed": "Google News",
    "summary": ""
   },
   {
-   "title": "AI가 찾은 단서, 법정에서도 통할까…'재현성·무결성'이 관건",
-   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFB0c3JlUUZXb0ZVdGRsZlg0dXRjUjJIVXhnTEZJRUxSSDF5WTllWm9UTklaQzlucVVpNzRuMFRhOF9ZeEU2eG1xTTRwQk1vcVhDWEU0dWFZU0ZyNFZBX0VEUldfWWjSAWpBVV95cUxQMkluZWU3YzZuSy0wRHBOQ2FjclN6ZW9WX2g3eDIwRkl6YkhtNjYybkpOTXp3Q3ZmMEZzYlBaZWRPblM2aXh5cDJfOGhOcE9uazlaN2R3NVFBUFc0cS1WejNobGdjWXpNSTV3?oc=5",
-   "date": "2026-08-15T22:00:00.000Z",
-   "source": "news1.kr",
+   "title": "모델 넘어 플랫폼으로…업스테이지의 ‘다음’ 승부수[AI 3강 이끌 개척자들]⑤",
+   "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1CSXpuVDBoZGxKY09ZZjNhSXRwOVlqRXJVdDR6NDlBYlhXME50RlcwUEpvMzdNUFRiRFNOdFZJZTNWMDRYTGoxeVhvU3JETG1nZmxNNmZsaWZyQ2ZaOGhQaFBR?oc=5",
+   "date": "2026-08-16T23:01:31.000Z",
+   "source": "economist.co.kr",
    "feed": "Google News",
    "summary": ""
   },
   {
-   "title": "미국, 한국 포함 35개국에 ‘중국 주도 AI 협력체 불참’ 요구 방침",
-   "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5lNm1pYmwxeDNaME1ma0ZQalVlb1FOWFgwNDlFMEhpTjRkb2NrS0R0ZnZqZExRbDBqWjU0RG9jQzMyNWdHRC1TcWRhcUFlU2Q3bm1reHdWOTE1TkY5eFNVdTZRRWdlbGdib01zckhsUQ?oc=5",
-   "date": "2026-08-15T21:59:00.000Z",
-   "source": "한겨레",
+   "title": "[AI 진영 전쟁] ②키미K3 쇼크...중국 개방형 공습에 미국 우위론 '흔들'",
+   "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5SckhaME1DT3VNeVE5UWVyMFhoQUU0WVdfU0tHOXRNUUFEMjNaYjN3blp1dFczZUl6ODc2cDV6MGsyWE1EcGdka2FWbkpEMEJINWVqckVjT3gyVE5H?oc=5",
+   "date": "2026-08-16T23:00:00.000Z",
+   "source": "뉴스핌",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "허채원 숨랩스 공동창업자 \"AI 영상 분야서 글로벌 기업과 경쟁할 것\"",
+   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1oeE5MdGpVM1FMNkJzQ2huLVQweDZXWGJuVFRQSXhENHN3Q3BuZEFDVTctc3dxN0VJamlvcTNwRDVkNmNMbzdxandRT3JnNHBremtMU1ZUWUdWZEVRRXVmZw?oc=5",
+   "date": "2026-08-16T23:00:00.000Z",
+   "source": "아시아경제",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "KT, 세계 최대 방송·미디어 박람회 'IBC 2026' 참가… AI 기반 미디어 비전 공개",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFB2cFJDdUhvT2dBR2NXQU5WVTRJRlJiQktjS2dqVjRkRFhjQWpkeEJPbF96elJqYi1LZ0ZmVi1Hek5fb3VPaG9iWV9MQzlwSUEwcGhGZDVpYmE0VHBtQnQ3UG85Zw?oc=5",
+   "date": "2026-08-16T22:55:37.000Z",
+   "source": "더구루",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "'새 눈' 될까‥지하철 누비는 AI 안내 로봇",
+   "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9qQWVUR1lvOFNYQVdnVTRReW9NX2RiQ2EzdHB5d0pGNlBRNHQ3dlh3WWh3NTVjUG9BakJ6aDcyWk9KSVExRThiTXpVckVqOGFPTkhGX29Sa2VKeml0Mk1wbmtqUVA5MThUM1JoS0h6Q0JtRlVRc0pwb3ZB?oc=5",
+   "date": "2026-08-16T22:36:33.000Z",
+   "source": "MBC 뉴스",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "새로운 AI 금융 지원 구조, 컴퓨팅 구매자에게 더 많은 통제권 부여",
+   "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1WOUpXV19QdmllRGwyZUFrOXFSRFc1NlRUWmFIbVBlVGMtOXU2c0hiQ0FOSXBCSHFhc1BaRVdEUkRQekZKbUUtWFM0YTFEM1M0U3VZQ0U0T01xeXV2UmJBM1ZDYTlVQjZjc0E?oc=5",
+   "date": "2026-08-16T22:10:00.000Z",
+   "source": "Investing.com 한국어",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "업무에 AI 도입하고 CAIO 신설도...기업에 AI 바람",
+   "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9YSllESFh5OUVQV2pxSThWaGZNQXdqVDI5ci12clhOTTA2bGJxbGFIVkVxbTdtVC1uS1dZSGVzaVVMZzR1aEFKaExmYVlHOTlVVDg2ZUt5a3lXMERuNGc?oc=5",
+   "date": "2026-08-16T21:39:00.000Z",
+   "source": "ytn.co.kr",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "OpenAI reportedly disbanded its preparedness team",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/980817/openai-disbands-preparedness-team",
+   "date": "2026-08-16T21:32:56.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "According to the Financial Times, OpenAI disbanded its preparedness team at the end of last month. The job of the preparedness team was to assess if models posed serious risks and develop ways to mitigate those risks. (Y",
+   "titleKo": "OpenAI가 준비 팀을 해체한 것으로 알려졌습니다."
+  },
+  {
+   "title": "누구나 정치 홍보 전문가가 된 시대…AI가 바꾼 한국 정치의 그늘",
+   "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1VUW15S3hVZkI2c1lkNDlTbE5JdWMxOUYyLVB3WTFiZUNUWVA3UWxmVmlCd1dzZE1Id3ZNOXJGZlgwNVh2T2d5d25TUUEwaXRlbEU3S2NSa0FZZmxRelE?oc=5",
+   "date": "2026-08-16T21:00:00.000Z",
+   "source": "주간경향",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "엔비디아의 AI로봇 파트너…LG 몸값 치솟는다",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1VTmFXaHh5cEtaMS1HSUxKRG5oME5YS2ttUi13TjdXRDhtNmM5cEhmb1dHZklrYlR3bW1PdGQ5ZUVndjF3WHc2UjEyb3VqUXQ5NzhXTE9B?oc=5",
+   "date": "2026-08-16T21:00:00.000Z",
+   "source": "중앙일보",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "Stripe will reportedly acquire AI gateway startup OpenRouter for $7B+",
+   "url": "https://techcrunch.com/2026/08/16/stripe-will-reportedly-acquire-ai-gateway-startup-openrouter-for-7b/",
+   "date": "2026-08-16T20:57:04.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "OpenRouter's CEO recently described the startup as Stripe for AI.",
+   "titleKo": "Stripe가 AI 게이트웨이 스타트업 OpenRouter를 $ 7B 이상에 인수할 예정인 것으로 알려졌습니다."
+  },
+  {
+   "title": "\"美 독점보다 통제력 높다\"… EU 경계에도 中 AI 모델, 유럽 시장서 영토 확장 - g-enews.com",
+   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNT1piM3c3QkFIVDJuVXVjcmZjZ2tXT00xRlJSSzRyM1c4cU00dmFIeHhib2RXOHRDSUZrTFZWdUpqQzZTQ3VKR19acDc0M3ctbXlFRWJ0ZkRkcUlfY2VRU2VjNnA5VTZwVjBtbHhtdE9FbEtVcHB5TXpRNm9CQWloTDJvZ0J4ZnhO?oc=5",
+   "date": "2026-08-16T20:55:00.000Z",
+   "source": "Google News",
+   "feed": "Google News",
+   "summary": "\"美 독점보다 통제력 높다\"… EU 경계에도 中 AI 모델, 유럽 시장서 영토 확장 g-enews.com"
+  },
+  {
+   "title": "Why people aren’t buying Mark Zuckerberg’s AI future",
+   "url": "https://techcrunch.com/2026/08/16/why-people-arent-buying-mark-zuckerbergs-ai-future/",
+   "date": "2026-08-16T20:32:01.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "On the latest episode of Equity podcast, we discuss why not everyone is buying Zuckerberg’s vision.",
+   "titleKo": "사람들이 마크 주커버그의 인공지능 미래를 구매하지 않는 이유"
+  },
+  {
+   "title": "슈퍼센트 인터뷰: 생산성을 폭발시키는 AI 도입 전략",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNc1BWVGJYa0VQblpCcmVzdUlPQ2RXY3RldzNJR2lXV2hqZ3BrU0puc0g0SGVVVm80WGowRDJIR1J6NlgzRTNGRll2d0tmRTJ0bzA1bWVLaWxPQWN6Mzcyc1NrM3hOSFRyMWlwU2JNR0tXTkI2eHVjaHQ1eWtsdTVQY2pMRW45ZjlQM25ZOFZ3QjhhdmZpX29oT3cwZlc2RWNOeF9ZQg?oc=5",
+   "date": "2026-08-16T17:06:10.000Z",
+   "source": "Google Business Profile",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "Anthropic CEO says AI backlash is ‘fundamentally a crisis of trust’",
+   "url": "https://techcrunch.com/2026/08/16/anthropic-ceo-says-ai-backlash-is-fundamentally-a-crisis-of-trust/",
+   "date": "2026-08-16T16:53:51.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "Dario Amodei is pushing back against the idea that he's been painting an overly pessimistic picture of AI.",
+   "titleKo": "Anthropic CEO는 AI에 대한 반발이 ‘근본적으로 신뢰의 위기' 라고 말합니다."
+  },
+  {
+   "title": "AI에 털어놓은 살해 계획… 얼마 후 경찰이 찾아왔다",
+   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPeXk0YkJFLWFXS05jc19DMVNrWTlnem5VQkhqeDItZVo2LUlEaDNnVU1ySmJnZ0ZZWjFBUm9QdlpqcHVjZUpad2NDZTM0a0otQjVrQzhqZTM3SXFfRVIwQktBYU5EV3VjRVVicHJzcVdSbG5fUEFwYVRIT045YXZuMXFCQQ?oc=5",
+   "date": "2026-08-16T15:47:00.000Z",
+   "source": "조선일보",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "美 “중국 AI에 동참하지 말라”… 한국 등 35개국에 경고",
+   "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPQkxadWV1ek13Vkh5Q0xNbTMwRGhzWjdkaHpvdFpwQTBabjg5S01Rdm8wTWJ1c211Sy1fZHFnSllQQXNZVjhhcFB3aFVtR2lFYUViY1E0ckFXSFN3V0JDWXNQSVJuQUNDSjZ2X0hTV3YxS1M4ang0UXI5UG5nU3U4R09xVHBzUQ?oc=5",
+   "date": "2026-08-16T15:42:14.000Z",
+   "source": "서울신문",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "ChatGPT’s Computer History tracks your clicks and keystrokes",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/980742/chatgpts-computer-history-tracks-your-clicks-and-keystrokes",
+   "date": "2026-08-16T14:56:40.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "ChatGPT's desktop app on macOS has a new feature called Computer History that turns your actions into training data, learning how you work, suggesting automations, and even picking up tasks you left half done. It uses yo",
+   "titleKo": "ChatGPT의 컴퓨터 기록은 클릭 및 키 입력을 추적합니다"
+  },
+  {
+   "title": "반대 직면한 AI 데이터센터…물·전기 부족 문제는? [AI너머]",
+   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1YREZ0VTVla0UwOVNma1NLUFBPZ2xWLWw2dzFDYmtzX3BzdlBlbGFQMUtZcXZQbWxhT0h0STBwaE5vaWE1RFVEVGpLY25uNFNSY0ZWWHFqVERXZTFfRkhXRjVYQ2tjdw?oc=5",
+   "date": "2026-08-16T12:13:00.000Z",
+   "source": "KBS 뉴스",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "Rogue AI aren’t science fiction anymore",
+   "url": "https://www.theverge.com/column/980337/rogue-ai-science-fiction-openai",
+   "date": "2026-08-16T12:00:00.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "This is The Stepback, a weekly newsletter breaking down one essential story from the tech world. For more on AI safety, follow Robert Hart. The Stepback arrives in our subscribers' inboxes at 8AM ET. Opt in for The Stepb",
+   "titleKo": "불량 AI는 더 이상 공상 과학 소설이 아닙니다"
+  },
+  {
+   "title": "애플, 美정책에 반기들고 中전용 AI 개발",
+   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE0tdWFYdmhlMDE1U3FSNWlkbnlxQjMtVkt4M19RVDNOM0ZEbWw4MXgxVHZxeE1jY1RHY1gxcnlDcFplTk5XUVVPYWJORHNnM1E?oc=5",
+   "date": "2026-08-16T08:54:16.000Z",
+   "source": "v.daum.net",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "AI주권, 새로운 독립 1년의 기록",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5BcTJlWF93VTRCLTVINDU2bE1JLUgxSnBiUkZza0Y1T1poRFVSX3U0U05ucGtXSVJIMjFPNWlfcFF5TThnLUR2WnNzbFFUemxESnctRzJR?oc=5",
+   "date": "2026-08-16T06:01:39.000Z",
+   "source": "대한민국 청와대",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "미, 한국 등 35개국에 경고…\"중국 AI 손잡으면 미국 연합서 제외\" - 머니투데이",
+   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9ndGFEemt6dWJjc2I5dmozU2xvY2xHTXJoYnBMSVpvZHdUYVlTNk00VEhFXzZjbGtSX29pVEN0V1ljNHBjUFp0Y0RlMFdfa0pleFVGdFpSUUFtcWhkaTUxUVhBMGI0bXhs0gFuQVVfeXFMTklyREZqdGlYc1VZSExnV0R3bG02WkFJVW1COVYwX0JhM2U0Sno4UUtWQUFCc2Z3YUZjcGExaEljbUdBSGZqdjgwRnNiaTd5dUFfRnBLdlNqOGNtNWZhYTFkY3NzaHFObVZoSzBwSXc?oc=5",
+   "date": "2026-08-16T01:00:29.000Z",
+   "source": "머니투데이",
    "feed": "Google News",
    "summary": ""
   },
@@ -66,22 +224,6 @@
    "titleKo": "계부가 어린 시절 사진을 노골적인 이미지로 바꾸기 위해 그록을 사용했다고 주장하는 여성"
   },
   {
-   "title": "한국 노린 북한 해킹 늘어…AI·딥페이크 악용",
-   "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5MWGVmX3RWOHNHa3QzTllWVzBHakNLMDdXQ0Yya1hKTTh4cVpjd0NrUEVEZi1OMmp2YnRKM1pBSDJJX0ZZdV9UY2U5WktidGNJU0tySV93R2VlNHRpaFp4ZWNqY1VBUWM?oc=5",
-   "date": "2026-08-15T21:18:00.000Z",
-   "source": "연합뉴스TV",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "한국 노린 북한 해킹 늘었다…AI·딥페이크까지 악용",
-   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1BVkl2c0I1WlJPeE03ZjVvWmh6YzZfb1JQZG1qREtGcWNUYUNQNF93WHhRbmZ3b3BrOWJLVGZUekhvZXQyTFdTZnRfSFhRcU1DZ0E?oc=5",
-   "date": "2026-08-15T21:13:00.000Z",
-   "source": "매일경제 마켓",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
    "title": "Have a laugh at AI’s expense by roleplaying as a chatbot",
    "url": "https://www.theverge.com/entertainment/980502/roleplay-as-an-ai-chatbot",
    "date": "2026-08-15T20:45:00.000Z",
@@ -89,30 +231,6 @@
    "feed": "The Verge",
    "summary": "Your AI Slop Bores Me is brilliant in its simplicity. There are two tabs: human and LARP as an AI. On one side you enter a request. On the other, you submit an answer. But the important thing is that there's a human on b",
    "titleKo": "챗봇 역할극을 통해 AI의 비용을 웃겨보세요"
-  },
-  {
-   "title": "테스트뮤 AI, 2026년 제5회 테스트뮤 콘퍼런스 공개",
-   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBTc1k3Y2QwekpxWHlKZnpBd2d0bVgtS295RmNObzhLZE5McE1BVVl1NGFkbm9YVTFSb2NJQXdMSXppc29DU3lnc0ZRdm5QSDRoWnJFZk83VFZ0ZzBLYlFCMQ?oc=5",
-   "date": "2026-08-15T20:21:08.000Z",
-   "source": "뉴시스",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "AI로 '도로 파임' 자동 감지...용인시, 버스 등 차량 300대 투입",
-   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5fbGlTM2tINEZpdUVzeGNnUDQwaURyd0k4Q19MckpOSXpISkZOU2owUGU2ZS1ZYWZHd2JrTGRTMWY4MnFqU1hfcmNraWJLenBwMGRXaGFBc095UW9iVVVwMkR3ajVkaHBYRTdBajViSTdfMUQzdWc?oc=5",
-   "date": "2026-08-15T19:23:00.000Z",
-   "source": "YTN",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "[전국]AI로 '도로 파임' 자동 감지...용인시, 버스 등 차량 300대 투입",
-   "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFB3VXdjQVV1OG13ZDNfU2NBbWZPYzhIellOa09VUjFOY2FDQk5rYlFQbzQ1dkRaV1pRczVucVZvOUJVTVRlY1BleG1UalFrVGs3d3pWcFVEMVRmNGw2NkpQazlFQTV1Uzd4V1ZhYUZyRQ?oc=5",
-   "date": "2026-08-15T19:23:00.000Z",
-   "source": "YTN",
-   "feed": "Google News",
-   "summary": ""
   },
   {
    "title": "Anthropic shares more details about how Claude’s new watermarks will work",
@@ -124,14 +242,6 @@
    "titleKo": "Anthropic은 Claude의 새로운 워터마크가 어떻게 작동하는지 자세히 공유합니다."
   },
   {
-   "title": "차세대 AI 데이터센터·ESS 기반 '배터리'에 쏠린 시선",
-   "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9DU0dhUVlXM1BVVnJoWGw4bGU2YVhpS2lMVGhISk1nUzFUN2dzbS1pcVNJeVM4VEtRaXNiTjRnaEpTc0V5ZGQyWTBycGJOQTFiSWJCTk02TWd1Qjlab1Z6V05oSnEtWDlJU2FHTmRDOG54Zw?oc=5",
-   "date": "2026-08-15T18:00:02.000Z",
-   "source": "마켓인",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
    "title": "SpaceX officially closes its Cursor acquisition",
    "url": "https://techcrunch.com/2026/08/15/spacex-officially-closes-its-cursor-acquisition/",
    "date": "2026-08-15T16:30:00.000Z",
@@ -141,42 +251,10 @@
    "titleKo": "SpaceX, 커서 획득 공식 종료"
   },
   {
-   "title": "“헬스장 예약해줘” AI에게 맡겼더니 생긴 일…앞사람 대기자 명단서 지워버렸다",
-   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5TWmQxbmJucW9Rcy1lc1N5Qk52Vk5KYVhPeElWbzFWMGQzY3pBSk85LWFmWnBzRUVNWUl3azFhQXdZYzQ5VGx3dnNCQWw0b2M?oc=5",
-   "date": "2026-08-15T10:57:01.000Z",
-   "source": "v.daum.net",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "엔비디아, 오픈AI 데이터센터 ‘채무 보증’ 절반 축소",
-   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQZUU1WkdSb3JwYjJYTnJuRHdBQ1c2NnFvai1VRGNJNEM3cFlkTHBBY0RZaFoxUy1Jb2lMcFhERUNVb1BxWTNrOFY2NEV4Vm4xMW1RX0dyV3pVdVp5aGRwTkxKd3daYjZkTVppWnU5ZVk3WGhINjMyVV91RklPVy15SXFQZw?oc=5",
-   "date": "2026-08-15T05:10:48.000Z",
-   "source": "조선일보",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "美 \"중국 AI 동참하지마\"…韓 등 35개국에 '양다리 불가' 경고",
-   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFByeGxLUVRxYTNHQzdJSV9mT1J2V201LUNYMWVEZTFNalFsV2k4VVFLRlR5YzVlMWNoZ0ZLN25ES3prd2daaUJLMDhlVmoxcU1RZTdpVk9OdzlqcXfSAWBBVV95cUxPWWt5aUM0X1JvTjE4ZmxYTk1xMThQcU5HaWdkNjJ4MXFzOC1velFMY213aWdXdVBuNVl3R0stMGFJLTdRUkJCQXljTFVrNU9iTWhhTWZBWFhjdFp6Nmc0dWg?oc=5",
-   "date": "2026-08-15T02:36:50.000Z",
-   "source": "연합뉴스",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "엔비디아, 오픈AI 데이터센터 '채무 보증' 반토막 축소",
-   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5ma1p4d3dHMDRXVDdxLUdleXNHUTE3MTdlQjEzMVRkNS03eWR3R1lTTEJjOW9wZWNZaGpQTy10ZGNlMDlwVHUxREdxWDZMSTU4amNtN0pHMFUxdTjSAWBBVV95cUxQOGJPb0NTMk9SaGZhM2JQRlpZdFZoQ1I5UHpuLURfYU5CUHlheWVrSVZCTjRoMF96NnY3NGNIZzlkaE9WTUU1QllKdi1tR19DVDdxOU9vWWgwQ3F5bUM0WFQ?oc=5",
-   "date": "2026-08-15T02:30:28.000Z",
-   "source": "연합뉴스",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "스스로 감옥 부수고 나온 AI…진짜 공포가 시작됐다?",
-   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE10RTlLV0EwRWlJRGNCbXB0Z01RbGRLVXM0NTd0OV9QaEZUdktVT29SbHJlbEttcUpUdExLWmRPRk5IQUpyZENqcVV3MzNaNllaUGZRaF9NMDdIRWc?oc=5",
-   "date": "2026-08-14T22:00:00.000Z",
-   "source": "KBS 뉴스",
+   "title": "\"전여친 죽일것\"…챗GPT에 털어논 남성, 오픈AI 신고로 체포",
+   "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBNUXBDUHc5VWxRcTA3WmRIZVJTZ2VGakdRVXY0ZVZDWEx1eGFUcUdONlVoMHJFSkUzbEpIbjhvWXJwRTVRSkNFZ0p2LXpkTVNxd3lj?oc=5",
+   "date": "2026-08-15T01:58:00.000Z",
+   "source": "네이트",
    "feed": "Google News",
    "summary": ""
   },
@@ -217,22 +295,6 @@
    "titleKo": "마크 주커버그는 정말로 인공지능이 '모두를 위한 것‘ 이라고 믿는가?"
   },
   {
-   "title": "AI에 밀려나는 사람 일자리… ‘갓무원’은 예외라고?",
-   "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOYkFTeG85Y0R5cjJ3NGZ0UF9nMzhNbkwxdEpQdndpbXNuVGE3RHJ1VnNsTXU0OGlYajNqdmR3VHp6VmhiNlhVOU9HVzhITVZqZVp6QlVSN0gxbjRrbDk0ekRmM01Tc2g4bktKYU92SUxGRUJZSm13bUY3blZSdFVqalJiSzk?oc=5",
-   "date": "2026-08-14T15:37:26.000Z",
-   "source": "조선일보",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "비용 10분의 1인데…AI 톱10에 중국모델 4개",
-   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBFYnEzQXpDUFZFX1lBY2dlYUh2RTMzNndOR1NQemduVXVMNjBZYXFoUldWbzZybzJUY3pYdjRaMUtDcVo3dHN3NVFFclFIMUxaLWpVblRB?oc=5",
-   "date": "2026-08-14T15:09:13.000Z",
-   "source": "중앙일보",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
    "title": "Kog is going deeper to squeeze more inference out of GPUs",
    "url": "https://techcrunch.com/2026/08/14/kog-is-going-deeper-to-squeeze-more-inference-out-of-gpus/",
    "date": "2026-08-14T14:50:11.000Z",
@@ -267,14 +329,6 @@
    "feed": "The Verge",
    "summary": "Apple has reportedly trained a custom AI model for the China market alongside domestic tech giant Alibaba, a rare cross-border partnership that cuts across growing tensions between Beijing and Washington. The China-focus",
    "titleKo": "애플은 알리바바의 도움을 받아 중국을 대상으로 자체 AI 모델을 교육했다."
-  },
-  {
-   "title": "AI 에이전트 함께 일하게 했더니 ‘영역 다툼’...계정 잠그고 악성코드 심어",
-   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPUGE3cjZRRTl3alRqdnRwNkluTm5Vam9OOVhmNWtJWkVKUGVSX0xpOWJhNmlMQlFuYjM3eVF0S3BvNlVtWFZIN3liMjdLYVZHVUFqOG5Gb2xJUzlPYjk2Rzd1NlFhVnl1WWd4OHRzbUxZOW5LQ01pelJhTmdodEEyS0ExVQ?oc=5",
-   "date": "2026-08-14T06:03:01.000Z",
-   "source": "조선일보",
-   "feed": "Google News",
-   "summary": ""
   },
   {
    "title": "Microsoft’s Clippy-like Mico character is no longer the face of Copilot",
@@ -331,24 +385,6 @@
    "titleKo": "IBM은 OpenAI와 파트너십을 맺고 엔터프라이즈 AI 추진력을 강화합니다."
   },
   {
-   "title": "Anthropic set AI agents loose on the same task. They started a turf war.",
-   "url": "https://techcrunch.com/2026/08/13/anthropic-set-ai-agents-loose-on-the-same-task-they-started-a-turf-war/",
-   "date": "2026-08-13T18:28:14.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "Anthropic researchers found AI agents can clash, collude, and coordinate in unexpected ways, raising new questions about whether today’s safety tests capture the risks of multi-agent systems.",
-   "titleKo": "Anthropic set AI agents loose on the same task. 그들은 잔디 전쟁을 시작했습니다."
-  },
-  {
-   "title": "OpenAI hires new CRO as executive shake-up continues",
-   "url": "https://techcrunch.com/2026/08/13/openai-hires-new-cro-as-executive-shake-up-continues/",
-   "date": "2026-08-13T17:07:13.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "OpenAI has replaced chief revenue officer Denise Dresser after just nine months on the job, tapping Wiz president and chief operating officer Dali Rajic to take on frontier lab's top sales job.",
-   "titleKo": "OpenAI는 경영진의 흔들림이 계속됨에 따라 새로운 CRO를 고용합니다."
-  },
-  {
    "title": "Suno is trying to look more like a real music production tool",
    "url": "https://www.theverge.com/ai-artificial-intelligence/979345/suno-studio-2-0-midi-chatbot-custom-effects",
    "date": "2026-08-13T16:00:00.000Z",
@@ -358,33 +394,6 @@
    "titleKo": "Suno는 실제 음악 제작 도구처럼 보이려고 노력하고 있습니다."
   },
   {
-   "title": "Microsoft kills off unsuccessful AI features while merging its separate Copilot apps",
-   "url": "https://techcrunch.com/2026/08/13/microsoft-kills-off-unsuccessful-ai-features-while-merging-its-separate-copilot-apps/",
-   "date": "2026-08-13T15:30:52.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "Microsoft is simplifying Copilot by combining its consumer and business apps, and dropping AI-generated podcasts, Group Chats, Deep Research, and its Mico character.",
-   "titleKo": "Microsoft는 별도의 Copilot 앱을 병합하는 동안 실패한 AI 기능을 제거합니다."
-  },
-  {
-   "title": "I looked inside an AI generated movie, and the best parts were all human",
-   "url": "https://www.theverge.com/entertainment/977994/higgsfield-ai-cully-hill-boys-black-list",
-   "date": "2026-08-13T15:30:00.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "Imagine a trio of bumbling, English lads who fantasize about becoming megastars while knocking back a few pints in a grimy pub somewhere in London. Picture the guys chortling and trying to one-up each other's idealized v",
-   "titleKo": "인공지능이 만든 영화 속을 들여다봤는데, 가장 좋은 부분은 모두 사람이었다."
-  },
-  {
-   "title": "Does Google even want to win at AI?",
-   "url": "https://www.theverge.com/podcast/979370/google-deepmind-ai-race-lose-jeff-dean-demis-hassabis",
-   "date": "2026-08-13T14:10:31.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "Today on Decoder, I’m talking with Hayden Field, The Verge’s senior AI reporter, about a question that’s been rocketing around the tech industry for the past week: Is Google losing the AI race? That’s because last week G",
-   "titleKo": "Google은 AI에서 이기고 싶습니까?"
-  },
-  {
    "title": "Flock is tightening its rules in response to a growing surveillance backlash",
    "url": "https://www.technologyreview.com/2026/08/13/1141904/flock-is-tightening-its-rules-in-response-to-a-growing-surveillance-backlash/",
    "date": "2026-08-13T13:41:10.000Z",
@@ -392,15 +401,6 @@
    "feed": "MIT Technology Review",
    "summary": "The police-tech giant Flock is announcing today that it will change officers’ access to its nationwide network of license plate readers, in an apparent effort to quell a growing backlash and win back contracts lost amid ",
    "titleKo": "Flock은 증가하는 감시 반발에 대응하여 규칙을 강화하고 있습니다."
-  },
-  {
-   "title": "Microsoft is combining its Copilot apps ahead of a ‘super app’",
-   "url": "https://www.theverge.com/tech/979466/microsoft-copilot-365-app-unified-experience",
-   "date": "2026-08-13T13:30:00.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "Microsoft is finally beginning to combine its consumer and commercial Copilot AI assistants into a single \"super app\" interface, starting with the Copilot and Microsoft 365 Copilot apps. Both personal and work accounts w",
-   "titleKo": "Microsoft는 ‘슈퍼 앱‘ 보다 먼저 Copilot 앱을 결합하고 있습니다."
   },
   {
    "title": "How kids feel about AI, in their own words",
