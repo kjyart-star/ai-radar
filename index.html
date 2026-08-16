@@ -78,9 +78,13 @@
   .progress{ position:fixed; inset:0 auto auto 0; z-index:100; height:3px; width:0;
              background:var(--lime); }
   .nav{ position:fixed; z-index:90; top:0; left:0; right:0; height:var(--navh);
-        display:flex; align-items:center; justify-content:space-between; gap:20px;
+        display:flex; align-items:center;
         padding:0 32px; border-bottom:1px solid var(--line-dark);
         background:rgba(7,17,13,.82); backdrop-filter:blur(20px); }
+  /* 내용을 본문(.inner)과 같은 max-width 컨테이너로 감싸 좌측을 본문과 맞춘다(대표 2026-08-16).
+     .section 도 padding:0 32px + inner 가운데정렬이라 좌측 시작점이 정확히 같아진다. */
+  .nav-inner{ width:min(var(--max),100%); margin:0 auto;
+        display:flex; align-items:center; justify-content:space-between; gap:20px; }
   /* 로고를 키웠다 (대표 지시 2026-08-12). 서비스 이름이 내비에서 가장 큰 글자여야
      한다 — 여기가 유일하게 브랜드를 말하는 자리다. 마크 26→34px, 워드마크 12→17px. */
   .brand{ display:flex; align-items:center; gap:13px; font-family:var(--display);
@@ -964,6 +968,7 @@
 <div class="progress" id="progress"></div>
 
 <nav class="nav">
+ <div class="nav-inner">
   <a class="brand" href="#newsrep" aria-label="AI 레이더 홈">
     <svg viewBox="0 0 48 48" aria-hidden="true" fill="none">
       <circle cx="24" cy="24" r="19" stroke="#b6ff3f" stroke-width="1.6" opacity=".5"/>
@@ -992,6 +997,7 @@
     </div>
     <div class="nav-auth" id="navAuth"></div>
   </div>
+ </div>
 </nav>
 
 <header class="hero" id="top">
@@ -5173,14 +5179,12 @@ var HOME_COPY = {
   menuH:"무엇을<br>볼 수 있나",
   aboutH:"만들 줄 몰라서<br>못 나가시나요?",
   aboutBody:"애플시드는 광고·뮤직비디오 VFX를 해 온 회사입니다. " +
-            "그 위에 생성형 AI를 얹어 콘텐츠를 만들고, 만드는 법을 가르칩니다."
+            "그 위에 생성형 AI를 얹어 콘텐츠를 만듭니다."
 };
 
 function homeMail(subject){
   return "mailto:kjyart@gmail.com?subject=" + encodeURIComponent(subject);
 }
-var HOME_MAIL_EDU = homeMail("[AI 레이더] 교육 문의");
-var HOME_MAIL_WORK = homeMail("[AI 레이더] 제작 문의");
 var HOME_MAIL_ALERT = homeMail("[AI 레이더] 마감 알림 신청");
 
 function homeIsDate(s){ return /^\d{4}-\d{2}-\d{2}$/.test(String(s||"")); }
@@ -5811,8 +5815,9 @@ function renderHome(){
           "width='1280' height='858' loading='lazy' decoding='async' " +
           "alt='어두운 스튜디오에서 여러 사람이 큰 모니터를 보며 함께 작업하는 모습'>" +
       "</picture>" +
-      "<p class='cta-row' style='margin-top:26px'><a class='btn' href='" + HOME_MAIL_EDU + "'>교육 문의</a>" +
-      "<a class='btn' href='" + HOME_MAIL_WORK + "'>제작 문의</a></p>" +
+      /* 교육은 아직 하지 않아 뺐다(대표 2026-08-16). 제작 문의는 애플시드 홈 문의 페이지로 */
+      "<p class='cta-row' style='margin-top:26px'>" +
+      "<a class='btn' href='https://apple-seed.co.kr/contact' target='_blank' rel='noopener noreferrer'>제작 문의</a></p>" +
     "</div></section>";
 
   homeFillDue();
