@@ -1264,6 +1264,9 @@ function richReport(s){
     } else {
       if (t === "" && cardBuf.length){ continue; } /* 카드 사이 빈 줄로 그리드가 끊기지 않게 */
       flushCards();
+      /* 관리시스템이 붙이는 내부 표기 줄은 사용자에게 보이지 않게 버린다
+         (예: "(자동 요약 미사용 — 수집 목록 원문)"). 대표 지시 2026-08-16 */
+      if (/^[\(（]\s*자동\s*요약/.test(t)){ continue; }
       /* "# 제목", "## [생성형 AI]" 같은 헤더 줄을 라벨로 조판한다. 원문 문자열은
          건드리지 않고 보이는 형태만 바꾼다 — 그냥 두면 #이 그대로 찍힌다. */
       var hm = t.match(/^(#{1,6})\s+(.+)$/);
@@ -5153,7 +5156,7 @@ var HOME_COPY = {
   sub:"공모전 마감부터 밤사이 소식, 새로 나온 도구까지. 오늘 필요한 것만 모아 둡니다.",
   dueH:"놓치면 다음은<br>내년입니다",
   alertH:"마감은 여기서<br>직접 챙기세요",
-  alertIntro:"이메일도, 알림 설정도 필요 없습니다. 관심 공모전을 담아 두면 '내 계획'에서 마감이 가까운 순으로 한눈에 봅니다.",
+  alertIntro:"관심 공모전을 담아 두면 '내 계획'에서 마감이 가까운 순으로 한눈에 봅니다.",
   alertBtn:"내 계획 보기",
   alertNote:"로그인만 하면 됩니다. 담은 것은 나만 볼 수 있습니다.",
   alertDone:"등록되었습니다. 마감이 가까워지면 메일을 보내드리겠습니다.",
@@ -5162,6 +5165,8 @@ var HOME_COPY = {
   alertFail:"지금은 등록이 되지 않았습니다. 잠시 뒤 다시 시도해 주세요.",
   briefH:"밤사이 무슨 일이<br>있었나",
   briefIntro:"아침에 한 번 정리해 드립니다.",
+  cardH:"지금 뜨는<br>AI 소식",
+  cardIntro:"밤사이 나온 AI 뉴스를 한눈에. 카드를 누르면 원문으로 갑니다.",
   intH:"관심 분야<br>마감 임박",
   commH:"지금 사람들이<br>나누는 이야기",
   workH:"여기 사람들이<br>만든 것",
@@ -5627,6 +5632,37 @@ function homeFillBrief(){
     }).join("") + "</div>" +
     "<p style='margin:26px 0 0'><a class='btn' href='" + esc(full) + "'>전체 보기</a></p>";
 }
+/* ---- 카드뉴스 ----
+   관심 분야 마감임박 아래에 "볼거리"를 먼저 세운다(대표 2026-08-16). 오늘의 AI 뉴스
+   (news.json 개별 기사)를 카드로 앞세운다 — 아침 브리핑(pub)과 소스가 달라 겹치지 않는다.
+   제목은 번역이 있으면 한글을 먼저 보여 준다. */
+function homeFillCardNews(){
+  var sec = document.getElementById("homeCardSec");
+  var el = document.getElementById("homeCardNews");
+  if (!sec || !el) return;
+  loadFeed("news").then(function(j){
+    if (curRoute() !== "home" || !C.contains(el)) return;
+    var items = (j && j.items) || [];
+    if (!items.length){ sec.style.display = "none"; return; }
+    var cards = items.slice(0, 6);
+    sec.style.display = "";
+    el.innerHTML = "<div class='brief-cards'>" + cards.map(function(it){
+      var url = ctSafeUrl(it.url || "");
+      var ext = url ? " target='_blank' rel='noopener noreferrer'" : "";
+      var href = url || menuHref("newsrep");
+      var head = String(it.titleKo || it.title || "").trim();
+      /* 구글뉴스 제목은 " - 언론사"로 끝난다. 출처는 태그로 이미 보여주므로,
+         꼬리가 정확히 그 출처와 같을 때만 떼어 낸다(정확 일치라 본문을 다치지 않는다). */
+      if (it.source){ var sfx = " - " + it.source; if (head.slice(-sfx.length) === sfx){ head = head.slice(0, -sfx.length).trim(); } }
+      return "<a class='brief-card' href='" + esc(href) + "'" + ext + ">" +
+        (it.source ? "<span class='bc-tag'>" + esc(it.source) + "</span>" : "") +
+        "<span class='bc-head'>" + esc(head) + "</span>" +
+        (it.summary ? "<span class='bc-sum'>" + esc(String(it.summary).slice(0, 90)) + "</span>" : "") +
+      "</a>";
+    }).join("") + "</div>" +
+    "<p style='margin:26px 0 0'><a class='btn' href='" + esc(menuHref("newsrep")) + "'>뉴스 전체 보기</a></p>";
+  }, function(){ sec.style.display = "none"; });
+}
 
 /* ---- 커뮤니티 최근 글 ----
    자유게시판이 쓰는 질의를 그대로 쓴다(원글만·최신순). 색인도 같은 것을 쓰므로
@@ -5715,6 +5751,13 @@ function renderHome(){
       "<div class='rows' id='homeInt'></div>" +
     "</div></section>" +
 
+    /* 카드뉴스 — 관심 분야 마감임박 바로 아래에 "볼거리"를 먼저 세운다(대표 2026-08-16).
+       brief-cards 스타일이 .dark 용이라 이 섹션도 dark 로 둔다. 뉴스가 없으면 숨긴다. */
+    "<section class='section dark' id='homeCardSec' style='display:none'><div class='inner'>" +
+      sectionHead("Headlines", HOME_COPY.cardH, HOME_COPY.cardIntro, "") +
+      "<div id='homeCardNews'></div>" +
+    "</div></section>" +
+
     "<section class='section paper'><div class='inner'>" +
       sectionHead("Deadlines", HOME_COPY.dueH, "", "") +
       "<div class='rows two' id='homeDue' style='min-height:520px'>" +
@@ -5777,6 +5820,7 @@ function renderHome(){
   homeWantsSub();   /* 「마감 알림」 착지 신호를 켜 둔다. 실제 스크롤은 마감 목록이
                        채워진 뒤(homeFillDue 완료) 한다 — 로딩 중 빈 상태로 내리면 어긋난다 */
   homeFillBrief();
+  homeFillCardNews();                     /* 카드뉴스 — 관심분야 마감임박 아래 볼거리 */
   homeIntPaint();                         /* 로그인·미선택 안내는 마감 데이터를 안 기다린다 */
   homeFillMenu();
   homeFillCommunity();
