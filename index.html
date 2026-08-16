@@ -1122,7 +1122,7 @@
 <header class="hero" id="top">
   <!-- 히어로 배경. 나중에 <video> 로 교체할 수 있게 이 블록만 갈아끼우면 되도록 둔다. 영상으로 바꾸면 자동재생·무음·루프·prefers-reduced-motion·모바일 데이터 소모를 함께 처리해야 한다. -->
   <div class="hero-bg" id="heroBg">
-    <!-- 슬라이드쇼: image/a001~a004.png 를 3초마다 크로스페이드로 전환한다.
+    <!-- 슬라이드쇼: a001·a002·a003·a005·a006 를 3초마다 크로스페이드로 전환한다.
          첫 번째 img 는 fetchpriority=high 로 먼저 불러오고, 나머지는 lazy 로 미룬다. -->
     <img class="active" src="image/a001.png" width="2560" height="1427"
          fetchpriority="high" decoding="async" loading="eager"
@@ -1133,10 +1133,14 @@
     <img src="image/a003.png" width="2560" height="1427"
          decoding="async" loading="lazy"
          alt="AI 레이더 메인 히어로 배경 3">
-    <img src="image/a004.png" width="2560" height="1427"
+    <img src="image/a005.png" width="2560" height="1427"
          decoding="async" loading="lazy"
          alt="AI 레이더 메인 히어로 배경 4">
+    <img src="image/a006.png" width="2560" height="1427"
+         decoding="async" loading="lazy"
+         alt="AI 레이더 메인 히어로 배경 5">
   </div>
+
   <!-- 시그니처 요소: 동심원 + 스위프. 주제(레이더)에서 나왔고 1px 선과
        평면 그라디언트만 쓴다 — 글로우나 블러는 넣지 않는다. -->
   <div class="hero-radar" aria-hidden="true">
