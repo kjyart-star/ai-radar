@@ -2960,7 +2960,9 @@ function fetchAiVideos(){
 }
 /* 브리핑 본문이 쓰는 카드(.card-grid/.item-card)를 그대로 쓴다. 영상 카드는 이미 이 시스템에 있다 */
 function videoCards(list){
-  /* 관리자(대표)면 picks(직접 올린 작품)에만 삭제 버튼을 얹는다. 수집 영상엔 _pickId 가 없어 안 뜬다. */
+  /* 관리자(대표)면 모든 작품에 삭제 버튼을 얹는다. picks(직접 올린 것)는 문서를 지우고,
+     수집 영상은 소스를 못 건드리므로 숨김(hidden)으로 화면에서 영구 제거한다.
+     버튼의 data-avdel 로 구분: "pick:<문서id>" 또는 "hide:<숨김키>". */
   var avAdmin = !!(bdUser && bdUser.email === "kjyart@gmail.com");
   return "<span class='card-grid'>"+(list||[]).map(function(v){
     var sub = v.subscribers != null ? " · 구독 "+kfmt(v.subscribers) : "";
@@ -2980,9 +2982,13 @@ function videoCards(list){
         "<span class='ic-desc'>"+esc(v.channel||"")+esc(sub)+"</span>"+
         "<span class='ic-url'>"+(vv ? "조회수 "+esc(vv)+esc(when) : esc(String(when).replace(/^ · /,"")))+"</span>"+
       "</span>"+(key ? "</button>" : "</a>");
-    if (avAdmin && v._pickId){
-      card = "<span class='av-pick'>"+card+
-        "<button type='button' class='av-del' data-avdel='"+esc(v._pickId)+"' title='작품소개에서 삭제'>삭제</button></span>";
+    if (avAdmin){
+      var hk = v._pickId ? "" : avHideKey(v);
+      if (v._pickId || hk){
+        var dv = v._pickId ? ("pick:"+v._pickId) : ("hide:"+hk);
+        card = "<span class='av-pick'>"+card+
+          "<button type='button' class='av-del' data-avdel='"+esc(dv)+"' title='작품소개에서 삭제'>삭제</button></span>";
+      }
     }
     return card;
   }).join("")+"</span>";
@@ -3017,6 +3023,13 @@ function avKey(v){
   if (p) return p.kind + ":" + p.id;
   return String((v && (v.url || v.videoId)) || "");
 }
+/* 숨김 목록(hidden 컬렉션)의 문서 id 로 쓰는 안전한 키. avKey 의 "youtube:<id>" 를
+   콜론 없이(youtube_<id>) 바꿔, 저장·조회·필터에서 한 가지 형태만 쓴다.
+   Firestore 문서 id 에 못 쓰는 문자는 모두 "_" 로 눕힌다. */
+function avHideKey(v){
+  var k = avKey(v);
+  return k ? k.replace(/[^A-Za-z0-9_-]+/g, "_") : "";
+}
 /* picks 문서를 videoCards 가 읽는 모양으로 바꾼다. 조회수·구독·게시일은 없으므로 넣지 않는다
    (videoCards 가 빈값을 건너뛴다). 유튜브 썸네일은 영상 ID 로 주소가 정해져 있다. */
 function avPickCard(o, id){
@@ -3037,6 +3050,17 @@ function avPicksLoad(){
   }).then(function(sn){
     var a = []; sn.forEach(function(d){ a.push(avPickCard(d.data()||{}, d.id)); }); return a;
   })["catch"](function(){ return []; });   /* picks 가 아직 없거나 못 읽어도 수집 영상은 나와야 한다 */
+}
+/* 관리자가 "삭제"로 내린 작품들의 숨김 키 집합(hidden 컬렉션). 병합 목록을 이 집합으로 거른다.
+   못 읽어도(로그인 안 함·규칙 등) 빈 집합이라 30편은 그대로 나온다. */
+var avHidden = {};
+function avHiddenLoad(){
+  if (!fbReady()) return Promise.resolve({});
+  return fbInit().then(function(){
+    return fbDb.collection("hidden").get();
+  }).then(function(sn){
+    var m = {}; sn.forEach(function(d){ m[d.id] = 1; }); return m;
+  }, function(){ return {}; });
 }
 var avFormOpen = false;   /* 「작품 올리기」를 눌렀을 때만 폼을 편다 — 평소엔 버튼만 */
 /* 병합된 전체 목록(avAll)과 검색어(avSearch). avSearch 는 모듈 변수라 재렌더에도 유지된다. */
@@ -3074,35 +3098,52 @@ function avAdminForm(formHost, body){
     if (box) wkForm(box, function(){ avFormOpen = false; avPickView(body, formHost); }, { coll:"picks" });
   }, function(){});
 }
-/* 관리자가 picks(직접 올린 작품)를 작품소개에서 내린다. 수집 영상(수신부)엔 삭제 버튼이 없다. */
+/* 관리자가 작품소개에서 작품을 내린다. picks(직접 올린 것)는 문서를 지우고,
+   수집 영상(수신부)은 소스를 못 건드리므로 hidden 컬렉션에 키를 적어 화면에서 영구 제거한다.
+   data-avdel 값이 "pick:<문서id>" 면 삭제, "hide:<숨김키>" 면 숨김. */
 function avDel(el){
   if (!fbDb) return;
-  var id = el.getAttribute("data-avdel");
+  var raw = el.getAttribute("data-avdel");
+  if (!raw) return;
+  var isHide = raw.indexOf("hide:") === 0;
+  var id = (isHide || raw.indexOf("pick:") === 0) ? raw.slice(5) : raw;
   if (!id) return;
   if (!window.confirm("이 작품을 작품소개에서 내릴까요? 되돌릴 수 없습니다.")) return;
   el.disabled = true;
-  fbDb.collection("picks").doc(id)["delete"]().then(function(){
+  var done = function(){
     var wrap = el.closest(".av-pick");
     if (wrap && wrap.parentNode) wrap.parentNode.removeChild(wrap);
-    /* 검색 중이면 avDraw 가 avAll 로 다시 그리므로, 지운 작품을 avAll 에서도 뺀다 */
-    for (var i = 0; i < avAll.length; i++){ if (avAll[i]._pickId === id){ avAll.splice(i,1); break; } }
-  }, function(e){
+    /* 검색 중이면 avDraw 가 avAll 로 다시 그리므로, 내린 작품을 avAll 에서도 뺀다 */
+    for (var i = 0; i < avAll.length; i++){
+      if (isHide ? (avHideKey(avAll[i]) === id) : (avAll[i]._pickId === id)){ avAll.splice(i,1); break; }
+    }
+  };
+  var fail = function(e){
     el.disabled = false;
     if (window.console && console.error) console.error("[작품소개 삭제]", e);
-  });
+  };
+  if (isHide){
+    avHidden[id] = 1;   /* 즉시 필터에 반영 — 실패하면 되돌린다 */
+    fbDb.collection("hidden").doc(id).set({ createdAt: firebase.firestore.FieldValue.serverTimestamp() })
+      .then(done, function(e){ delete avHidden[id]; fail(e); });
+  } else {
+    fbDb.collection("picks").doc(id)["delete"]().then(done, fail);
+  }
 }
 function avPickView(host, formHost){
   avAdminForm(formHost, host);
   Promise.all([
     avPicksLoad(),
-    fetchAiVideos().then(function(j){ return j; }, function(){ return null; })
+    fetchAiVideos().then(function(j){ return j; }, function(){ return null; }),
+    avHiddenLoad()
   ]).then(function(r){
     if (curRoute()!=="aivideo" || !C.contains(host)) return;
     var picks = r[0] || [], j = r[1] || null;
+    avHidden = r[2] || {};
     var mgmt = (j && (j.works || (j.domestic||[]).concat(j.overseas||[]))) || [];
     var seen = {}, list = [], i, k;
-    for (i = 0; i < picks.length; i++){ k = avKey(picks[i]); if (k) seen[k] = 1; list.push(picks[i]); }
-    for (i = 0; i < mgmt.length; i++){ k = avKey(mgmt[i]); if (k && seen[k]) continue; if (k) seen[k] = 1; list.push(mgmt[i]); }
+    for (i = 0; i < picks.length; i++){ if (avHidden[avHideKey(picks[i])]) continue; k = avKey(picks[i]); if (k) seen[k] = 1; list.push(picks[i]); }
+    for (i = 0; i < mgmt.length; i++){ if (avHidden[avHideKey(mgmt[i])]) continue; k = avKey(mgmt[i]); if (k && seen[k]) continue; if (k) seen[k] = 1; list.push(mgmt[i]); }
     var top = 0;
     for (i = 0; i < mgmt.length; i++){ if ((mgmt[i].views||0) > top) top = mgmt[i].views; }
     setKicker(["AI 작품", list.length+"편"]);
