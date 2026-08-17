@@ -3023,14 +3023,19 @@ function avPicksLoad(){
     var a = []; sn.forEach(function(d){ a.push(avPickCard(d.data()||{})); }); return a;
   })["catch"](function(){ return []; });   /* picks 가 아직 없거나 못 읽어도 수집 영상은 나와야 한다 */
 }
+var avFormOpen = false;   /* 「작품 올리기」를 눌렀을 때만 폼을 편다 — 평소엔 버튼만 */
 function avAdminForm(formHost, body){
   if (!formHost) return;
   var isAdmin = !!(bdUser && bdUser.email === "kjyart@gmail.com");
   if (!isAdmin || !fbReady()){ formHost.innerHTML = ""; return; }
+  formHost.innerHTML = "<div class='wk-bar'><button type='button' class='btn' data-avopen>"+
+    (avFormOpen ? "닫기" : "작품 올리기")+"</button></div><div data-avformbox></div>";
+  if (!avFormOpen) return;
   fbInit().then(function(){
     if (curRoute()!=="aivideo" || !C.contains(formHost)) return;
-    wkForm(formHost, function(){ avPickView(body, formHost); }, { coll:"picks" });
-  }, function(){ if (C.contains(formHost)) formHost.innerHTML = ""; });
+    var box = formHost.querySelector("[data-avformbox]");
+    if (box) wkForm(box, function(){ avFormOpen = false; avPickView(body, formHost); }, { coll:"picks" });
+  }, function(){});
 }
 function avPickView(host, formHost){
   avAdminForm(formHost, host);
@@ -4328,6 +4333,7 @@ C.addEventListener("click", function(e){
   if ((el = t.closest("[data-reply]"))){ bdOpenReply(el); return; }
   /* 갤러리의 것들도 같은 자리에서 받는다 — 다시 그려도 끊기지 않는다 */
   if ((el = t.closest("[data-wkopen]"))){ wkFormOpen = !wkFormOpen; renderGallery(); return; }
+  if ((el = t.closest("[data-avopen]"))){ avFormOpen = !avFormOpen; renderAiVideo(); return; }
   /* 가입 화면의 로그인 버튼은 본문 안에 있다 — 상단바 위임만으로는 안 먹는다 */
   if ((el = t.closest("[data-nvlogin]"))){ nvLoginGo(); return; }
   if ((el = t.closest("[data-festall]"))){ festSearch = ""; renderFestivals(); return; }
