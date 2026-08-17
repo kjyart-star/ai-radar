@@ -472,14 +472,14 @@
            font-size:11px; font-family:var(--body); font-weight:700; letter-spacing:.01em; color:#fff;
            background:rgba(9,20,15,.55); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
            border:1px solid rgba(255,255,255,.26); border-radius:999px; cursor:pointer; line-height:1;
-           opacity:.82; box-shadow:0 2px 8px rgba(0,0,0,.28);
-           transition:opacity .16s ease, background .16s ease, border-color .16s ease, box-shadow .16s ease; }
+           opacity:.82;
+           transition:opacity .16s ease, background .16s ease, border-color .16s ease; }
   /* 휴지통 아이콘(인라인 SVG, data URI) — 텍스트 왼쪽에 */
   .av-del::before{ content:""; position:absolute; left:10px; top:50%; width:11px; height:11px;
            margin-top:-5.5px; background:no-repeat center/contain;
            background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14'/></svg>"); }
   .av-pick:hover .av-del{ opacity:1; }
-  .av-del:hover{ background:#e5442f; border-color:#e5442f; opacity:1; box-shadow:0 3px 13px rgba(217,75,58,.42); }
+  .av-del:hover{ background:#e5442f; border-color:#e5442f; opacity:1; }
   /* 삭제 버튼이 긴 제목 위로 겹치지 않게 — 관리자 카드의 제목만 오른쪽을 비운다 */
   .av-pick .ic-title{ padding-right:62px; }
   button.yt-thumb{ text-align:left; }
