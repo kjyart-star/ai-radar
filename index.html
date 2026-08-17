@@ -465,6 +465,13 @@
   /* 영상 카드는 <a> 였다가 모달을 여는 <button> 이 되었다 — 생김새는 같아야 한다.
      .yt-thumb 는 글 속에 인라인으로 놓이므로 폭을 100% 로 늘리지 않는다 */
   button.item-card{ width:100%; text-align:left; }
+  /* 작품소개 관리자 삭제 — picks 카드에만 오버레이한다 */
+  .av-pick{ position:relative; }
+  .av-pick > .item-card{ width:100%; }
+  .av-del{ position:absolute; top:9px; right:9px; z-index:3; padding:5px 10px; font-size:11px;
+           font-family:var(--body); font-weight:700; color:#fff; background:rgba(7,17,13,.74);
+           border:1px solid rgba(255,255,255,.4); border-radius:7px; cursor:pointer; line-height:1; }
+  .av-del:hover{ background:#d94b3a; border-color:transparent; }
   button.yt-thumb{ text-align:left; }
   .item-card{ display:grid; grid-template-columns:184px 1fr; gap:15px; align-items:start;
               border:1px solid var(--line-light); padding:13px;
@@ -2953,6 +2960,8 @@ function fetchAiVideos(){
 }
 /* 브리핑 본문이 쓰는 카드(.card-grid/.item-card)를 그대로 쓴다. 영상 카드는 이미 이 시스템에 있다 */
 function videoCards(list){
+  /* 관리자(대표)면 picks(직접 올린 작품)에만 삭제 버튼을 얹는다. 수집 영상엔 _pickId 가 없어 안 뜬다. */
+  var avAdmin = !!(bdUser && bdUser.email === "kjyart@gmail.com");
   return "<span class='card-grid'>"+(list||[]).map(function(v){
     var sub = v.subscribers != null ? " · 구독 "+kfmt(v.subscribers) : "";
     var when = v.published ? " · "+String(v.published).slice(0,10) : "";
@@ -2963,7 +2972,7 @@ function videoCards(list){
     var head = key
       ? "<button type='button' class='item-card yt' data-wkplay='"+esc(key)+"'>"
       : "<a class='item-card yt' href='"+esc(ctSafeUrl(v.url))+"' target='_blank' rel='noopener noreferrer'>";
-    return head+
+    var card = head+
       /* 썸네일 주소도 http(s) 인지 보고 넣는다. 바깥에서 온 값이 그대로 src 로 들어가는 자리다 */
       "<img src='"+esc(ctSafeUrl(v.thumbnail))+"' alt='' loading='lazy'>"+
       "<span class='ic-body'>"+
@@ -2971,6 +2980,11 @@ function videoCards(list){
         "<span class='ic-desc'>"+esc(v.channel||"")+esc(sub)+"</span>"+
         "<span class='ic-url'>"+(vv ? "조회수 "+esc(vv)+esc(when) : esc(String(when).replace(/^ · /,"")))+"</span>"+
       "</span>"+(key ? "</button>" : "</a>");
+    if (avAdmin && v._pickId){
+      card = "<span class='av-pick'>"+card+
+        "<button type='button' class='av-del' data-avdel='"+esc(v._pickId)+"' title='작품소개에서 삭제'>삭제</button></span>";
+    }
+    return card;
   }).join("")+"</span>";
 }
 function videoSection(cls, eyebrow, h2, list, queries, generated){
@@ -3005,10 +3019,11 @@ function avKey(v){
 }
 /* picks 문서를 videoCards 가 읽는 모양으로 바꾼다. 조회수·구독·게시일은 없으므로 넣지 않는다
    (videoCards 가 빈값을 건너뛴다). 유튜브 썸네일은 영상 ID 로 주소가 정해져 있다. */
-function avPickCard(o){
+function avPickCard(o, id){
   o = o || {};
   var vimeo = String(o.url||"").indexOf("//vimeo.com/") >= 0;
   return {
+    _pickId: id || "",   /* Firebase 문서 id — 관리자 삭제에 쓴다(수집 영상엔 없다) */
     title: o.title || "",
     url: o.url || "",
     channel: "",
@@ -3020,7 +3035,7 @@ function avPicksLoad(){
   return fbInit().then(function(){
     return fbDb.collection("picks").orderBy("createdAt","desc").limit(300).get();
   }).then(function(sn){
-    var a = []; sn.forEach(function(d){ a.push(avPickCard(d.data()||{})); }); return a;
+    var a = []; sn.forEach(function(d){ a.push(avPickCard(d.data()||{}, d.id)); }); return a;
   })["catch"](function(){ return []; });   /* picks 가 아직 없거나 못 읽어도 수집 영상은 나와야 한다 */
 }
 var avFormOpen = false;   /* 「작품 올리기」를 눌렀을 때만 폼을 편다 — 평소엔 버튼만 */
@@ -3036,6 +3051,21 @@ function avAdminForm(formHost, body){
     var box = formHost.querySelector("[data-avformbox]");
     if (box) wkForm(box, function(){ avFormOpen = false; avPickView(body, formHost); }, { coll:"picks" });
   }, function(){});
+}
+/* 관리자가 picks(직접 올린 작품)를 작품소개에서 내린다. 수집 영상(수신부)엔 삭제 버튼이 없다. */
+function avDel(el){
+  if (!fbDb) return;
+  var id = el.getAttribute("data-avdel");
+  if (!id) return;
+  if (!window.confirm("이 작품을 작품소개에서 내릴까요? 되돌릴 수 없습니다.")) return;
+  el.disabled = true;
+  fbDb.collection("picks").doc(id)["delete"]().then(function(){
+    var wrap = el.closest(".av-pick");
+    if (wrap && wrap.parentNode) wrap.parentNode.removeChild(wrap);
+  }, function(e){
+    el.disabled = false;
+    if (window.console && console.error) console.error("[작품소개 삭제]", e);
+  });
 }
 function avPickView(host, formHost){
   avAdminForm(formHost, host);
@@ -4341,6 +4371,7 @@ C.addEventListener("click", function(e){
   if ((el = t.closest("[data-wkplay]"))){ wkOpen(el.getAttribute("data-wkplay")); return; }
   if ((el = t.closest("[data-wklike]"))){ wkToggleLike(el); return; }
   if ((el = t.closest("[data-wkdel]"))){ wkDelete(el); return; }
+  if ((el = t.closest("[data-avdel]"))){ avDel(el); return; }
   if ((el = t.closest("[data-bdimgpop]"))){ bdOpenImg(el.getAttribute("data-bdimgpop"), "첨부 이미지"); return; }
   if ((el = t.closest("[data-bdplay]"))){ bdOpenVideo(el.getAttribute("data-bdplay"), "영상 재생"); return; }
   if ((el = t.closest("[data-login]"))){ bdLogin(); return; }
