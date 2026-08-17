@@ -468,10 +468,18 @@
   /* 작품소개 관리자 삭제 — picks 카드에만 오버레이한다 */
   .av-pick{ position:relative; }
   .av-pick > .item-card{ width:100%; }
-  .av-del{ position:absolute; top:9px; right:9px; z-index:3; padding:5px 10px; font-size:11px;
-           font-family:var(--body); font-weight:700; color:#fff; background:rgba(7,17,13,.74);
-           border:1px solid rgba(255,255,255,.4); border-radius:7px; cursor:pointer; line-height:1; }
-  .av-del:hover{ background:#d94b3a; border-color:transparent; }
+  .av-del{ position:absolute; top:10px; right:10px; z-index:3; padding:6px 12px 6px 26px;
+           font-size:11px; font-family:var(--body); font-weight:700; letter-spacing:.01em; color:#fff;
+           background:rgba(9,20,15,.55); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+           border:1px solid rgba(255,255,255,.26); border-radius:999px; cursor:pointer; line-height:1;
+           opacity:.82; box-shadow:0 2px 8px rgba(0,0,0,.28);
+           transition:opacity .16s ease, background .16s ease, border-color .16s ease, box-shadow .16s ease; }
+  /* 휴지통 아이콘(인라인 SVG, data URI) — 텍스트 왼쪽에 */
+  .av-del::before{ content:""; position:absolute; left:10px; top:50%; width:11px; height:11px;
+           margin-top:-5.5px; background:no-repeat center/contain;
+           background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14'/></svg>"); }
+  .av-pick:hover .av-del{ opacity:1; }
+  .av-del:hover{ background:#e5442f; border-color:#e5442f; opacity:1; box-shadow:0 3px 13px rgba(217,75,58,.42); }
   button.yt-thumb{ text-align:left; }
   .item-card{ display:grid; grid-template-columns:184px 1fr; gap:15px; align-items:start;
               border:1px solid var(--line-light); padding:13px;
@@ -3292,6 +3300,7 @@ function fbInit(){
             if (r==="board") renderBoard();
             else if (r==="prof") renderProfile();
             else if (r==="gallery") renderGallery();
+            else if (r==="aivideo") renderAiVideo();   /* 관리자 삭제 버튼이 로그인 즉시 뜨게 */
             else if (r==="join") renderJoin();        /* 로그인했으면 홈으로 비켜 준다 */
           } else {
             wpAuto = false; svMine = {}; svLoaded = false;
