@@ -3039,6 +3039,28 @@ function avPicksLoad(){
   })["catch"](function(){ return []; });   /* picks 가 아직 없거나 못 읽어도 수집 영상은 나와야 한다 */
 }
 var avFormOpen = false;   /* 「작품 올리기」를 눌렀을 때만 폼을 편다 — 평소엔 버튼만 */
+/* 병합된 전체 목록(avAll)과 검색어(avSearch). avSearch 는 모듈 변수라 재렌더에도 유지된다. */
+var avAll = [], avSearch = "";
+/* avAll 을 검색어로 걸러 카드 자리(data-avcards)에만 다시 그린다 — 재조회 없이 필터만.
+   건수(data-avcount)도 필터 결과로 맞춘다. ⚠️ 제목은 맥에서 온 자모 분해형(NFD)일 수 있어
+   wkNfc 로 NFC 로 맞춘 뒤 소문자로 비교한다(검색어도 같게). */
+function avDraw(host){
+  var cards = host.querySelector("[data-avcards]");
+  if (!cards) return;
+  var q = wkNfc(String(avSearch||"").trim()).toLowerCase();
+  var list = avAll, i, t;
+  if (q){
+    list = [];
+    for (i = 0; i < avAll.length; i++){
+      t = wkNfc(String((avAll[i] && avAll[i].title) || "")).toLowerCase();
+      if (t.indexOf(q) >= 0) list.push(avAll[i]);
+    }
+  }
+  cards.innerHTML = list.length ? videoCards(list)
+    : emptyNote(avSearch ? "검색 결과가 없습니다." : "아직 모인 영상이 없습니다.");
+  var cnt = host.querySelector("[data-avcount]");
+  if (cnt) cnt.innerHTML = String(list.length);
+}
 function avAdminForm(formHost, body){
   if (!formHost) return;
   var isAdmin = !!(bdUser && bdUser.email === "kjyart@gmail.com");
@@ -3062,6 +3084,8 @@ function avDel(el){
   fbDb.collection("picks").doc(id)["delete"]().then(function(){
     var wrap = el.closest(".av-pick");
     if (wrap && wrap.parentNode) wrap.parentNode.removeChild(wrap);
+    /* 검색 중이면 avDraw 가 avAll 로 다시 그리므로, 지운 작품을 avAll 에서도 뺀다 */
+    for (var i = 0; i < avAll.length; i++){ if (avAll[i]._pickId === id){ avAll.splice(i,1); break; } }
   }, function(e){
     el.disabled = false;
     if (window.console && console.error) console.error("[작품소개 삭제]", e);
@@ -3084,11 +3108,19 @@ function avPickView(host, formHost){
     setKicker(["AI 작품", list.length+"편"]);
     setFacts([[String(list.length),"작품"],[top ? kfmt(top) : "—","최고 조회수"],
               [(j ? fmtGen(j.generated).slice(0,10) : "") || "—","수집"]]);
+    avAll = list;
     host.innerHTML =
       sectionHead("Showcase","AI로 만든<br>영상 작품.",
         (j ? esc(fmtGen(j.generated))+" 기준." : "관리자가 고른 작품입니다."),
-        "<b>"+list.length+"</b>편")+
-      (list.length ? videoCards(list) : emptyNote("아직 모인 영상이 없습니다."));
+        "<b data-avcount>"+list.length+"</b>편")+
+      "<div class='wk-bar'><input class='search' type='search' placeholder='작품 제목 검색' data-avsearch aria-label='작품 제목 검색'></div>"+
+      "<div data-avcards></div>";
+    var avSearchEl = host.querySelector("[data-avsearch]");
+    if (avSearchEl){
+      avSearchEl.value = avSearch;   /* 재렌더에도 검색어·건수 유지 */
+      avSearchEl.oninput = function(){ avSearch = avSearchEl.value; avDraw(host); };
+    }
+    avDraw(host);
     observeReveal();
   })["catch"](function(){
     if (curRoute()!=="aivideo" || !C.contains(host)) return;
@@ -5551,6 +5583,7 @@ function renderGallery(){
     "<div class='wk-bar'>"+
       "<button type='button' class='btn' data-wkopen>"+
         (wkFormOpen ? "닫기" : "작품 올리기")+"</button>"+
+      "<input class='search' type='search' placeholder='작품 제목 검색' data-wksearch aria-label='작품 제목 검색'>"+
     "</div>"+
     "<div data-wkform></div>"+
     "<div data-wkrows>"+emptyNote("작품을 불러오는 중입니다.")+"</div>"+
@@ -5578,7 +5611,20 @@ function wkNfc(s){ s = String(s || ""); return s.normalize ? s.normalize("NFC") 
 /* 페이지네이션 상태 — 게시판(bdCursor/bdMore/bdBusy)과 같은 방식이다. 폼을 여닫으면
    renderGallery 가 다시 불려 처음부터 받는다. WK_PAGE 는 이제 상한이 아니라 페이지 크기다. */
 var wkCursor = null, wkMore = false, wkBusy = false;
+var wkSearch = "";   /* 갤러리 제목 검색어 — 이미 로드된 작품(wkFeed)만 거른다 */
 function wkReset(){ wkFeed = []; wkCursor = null; wkMore = false; wkBusy = false; }
+/* 이미 로드된 작품만 제목으로 거른다(Firestore 부분일치 쿼리는 없다). '더 보기'로 더 받은
+   것도 함께 걸린다. ⚠️ 제목은 NFC 로 맞춰 소문자 비교한다(맥 NFD 대응, 검색어도 같게). */
+function wkFilter(list){
+  var q = wkNfc(String(wkSearch||"").trim()).toLowerCase();
+  if (!q) return list;
+  var out = [], i, t;
+  for (i = 0; i < list.length; i++){
+    t = wkNfc(String((list[i] && list[i].title) || "")).toLowerCase();
+    if (t.indexOf(q) >= 0) out.push(list[i]);
+  }
+  return out;
+}
 /* 대표 지시(2026-08-17): 이 두 작품은 갤러리 맨 아래로 내린다. 나머지는 최신순 그대로.
    createdAt 은 서버 고정값이라 못 바꾸므로 화면에서 정렬로 내린다(제목 포함 매칭).
    ⚠️ 맥에서 올린 제목은 한글이 자모 분해형(NFD)이라 NFC 로 맞춘 뒤 비교한다.
@@ -5602,6 +5648,13 @@ function wkLoad(rows){
   }
   var gridEl = rows.querySelector("[data-wkgrid]");
   var moreEl = rows.querySelector("[data-wkmore]");
+  /* 검색창은 grid 바깥(wk-bar)에 있어 다시 그려도 포커스·값이 유지된다. 입력하면 서버를
+     다시 부르지 않고 이미 받은 목록만 필터해 그린다(paint). */
+  var searchEl = C.querySelector("[data-wksearch]");
+  if (searchEl){
+    searchEl.value = wkSearch;
+    searchEl.oninput = function(){ wkSearch = searchEl.value; paint(); };
+  }
   var hasIo = ("IntersectionObserver" in window);
   var sentIo = null;
   function watchSentinel(){
@@ -5615,9 +5668,11 @@ function wkLoad(rows){
     sentIo.observe(s);
   }
   function paint(){
-    var list = wkSort(wkFeed);
+    var list = wkSort(wkFilter(wkFeed));
     gridEl.innerHTML = list.length ? wkGrid(list)
-      : "<div class='bd-empty'><p>아직 올라온 작품이 없습니다. 첫 작품을 올려 보세요.</p></div>";
+      : "<div class='bd-empty'><p>"+
+        (wkSearch ? "검색 결과가 없습니다." : "아직 올라온 작품이 없습니다. 첫 작품을 올려 보세요.")+
+        "</p></div>";
     moreEl.innerHTML = !wkMore ? ""
       : (hasIo ? "<span class='bd-sentinel' data-sentinel></span><span class='bd-loading'>더 불러오는 중…</span>"
                : "<button type='button' class='btn' data-loadmore>더 보기</button>");
