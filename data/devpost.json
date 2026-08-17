@@ -1,32 +1,16 @@
 {
- "generated": "2026-08-16T23:44:47.867Z",
+ "generated": "2026-08-17T23:46:50.214Z",
  "source": "Devpost",
- "total_on_devpost": 2165,
+ "total_on_devpost": 2167,
  "search": "ai",
  "items": [
-  {
-   "title": "Build with Gemini XPRIZE",
-   "url": "https://xprize.devpost.com/",
-   "state": "open",
-   "dates": "May 19 - Aug 17, 2026",
-   "time_left": "about 20 hours left",
-   "prize": "$2,000,000",
-   "themes": [
-    "Machine Learning/AI",
-    "Education",
-    "Productivity"
-   ],
-   "location": "Online",
-   "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/686/462/datas/medium_square.png",
-   "registrations": 26154
-  },
   {
    "title": "Reverie Hacks 2026",
    "url": "https://reverie-hacks-2026.devpost.com/",
    "state": "open",
    "dates": "Aug 02 - 24, 2026",
-   "time_left": "7 days left",
-   "prize": "$1,038,450",
+   "time_left": "6 days left",
+   "prize": "$1,096,950",
    "themes": [
     "Beginner Friendly",
     "Machine Learning/AI",
@@ -34,14 +18,30 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/705/305/datas/medium_square.png",
-   "registrations": 1641
+   "registrations": 1704
+  },
+  {
+   "title": "INNOVIK 6.0 – International Hackathon 2026 | Indore Edition",
+   "url": "https://innovik6-indore.devpost.com/",
+   "state": "open",
+   "dates": "Aug 10 - 25, 2026",
+   "time_left": "7 days left",
+   "prize": "₹ 200,000",
+   "themes": [
+    "Education",
+    "Machine Learning/AI",
+    "Social Good"
+   ],
+   "location": "VITM Indore",
+   "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/083/435/datas/medium_square.png",
+   "registrations": 43
   },
   {
    "title": "All Things Agentic Hackathon",
    "url": "https://allthingsagentichackathon.devpost.com/",
    "state": "open",
    "dates": "Aug 04 - 31, 2026",
-   "time_left": "15 days left",
+   "time_left": "14 days left",
    "prize": "$180,000",
    "themes": [
     "Enterprise",
@@ -50,7 +50,7 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/067/604/datas/medium_square.png",
-   "registrations": 3782
+   "registrations": 4568
   },
   {
    "title": "Global Innovation Build Challenge V2",
@@ -66,14 +66,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/835/213/datas/medium_square.png",
-   "registrations": 190
+   "registrations": 209
   },
   {
    "title": "The Great Agent Hackathon",
    "url": "https://the-great-agent-hackathon.devpost.com/",
    "state": "open",
    "dates": "Jul 23 - Aug 25, 2026",
-   "time_left": "9 days left",
+   "time_left": "8 days left",
    "prize": "₹ 100,000",
    "themes": [
     "Enterprise",
@@ -82,14 +82,14 @@
    ],
    "location": "Freshworks",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/017/793/datas/medium_square.png",
-   "registrations": 205
+   "registrations": 228
   },
   {
    "title": "Agentic Cinema: The Blockbuster Hackathon",
    "url": "https://agentic-cinema.devpost.com/",
    "state": "open",
    "dates": "Jul 27 - Sep 09, 2026",
-   "time_left": "24 days left",
+   "time_left": "23 days left",
    "prize": "$75,000",
    "themes": [
     "Databases",
@@ -98,14 +98,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/901/608/datas/medium_square.jpg",
-   "registrations": 6129
+   "registrations": 6259
   },
   {
    "title": "Agents for Humans Hackathon",
    "url": "https://agentsforhumans.devpost.com/",
    "state": "open",
    "dates": "Aug 10 - Sep 14, 2026",
-   "time_left": "29 days left",
+   "time_left": "28 days left",
    "prize": "$40,000",
    "themes": [
     "Beginner Friendly",
@@ -114,21 +114,37 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/064/760/datas/medium_square.jpg",
-   "registrations": 2826
+   "registrations": 3335
   },
   {
    "title": "AWS Trainium Frontier Competition",
    "url": "https://trainium-frontier.devpost.com/",
    "state": "open",
    "dates": "Aug 07 - Oct 01, 2026",
-   "time_left": "about 2 months left",
+   "time_left": "about 1 month left",
    "prize": "$40,000",
    "themes": [
     "Machine Learning/AI"
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/067/203/datas/medium_square.png",
-   "registrations": 230
+   "registrations": 312
+  },
+  {
+   "title": "DevNetwork [API + Cloud + AI] Hackathon 2026",
+   "url": "https://api-cloud-ai-hackathon-2026.devpost.com/",
+   "state": "open",
+   "dates": "Aug 17 - Sep 03, 2026",
+   "time_left": "17 days left",
+   "prize": "$39,500",
+   "themes": [
+    "IoT",
+    "Low/No Code",
+    "Machine Learning/AI"
+   ],
+   "location": "Santa Clara Convention Center and Online",
+   "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/648/675/datas/medium_square.jpg",
+   "registrations": 699
   },
   {
    "title": "UnivaBio",
@@ -144,14 +160,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/956/477/datas/medium_square.png",
-   "registrations": 131
+   "registrations": 141
   },
   {
    "title": "VoltHacks",
    "url": "https://volthacks.devpost.com/",
    "state": "open",
    "dates": "May 22 - Sep 05, 2026",
-   "time_left": "20 days left",
+   "time_left": "19 days left",
    "prize": "$32,785",
    "themes": [
     "IoT",
@@ -160,30 +176,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/620/967/datas/medium_square.png",
-   "registrations": 1595
-  },
-  {
-   "title": "Nexora",
-   "url": "https://nexora.devpost.com/",
-   "state": "open",
-   "dates": "Jul 30 - Aug 16, 2026",
-   "time_left": "about 5 hours left",
-   "prize": "₹ 30,000",
-   "themes": [
-    "Blockchain",
-    "Cybersecurity",
-    "Machine Learning/AI"
-   ],
-   "location": "SNS Innovation HUB",
-   "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/037/935/datas/medium_square.png",
-   "registrations": 135
+   "registrations": 1622
   },
   {
    "title": "Africa Deep Tech Challenge 2026",
    "url": "https://adtc-2026.devpost.com/",
    "state": "open",
    "dates": "Jun 17 - Aug 25, 2026",
-   "time_left": "8 days left",
+   "time_left": "7 days left",
    "prize": "$16,500",
    "themes": [
     "Machine Learning/AI",
@@ -191,14 +191,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/739/255/datas/medium_square.png",
-   "registrations": 1672
+   "registrations": 1691
   },
   {
    "title": "CALL-E: Your Code Is Calling",
    "url": "https://call-e.devpost.com/",
    "state": "open",
    "dates": "Jul 23 - Sep 14, 2026",
-   "time_left": "29 days left",
+   "time_left": "28 days left",
    "prize": "$10,000",
    "themes": [
     "Communication",
@@ -207,14 +207,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/977/426/datas/medium_square.png",
-   "registrations": 2197
+   "registrations": 2221
   },
   {
    "title": "CockroachDB × AWS Hackathon - Build with Agentic Memory",
    "url": "https://cockroachdb-ai.devpost.com/",
    "state": "open",
    "dates": "Jun 30 - Aug 18, 2026",
-   "time_left": "2 days left",
+   "time_left": "about 21 hours left",
    "prize": "$8,750",
    "themes": [
     "Machine Learning/AI",
@@ -223,30 +223,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/649/552/datas/medium_square.png",
-   "registrations": 3559
-  },
-  {
-   "title": "YouCam API Skin AI & Apparel VTO Hackathon",
-   "url": "https://youcam-api.devpost.com/",
-   "state": "open",
-   "dates": "Jul 06 - Aug 17, 2026",
-   "time_left": "about 16 hours left",
-   "prize": "$6,000",
-   "themes": [
-    "Machine Learning/AI",
-    "AR/VR",
-    "E-commerce/Retail"
-   ],
-   "location": "Online",
-   "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/868/331/datas/medium_square.png",
-   "registrations": 1255
+   "registrations": 3628
   },
   {
    "title": "Hacksocial 2026",
    "url": "https://hacksocial2026.devpost.com/",
    "state": "open",
    "dates": "Aug 01 - 31, 2026",
-   "time_left": "15 days left",
+   "time_left": "14 days left",
    "prize": "$3,979",
    "themes": [
     "Machine Learning/AI",
@@ -255,14 +239,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/901/781/datas/medium_square.png",
-   "registrations": 314
+   "registrations": 338
   },
   {
    "title": "Galuxium Nexus V2",
    "url": "https://galuxium-nexus-v2-29411.devpost.com/",
    "state": "open",
    "dates": "Jul 15 - Aug 31, 2026",
-   "time_left": "15 days left",
+   "time_left": "14 days left",
    "prize": "$2,600",
    "themes": [
     "Enterprise",
@@ -271,14 +255,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/684/795/datas/medium_square.png",
-   "registrations": 363
+   "registrations": 376
   },
   {
    "title": "QuantumHacks",
    "url": "https://quantumhacks.devpost.com/",
    "state": "open",
    "dates": "Jun 21 - Aug 20, 2026",
-   "time_left": "4 days left",
+   "time_left": "3 days left",
    "prize": "$1,000",
    "themes": [
     "Databases",
@@ -287,14 +271,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/030/048/datas/medium_square.png",
-   "registrations": 792
+   "registrations": 814
   },
   {
    "title": "Suvidha AI Virtual Hackathon",
    "url": "https://suvidha-ai-virtual-hackathon.devpost.com/",
    "state": "open",
    "dates": "Aug 15 - 22, 2026",
-   "time_left": "5 days left",
+   "time_left": "4 days left",
    "prize": "$800",
    "themes": [
     "Beginner Friendly",
@@ -303,14 +287,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/888/638/datas/medium_square.png",
-   "registrations": 168
+   "registrations": 200
   },
   {
    "title": "Build Beyond Hackathon",
    "url": "https://build-beyond-hackathon.devpost.com/",
    "state": "open",
    "dates": "Jun 18 - Aug 22, 2026",
-   "time_left": "5 days left",
+   "time_left": "4 days left",
    "prize": "$500",
    "themes": [
     "Beginner Friendly",
@@ -319,14 +303,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/785/686/datas/medium_square.png",
-   "registrations": 1183
+   "registrations": 1218
   },
   {
    "title": "NeuralSprint",
    "url": "https://neuralsprint.devpost.com/",
    "state": "open",
    "dates": "Jun 18 - Aug 24, 2026",
-   "time_left": "7 days left",
+   "time_left": "6 days left",
    "prize": "$150",
    "themes": [
     "Machine Learning/AI",
@@ -335,14 +319,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/789/176/datas/medium_square.png",
-   "registrations": 544
+   "registrations": 557
   },
   {
    "title": "Hack for Humanity | Summer 2026 (+13 non-cash prizes)",
    "url": "https://hack-for-humanity-summer-26.devpost.com/",
    "state": "open",
    "dates": "Aug 07 - Sep 04, 2026",
-   "time_left": "19 days left",
+   "time_left": "18 days left",
    "prize": "$100",
    "themes": [
     "Beginner Friendly",
@@ -351,14 +335,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/429/605/datas/medium_square.png",
-   "registrations": 889
+   "registrations": 923
   },
   {
    "title": "3D Websites Hackathon",
    "url": "https://3d-websites-hackathon.devpost.com/",
    "state": "open",
    "dates": "Jun 22 - Aug 31, 2026",
-   "time_left": "15 days left",
+   "time_left": "14 days left",
    "prize": "$55",
    "themes": [
     "Design",
@@ -367,14 +351,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/799/053/datas/medium_square.png",
-   "registrations": 1217
+   "registrations": 1238
   },
   {
    "title": "GatewayGS & The AEI Initiative:  AI 4 Earth Hackathon",
    "url": "https://gatewaygs-ai-4-earth-hackathon.devpost.com/",
    "state": "open",
    "dates": "Jul 25 - Aug 22, 2026",
-   "time_left": "6 days left",
+   "time_left": "5 days left",
    "prize": "$25",
    "themes": [
     "Beginner Friendly",
@@ -383,14 +367,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/883/630/datas/medium_square.png",
-   "registrations": 193
+   "registrations": 201
   },
   {
    "title": "AI YES :International Youth AI Competition",
    "url": "https://ai-yes-competition-30441.devpost.com/",
    "state": "open",
    "dates": "Jun 17 - Sep 01, 2026",
-   "time_left": "16 days left",
+   "time_left": "15 days left",
    "prize": "$0",
    "themes": [
     "Beginner Friendly",
@@ -399,14 +383,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/778/937/datas/medium_square.png",
-   "registrations": 231
+   "registrations": 241
   },
   {
    "title": "Spatial Hack AI",
    "url": "https://spatial-hack-ai.devpost.com/",
    "state": "open",
    "dates": "Aug 12 - 19, 2026",
-   "time_left": "3 days left",
+   "time_left": "2 days left",
    "prize": "$0",
    "themes": [
     "AR/VR",
@@ -414,7 +398,7 @@
    ],
    "location": "Singapore, Singapore",
    "thumbnail": "https://d2dmyh35ffsxbl.cloudfront.net/assets/defaults/thumbnail-placeholder-8c916ef4da99a222ce6ece077c71c7e282f071f830747b2abb5718018cbfa699.gif",
-   "registrations": 22
+   "registrations": 24
   },
   {
    "title": "Evorozen Apex: NextGen AI Buildathon",
@@ -430,14 +414,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/909/345/datas/medium_square.png",
-   "registrations": 125
+   "registrations": 131
   },
   {
    "title": "Pixel Forge AI Hackathon ($18,000+ in Prizes)",
    "url": "https://pixel-forge-ai-hackathon-08.devpost.com/",
    "state": "open",
    "dates": "Aug 15 - 22, 2026",
-   "time_left": "6 days left",
+   "time_left": "5 days left",
    "prize": "$0",
    "themes": [
     "Beginner Friendly",
@@ -446,28 +430,28 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/728/956/datas/medium_square.png",
-   "registrations": 541
+   "registrations": 589
   },
   {
    "title": "Win4AISafety - Open Research Summer Challenge",
    "url": "https://win4aisafety-sain-utrecht.devpost.com/",
    "state": "open",
    "dates": "Jul 06 - Aug 18, 2026",
-   "time_left": "1 day left",
+   "time_left": "about 15 hours left",
    "prize": "$0",
    "themes": [
     "Machine Learning/AI"
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/846/187/datas/medium_square.png",
-   "registrations": 58
+   "registrations": 64
   },
   {
    "title": "BuunieX Hackathon",
    "url": "https://buuniex-hackathon.devpost.com/",
    "state": "open",
    "dates": "Jun 22 - Aug 22, 2026",
-   "time_left": "6 days left",
+   "time_left": "5 days left",
    "prize": "$0",
    "themes": [
     "Machine Learning/AI",
@@ -476,7 +460,7 @@
    ],
    "location": "Online",
    "thumbnail": "https://d2dmyh35ffsxbl.cloudfront.net/assets/defaults/thumbnail-placeholder-8c916ef4da99a222ce6ece077c71c7e282f071f830747b2abb5718018cbfa699.gif",
-   "registrations": 137
+   "registrations": 144
   },
   {
    "title": "DSH Hacks V2",
@@ -492,7 +476,7 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/799/059/datas/medium_square.png",
-   "registrations": 149
+   "registrations": 153
   },
   {
    "title": "HTCJ Aviation Futures Innovation Challenge",
@@ -508,14 +492,14 @@
    ],
    "location": "San Diego Convention Center ",
    "thumbnail": "https://d2dmyh35ffsxbl.cloudfront.net/assets/defaults/thumbnail-placeholder-8c916ef4da99a222ce6ece077c71c7e282f071f830747b2abb5718018cbfa699.gif",
-   "registrations": 40
+   "registrations": 41
   },
   {
    "title": "Hack days in KGI",
    "url": "https://hack-days-in-kgi.devpost.com/",
    "state": "open",
    "dates": "Aug 02 - 19, 2026",
-   "time_left": "3 days left",
+   "time_left": "1 day left",
    "prize": "₹ 0",
    "themes": [
     "Mobile",
@@ -524,14 +508,14 @@
    ],
    "location": "Hosur",
    "thumbnail": "https://d2dmyh35ffsxbl.cloudfront.net/assets/defaults/thumbnail-placeholder-8c916ef4da99a222ce6ece077c71c7e282f071f830747b2abb5718018cbfa699.gif",
-   "registrations": 39
+   "registrations": 42
   },
   {
    "title": "Prism Build Challenge",
    "url": "https://prismbuild.devpost.com/",
    "state": "open",
-   "dates": "Aug 12 - 17, 2026",
-   "time_left": "about 22 hours left",
+   "dates": "Aug 12 - 18, 2026",
+   "time_left": "about 11 hours left",
    "prize": "$0",
    "themes": [
     "Enterprise",
@@ -539,8 +523,8 @@
     "Social Good"
    ],
    "location": "Online",
-   "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/091/199/datas/medium_square.png",
-   "registrations": 341
+   "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/123/928/datas/medium_square.gif",
+   "registrations": 355
   },
   {
    "title": "Code for Humanity",
@@ -556,7 +540,7 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/909/585/datas/medium_square.png",
-   "registrations": 176
+   "registrations": 186
   },
   {
    "title": "GatewayHacks 2026 | Software & AI",
@@ -572,7 +556,7 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/932/136/datas/medium_square.png",
-   "registrations": 80
+   "registrations": 94
   },
   {
    "title": "Since AI 2026",
@@ -591,22 +575,6 @@
    "registrations": 33
   },
   {
-   "title": "DevNetwork [API + Cloud + AI] Hackathon 2026",
-   "url": "https://api-cloud-ai-hackathon-2026.devpost.com/",
-   "state": "upcoming",
-   "dates": "Aug 17 - Sep 03, 2026",
-   "time_left": "Upcoming",
-   "prize": "$45,500",
-   "themes": [
-    "IoT",
-    "Low/No Code",
-    "Machine Learning/AI"
-   ],
-   "location": "Santa Clara Convention Center and Online",
-   "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/648/675/datas/medium_square.jpg",
-   "registrations": 655
-  },
-  {
    "title": "AI Builders Hackathon",
    "url": "https://ai-builders-hackathon-2026.devpost.com/",
    "state": "upcoming",
@@ -620,7 +588,23 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/783/650/datas/medium_square.png",
-   "registrations": 1411
+   "registrations": 1469
+  },
+  {
+   "title": "Prompt Wars 2026",
+   "url": "https://prompt-wars-2026.devpost.com/",
+   "state": "upcoming",
+   "dates": "Aug 29, 2026",
+   "time_left": "Upcoming",
+   "prize": "₹ 30,000",
+   "themes": [
+    "Beginner Friendly",
+    "Low/No Code",
+    "Machine Learning/AI"
+   ],
+   "location": "Online",
+   "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/130/304/datas/medium_square.png",
+   "registrations": 6
   },
   {
    "title": "OpenCV AI Competition 2026, powered by AWS",
@@ -636,7 +620,7 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/087/526/datas/medium_square.png",
-   "registrations": 65
+   "registrations": 253
   },
   {
    "title": "Hack Apertus",
@@ -652,7 +636,7 @@
    ],
    "location": "Grand Finals 2027 ",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/992/867/datas/medium_square.png",
-   "registrations": 113
+   "registrations": 121
   },
   {
    "title": "IEEE ClimateChain Global Hackathon",
@@ -668,7 +652,23 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/642/899/datas/medium_square.png",
-   "registrations": 92
+   "registrations": 95
+  },
+  {
+   "title": "OneAquaHealth IEEE Global Hackathon",
+   "url": "https://oneaquahealth-ieee-hackathon.devpost.com/",
+   "state": "upcoming",
+   "dates": "Sep 14 - Oct 01, 2026",
+   "time_left": "Upcoming",
+   "prize": "$3,000",
+   "themes": [
+    "Health",
+    "Machine Learning/AI",
+    "Social Good"
+   ],
+   "location": "Online",
+   "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/514/502/datas/medium_square.png",
+   "registrations": 519
   },
   {
    "title": "AI Agent Hackathon",
@@ -682,7 +682,7 @@
     "Low/No Code"
    ],
    "location": "Pennovation center",
-   "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/068/167/datas/medium_square.png",
+   "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/125/039/datas/medium_square.png",
    "registrations": 16
   },
   {
@@ -699,7 +699,7 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/095/324/datas/medium_square.png",
-   "registrations": 12
+   "registrations": 13
   },
   {
    "title": "Build with AI Hack Days @BAU",
@@ -715,23 +715,7 @@
    ],
    "location": "Bangladesh Agricultural University",
    "thumbnail": "https://d2dmyh35ffsxbl.cloudfront.net/assets/defaults/thumbnail-placeholder-8c916ef4da99a222ce6ece077c71c7e282f071f830747b2abb5718018cbfa699.gif",
-   "registrations": 17
-  },
-  {
-   "title": "Build with AI Hack Days @EMK",
-   "url": "https://build-with-ai-hack-days-emk.devpost.com/",
-   "state": "upcoming",
-   "dates": "Aug 17, 2026",
-   "time_left": "Upcoming",
-   "prize": "$0",
-   "themes": [
-    "Education",
-    "Low/No Code",
-    "Machine Learning/AI"
-   ],
-   "location": "EMK Center",
-   "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/064/977/datas/medium_square.png",
-   "registrations": 110
+   "registrations": 21
   },
   {
    "title": "AI Hackathon 2026 by LA Hacks",
@@ -761,7 +745,7 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/940/122/datas/medium_square.png",
-   "registrations": 16
+   "registrations": 15
   },
   {
    "title": "RescueHacks",
@@ -777,7 +761,7 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/876/471/datas/medium_square.jpeg",
-   "registrations": 44
+   "registrations": 46
   },
   {
    "title": "Vibe Code Animated Maps",
@@ -809,7 +793,7 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/030/054/datas/medium_square.png",
-   "registrations": 14
+   "registrations": 15
   },
   {
    "title": "ForgeHacks Online 2026",
@@ -841,7 +825,7 @@
    ],
    "location": "Lahore",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/726/390/datas/medium_square.png",
-   "registrations": 36
+   "registrations": 40
   },
   {
    "title": "Hacks day Bhopal",
@@ -858,6 +842,22 @@
    "location": "Online",
    "thumbnail": "https://d2dmyh35ffsxbl.cloudfront.net/assets/defaults/thumbnail-placeholder-8c916ef4da99a222ce6ece077c71c7e282f071f830747b2abb5718018cbfa699.gif",
    "registrations": 2
+  },
+  {
+   "title": "DreamHacks @ Georgia Institute of Technology",
+   "url": "https://dreamhacks-gt.devpost.com/",
+   "state": "upcoming",
+   "dates": "Aug 29, 2026",
+   "time_left": "Upcoming",
+   "prize": "$0",
+   "themes": [
+    "Lifehacks",
+    "Machine Learning/AI",
+    "Social Good"
+   ],
+   "location": "Georgia Institute of Technology",
+   "thumbnail": "https://d2dmyh35ffsxbl.cloudfront.net/assets/defaults/thumbnail-placeholder-8c916ef4da99a222ce6ece077c71c7e282f071f830747b2abb5718018cbfa699.gif",
+   "registrations": 8
   }
  ]
 }
