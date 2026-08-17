@@ -5478,6 +5478,9 @@ function wkListView(formEl, rows){
     rows.innerHTML = emptyNote("지금은 열 수 없습니다. 잠시 후 다시 시도해 주세요.");
   });
 }
+/* 한글 자모 분해형(NFD)을 합쳐진 형(NFC)으로. 맥에서 올린 제목은 자모가 분해돼 있어
+   그대로 비교하면 같은 글자도 안 맞는다. normalize 없는 옛 브라우저는 원문 그대로 둔다. */
+function wkNfc(s){ s = String(s || ""); return s.normalize ? s.normalize("NFC") : s; }
 function wkLoad(rows){
   Promise.all([
     fbDb.collection("works").orderBy("createdAt","desc").limit(WK_PAGE).get(),
@@ -5486,6 +5489,18 @@ function wkLoad(rows){
     if (curRoute()!=="gallery" || !C.contains(rows)) return;
     var got = [], who = {};
     r[0].forEach(function(d){ var o = d.data()||{}; o.id = d.id; got.push(o); });
+    /* 대표 지시(2026-08-17): 이 두 작품은 갤러리 맨 아래로 내린다. 나머지는 최신순 그대로.
+       createdAt 은 서버 고정값이라 못 바꾸므로 화면에서 정렬로 내린다(제목 포함 매칭).
+       ⚠️ 맥에서 올린 제목은 한글이 자모 분해형(NFD)이라 NFC 로 맞춘 뒤 비교한다.
+       'The Last Signal' 은 영문 제목이라 'Last Signal' 로 잡는다. */
+    var WK_SINK = ["혈계", "Last Signal"];
+    var _keep = [], _sink = [];
+    got.forEach(function(w){
+      var t = wkNfc((w && w.title) || ""), s = false, i;
+      for (i=0;i<WK_SINK.length;i++){ if (t.indexOf(wkNfc(WK_SINK[i])) >= 0){ s = true; break; } }
+      (s ? _sink : _keep).push(w);
+    });
+    got = _keep.concat(_sink);
     got.forEach(function(w){ if (w.uid) who[w.uid] = 1; });
     wkFeed = got;
     setKicker(["AI 작품", got.length+"편"]);
