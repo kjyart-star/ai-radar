@@ -2956,6 +2956,7 @@ function videoCards(list){
   return "<span class='card-grid'>"+(list||[]).map(function(v){
     var sub = v.subscribers != null ? " · 구독 "+kfmt(v.subscribers) : "";
     var when = v.published ? " · "+String(v.published).slice(0,10) : "";
+    var vv = v.views != null ? nfmt(v.views) : "";   /* 관리자 큐레이션(picks)은 조회수가 없다 — 없으면 줄을 비운다 */
     /* 갤러리와 같은 모달로 연다(대표 지시 2026-08-15 "같은 창에서 플레이되게").
        주소에서 영상 ID 를 못 뽑으면 예전처럼 새 탭으로 둔다. */
     var key = wkReg({ url:v.url, title:v.title, by:v.channel });
@@ -2968,7 +2969,7 @@ function videoCards(list){
       "<span class='ic-body'>"+
         "<span class='ic-title'>"+esc(v.title||"(제목 없음)")+"</span>"+
         "<span class='ic-desc'>"+esc(v.channel||"")+esc(sub)+"</span>"+
-        "<span class='ic-url'>조회수 "+esc(nfmt(v.views))+esc(when)+"</span>"+
+        "<span class='ic-url'>"+(vv ? "조회수 "+esc(vv)+esc(when) : esc(String(when).replace(/^ · /,"")))+"</span>"+
       "</span>"+(key ? "</button>" : "</a>");
   }).join("")+"</span>";
 }
@@ -2985,27 +2986,76 @@ function renderAiVideo(){
   setKicker(["AI 작품"]);
   setFacts([["—","작품"],["—","최고 조회수"],["—","수집"]]);
   C.innerHTML = "<section class='section paper'><div class='inner'>"+
+    "<div data-avform></div>"+
     "<div data-avbody>"+emptyNote("작품을 불러오는 중입니다.")+"</div>"+
     "</div></section>";
-  avPickView(C.querySelector("[data-avbody]"));
+  avPickView(C.querySelector("[data-avbody]"), C.querySelector("[data-avform]"));
 }
 /* 화면 안쪽만 그린다 — 바깥 <section> 은 부른 쪽이 세운다.
-   내용과 숫자 계산은 처음 만들었을 때 그대로다. */
-function avPickView(host){
-  fetchAiVideos().then(function(j){
+   자료가 두 갈래다(대표 지시 2026-08-17 — 관리시스템 30 캡에서 독립):
+   (1) 관리자가 고른 작품 — Firebase picks 컬렉션. 무제한(넉넉히 300)까지 최신순.
+   (2) 수집 영상 — 기존 수신부 fetchAiVideos().works(30편). 콘텐츠 손실 방지로 함께 병합.
+   병합 순서는 picks 먼저, 그다음 수집. 영상 ID(또는 주소)로 중복을 지운다.
+   관리자(kjyart@gmail.com)로 로그인하면 위에 「작품 올리기」 폼이 뜬다 — 갤러리 폼(wkForm)을
+   picks 컬렉션 대상으로 재사용한다. */
+function avKey(v){
+  var p = wkParse((v && v.url) || "");
+  if (p) return p.kind + ":" + p.id;
+  return String((v && (v.url || v.videoId)) || "");
+}
+/* picks 문서를 videoCards 가 읽는 모양으로 바꾼다. 조회수·구독·게시일은 없으므로 넣지 않는다
+   (videoCards 가 빈값을 건너뛴다). 유튜브 썸네일은 영상 ID 로 주소가 정해져 있다. */
+function avPickCard(o){
+  o = o || {};
+  var vimeo = String(o.url||"").indexOf("//vimeo.com/") >= 0;
+  return {
+    title: o.title || "",
+    url: o.url || "",
+    channel: "",
+    thumbnail: vimeo ? "" : "https://i.ytimg.com/vi/"+encodeURIComponent(String(o.videoId||""))+"/mqdefault.jpg"
+  };
+}
+function avPicksLoad(){
+  if (!fbReady()) return Promise.resolve([]);
+  return fbInit().then(function(){
+    return fbDb.collection("picks").orderBy("createdAt","desc").limit(300).get();
+  }).then(function(sn){
+    var a = []; sn.forEach(function(d){ a.push(avPickCard(d.data()||{})); }); return a;
+  })["catch"](function(){ return []; });   /* picks 가 아직 없거나 못 읽어도 수집 영상은 나와야 한다 */
+}
+function avAdminForm(formHost, body){
+  if (!formHost) return;
+  var isAdmin = !!(bdUser && bdUser.email === "kjyart@gmail.com");
+  if (!isAdmin || !fbReady()){ formHost.innerHTML = ""; return; }
+  fbInit().then(function(){
+    if (curRoute()!=="aivideo" || !C.contains(formHost)) return;
+    wkForm(formHost, function(){ avPickView(body, formHost); }, { coll:"picks" });
+  }, function(){ if (C.contains(formHost)) formHost.innerHTML = ""; });
+}
+function avPickView(host, formHost){
+  avAdminForm(formHost, host);
+  Promise.all([
+    avPicksLoad(),
+    fetchAiVideos().then(function(j){ return j; }, function(){ return null; })
+  ]).then(function(r){
     if (curRoute()!=="aivideo" || !C.contains(host)) return;
-    var works = j.works || (j.domestic||[]).concat(j.overseas||[]);
+    var picks = r[0] || [], j = r[1] || null;
+    var mgmt = (j && (j.works || (j.domestic||[]).concat(j.overseas||[]))) || [];
+    var seen = {}, list = [], i, k;
+    for (i = 0; i < picks.length; i++){ k = avKey(picks[i]); if (k) seen[k] = 1; list.push(picks[i]); }
+    for (i = 0; i < mgmt.length; i++){ k = avKey(mgmt[i]); if (k && seen[k]) continue; if (k) seen[k] = 1; list.push(mgmt[i]); }
     var top = 0;
-    for (var w = 0; w < works.length; w++) if ((works[w].views||0) > top) top = works[w].views;
-    setKicker(["AI 작품", works.length+"편"]);
-    setFacts([[String(works.length),"작품"],[top ? kfmt(top) : "—","최고 조회수"],
-              [fmtGen(j.generated).slice(0,10)||"—","수집"]]);
+    for (i = 0; i < mgmt.length; i++){ if ((mgmt[i].views||0) > top) top = mgmt[i].views; }
+    setKicker(["AI 작품", list.length+"편"]);
+    setFacts([[String(list.length),"작품"],[top ? kfmt(top) : "—","최고 조회수"],
+              [(j ? fmtGen(j.generated).slice(0,10) : "") || "—","수집"]]);
     host.innerHTML =
-      sectionHead("Showcase","AI로 만든<br>영상 작품.", esc(fmtGen(j.generated))+" 기준.",
-        "<b>"+works.length+"</b>편")+
-      (works.length ? videoCards(works) : emptyNote("아직 모인 영상이 없습니다."));
+      sectionHead("Showcase","AI로 만든<br>영상 작품.",
+        (j ? esc(fmtGen(j.generated))+" 기준." : "관리자가 고른 작품입니다."),
+        "<b>"+list.length+"</b>편")+
+      (list.length ? videoCards(list) : emptyNote("아직 모인 영상이 없습니다."));
     observeReveal();
-  }).catch(function(){
+  })["catch"](function(){
     if (curRoute()!=="aivideo" || !C.contains(host)) return;
     setKicker(["연결 준비 중"]);
     setFacts([["—","작품"],["—","최고 조회수"],["—","수집"]]);
@@ -4314,8 +4364,8 @@ var WP_LINK_MAX = 200;     /* rules: link <= 200 */
 var WP_PHOTO_MAX = 50000;  /* rules: photoURL <= 50000 — 업로드한 아바타(축소 data URL)를 담을 크기 */
 var WK_TITLE_MAX = 60;     /* rules: title <= 60 */
 var WK_DAY_MAX = 3;        /* 하루 등록 상한 — 화면에서 센다(아래 wkCountToday 주석) */
-var WK_PAGE = 100;   /* 갤러리 표시 한도(대표 2026-08-17: 등록하는 대로 계속 보이게 12→100).
-                        100 근처로 늘면 "더 보기" 페이지네이션으로 바꾼다. */
+var WK_PAGE = 100;   /* 갤러리 한 페이지 크기(대표 2026-08-17). 상한이 아니다 — 이만큼 꽉 차면
+                        아래 "더 보기"(무한 스크롤 sentinel · 폴백 버튼)로 계속 이어 받는다. */
 var WK_HOME = 4;           /* 홈에 보여줄 최근 작품 수 */
 
 var wpMine;                /* 내 프로필 — undefined: 아직 모름 · null: 없음 */
@@ -5224,8 +5274,11 @@ function wkDelete(el){
    칸은 셋(주소·제목·관련 공모전)뿐이고 공모전은 선택이다. 본인 작품 확인은 체크 하나.
    프로필이 없으면 등록 대신 프로필부터 만들게 한다 — 작품에 이름을 걸 곳이 프로필뿐이라
    (구글 이름·메일은 쓰지 않는다) 순서가 이렇게 된다. */
-function wkForm(host, done){
+function wkForm(host, done, opt){
   if (!host) return;
+  opt = opt || {};
+  var coll = opt.coll || "works";   /* 기본은 갤러리(works). 작품소개 관리자 폼은 picks 로 저장한다 */
+  var isPick = coll === "picks";
   if (!bdUser){
     host.innerHTML = "<div class='bd-composer'>"+
       "<p class='bd-lead' style='margin-top:0'>내 작품 올리기</p>"+
@@ -5235,7 +5288,7 @@ function wkForm(host, done){
   }
   if (wpMine === undefined){
     host.innerHTML = "<div class='bd-composer'>"+emptyNote("확인하는 중입니다.")+"</div>";
-    wpMineLoad().then(function(){ if (C.contains(host)) wkForm(host, done); });
+    wpMineLoad().then(function(){ if (C.contains(host)) wkForm(host, done, opt); });
     return;
   }
   /* ⚠️ 프로필이 있든 없든 여기서 막지 않는다. 예전에는 "먼저 프로필을 만들어 주세요"로
@@ -5243,7 +5296,7 @@ function wkForm(host, done){
      대표가 "작품 갤러리 올릴 수 없음"이라고 한 지점이다(2026-08-15).
      프로필은 로그인할 때 저절로 만들어지고(wpAutoProfile), 없어도 올리는 데 지장이 없다. */
   host.innerHTML = "<div class='bd-composer'>"+
-    "<p class='bd-lead' style='margin-top:0'>내 작품 올리기</p>"+
+    "<p class='bd-lead' style='margin-top:0'>"+(isPick ? "작품 소개에 올리기" : "내 작품 올리기")+"</p>"+
     "<div class='pf-form'>"+
       "<label class='pf-lab'>작품 주소"+
         "<input class='bd-in' type='url' inputmode='url' maxlength='300' data-wkurl"+
@@ -5257,7 +5310,7 @@ function wkForm(host, done){
     "</div>"+
     "<p class='bd-msg' data-wkmsg></p>"+
     "<div class='bd-cfoot'>"+
-      "<label class='bd-hint'><input type='checkbox' data-wkown> 본인이 만든 작품입니다</label>"+
+      (isPick ? "" : "<label class='bd-hint'><input type='checkbox' data-wkown> 본인이 만든 작품입니다</label>")+
       "<button type='button' class='btn' data-wksend>등록</button>"+
     "</div></div>";
   var urlEl = host.querySelector("[data-wkurl]");
@@ -5284,15 +5337,17 @@ function wkForm(host, done){
     if (title.length < 1 || title.length > WK_TITLE_MAX){
       msg.textContent = "제목은 1자 이상 "+WK_TITLE_MAX+"자 이하로 적어 주세요."; return;
     }
-    if (!ownEl.checked){ msg.textContent = "본인이 만든 작품인지 확인해 주세요."; return; }
+    if (!isPick && (!ownEl || !ownEl.checked)){ msg.textContent = "본인이 만든 작품인지 확인해 주세요."; return; }
     send.disabled = true; msg.textContent = "등록하는 중입니다.";
-    wkCountToday().then(function(n){
-      if (n >= WK_DAY_MAX){
+    /* 갤러리(works)만 하루 상한을 센다. 관리자 큐레이션(picks)에는 상한을 두지 않는다 */
+    var guard = isPick ? Promise.resolve(0) : wkCountToday();
+    guard.then(function(n){
+      if (!isPick && n >= WK_DAY_MAX){
         send.disabled = false;
         msg.textContent = "하루에 "+WK_DAY_MAX+"건까지 등록하실 수 있습니다.";
         return;
       }
-      return fbDb.collection("works").add({
+      return fbDb.collection(coll).add({
         uid: bdUser.uid,
         title: title,
         url: wkCanon(v.kind, v.id),
@@ -5301,7 +5356,7 @@ function wkForm(host, done){
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
         likeCount: 0   /* 규칙이 0 을 요구한다 — 처음부터 부풀린 값으로 만들 수 없게 */
       }).then(function(){
-        urlEl.value = ""; titleEl.value = ""; ctEl.value = ""; ownEl.checked = false;
+        urlEl.value = ""; titleEl.value = ""; ctEl.value = ""; if (ownEl) ownEl.checked = false;
         send.disabled = false; msg.textContent = "";
         bdToast("등록했습니다");
         if (done) done();
@@ -5470,8 +5525,9 @@ function wkListView(formEl, rows){
   if (!fbReady()){ rows.innerHTML = emptyNote("작품 등록 준비 중입니다."); return; }
   fbInit().then(function(){
     if (curRoute()!=="gallery" || !C.contains(rows)) return;
-    if (wkFormOpen) wkForm(formEl, function(){ wkLoad(rows); });
+    if (wkFormOpen) wkForm(formEl, function(){ wkReset(); wkLoad(rows); });
     else if (formEl) formEl.innerHTML = "";
+    wkReset();
     wkLoad(rows);
   }, function(e){
     if (!C.contains(rows)) return;
@@ -5482,44 +5538,94 @@ function wkListView(formEl, rows){
 /* 한글 자모 분해형(NFD)을 합쳐진 형(NFC)으로. 맥에서 올린 제목은 자모가 분해돼 있어
    그대로 비교하면 같은 글자도 안 맞는다. normalize 없는 옛 브라우저는 원문 그대로 둔다. */
 function wkNfc(s){ s = String(s || ""); return s.normalize ? s.normalize("NFC") : s; }
+/* 페이지네이션 상태 — 게시판(bdCursor/bdMore/bdBusy)과 같은 방식이다. 폼을 여닫으면
+   renderGallery 가 다시 불려 처음부터 받는다. WK_PAGE 는 이제 상한이 아니라 페이지 크기다. */
+var wkCursor = null, wkMore = false, wkBusy = false;
+function wkReset(){ wkFeed = []; wkCursor = null; wkMore = false; wkBusy = false; }
+/* 대표 지시(2026-08-17): 이 두 작품은 갤러리 맨 아래로 내린다. 나머지는 최신순 그대로.
+   createdAt 은 서버 고정값이라 못 바꾸므로 화면에서 정렬로 내린다(제목 포함 매칭).
+   ⚠️ 맥에서 올린 제목은 한글이 자모 분해형(NFD)이라 NFC 로 맞춘 뒤 비교한다.
+   'The Last Signal' 은 영문 제목이라 'Last Signal' 로 잡는다.
+   페이지네이션과 안 싸우게 누적 목록(wkFeed)에 그릴 때마다 적용한다. */
+function wkSort(list){
+  var SINK = ["혈계", "Last Signal"];
+  var keep = [], sink = [], i, k, t, s;
+  for (i = 0; i < list.length; i++){
+    t = wkNfc((list[i] && list[i].title) || ""); s = false;
+    for (k = 0; k < SINK.length; k++){ if (t.indexOf(wkNfc(SINK[k])) >= 0){ s = true; break; } }
+    (s ? sink : keep).push(list[i]);
+  }
+  return keep.concat(sink);
+}
+/* 누적 목록을 이어 받는다 — WK_PAGE 만큼 받고, 그만큼 꽉 차면 아래 "더 보기"(무한 스크롤
+   sentinel · 폴백 버튼)로 다음 페이지를 잇는다. 상한이 없다(대표 지시 2026-08-17). */
 function wkLoad(rows){
-  Promise.all([
-    fbDb.collection("works").orderBy("createdAt","desc").limit(WK_PAGE).get(),
-    wpContestMap()["catch"](function(){ return {}; })
-  ]).then(function(r){
-    if (curRoute()!=="gallery" || !C.contains(rows)) return;
-    var got = [], who = {};
-    r[0].forEach(function(d){ var o = d.data()||{}; o.id = d.id; got.push(o); });
-    /* 대표 지시(2026-08-17): 이 두 작품은 갤러리 맨 아래로 내린다. 나머지는 최신순 그대로.
-       createdAt 은 서버 고정값이라 못 바꾸므로 화면에서 정렬로 내린다(제목 포함 매칭).
-       ⚠️ 맥에서 올린 제목은 한글이 자모 분해형(NFD)이라 NFC 로 맞춘 뒤 비교한다.
-       'The Last Signal' 은 영문 제목이라 'Last Signal' 로 잡는다. */
-    var WK_SINK = ["혈계", "Last Signal"];
-    var _keep = [], _sink = [];
-    got.forEach(function(w){
-      var t = wkNfc((w && w.title) || ""), s = false, i;
-      for (i=0;i<WK_SINK.length;i++){ if (t.indexOf(wkNfc(WK_SINK[i])) >= 0){ s = true; break; } }
-      (s ? _sink : _keep).push(w);
+  if (!rows.querySelector("[data-wkgrid]")){
+    rows.innerHTML = "<div data-wkgrid></div><div class='bd-more' data-wkmore></div>";
+  }
+  var gridEl = rows.querySelector("[data-wkgrid]");
+  var moreEl = rows.querySelector("[data-wkmore]");
+  var hasIo = ("IntersectionObserver" in window);
+  var sentIo = null;
+  function watchSentinel(){
+    if (sentIo){ sentIo.disconnect(); sentIo = null; }
+    if (!wkMore || !hasIo) return;
+    var s = moreEl.querySelector("[data-sentinel]");
+    if (!s) return;
+    sentIo = new IntersectionObserver(function(en){
+      if (en[0] && en[0].isIntersecting) load(false);
+    }, { rootMargin:"400px" });
+    sentIo.observe(s);
+  }
+  function paint(){
+    var list = wkSort(wkFeed);
+    gridEl.innerHTML = list.length ? wkGrid(list)
+      : "<div class='bd-empty'><p>아직 올라온 작품이 없습니다. 첫 작품을 올려 보세요.</p></div>";
+    moreEl.innerHTML = !wkMore ? ""
+      : (hasIo ? "<span class='bd-sentinel' data-sentinel></span><span class='bd-loading'>더 불러오는 중…</span>"
+               : "<button type='button' class='btn' data-loadmore>더 보기</button>");
+    var mb = moreEl.querySelector("[data-loadmore]");
+    if (mb) mb.onclick = function(){ load(false); };
+    watchSentinel();
+  }
+  function load(first){
+    if (wkBusy) return;
+    wkBusy = true;
+    if (first){ if (!wkFeed.length) gridEl.innerHTML = emptyNote("작품을 불러오는 중입니다."); wkCursor = null; }
+    var q = fbDb.collection("works").orderBy("createdAt","desc");
+    if (!first && wkCursor) q = q.startAfter(wkCursor);
+    Promise.all([
+      q.limit(WK_PAGE).get(),
+      first ? wpContestMap()["catch"](function(){ return {}; }) : Promise.resolve(null)
+    ]).then(function(res){
+      var sn = res[0];
+      if (curRoute()!=="gallery" || !C.contains(rows)){ wkBusy = false; return; }
+      var got = [];
+      sn.forEach(function(d){ var o = d.data()||{}; o.id = d.id; got.push(o); });
+      if (sn.docs && sn.docs.length) wkCursor = sn.docs[sn.docs.length-1];
+      wkMore = !!(sn.docs && sn.docs.length === WK_PAGE);
+      wkFeed = first ? got : wkFeed.concat(got);
+      /* 작성자 이름은 프로필에만 있다. 새 페이지 몫을 먼저 받아 두고 그린다 —
+         카드를 그린 뒤에 이름을 끼워 넣으면 글자가 늦게 튀어 들어온다. */
+      return wpFetchMany(got).then(function(){
+        wkBusy = false;
+        if (curRoute()!=="gallery" || !C.contains(rows)) return;
+        var who = {};
+        wkFeed.forEach(function(w){ if (w.uid) who[w.uid] = 1; });
+        setKicker(["AI 작품", wkFeed.length+"편"]);
+        setFacts([[String(wkFeed.length),"작품"],[String(Object.keys(who).length),"만든 사람"],
+                  [wkFeed.length ? bdWhen(wkFeed[0].createdAt) : "—","최근 등록"]]);
+        paint();
+        wkPrefetchLikes(got);
+        observeReveal();
+      });
+    }, function(e){
+      wkBusy = false;
+      if (curRoute()!=="gallery" || !C.contains(rows)) return;
+      bdQueryFail(rows, e, function(){ wkReset(); wkLoad(rows); });
     });
-    got = _keep.concat(_sink);
-    got.forEach(function(w){ if (w.uid) who[w.uid] = 1; });
-    wkFeed = got;
-    setKicker(["AI 작품", got.length+"편"]);
-    setFacts([[String(got.length),"작품"],[String(Object.keys(who).length),"만든 사람"],
-              [got.length ? bdWhen(got[0].createdAt) : "—","최근 등록"]]);
-    /* 작성자 이름은 프로필에만 있다. 먼저 다 받아 두고 한 번에 그린다 —
-       카드를 그린 뒤에 이름을 끼워 넣으면 글자가 늦게 튀어 들어온다. */
-    return wpFetchMany(got).then(function(){
-      if (!C.contains(rows)) return;
-      rows.innerHTML = got.length ? wkGrid(got)
-        : "<div class='bd-empty'><p>아직 올라온 작품이 없습니다. 첫 작품을 올려 보세요.</p></div>";
-      wkPrefetchLikes(got);
-      observeReveal();
-    });
-  }, function(e){
-    if (!C.contains(rows)) return;
-    bdQueryFail(rows, e, function(){ wkLoad(rows); });
-  });
+  }
+  load(true);
 }
 /* ============================================================================
    상단바 오른쪽 — 검색 · 로그인/가입

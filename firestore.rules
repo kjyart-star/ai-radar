@@ -257,6 +257,41 @@ service cloud.firestore {
       }
     }
 
+    /* ---------------- 작품 소개(관리자 큐레이션) ----------------
+       작품 갤러리(works, 회원 누구나 업로드)와 분리된, 관리자 한 사람이 고른 작품 컬렉션입니다.
+       읽기는 누구나(작품소개 화면이 로그인 없이 보여야 함), 쓰기는 관리자(kjyart@gmail.com)만.
+       저장 모양은 works 와 같습니다 — 화면이 같은 폼(wkForm)을 재사용하기 때문입니다.
+       그래서 create 검증도 works 와 같은 모양을 요구하되, 관리자 이메일 조건을 하나 더 겁니다.
+       (관리시스템 30편 캡에서 독립해 무제한으로 쌓기 위한 컬렉션입니다 — 대표 지시 2026-08-17.) */
+    match /picks/{id} {
+
+      allow read: if true;
+
+      allow create: if request.auth != null
+                    && request.auth.token.email == 'kjyart@gmail.com'
+                    && request.resource.data.keys()
+                         .hasOnly(['uid','title','url','videoId','contestSlug','createdAt','likeCount'])
+                    && request.resource.data.uid == request.auth.uid
+                    && request.resource.data.title is string
+                    && request.resource.data.title.size() > 0
+                    && request.resource.data.title.size() <= 60
+                    && request.resource.data.url is string
+                    && (request.resource.data.url
+                          .matches('^https://www\\.youtube\\.com/watch\\?v=[A-Za-z0-9_-]{6,20}$')
+                     || request.resource.data.url
+                          .matches('^https://vimeo\\.com/[0-9]{6,12}$'))
+                    && request.resource.data.videoId is string
+                    && request.resource.data.videoId.matches('^[A-Za-z0-9_-]{6,20}$')
+                    && request.resource.data.contestSlug is string
+                    && request.resource.data.contestSlug.size() <= 120
+                    && request.resource.data.likeCount == 0
+                    && request.resource.data.createdAt == request.time;
+
+      /* 수정·삭제는 관리자만. 큐레이션은 한 사람 몫이라 좋아요·소유자 분기를 두지 않습니다. */
+      allow update, delete: if request.auth != null
+                    && request.auth.token.email == 'kjyart@gmail.com';
+    }
+
     /* ---------------- 담은 것(내 계획) ----------------
        ⚠️ 이 컬렉션은 공개하지 않습니다. 남이 무엇을 담았는지 보이면 안 됩니다 —
        무엇에 지원하려는지가 그대로 드러나는 값입니다.
