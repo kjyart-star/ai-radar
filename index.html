@@ -1361,7 +1361,7 @@ function linkify(s){
    [썸네일 | 제목·설명·링크] 가로 카드로 변환 (유튜브=영상 썸네일, 뉴스=언론사 아이콘/기사 사진) */
 function richReport(s){
   var lines = String(s==null?"":s).replace(/\*\*/g,"").split("\n");
-  var out = [], cardBuf = [];
+  var out = [], cardBuf = [], seenT = [];
   /* 연속된 카드 라인은 2열 그리드(card-grid)로 묶는다 */
   function flushCards(){
     if (cardBuf.length){
@@ -1386,6 +1386,22 @@ function richReport(s){
       var dash = body.indexOf(" — "); if (dash < 0) dash = body.indexOf(" - ");
       if (dash > -1){ title = body.slice(0,dash).trim(); desc = body.slice(dash+3).trim(); }
       var ym = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([A-Za-z0-9_-]{6,20})/);
+      /* 같은 사건을 여러 언론사가 다룬 근접 중복 기사는 하나만 보인다(대표 2026-08-17).
+         언론사마다 제목을 다르게 쓰고 앞에 수식을 붙이기도 해서("AI가 화면 밖 현실로…서울 AI 허브…"
+         vs "서울 AI 허브, 22일…") 앞부분 비교로는 못 잡는다. 단어(토큰)를 얼마나 공유하는지로 본다 —
+         짧은 쪽 단어의 60% 이상을 공유하면 같은 기사로 본다. 유튜브(ym)는 규칙에서 뺀다. */
+      if (!ym){
+        var _toks = String(title).toLowerCase().split(/[^가-힣a-z0-9]+/)
+                      .filter(function(w){ return w.length >= 2; });
+        var _dup = false;
+        for (var _si=0; _si<seenT.length && _toks.length>=3; _si++){
+          var _o = seenT[_si], _both = 0, _oi;
+          for (_oi=0; _oi<_toks.length; _oi++){ if (_o.indexOf(_toks[_oi]) >= 0) _both++; }
+          if (_both >= Math.min(_toks.length, _o.length) * 0.6){ _dup = true; break; }
+        }
+        if (_dup) continue;
+        if (_toks.length) seenT.push(_toks);
+      }
       var hh = url.match(/^https?:\/\/([^\/]+)/); var hst = hh ? hh[1].replace(/^www\./,"") : "";
       var img, cls, go;
       if (ym){ img = "https://i.ytimg.com/vi/"+ym[1]+"/mqdefault.jpg"; cls = "yt"; go = "youtube.com · 영상 보기"; }
@@ -2202,6 +2218,11 @@ function renderYoutube(){
   fetchAiVideos().catch(function(){ return null; }).then(function(j){
     if (curRoute()!=="youtube") return;
     var news = (j && j.news) || [], vibe = (j && j.vibe) || [];
+    /* 새 영상이 매일 위로 오도록 최신 업로드순으로 세운다(대표 2026-08-17). 관리시스템은
+       조회수 위주라 옛 인기영상이 위에 남았다. 업로드일이 없는 것은 뒤로. 더 많은 새 영상
+       확보(수집 폭)는 관리시스템 몫이라 여기선 있는 영상 안에서 신선한 것을 앞세운다. */
+    function byNew(a,b){ return String(b.published||"").localeCompare(String(a.published||"")); }
+    news = news.slice().sort(byNew); vibe = vibe.slice().sort(byNew);
     var briefs = sortedReports()
       .filter(function(r){ return !!ytSectionOf(r.content); })
       .slice(0, 30);
