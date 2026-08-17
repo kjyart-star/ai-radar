@@ -480,6 +480,8 @@
            background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14'/></svg>"); }
   .av-pick:hover .av-del{ opacity:1; }
   .av-del:hover{ background:#e5442f; border-color:#e5442f; opacity:1; box-shadow:0 3px 13px rgba(217,75,58,.42); }
+  /* 삭제 버튼이 긴 제목 위로 겹치지 않게 — 관리자 카드의 제목만 오른쪽을 비운다 */
+  .av-pick .ic-title{ padding-right:62px; }
   button.yt-thumb{ text-align:left; }
   .item-card{ display:grid; grid-template-columns:184px 1fr; gap:15px; align-items:start;
               border:1px solid var(--line-light); padding:13px;
@@ -3059,6 +3061,28 @@ function avPicksLoad(){
     var a = []; sn.forEach(function(d){ a.push(avPickCard(d.data()||{}, d.id)); }); return a;
   })["catch"](function(){ return []; });   /* picks 가 아직 없거나 못 읽어도 수집 영상은 나와야 한다 */
 }
+/* 정적 소스(data/aivideo-extra.json) — 대표가 고른 유튜브 작품. 수신부가 30편으로 회전해
+   오래된 게 밀려나도 이 목록은 항상 보인다. 병합 때 avKey 로 수신부와 겹치면 수신부가 이겨
+   (조회수·게시일이 있는 쪽) 한 번만 나온다. 삭제는 _pickId 가 없으므로 hidden(숨김)으로 내린다. */
+function avExtraLoad(){
+  return fetch(BASE+"data/aivideo-extra.json", { cache:"no-store" })
+    .then(function(r){ return r.ok ? r.json() : []; })
+    .then(function(a){
+      if (!a || !a.length) return [];
+      var out = [], i, o;
+      for (i = 0; i < a.length; i++){
+        o = a[i] || {};
+        if (!o.url) continue;
+        out.push({
+          title: o.title || "",
+          url: o.url,
+          channel: o.channel || "",
+          thumbnail: o.videoId ? "https://i.ytimg.com/vi/"+encodeURIComponent(String(o.videoId))+"/mqdefault.jpg" : ""
+        });
+      }
+      return out;
+    }, function(){ return []; });
+}
 /* 관리자가 "삭제"로 내린 작품들의 숨김 키 집합(hidden 컬렉션). 병합 목록을 이 집합으로 거른다.
    못 읽어도(로그인 안 함·규칙 등) 빈 집합이라 30편은 그대로 나온다. */
 var avHidden = {};
@@ -3143,15 +3167,18 @@ function avPickView(host, formHost){
   Promise.all([
     avPicksLoad(),
     fetchAiVideos().then(function(j){ return j; }, function(){ return null; }),
-    avHiddenLoad()
+    avHiddenLoad(),
+    avExtraLoad()
   ]).then(function(r){
     if (curRoute()!=="aivideo" || !C.contains(host)) return;
-    var picks = r[0] || [], j = r[1] || null;
+    var picks = r[0] || [], j = r[1] || null, extra = r[3] || [];
     avHidden = r[2] || {};
     var mgmt = (j && (j.works || (j.domestic||[]).concat(j.overseas||[]))) || [];
     var seen = {}, list = [], i, k;
     for (i = 0; i < picks.length; i++){ if (avHidden[avHideKey(picks[i])]) continue; k = avKey(picks[i]); if (k) seen[k] = 1; list.push(picks[i]); }
     for (i = 0; i < mgmt.length; i++){ if (avHidden[avHideKey(mgmt[i])]) continue; k = avKey(mgmt[i]); if (k && seen[k]) continue; if (k) seen[k] = 1; list.push(mgmt[i]); }
+    /* 정적 소스는 수신부 뒤에 병합 — 이미 나온 것(수신부 우선)은 건너뛴다 */
+    for (i = 0; i < extra.length; i++){ if (avHidden[avHideKey(extra[i])]) continue; k = avKey(extra[i]); if (k && seen[k]) continue; if (k) seen[k] = 1; list.push(extra[i]); }
     var top = 0;
     for (i = 0; i < mgmt.length; i++){ if ((mgmt[i].views||0) > top) top = mgmt[i].views; }
     setKicker(["AI 작품", list.length+"편"]);
