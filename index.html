@@ -1006,6 +1006,9 @@
        column 대신 wrap 을 쓰는 이유는 위 줄에 두 덩어리를 양끝으로 놓기 위해서다. */
     .nav{ flex-wrap:wrap; align-items:center; justify-content:space-between; gap:0;
           padding:0 18px; }
+    /* 좌측정렬용 래퍼 nav-inner 가 실제 flex 부모다. 모바일 2줄 접기(메뉴가 아래 줄로)는
+       여기서 일어나야 한다 — nav-inner 에 wrap 이 없으면 메뉴가 안 접히고 삐져나온다. */
+    .nav-inner{ flex-wrap:wrap; gap:0; }
     .brand{ height:52px; }
     .nav-right{ height:52px; }
     /* 아래 줄로 내린다. flex-basis 를 100%+36px 로 잡아야 아래 음수 마진(-18px)과
