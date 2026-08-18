@@ -34,31 +34,29 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
  * 주석에 채널 이름을 남긴다. 새 채널을 넣을 땐 여기 한 줄만 추가하면 된다.
  */
 
-/* News 군 — AI 창작/영상 채널 */
+/* News 군 — AI 뉴스/정보 채널 (AI 소식·모델 발표·연구 해설 위주. 영상 창작 채널 아님)
+   channelId 는 각 채널 페이지의 <link rel="canonical" .../channel/UC...> 로 해석·검증했다. */
 const NEWS_CHANNELS = [
-  ["전조 INDEX", "UCKnv_2-6K3F5BB8fXup8hfA"],
-  ["Higgsfield AI", "UCh13OyDSm-Kb8ij3yZArtFg"],
-  ["Gossip Goblin", "UC4oOA0pU7YvHPGOHubo2chg"],
-  ["Director Dave Clark", "UCqrWkLKwRKNZRbbJXVEvAjw"],
-  ["Particle Panic", "UC-tCW7sRP5KYa791o-onKtg"],
-  ["Pizza Later", "UCkEKwSaDElpHBVv0g3koF7w"],
-  ["MetaPuppet", "UCsqod3mDyrhIxy8QoZRn0DA"],
-  ["Skim On West", "UCHB3rzoUYi0_ArFvb__nRDQ"],
-  ["JOEY", "UCG0sRL6J1x62Y-FQTrJmP1w"],
+  ["Matthew Berman", "UCawZsQWqfGSbCI5yjkdVkTA"],
+  ["Wes Roth", "UCqcbQf6yw5KzRoDDcZ_wBSw"],
+  ["The AI Advantage", "UCHhYXsLBEVVnbvsq57n1MTQ"],
+  ["TheAIGRID", "UCbY9xX3_jW5c2fjlZVBI4cg"],
+  ["AI Explained", "UCNJ1Ymd5yFuUPtn21xtRbbw"],
+  ["Matt Wolfe", "UChpleBmo18P08aKCIgti38g"],
+  ["bycloud", "UC6r0JH23PKZfogSwn2Q-oMw"],
+  ["Two Minute Papers", "UCbfYPyITQ-7l4upoX8nvctg"],
+  ["안될공학", "UCeN2YeJcBCRJoXgzF_OU3qw"],   /* 국내 AI/테크 뉴스 */
 ];
 
 /* Vibe 군 — AI 코딩/바이브코딩 채널 */
 const VIBE_CHANNELS = [
   ["IndyDevDan", "UC_x36zCEGilGpB1m-V4gmjg"],
-  ["Riley Brown", "UCMcoud_ZW7cfxeIugBflSBw"],
-  ["AI Jason", "UCrXSVX9a1mj8l0CMLwKgMVw"],
-  ["Matthew Berman", "UCawZsQWqfGSbCI5yjkdVkTA"],
   ["Cole Medin", "UCMwVTLZIRRUyyVrkjDpn4pA"],
   ["Volo Builds", "UCBr1IoxBAF9RDPdTzb6459g"],
+  ["AI Jason", "UCrXSVX9a1mj8l0CMLwKgMVw"],
+  ["Riley Brown", "UCMcoud_ZW7cfxeIugBflSBw"],
   ["Greg Isenberg", "UCPjNBjflYl0-HQtUvOx0Ibw"],
-  ["조코딩 JoCoding", "UCYaDkwVaOhuoe_LuFr3lWkA"],
-  ["The AI Advantage", "UCHhYXsLBEVVnbvsq57n1MTQ"],
-  ["Wes Roth", "UCqcbQf6yw5KzRoDDcZ_wBSw"],
+  ["조코딩 JoCoding", "UCQNE2JmbasNYbjGAcuBiRRg"],
 ];
 
 const NEWS_CAP = 40;   /* 각 군 상위 N */
@@ -95,6 +93,28 @@ async function get(url, opts) {
     }
   }
   throw last;
+}
+
+/* 쇼츠 판별: /shorts/<id> 를 리다이렉트 따라가지 않고 HEAD 로 친다.
+   롱폼이면 유튜브가 /watch 로 303 리다이렉트, 쇼츠면 그 자리(200)로 응답한다.
+     → status 200 = 쇼츠(제외),  303 = 롱폼(유지).
+   판별 요청이 실패(네트워크/타임아웃)하면 '유지'로 본다 — 에러로 롱폼까지 과다 제외하지 않는다. */
+async function isShort(videoId, { timeout = 15000 } = {}) {
+  const ac = new AbortController();
+  const t = setTimeout(() => ac.abort(), timeout);
+  try {
+    const r = await fetch("https://www.youtube.com/shorts/" + videoId, {
+      method: "HEAD",
+      redirect: "manual",
+      signal: ac.signal,
+      headers: { "user-agent": UA },
+    });
+    return r.status === 200;   /* 200 이면 쇼츠 */
+  } catch (e) {
+    return false;              /* 판별 실패 → 유지 */
+  } finally {
+    clearTimeout(t);
+  }
 }
 
 function unwrapCdata(s) {
@@ -161,17 +181,21 @@ async function collectGroup(label, channels, cap) {
       log("  ! " + name + ": 실패 (" + e.message + ")");
     }
   }
-  /* 최신 업로드순 정렬 → videoId 중복 제거 → 상위 cap */
+  /* 최신 업로드순 정렬 → videoId 중복 제거 → 쇼츠 제외 → 상위 cap.
+     최신순으로 cap 을 채울 때까지만 쇼츠 판별을 돌려 요청 수를 줄인다. */
   items.sort((a, b) => String(b.published || "").localeCompare(String(a.published || "")));
   const seen = new Set();
   const dedup = [];
+  let shorts = 0;
   for (const it of items) {
     if (seen.has(it.videoId)) continue;
     seen.add(it.videoId);
+    if (await isShort(it.videoId)) { shorts++; continue; }
     dedup.push(it);
+    await sleep(120);   /* 쇼츠 판별 요청 간 간격 */
     if (dedup.length >= cap) break;
   }
-  log("  = " + label + ": 채널 " + okCh + "/" + channels.length + " · 영상 " + dedup.length + "개");
+  log("  = " + label + ": 채널 " + okCh + "/" + channels.length + " · 영상 " + dedup.length + "개 (쇼츠 " + shorts + "개 제외)");
   return dedup;
 }
 

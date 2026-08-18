@@ -11,6 +11,9 @@
 
 ---
 
+## v1.8.2 — 2026-08-18
+- **AI 유튜브: News군을 AI 뉴스 채널로 재구성 + 쇼츠 제외**(대표 지시). 기존 News군이 AI 영상 창작 채널(힉스필드·Director Dave Clark 등)이라 "뉴스"가 아니었음 → **AI 뉴스/정보 채널 9개**(Matthew Berman·Wes Roth·The AI Advantage·TheAIGRID·AI Explained·Matt Wolfe·bycloud·Two Minute Papers·안될공학)로 교체, 창작 채널은 WATCH에서 제거(작품소개용). Vibe군은 바이브코딩 7개. **쇼츠 제외**: /shorts/<id> HEAD 판별(200=쇼츠 제외, 303=롱폼)로 필터. (조코딩 channelId 오류도 바로잡음.)
+
 ## v1.8.1 — 2026-08-18
 - **유튜브 자체수집 데이터 유실 방지(병합)** — GitHub Actions IP에서 YouTube가 채널 RSS를 막아 CI 수집이 news 0건으로 오면, 빈 결과가 좋은 목록을 덮어써 화면이 비던 문제(대표 발견). 이제 수집 결과를 **기존 youtube.json과 videoId로 병합**(새 것 우선·최신순·cap)해서, 한 군이 0건이 와도 기존 목록은 유지하고 새 영상만 위에 얹음. 로컬 재수집으로 news 40·vibe 40 복구.
 
