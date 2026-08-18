@@ -17,7 +17,7 @@
  *   - 결과 JSON 에 generated(ISO) 를 넣는다. 비밀값을 쓰지 않는다(공개 엔드포인트뿐)
  */
 
-import { writeFileSync, existsSync, mkdirSync } from "node:fs";
+import { writeFileSync, readFileSync, existsSync, mkdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -188,12 +188,36 @@ function save(name, payload, count) {
   return true;
 }
 
+/* 기존 youtube.json 을 읽는다(없거나 깨지면 빈 값). */
+function readExisting() {
+  try { return JSON.parse(readFileSync(join(DATA, "youtube.json"), "utf8")); }
+  catch (e) { return {}; }
+}
+/* 새 수집과 기존 목록을 videoId 로 합친다(새 것 우선), 최신 업로드순 정렬, cap 로 자른다.
+   ⚠️ 깃허브 액션 IP 에서는 유튜브가 채널 RSS 를 자주 막아 일부(심하면 0)만 온다.
+   그때 빈 결과로 덮으면 좋은 목록이 통째로 사라진다 — 그래서 항상 기존 것과 합쳐,
+   한 군이 0건이 와도 기존 목록은 그대로 남고, 새로 온 것만 위에 얹힌다. */
+function mergeGroup(fresh, old, cap) {
+  const seen = {}, out = [];
+  (fresh || []).concat(old || []).forEach(function (it) {
+    const id = it && it.videoId;
+    if (!id || seen[id]) return;
+    seen[id] = 1; out.push(it);
+  });
+  out.sort(function (a, b) { return String(b.published || "").localeCompare(String(a.published || "")); });
+  return out.slice(0, cap);
+}
+
 /* ---------- main ---------- */
 
 async function main() {
   const news = await collectGroup("News", NEWS_CHANNELS, NEWS_CAP);
   const vibe = await collectGroup("Vibe", VIBE_CHANNELS, VIBE_CAP);
-  save("youtube.json", { generated: NOW, news: news, vibe: vibe }, news.length + vibe.length);
+  const old = readExisting();
+  const mNews = mergeGroup(news, old.news, NEWS_CAP);
+  const mVibe = mergeGroup(vibe, old.vibe, VIBE_CAP);
+  log("  · 병합: news " + news.length + "→" + mNews.length + " · vibe " + vibe.length + "→" + mVibe.length);
+  save("youtube.json", { generated: NOW, news: mNews, vibe: mVibe }, mNews.length + mVibe.length);
 }
 
 main().catch((e) => {
