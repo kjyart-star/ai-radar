@@ -1,11 +1,21 @@
 {
- "generated": "2026-08-17T23:46:50.214Z",
+ "generated": "2026-08-18T05:38:48.191Z",
  "source": "Hacker News · r/artificial",
  "sources": [
   "Hacker News",
   "r/artificial"
  ],
  "items": [
+  {
+   "title": "I shipped a digital legacy app that builds an interactive AI version of you from months of recorded conversations",
+   "url": "https://www.reddit.com/r/artificial/comments/1vrf830/i_shipped_a_digital_legacy_app_that_builds_an/",
+   "date": "2026-08-18T04:41:59.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "A photo album can’t answer questions. That’s the entire problem, and it’s why voice notes and old videos stop being useful the moment you actually need something from them. EchoVault builds an Echo of",
+   "titleKo": "수개월 동안 녹음된 대화를 통해 대화형 AI 버전을 구축하는 디지털 레거시 앱을 배송했습니다."
+  },
   {
    "title": "Looking for the name of an old ai app",
    "url": "https://www.reddit.com/r/artificial/comments/1vr7dkg/looking_for_the_name_of_an_old_ai_app/",
@@ -47,16 +57,6 @@
    "titleKo": "SQL을 작성하고 자체 번호를 확인하며 모든 클레임이 발생한 쿼리를 인용하는 자체 호스팅 AI 분석가"
   },
   {
-   "title": "Could AI and the Internet Fulfill Prophecies of Control in Revelation?",
-   "url": "https://www.reddit.com/r/artificial/comments/1vr6ib6/could_ai_and_the_internet_fulfill_prophecies_of/",
-   "date": "2026-08-17T22:09:21.000Z",
-   "source": "r/artificial",
-   "points": null,
-   "comments": null,
-   "summary": "The internet is integral in most peoples lives around the world. It is conceivable that the 'Beast ', the system of governances described in Revelation in the end times, identified by the number 666, ",
-   "titleKo": "인공지능과 인터넷이 계시록의 통제 예언을 성취할 수 있을까?"
-  },
-  {
    "title": "Cursor replacement?",
    "url": "https://www.reddit.com/r/artificial/comments/1vr6bu7/cursor_replacement/",
    "date": "2026-08-17T22:02:10.000Z",
@@ -77,6 +77,16 @@
    "titleKo": "AI 상담원은 회사 카드를 보유해야 하나요?"
   },
   {
+   "title": "Israel creates fake think tank in likely attempt to dupe AI chatbots",
+   "url": "https://responsiblestatecraft.org/israel-influence-chatgpt/",
+   "date": "2026-08-17T20:46:10.000Z",
+   "source": "Hacker News",
+   "points": 282,
+   "comments": 154,
+   "summary": "",
+   "titleKo": "이스라엘은 인공지능 챗봇을 속이려는 시도로 가짜 싱크탱크를 만듭니다."
+  },
+  {
    "title": "Feels like AI quietly took over every security conversation we have",
    "url": "https://www.reddit.com/r/artificial/comments/1vr49j1/feels_like_ai_quietly_took_over_every_security/",
    "date": "2026-08-17T20:43:02.000Z",
@@ -91,8 +101,8 @@
    "url": "https://www.rickmanelius.com/p/aidr-ai-didnt-read",
    "date": "2026-08-17T19:47:15.000Z",
    "source": "Hacker News",
-   "points": 515,
-   "comments": 310,
+   "points": 730,
+   "comments": 468,
    "summary": "",
    "titleKo": "AI, DR (AI, 읽지 않음)"
   },
@@ -101,7 +111,7 @@
    "url": "https://arstechnica.com/tech-policy/2026/08/hidden-airtag-reveals-amazon-is-trashing-rare-books-to-train-ai/",
    "date": "2026-08-17T19:06:11.000Z",
    "source": "Hacker News",
-   "points": 126,
+   "points": 127,
    "comments": 6,
    "summary": "",
    "titleKo": "에어태그 (AirTag) 에 따르면 아마존은 AI 훈련을 위해 희귀 서적을 버리고 있습니다."
@@ -171,8 +181,8 @@
    "url": "https://speko.ai/",
    "date": "2026-08-17T15:36:18.000Z",
    "source": "Hacker News",
-   "points": 86,
-   "comments": 51,
+   "points": 99,
+   "comments": 58,
    "summary": "",
    "titleKo": "HN 출시: SPEKO (YC S26) – 음성 AI용 OpenRouter"
   },
@@ -181,8 +191,8 @@
    "url": "https://twitter.com/TheAhmadOsman/status/2065307070044234186",
    "date": "2026-08-17T15:24:34.000Z",
    "source": "Hacker News",
-   "points": 129,
-   "comments": 55,
+   "points": 141,
+   "comments": 57,
    "summary": "",
    "titleKo": "오픈 소스 AI에 대한 인류의 전쟁"
   },
@@ -191,7 +201,7 @@
    "url": "https://reason.com/volokh/2026/08/17/judges-allegedly-relying-wholly-on-ai-in-order-is-covered-by-judicial-immunity-court-rules/",
    "date": "2026-08-17T14:30:09.000Z",
    "source": "Hacker News",
-   "points": 51,
+   "points": 55,
    "comments": 48,
    "summary": "",
    "titleKo": "순서대로 AI에 전적으로 의존하는 판사는 사법 면책, 법원 규칙의 적용을 받습니다."
@@ -211,8 +221,8 @@
    "url": "https://www.wiz.io/blog/red-agent-snowflake-copilot-cicd-bug",
    "date": "2026-08-17T14:18:38.000Z",
    "source": "Hacker News",
-   "points": 303,
-   "comments": 123,
+   "points": 343,
+   "comments": 137,
    "summary": "",
    "titleKo": "AI로 생성된 GitHub Copilot \"Autofix\" 는 Snowflake의 JIRA를 손상시킬 수 있습니다."
   },
@@ -221,8 +231,8 @@
    "url": "https://www.librarian.net/notoai/",
    "date": "2026-08-17T14:07:56.000Z",
    "source": "Hacker News",
-   "points": 241,
-   "comments": 137,
+   "points": 272,
+   "comments": 165,
    "summary": "",
    "titleKo": "침입성 AI를 비활성화하거나 방지하는 방법"
   },
@@ -231,8 +241,8 @@
    "url": "https://www.404media.co/we-tracked-a-shipment-of-rare-books-it-ended-at-an-amazon-ai-training-facility/",
    "date": "2026-08-17T13:44:23.000Z",
    "source": "Hacker News",
-   "points": 127,
-   "comments": 283,
+   "points": 136,
+   "comments": 293,
    "summary": "",
    "titleKo": "희귀 서적 배송을 추적했습니다. Amazon AI 교육 시설에서 종료되었습니다."
   },
@@ -241,8 +251,8 @@
    "url": "https://mkornreich.me/projects/sokoban/",
    "date": "2026-08-17T13:07:00.000Z",
    "source": "Hacker News",
-   "points": 66,
-   "comments": 40,
+   "points": 67,
+   "comments": 41,
    "summary": ""
   },
   {
@@ -254,6 +264,16 @@
    "comments": null,
    "summary": "I still remember those few days in 2023 when LK-99 looked like it might actually be a room-temperature, ambient-pressure superconductor. For a brief moment, it felt like we were watching one of those ",
    "titleKo": "오늘날의 인공지능 모델이 우리에게 \"LK-99의 순간\" 을 줄 수 있을까요? 하지만 이번에는 진짜일까요?"
+  },
+  {
+   "title": "Anthropic says its AI models hacked 3 organizations during testing",
+   "url": "https://www.reddit.com/r/artificial/comments/1vqqus9/anthropic_says_its_ai_models_hacked_3/",
+   "date": "2026-08-17T12:23:56.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "submitted by /u/Traditional_Blood799 [link] [comments]",
+   "titleKo": "Anthropic은 AI 모델이 테스트 중 3개 조직을 해킹했다고 말합니다."
   },
   {
    "title": "Anyone here who is starting AI engineering self studies or has been on this track before.",
@@ -306,22 +326,12 @@
    "titleKo": "NVIDIA의 6년 된 A100 GPU가 여전히 수익을 올리는 이유"
   },
   {
-   "title": "Free GPT Plus",
-   "url": "https://www.reddit.com/r/artificial/comments/1vqfh1b/free_gpt_plus/",
-   "date": "2026-08-17T02:12:08.000Z",
-   "source": "r/artificial",
-   "points": null,
-   "comments": null,
-   "summary": "Guys, I'm now studying at Australia, the ChatGPT Plus is free for 1 month!!! https://preview.redd.it/4u5lhpi4gujh1.png?width=793&format=png&auto=webp&s=64532d27ce10cac69c33f337b11248fb8c356497 Remembe",
-   "titleKo": "무료 GPT Plus"
-  },
-  {
    "title": "On AI regulation and messaging",
    "url": "https://twitter.com/DarioAmodei/status/2088758816376807762",
    "date": "2026-08-17T01:59:56.000Z",
    "source": "Hacker News",
-   "points": 231,
-   "comments": 494,
+   "points": 236,
+   "comments": 504,
    "summary": "",
    "titleKo": "AI 규제 및 메시징에 대해"
   },
@@ -330,8 +340,8 @@
    "url": "https://futurism.com/artificial-intelligence/young-people-ai-ceos-executives-poll",
    "date": "2026-08-16T21:34:06.000Z",
    "source": "Hacker News",
-   "points": 147,
-   "comments": 177,
+   "points": 149,
+   "comments": 181,
    "summary": "",
    "titleKo": "젊은 사람들은 AI CEO를 너무 열정적으로 싫어해서 거의 믿기 어렵습니다."
   },
@@ -340,8 +350,8 @@
    "url": "https://www.cst.cam.ac.uk/news/red-queen-hypothesis-new-way-forward-self-improving-ai",
    "date": "2026-08-16T20:01:13.000Z",
    "source": "Hacker News",
-   "points": 95,
-   "comments": 26,
+   "points": 98,
+   "comments": 27,
    "summary": "",
    "titleKo": "붉은 여왕 가설 – 자기 개선 AI를 위한 새로운 길"
   },
@@ -350,7 +360,7 @@
    "url": "https://vectoral.com/blog/who-are-the-token-brokers",
    "date": "2026-08-16T14:44:55.000Z",
    "source": "Hacker News",
-   "points": 322,
+   "points": 323,
    "comments": 128,
    "summary": "",
    "titleKo": "AI 신용 재판매 경제"
@@ -360,7 +370,7 @@
    "url": "https://wildstatic.com/",
    "date": "2026-08-16T13:21:45.000Z",
    "source": "Hacker News",
-   "points": 80,
+   "points": 81,
    "comments": 69,
    "summary": "",
    "titleKo": "Show HN: 모든 사용자 간에 메모리가 공유되는 공용 AI"
@@ -370,7 +380,7 @@
    "url": "https://peterbloem.nl/blog/craft-coding",
    "date": "2026-08-16T10:31:36.000Z",
    "source": "Hacker News",
-   "points": 96,
+   "points": 97,
    "comments": 55,
    "summary": "",
    "titleKo": "분위기 없는 인공지능 코딩"
@@ -394,16 +404,6 @@
    "comments": 91,
    "summary": "",
    "titleKo": "신약 개발의 AI – 그것이 무엇인지, 우리가 서 있는 곳과 앞으로 나아갈 길"
-  },
-  {
-   "title": "AI isn’t outthinking mathematicians, it’s out-remembering them",
-   "url": "https://davidepiffer.com/p/ai-isnt-outthinking-mathematicians",
-   "date": "2026-08-15T18:13:02.000Z",
-   "source": "Hacker News",
-   "points": 628,
-   "comments": 497,
-   "summary": "",
-   "titleKo": "인공지능은 수학자들을 뛰어넘는 것이 아니라, 그들을 기억하는 것이다."
   }
  ]
 }

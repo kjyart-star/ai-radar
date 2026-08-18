@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-17T23:46:50.214Z",
+ "generated": "2026-08-18T05:38:48.191Z",
  "source": "arXiv cs.AI · GitHub · Hugging Face",
  "sources": [
   "arXiv cs.AI",
@@ -8,159 +8,159 @@
  ],
  "arxiv": [
   {
-   "title": "Decoding the Past: An Uncertainty-Aware Deep Learning Framework for Sex Attribution in Prehistoric Hand Stencils",
-   "url": "https://arxiv.org/abs/2608.14539v1",
-   "date": "2026-08-14T17:51:30.000Z",
-   "summary": "Determining the biological sex of the individuals who created Upper Paleolithic hand stencils remains a challenging problem due to the absence of ground truth, population differences between contemporary and prehistoric ",
-   "titleKo": "과거 해독: 선사 시대 핸드 스텐실의 성 귀속을 위한 불확실성 인식 딥 러닝 프레임워크"
+   "title": "Don't Drop the BATON: Long-Horizon Robot Manipulation via Agentic Subtask Exploration and Transition-aware Memory",
+   "url": "https://arxiv.org/abs/2608.16889v1",
+   "date": "2026-08-17T17:59:57.000Z",
+   "summary": "Long-horizon robot manipulation chains many contact-rich skills into one multi-stage task. Vision-language-action (VLA) models increasingly master the individual skills, yet the chain still fails: errors compound beyond ",
+   "titleKo": "지휘봉을 놓지 마세요: Agentic 하위 작업 탐색 및 전환 인식 메모리를 통한 Long-Horizon 로봇 조작"
   },
   {
-   "title": "Marionette: Predicting World States, Rendering Geometry, Painting Appearance",
-   "url": "https://arxiv.org/abs/2608.14530v1",
-   "date": "2026-08-14T17:48:16.000Z",
-   "summary": "Interactive game world models typically autoregress visual observations directly in pixel or latent space, forcing structured properties such as pose, geometry, and occlusion to be implicitly maintained by the same gener",
-   "titleKo": "마리오네트: 세계 국가 예측, 기하학 렌더링, 회화 외관"
+   "title": "Improving the matrix multiplication exponent with modern optimization and AlphaEvolve",
+   "url": "https://arxiv.org/abs/2608.16884v1",
+   "date": "2026-08-17T17:59:05.000Z",
+   "summary": "The current best bounds on the matrix multiplication exponent $ω$ are obtained through a refinement of the laser method called combination loss analysis (Duan et al., 2022; Williams et al., 2024; Alman et al., 2025). In ",
+   "titleKo": "현대 최적화 및 AlphaEvolve를 사용하여 행렬 곱셈 지수 개선"
   },
   {
-   "title": "Handover of In-Context Learning State Across Session Boundaries",
-   "url": "https://arxiv.org/abs/2608.14528v1",
-   "date": "2026-08-14T17:47:13.000Z",
-   "summary": "This study investigates the methodological and theoretical properties of session handover in applications that use large language models. A task may continue in a new session when the context reaches the model's input li",
-   "titleKo": "세션 경계를 넘어 직접 학습 상태 인계"
+   "title": "AutoSR: Automatic Symbolic Regression by Searching Research States",
+   "url": "https://arxiv.org/abs/2608.16876v1",
+   "date": "2026-08-17T17:55:26.000Z",
+   "summary": "We introduce Automatic Symbolic Regression (AutoSR), a fully automated system that instantiates Research-Space Symbolic Regression by searching persistent scientific investigations rather than isolated equations. Finite,",
+   "titleKo": "AutoSR: 연구 상태 검색을 통한 자동 기호 회귀"
   },
   {
-   "title": "Participatory Moral AI Is Not Neutral: The Invisible Hand of Developers",
-   "url": "https://arxiv.org/abs/2608.14522v1",
-   "date": "2026-08-14T17:43:16.000Z",
-   "summary": "As AI systems make more morally loaded decisions across society, one response has been moral preference elicitation. In this approach, researchers poll participants on hypothetical dilemmas and use the aggregated votes t",
-   "titleKo": "참여형 도덕적 AI는 중립적이지 않다: 개발자의 보이지 않는 손"
+   "title": "Towards Computational Provenance: Carrying Causal-State Evidence in Generated Text",
+   "url": "https://arxiv.org/abs/2608.16868v1",
+   "date": "2026-08-17T17:50:04.000Z",
+   "summary": "A language model's output does not by itself provide verifiable evidence about the internal computation that produced it. We study computational provenance: whether generated text can carry detectable evidence of which c",
+   "titleKo": "계산적 출처를 향하여: 생성된 텍스트에 인과-상태 증거를 담기"
   },
   {
-   "title": "Learning-to-Transition for Large-scale and High-Order MIMO Detection",
-   "url": "https://arxiv.org/abs/2608.14511v1",
-   "date": "2026-08-14T17:29:07.000Z",
-   "summary": "High-order multiple-input multiple-output (MIMO) detection requires efficient search over a large discrete symbol space while producing reliable soft information for channel decoding. This paper develops a learning-to-tr",
-   "titleKo": "대규모 및 고차원 MIMO 감지를 위한 학습-전환"
+   "title": "What Do Compliance Detectors Read? An Audit of Activation Probes and Guard Models",
+   "url": "https://arxiv.org/abs/2608.16852v1",
+   "date": "2026-08-17T17:37:07.000Z",
+   "summary": "Regulatory compliance monitoring in deployed language models is increasingly implemented as a legal and audit control, checking model outputs against written rules spanning data protection, healthcare, financial regulati",
+   "titleKo": "규정 준수 탐지기는 무엇을 읽나요? 활성화 프로브 및 가드 모델에 대한 감사"
   },
   {
-   "title": "Split the Labor: Separating Evidence Interpretation from Decision Aggregation",
-   "url": "https://arxiv.org/abs/2608.14509v1",
-   "date": "2026-08-14T17:24:55.000Z",
-   "summary": "Systems that ask a language model to reach a conclusion from many sources usually concatenate them into one prompt. This conflates two operations with different requirements. Interpreting a source rewards capacity and co",
-   "titleKo": "Split the Labor: 의사 결정 집계에서 증거 해석 분리"
+   "title": "Proteus: Incremental Memory Activation for Long-Context Sequence Modeling",
+   "url": "https://arxiv.org/abs/2608.16844v1",
+   "date": "2026-08-17T17:30:43.000Z",
+   "summary": "The quadratic cost of attention-based sequence models for long contexts has motivated a growing line of research on memory-based models that can compress context into a compact state. However, most existing memory models",
+   "titleKo": "Proteus: 긴 컨텍스트 시퀀스 모델링을 위한 증분 메모리 활성화"
   },
   {
-   "title": "RecipeNet: A Hierarchical Transformer for Recipe Data",
-   "url": "https://arxiv.org/abs/2608.14505v1",
-   "date": "2026-08-14T17:18:36.000Z",
-   "summary": "Recipe data arises in domains such as materials synthesis, pharmaceutical formulation, and industrial manufacturing, where procedures are represented as ordered sequences of steps containing heterogeneous structured fiel",
-   "titleKo": "RecipeNet: 레시피 데이터를 위한 계층적 변환기"
+   "title": "HAF: Adapting Generalist VLAs to Humanoid Whole-Body Loco-manipulation via Hierarchical Action Flow and Spectral Latent RL",
+   "url": "https://arxiv.org/abs/2608.16837v1",
+   "date": "2026-08-17T17:22:33.000Z",
+   "summary": "Humanoid robots hold great promise as general-purpose agents in human-centered environments, yet generalist vision-language-action (VLA) foundation models are not readily applicable to humanoid whole-body loco-manipulati",
+   "titleKo": "HAF: Hierarchical Action Flow 및 Spectral Latent RL을 통해 Generalist VLA를 Humanoid Whole-Body Loco-manipulation에 적용"
   },
   {
-   "title": "Universal Thermodynamic Interatomic Potentials for Crystalline Materials",
-   "url": "https://arxiv.org/abs/2608.14502v1",
-   "date": "2026-08-14T17:16:27.000Z",
-   "summary": "Free energies govern solid-state phase stability, yet computational materials discovery still relies largely on ground-state energies because free energy calculations require ensemble averages. We introduce the thermodyn",
-   "titleKo": "결정질 물질에 대한 범용 열역학 원자간 전위"
+   "title": "Model Hypnosis: Strong control of AI via additive subliminal effects",
+   "url": "https://arxiv.org/abs/2608.16834v1",
+   "date": "2026-08-17T17:20:10.000Z",
+   "summary": "We demonstrate that AI models are broadly susceptible to a phenomenon we call model hypnosis, in which individually weak and seemingly irrelevant cues in the prompt can be systematically combined to strongly control mode",
+   "titleKo": "모델 최면: 첨가제 subliminal 효과를 통해 AI의 강력한 제어"
   },
   {
-   "title": "Generating Benchmark Health Data Using a Tabular Diffusion Transformer",
-   "url": "https://arxiv.org/abs/2608.14496v1",
-   "date": "2026-08-14T17:10:44.000Z",
-   "summary": "Cross-Tabular Data Generation (CTDG) seeks to learn a generative model from multiple heterogeneous tables and produce new synthetic tabular datasets. However, existing synthetic tabular data generation methods are largel",
-   "titleKo": "테이블형 확산 변압기를 사용하여 벤치마크 상태 데이터 생성"
+   "title": "Policy Iteration with Human Feedback: Bringing Post-Training RL to In-context Learning",
+   "url": "https://arxiv.org/abs/2608.16831v1",
+   "date": "2026-08-17T17:16:43.000Z",
+   "summary": "Generative pretraining established reusable task representations; later work on language-based task conditioning and in-context learning showed that a fixed model could adapt its behavior from instructions and demonstrat",
+   "titleKo": "인간 피드백을 통한 정책 반복: 교육 후 RL을 상황에 맞는 학습으로 전환"
   },
   {
-   "title": "Optimal Scheduling of Road Maintenance Jobs Considering Impact on Traffic Flows",
-   "url": "https://arxiv.org/abs/2608.14491v1",
-   "date": "2026-08-14T17:07:14.000Z",
-   "summary": "Network-level maintenance planning requires repeated evaluations of equilibrium traffic flows under road capacity reductions. While equilibrium traffic assignment models are well established, their repeated solution quic",
-   "titleKo": "교통 흐름에 미치는 영향을 고려한 도로 유지 보수 작업의 최적 스케줄링"
+   "title": "CaliBench: Are the Stochastic Dynamics of Video World Models Physically Calibrated?",
+   "url": "https://arxiv.org/abs/2608.16829v1",
+   "date": "2026-08-17T17:14:50.000Z",
+   "summary": "Video world models approximate the stochastic distribution of physical outcomes through generative sampling, but existing benchmarks score individual generations or compare distributions coarsely over a whole dataset, le",
+   "titleKo": "CaliBench: 비디오 월드 모델의 확률 역학은 물리적으로 보정됩니까?"
   },
   {
-   "title": "Twin: Playing an Unknown Game with a Test-Time Digital Twin",
-   "url": "https://arxiv.org/abs/2608.14490v1",
-   "date": "2026-08-14T17:06:00.000Z",
-   "summary": "We present a Test-time World-model Inference (Twin) system, in which a frontier coding agent writes an executable world model for completing continual learning tasks, such as ARC-AGI-3 games. Traditional approaches hand-",
-   "titleKo": "트윈: 테스트 타임 디지털 트윈으로 알 수 없는 게임 플레이하기"
+   "title": "Quipu: A Governed Bitemporal Knowledge Graph Store",
+   "url": "https://arxiv.org/abs/2608.16813v1",
+   "date": "2026-08-17T17:04:29.000Z",
+   "summary": "Agents now write knowledge graphs, but knowledge-graph stores still carry defaults set when humans curated them: accept writes now and clean later, keep one time axis or none, treat every writer's facts as equally trustw",
+   "titleKo": "Quipu: 관리되는 Bitemporal 지식 그래프 스토어"
   },
   {
-   "title": "Ensuring Safe Physical AI in Urban Mobility via Hazard-Informed Synthesized Envelopes",
-   "url": "https://arxiv.org/abs/2608.14481v1",
-   "date": "2026-08-14T16:57:54.000Z",
-   "summary": "As heterogeneous robotic systems deploy across diverse urban zones, maintaining safety amid complex human-robot interactions remains a critical challenge. We present a unified framework that bridges systematic hazard ana",
-   "titleKo": "위험 정보에 입각한 합성 봉투를 통해 도시 이동성에서 안전한 물리적 AI 보장"
+   "title": "When State Becomes an Attack Surface: State-Semantic Injection in LLM-Driven Embodied Agents",
+   "url": "https://arxiv.org/abs/2608.16806v1",
+   "date": "2026-08-17T17:02:07.000Z",
+   "summary": "Large Language Models (LLMs) have demonstrated capabilities in in-context learning, task decomposition, step-by-step reasoning, and code generation, driving their gradual evolution from text generation models into the co",
+   "titleKo": "State가 Attack Surface가 될 때: LLM 구동 Embodied Agent에서 State-Semantic Injection"
   },
   {
-   "title": "LP-NAS: Linear Programming-based Neural Architecture Search",
-   "url": "https://arxiv.org/abs/2608.14472v1",
-   "date": "2026-08-14T16:53:11.000Z",
-   "summary": "Neural Architecture Search (NAS) aims to automate neural network architecture design, reducing reliance on human expertise. Among the various NAS methods, differentiable NAS has gained prominence due to its efficiency an",
-   "titleKo": "LP-NAS: 선형 프로그래밍 기반 신경 아키텍처 검색"
+   "title": "Diagnosing Dense Same-Class Attribute Misbinding in Large Vision-Language Models",
+   "url": "https://arxiv.org/abs/2608.16805v1",
+   "date": "2026-08-17T17:01:21.000Z",
+   "summary": "Large vision-language models can recognize the objects and attributes in a crowded scene yet assign an attribute to the wrong same-class instance. Generic visual-question-answering accuracy marks the response as wrong, w",
+   "titleKo": "대형 비전 언어 모델에서 밀도 높은 동일 클래스 속성 오결합 진단"
   },
   {
-   "title": "Shift Aware Transfer Learning with Adaptive Dual-Encoder Fusion for PM Forecasting in Data-Limited Environments",
-   "url": "https://arxiv.org/abs/2608.14456v1",
-   "date": "2026-08-14T16:41:16.000Z",
-   "summary": "Short-horizon forecasting of fine particulate matter (PM2.5) remains difficult when observations from the target domain are limited and the statistical properties of the source and target domains differ. In these setting",
-   "titleKo": "데이터 제한 환경의 PM 예측을 위한 적응형 듀얼 인코더 퓨전으로 인식 전송 학습 전환"
+   "title": "Cross-Sign Language Transfer Learning Using Domain Adaptation with Multi-scale Temporal Alignment",
+   "url": "https://arxiv.org/abs/2608.16804v1",
+   "date": "2026-08-17T17:00:36.000Z",
+   "summary": "Sign language serves as a vital means of communication for individuals with hearing impairments, yet recognition resources for the over 100 distinct sign languages are severely lacking. In response, we present our work o",
+   "titleKo": "다중 스케일 시간 정렬을 사용한 도메인 적응을 사용한 교차 서명 언어 전송 학습"
   },
   {
-   "title": "SheetCompass: Hierarchical Relation Graphs for Agentic Spreadsheet Reasoning",
-   "url": "https://arxiv.org/abs/2608.14452v1",
-   "date": "2026-08-14T16:39:16.000Z",
-   "summary": "Spreadsheets are widely used to organize, analyze, and manipulate semi-structured data, yet automated spreadsheet reasoning remains challenging for large language models (LLMs). Real-world workbooks often contain implici",
-   "titleKo": "SheetCompass: 에이전트 스프레드시트 추론을 위한 계층적 관계 그래프"
+   "title": "When Agents Coordinate: Measuring Coordination in Multi-Agent AI Coding",
+   "url": "https://arxiv.org/abs/2608.16801v1",
+   "date": "2026-08-17T16:57:38.000Z",
+   "summary": "We study how teams of AI coding agents coordinate while solving programming tasks. Current evaluations usually report whether the agents complete the task and how much the run costs, leaving the coordination inside the t",
+   "titleKo": "상담원이 조율할 때: 다중 에이전트 AI 코딩에서 조율 측정"
   },
   {
-   "title": "Wyvern: An Agentic Framework for Generating Grounded Multimodal Reports",
-   "url": "https://arxiv.org/abs/2608.14446v1",
-   "date": "2026-08-14T16:31:43.000Z",
-   "summary": "In the current artificial intelligence-driven innovation era, the pace of knowledge growth is accelerating, and is hard to keep up with. While generative models are increasingly used to synthesize content, they often lac",
-   "titleKo": "Wyvern: 접지된 다중 양식 보고서를 생성하기 위한 에이전트 프레임워크"
+   "title": "ClawGym II: Exploring Black-Box RL on Agent Harness",
+   "url": "https://arxiv.org/abs/2608.16798v1",
+   "date": "2026-08-17T16:53:03.000Z",
+   "summary": "Agent harnesses have substantially improved performance on long-horizon tasks by coordinating agent interactions with the environment. However, reinforcement learning through complex harnesses remains largely unexplored,",
+   "titleKo": "ClawGym II: 상담원 하네스에서 블랙박스 RL 살펴보기"
   },
   {
-   "title": "Designing Compact Neural Architectures via Neuron Gating and Mixed Activation",
-   "url": "https://arxiv.org/abs/2608.14443v1",
-   "date": "2026-08-14T16:28:32.000Z",
-   "summary": "Neural Architecture Search (NAS) is naturally formulated as a bilevel optimization problem, where the upper-level optimizes the architecture using validation performance and the lower-level trains network parameters usin",
-   "titleKo": "뉴런 게이팅 및 혼합 활성화를 통한 소형 신경 아키텍처 설계"
+   "title": "UniDot: A Unified Network for Sequence Modeling and Feature Interaction in Large-scale Recommendation",
+   "url": "https://arxiv.org/abs/2608.16797v1",
+   "date": "2026-08-17T16:52:56.000Z",
+   "summary": "Industrial recommenders rely on two model families that have evolved largely independently: feature-interaction models over multi-field user/item features, and sequential models over user-behavior histories. Production s",
+   "titleKo": "UniDot: 대규모 권장 사항에서 시퀀스 모델링 및 기능 상호 작용을 위한 통합 네트워크"
   },
   {
-   "title": "PACE-Bench: Benchmarking Physics Adaptation via Code Evolution in Dynamic Environments",
-   "url": "https://arxiv.org/abs/2608.14441v1",
-   "date": "2026-08-14T16:25:43.000Z",
-   "summary": "Self-evolving agents improve future behavior from interaction experience, yet existing evaluations typically optimize under fixed execution conditions and do not test recovery after those conditions change. To address th",
-   "titleKo": "PACE-벤치: 동적 환경에서 코드 진화를 통한 물리 적응 벤치마킹"
+   "title": "Historical Backtesting for Scientific Question Discovery: A Protocol and Astronomy Pilot",
+   "url": "https://arxiv.org/abs/2608.16795v1",
+   "date": "2026-08-17T16:51:06.000Z",
+   "summary": "Systems that generate scientific research questions are evaluated today by expert scores, LLM-as-judge ratings, or curated case studies -- all subjective, none falsifiable. We formalize historical backtesting as an alter",
+   "titleKo": "과학적 질문 발견을 위한 역사적 역검사: 프로토콜 및 천문학 파일럿"
   },
   {
-   "title": "The Dynamics of Intelligence Explosions",
-   "url": "https://arxiv.org/abs/2608.14426v1",
-   "date": "2026-08-14T16:07:51.000Z",
-   "summary": "AI is increasingly being used to help with AI R&D. Under certain conditions this feedback loop might be able to produce an intelligence explosion, with rapidly escalating AI capabilities. I explore the mathematics of the",
-   "titleKo": "지능 폭발의 역학"
+   "title": "Neurosymbolic Embodied Agents",
+   "url": "https://arxiv.org/abs/2608.16794v1",
+   "date": "2026-08-17T16:50:59.000Z",
+   "summary": "Language and vision-language models generate plausible embodied plans but do not guarantee executability, as their outputs can violate environment dynamics or act on incorrectly grounded entities. We present a neurosymbo",
+   "titleKo": "신경 심볼릭 체형제"
   },
   {
-   "title": "Knowing When to Stop: Bayesian Optimal Stopping for LLM Evaluations",
-   "url": "https://arxiv.org/abs/2608.14425v1",
-   "date": "2026-08-14T16:06:41.000Z",
-   "summary": "LLM evaluations often use fixed sampling budgets, testing every item the same number of times even after estimates are precise. We introduce optstop, a precision-based adaptive stopping framework that treats evaluation a",
-   "titleKo": "중지 시점 파악: LLM 평가를 위한 베이지안 최적 중지"
+   "title": "Steering the Flow: Inverting Face Recognition Models via Gradient-Guided Flow Matching",
+   "url": "https://arxiv.org/abs/2608.16791v1",
+   "date": "2026-08-17T16:47:09.000Z",
+   "summary": "Model Inversion Attacks (MIAs) aim to reconstruct representative training samples of target identities from face recognition models, exposing critical security vulnerabilities. Existing methods typically rely on indirect",
+   "titleKo": "흐름 조정: 그라데이션 유도 흐름 매칭을 통한 얼굴 인식 모델 반전"
   }
  ],
  "github": [
   {
    "title": "openclaw/openclaw",
    "url": "https://github.com/openclaw/openclaw",
-   "stars": 386560,
+   "stars": 386585,
    "language": "TypeScript",
-   "date": "2026-08-17T23:47:14Z",
+   "date": "2026-08-18T05:40:58Z",
    "summary": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 "
   },
   {
    "title": "obra/superpowers",
    "url": "https://github.com/obra/superpowers",
-   "stars": 273213,
+   "stars": 273319,
    "language": "Shell",
    "date": "2026-08-13T00:36:31Z",
    "summary": "An agentic skills framework & software development methodology that works."
@@ -168,31 +168,31 @@
   {
    "title": "NousResearch/hermes-agent",
    "url": "https://github.com/NousResearch/hermes-agent",
-   "stars": 232010,
+   "stars": 232152,
    "language": "Python",
-   "date": "2026-08-17T23:46:09Z",
+   "date": "2026-08-18T05:38:37Z",
    "summary": "The agent that grows with you"
   },
   {
    "title": "n8n-io/n8n",
    "url": "https://github.com/n8n-io/n8n",
-   "stars": 201000,
+   "stars": 201020,
    "language": "TypeScript",
-   "date": "2026-08-17T23:32:00Z",
+   "date": "2026-08-18T05:38:21Z",
    "summary": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations."
   },
   {
    "title": "Significant-Gravitas/AutoGPT",
    "url": "https://github.com/Significant-Gravitas/AutoGPT",
-   "stars": 186656,
+   "stars": 186660,
    "language": "Python",
-   "date": "2026-08-17T22:54:51Z",
+   "date": "2026-08-18T05:29:23Z",
    "summary": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters."
   },
   {
    "title": "firecrawl/firecrawl",
    "url": "https://github.com/firecrawl/firecrawl",
-   "stars": 168626,
+   "stars": 168739,
    "language": "TypeScript",
    "date": "2026-08-17T23:40:12Z",
    "summary": "The context API to search, scrape, and interact with the web at scale. 🔥"
@@ -200,15 +200,15 @@
   {
    "title": "f/prompts.chat",
    "url": "https://github.com/f/prompts.chat",
-   "stars": 167328,
+   "stars": 167355,
    "language": "HTML",
-   "date": "2026-08-17T03:22:38Z",
+   "date": "2026-08-18T03:20:31Z",
    "summary": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy."
   },
   {
    "title": "Snailclimb/JavaGuide",
    "url": "https://github.com/Snailclimb/JavaGuide",
-   "stars": 157824,
+   "stars": 157834,
    "language": "JavaScript",
    "date": "2026-08-17T08:45:22Z",
    "summary": "Java 面试 & 后端通用面试指南，覆盖计算机基础、数据库、分布式、高并发、系统设计与 AI 应用开发"
@@ -216,15 +216,15 @@
   {
    "title": "langgenius/dify",
    "url": "https://github.com/langgenius/dify",
-   "stars": 152721,
+   "stars": 152746,
    "language": "TypeScript",
-   "date": "2026-08-17T23:10:50Z",
+   "date": "2026-08-18T05:27:56Z",
    "summary": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without reb"
   },
   {
    "title": "open-webui/open-webui",
    "url": "https://github.com/open-webui/open-webui",
-   "stars": 149047,
+   "stars": 149079,
    "language": "Python",
    "date": "2026-08-17T20:56:30Z",
    "summary": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)"
@@ -232,23 +232,15 @@
   {
    "title": "langchain-ai/langchain",
    "url": "https://github.com/langchain-ai/langchain",
-   "stars": 144414,
+   "stars": 144432,
    "language": "Python",
-   "date": "2026-08-17T23:16:26Z",
+   "date": "2026-08-18T01:51:37Z",
    "summary": "The agent engineering platform."
-  },
-  {
-   "title": "x1xhlol/system-prompts-and-models-of-ai-tools",
-   "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-   "stars": 142872,
-   "language": "",
-   "date": "2026-08-11T13:01:09Z",
-   "summary": "FULL Augment Code, Claude Code, Cluely, CodeBuddy, Comet, Cursor, Devin AI, Junie, Kiro, Leap.new, Lovable, Manus, NotionAI, Orchids.app, Perplexity, Poke, Qoder, Replit, Same.dev, Trae, Traycer AI, V"
   },
   {
    "title": "github/spec-kit",
    "url": "https://github.com/github/spec-kit",
-   "stars": 129830,
+   "stars": 129886,
    "language": "Python",
    "date": "2026-08-17T23:32:16Z",
    "summary": "💫 Toolkit to help you get started with Spec-Driven Development"
@@ -256,15 +248,15 @@
   {
    "title": "Comfy-Org/ComfyUI",
    "url": "https://github.com/Comfy-Org/ComfyUI",
-   "stars": 128130,
+   "stars": 128179,
    "language": "Python",
-   "date": "2026-08-17T23:44:06Z",
+   "date": "2026-08-18T04:46:59Z",
    "summary": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface."
   },
   {
    "title": "microsoft/generative-ai-for-beginners",
    "url": "https://github.com/microsoft/generative-ai-for-beginners",
-   "stars": 117949,
+   "stars": 117966,
    "language": "Jupyter Notebook",
    "date": "2026-08-13T03:43:40Z",
    "summary": "21 Lessons, Get Started Building with Generative AI "
@@ -272,31 +264,31 @@
   {
    "title": "supabase/supabase",
    "url": "https://github.com/supabase/supabase",
-   "stars": 108099,
+   "stars": 108107,
    "language": "TypeScript",
-   "date": "2026-08-17T23:40:47Z",
+   "date": "2026-08-18T05:08:35Z",
    "summary": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications."
   },
   {
    "title": "google-gemini/gemini-cli",
    "url": "https://github.com/google-gemini/gemini-cli",
-   "stars": 106542,
+   "stars": 106548,
    "language": "TypeScript",
-   "date": "2026-08-17T23:44:58Z",
+   "date": "2026-08-18T02:01:01Z",
    "summary": "An open-source AI agent that brings the power of Gemini directly into your terminal."
   },
   {
    "title": "JuliusBrussee/caveman",
    "url": "https://github.com/JuliusBrussee/caveman",
-   "stars": 98744,
+   "stars": 98785,
    "language": "Go",
-   "date": "2026-08-16T19:26:43Z",
+   "date": "2026-08-18T00:05:53Z",
    "summary": "🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman"
   },
   {
    "title": "hacksider/Deep-Live-Cam",
    "url": "https://github.com/hacksider/Deep-Live-Cam",
-   "stars": 95988,
+   "stars": 95990,
    "language": "Python",
    "date": "2026-08-13T22:44:22Z",
    "summary": "real time face swap and one-click video deepfake with only a single image"
@@ -304,10 +296,18 @@
   {
    "title": "punkpeye/awesome-mcp-servers",
    "url": "https://github.com/punkpeye/awesome-mcp-servers",
-   "stars": 92486,
+   "stars": 92498,
    "language": "",
    "date": "2026-08-17T21:28:42Z",
    "summary": "A collection of MCP servers."
+  },
+  {
+   "title": "thedotmack/claude-mem",
+   "url": "https://github.com/thedotmack/claude-mem",
+   "stars": 91034,
+   "language": "JavaScript",
+   "date": "2026-08-17T15:46:17Z",
+   "summary": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Cla"
   }
  ],
  "huggingface": [
@@ -315,7 +315,7 @@
    "title": "Qwen/Qwen3.8-27B",
    "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
    "downloads": 415039,
-   "likes": 10703,
+   "likes": 10802,
    "task": "image-text-to-text",
    "date": "2026-08-05T08:22:59.000Z"
   },
@@ -323,7 +323,7 @@
    "title": "unsloth/Qwen3.8-27B-GGUF",
    "url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
    "downloads": 2727609,
-   "likes": 1624,
+   "likes": 1666,
    "task": "",
    "date": "2026-08-13T08:28:40.000Z"
   },
@@ -331,7 +331,7 @@
    "title": "Qwen/Qwen3.8-2.4T-A95B",
    "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
    "downloads": 9465,
-   "likes": 1041,
+   "likes": 1043,
    "task": "text-generation",
    "date": "2026-08-08T01:50:52.000Z"
   },
@@ -339,7 +339,7 @@
    "title": "Lightricks/LTX-2.5",
    "url": "https://huggingface.co/Lightricks/LTX-2.5",
    "downloads": 465529,
-   "likes": 1105,
+   "likes": 1132,
    "task": "image-to-video",
    "date": "2026-07-23T07:55:24.000Z"
   },
@@ -347,7 +347,7 @@
    "title": "MiniMaxAI/MiniMax-Music3",
    "url": "https://huggingface.co/MiniMaxAI/MiniMax-Music3",
    "downloads": 10375,
-   "likes": 903,
+   "likes": 914,
    "task": "text-to-audio",
    "date": "2026-08-07T12:23:29.000Z"
   },
@@ -355,7 +355,7 @@
    "title": "meta-models/Muse-Glimmer-30B",
    "url": "https://huggingface.co/meta-models/Muse-Glimmer-30B",
    "downloads": 334099,
-   "likes": 1660,
+   "likes": 1667,
    "task": "image-text-to-text",
    "date": "2026-08-09T17:51:35.000Z"
   },
@@ -363,7 +363,7 @@
    "title": "MiniMaxAI/MiniMax-H3",
    "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3",
    "downloads": 2403238,
-   "likes": 4087,
+   "likes": 4098,
    "task": "image-text-to-video",
    "date": "2026-07-28T10:45:18.000Z"
   },
@@ -371,7 +371,7 @@
    "title": "deepseek-ai/DeepSeek-V4-Pro-0813",
    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813",
    "downloads": 25006,
-   "likes": 573,
+   "likes": 577,
    "task": "text-generation",
    "date": "2026-08-13T03:05:06.000Z"
   },
@@ -379,7 +379,7 @@
    "title": "Qwen/Qwen3.8-27B-FP8",
    "url": "https://huggingface.co/Qwen/Qwen3.8-27B-FP8",
    "downloads": 495646,
-   "likes": 528,
+   "likes": 534,
    "task": "image-text-to-text",
    "date": "2026-08-13T08:01:58.000Z"
   },
@@ -387,7 +387,7 @@
    "title": "orcarouter/Qwen3.8-27B-Uncensored-FP8",
    "url": "https://huggingface.co/orcarouter/Qwen3.8-27B-Uncensored-FP8",
    "downloads": 15812,
-   "likes": 433,
+   "likes": 455,
    "task": "image-text-to-text",
    "date": "2026-08-15T05:45:04.000Z"
   },
@@ -395,15 +395,23 @@
    "title": "deepseek-ai/DeepSeek-V4-Flash-0731",
    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731",
    "downloads": 1978298,
-   "likes": 3497,
+   "likes": 3504,
    "task": "text-generation",
    "date": "2026-07-31T07:30:24.000Z"
+  },
+  {
+   "title": "JonathanColetti/Qwen3.8-27B-Uncensored-GGUF",
+   "url": "https://huggingface.co/JonathanColetti/Qwen3.8-27B-Uncensored-GGUF",
+   "downloads": 357701,
+   "likes": 328,
+   "task": "text-generation",
+   "date": "2026-08-14T03:43:36.000Z"
   },
   {
    "title": "lightx2v/Minimax-h3-Turbo",
    "url": "https://huggingface.co/lightx2v/Minimax-h3-Turbo",
    "downloads": 264351,
-   "likes": 583,
+   "likes": 589,
    "task": "image-to-video",
    "date": "2026-08-07T12:59:07.000Z"
   },
@@ -411,63 +419,55 @@
    "title": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4",
    "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4",
    "downloads": 231271,
-   "likes": 307,
+   "likes": 311,
    "task": "text-generation",
    "date": "2026-08-04T19:10:45.000Z"
-  },
-  {
-   "title": "JonathanColetti/Qwen3.8-27B-Uncensored-GGUF",
-   "url": "https://huggingface.co/JonathanColetti/Qwen3.8-27B-Uncensored-GGUF",
-   "downloads": 357701,
-   "likes": 298,
-   "task": "text-generation",
-   "date": "2026-08-14T03:43:36.000Z"
-  },
-  {
-   "title": "unsloth/Muse-Glimmer-30B-GGUF",
-   "url": "https://huggingface.co/unsloth/Muse-Glimmer-30B-GGUF",
-   "downloads": 755125,
-   "likes": 470,
-   "task": "image-text-to-text",
-   "date": "2026-08-10T09:11:29.000Z"
   },
   {
    "title": "moonshotai/Kimi-K3",
    "url": "https://huggingface.co/moonshotai/Kimi-K3",
    "downloads": 2163953,
-   "likes": 10802,
+   "likes": 10808,
    "task": "image-text-to-text",
    "date": "2026-06-13T06:42:57.000Z"
-  },
-  {
-   "title": "inclusionAI/Ling-3.0-tiny",
-   "url": "https://huggingface.co/inclusionAI/Ling-3.0-tiny",
-   "downloads": 6266,
-   "likes": 306,
-   "task": "",
-   "date": "2026-08-10T02:44:06.000Z"
   },
   {
    "title": "unsloth/Qwen3.8-27B-NVFP4",
    "url": "https://huggingface.co/unsloth/Qwen3.8-27B-NVFP4",
    "downloads": 378177,
-   "likes": 238,
+   "likes": 243,
    "task": "",
    "date": "2026-08-13T08:28:51.000Z"
   },
   {
-   "title": "Comfy-Org/MiniMax-H3",
-   "url": "https://huggingface.co/Comfy-Org/MiniMax-H3",
-   "downloads": 14015769,
-   "likes": 1403,
-   "task": "",
-   "date": "2026-07-30T22:36:12.000Z"
+   "title": "unsloth/Muse-Glimmer-30B-GGUF",
+   "url": "https://huggingface.co/unsloth/Muse-Glimmer-30B-GGUF",
+   "downloads": 755125,
+   "likes": 471,
+   "task": "image-text-to-text",
+   "date": "2026-08-10T09:11:29.000Z"
+  },
+  {
+   "title": "inclusionAI/Ling-3.0-tiny",
+   "url": "https://huggingface.co/inclusionAI/Ling-3.0-tiny",
+   "downloads": 6266,
+   "likes": 310,
+   "task": "text-generation",
+   "date": "2026-08-10T02:44:06.000Z"
+  },
+  {
+   "title": "Gazingstars123/Anima-2.9B",
+   "url": "https://huggingface.co/Gazingstars123/Anima-2.9B",
+   "downloads": 23202,
+   "likes": 234,
+   "task": "text-to-image",
+   "date": "2026-08-12T07:23:49.000Z"
   },
   {
    "title": "DavidAU/Qwen3.6-27B-Fable-Fusion-711-Uncensored-Heretic-NM-DAU-NEO-MAX-MTP-GGUF",
    "url": "https://huggingface.co/DavidAU/Qwen3.6-27B-Fable-Fusion-711-Uncensored-Heretic-NM-DAU-NEO-MAX-MTP-GGUF",
    "downloads": 3033928,
-   "likes": 2119,
+   "likes": 2124,
    "task": "image-text-to-text",
    "date": "2026-07-17T00:27:17.000Z"
   }
