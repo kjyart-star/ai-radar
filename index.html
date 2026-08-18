@@ -3040,17 +3040,30 @@ function avHideKey(v){
   var k = avKey(v);
   return k ? k.replace(/[^A-Za-z0-9_-]+/g, "_") : "";
 }
-/* picks 문서를 videoCards 가 읽는 모양으로 바꾼다. 조회수·구독·게시일은 없으므로 넣지 않는다
-   (videoCards 가 빈값을 건너뛴다). 유튜브 썸네일은 영상 ID 로 주소가 정해져 있다. */
+/* 큐레이션 영상 메타(data/aivideo-meta.json) — 영상ID → {channel, views, published}.
+   폼으로 올린 picks 와 정적 소스(extras)는 조회수·게시일·채널이 없으므로, 빌드 때 유튜브에서
+   긁어 둔 이 값으로 채워 수신부 영상처럼 정보가 보이게 한다. 못 읽어도 제목은 나온다. */
+var avMeta = {};
+function avMetaLoad(){
+  return fetch(BASE+"data/aivideo-meta.json", { cache:"no-store" })
+    .then(function(r){ return r.ok ? r.json() : {}; })
+    .then(function(m){ avMeta = m || {}; return avMeta; }, function(){ avMeta = {}; return {}; });
+}
+/* picks 문서를 videoCards 가 읽는 모양으로 바꾼다. 조회수·채널·게시일은 avMeta 에서 채운다
+   (없으면 videoCards 가 빈값을 건너뛴다). 유튜브 썸네일은 영상 ID 로 주소가 정해져 있다. */
 function avPickCard(o, id){
   o = o || {};
   var vimeo = String(o.url||"").indexOf("//vimeo.com/") >= 0;
+  var vid = String(o.videoId||"");
+  var m = avMeta[vid] || null;
   return {
     _pickId: id || "",   /* Firebase 문서 id — 관리자 삭제에 쓴다(수집 영상엔 없다) */
     title: o.title || "",
     url: o.url || "",
-    channel: "",
-    thumbnail: vimeo ? "" : "https://i.ytimg.com/vi/"+encodeURIComponent(String(o.videoId||""))+"/mqdefault.jpg"
+    channel: (m && m.channel) || "",
+    views: (m && m.views != null) ? m.views : null,
+    published: (m && m.published) || "",
+    thumbnail: vimeo ? "" : "https://i.ytimg.com/vi/"+encodeURIComponent(vid)+"/mqdefault.jpg"
   };
 }
 function avPicksLoad(){
@@ -3073,10 +3086,13 @@ function avExtraLoad(){
       for (i = 0; i < a.length; i++){
         o = a[i] || {};
         if (!o.url) continue;
+        var m = avMeta[String(o.videoId||"")] || null;
         out.push({
           title: o.title || "",
           url: o.url,
-          channel: o.channel || "",
+          channel: (m && m.channel) || o.channel || "",
+          views: (m && m.views != null) ? m.views : null,
+          published: (m && m.published) || "",
           thumbnail: o.videoId ? "https://i.ytimg.com/vi/"+encodeURIComponent(String(o.videoId))+"/mqdefault.jpg" : ""
         });
       }
@@ -3164,12 +3180,14 @@ function avDel(el){
 }
 function avPickView(host, formHost){
   avAdminForm(formHost, host);
-  Promise.all([
-    avPicksLoad(),
-    fetchAiVideos().then(function(j){ return j; }, function(){ return null; }),
-    avHiddenLoad(),
-    avExtraLoad()
-  ]).then(function(r){
+  avMetaLoad().then(function(){   /* 메타를 먼저 채워야 picks·extras 가 조회수·채널을 읽는다 */
+    return Promise.all([
+      avPicksLoad(),
+      fetchAiVideos().then(function(j){ return j; }, function(){ return null; }),
+      avHiddenLoad(),
+      avExtraLoad()
+    ]);
+  }).then(function(r){
     if (curRoute()!=="aivideo" || !C.contains(host)) return;
     var picks = r[0] || [], j = r[1] || null, extra = r[3] || [];
     avHidden = r[2] || {};
