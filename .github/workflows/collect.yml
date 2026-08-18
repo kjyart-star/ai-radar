@@ -44,6 +44,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node scripts/collect-feeds.mjs
 
+      - name: 유튜브 채널 최신 영상 수집
+        continue-on-error: true
+        run: node scripts/collect-youtube.mjs
+
       - name: Playwright 설치
         continue-on-error: true
         run: |

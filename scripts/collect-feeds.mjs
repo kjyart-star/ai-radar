@@ -221,6 +221,142 @@ async function collectNews() {
   return save("news.json", { generated: NOW, source: okSources.join(" · "), sources: okSources, items: top }, items.length);
 }
 
+/* ---------- 1-b. 자체 브리핑 (data/brief.json) ----------
+ *
+ * 왜: 관리시스템 브리핑은 좁은 고정 검색어를 써서 국내 AI 뉴스가 안 바뀌면 같은 기사가 며칠씩
+ *     반복됐다 — 2026-08-16·17·18 [AI VFX] 섹션이 3일 연속 같은 "M83 흑자전환" 기사로 시작.
+ *     그래서 AI 레이더가 직접 카테고리별 다양한 검색어로 신선한 기사를 모으고, 날짜 간 중복을
+ *     제거해(어제 나온 건 오늘 빼고) 매일 새 기사로 채운 자체 브리핑을 만든다.
+ *
+ * 형식: 관리시스템 report.content 를 그대로 흉내 낸다 — 화면 richReport() 가 같은 코드로 파싱한다.
+ *   [카테고리]
+ *   • 기사제목 - 언론사 (출처: https://링크)
+ *   (카테고리 사이 빈 줄)
+ *
+ * 중복제거: data/news-seen.json 에 이미 내보낸 기사 키(정규화 제목)를 날짜와 함께 보관한다.
+ *   매 실행 시 seen 에 있는 건 제외 → 남은 새 기사만 사용 → 사용한 것 seen 에 오늘 날짜로 추가 →
+ *   N일 지난 것 정리. 같은 기사가 다음날 다시 안 뜬다.
+ */
+
+const BRIEF_CATEGORIES = [
+  { name: "AI 영상·VFX",     queries: ["AI 영상 제작", "생성형 AI 영화", "AI VFX", "AI 콘텐츠"] },
+  { name: "생성형 AI·모델",   queries: ["생성형 AI", "LLM 모델", "ChatGPT OR Claude OR Gemini"] },
+  { name: "AI 스타트업·투자", queries: ["AI 스타트업 투자", "AI 유니콘"] },
+  { name: "AI 정책·규제",     queries: ["AI 규제", "AI 기본법"] },
+  { name: "AI 도구·서비스",   queries: ["AI 서비스 출시", "AI 앱 출시"] },
+];
+
+const SEEN_FILE = "news-seen.json";
+const SEEN_KEEP_DAYS = 14;
+
+/* 제목 정규화: 언론사 꼬리(" - 언론사") 제거 후 글자·숫자만 남겨 소문자로.
+   \p{L}\p{N} 로 한글을 살린다(\W 는 한글을 지워 서로 다른 기사를 같은 키로 만든다). */
+function briefNormTitle(t) {
+  return String(t || "")
+    .replace(/\s*-\s*[^-]{2,40}$/, "")
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}]+/gu, "");
+}
+/* 같은 사건 다른 언론사 근접중복 판정용 토큰(2글자 이상 단어) */
+function briefTokens(t) {
+  return String(t || "").toLowerCase().split(/[^가-힣a-z0-9]+/).filter((w) => w.length >= 2);
+}
+
+function loadSeen() {
+  try {
+    const j = JSON.parse(readFileSync(join(DATA, SEEN_FILE), "utf8"));
+    return j && j.keys ? j : { updated: "", keys: {} };
+  } catch { return { updated: "", keys: {} }; }
+}
+
+async function collectBrief() {
+  log("[자체 브리핑]");
+  const today = kstToday();
+  const cutoff = addDaysKst(-SEEN_KEEP_DAYS);
+  const store = loadSeen();
+  const seen = store.keys;
+  /* 오래된 seen 정리 — 14일 지난 기사는 다시 나와도 된다 */
+  for (const k of Object.keys(seen)) { if (String(seen[k]) < cutoff) delete seen[k]; }
+
+  const runKeys = new Set();   // 이번 실행에서 이미 뽑은 정확 키(카테고리 간 중복 방지)
+  const pickedToks = [];       // 이번 실행에서 이미 뽑은 제목 토큰(근접중복 방지)
+  const sections = [];
+  let totalItems = 0;
+
+  for (const cat of BRIEF_CATEGORIES) {
+    const cand = [];
+    for (const q of cat.queries) {
+      const url = "https://news.google.com/rss/search?q=" + encodeURIComponent(q) + "&hl=ko&gl=KR&ceid=KR:ko";
+      try {
+        const xml = await get(url);
+        for (const it of parseFeed(xml)) {
+          let title = it.title, src = "";
+          const m = it.title.match(/^([\s\S]+?)\s+-\s+([^-]{2,40})$/);
+          if (m) { title = m[1].trim(); src = m[2].trim(); }
+          const key = briefNormTitle(title);
+          if (!key) continue;
+          cand.push({ title, src, url: it.url, date: it.date, key });
+        }
+      } catch (e) {
+        log(`  ! [${cat.name}] "${q}" 실패: ${e.message}`);
+      }
+    }
+    cand.sort((a, b) => String(b.date).localeCompare(String(a.date)));
+
+    const picked = [];
+    for (const c of cand) {
+      if (seen[c.key] || runKeys.has(c.key)) continue;   // 지난 날짜 or 이번 실행 정확 중복
+      const toks = briefTokens(c.title);
+      let dup = false;
+      if (toks.length >= 3) {
+        for (const o of pickedToks) {
+          let both = 0;
+          for (const w of toks) { if (o.indexOf(w) >= 0) both++; }
+          if (both >= Math.min(toks.length, o.length) * 0.6) { dup = true; break; }
+        }
+      }
+      if (dup) continue;
+      picked.push(c);
+      runKeys.add(c.key);
+      pickedToks.push(toks);
+      if (picked.length >= 6) break;
+    }
+
+    if (picked.length) {
+      const lines = picked.map((p) => "• " + p.title + (p.src ? " - " + p.src : "") + " (출처: " + p.url + ")");
+      sections.push("[" + cat.name + "]\n" + lines.join("\n"));
+      totalItems += picked.length;
+      log(`  · ${cat.name}: ${picked.length}건 (후보 ${cand.length})`);
+    } else {
+      log(`  · ${cat.name}: 신선 기사 없음 (후보 ${cand.length})`);
+    }
+  }
+
+  if (!totalItems) {
+    log("  ! 브리핑: 신선 기사 0건 — 기존 brief.json 을 유지한다 (덮어쓰지 않음)");
+    return false;
+  }
+
+  /* 사용한 기사만 오늘 날짜로 seen 에 기록한다 (후보 전체가 아니라 뽑은 것만 — 풀을 빨리 소진하지 않으려고) */
+  for (const k of runKeys) seen[k] = today;
+  store.keys = seen;
+  store.updated = kstNowIso();
+  if (!existsSync(DATA)) mkdirSync(DATA, { recursive: true });
+  writeFileSync(join(DATA, SEEN_FILE), JSON.stringify(store, null, 1) + "\n", "utf8");
+  log(`  · ${SEEN_FILE}: ${Object.keys(seen).length}개 키 보관`);
+
+  const kd = new Date(Date.now() + 9 * 3600 * 1000);   // KST
+  const md = (kd.getUTCMonth() + 1) + "/" + kd.getUTCDate();
+  const brief = {
+    generated: kd.toISOString().slice(0, 16).replace("T", " "),   // "2026-08-18 09:00"
+    report_date: today,
+    id: "brief-" + today,
+    title: "AI 브리핑 (" + md + ")",
+    content: sections.join("\n\n"),
+  };
+  return save("brief.json", brief, totalItems);
+}
+
 /* ---------- 2. 커뮤니티 (Hacker News · Reddit) ---------- */
 
 async function collectCommunity() {
@@ -704,7 +840,7 @@ async function collectContests() {
 
 const only = process.argv[2];   // 인자를 주면 그 수집기만 돈다 (예: node collect-feeds.mjs contests)
 const results = [];
-for (const [name, fn] of [["news", collectNews], ["community", collectCommunity], ["tech", collectTech], ["devpost", collectDevpost], ["contests", collectContests], ["snapshots", collectSnapshots]]) {
+for (const [name, fn] of [["news", collectNews], ["brief", collectBrief], ["community", collectCommunity], ["tech", collectTech], ["devpost", collectDevpost], ["contests", collectContests], ["snapshots", collectSnapshots]]) {
   if (only && name !== only) continue;
   try {
     results.push([name, await fn()]);
