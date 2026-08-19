@@ -1,6 +1,14 @@
 {
- "generated": "2026-08-18T23:50:39.582Z",
+ "generated": "2026-08-19T23:50:32.784Z",
  "news": [
+  {
+   "title": "DeepSeek Just Made Closed AI Look Ridiculous",
+   "url": "https://www.youtube.com/watch?v=kyYepbhe1g8",
+   "videoId": "kyYepbhe1g8",
+   "channel": "Two Minute Papers",
+   "published": "2026-08-19T18:02:46.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/kyYepbhe1g8/mqdefault.jpg"
+  },
   {
    "title": "Exclusive BTS of my Automated AI System (LIVE)",
    "url": "https://www.youtube.com/watch?v=IeT5Jn7d1aM",
@@ -312,17 +320,25 @@
    "channel": "Wes Roth",
    "published": "2026-08-04T03:45:44.000Z",
    "thumbnail": "https://i.ytimg.com/vi/bjmbKdFOW_I/mqdefault.jpg"
-  },
-  {
-   "title": "Open-source is WINNING",
-   "url": "https://www.youtube.com/watch?v=CVlKp9Ld-Zg",
-   "videoId": "CVlKp9Ld-Zg",
-   "channel": "Matthew Berman",
-   "published": "2026-08-04T00:51:26.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/CVlKp9Ld-Zg/mqdefault.jpg"
   }
  ],
  "vibe": [
+  {
+   "title": "Watch This To Fix Your AI Agents (Skills, Plugins)",
+   "url": "https://www.youtube.com/watch?v=xHsftiyT9pQ",
+   "videoId": "xHsftiyT9pQ",
+   "channel": "Greg Isenberg",
+   "published": "2026-08-19T20:00:27.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/xHsftiyT9pQ/mqdefault.jpg"
+  },
+  {
+   "title": "채널톡은 Codex를 어떻게 활용할까? | OpenAI × AX 인재전쟁",
+   "url": "https://www.youtube.com/watch?v=Rp7h16-C7mI",
+   "videoId": "Rp7h16-C7mI",
+   "channel": "조코딩 JoCoding",
+   "published": "2026-08-19T09:00:37.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/Rp7h16-C7mI/mqdefault.jpg"
+  },
   {
    "title": "카카오페이증권은 Codex를 어떻게 활용할까? | OpenAI × AX 인재전쟁",
    "url": "https://www.youtube.com/watch?v=hFrTbX7FRu8",
@@ -372,7 +388,7 @@
    "thumbnail": "https://i.ytimg.com/vi/Tliio-33w4g/mqdefault.jpg"
   },
   {
-   "title": "Codex Just Replaced All His Apps | Bilawal Sidhu",
+   "title": "Codex Might Be the First Real AI Super App | Bilawal Sidhu",
    "url": "https://www.youtube.com/watch?v=NR_GMq2lDCE",
    "videoId": "NR_GMq2lDCE",
    "channel": "Riley Brown",
@@ -626,22 +642,6 @@
    "channel": "Greg Isenberg",
    "published": "2026-07-23T04:01:35.000Z",
    "thumbnail": "https://i.ytimg.com/vi/ihM91WWU0lE/mqdefault.jpg"
-  },
-  {
-   "title": "How to Actually Run Your Coding Agent Safely (And Avoid the Horror Stories)",
-   "url": "https://www.youtube.com/watch?v=zb2LyMro77M",
-   "videoId": "zb2LyMro77M",
-   "channel": "Cole Medin",
-   "published": "2026-07-23T00:00:02.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/zb2LyMro77M/mqdefault.jpg"
-  },
-  {
-   "title": "Codex Basically Runs My Company Now. Here’s How.",
-   "url": "https://www.youtube.com/watch?v=gOx37on-iA8",
-   "videoId": "gOx37on-iA8",
-   "channel": "Riley Brown",
-   "published": "2026-07-21T22:27:56.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/gOx37on-iA8/mqdefault.jpg"
   }
  ]
 }

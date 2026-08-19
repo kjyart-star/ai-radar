@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-18T23:46:45.052Z",
+ "generated": "2026-08-19T23:46:40.758Z",
  "source": "Google News · TechCrunch · MIT Technology Review · The Verge",
  "sources": [
   "Google News",
@@ -9,66 +9,298 @@
  ],
  "items": [
   {
-   "title": "초저출생·초고령화, AI·디지털트윈으로 해법 찾는다",
-   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBXZFhldkFBUG9qNThsVVNwSF81c3gxMk1OVnp2Rk9jLUNYZDdyZFQycy1pN3owNGlxMElZbEFmeTM5SmRvVllDSl9NVDJ5Yi10RHE5WEhmX1duUQ?oc=5",
-   "date": "2026-08-18T23:37:00.000Z",
-   "source": "브릿지경제",
+   "title": "쿠팡vs지마켓vs11번가, 'AI 검색' 경쟁...뭐가 다를까",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9sc3IxR2E2ckFtMHR1UHNXelFrYTFZX0hLd1hYOTZ5dl9pTEEzVEJ3LUhXZGczeFR4dHFJSlhMa3JJVDdySFUzR1VQRVpTdk9Gd1RZazJ3?oc=5",
+   "date": "2026-08-19T23:41:48.000Z",
+   "source": "지디넷코리아",
    "feed": "Google News",
    "summary": ""
   },
   {
-   "title": "무신사, AI로 커머스 개발 혁신…첫 테크 컨퍼런스 개최",
-   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5OZmFXaXo1QVhsQ3NBS0tzWU1HMUM4anJVWFhlZENWQ1g4aWJzamE3Z1VHaU5PYVlWWHBVM2VxaHJ3cS1oM2tSMzBSRFhaZGFiYlJEU1VtVEVVTUxZNUpFbdIBeEFVX3lxTFB1R1pjblFIWXdMYWMzMjBrOWVkaVpWSTYwU2xrdGN1SzhhNmVTdFNkcFJNaWMtY2l0eGFDVGRKRFBER2dyVFhEcmRwU183R1Z6dU4xNWZEV0t2ZXozN0V0ZXlYWjZMRXZtSFIzQUNwLVlsanNUVEJEaA?oc=5",
-   "date": "2026-08-18T23:29:42.000Z",
+   "title": "Stripe didn’t really buy OpenRouter because of the ‘singularity’",
+   "url": "https://techcrunch.com/2026/08/19/stripe-didnt-really-buy-openrouter-because-of-the-singularity/",
+   "date": "2026-08-19T23:32:00.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "What does a payments giant want with a startup that routes prompts between different AI models? Stripe says it's because of \"the singularity\" but it's really for a far more real and powerful reason.",
+   "titleKo": "Stripe는 ‘특이점‘ 때문에 OpenRouter를 실제로 구입하지 않았습니다."
+  },
+  {
+   "title": "“학생, AI가 틀릴 시험문제 내봐”… 중국 푸단대의 커닝 묘수",
+   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5CUy01S3ZnTHo1X01HMlR0Sk00dVlDWF85RzVLSV9ZTzcwcDdLTXhGOG1hWWlZOGdsblVENkluUE5UTU5qUEtqY2E3LS1qV2M?oc=5",
+   "date": "2026-08-19T23:19:47.000Z",
+   "source": "v.daum.net",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "부산, '한글햇살버스' 신규 선정…산복도로 찾아가 AI 교육",
+   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5sOXIxbkd5ZnF2d0MzbWNqdThPajdHRmRObFJid25KU2pFWGZydXFja0JpaGxhbDlYbjFYUGZSVnItNzdLcXE2TXBFQlhfU0lXUmZleFVLZ2tZRXJlSnhTd9IBeEFVX3lxTE95dng1MVdXTnp6YXRya0RXeDd2N3p0VExCemRSVkxGU1h5MVF2Nk1xQzVDV0Qxb0ZTYmJJSktWUTJzWVF0TkpSMjRWMENSSUtfcWR5TkpPUkswb1o5UDlCMFFTOU5hajlJR2taZGg0QlhNX1ZBYXBnRQ?oc=5",
+   "date": "2026-08-19T23:13:10.000Z",
    "source": "뉴시스",
    "feed": "Google News",
    "summary": ""
   },
   {
-   "title": "라온시큐어, 업스테이지 '독파모' 컨소시엄 합류…AI 보안 맡는다 - 머니투데이",
-   "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE90LWZXOGlkLU5pOWFuQkRHWXo5XzZucVVLYktDX2pUamZ2SEhleUFsQUZ0d0JzUVk0SU03UEpuZXNYUnB4WERoUEhrUnVfQjhtN3RJbzgwQWxhRTRYYkU3MEJXczdNMmfSAWxBVV95cUxQNVBNZWxSajUwNGREaXFTVHJvOHQ5RVpQa2pTVVM4T0Z6bkZjQVZIUEZqMDM4aXVBZklQY1ZQYWl2UW5ENkZKMDVaN0lhckZ1cF9sUTd5Tllmb240eGlZWTB3SkpHWWZ0SGdfQWM?oc=5",
-   "date": "2026-08-18T23:25:00.000Z",
-   "source": "머니투데이",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "동대문구, 서울시립대와 손잡고 ‘AI·디지털 아카데미’ 운영",
-   "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE55TUFjUUZSZldKazNEQTdoZmh6QXpWRHZ6TUVzTU5UZW5GZHlZNUhMQ3phNHZfU0VqTEYyQjdHU1NySHVCMjRjb2VjbVZ5NmZZ?oc=5",
-   "date": "2026-08-18T23:21:41.000Z",
-   "source": "munhwa.com",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "기안84 \"호기심에 참여\"…AI와 데이트 '기이한 연애'",
-   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFA3cUp5TElsc1JCakY2TVVwdnB3bE1wcnR6X3Ayb2lSRkNGWFR5TW8wRExGNUtjNlU5NFdLeHZrR0hUTkF0dmRBN0FEcm5EUGc?oc=5",
-   "date": "2026-08-18T23:09:08.000Z",
+   "title": "오픈AI는 훈련 중단, 구글은 출시 연기…AI 경쟁, 속도서 안전·완성도로",
+   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1NOGIzNmFVLXJOTlM0TE1US0s3RXlYdVdvejJXVjZHMWFwYXVHbGVKaDU5OGVRR3VwNDVRV1ZNYWdjYlNmV0V5TTVCWDhaR28?oc=5",
+   "date": "2026-08-19T23:02:09.000Z",
    "source": "v.daum.net",
    "feed": "Google News",
    "summary": ""
   },
   {
-   "title": "日 문학상 응모작 급증…AI 활용 의심 “공모전 접어야 하나”",
-   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9KNkRPeG5rcUlKUjdDcUlLMEJBeVVleTNITXhMa2pHbEdQSHdCdGhORmZiZ0xmOUhJLTNZeFFlQnozaHJZVFNHd1Rac3lHLWZnSFZUSjBTWU5OQQ?oc=5",
-   "date": "2026-08-18T22:55:00.000Z",
-   "source": "농민신문",
+   "title": "국제 AI보안대회 우승 포스텍 동문·교수, 후학 양성 위해 상금 1억 기부",
+   "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9tTWZIZWxvelVxQWxiZTdyLTNleU8wT0NKRjZHUmZpNjg3NmgyWVBLZlZ5UUdfN1N5RzNLMVlMUVFHVnV6SUpsRzJTYkdDb1J2?oc=5",
+   "date": "2026-08-19T22:19:54.000Z",
+   "source": "문화일보",
    "feed": "Google News",
    "summary": ""
   },
   {
-   "title": "“AI와 사랑에 빠졌어요”…청소년 파고드는 ‘Ai과의존’",
-   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE0xc2xCNTdXbUxERXBtdTNwNnBaMHRsQmFWY2c2TkhXUThTU3llZ2xveVFweGI5cDhDYk02VTNCTzFtZG44QXV2RUEtbEh6TTQ?oc=5",
-   "date": "2026-08-18T22:49:12.000Z",
+   "title": "OpenAI seeks to one-up Anthropic with new customer privacy protections",
+   "url": "https://techcrunch.com/2026/08/19/openai-seeks-to-one-up-anthropic-with-new-customer-privacy-protections/",
+   "date": "2026-08-19T22:10:46.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "A competition is developing between OpenAI and Anthropic over who can provide the best privacy protections for enterprise customer data.",
+   "titleKo": "OpenAI는 새로운 고객 개인 정보 보호를 통해 Anthropic을 통합하고자 합니다."
+  },
+  {
+   "title": "사용자 정치 성향 따라 답변 달라져…AI는 ‘정치 카멜레온’",
+   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNdExoRmk3NGpXaGx3dzVjajRsSlRtMzJsN2xHZEdET3VFVTBzYVA4MTh5NExpeXhaWVduSGtSbVFkY1QwZjRNNERTb0gyY0trT2RlajRNSmNHLTJWMTVTeHJRWGowQkhOVkw0b0diYUpPRktyUndvVFk4Q1dxbDhMSjZwYw?oc=5",
+   "date": "2026-08-19T22:02:50.000Z",
+   "source": "조선일보",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "Cognition CEO denies report that SpaceX tried to acquire the startup",
+   "url": "https://techcrunch.com/2026/08/19/cognition-ceo-denies-report-that-spacex-tried-to-acquire-the-startup/",
+   "date": "2026-08-19T21:51:23.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "SpaceX was reportedly in talks to buy AI coding startup Cognition. SpaceX has already acquired Cursor as it races to catch up to rivals like OpenAI and Anthropic in enterprise AI.",
+   "titleKo": "Cognition CEO는 SpaceX가 스타트업을 인수하려고 했다는 보고서를 거부합니다."
+  },
+  {
+   "title": "데이터볼트 AI, 뱅크와이즈 인수 계약 체결..데이터 수익화 생태계 완성",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE8xbW4xNDExRDBBelJISW5jV3hDbTg1UEY0U08yZG93Y0RrWWhUbmRHb09Xenh4N29uOWl0VnRYWU1jTTBvTVJDWkNibnZHcTdNZVE?oc=5",
+   "date": "2026-08-19T21:31:17.000Z",
+   "source": "매일경제 마켓",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "AI가 고르는 쇼핑, 브랜드 경쟁도 바뀐다",
+   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPQm9BdDZOZHpRc1dIaVRLOXVBZ1RiVHZUT05zb3VWMnF3X0E1bGR1QnlDLTdsVVFpOWVRbFVwUGN5bzN4Z09zS1d2RVNaSjVxSTg5TUdlcHQ4YVVDWHRvTmpVd3YwOEFsUVFIQkNJNFFpMmFiZGlBaXltT3hJWHpIWWt3MjUxem5kbUJuNmZuRjNzSmM?oc=5",
+   "date": "2026-08-19T21:01:00.000Z",
+   "source": "약업신문",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "아이폰 보안문서에 AI 이름 줄줄이…코드 짜던 AI, 보안 연구원 되다",
+   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9wTFR3X1lHTEQ5X3lNcVJIdEJYaDdHVVdIQWhHeEVYTjhWQlBrTDRPRVZyLWVHU1UzSkZwM1RLOXhoekVLYUpjaWU4Rjd1N3QxckxZT05HSUxyN05VQWs3StIBeEFVX3lxTE8td3ZmajBjOXpoUjJicndyVG1JTzlwTjVvSElmWWVPOWp1SnhkX3pZbFI0NERyRVlZTHFYOEszekpyd1lZREhaSVhCQVN2VktoZFU3RFB6WkxmTmYxT215QVZuZ2F3TDBnYml4VVBQUE14Z1p2Wmtjag?oc=5",
+   "date": "2026-08-19T21:00:00.000Z",
+   "source": "뉴시스",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "‘상자 속의 양’과 ‘원더랜드’가 그리는 AI 시대의 미래",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE4yUHZIWkloNFBxRUVra3YtSFJDMzVjcms3Y0pNazRtbXR3ZHI0ZEs4U2FXZU1nWmZqTXRqV3k5OHgtVHE1akFDX0tmS1doSUh2bGo3N2NqeEpDdw?oc=5",
+   "date": "2026-08-19T21:00:00.000Z",
+   "source": "이투데이",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "필수의료 인력난 해법 부상 ‘피지컬 AI 로봇’",
+   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBtakZSUEpFczBNbVdlU3BWb05BTnNDaWhIZzlYeXNrdXdBbDV2ZHdseHVYcmlSbUp5WGFXVUM5RHdNMVlJclR0UHRaOFVYR29Oc216NFM0SkJZWlJCTTA3OVRmQkFpV3RU?oc=5",
+   "date": "2026-08-19T20:48:00.000Z",
+   "source": "데일리메디",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "유럽 전력난에 AI 데이터센터 '탈도심' 엑소더스… 핵심 투자처는 어디?",
+   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQbDJWWk1GcXluaE1ocVVzT2s0Z0ZTVkRwZTQ3TjJteUw3RXExMmpNdFd4dk1tamhXdlRRcGhrRHFRdTBMMkZ5VFVySElVbGw1aUtMV014QUJrcTNQcUJqT3pVZ1FKV1RHUWNMNGo1SVVfbFE5NjZFRzI4MGh3NU5NenB6TlRLSHox?oc=5",
+   "date": "2026-08-19T20:10:00.000Z",
+   "source": "글로벌이코노믹",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "“학생, AI가 틀릴 시험문제 내봐”… 중국 푸단대의 커닝 묘수",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE12dUFEU0kybTZYRmM0UlRoejJxcVRBNWVkZGlmdjB3UVFxQ1lSQ0RRdW9sV3ZVWS1FdkFOVlBDSnhNSTdlbkUtQ0wxNWxWOUlYWFZGY0V3?oc=5",
+   "date": "2026-08-19T20:02:29.000Z",
+   "source": "중앙일보",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "AI was supposed to win people over by now — it hasn’t",
+   "url": "https://techcrunch.com/2026/08/19/ai-was-supposed-to-win-people-over-by-now-it-hasnt/",
+   "date": "2026-08-19T19:11:40.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "As AI becomes harder to avoid, consumers are growing more wary of the technology — and Silicon Valley is discovering that widespread adoption doesn’t necessarily lead to acceptance.",
+   "titleKo": "AI는 지금쯤 사람들을 이길 예정이었습니다."
+  },
+  {
+   "title": "Google packs Search and Gemini with new AI study tools",
+   "url": "https://techcrunch.com/2026/08/19/google-launches-new-study-tools-for-students-across-search-and-gemini/",
+   "date": "2026-08-19T19:00:00.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "The launch of the new study features marks Google's latest effort to make Gemini the AI assistant that students turn to when learning and studying, as it continues to compete with companies like OpenAI.",
+   "titleKo": "새로운 AI 연구 도구로 Google Packs Search 및 Gemini"
+  },
+  {
+   "title": "Google Gemini is getting a dedicated student hub",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/982425/google-gemini-student-hub",
+   "date": "2026-08-19T19:00:00.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "As we're gearing up for back-to-school season, Google is rolling out a new dedicated student hub in Gemini. It's a one-stop repository for collecting research in a study notebook, creating flashcards, taking practice qui",
+   "titleKo": "Google Gemini는 학생 전용 허브를 제공하고 있습니다."
+  },
+  {
+   "title": "Researchers say OpenAI revoked their access to limited cyber program",
+   "url": "https://techcrunch.com/2026/08/19/researchers-complain-that-openai-revoked-their-access-to-limited-cyber-program/",
+   "date": "2026-08-19T18:46:14.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "The idea behind OpenAI's Trusted Access for Cyber program is to give trusted defenders better models so they can report bugs and vulnerabilities to companies, with the aim of getting flaws patched faster.",
+   "titleKo": "연구원들은 OpenAI가 제한된 사이버 프로그램에 대한 액세스를 취소했다고 말합니다."
+  },
+  {
+   "title": "Meet the startup helping Wall Street put a price on AI compute",
+   "url": "https://techcrunch.com/video/meet-the-startup-helping-wall-street-put-a-price-on-ai-compute/",
+   "date": "2026-08-19T17:26:48.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "The AI buildout shows no signs of slowing. And with hundreds of billions of dollars a year going into data centers and GPUs, compute has become the single biggest cost for anyone building AI products. But for all that sp",
+   "titleKo": "월스트리트가 AI 컴퓨팅에 가격을 매길 수 있도록 돕는 스타트업을 만나보세요"
+  },
+  {
+   "title": "OpenAI hit the brakes. Now what?",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/982323/openai-hit-brakes-voluntary-pacing-ai",
+   "date": "2026-08-19T17:10:09.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "With a looming IPO, intense competition from Anthropic, and Chinese and open-weight rivals nipping at its heels, OpenAI has plenty of reasons to move fast. Instead, it hit the brakes. On Tuesday, the company said it had ",
+   "titleKo": "OpenAI가 브레이크를 밟았습니다. 이제 어떻게 해야 할까요?"
+  },
+  {
+   "title": "Meta AI is getting a Mac app",
+   "url": "https://www.theverge.com/tech/982270/meta-ai-mac-app",
+   "date": "2026-08-19T17:00:00.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "Meta is launching a new Mac app dedicated to its AI chatbot. In an announcement on Wednesday, Meta says you can share your window with its AI chatbot, which can provide suggestions, answer questions, or create content ba",
+   "titleKo": "메타 AI가 Mac 앱을 가져옵니다"
+  },
+  {
+   "title": "TerraPower’s nuclear reactor has a secret weapon for powering AI data centers",
+   "url": "https://techcrunch.com/2026/08/19/terrapowers-nuclear-reactor-has-a-secret-weapon-for-powering-ai-data-centers/",
+   "date": "2026-08-19T15:44:53.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "TerraPower's nuclear power plant possesses a strategic advantage over competitors, especially when chasing after data center deals.",
+   "titleKo": "TerraPower의 원자로에는 AI 데이터 센터에 전력을 공급하기 위한 비밀 무기가 있습니다."
+  },
+  {
+   "title": "Amazon makes its AI-powered Alexa+ free on Fire TV, no Prime required",
+   "url": "https://techcrunch.com/2026/08/19/amazon-makes-its-ai-powered-alexa-free-on-fire-tv-no-prime-required/",
+   "date": "2026-08-19T15:00:00.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "Amazon is making its AI-powered Alexa+ assistant free on all compatible Fire TV devices in the U.S., automatically upgrading users whether or not they subscribe to Prime.",
+   "titleKo": "Amazon은 AI 기반 Alexa + 를 Fire TV에서 무료로 제공하며 Prime은 필요하지 않습니다."
+  },
+  {
+   "title": "Calendly throws its hat into meeting note-taker circus",
+   "url": "https://techcrunch.com/2026/08/19/calendly-throws-its-hat-into-meeting-note-taker-circus/",
+   "date": "2026-08-19T14:09:39.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "Calendly is also releasing a meeting scheduling assistant called Callie.",
+   "titleKo": "모자를 칼렌들리 (Calendly) 가 미팅 노트 테이커 서커스에 던집니다"
+  },
+  {
+   "title": "친구·부모 대신 AI?…“인공지능이 행동에도 영향”",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1tNkRVa2ZsWkFZQmYyRW1WMTZDSU9ZUE54QlVWdkRnaU1HVzBCS0VBX2p4QVhsZk9XTTFoeWd0VEJ2cGJ2eFpJTmxiN3EtZVVzWmdFS0VoaTRfYkE?oc=5",
+   "date": "2026-08-19T12:39:00.000Z",
+   "source": "KBS 뉴스",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "AI isn’t close to curing cancer. This startup says it knows what it will take.",
+   "url": "https://techcrunch.com/2026/08/19/ai-isnt-close-to-curing-cancer-this-startup-says-it-knows-what-it-will-take/",
+   "date": "2026-08-19T12:00:00.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "It's the data, stupid.",
+   "titleKo": "AI는 암을 치료하는 데 가깝지 않습니다. 이 스타트업은 무엇이 필요한지 알고 있다고 말합니다."
+  },
+  {
+   "title": "Nvidia’s new financial strategy does not compute",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/981668/nvidias-goldman-blackrock-gpu-compute-asset",
+   "date": "2026-08-19T12:00:00.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "April - 1805 Napoleon is master of Europe Only the British fleet stands before him Compute is now an asset class I see it is once again time to talk financial innovation. Apollo, BlackRock, Blackstone, Brookfield, Goldma",
+   "titleKo": "엔비디아의 새로운 재무 전략은"
+  },
+  {
+   "title": "오픈AI, 오픈라우터서 'GPT-5.6' 절반가 할인...앤트로픽 사용량 2배 넘어",
+   "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBCTmp6TExvZGJvU2RZOHB5V19DMzhMTklxMUhyQWlfQXFjaVpUVVBGS2VsaHphZFVIUk5HWFJqb0JCOGpSRThqNlpPVFVRNkdkWFh6eW5CUzQzS0FseTFfZTB6RlFMX29kX1E?oc=5",
+   "date": "2026-08-19T10:54:38.000Z",
+   "source": "AI타임스",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "Relativity Networks raises $22 million to bring a faster kind of fiber to data centers",
+   "url": "https://techcrunch.com/2026/08/19/relativity-networks-raises-22-million-to-bring-a-faster-kind-of-fiber-to-data-centers/",
+   "date": "2026-08-19T10:00:00.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "Relativity Networks deals in hollow-core fiber, a rarely deployed technology that allows data to be transmitted 30% faster than conventional fiber.",
+   "titleKo": "Relativity Networks, 데이터 센터에 더 빠른 종류의 광섬유를 제공하기 위해 $ 2,200만 모금"
+  },
+  {
+   "title": "아마존 따라가는 쿠팡, 'AI 팩토리' 만든다",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9rTk9jRGtIWm54V1MxWU0xendUTGsyeUZ2eURoQ2ktaEVXbXNyemxCbnpDejZ4SzFjOTRmTmZCRjZIUm9iU0VtWWMxYThUVzFualg0VzYwdThOQQ?oc=5",
+   "date": "2026-08-19T08:56:57.000Z",
+   "source": "한국경제",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "전 국민에 1인당 44만원 쏜다…AI 산업 호황 결실 나누는 대만",
+   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5zRkR3V1pZM19jNXY5MWxtdnJKYThvUGJucG1vNWZWc2ZLSURYXzJueU82MER5Q2JGSEJkdmY3M2pHTXJaZXVlWWlJbHBQNlE?oc=5",
+   "date": "2026-08-19T08:26:51.000Z",
    "source": "v.daum.net",
    "feed": "Google News",
    "summary": ""
   },
   {
-   "title": "오픈AI \"보안 위협에 AI 개발속도 늦췄다\"",
-   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9rYTkxdlplTjRvVkdSaFk3YnQ3Q0t5bmtOaVdtbkNHMkJtdkEzNEZGc0k1YWlpTWF3bkRvckp1MWVhUEoxT3d6Q0NVRW5ldUU?oc=5",
-   "date": "2026-08-18T22:33:02.000Z",
-   "source": "v.daum.net",
+   "title": "AI 컴퓨팅 성능 확장에 새로운 전력 아키텍처가 필요한 이유",
+   "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBFVzFuZzJqcDNVT0w4RVdQWjNHY05iV0VoU3ZLbHJQVjRZUVhaei1NSFI3SjhkZW5LQl9IQzVTQXVpcUVFdWNfWk5xQl9Qc1lQVGJSVTFCb1lmVHN1c2VBUkh2dWg3WURERlRVZjN6bnN3UXVWdXMxQjF3?oc=5",
+   "date": "2026-08-19T07:25:20.000Z",
+   "source": "NVIDIA",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "“전 국민에 45만원 ‘AI 보너스’ 드립니다”···돈 벌면 국민에 나눠주는 황금국들 [이윤정 기자의 소소월드]",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5od3R4MlVLcHNtQXN4LUxsZ09RM1piYlVZWGFUeElhRDVablh4eFBaQmtaVzV4UkVIVnVKOFlNblhQN1A5QjV1UFpjU2ZOLURGV3JzR0lHREZnQdIBX0FVX3lxTE5oSVlzVlpkMVo1M1Z1WkU5cUxEWkwxaHUyeDlJcnBDMjEwTk9yX3dKN041VGpOQXluMzVkUU0xZWtwLUs2Y2RhTG9hM0oxcDFfOG9aaWJ6X3p2OFpRM2lV?oc=5",
+   "date": "2026-08-19T01:17:00.000Z",
+   "source": "경향신문",
    "feed": "Google News",
    "summary": ""
   },
@@ -82,44 +314,22 @@
    "titleKo": "Cursor는 GitHub의 불만을 활용하여 라이벌 호스팅 플랫폼을 출시합니다."
   },
   {
-   "title": "“AI 에이전트가 다 해주는데요”···‘제로 클릭’ 시대, 플랫폼이 살아남는 방법은? [경제밥도둑]",
-   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE84d1U5RlgxaU4zZlZNWFpPSUdCc3dTeEVhV29FWDJIWGNlSXJyeHZzc1YtVURxZTdqUHdBaGlGUzZSNUVPdjhIWFh0V3RTYnI3MHpYZy1yOFhVd9IBX0FVX3lxTFBaQnM3dXUtRVBQZEUzdUc2LUxfRFM2OTNPWUFwZkU5djgwN2Fwd1RIa2xMZGJrUDVPUDJMcDZBQVgxTWtXV3otTlZOdDFpanN4bXJjN2x2LVR6QktnRGh3?oc=5",
-   "date": "2026-08-18T22:00:00.000Z",
-   "source": "경향신문",
-   "feed": "Google News",
-   "summary": ""
+   "title": "Robin Williams’ Instagram account brought back to fight ‘AI abuse’",
+   "url": "https://www.theverge.com/entertainment/981644/robin-williams-instagram-account-ai",
+   "date": "2026-08-18T19:48:26.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "Robin Williams' children are taking over their father's Instagram account after his daughter spoke out against the use of his AI likeness, as reported earlier by The Wrap. In a post on Tuesday, Zak, Zelda, and Cody Willi",
+   "titleKo": "로빈 윌리엄스의 인스타그램 계정이 ’AI 악용‘ 에 맞서 싸웠습니다"
   },
   {
-   "title": "AI는 일자리를 빼앗는가, 아니면 일의 가치를 바꾸는가",
-   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1xVXJ2RHo1SjVPTEJWYzdYOWgzMVVDbkZXRk9Dd28zUGV6NGxSYmdNYzVIalR4Y1lONWZhUzlCb2NlWnA4b1Nrb1phV05BMlZqYlMxcDNoUHJlX2d4ZzFpY2RZa1lEaHJFMmZ2N3pyOGc?oc=5",
-   "date": "2026-08-18T21:30:04.000Z",
-   "source": "매일노동뉴스",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "엔비디아 자본력 확장…AI 칩 독점서 금융 보증으로 전환",
-   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPWGJxZU0xaWQtdmVYa0puVW82ek9TdUlOcU1Sa0VZaDZyX0hnRUZDem9ybG1UWlhua08yUkgxbk9wMTJwMk0zS0lhdXd0dVp2bFpNSThGenZOdUl0NThjVmNFX0owQ1NuT0lNZkF5dUZmbksxY1ZOam9TX3I5c1BUYTZvbWRSQUVM?oc=5",
-   "date": "2026-08-18T20:35:05.000Z",
-   "source": "글로벌이코노믹",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "'토큰' 대신 중국어 '츠위안' 쓰자…中, AI 기술 담론 주권경쟁 시동 - 머니투데이",
-   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE45a2wyZHBwRThJU3hRb0Eyc1FKVEdUWTFEcXdCMmw3dWgxOTBod3ZzXzBmak9kTTZnME5KZ1NkOURibmFJOFZnLS1LOVNQc2dkbzhJY0szalRZWktQMVZGS0s3T0t6TUtI0gFuQVVfeXFMTnFEVFIxYVdzdHAxQ1Z3WkFiUjJVWUVEMlh4WDNvT0dIRzJybngzcVZua2huYV91Q2hCek9sRk1Gb1k5NHpfMXE2eUFUSkF3YU51NVV4TkJmR192Q1F3RV9EaTI4THNDZG5CNkxqSWc?oc=5",
-   "date": "2026-08-18T20:31:00.000Z",
-   "source": "머니투데이",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "오픈AI, 청소년용 챗GPT 출시…안전장치·공부모드 대폭 강화",
-   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFAtd1ljSm5sanZ4WTY4aXFKSTJ3cnM1TVd5ZnZQUjcyVzVHel9rNnZXUFV1TWVkWENNdDdlX2JfZlhNTkxNQzJFMmY1MllJRWN0X1U4WGVyNUFMaE3SAWBBVV95cUxNMXFnT3ZjdDJueEEzMmZndGlCQ2FTSkZiZDJCZUctVnNSeGtNeUtqcjNhd3BwaFg0UWs1aUtDSUVGWlFra3RtdnhIVjJNbDkwRDVmNE9fc0VBeW40X0FJTy0?oc=5",
-   "date": "2026-08-18T18:04:15.000Z",
-   "source": "연합뉴스",
-   "feed": "Google News",
-   "summary": ""
+   "title": "OpenAI lays out new security changes after its AI hacked Hugging Face",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/981640/openai-security-changes-ai-hugging-face-hack",
+   "date": "2026-08-18T19:28:30.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "OpenAI is announcing security updates following the July news that its AI broke out of a sandboxed environment and accidentally hacked Hugging Face, including improvements to its research environments, monitoring, and al",
+   "titleKo": "OpenAI는 AI가 Hugging Face를 해킹한 후 새로운 보안 변경 사항을 적용합니다."
   },
   {
    "title": "OpenAI institutes new safeguards after Hugging Face breach",
@@ -140,50 +350,6 @@
    "titleKo": "에칭의 밸류에이션은 한 달 만에 $ 21B로 두 배 증가"
   },
   {
-   "title": "Why Apple’s camera-equipped AirPods may not be the ‘pervert pods’ consumers fear",
-   "url": "https://techcrunch.com/2026/08/18/why-apples-camera-equipped-airpods-may-not-be-the-pervert-pods-consumers-fear/",
-   "date": "2026-08-18T16:19:10.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "Apple’s leaked camera-equipped AirPods might avoid the privacy pitfalls of other AI wearables by preventing users from recording photos and videos.",
-   "titleKo": "Apple의 카메라 장착 AirPods가 소비자가 두려워하는 ‘변태 Pods‘ 가 아닐 수 있는 이유"
-  },
-  {
-   "title": "[횡설수설/김창덕]AI 데이터 ‘골드러시’",
-   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1uOUxOQ2ZJVTZBaUtpb2lmT2dyRVYtN3NSTHNPaFJVT2xoRUduZ1NqSUFhbWdTTTJ4dFZhdjRaMmg2YWJ0Vk5JaGJmbHFTQlg0S0otRXlTaXAwTUllMGN5MXdzaU5xamZidmlReTFBNjU2cFo1d3fSAWZBVV95cUxQSWh6XzI5b2Y3Yjl3X2hRdGQ4U29xTEVyT0NseUtDb25BV1JkcVdnTmxPbnl6N2hOeEpRYjRZZm9BVHdpcjUwVUJEbjdMTEhuWFpRemEzYUdSMVQ5cVhtZGZNay1Ub0E?oc=5",
-   "date": "2026-08-18T14:18:00.000Z",
-   "source": "동아일보",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "Warp’s new system is an out-of-the-box software factory for AI development",
-   "url": "https://techcrunch.com/2026/08/18/warps-new-system-is-an-out-of-the-box-software-factory-for-ai-development/",
-   "date": "2026-08-18T14:00:00.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "On Tuesday, Warp introduced Warp Factories, a new infrastructure system designed to make building AI software factories as easy as possible.",
-   "titleKo": "Warp의 새로운 시스템은 AI 개발을 위한 즉시 사용할 수 있는 소프트웨어 공장입니다."
-  },
-  {
-   "title": "OpenAI launches a safer ChatGPT for teens — years after teens started using it",
-   "url": "https://techcrunch.com/2026/08/18/openai-launches-a-safer-chatgpt-for-teens-years-after-teens-started-using-it/",
-   "date": "2026-08-18T13:50:30.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "ChatGPT for Teens adds age-appropriate safety measures, parental controls, and learning tools designed to steer teens away from harmful content — and from using AI to cheat on their homework.",
-   "titleKo": "OpenAI, 청소년을 위한 보다 안전한 ChatGPT 출시 — 청소년이 사용하기 시작한 지 수년 후"
-  },
-  {
-   "title": "Perplexity’s free AI offer left it with millions more users in India",
-   "url": "https://techcrunch.com/2026/08/18/perplexitys-free-ai-offer-left-it-with-millions-more-users-in-india/",
-   "date": "2026-08-18T13:45:40.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "Perplexity's India revenue rose about 60% after the Airtel offer ended for new users, even as downloads declined.",
-   "titleKo": "Perplexity의 무료 AI 제공으로 인도에서 수백만 명의 사용자가 증가했습니다."
-  },
-  {
    "title": "Firefox’s Smart Window promises a better AI browser",
    "url": "https://www.theverge.com/ai-artificial-intelligence/981283/mozilla-firefox-smart-window-ai-features",
    "date": "2026-08-18T13:00:00.000Z",
@@ -191,22 +357,6 @@
    "feed": "The Verge",
    "summary": "Starting today, AI chats in Firefox's Smart Window AI browsing mode can pull from current web info and show source links in chat responses through a partnership with Exa. Smart Window can also now automatically suggest t",
    "titleKo": "Firefox의 Smart Window는 더 나은 AI 브라우저를 약속합니다"
-  },
-  {
-   "title": "“AI와 사랑에 빠졌어요”…청소년 파고드는 ‘AI 과의존’",
-   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFB3cVRtLTcyWmV0UDQyWEVmRHFMOXZGNHRLSWRhcGUxWml1Q3VPRGFOQk11YURFMTVyWW5PNlVsRmlDdXZTXzN5QklRREkzdkUtV3NZVkpNcjFEMm8?oc=5",
-   "date": "2026-08-18T12:36:00.000Z",
-   "source": "KBS 뉴스",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "'모두의 AI' 프로젝트 공모에 6개 컨소시엄 출사표...이달 말 최종 사업자 결정",
-   "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1ycTlDV2hQdnVfM3pTZXpmR0hiY1dJTzFZOURpeUFiM0FWcnEwWmQ0VEpWR3pQd1JQX0NWT1MxNjkyLV9BZjVOalRUSGlQT2pJSkZ4NUh3ckRQa0lQc052Vk1tcGp2ck81YXc?oc=5",
-   "date": "2026-08-18T12:30:00.000Z",
-   "source": "AI타임스",
-   "feed": "Google News",
-   "summary": ""
   },
   {
    "title": "Google’s Pet Memory forgot who my cats are",
@@ -218,21 +368,13 @@
    "titleKo": "Google의 Pet Memory에서 내 고양이가 누구인지 잊어버림"
   },
   {
-   "title": "‘모두의 AI’에 6개 컨소시엄 접수... LG는 카카오와 손잡았다",
-   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPQVlpYlF0TC1qWnVQSVlvelpFX1ZPTWlvdE5zdUlHSG1CT18tTXR6YXBiM010bVJKRzRNUUE3S0dJUGFtazBoU096clZweHVZai1tcFN6cUhmNnZwOUVhNFdRRzdoS1VSallCNmNfWmJkREFtbnF5OEZFVWFtWmFOVGR4VQ?oc=5",
-   "date": "2026-08-18T11:20:51.000Z",
-   "source": "조선일보",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "Elon Musk made flying even worse so Palantir could profit",
+   "title": "Elon Musk broke the FAA — Palantir is picking up the pieces",
    "url": "https://www.theverge.com/transportation/981194/faa-air-traffic-elon-musk-peter-thiel-palantir",
    "date": "2026-08-18T11:00:00.000Z",
    "source": "The Verge",
    "feed": "The Verge",
    "summary": "On August 6th, the Minneapolis Air Route Traffic Control Center lost radar and communications for around two hours. The outage disrupted more than 1,100 flights across the center's 330,000 square mile, nine-state airspac",
-   "titleKo": "Elon Musk는 Palantir가 이익을 얻을 수 있도록 비행을 더욱 악화 시켰습니다."
+   "titleKo": "일론 머스크가 FAA를 어겼습니다 — 팔란티르가 조각을 집어들고 있습니다"
   },
   {
    "title": "ChatGPT is getting a dedicated mode for teens",
@@ -253,15 +395,6 @@
    "titleKo": "우리는 여전히 사람들이 AI를 실제로 어떻게 사용하는지 알지 못합니다."
   },
   {
-   "title": "Apple’s camera-equipped AirPods appear in leaked video",
-   "url": "https://www.theverge.com/tech/981326/apple-airpods-with-cameras-demo-video-leak",
-   "date": "2026-08-18T09:00:01.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "We may have our first glimpse of Apple's rumored camera-equipped AirPods, thanks to a video that MacRumors found in the macOS Tahoe 26.7 Release Candidate. The short video clip features a man - who is wearing the new Air",
-   "titleKo": "Apple의 카메라 장착 AirPods가 유출된 비디오에 나타납니다."
-  },
-  {
    "title": "AI’s recursive self-improvement might not come so quickly after all",
    "url": "https://www.technologyreview.com/2026/08/18/1142188/ai-recursive-self-improvement/",
    "date": "2026-08-18T09:00:00.000Z",
@@ -271,46 +404,12 @@
    "titleKo": "AI의 재귀적 자기 개선은 결국 그렇게 빨리 오지 않을 수도 있습니다."
   },
   {
-   "title": "[독파모 2차 발표] '국가대표 AI' 3파전 돌입…정예팀에 B200 3천장 푼다",
-   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE96alFSSHF6bFQtMnZZUDB2Vlo1ekM4NTlnNDV5M2JJcHNlV243YmpWR1lSbkFuSFRIZWptb2pJR213WjNvVTctbkREWjdtZ1VqVVpldlRn?oc=5",
-   "date": "2026-08-18T05:28:01.000Z",
-   "source": "지디넷코리아",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "[현장] 알리바바 클라우드, 韓 제3 데이터센터 가동…풀스택 AI 지원 앞장선다",
-   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9vYmZhZ1NuRVd0N1lqaFh1RzdKbWZCYVBwR2NyR21OSGRXQUJMWUYyUFgwQ3V1am16MC1TU0RCNHZvaHNNYzRXVmtWOFZ3YllZelUySWxB?oc=5",
-   "date": "2026-08-18T02:59:49.000Z",
-   "source": "지디넷코리아",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "LG·SKT·업스테이지 독파모 3파전…한국 AI 글로벌 3위(종합)",
-   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE01cHVyQmtpOTgycTZjdUllRGtJT0g3OVFVN0dNQWYyaUJCTDZ5U2VyREp0WU1CX2lreHdvcnZkYmdraWJEd0NvUDBJNmpDTnVTU0djT2JaclcwcDjSAWBBVV95cUxONlNXYWJDcWpxODNMOV9ZUHNzWllNREo5VnFfdVRxWF80c0lHNG1tam5BRWdsaC1qMEpYVDhRcUZzWFVVNGxjbE9rd240a2I2ZFNrdFo4Rnp1TFVNbkFmMjE?oc=5",
-   "date": "2026-08-18T02:39:34.000Z",
+   "title": "대만, 전국민에 44만원 보너스 쏜다…'AI특수에 역대급 GDP성장'",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE8wSUl2TnBuQ3RFTkdHZkhyV1ZsRlhJVU9BTTltcEZSZkRvbUVlR2paWUpuRmRKVzJmMzBzQjhOdWxEX0tlcG5EdGJtbHJCY0d0bEpzZ29vN2ZtV2PSAWBBVV95cUxOa09Ub1ExX05lWUZjcE9wODUtaXUzRW4xbXZqOXliYUxKajVKUzF5VFdVOFRzYUFWNmdTVktjQzJXQlR5OGtvSkxERW9BVnB5TlV3cGRrSllhdnMybnFmdFk?oc=5",
+   "date": "2026-08-18T04:34:01.000Z",
    "source": "연합뉴스",
    "feed": "Google News",
    "summary": ""
-  },
-  {
-   "title": "Anthropic’s annualized revenue surges to $65B",
-   "url": "https://techcrunch.com/2026/08/17/anthropics-annualized-revenue-surges-to-65b/",
-   "date": "2026-08-17T23:56:26.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "The model maker added $18 billion in annualized revenue in two months.",
-   "titleKo": "Anthropic의 연간 매출이 $ 65B로 급증"
-  },
-  {
-   "title": "AI automation startup Relay shuts down, staff joins Google’s Chrome team",
-   "url": "https://techcrunch.com/2026/08/17/ai-automation-startup-relay-shuts-down-staff-joins-googles-chrome-team/",
-   "date": "2026-08-17T21:27:05.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "\"We have some really ambitious plans to help you work with AI in Chrome to get things done, and I’ll have more to share soon,\" Jacob Bank, Relay founder and CEO, said.",
-   "titleKo": "AI 자동화 시작 릴레이가 종료되고 직원이 Google의 Chrome 팀에 합류합니다."
   },
   {
    "title": "What Flock’s defenders are missing",
@@ -322,60 +421,6 @@
    "titleKo": "플록의 수비수들이 놓치고 있는 것"
   },
   {
-   "title": "Amazon, which started off selling books, is destroying rare texts to train AI",
-   "url": "https://techcrunch.com/2026/08/17/amazon-once-an-online-bookseller-is-destroying-rare-books-to-train-ai-models/",
-   "date": "2026-08-17T16:38:44.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "Rare books are incredibly valuable for training LLMs, since these models have already trained on whatever's available online.",
-   "titleKo": "책 판매를 시작한 아마존은 AI 훈련을 위해 희귀한 텍스트를 파괴하고 있다."
-  },
-  {
-   "title": "Groq raises $350M to fuel its pivot from AI chips to neocloud",
-   "url": "https://techcrunch.com/2026/08/17/groq-raises-350m-to-fuel-its-pivot-from-ai-chips-to-neocloud/",
-   "date": "2026-08-17T16:15:12.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "Groq raised $350 million at a $3.5 billion valuation as the former AI chipmaker pivots to a neocloud business and expands its Nvidia-powered data center footprint.",
-   "titleKo": "Groq는 AI 칩에서 neocloud로 선회하기 위해 $ 350M를 모금합니다"
-  },
-  {
-   "title": "Nvidia investing $1.5B in SoftBank data center developer behind OpenAI project",
-   "url": "https://techcrunch.com/2026/08/17/nvidia-investing-1-5b-in-softbank-data-center-developer-behind-openai-project/",
-   "date": "2026-08-17T15:16:24.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "Nvidia's investment in SoftBank's data center developer will guarantee its chips power an OpenAI data center.",
-   "titleKo": "OpenAI 프로젝트를 수행하기 위해 소프트뱅크 데이터 센터 개발업체에 $ 1.5B를 투자하는 엔비디아"
-  },
-  {
-   "title": "Wispr raises $280M at $2B valuation as it looks beyond dictation",
-   "url": "https://techcrunch.com/2026/08/17/wispr-raises-280m-at-2b-valuation-as-it-looks-beyond-dictation/",
-   "date": "2026-08-17T13:10:05.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "The funds will allow Wispr to increase its footprint as it ventures into new areas, such as meetings, with its newly released note-taker tool.",
-   "titleKo": "Wispr는 받아쓰기를 넘어서는 것으로 보이기 때문에 20억 달러의 가치 평가로 2억 8천만 달러를 모금합니다."
-  },
-  {
-   "title": "Whisker’s AI-powered litter robot thinks my cats swapped bodies",
-   "url": "https://www.theverge.com/tech/978323/whisker-litter-robot-5-pro-review",
-   "date": "2026-08-17T11:00:00.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "The greatest invention in pet tech in recent years is the litter robot. A machine that scoops your kitties' poop so you don't have to - what else could a cat owner possibly want? How about insights into your kitty's litt",
-   "titleKo": "Whisker의 AI 기반 쓰레기 로봇은 내 고양이가 시체를 교환했다고 생각합니다."
-  },
-  {
-   "title": "Anthropic explains how Claude’s invisible text watermarks will work",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/980869/anthropic-claude-watermarks-synthid-text-system",
-   "date": "2026-08-17T10:57:13.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "Anthropic has clarified how it's planning to apply invisible watermarks to Claude-generated text in order to comply with Europe's AI transparency rules. On Friday, Anthropic announced that Claude's text marking system is",
-   "titleKo": "Anthropic은 Claude의 보이지 않는 텍스트 워터마크가 어떻게 작동하는지 설명합니다."
-  },
-  {
    "title": "What happens when a kid’s robot best friend dies?",
    "url": "https://www.technologyreview.com/2026/08/17/1141568/moxie-when-kids-robot-best-friend-dies/",
    "date": "2026-08-17T09:00:00.000Z",
@@ -383,51 +428,6 @@
    "feed": "MIT Technology Review",
    "summary": "When Xander first met Moxie, she taught him that when he was anxious, he could calm down by exhaling through his lips so that he buzzed like a bee. They practiced breathing like dragons to manage feeling mad and sniffing",
    "titleKo": "아이의 로봇 절친이 죽으면 어떻게 될까요?"
-  },
-  {
-   "title": "OpenAI reportedly disbanded its preparedness team",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/980817/openai-disbands-preparedness-team",
-   "date": "2026-08-16T21:32:56.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "According to the Financial Times, OpenAI disbanded its preparedness team at the end of last month. The job of the preparedness team was to assess if models posed serious risks and develop ways to mitigate those risks. (Y",
-   "titleKo": "OpenAI가 준비 팀을 해체한 것으로 알려졌습니다."
-  },
-  {
-   "title": "Stripe will reportedly acquire AI gateway startup OpenRouter for $7B+",
-   "url": "https://techcrunch.com/2026/08/16/stripe-will-reportedly-acquire-ai-gateway-startup-openrouter-for-7b/",
-   "date": "2026-08-16T20:57:04.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "OpenRouter's CEO recently described the startup as Stripe for AI.",
-   "titleKo": "Stripe가 AI 게이트웨이 스타트업 OpenRouter를 $ 7B 이상에 인수할 예정인 것으로 알려졌습니다."
-  },
-  {
-   "title": "Why people aren’t buying Mark Zuckerberg’s AI future",
-   "url": "https://techcrunch.com/2026/08/16/why-people-arent-buying-mark-zuckerbergs-ai-future/",
-   "date": "2026-08-16T20:32:01.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "On the latest episode of Equity podcast, we discuss why not everyone is buying Zuckerberg’s vision.",
-   "titleKo": "사람들이 마크 주커버그의 인공지능 미래를 구매하지 않는 이유"
-  },
-  {
-   "title": "ChatGPT’s Computer History tracks your clicks and keystrokes",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/980742/chatgpts-computer-history-tracks-your-clicks-and-keystrokes",
-   "date": "2026-08-16T14:56:40.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "ChatGPT's desktop app on macOS has a new feature called Computer History that turns your actions into training data, learning how you work, suggesting automations, and even picking up tasks you left half done. It uses yo",
-   "titleKo": "ChatGPT의 컴퓨터 기록은 클릭 및 키 입력을 추적합니다"
-  },
-  {
-   "title": "Rogue AI aren’t science fiction anymore",
-   "url": "https://www.theverge.com/column/980337/rogue-ai-science-fiction-openai",
-   "date": "2026-08-16T12:00:00.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "This is The Stepback, a weekly newsletter breaking down one essential story from the tech world. For more on AI safety, follow Robert Hart. The Stepback arrives in our subscribers' inboxes at 8AM ET. Opt in for The Stepb",
-   "titleKo": "불량 AI는 더 이상 공상 과학 소설이 아닙니다"
   },
   {
    "title": "Flock is tightening its rules in response to a growing surveillance backlash",
