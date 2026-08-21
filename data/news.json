@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-20T23:50:23.984Z",
+ "generated": "2026-08-21T23:49:09.924Z",
  "source": "Google News · TechCrunch · MIT Technology Review · The Verge",
  "sources": [
   "Google News",
@@ -9,49 +9,209 @@
  ],
  "items": [
   {
-   "title": "이노테나, 문서중앙화 기반 '안전한 AI 전환' 시장 공략",
-   "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFA3QjY2bTM3NXdFU19pSTBzVFl6eEN4TUNEYXkweWN4QWs0M2J0b0RzVV9ISTNiU09fSnNmUXlTcnBhamk3Q09Rb0xmdUNPdw?oc=5",
-   "date": "2026-08-20T23:41:13.000Z",
-   "source": "전자신문",
+   "title": "[영상] \"보고서에만 AI 쓰는 기업, 결국 뒤처진다\"…포티투마루의 AX 생존법",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1XaVJHUHJhV21rR0pfb2dVZnZwdTd0VGtZZkM1TDdoMVdzOGh5M05YeE1LSm94LWtzeC11Mzg5TmlGcGIyaTF0NWt5Z0oyY1Z5TlN6S2l3?oc=5",
+   "date": "2026-08-21T23:43:55.000Z",
+   "source": "지디넷코리아",
    "feed": "Google News",
    "summary": ""
   },
   {
-   "title": "강원혁신센터, NC AI와 소상공인 AI 활용 교육 추진",
-   "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBULVRVRmVtWmVvcXZTM0J4Z2MtRlBQVEhDMzNiV05Dcm04bURFYnB1NUVrYlNIbndiS2ZXd2RPZmljSlNPSXllUnB1WWtFZw?oc=5",
-   "date": "2026-08-20T23:33:10.000Z",
-   "source": "전자신문",
+   "title": "Anthropic’s Opus 4.6 is a smut-machine",
+   "url": "https://techcrunch.com/2026/08/21/anthropics-opus-4-6-is-a-smut-machine/",
+   "date": "2026-08-21T23:07:25.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "Anthropic forbids its Claude models from generating sexually explicit content. But a series of tests conducted by TechCrunch found that it didn't take much to get past the restriction.",
+   "titleKo": "Anthropic의 Opus 4.6은 스머트 머신입니다"
+  },
+  {
+   "title": "삼성전자 美 반도체 총괄, 글로벌 기술 콘퍼런스서 AI 반도체 청사진 제시",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE14alo3eTU2d1I0VjY4OHVsdUtfN0ZNTGt0MUJ3R293ME15N0JXUG1oa2YxUW1nQjRLZlN0VW9iZU5Xa0Q5WTVVbU5aV0ZWVEU5cExZQ293TUlGOV9lNzlicW82MA?oc=5",
+   "date": "2026-08-21T22:40:49.000Z",
+   "source": "더구루",
    "feed": "Google News",
    "summary": ""
   },
   {
-   "title": "AI 시대, 노동 이후의 인간",
-   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1YbnlCVWoxaWhCMGxic1oySURSUXFFVGJ5QmpUVF9RRDZaV3cyTUdqSnlOVmg2RGpscXBDeDZKY1JzdUZMZjNPdzZRVjNpVUNpNEQzcktMSnllTVIxaEwxV28xNm9VZkNP?oc=5",
-   "date": "2026-08-20T23:26:02.000Z",
-   "source": "한국아파트신문",
-   "feed": "Google News",
-   "summary": ""
+   "title": "Nvidia partners with data center developer Cloverleaf",
+   "url": "https://techcrunch.com/2026/08/21/nvidia-partners-with-data-center-developer-cloverleaf/",
+   "date": "2026-08-21T22:37:38.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "Nvidia continues to pour money into data center development — just as AI data centers bring lots of money into Nvidia.",
+   "titleKo": "엔비디아, 데이터 센터 개발자 클로버리프와 파트너십 체결"
   },
   {
-   "title": "코어라인소프트, 英 옵텔럼과 폐결절 AI 협력…북미 사업 확장 기대",
-   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFB6R1ZhTTVXMm5FUHJzekx5RGtha1VuYkRtb1RyOG9TdkNuMkhKaVY4TFR6MWdMalRXUHd4U1kzMkVNS2lzYUJsYjBoQTdXX0xDOW51djR0X2RERWwtZzlrRWVjTU9jN1QtLVE3eElR?oc=5",
-   "date": "2026-08-20T23:05:04.000Z",
-   "source": "팜이데일리",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "“네 말이 맞아” AI가 아첨…실험결과 봤더니",
-   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBLVVB2QVF4WDVQNElMNzZHajM3MXVkUzczQ0hSX2d3a3ZSUlNpbGtTMmxwTzBFdXVuVTExandRTld3cGVhamI0aWlYUlU3bHM?oc=5",
-   "date": "2026-08-20T22:47:11.000Z",
+   "title": "“골프장 예약해줘”…AI가 해킹으로 남 밀어냈다면 누구 책임?",
+   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBmNzhORmFyaVpONjJ3NEZWZ3ctOHNxeVp1djFNT0lDNXpIUHZZWi1MVXdMYkprM3hGUGdGUlFXcnhaQzJ6ZGgtcGFiWkFzcE0?oc=5",
+   "date": "2026-08-21T22:02:09.000Z",
    "source": "v.daum.net",
    "feed": "Google News",
    "summary": ""
   },
   {
-   "title": "엔비디아가 中 맞춤형 AI칩 출시(?)…회사 \"전혀 계획 없다\"",
-   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFB6ajRsVkhMZ2tMQmtuZkpyQlpJUVY2Znp5cEQzaHlrNnhrQ21ZR1ZEZk9aVlFvRjY2bDNIZ0NNblJYMUNVeFlzTlBua3R6UUk?oc=5",
-   "date": "2026-08-20T22:46:59.000Z",
+   "title": "[8월21일] 오픈AI가 ‘컴퓨터 유즈’에 보인 자신감…9년간 이어온 ‘행동하는 AI’의 현재",
+   "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBaVnVpQ3BBckd3eVE1LXpONkQ2eElhNUtRMWsxcmpWRVJnVDFxX1lDa0c1N1J0cFpvemdhLTZLdmZLY19KY2NOOU5QbG8yWmdLLWkzOVhxVDNPelBKNTBqdkNlQTFYa3ZiM3c?oc=5",
+   "date": "2026-08-21T22:00:00.000Z",
+   "source": "AI타임스",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "“AI의 새로운 위험은 가짜 독서…읽지 않고도 읽은 것처럼 착각” [.txt]",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBadDQxeWFGVUkyVFRGV3NlZXNTanpSWE15N0M0YTB2U3JNVkplcTB2eVhKY2R2Mi1xR0hrWXRGNUd1UjZyMWl5ZENRQ09vWUdoSnp3TDJRYjlXSkNGSjVBSktCUQ?oc=5",
+   "date": "2026-08-21T22:00:00.000Z",
+   "source": "한겨레",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "[AI돋보기] 한국 AI 정말 세계 3강인가…숫자로 따져보니",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5BV2g4TVNUZmgzTGxrdE5CYmRCZ1dhelc3aWNRb2dLNEo4elVlTkJLTUlSR2lkV1NLZUNCZGxEWWFueFJ4N09tejRybW5DOEhUNjY2cnF5ZFVlM2fSAWBBVV95cUxOWUlyVXhldkdDdFRNcUtYbGtEWi1GXzB1Q0pybVQ1VVZvbEJQM3FGVm1lZGdQemJKMDRKTkVNOHlOUEFPTUQ4b0NFWEZRcHlmbVZQM2FzWjhHS2VObDBNQkE?oc=5",
+   "date": "2026-08-21T21:33:00.000Z",
+   "source": "연합뉴스",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "Over 1 million people have clicked LinkedIn’s AI slop button",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/983502/linkedin-ai-slop-button-one-million-people-message",
+   "date": "2026-08-21T21:25:50.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "LinkedIn actually announced a \"Seems like AI slop\" button on July 30th, and the company says that a lot of people have already used it. According to a Thursday post from chief product officer Hari Srinivasan, \"over a mil",
+   "titleKo": "100만 명이 넘는 사람들이 LinkedIn의 AI slop 버튼을 클릭했습니다."
+  },
+  {
+   "title": "“AI가 만든 가난한 아프리카”…반크, ‘빈곤 마케팅·AI 슬롭’과 전쟁",
+   "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1MQ3JiVTk3bXdwUTFvWjNzTllPbDRObnhyNDlwTWhlTmxyODZ5My03eFpUcGZtMVd5TUtoNjZJN2pkX1YxSDNNWHNuU0RRbW9HSy1BVmpsUzV2YmVMbnBadXdkUG9zdnBBb3VFQg?oc=5",
+   "date": "2026-08-21T21:13:42.000Z",
+   "source": "재외동포신문",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "대답만 하던 병원AI, 이젠 업무도 척척…'에이전트' 시대 성큼",
+   "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBsdTk3RDh0M25GZnhFVXM5ZF9VT0tsa1dkOUFFSWZtcDdmRFBvcElPamhMUlhwVFRpa1Z4cUpoaDV2YkF3djBOLUl0V252bG4tUkZSa2Y2SmYzWE5ZSWpsTzFsY1pzcUZtcThR?oc=5",
+   "date": "2026-08-21T21:05:00.000Z",
+   "source": "히트뉴스",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "\"왜 아플까\" 원인찾아 병원 삼만리…AI가 답주다[빠정예진]",
+   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE81TkFscnRBNGc0S3MwaHhQTWx1czhuZjBOeTFSQjZEblVXaGJNbjI2Z01JMF82cVVZaHZ1amlDeHhCdHJrcFZ1MktpbGZRT3ozUGpCejJMZlFzTzZMcHpTRdIBeEFVX3lxTFBwY2IyQzRva2Izb2pLSzU5THB3b3pmOGZlUjlFSWlZNDByeldPLWN0WHQ3M01wb0ZKUUxxTVNzSkEzSGE5VGxpdzQzUF9jVVAtU2s3S0prdmU3aXhBV3lWd2RQNzhQdXh1ckN1NVFIRkowMm9aRy1PUQ?oc=5",
+   "date": "2026-08-21T21:01:00.000Z",
+   "source": "뉴시스",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "[IT 칼럼] 우리에게 AI란 무엇인가?",
+   "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE44RktkbEp0V1JzcjNhNnhOSFlvdmlaM1VOcHJaNWpMREFHWUV2Ym4xNFd2bjQ4UExWRTVqZFM2RnpnYkt5U3JWTDEzZE91bURsS2Rhdk9iR0VtcnJaQXc?oc=5",
+   "date": "2026-08-21T21:00:00.000Z",
+   "source": "주간경향",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "AI 채권 발행 폭탄에 투자자 한계 직면…금리 비상",
+   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOV0lPNE92YlhCTUFBQ3JUbE5tREtsMW9EUUNudVNrcDZOM3lScTMwZ0lEYzZ3SWpQemxWaFZDMG1RbXBLUlN1R0oyOHlDc2VIcC1vYW1SakdVcE84cFhVOXd1VmJ2LWRGWURQWGtmUnFRS2VxTlZoQ3ZqSjdHbXU1MW5hYUxteld3?oc=5",
+   "date": "2026-08-21T20:55:42.000Z",
+   "source": "글로벌이코노믹",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "이름 달라도 같은 사람 찾는다…USCIS, AI 신원확인 강화",
+   "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE4tdC1waHNjb3FNd3l0MkJKOHk0ekZIQ0F1V0NMZlhWbV9lZy1NdThBLW9rX1p3Wkh6LWVvLWZPMWd3OFdURmpFeXNYdUx2R3V3ajR2WW9jTTRReWl6M21OSENR?oc=5",
+   "date": "2026-08-21T20:39:00.000Z",
+   "source": "미주중앙일보",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "Nvidia just showed that the harness, not the AI model, is now the real hero",
+   "url": "https://techcrunch.com/2026/08/21/nvidia-just-showed-that-the-harness-not-the-ai-model-is-now-the-real-hero/",
+   "date": "2026-08-21T19:43:39.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "Nvidia research shows that AI agents can perform well, and not go off the deep end, through fine-tuning, even if the AI model isn't that great at the task.",
+   "titleKo": "엔비디아는 방금 AI 모델이 아닌 하네스가 이제 진정한 영웅이라는 것을 보여주었습니다."
+  },
+  {
+   "title": "[더 프롬프트] 제리 카플란 \"AI, 일의 본질 바꿀 것...AI 투자는 거품\"",
+   "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE0wZHhObkFuQzhRTW5GdjVFYzJYUDZtV3ZLemZBdmlTMUd5b2N3TEt2REd5SGFHaVlDd09BLVIwR09IbGNuZUtPTmJ2QVR6U25tc09NcGd1WjF5WWExeEE?oc=5",
+   "date": "2026-08-21T19:32:00.000Z",
+   "source": "YTN",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "The DOJ is investigating a16z. What does this mean for venture capital?",
+   "url": "https://techcrunch.com/podcast/the-doj-is-investigating-a16z-what-does-this-mean-for-venture-capital/",
+   "date": "2026-08-21T14:00:00.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "Andreessen Horowitz has two partners sitting on the boards of companies that now compete with each other: Ben Horowitz at Databricks and Martin Casado at Fivetran. Nothing too scandalous on the surface, except the Depart",
+   "titleKo": "법무부는 a16z를 조사하고 있습니다. 이는 벤처 캐피탈에게 어떤 의미인가요?"
+  },
+  {
+   "title": "Starcloud raises $250 million for orbital data centers as launch options dry up",
+   "url": "https://techcrunch.com/2026/08/21/starcloud-raises-200-million-for-orbital-data-centers-as-launch-options-dry-up/",
+   "date": "2026-08-21T14:00:00.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "There's about to be a big fight to secure access to space.",
+   "titleKo": "Starcloud, 출시 옵션이 종료됨에 따라 궤도 데이터 센터를 위해 2억 5천만 $ 모금"
+  },
+  {
+   "title": "Major YouTube creators are facing backlash for accepting AI money",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/983181/matti-haapoja-sam-kold-kolder-higgsfield-seedance-backlash",
+   "date": "2026-08-21T13:37:52.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "Over the past few days, a number of prominent filmmaking content creators including Matti Haapoja and Sam \"Kold\" Kolder have posted videos of themselves demonstrating what's possible with AI platform Higgsfield. The vide",
+   "titleKo": "주요 유튜브 크리에이터들이 AI 자금 수수에 대한 반발에 직면하고 있다."
+  },
+  {
+   "title": "의생명 논문 10편 중 9편에 ‘AI 손길’…한국이 사용률 1위",
+   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPb2lZVWp4LW5nLU9zbTBSYU5xNlZqN0JVWUlma3BoWTZLYnIxdW5lU0FFQi1VZldQejBtWW1QMGJkUFJaVnFWeUhvMTRHdjNlUVVaMG11aGV4MmJBU1o0elhieXZyNExkdzR4Uk9FVkF6OEd0ZXQtbnJjb28xUEczLU5TNA?oc=5",
+   "date": "2026-08-21T07:00:04.000Z",
+   "source": "조선일보",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "카카오, ‘AI’와 ‘투자’로 나눈다...주가는 7.49%↓",
+   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPX01RTjdpWHdyMkxIM2dHdFZpSHFKLTRRRzVmMDg5M1VTdjljekN5TWw3amttWGhacTRPVlFETUlzeEZ0bE1MUUxfSzB0MFZmNkVLNUVXNU5TeW44U0l0TjJTN1AySHA3bFlwMHNWckw2WVR1VXZGX1h0ek90NU83bmROMA?oc=5",
+   "date": "2026-08-21T05:41:11.000Z",
+   "source": "조선일보",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "카카오, '카카오AI·카카오X'로 인적분할…AI 사업·투자 부문 분리",
+   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPS3pBTFFlS05veExuaVBua1lsWVc1ckdKdnZWY3RGMWlDb3dtTWM2MlBZNEpzdlNqcWV3YXJmQ0YzaGRVN0NDejl2cllVWVVuMmFOVjByenB1TnpaT0F6ejFHcUNmYmtEaTlZaFEwVV9MQ1hWeFRJakVvbHlSaXI4R2w5TQ?oc=5",
+   "date": "2026-08-21T01:24:00.000Z",
+   "source": "인베스트조선",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "AI data startup Micro1 reaches $500M gross run rate amid AI training boom",
+   "url": "https://techcrunch.com/2026/08/20/ai-data-startup-micro1-reaches-500m-gross-run-rate-amid-ai-training-boom/",
+   "date": "2026-08-21T00:13:44.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "Surging demand for AI training data is driving rapid growth for the startup and its rivals.",
+   "titleKo": "AI 데이터 스타트업 Micro1, AI 교육 붐 속에서 총 실행률 $ 500M 달성"
+  },
+  {
+   "title": "구글에 무슨 일이? '전설급' AI 인재 다 떠난다 [스프]",
+   "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE5lbUR2N1pzMTNBbW1xb0M0WDloOFBLTWttTzFnckRrcDgydFFiYXkyZWRaN21ydm45Y3RjSkhkaXJTQXRYT3c?oc=5",
+   "date": "2026-08-21T00:03:12.000Z",
    "source": "v.daum.net",
    "feed": "Google News",
    "summary": ""
@@ -66,14 +226,6 @@
    "titleKo": "OpenAI는 비즈니스 사용자와 함께 Anthropic에서 얻고 있으며, 새로운 데이터는"
   },
   {
-   "title": "세레브라스, 차세대 AI 가속기 'CS-4' 공개…\"GPU 대비 30배 빨라\"",
-   "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFB4MzJDRV93Zk5kZ0l3VEprZ2JPcHZIZFIyUHNSNHpKWDRjZmtsajJfX2xRd2l3TG9ZcmVzd2t4TTV4dF9SYUJiemxOVFdmcGYxMDcwd0ZDWF8yYjI1VHJ6TXhBdUwzMFFpSUE?oc=5",
-   "date": "2026-08-20T22:30:14.000Z",
-   "source": "AI타임스",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
    "title": "ChatGPT can now send texts for you with new Apple Messages plug-in",
    "url": "https://techcrunch.com/2026/08/20/chatgpt-can-now-send-texts-for-you-with-new-apple-messages-plugin/",
    "date": "2026-08-20T22:09:51.000Z",
@@ -81,22 +233,6 @@
    "feed": "TechCrunch",
    "summary": "Ever wanted someone else to do your texting for you? ChatGPT is being offered up as an automated text scribe via a new Apple Messages integration.",
    "titleKo": "ChatGPT는 이제 새로운 Apple Messages 플러그인으로 문자 메시지를 보낼 수 있습니다."
-  },
-  {
-   "title": "'AI 활용' 힘주는 미래운용…실무 공백에 커지는 내부 피로감",
-   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOcVNHOU5qMEhQMWNRbDhFQldZOFplQTRJWGVSUXhzTlhlazAzMTJ3REVsSjZBZnBSVGROR1Frb01jTjhpMW1NS2s0RWphMkZidkNwbVhXcjM4SnpiWlA0Njl1aEN4eTI5Z3dsZnJ6WWtQZ1NkSkZmNGdNdk1TdmFJUVR5bw?oc=5",
-   "date": "2026-08-20T22:01:16.000Z",
-   "source": "인베스트조선",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "2026 경기도서관 AI 포럼 ‘AI 너머 우리는’ 개최",
-   "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPbkV6WjN4SW1HdFo0Y01yR1BZM2xZTVlxeVo3SW5OZ3NzUkpqNUxKVkpCY2VFcmU4MG9SeHhFZnF3R3pMZFVaNnBoanZoMmN1T0lhQnpOdGRKUlVhWUNJSmQ0c1A5T1ZxQXVDMzdfNldTdW4tZGxPV0ZmOU12ZEVCUkVRcEI?oc=5",
-   "date": "2026-08-20T22:00:00.000Z",
-   "source": "경기도뉴스포털",
-   "feed": "Google News",
-   "summary": ""
   },
   {
    "title": "Google Discover is getting an AI chatbot-tuned feed",
@@ -108,22 +244,6 @@
    "titleKo": "Google Discover에서 AI 챗봇 튜닝 피드를 받고 있습니다."
   },
   {
-   "title": "해외선 벌써 3상, 우린 겨우 1상 AI 신약 개발도 ‘부익부 빈익빈’",
-   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBaSHU4TXFsSmtncTJ5VWdteW5mbUdjcS1NNXVseV9GeG5IUkl6YkhsQjBXeW5FeGRMdTFjLXljdlVuVTlVRGkwbzkzQ0xYaUJWZDlYb0htV3Q2elpTTk9KMjdOTU5QRmVtSC1kMFR3?oc=5",
-   "date": "2026-08-20T21:09:53.000Z",
-   "source": "팜이데일리",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "AI가 썼나, 사람이 썼나…AI 시대 달라진 '저자 판별법'",
-   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBUVHR6d084bGFGRTQ1NzNFbl8zYjh4QTliMm5rZ3pUQWVLV1Ridi1IUzI2LWwyM2tRd0VoRFJHcFlzOERjanF4RnFuVFVrWFotMzNZc2lzTTUzSjVydUZ2SdIBeEFVX3lxTFA4VTVMSHdOQ0ZZYWdqazBTT0ltVXMyV1ZjVGlyUWI4VW5mZUxmMHFuMDN1eFlYRGN0THJGUGlXZTNLVlRKakVRT01ZdHVvdFFPQTZUeVN3WGNySHJMVy1PWk9pVGIycGVNSVdsU2hZamZVc1poTGltMw?oc=5",
-   "date": "2026-08-20T21:00:00.000Z",
-   "source": "뉴시스",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
    "title": "OK, can we actually cool data centers with our pee?",
    "url": "https://techcrunch.com/2026/08/20/ok-can-we-actually-cool-data-centers-with-our-pee/",
    "date": "2026-08-20T20:53:13.000Z",
@@ -131,38 +251,6 @@
    "feed": "TechCrunch",
    "summary": "Jason Kelce joked that people should cool data centers with their pee, rather than potable water -- but his suggestion is not completely ludicrous.",
    "titleKo": "좋아요, 실제로 PEE로 데이터 센터를 냉각시킬 수 있을까요?"
-  },
-  {
-   "title": "올해부터 약사국시도 AI 대응한다…\"시대에 맞춰 기준 강화\"",
-   "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1OTDJNeFJ2NUQ1WmkyLXNTNGhDZ0lrVVJCdk9PZ3JiSFNMdGJWU3FyaTZwWEplakxLT2Y4clRNQ0tZeEtyNGlSa3BES0NSTGQ5V3A1NVJIdjU0WVQzbFpNNnFyb2dWMTljX3dzRg?oc=5",
-   "date": "2026-08-20T20:52:00.000Z",
-   "source": "약사공론",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "中 차세대 AI ‘체화지능’ 국가 전략산업 육성…의료 현장 혁신 예고",
-   "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBRTlhudG9UQ3dpVkdMUTZweEIxMjRQc0NhVV9ENVdOUklRb3k0MlBnU1JBMmxTY2ktamtwSW01cjNTck55NnFSekh5dnk0dmVPdmFBU3MwRUJZMlRIRW04ODhqZng5ZXZTNXc?oc=5",
-   "date": "2026-08-20T20:50:00.000Z",
-   "source": "의학신문",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "“인공지능 툴 ‘뚝딱’ 만들더라”…지방 중기 살리는 ‘AI 구원투수’",
-   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBxRTR1SU5nR1lTVm85aWhDSXV0aVpya29kQVNYOElmYk91TE1GdzJUR3BHekRqOEo5Y3prLWVYVzI0NExNZXJ0NzZMWU1VNm8?oc=5",
-   "date": "2026-08-20T20:02:13.000Z",
-   "source": "v.daum.net",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "\"사실 AI가 써줬어요\"…수사관 잡는 '화려한' AI 고소장",
-   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE83ZHBOX29qNkFNY2NmUEZGTnVFemJPVGZOZWNsUGVYZVRyekpJenRYTjhqbnhCd2VKamhGRVU2QUZ2VGllMWQ0aEdKV01mbkRneVE?oc=5",
-   "date": "2026-08-20T20:00:00.000Z",
-   "source": "노컷뉴스",
-   "feed": "Google News",
-   "summary": ""
   },
   {
    "title": "청소년 즐겨하는 AI 채팅앱, 선정성 민원 쏟아지는데…정부 조사 '0건' - 머니투데이",
@@ -200,14 +288,6 @@
    "titleKo": "Linkdaze의 스마트 캘린더는 단순히 일정을 추적하는 것이 아니라 가정을 운영하도록 설계되었습니다."
   },
   {
-   "title": "넥스트 칩 워… AI 인프라의 신경망 ‘光 네트워킹’을 접수하라",
-   "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNWnNNdHVSelFVNDJmTEZvLWgyeXBPUnBQN3RqM1RlZEI4a0kyeUZFQVpwTmhfWmhQRGVYcnk4REpGRWVkTExhWnp2eDQ2eFhCa2VvZzl4eUNWdG5rM2Y4eFM2dTE2MnBTRVB4a1pHR2R3REZVdVpxMUVZS1h5SVI0OE1LdDNEQQ?oc=5",
-   "date": "2026-08-20T18:00:00.000Z",
-   "source": "조선일보",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
    "title": "Grok keeps sending gibberish responses to users",
    "url": "https://techcrunch.com/2026/08/20/grok-keeps-sending-gibberish-responses-to-users/",
    "date": "2026-08-20T17:32:16.000Z",
@@ -217,13 +297,13 @@
    "titleKo": "Grok은 사용자에게 계속 횡설수설한 답변을 보냅니다."
   },
   {
-   "title": "A third of web pages published since ChatGPT’s launch show signs of AI authorship, study finds",
+   "title": "A third of web pages published since ChatGPT launched were written by AI, study finds",
    "url": "https://techcrunch.com/2026/08/20/a-third-of-webpages-published-since-chatgpts-launch-show-signs-of-ai-authorship-study-finds/",
    "date": "2026-08-20T17:18:58.000Z",
    "source": "TechCrunch",
    "feed": "TechCrunch",
    "summary": "ChatGPT and other AI models are now authoring and editing much of the new web.",
-   "titleKo": "ChatGPT의 출시 이후 게시된 웹 페이지 중 1/3은 AI 저자의 흔적을 보여준다고 연구팀은 밝혔습니다."
+   "titleKo": "ChatGPT가 출시된 이후 게시된 웹 페이지의 1/3은 AI에 의해 작성되었습니다."
   },
   {
    "title": "Ramp launches its own AI model router, called Router",
@@ -233,24 +313,6 @@
    "feed": "TechCrunch",
    "summary": "Ramp has launched its own AI model routing service, dubbed Router, that lets users and companies use and switch between various large language models via an API.",
    "titleKo": "RAMP는 라우터라고 하는 자체 AI 모델 라우터를 출시합니다."
-  },
-  {
-   "title": "Meta brings Pocket, an app that lets you vibe-code and share games, to US users",
-   "url": "https://techcrunch.com/2026/08/20/meta-brings-pocket-an-app-that-lets-you-vibe-code-and-share-games-to-us-users/",
-   "date": "2026-08-20T16:07:26.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "Meta is bringing Pocket, its experimental AI-powered app for creating and sharing interactive games, to users across the U.S. after quietly testing it in Brazil.",
-   "titleKo": "Meta는 미국 사용자에게 게임을 바이브코딩하고 공유할 수 있는 앱인 Pocket을 제공합니다."
-  },
-  {
-   "title": "Inertia Enterprises finds a way to make its fusion fuel fast",
-   "url": "https://techcrunch.com/2026/08/20/inertia-enterprises-finds-a-way-to-make-its-fusion-fuel-fast/",
-   "date": "2026-08-20T16:00:00.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "Fusion power startup Inertia Enterprises reduced the fuel filling process from a week to just a few hours. It's one of 10 hurdles the company must overcome to make a profitable power plant.",
-   "titleKo": "관성 기업은 융합 연료를 빠르게 만드는 방법을 찾습니다"
   },
   {
    "title": "It’s Greg Brockman’s OpenAI now",
@@ -271,14 +333,6 @@
    "titleKo": "인공지능 의식에 대한 논쟁은 함정이다"
   },
   {
-   "title": "李-최태원 비공개 만찬…美 AI서밋 3주만에 다시 회동",
-   "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9rNHZTZ3JvcmFGN050U0pidk9hUzdJSEJNTmZzel9LX0V3S2NZSUZUOExqbnBURWRRNEp1SnBRU2tnZkxSbjBGaEVsVnZ1WGY5NlNTZkEwR1VlNEl3eHhlbzFONXduUURySUE0R1FUa1pXcG1vYm840gFmQVVfeXFMTXBJcGM2YmZYUXJoNk0wTnFjR3RjRGpHNnRiVVJfLWxmeGV0REQtNk03TkhGRlFqa3JyVTZZQkw5bTRKTmlwTk44eHFncF9JV21kWm11anNTRW1uVW5ZamxiNlB6QTJR?oc=5",
-   "date": "2026-08-20T14:07:00.000Z",
-   "source": "동아일보",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
    "title": "Welcome to the AI crisis in math",
    "url": "https://www.theverge.com/podcast/982434/ai-math-openai-astra-existential-crisis",
    "date": "2026-08-20T14:00:00.000Z",
@@ -286,23 +340,6 @@
    "feed": "The Verge",
    "summary": "Today on Decoder, I’m talking with Robert Hart, The Verge’s London-based AI reporter, about what AI is doing to the field of mathematics and the existential crisis many lead mathematicians are having about it. OpenAI jus",
    "titleKo": "수학 분야의 AI 위기에 오신 것을 환영합니다"
-  },
-  {
-   "title": "“네 말이 맞아” AI가 아첨…실험결과 봤더니",
-   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE44M0JtZUd4WDBXeEZFbUI0THlmSjFFM1M5ZEJQYThCVFRGeUZmNklGTVg1T1NrZkFoNHZ3cFo5XzdZNEFtc243SjFuaDN2ZVFNeS1nTFdwbG1QSzg?oc=5",
-   "date": "2026-08-20T12:34:00.000Z",
-   "source": "KBS 뉴스",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "Meta AI’s new Mac app wants you to talk to your apps",
-   "url": "https://techcrunch.com/2026/08/20/meta-ais-new-mac-app-wants-you-to-talk-to-your-apps/",
-   "date": "2026-08-20T12:11:57.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "The company said that the dictation feature works across all apps, just like other tools such as Wispr Flow, Superwhisper, and Monologue.",
-   "titleKo": "Meta AI의 새로운 Mac 앱은 앱과 대화하기를 원합니다"
   },
   {
    "title": "Slack is launching collaborative vibe-coding channels",
@@ -323,13 +360,12 @@
    "titleKo": "시장 모델로 숨겨진 수익원 창출"
   },
   {
-   "title": "Binance now lets AI agents trade, but keeping them in check is largely up to users",
-   "url": "https://techcrunch.com/2026/08/20/binance-now-lets-ai-agents-trade-but-keeping-them-in-check-is-largely-up-to-users/",
-   "date": "2026-08-20T09:30:00.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "Binance's Agent OS works with tools such as ChatGPT, Claude Code, and Cursor.",
-   "titleKo": "이제 Binance를 통해 AI 상담원이 거래할 수 있지만, 이를 확인하는 것은 주로 사용자의 몫입니다."
+   "title": "구글, AI 기반 학습 도구 대거 공개…대학생 1년 무료 이벤트까지",
+   "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9mclJZaFQtbDZTN2tlSUNSeUk1elR6aGVDZEZRZ1l0LXBTTU5RM0N1ajQxVVN3NUhCWDg1dmY5SEJma1JWV0RWX3JjTzlqdDcyd1UxTVFSSGthZnBXZmN4R2NOcVhPRDROZ3c?oc=5",
+   "date": "2026-08-20T08:45:00.000Z",
+   "source": "AI타임스",
+   "feed": "Google News",
+   "summary": ""
   },
   {
    "title": "제미나이 1년 무료 혜택과 함께, 알찬 새 학기를 시작해 보세요",
@@ -338,24 +374,6 @@
    "source": "blog.google",
    "feed": "Google News",
    "summary": ""
-  },
-  {
-   "title": "Stripe didn’t really buy OpenRouter because of the ‘singularity’",
-   "url": "https://techcrunch.com/2026/08/19/stripe-didnt-really-buy-openrouter-because-of-the-singularity/",
-   "date": "2026-08-19T23:32:00.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "What does a payments giant want with a startup that routes prompts between different AI models? Stripe says it's because of \"the singularity\" but it's really for a far more real and powerful reason.",
-   "titleKo": "Stripe는 ‘특이점‘ 때문에 OpenRouter를 실제로 구입하지 않았습니다."
-  },
-  {
-   "title": "OpenAI seeks to one-up Anthropic with new customer privacy protections",
-   "url": "https://techcrunch.com/2026/08/19/openai-seeks-to-one-up-anthropic-with-new-customer-privacy-protections/",
-   "date": "2026-08-19T22:10:46.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "A competition is developing between OpenAI and Anthropic over who can provide the best privacy protections for enterprise customer data.",
-   "titleKo": "OpenAI는 새로운 고객 개인 정보 보호를 통해 Anthropic을 통합하고자 합니다."
   },
   {
    "title": "Google Gemini is getting a dedicated student hub",
@@ -392,24 +410,6 @@
    "feed": "The Verge",
    "summary": "April - 1805 Napoleon is master of Europe Only the British fleet stands before him Compute is now an asset class I see it is once again time to talk financial innovation. Apollo, BlackRock, Blackstone, Brookfield, Goldma",
    "titleKo": "엔비디아의 새로운 재무 전략은"
-  },
-  {
-   "title": "Robin Williams’ Instagram account brought back to fight ‘AI abuse’",
-   "url": "https://www.theverge.com/entertainment/981644/robin-williams-instagram-account-ai",
-   "date": "2026-08-18T19:48:26.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "Robin Williams' children are taking over their father's Instagram account after his daughter spoke out against the use of his AI likeness, as reported earlier by The Wrap. In a post on Tuesday, Zak, Zelda, and Cody Willi",
-   "titleKo": "로빈 윌리엄스의 인스타그램 계정이 ’AI 악용‘ 에 맞서 싸웠습니다"
-  },
-  {
-   "title": "OpenAI lays out new security changes after its AI hacked Hugging Face",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/981640/openai-security-changes-ai-hugging-face-hack",
-   "date": "2026-08-18T19:28:30.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "OpenAI is announcing security updates following the July news that its AI broke out of a sandboxed environment and accidentally hacked Hugging Face, including improvements to its research environments, monitoring, and al",
-   "titleKo": "OpenAI는 AI가 Hugging Face를 해킹한 후 새로운 보안 변경 사항을 적용합니다."
   },
   {
    "title": "We still don’t know how people are really using AI",
