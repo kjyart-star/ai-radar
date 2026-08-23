@@ -1,6 +1,22 @@
 {
- "generated": "2026-08-22T23:49:13.052Z",
+ "generated": "2026-08-23T23:50:19.671Z",
  "news": [
+  {
+   "title": "Ilya Sutskever new \"Superintelligence\" model will change EVERYTHING",
+   "url": "https://www.youtube.com/watch?v=VbNdual0DFo",
+   "videoId": "VbNdual0DFo",
+   "channel": "Wes Roth",
+   "published": "2026-08-23T10:54:20.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/VbNdual0DFo/mqdefault.jpg"
+  },
+  {
+   "title": "SK하이닉스 Nature 논문 최초 공개, AI 광학 메모리 시대 등장 | CPO가 메모리까지 들어오면 생기는 일",
+   "url": "https://www.youtube.com/watch?v=4h7_lPC38Kg",
+   "videoId": "4h7_lPC38Kg",
+   "channel": "안될공학",
+   "published": "2026-08-23T05:34:53.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/4h7_lPC38Kg/mqdefault.jpg"
+  },
   {
    "title": "Claude vs. ChatGPT Just Got Serious",
    "url": "https://www.youtube.com/watch?v=ARnUlEyVRoY",
@@ -304,27 +320,19 @@
    "channel": "Matt Wolfe",
    "published": "2026-08-07T14:30:29.000Z",
    "thumbnail": "https://i.ytimg.com/vi/ACYAYsVMmT8/mqdefault.jpg"
-  },
-  {
-   "title": "DeepMind Just Changed How AI Sees The World",
-   "url": "https://www.youtube.com/watch?v=vO6SWG-jxvE",
-   "videoId": "vO6SWG-jxvE",
-   "channel": "Two Minute Papers",
-   "published": "2026-08-07T08:22:00.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/vO6SWG-jxvE/mqdefault.jpg"
-  },
-  {
-   "title": "What is Google even doing?",
-   "url": "https://www.youtube.com/watch?v=LVepOOCtjnQ",
-   "videoId": "LVepOOCtjnQ",
-   "channel": "Matthew Berman",
-   "published": "2026-08-07T01:33:42.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/LVepOOCtjnQ/mqdefault.jpg"
   }
  ],
  "vibe": [
   {
-   "title": "Codex Can CONTROL Your Messages Now (Endless Possibilities)",
+   "title": "IT뉴스 - ox-alpha, 오픈AI 트레이닝 중지, Mythos 5 개방, Gemini 하입과 무료, 모더나 머크, 통속의 뇌 등",
+   "url": "https://www.youtube.com/watch?v=iP5RUzXhWoc",
+   "videoId": "iP5RUzXhWoc",
+   "channel": "조코딩 JoCoding",
+   "published": "2026-08-23T11:18:01.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/iP5RUzXhWoc/mqdefault.jpg"
+  },
+  {
+   "title": "Codex vs Claude vs Grokbot: What's The Best Super App?",
    "url": "https://www.youtube.com/watch?v=ETa6ZYqoIXo",
    "videoId": "ETa6ZYqoIXo",
    "channel": "Riley Brown",
@@ -634,14 +642,6 @@
    "channel": "Greg Isenberg",
    "published": "2026-07-27T18:20:00.000Z",
    "thumbnail": "https://i.ytimg.com/vi/U2hogriGmEw/mqdefault.jpg"
-  },
-  {
-   "title": "Is Anthropic STEALING Your Data? (While You PAY FOR IT)",
-   "url": "https://www.youtube.com/watch?v=qh4vLlit97I",
-   "videoId": "qh4vLlit97I",
-   "channel": "IndyDevDan",
-   "published": "2026-07-27T13:00:10.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/qh4vLlit97I/mqdefault.jpg"
   }
  ]
 }
