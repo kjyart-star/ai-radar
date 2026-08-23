@@ -11,6 +11,11 @@
 
 ---
 
+## v1.9.0 — 2026-08-24
+- **AI 유튜브 중복 제거** — 관리시스템 브리핑의 [유튜브 최신 영상] 아카이브가 매일 같은 영상(예: "AI 영상 제작의 정석")을 반복해서, 그 아카이브 섹션을 제거. 이제 자체수집 News·Vibe 두 군만 표시하고, News에 나온 영상은 Vibe에서 빼 교차 중복도 제거.
+- **작품소개 조회수·채널·게시일 자동화** — 그동안 수동으로 긁던 메타를 매일 자동 수집. 새 스크립트 `scripts/collect-meta.mjs`(picks[Firestore]+extras의 영상ID를 유튜브에서 긁어 `data/aivideo-meta.json` 갱신, 성공한 것만 갱신·실패는 기존 유지). 워크플로에 스텝 추가. 대표가 새 작품을 올리면 조회수가 저절로 채워짐(27→33건).
+- **브리핑 기사 이미지 표시** — 자체 브리핑 링크가 news.google.com 리다이렉트라 구글뉴스 아이콘만 뜨던 것을, `collectBrief`가 **실제 언론사 기사 URL로 해석**(30/30)하고 **og:image를 수집**(11/30 사진 카드)해서, 실제 기사 사진·진짜 언론사 파비콘이 뜨게 함.
+
 ## v1.8.2 — 2026-08-18
 - **AI 유튜브: News군을 AI 뉴스 채널로 재구성 + 쇼츠 제외**(대표 지시). 기존 News군이 AI 영상 창작 채널(힉스필드·Director Dave Clark 등)이라 "뉴스"가 아니었음 → **AI 뉴스/정보 채널 9개**(Matthew Berman·Wes Roth·The AI Advantage·TheAIGRID·AI Explained·Matt Wolfe·bycloud·Two Minute Papers·안될공학)로 교체, 창작 채널은 WATCH에서 제거(작품소개용). Vibe군은 바이브코딩 7개. **쇼츠 제외**: /shorts/<id> HEAD 판별(200=쇼츠 제외, 303=롱폼)로 필터. (조코딩 channelId 오류도 바로잡음.)
 
