@@ -48,6 +48,10 @@ jobs:
         continue-on-error: true
         run: node scripts/collect-youtube.mjs
 
+      - name: 작품소개 영상 메타(조회수·채널·게시일) 수집
+        continue-on-error: true
+        run: node scripts/collect-meta.mjs
+
       - name: Playwright 설치
         continue-on-error: true
         run: |

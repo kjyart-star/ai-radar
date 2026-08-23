@@ -2276,15 +2276,14 @@ function renderYoutube(){
        확보(수집 폭)는 관리시스템 몫이라 여기선 있는 영상 안에서 신선한 것을 앞세운다. */
     function byNew(a,b){ return String(b.published||"").localeCompare(String(a.published||"")); }
     news = news.slice().sort(byNew); vibe = vibe.slice().sort(byNew);
-    var briefs = sortedReports()
-      .filter(function(r){ return !!ytSectionOf(r.content); })
-      .slice(0, 30);
-    var counts = briefs.map(function(r){ return (ytSectionOf(r.content).match(/^•/gm)||[]).length; });
-    var total = counts.reduce(function(a,b){ return a+b; }, 0);
+    /* News 에 이미 나온 영상은 Vibe 에서 뺀다 — 두 군에 같은 영상이 겹쳐 뜨지 않게 */
+    var _nid = {}, _k;
+    for (_k = 0; _k < news.length; _k++){ if (news[_k].videoId) _nid[news[_k].videoId] = 1; }
+    vibe = vibe.filter(function(v){ return !(v.videoId && _nid[v.videoId]); });
 
-    if (!news.length && !vibe.length && !briefs.length){
+    if (!news.length && !vibe.length){
       setKicker(["대기 중"]);
-      setFacts([["—","AI 뉴스"],["—","바이브코딩"],["0","브리핑 수집"]]);
+      setFacts([["—","AI 뉴스"],["—","바이브코딩"],["—","전체 영상"]]);
       C.innerHTML = "<section class='section paper'><div class='inner'>"+
         sectionHead("Watch","아직 모인 영상이<br>없습니다.",
           "아직 모인 영상이 없습니다. 내일 아침에 다시 확인해 주세요.","")+
@@ -2294,40 +2293,25 @@ function renderYoutube(){
 
     var kick = [];
     if (j) kick.push("유튜브 검색", "뉴스·바이브코딩");
-    if (briefs.length) kick.push("브리핑 " + briefs.length + "일치");
-    kick.push((news.length + vibe.length + total) + "편");
+    kick.push((news.length + vibe.length) + "편");
     setKicker(kick);
     setFacts([
       [j ? String(news.length) : "—", "AI 뉴스"],
       [j ? String(vibe.length) : "—", "바이브코딩"],
-      [String(total), "브리핑 수집"]
+      [j ? String(news.length + vibe.length) : "—", "전체 영상"]
     ]);
 
     /* 배경은 섹션이 나올 때마다 paper·dark 를 번갈아 쓴다 — 이 사이트의 기존 규칙 */
     var alt = 0;
     function bg(){ return (alt++ % 2) ? "dark" : "paper"; }
 
+    /* 관리시스템 브리핑의 [유튜브 최신 영상] 아카이브는 뺐다 — 매일 같은 영상(예: "AI 영상 제작의
+       정석")이 반복되고 자체수집 News·Vibe 와 겹쳐 중복이 많았다(대표 지시 2026-08-23).
+       이제 유튜브 화면은 우리가 직접 모은 News·Vibe 두 군만 보여 준다. */
     var html = "";
     if (j){
       html += videoSection(bg(),"News","AI 소식을<br>영상으로.", news, (j.queries||{}).news, j.generated)+
               videoSection(bg(),"Vibe Coding","바이브코딩<br>지금 뭐가 되나.", vibe, (j.queries||{}).vibe, j.generated);
-    }
-    if (briefs.length){
-      var top = briefs[0];
-      html += "<section class='section "+bg()+"'><div class='inner'>"+
-        sectionHead("Briefing","아침 브리핑이<br>고른 영상.",
-          "브리핑이 그날 고른 영상입니다. 썸네일을 누르면 유튜브로 갑니다.",
-          "<b>"+counts[0]+"</b>편 · "+esc(String(top.report_date||"").slice(0,10)))+
-        "<div class='brief-body'>"+richReport(ytSectionOf(top.content))+"</div>"+
-        "</div></section>";
-      if (briefs.length > 1){
-        var body = briefs.slice(1).map(function(r,i){
-          return "<div style='margin-bottom:34px'>"+
-            "<p class='count' style='margin:0 0 12px'><b>"+esc(String(r.report_date||"").slice(0,10))+"</b> · "+counts[i+1]+"편</p>"+
-            "<div class='brief-body'>"+richReport(ytSectionOf(r.content))+"</div></div>";
-        }).join("");
-        html += foldSection(bg(),"Archive","지난 날짜", (briefs.length-1)+"일치", body);
-      }
     }
     C.innerHTML = html;
     bindFold(C);

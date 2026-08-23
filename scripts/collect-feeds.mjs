@@ -269,6 +269,90 @@ function loadSeen() {
   } catch { return { updated: "", keys: {} }; }
 }
 
+/* ---- Google 뉴스 리다이렉트 URL → 실제 기사 URL 해석 + og:image 수집 ----
+ *
+ * 왜: 자체 브리핑 링크는 전부 news.google.com/rss/articles/... (구글 뉴스 리다이렉트)라,
+ *     화면 richReport() 가 host 를 news.google.com 으로 보고 구글뉴스 파비콘만 띄운다.
+ *     실제 기사 URL 을 얻으면 (1) 진짜 언론사 파비콘, (2) og:image 를 사진 카드로 보여줄 수 있다.
+ *
+ * 방법: 구글 뉴스는 더 이상 HTTP 리다이렉트를 주지 않는다(기사 페이지 HTML 만 준다). 대신 그 HTML 의
+ *     data-n-a-sg(서명)·data-n-a-ts(타임스탬프)·data-n-a-id 를 뽑아 batchexecute 로 원문 URL 을 받는다.
+ *     실패하면 그 기사만 폴백(원래 news.google.com URL 유지) — 브리핑 생성은 절대 막지 않는다.
+ */
+const BRIEF_GAP_MS = 400;     // 기사 간 요청 간격 (구글에 몰아치지 않으려고)
+const BRIEF_TIMEOUT = 15000;
+
+async function fetchTextTO(url, { timeout = BRIEF_TIMEOUT, method = "GET", body = null, headers = {} } = {}) {
+  const ac = new AbortController();
+  const t = setTimeout(() => ac.abort(), timeout);
+  try {
+    const r = await fetch(url, {
+      signal: ac.signal, redirect: "follow", method, body,
+      headers: { "user-agent": CT_UA, "accept-language": "ko,en;q=0.8", ...headers },
+    });
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    return await r.text();
+  } finally { clearTimeout(t); }
+}
+
+async function resolveGoogleNewsUrl(gnUrl) {
+  const html = await fetchTextTO(gnUrl);
+  const sig = (html.match(/data-n-a-sg="([^"]+)"/) || [])[1];
+  const ts  = (html.match(/data-n-a-ts="([^"]+)"/) || [])[1];
+  const id  = (html.match(/data-n-a-id="([^"]+)"/) || [])[1];
+  if (!sig || !ts || !id) throw new Error("서명/타임스탬프 없음");
+  const inner = JSON.stringify(["garturlreq",
+    [["X", "X", ["X", "X"], null, null, 1, 1, "US:en", null, 1, null, null, null, null, null, 0, 1],
+      "X", "X", 1, [1, 1, 1], 1, 1, null, 0, 0, null, 0], id, ts, sig]);
+  const body = "f.req=" + encodeURIComponent(JSON.stringify([[["Fbv4je", inner, null, "generic"]]]));
+  const bt = await fetchTextTO("https://news.google.com/_/DotsSplashUi/data/batchexecute",
+    { method: "POST", body, headers: { "content-type": "application/x-www-form-urlencoded;charset=UTF-8" } });
+  const m = bt.match(/"garturlres\\",\\"(https?:\/\/[^\\"]+)/);
+  if (!m) throw new Error("batchexecute 응답에 URL 없음");
+  return m[1].replace(/\\u003d/g, "=").replace(/\\u0026/g, "&");
+}
+
+/* 기사 페이지 HTML 에서 대표 이미지(og:image, 없으면 twitter:image)를 뽑는다.
+   richReport 의 마커 정규식([^\s)）])과 맞도록 https 이고 공백·괄호가 없는 URL 만 통과시킨다. */
+function extractOgImage(html, base) {
+  const pick = (re) => { const mm = html.match(re); return mm ? mm[1] : ""; };
+  let img = pick(/<meta[^>]+property=["']og:image(?::url)?["'][^>]+content=["']([^"']+)["']/i)
+        ||  pick(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image(?::url)?["']/i)
+        ||  pick(/<meta[^>]+name=["']twitter:image(?::src)?["'][^>]+content=["']([^"']+)["']/i)
+        ||  pick(/<meta[^>]+content=["']([^"']+)["'][^>]+name=["']twitter:image(?::src)?["']/i);
+  img = entities(String(img || "").trim());
+  if (!img) return "";
+  try { img = new URL(img, base).href; } catch { return ""; }
+  if (!/^https:\/\//i.test(img)) return "";       // https 이미지만 (마커 규칙)
+  if (/[\s()（）]/.test(img)) return "";           // 공백·괄호 있으면 마커가 깨진다
+  return img;
+}
+
+/* 뽑힌 기사에만 실제 URL 해석 + og:image 수집을 붙인다(mutate). 요청이 많아 순차 처리하고,
+   각 기사는 독립적으로 try/catch — 하나 실패해도 폴백(google news URL)으로 계속 간다. */
+async function enrichBriefImages(picks) {
+  let urlOk = 0, imgOk = 0, resFail = 0, total = 0;
+  for (const p of picks) {
+    for (const it of p.items) {
+      total++;
+      it.finalUrl = it.url;   // 기본 폴백: 원래 google news URL
+      it.img = "";
+      if (!/news\.google\.com\/rss\/articles/.test(it.url)) continue;
+      try {
+        const real = await resolveGoogleNewsUrl(it.url);
+        it.finalUrl = real; urlOk++;
+        try {
+          const html = await fetchTextTO(real);
+          const og = extractOgImage(html, real);
+          if (og) { it.img = og; imgOk++; }
+        } catch { /* og 실패는 무시 — 실제 URL 은 살려서 진짜 파비콘이라도 뜨게 한다 */ }
+      } catch { resFail++; /* 해석 실패 — google news URL 폴백 */ }
+      await sleep(BRIEF_GAP_MS);
+    }
+  }
+  log(`  · 실제URL ${urlOk}/${total} 해석 · og이미지 ${imgOk}건 확보 · 해석실패 ${resFail}`);
+}
+
 async function collectBrief() {
   log("[자체 브리핑]");
   const today = kstToday();
@@ -280,7 +364,7 @@ async function collectBrief() {
 
   const runKeys = new Set();   // 이번 실행에서 이미 뽑은 정확 키(카테고리 간 중복 방지)
   const pickedToks = [];       // 이번 실행에서 이미 뽑은 제목 토큰(근접중복 방지)
-  const sections = [];
+  const picks = [];            // [{ name, items:[{title,src,url,...}] }] — URL/이미지 해석 후 문자열로 조판
   let totalItems = 0;
 
   for (const cat of BRIEF_CATEGORIES) {
@@ -323,8 +407,7 @@ async function collectBrief() {
     }
 
     if (picked.length) {
-      const lines = picked.map((p) => "• " + p.title + (p.src ? " - " + p.src : "") + " (출처: " + p.url + ")");
-      sections.push("[" + cat.name + "]\n" + lines.join("\n"));
+      picks.push({ name: cat.name, items: picked });
       totalItems += picked.length;
       log(`  · ${cat.name}: ${picked.length}건 (후보 ${cand.length})`);
     } else {
@@ -336,6 +419,17 @@ async function collectBrief() {
     log("  ! 브리핑: 신선 기사 0건 — 기존 brief.json 을 유지한다 (덮어쓰지 않음)");
     return false;
   }
+
+  /* 뽑힌 기사에만 실제 URL 해석 + og:image 수집 (실패는 기사별 폴백) */
+  await enrichBriefImages(picks);
+
+  /* 조판: "(img: og) • 제목 - 출처 (출처: 실제URL)" — og 없으면 img 마커 생략(실제 파비콘이 뜬다) */
+  const sections = picks.map((p) => {
+    const lines = p.items.map((it) =>
+      (it.img ? "(img: " + it.img + ") " : "") +
+      "• " + it.title + (it.src ? " - " + it.src : "") + " (출처: " + it.finalUrl + ")");
+    return "[" + p.name + "]\n" + lines.join("\n");
+  });
 
   /* 사용한 기사만 오늘 날짜로 seen 에 기록한다 (후보 전체가 아니라 뽑은 것만 — 풀을 빨리 소진하지 않으려고) */
   for (const k of runKeys) seen[k] = today;
