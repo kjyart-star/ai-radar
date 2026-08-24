@@ -1,6 +1,30 @@
 {
- "generated": "2026-08-23T23:50:19.671Z",
+ "generated": "2026-08-24T23:50:57.964Z",
  "news": [
+  {
+   "title": "How to Understand the Next Wave of AI Before Everyone Else | Tibo Interview",
+   "url": "https://www.youtube.com/watch?v=4qjEgPojjzM",
+   "videoId": "4qjEgPojjzM",
+   "channel": "Matthew Berman",
+   "published": "2026-08-24T18:11:25.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/4qjEgPojjzM/mqdefault.jpg"
+  },
+  {
+   "title": "This Small AI Will Change Everything",
+   "url": "https://www.youtube.com/watch?v=wMl6c_r0ubw",
+   "videoId": "wMl6c_r0ubw",
+   "channel": "Two Minute Papers",
+   "published": "2026-08-24T16:48:40.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/wMl6c_r0ubw/mqdefault.jpg"
+  },
+  {
+   "title": "엔비디아 금융 플랫폼 등장! 빅테크가 이렇게까지 AI에 투자하는 진짜 이유 | GPU 부족이 곧 매출 손실이 되는 시대",
+   "url": "https://www.youtube.com/watch?v=tsJP-sWP3Sg",
+   "videoId": "tsJP-sWP3Sg",
+   "channel": "안될공학",
+   "published": "2026-08-24T06:01:44.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/tsJP-sWP3Sg/mqdefault.jpg"
+  },
   {
    "title": "Ilya Sutskever new \"Superintelligence\" model will change EVERYTHING",
    "url": "https://www.youtube.com/watch?v=VbNdual0DFo",
@@ -296,33 +320,25 @@
    "channel": "TheAIGRID",
    "published": "2026-08-08T12:15:09.000Z",
    "thumbnail": "https://i.ytimg.com/vi/BhMpTncwFBw/mqdefault.jpg"
-  },
-  {
-   "title": "it JUST got so much worse...",
-   "url": "https://www.youtube.com/watch?v=C9WoQrslPMM",
-   "videoId": "C9WoQrslPMM",
-   "channel": "Wes Roth",
-   "published": "2026-08-08T08:32:24.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/C9WoQrslPMM/mqdefault.jpg"
-  },
-  {
-   "title": "I'm Obsessed With New ChatGPT Voice",
-   "url": "https://www.youtube.com/watch?v=_HzdjYg0vXs",
-   "videoId": "_HzdjYg0vXs",
-   "channel": "The AI Advantage",
-   "published": "2026-08-07T20:30:01.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/_HzdjYg0vXs/mqdefault.jpg"
-  },
-  {
-   "title": "AI News: The AI Stories Everyone's Freaking Out About",
-   "url": "https://www.youtube.com/watch?v=ACYAYsVMmT8",
-   "videoId": "ACYAYsVMmT8",
-   "channel": "Matt Wolfe",
-   "published": "2026-08-07T14:30:29.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/ACYAYsVMmT8/mqdefault.jpg"
   }
  ],
  "vibe": [
+  {
+   "title": "AI뉴스 - ox-alpha 열풍, 오픈AI RL 중지, Mythos 5 개방, Gemini 하입과 무료, 모더나 머크, 독파모, 통속의 뇌, 로봇 올림픽 등",
+   "url": "https://www.youtube.com/watch?v=i1FoKc5X4_8",
+   "videoId": "i1FoKc5X4_8",
+   "channel": "조코딩 JoCoding",
+   "published": "2026-08-24T13:00:39.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/i1FoKc5X4_8/mqdefault.jpg"
+  },
+  {
+   "title": "Intelligence EXPLOSION: Harness Engineering with Pi Agent, Deepseek, and Gemini",
+   "url": "https://www.youtube.com/watch?v=rqZHR-hRllI",
+   "videoId": "rqZHR-hRllI",
+   "channel": "IndyDevDan",
+   "published": "2026-08-24T13:00:24.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/rqZHR-hRllI/mqdefault.jpg"
+  },
   {
    "title": "IT뉴스 - ox-alpha, 오픈AI 트레이닝 중지, Mythos 5 개방, Gemini 하입과 무료, 모더나 머크, 통속의 뇌 등",
    "url": "https://www.youtube.com/watch?v=iP5RUzXhWoc",
@@ -626,22 +642,6 @@
    "channel": "Greg Isenberg",
    "published": "2026-07-28T22:10:09.000Z",
    "thumbnail": "https://i.ytimg.com/vi/_jGSgzBkzrY/mqdefault.jpg"
-  },
-  {
-   "title": "Master Claude for Excel in 20 Minutes (Full Guide)",
-   "url": "https://www.youtube.com/watch?v=fZ1Kmuafzzk",
-   "videoId": "fZ1Kmuafzzk",
-   "channel": "Riley Brown",
-   "published": "2026-07-27T23:23:11.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/fZ1Kmuafzzk/mqdefault.jpg"
-  },
-  {
-   "title": "Marketing Agents Are Too Good Now",
-   "url": "https://www.youtube.com/watch?v=U2hogriGmEw",
-   "videoId": "U2hogriGmEw",
-   "channel": "Greg Isenberg",
-   "published": "2026-07-27T18:20:00.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/U2hogriGmEw/mqdefault.jpg"
   }
  ]
 }
