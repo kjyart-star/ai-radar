@@ -1,6 +1,22 @@
 {
- "generated": "2026-08-24T23:50:57.964Z",
+ "generated": "2026-08-25T23:53:50.019Z",
  "news": [
+  {
+   "title": "This New SECRET LLM Is Taking The World By Storm 0x Alpha",
+   "url": "https://www.youtube.com/watch?v=DKNmrpppgfw",
+   "videoId": "DKNmrpppgfw",
+   "channel": "TheAIGRID",
+   "published": "2026-08-25T16:45:22.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/DKNmrpppgfw/mqdefault.jpg"
+  },
+  {
+   "title": "중국 메모리, 기술력도 따라왔지만 이젠 정말 위협인 이유 | CXMT DDR5·삼성 기술유출",
+   "url": "https://www.youtube.com/watch?v=ujD8A178C4Y",
+   "videoId": "ujD8A178C4Y",
+   "channel": "안될공학",
+   "published": "2026-08-25T10:30:32.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/ujD8A178C4Y/mqdefault.jpg"
+  },
   {
    "title": "How to Understand the Next Wave of AI Before Everyone Else | Tibo Interview",
    "url": "https://www.youtube.com/watch?v=4qjEgPojjzM",
@@ -114,7 +130,7 @@
    "thumbnail": "https://i.ytimg.com/vi/93YDuYBayNs/mqdefault.jpg"
   },
   {
-   "title": "You NEED to try this 6 Open-Source Projects NOW",
+   "title": "You NEED to try these 6 Open-Source Projects NOW",
    "url": "https://www.youtube.com/watch?v=1RTq_EWv2Yo",
    "videoId": "1RTq_EWv2Yo",
    "channel": "Matthew Berman",
@@ -304,25 +320,25 @@
    "channel": "TheAIGRID",
    "published": "2026-08-10T17:00:05.000Z",
    "thumbnail": "https://i.ytimg.com/vi/EXWK2NMAEKk/mqdefault.jpg"
-  },
-  {
-   "title": "AI Agents Just Got WAY More Powerful (Zapier MCP Tutorial)",
-   "url": "https://www.youtube.com/watch?v=nhJHupTmmUU",
-   "videoId": "nhJHupTmmUU",
-   "channel": "TheAIGRID",
-   "published": "2026-08-10T01:16:37.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/nhJHupTmmUU/mqdefault.jpg"
-  },
-  {
-   "title": "OpenAIs Astra (GPT-6) Will Shock The World",
-   "url": "https://www.youtube.com/watch?v=BhMpTncwFBw",
-   "videoId": "BhMpTncwFBw",
-   "channel": "TheAIGRID",
-   "published": "2026-08-08T12:15:09.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/BhMpTncwFBw/mqdefault.jpg"
   }
  ],
  "vibe": [
+  {
+   "title": "BMAD's Founder on the Future of AI Coding (And the Slop Apocalypse)",
+   "url": "https://www.youtube.com/watch?v=6XgSpFdD3EU",
+   "videoId": "6XgSpFdD3EU",
+   "channel": "Cole Medin",
+   "published": "2026-08-25T16:54:48.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/6XgSpFdD3EU/mqdefault.jpg"
+  },
+  {
+   "title": "I don't prompt agents anymore...",
+   "url": "https://www.youtube.com/watch?v=_9OT25ZvrWs",
+   "videoId": "_9OT25ZvrWs",
+   "channel": "AI Jason",
+   "published": "2026-08-25T10:51:06.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/_9OT25ZvrWs/mqdefault.jpg"
+  },
   {
    "title": "AI뉴스 - ox-alpha 열풍, 오픈AI RL 중지, Mythos 5 개방, Gemini 하입과 무료, 모더나 머크, 독파모, 통속의 뇌, 로봇 올림픽 등",
    "url": "https://www.youtube.com/watch?v=i1FoKc5X4_8",
@@ -626,22 +642,6 @@
    "channel": "Greg Isenberg",
    "published": "2026-07-29T20:42:25.000Z",
    "thumbnail": "https://i.ytimg.com/vi/Uslb-G2pc5I/mqdefault.jpg"
-  },
-  {
-   "title": "Everyone is saying SOFTWARE IS DEAD (LIVE Q&A)",
-   "url": "https://www.youtube.com/watch?v=6DT8Cy2rnd0",
-   "videoId": "6DT8Cy2rnd0",
-   "channel": "Greg Isenberg",
-   "published": "2026-07-29T20:32:07.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/6DT8Cy2rnd0/mqdefault.jpg"
-  },
-  {
-   "title": "Jack Dorsey's Buzz: Clearly Explained (and how to use it)",
-   "url": "https://www.youtube.com/watch?v=_jGSgzBkzrY",
-   "videoId": "_jGSgzBkzrY",
-   "channel": "Greg Isenberg",
-   "published": "2026-07-28T22:10:09.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/_jGSgzBkzrY/mqdefault.jpg"
   }
  ]
 }

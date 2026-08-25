@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-24T23:46:16.102Z",
+ "generated": "2026-08-25T23:48:56.795Z",
  "source": "arXiv cs.AI · GitHub · Hugging Face",
  "sources": [
   "arXiv cs.AI",
@@ -8,159 +8,159 @@
  ],
  "arxiv": [
   {
-   "title": "Primal Acceleration of Newton's Method",
-   "url": "https://arxiv.org/abs/2608.21359v1",
-   "date": "2026-08-21T17:59:37.000Z",
-   "summary": "We develop a new direct accelerated Newton method for minimizing convex functions with Lipschitz continuous Hessian. The algorithm uses only primal variables and performs just one linear solve per iteration. With a simpl",
-   "titleKo": "뉴턴법의 원가속도"
+   "title": "How to Train a Critic Stably and Efficiently",
+   "url": "https://arxiv.org/abs/2608.23566v1",
+   "date": "2026-08-24T17:59:39.000Z",
+   "summary": "Group-based reinforcement learning methods such as GRPO for large language models avoid training a critic by sampling multiple responses for each prompt. A reliable critic could instead estimate token-level advantages fr",
+   "titleKo": "비평가를 안정적이고 효율적으로 훈련하는 방법"
   },
   {
-   "title": "VIALS: A Benchmark for Visual Interpretation of Artifacts in the Life Sciences",
-   "url": "https://arxiv.org/abs/2608.21357v1",
-   "date": "2026-08-21T17:59:26.000Z",
-   "summary": "In professional life sciences workflows, scientists routinely interpret visual artifacts (gel blots, microscopy images, plasmid maps, flow cytometry plots, molecular structures, ...) to inform research decisions. We intr",
-   "titleKo": "바이알: 생명 과학에서 유물의 시각적 해석을 위한 벤치마크"
+   "title": "ReWorld: An Interactive World Model with Long-Horizon Memory",
+   "url": "https://arxiv.org/abs/2608.23565v1",
+   "date": "2026-08-24T17:59:05.000Z",
+   "summary": "An interactive world model must follow the user's actions, remember the places it has shown, and stream in real time. The tension is structural: control wants a short horizon, memory wants an unbounded one. ReWorld separ",
+   "titleKo": "ReWorld: Long-Horizon 메모리가 탑재된 인터랙티브 월드 모델"
   },
   {
-   "title": "AI with Authority, from Application to Silicon",
-   "url": "https://arxiv.org/abs/2608.21356v1",
-   "date": "2026-08-21T17:59:16.000Z",
-   "summary": "For sixty years, machine verification has been a major cost overhead, affordable only for exceptional artifacts. Here we report that generative AI inverts this relationship: at AI speed, machine verification is not only ",
-   "titleKo": "애플리케이션에서 실리콘에 이르기까지 권위 있는 AI"
+   "title": "SWE Refactor Bench: Can Coding Agents Complete a Long-Horizon, Whole-Repository Stack Migration?",
+   "url": "https://arxiv.org/abs/2608.23564v1",
+   "date": "2026-08-24T17:59:04.000Z",
+   "summary": "Modern software systems accumulate technical debt over decades of development, which makes migration expensive and largely manual. As coding agents become increasingly capable at bug fixing, can they autonomously perform",
+   "titleKo": "SWE 리팩터 벤치: 코딩 에이전트가 롱 호라이즌, 전체 저장소 스택 마이그레이션을 완료할 수 있습니까?"
   },
   {
-   "title": "TurboBias 2.0: Streaming Context-Biasing for Production-Efficient ASR Systems",
-   "url": "https://arxiv.org/abs/2608.21343v1",
-   "date": "2026-08-21T17:50:00.000Z",
-   "summary": "Contextualization is essential for production automatic speech recognition (ASR) systems, where user-provided phrases must be recognized accurately under strict latency constraints. Although many context-biasing methods ",
-   "titleKo": "TurboBias 2.0: 생산 효율적인 ASR 시스템을 위한 스트리밍 컨텍스트 바이어싱"
+   "title": "EG-ARSA: An Expert-Grounded Open Model for Visual Road Safety Auditing in Low-Resource Settings",
+   "url": "https://arxiv.org/abs/2608.23563v1",
+   "date": "2026-08-24T17:58:41.000Z",
+   "summary": "Road traffic injuries remain a major challenge in low- and middle-income countries, where proactive road safety auditing is limited by incomplete crash records, shortages of qualified auditors, and the high cost of large",
+   "titleKo": "EG-ARSA: 낮은 자원 설정에서 시각 도로 안전 감사를 위한 전문가 기반의 개방형 모델"
   },
   {
-   "title": "Anatomy-Informed Neural Networks: Encoding Anatomic Priors in Loss and Architecture, with an SE(3) Formulation of Guidewire-Induced Aortoiliac Deformation",
-   "url": "https://arxiv.org/abs/2608.21332v1",
-   "date": "2026-08-21T17:38:42.000Z",
-   "summary": "Deep-learning models of anatomy can be numerically plausible yet anatomically impossible, and they generalize poorly when data are scarce. We introduce Anatomy-Informed Neural Networks (AINN), in which soft anatomic prio",
-   "titleKo": "해부학-정보 신경망: SE (3) 유도 대동맥 변형의 공식화로 손실 및 아키텍처에서 해부학 선행 인코딩"
+   "title": "Physics-Constrained Deep Learning Model for Contactless Blood Pressure Monitoring from Triaxial Bodyseismography",
+   "url": "https://arxiv.org/abs/2608.23562v1",
+   "date": "2026-08-24T17:58:35.000Z",
+   "summary": "Ballistocardiography (BCG) is promising for unobtrusive long-term blood pressure (BP) monitoring in laboratory settings, but traditional BCG signals are vulnerable to the variations in body-bed interaction with shifted f",
+   "titleKo": "Triaxial Bodyseismography의 비접촉식 혈압 모니터링을 위한 물리학-제약된 딥 러닝 모델"
   },
   {
-   "title": "Unified Branch-and-Bound Search for the Steiner Traveling Salesman Problem on Graphs of Convex Sets",
-   "url": "https://arxiv.org/abs/2608.21319v1",
-   "date": "2026-08-21T17:28:03.000Z",
-   "summary": "We formalize the Steiner Traveling Salesman Problem (Steiner-TSP) on Graphs of Convex Sets (GCS), which seeks a minimum-cost closed trajectory through required convex sets while allowing optional transit vertices and rev",
-   "titleKo": "볼록 세트 그래프에서 슈타이너 이동 세일즈맨 문제를 위한 통합 지점 및 바운드 검색"
+   "title": "Prime Agent: A Self-Improving RLM Harness",
+   "url": "https://arxiv.org/abs/2608.23552v1",
+   "date": "2026-08-24T17:54:19.000Z",
+   "summary": "Language models are sequential processors, but long-horizon agency requires external information and computation beyond model weights and active context. Prime Agent is an open-source harness for long-horizon evaluation ",
+   "titleKo": "프라임 에이전트: 자기 개선 RLM 하네스"
   },
   {
-   "title": "From Regulation to Implementation: A Critical Evaluation of LLM-Assisted Regulatory Compliance in Industry",
-   "url": "https://arxiv.org/abs/2608.21317v1",
-   "date": "2026-08-21T17:27:13.000Z",
-   "summary": "The European Union (EU) has emerged as a leading regulatory body in the development of sustainability and privacy regulations. While new regulation requirements vary, many include a documentation artifact to ensure compl",
-   "titleKo": "규제에서 구현으로: 업계의 LLM 지원 규제 준수에 대한 중요한 평가"
+   "title": "ConvergeFlow: Language Flow with Provable Convergence to Token Embeddings",
+   "url": "https://arxiv.org/abs/2608.23551v1",
+   "date": "2026-08-24T17:54:14.000Z",
+   "summary": "Recent advances in continuous diffusion and flow-based language models (LMs) have achieved performance competitive with discrete LMs. However, existing continuous frameworks still rely on decoders supervised with cross e",
+   "titleKo": "ConvergeFlow: 토큰 임베딩에 대한 제공 가능한 컨버전스가 있는 언어 흐름"
   },
   {
-   "title": "Re$^3$Cap: Retrieval-Guided Refinement for Image Captioning Enhancement via Reinforcement Learning",
-   "url": "https://arxiv.org/abs/2608.21305v1",
-   "date": "2026-08-21T17:07:41.000Z",
-   "summary": "Reinforcement Learning (RL) has demonstrated significant gains in image captioning, yet it is still limited in encouraging Large Vision-Language Models (LVLMs) to explore novel reasoning strategies. This limitation leads",
-   "titleKo": "Re $ ^ 3 $ 한도: 강화 학습을 통한 이미지 캡션 개선을 위한 검색 가이드 구체화"
+   "title": "How AI Assistance Affects Human Skill Development: A Study of Learning with Logic Puzzles",
+   "url": "https://arxiv.org/abs/2608.23543v1",
+   "date": "2026-08-24T17:46:11.000Z",
+   "summary": "While AI assistance can improve human task performance in the short term, it may also undermine the development of skills in the longer term. We examine this tension in a controlled logic-puzzle experiment involving on-d",
+   "titleKo": "AI 지원이 인간의 기술 개발에 미치는 영향: 논리 퍼즐을 사용한 학습 연구"
   },
   {
-   "title": "AUSO: Action-Level Unified Skill Optimization from Internalization to Utilization",
-   "url": "https://arxiv.org/abs/2608.21292v1",
-   "date": "2026-08-21T16:53:27.000Z",
-   "summary": "Skills play different roles as an agent's policy evolves: they should first provide learnable knowledge, then support capability formation, and finally be invoked only when they improve individual decisions. Existing met",
-   "titleKo": "AUSO: 내재화에서 활용까지의 액션 레벨 통합 기술 최적화"
+   "title": "The Interaction Tax: When Communication Erases Diversity in Multi-Agent Teams",
+   "url": "https://arxiv.org/abs/2608.23541v1",
+   "date": "2026-08-24T17:45:15.000Z",
+   "summary": "Does multi-agent LLM interaction help or hurt? Some work reports gains from debate (Du et al., 2024), critique loops (Chen et al., 2025), and mixture-of-agents synthesis (Wang et al., 2025), while other work finds that i",
+   "titleKo": "상호 작용세: 커뮤니케이션이 다중 에이전트 팀의 다양성을 삭제하는 경우"
   },
   {
-   "title": "CLEAR: Continuous Latent Adapter Routing for Utility-Preserving LLM Safety Alignment",
-   "url": "https://arxiv.org/abs/2608.21278v1",
-   "date": "2026-08-21T16:36:10.000Z",
-   "summary": "Improving the safety of large language models (LLMs) often comes at the expense of utility, as globally applied safety tuning may affect model responses to both harmful and benign inputs. We propose \\textbf{C}ontinuous \\",
-   "titleKo": "명확함: 유틸리티 보존 LLM 안전 정렬을 위한 지속적인 잠재 어댑터 라우팅"
+   "title": "Adapter-Based Few-Shot Continual Learning for Malicious Packet Recognition",
+   "url": "https://arxiv.org/abs/2608.23536v1",
+   "date": "2026-08-24T17:41:15.000Z",
+   "summary": "The continual evolution of malware variants necessitates detection systems that can adapt to new threats without retraining from scratch. However, continually updating models on new data often leads to catastrophic forge",
+   "titleKo": "악성 패킷 인식을 위한 어댑터 기반 Few-Shot 연속 학습"
   },
   {
-   "title": "EnSI-RAG: Entity-Structure-Indexed Retrieval-Augmented Generation for Long-Document Question Answering",
-   "url": "https://arxiv.org/abs/2608.21252v1",
-   "date": "2026-08-21T16:05:00.000Z",
-   "summary": "Question answering (QA) over long, connected documents remains challenging because relevant evidence may span multiple entities and their relationships. Existing retrieval-augmented generation (RAG) methods typically ind",
-   "titleKo": "EnSI-RAG: 긴 문서 질문 답변을 위한 엔터티 구조 색인 검색 증강 생성"
+   "title": "Correcting a learned physical invariant improves world-model rollouts",
+   "url": "https://arxiv.org/abs/2608.23526v1",
+   "date": "2026-08-24T17:29:40.000Z",
+   "summary": "World models can predict video without learning dynamics that they reliably preserve. We test whether a frozen DreamerV3 trained only on pendulum video learns a scalar that its own latent transition treats as approximate",
+   "titleKo": "학습된 물리적 불변성을 수정하면 월드 모델 롤아웃이 개선됩니다"
   },
   {
-   "title": "Adapting Knowledge Graphs for Behavior Denoising in Sequential Recommendation",
-   "url": "https://arxiv.org/abs/2608.21243v1",
-   "date": "2026-08-21T15:54:39.000Z",
-   "summary": "Sequential recommendation predicts the next item from a user's interaction history, but not every interaction is equally informative. Real logs combine persistent preferences with temporary needs, exploration, and incide",
-   "titleKo": "순차 권장 사항에서 행동 노이즈 제거에 대한 지식 그래프 적용"
+   "title": "EarthVerse: Benchmarking Scientific Agents Across Dynamic Earth Systems and Natural Hazards",
+   "url": "https://arxiv.org/abs/2608.23525v1",
+   "date": "2026-08-24T17:29:16.000Z",
+   "summary": "Earth-system analysis reconstructs changing physical processes from observations that differ in source, scale, timing, and modality. Natural hazards make this work consequential because incomplete evidence can change est",
+   "titleKo": "EarthVerse: 동적 지구 시스템 및 자연 위험에 대한 과학적 에이전트 벤치마킹"
   },
   {
-   "title": "Fine-Grain GPU Parallelization of the Generalized Partition Crossover for Large-Scale Traveling Salesman Problems",
-   "url": "https://arxiv.org/abs/2608.21233v1",
-   "date": "2026-08-21T15:42:05.000Z",
-   "summary": "The Traveling Salesman Problem (TSP) is one of the most extensively studied NP-hard optimization problems. Genetic Algorithm (GA)-based solvers, such as the Edge Assembly Crossover (EAX), achieve state-of-the-art perform",
-   "titleKo": "대규모 이동 세일즈맨 문제를 위한 일반 파티션 크로스오버의 미세 입자 GPU 병렬화"
+   "title": "The Measurement Revolution? Credible Measurement and Inference in the Age of AI",
+   "url": "https://arxiv.org/abs/2608.23524v1",
+   "date": "2026-08-24T17:28:34.000Z",
+   "summary": "Artificial intelligence (AI) is transforming measurement in economics. AI models convert unstructured data, such as text and images, into structured variables at low cost, making previously prohibitive measurement feasib",
+   "titleKo": "측정 혁명? AI 시대의 신뢰할 수 있는 측정 및 추론"
   },
   {
-   "title": "Utility Under Attack: Agent Memory Poisoning and the Limits of Content Screening and Provenance Ranking",
-   "url": "https://arxiv.org/abs/2608.21230v1",
-   "date": "2026-08-21T15:37:35.000Z",
-   "summary": "Persistent memory makes false information durable: once a false statement is stored, it can be retrieved into future sessions that match it. We measure the cost of this failure mode using plainly worded false assertions ",
-   "titleKo": "공격받는 유틸리티: 상담원 메모리 중독 및 콘텐츠 심사 및 출처 순위의 한계"
+   "title": "When Names Cross Scripts: A Source-Grounded Benchmark for Historical Entity Reconciliation in the Mongol World",
+   "url": "https://arxiv.org/abs/2608.23507v1",
+   "date": "2026-08-24T17:10:36.000Z",
+   "summary": "Historical people may appear under different languages, scripts, and transcription traditions, while distinct individuals may share highly similar or even identical names. This makes historical identity reconciliation mo",
+   "titleKo": "When Names Cross Scripts: 몽골 세계의 역사적 실체 화해를 위한 소스 기반 벤치마크"
   },
   {
-   "title": "Ontology-supported AI Model and Dataset Management",
-   "url": "https://arxiv.org/abs/2608.21224v1",
-   "date": "2026-08-21T15:32:57.000Z",
-   "summary": "Recently, there has been a great deal of research into improving AI methods and their application. The main focus is on tracking progress, enabling transparent comparisons, and fostering a more profound understanding of ",
-   "titleKo": "온톨로지가 지원하는 AI 모델 및 데이터 세트 관리"
+   "title": "Mitigating Reasoning-Induced Misalignment via Safety-Direction Penalty",
+   "url": "https://arxiv.org/abs/2608.23497v1",
+   "date": "2026-08-24T16:57:28.000Z",
+   "summary": "Reasoning-Induced Misalignment, where fine-tuning on reasoning data containing no harmful content, including mathematics, code, and problem-solving with chain-of-thought traces can induce harmful behaviors of LLM, posing",
+   "titleKo": "추론 완화 - 안전 지침 페널티를 통한 잘못된 정렬 유도"
   },
   {
-   "title": "Enhancing LLMs in Predictive Political QA with Semi-Structured Data",
-   "url": "https://arxiv.org/abs/2608.21218v1",
-   "date": "2026-08-21T15:27:28.000Z",
-   "summary": "Predictive political question answering (QA), such as predicting how a political actor will vote, goes beyond factual lookup. External political resources offer rich historical evidence, but rarely contain the answer its",
-   "titleKo": "반정형 데이터로 예측 정치 QA에서 LLM 향상"
+   "title": "SRPO: Self-Reflective Policy Optimization for Long-Horizon Reasoning",
+   "url": "https://arxiv.org/abs/2608.23493v1",
+   "date": "2026-08-24T16:55:09.000Z",
+   "summary": "Self-reflection is a powerful mechanism for credit assignment in human learning, converting sparse outcome feedback into actionable guidance. However, its potential for post-training Large Language Models (LLMs) remains ",
+   "titleKo": "SRPO: Long-Horizon 추론을 위한 자기 반성적 정책 최적화"
   },
   {
-   "title": "Personalized Privacy Control in LLMs via Attention Head Intervention",
-   "url": "https://arxiv.org/abs/2608.21209v1",
-   "date": "2026-08-21T15:22:20.000Z",
-   "summary": "The rise of agentic AI enables LLMs to access diverse user data, raising critical privacy concerns. Prior work on contextual privacy studies whether LLMs regulate information disclosure according to context-dependent nor",
-   "titleKo": "Attention Head 개입을 통한 LLM의 개인화된 개인 정보 보호 제어"
+   "title": "Multi-Modal Semantic Expansion with Constrained LLM Reranking for Conversational Music Recommendation",
+   "url": "https://arxiv.org/abs/2608.23484v1",
+   "date": "2026-08-24T16:48:50.000Z",
+   "summary": "We present Team Semiintelligencn's solution for the ACM RecSys 2026 TalkPlayData Challenge, addressing conversational music recommendation through a multi-modal and personalized conversational recommender system. Our sub",
+   "titleKo": "회화 음악 추천을 위한 제한된 LLM 재랭킹을 통한 다중 모드 의미 확장"
   },
   {
-   "title": "Specification Portability Across LLM Development Agents: Cross-Agent Compatibility in Specification-Driven Software Migration",
-   "url": "https://arxiv.org/abs/2608.21208v1",
-   "date": "2026-08-21T15:21:40.000Z",
-   "summary": "This paper investigates cross-agent specification portability using Oracle-to-PostgreSQL migration as a controlled software transformation task. The study combines two experimental stages. First, a specification-first mi",
-   "titleKo": "LLM 개발 에이전트 전반의 사양 이동성: 사양 기반 소프트웨어 마이그레이션의 교차 에이전트 호환성"
+   "title": "Act with Intent: Distilling Behavior Intent for Vision-Language-Action Models",
+   "url": "https://arxiv.org/abs/2608.23478v1",
+   "date": "2026-08-24T16:42:49.000Z",
+   "summary": "Vision-Language-Action (VLA) models can turn multimodal context into robot actions, but their action decoders are still trained largely by behavior cloning. This supervises which motor command was demonstrated while leav",
+   "titleKo": "의도를 가지고 행동하기: 비전 언어 행동 모델에 대한 증류 행동 의도"
   },
   {
-   "title": "Curriculum-Aware Interpolate-then-Refine: Learned Physiological Time-Series Imputation under Realistic Missingness",
-   "url": "https://arxiv.org/abs/2608.21207v1",
-   "date": "2026-08-21T15:21:36.000Z",
-   "summary": "Imputing physiological time series (arterial blood pressure, blood glucose, etc.) is essential for addressing the missingness that pervades clinical data. Yet modern imputation methods perform poorly in this domain: a re",
-   "titleKo": "커리큘럼 인식 Interpolate-then-Refine: 현실적 누락 하에서 학습된 생리적 시계열 귀속"
+   "title": "StrategyBench: Evaluating Explicit Strategy Induction in Large Language Models",
+   "url": "https://arxiv.org/abs/2608.23475v1",
+   "date": "2026-08-24T16:41:10.000Z",
+   "summary": "As large language models are increasingly used in data-scarce and evolving task scenarios, few-shot in-context learning (ICL) has become a key paradigm for task adaptation. However, direct ICL often uses a small set of e",
+   "titleKo": "StrategyBench: 대규모 언어 모델에서 명시적 전략 유도 평가"
   },
   {
-   "title": "No PUN Intended: Plausible Unknown Names for Person-Centred LLM Evaluation",
-   "url": "https://arxiv.org/abs/2608.21206v1",
-   "date": "2026-08-21T15:20:37.000Z",
-   "summary": "Person names are widely used as prompt variables in LLM evaluations of factuality, privacy leakage, bias and abstention, but when a name's evidential status is uncontrolled, measurements may conflate memorisation, retrie",
-   "titleKo": "말장난 의도 없음: 개인 중심 LLM 평가에 대한 그럴듯한 알 수 없는 이름"
+   "title": "What's the Catch? Evaluating Temporal Consistency in Vision-Language Models",
+   "url": "https://arxiv.org/abs/2608.23474v1",
+   "date": "2026-08-24T16:40:49.000Z",
+   "summary": "Vision-language models (VLMs) achieve strong performance on video and image-sequence benchmarks, yet it remains unclear whether they capture temporal structure. To study this question, we formulate temporal grounding as ",
+   "titleKo": "캐치가 무엇인가요? 비전 언어 모델의 시간적 일관성 평가"
   }
  ],
  "github": [
   {
    "title": "openclaw/openclaw",
    "url": "https://github.com/openclaw/openclaw",
-   "stars": 387433,
+   "stars": 387607,
    "language": "TypeScript",
-   "date": "2026-08-24T23:47:43Z",
+   "date": "2026-08-25T23:51:28Z",
    "summary": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 "
   },
   {
    "title": "obra/superpowers",
    "url": "https://github.com/obra/superpowers",
-   "stars": 277104,
+   "stars": 277558,
    "language": "Shell",
    "date": "2026-08-19T17:33:23Z",
    "summary": "An agentic skills framework & software development methodology that works."
@@ -168,47 +168,47 @@
   {
    "title": "NousResearch/hermes-agent",
    "url": "https://github.com/NousResearch/hermes-agent",
-   "stars": 235778,
+   "stars": 236401,
    "language": "Python",
-   "date": "2026-08-24T22:18:09Z",
+   "date": "2026-08-25T23:39:16Z",
    "summary": "The agent that grows with you"
   },
   {
    "title": "n8n-io/n8n",
    "url": "https://github.com/n8n-io/n8n",
-   "stars": 202299,
+   "stars": 202419,
    "language": "TypeScript",
-   "date": "2026-08-24T22:49:03Z",
+   "date": "2026-08-25T23:41:44Z",
    "summary": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations."
   },
   {
    "title": "Significant-Gravitas/AutoGPT",
    "url": "https://github.com/Significant-Gravitas/AutoGPT",
-   "stars": 186852,
+   "stars": 186867,
    "language": "Python",
-   "date": "2026-08-24T19:12:39Z",
+   "date": "2026-08-25T23:43:01Z",
    "summary": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters."
   },
   {
    "title": "firecrawl/firecrawl",
    "url": "https://github.com/firecrawl/firecrawl",
-   "stars": 171848,
+   "stars": 172333,
    "language": "TypeScript",
-   "date": "2026-08-24T18:58:49Z",
+   "date": "2026-08-25T23:51:26Z",
    "summary": "The context API to search, scrape, and interact with the web at scale. 🔥"
   },
   {
    "title": "f/prompts.chat",
    "url": "https://github.com/f/prompts.chat",
-   "stars": 167859,
+   "stars": 167899,
    "language": "HTML",
-   "date": "2026-08-24T03:24:40Z",
+   "date": "2026-08-25T03:21:48Z",
    "summary": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy."
   },
   {
    "title": "Snailclimb/JavaGuide",
    "url": "https://github.com/Snailclimb/JavaGuide",
-   "stars": 158001,
+   "stars": 158032,
    "language": "JavaScript",
    "date": "2026-08-24T09:08:16Z",
    "summary": "Java 面试 & 后端通用面试指南，覆盖计算机基础、数据库、分布式、高并发、系统设计与 AI 应用开发"
@@ -216,47 +216,47 @@
   {
    "title": "langgenius/dify",
    "url": "https://github.com/langgenius/dify",
-   "stars": 153391,
+   "stars": 153498,
    "language": "TypeScript",
-   "date": "2026-08-24T23:28:39Z",
+   "date": "2026-08-25T16:48:39Z",
    "summary": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without reb"
   },
   {
    "title": "open-webui/open-webui",
    "url": "https://github.com/open-webui/open-webui",
-   "stars": 149803,
+   "stars": 149918,
    "language": "Python",
-   "date": "2026-08-24T23:48:51Z",
+   "date": "2026-08-25T21:24:38Z",
    "summary": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)"
   },
   {
    "title": "langchain-ai/langchain",
    "url": "https://github.com/langchain-ai/langchain",
-   "stars": 144912,
+   "stars": 144981,
    "language": "Python",
-   "date": "2026-08-24T23:34:10Z",
+   "date": "2026-08-25T20:44:31Z",
    "summary": "The agent engineering platform."
   },
   {
    "title": "github/spec-kit",
    "url": "https://github.com/github/spec-kit",
-   "stars": 131158,
+   "stars": 131454,
    "language": "Python",
-   "date": "2026-08-24T22:10:34Z",
+   "date": "2026-08-25T21:09:11Z",
    "summary": "💫 Toolkit to help you get started with Spec-Driven Development"
   },
   {
    "title": "Comfy-Org/ComfyUI",
    "url": "https://github.com/Comfy-Org/ComfyUI",
-   "stars": 129765,
+   "stars": 129964,
    "language": "Python",
-   "date": "2026-08-24T23:19:03Z",
+   "date": "2026-08-25T22:54:44Z",
    "summary": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface."
   },
   {
    "title": "microsoft/generative-ai-for-beginners",
    "url": "https://github.com/microsoft/generative-ai-for-beginners",
-   "stars": 118481,
+   "stars": 118550,
    "language": "Jupyter Notebook",
    "date": "2026-08-20T03:43:12Z",
    "summary": "21 Lessons, Get Started Building with Generative AI "
@@ -264,23 +264,23 @@
   {
    "title": "supabase/supabase",
    "url": "https://github.com/supabase/supabase",
-   "stars": 108360,
+   "stars": 108406,
    "language": "TypeScript",
-   "date": "2026-08-24T23:38:55Z",
+   "date": "2026-08-25T23:49:32Z",
    "summary": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications."
   },
   {
    "title": "google-gemini/gemini-cli",
    "url": "https://github.com/google-gemini/gemini-cli",
-   "stars": 106663,
+   "stars": 106684,
    "language": "TypeScript",
-   "date": "2026-08-24T23:28:21Z",
+   "date": "2026-08-25T19:34:44Z",
    "summary": "An open-source AI agent that brings the power of Gemini directly into your terminal."
   },
   {
    "title": "rasbt/LLMs-from-scratch",
    "url": "https://github.com/rasbt/LLMs-from-scratch",
-   "stars": 103681,
+   "stars": 103777,
    "language": "Jupyter Notebook",
    "date": "2026-08-24T13:50:37Z",
    "summary": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step"
@@ -288,7 +288,7 @@
   {
    "title": "JuliusBrussee/caveman",
    "url": "https://github.com/JuliusBrussee/caveman",
-   "stars": 100692,
+   "stars": 100943,
    "language": "Go",
    "date": "2026-08-24T23:31:25Z",
    "summary": "🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman"
@@ -296,7 +296,7 @@
   {
    "title": "hacksider/Deep-Live-Cam",
    "url": "https://github.com/hacksider/Deep-Live-Cam",
-   "stars": 96094,
+   "stars": 96117,
    "language": "Python",
    "date": "2026-08-22T21:12:28Z",
    "summary": "real time face swap and one-click video deepfake with only a single image"
@@ -304,9 +304,9 @@
   {
    "title": "thedotmack/claude-mem",
    "url": "https://github.com/thedotmack/claude-mem",
-   "stars": 91724,
+   "stars": 91837,
    "language": "JavaScript",
-   "date": "2026-08-23T22:58:45Z",
+   "date": "2026-08-25T23:38:17Z",
    "summary": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Cla"
   }
  ],
@@ -314,160 +314,160 @@
   {
    "title": "Qwen/Qwen3.8-27B",
    "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
-   "downloads": 2645226,
-   "likes": 12509,
+   "downloads": 2945415,
+   "likes": 12705,
    "task": "image-text-to-text",
    "date": "2026-08-05T08:22:59.000Z"
   },
   {
    "title": "unsloth/Qwen3.8-27B-GGUF",
    "url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
-   "downloads": 7009063,
-   "likes": 2834,
+   "downloads": 7334695,
+   "likes": 2914,
    "task": "",
    "date": "2026-08-13T08:28:40.000Z"
   },
   {
    "title": "orcarouter/Qwen3.8-27B-Uncensored-MLX",
    "url": "https://huggingface.co/orcarouter/Qwen3.8-27B-Uncensored-MLX",
-   "downloads": 57947,
-   "likes": 1026,
+   "downloads": 68855,
+   "likes": 1094,
    "task": "image-text-to-text",
    "date": "2026-08-17T14:10:50.000Z"
   },
   {
    "title": "OBLITERATUS/Qwen3.8-27B-OBLITERATED",
    "url": "https://huggingface.co/OBLITERATUS/Qwen3.8-27B-OBLITERATED",
-   "downloads": 312627,
-   "likes": 693,
+   "downloads": 389747,
+   "likes": 747,
    "task": "text-generation",
    "date": "2026-08-19T14:53:08.000Z"
   },
   {
    "title": "orcarouter/Qwen3.8-27B-Uncensored-FP8",
    "url": "https://huggingface.co/orcarouter/Qwen3.8-27B-Uncensored-FP8",
-   "downloads": 224114,
-   "likes": 1097,
+   "downloads": 249744,
+   "likes": 1147,
    "task": "image-text-to-text",
    "date": "2026-08-15T05:45:04.000Z"
   },
   {
+   "title": "ornith-ai/Ornith-1.5-35B-A3B",
+   "url": "https://huggingface.co/ornith-ai/Ornith-1.5-35B-A3B",
+   "downloads": 70158,
+   "likes": 419,
+   "task": "text-generation",
+   "date": "2026-08-18T06:24:38.000Z"
+  },
+  {
    "title": "HauhauCS/Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-MTP-GGUF",
    "url": "https://huggingface.co/HauhauCS/Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-MTP-GGUF",
-   "downloads": 761975,
-   "likes": 577,
+   "downloads": 832185,
+   "likes": 623,
    "task": "image-text-to-text",
    "date": "2026-08-17T15:15:19.000Z"
   },
   {
    "title": "Lightricks/LTX-2.5",
    "url": "https://huggingface.co/Lightricks/LTX-2.5",
-   "downloads": 790378,
-   "likes": 1722,
+   "downloads": 833845,
+   "likes": 1796,
    "task": "image-to-video",
    "date": "2026-07-23T07:55:24.000Z"
   },
   {
-   "title": "ornith-ai/Ornith-1.5-35B-A3B",
-   "url": "https://huggingface.co/ornith-ai/Ornith-1.5-35B-A3B",
-   "downloads": 60294,
-   "likes": 395,
+   "title": "ornith-ai/Ornith-1.5-35B-A3B-GGUF",
+   "url": "https://huggingface.co/ornith-ai/Ornith-1.5-35B-A3B-GGUF",
+   "downloads": 1156903,
+   "likes": 297,
    "task": "text-generation",
-   "date": "2026-08-18T06:24:38.000Z"
-  },
-  {
-   "title": "JonathanColetti/Qwen3.8-27B-Uncensored-GGUF",
-   "url": "https://huggingface.co/JonathanColetti/Qwen3.8-27B-Uncensored-GGUF",
-   "downloads": 1456700,
-   "likes": 689,
-   "task": "text-generation",
-   "date": "2026-08-14T03:43:36.000Z"
+   "date": "2026-08-18T06:38:41.000Z"
   },
   {
    "title": "MiniMaxAI/MiniMax-Music3",
    "url": "https://huggingface.co/MiniMaxAI/MiniMax-Music3",
-   "downloads": 18065,
-   "likes": 1228,
+   "downloads": 18705,
+   "likes": 1245,
    "task": "text-to-audio",
    "date": "2026-08-07T12:23:29.000Z"
   },
   {
+   "title": "JonathanColetti/Qwen3.8-27B-Uncensored-GGUF",
+   "url": "https://huggingface.co/JonathanColetti/Qwen3.8-27B-Uncensored-GGUF",
+   "downloads": 1525645,
+   "likes": 721,
+   "task": "text-generation",
+   "date": "2026-08-14T03:43:36.000Z"
+  },
+  {
    "title": "MiniMaxAI/MiniMax-H3",
    "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3",
-   "downloads": 4465161,
-   "likes": 4417,
+   "downloads": 4639786,
+   "likes": 4455,
    "task": "image-text-to-video",
    "date": "2026-07-28T10:45:18.000Z"
   },
   {
    "title": "orcarouter/Qwen3.8-27B-Uncensored-GGUF",
    "url": "https://huggingface.co/orcarouter/Qwen3.8-27B-Uncensored-GGUF",
-   "downloads": 143108,
-   "likes": 422,
+   "downloads": 154225,
+   "likes": 452,
    "task": "image-text-to-text",
    "date": "2026-08-16T07:34:08.000Z"
   },
   {
-   "title": "ornith-ai/Ornith-1.5-35B-A3B-GGUF",
-   "url": "https://huggingface.co/ornith-ai/Ornith-1.5-35B-A3B-GGUF",
-   "downloads": 988170,
-   "likes": 274,
+   "title": "superwhisper/s1-mini",
+   "url": "https://huggingface.co/superwhisper/s1-mini",
+   "downloads": 3474,
+   "likes": 238,
    "task": "text-generation",
-   "date": "2026-08-18T06:38:41.000Z"
-  },
-  {
-   "title": "huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF",
-   "url": "https://huggingface.co/huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF",
-   "downloads": 1140375,
-   "likes": 334,
-   "task": "image-text-to-text",
-   "date": "2026-08-16T13:18:55.000Z"
+   "date": "2026-08-12T14:33:55.000Z"
   },
   {
    "title": "froggeric/Qwen-Fixed-Chat-Templates",
    "url": "https://huggingface.co/froggeric/Qwen-Fixed-Chat-Templates",
    "downloads": 0,
-   "likes": 1447,
+   "likes": 1467,
    "task": "",
    "date": "2026-04-23T15:28:14.000Z"
   },
   {
-   "title": "superwhisper/s1-mini",
-   "url": "https://huggingface.co/superwhisper/s1-mini",
-   "downloads": 2976,
-   "likes": 229,
-   "task": "text-generation",
-   "date": "2026-08-12T14:33:55.000Z"
-  },
-  {
-   "title": "z-lab/Qwen3.8-27B-DFlash2",
-   "url": "https://huggingface.co/z-lab/Qwen3.8-27B-DFlash2",
-   "downloads": 50763,
-   "likes": 214,
-   "task": "text-generation",
-   "date": "2026-08-15T21:26:10.000Z"
+   "title": "huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF",
+   "url": "https://huggingface.co/huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF",
+   "downloads": 1230831,
+   "likes": 356,
+   "task": "image-text-to-text",
+   "date": "2026-08-16T13:18:55.000Z"
   },
   {
    "title": "ornith-ai/Ornith-1.5-9B",
    "url": "https://huggingface.co/ornith-ai/Ornith-1.5-9B",
-   "downloads": 83192,
-   "likes": 202,
+   "downloads": 98323,
+   "likes": 213,
    "task": "text-generation",
    "date": "2026-08-18T06:20:12.000Z"
   },
   {
-   "title": "DavidAU/Qwen3.8-27B-Cold-Fusion-GAIN-V1.1-NM-DAU-NEO-MAX-MTP-GGUF",
-   "url": "https://huggingface.co/DavidAU/Qwen3.8-27B-Cold-Fusion-GAIN-V1.1-NM-DAU-NEO-MAX-MTP-GGUF",
-   "downloads": 209017,
-   "likes": 226,
-   "task": "image-text-to-text",
-   "date": "2026-08-17T08:48:09.000Z"
+   "title": "z-lab/Qwen3.8-27B-DFlash2",
+   "url": "https://huggingface.co/z-lab/Qwen3.8-27B-DFlash2",
+   "downloads": 64984,
+   "likes": 227,
+   "task": "text-generation",
+   "date": "2026-08-15T21:26:10.000Z"
+  },
+  {
+   "title": "ornith-ai/Ornith-1.5-9B-GGUF",
+   "url": "https://huggingface.co/ornith-ai/Ornith-1.5-9B-GGUF",
+   "downloads": 1144037,
+   "likes": 201,
+   "task": "text-generation",
+   "date": "2026-08-19T00:02:44.000Z"
   },
   {
    "title": "peculiar-ragdoll/Qwen-Sharp-Chat-Templates",
    "url": "https://huggingface.co/peculiar-ragdoll/Qwen-Sharp-Chat-Templates",
    "downloads": 0,
-   "likes": 227,
+   "likes": 244,
    "task": "",
    "date": "2026-08-10T01:35:20.000Z"
   }
