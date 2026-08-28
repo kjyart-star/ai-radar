@@ -1,6 +1,86 @@
 {
- "generated": "2026-08-27T04:42:47.395Z",
+ "generated": "2026-08-28T07:05:34.632Z",
  "news": [
+  {
+   "title": "eSSD, HBF, zNAND-O... 홀대받던 NAND Flash는 앞으로 훨씬 더 많이 필요해진다",
+   "url": "https://www.youtube.com/watch?v=pUqkjC716h4",
+   "videoId": "pUqkjC716h4",
+   "channel": "안될공학",
+   "published": "2026-08-28T05:00:11.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/pUqkjC716h4/mqdefault.jpg"
+  },
+  {
+   "title": "This feels illegal...",
+   "url": "https://www.youtube.com/watch?v=z1ez0yWu1P4",
+   "videoId": "z1ez0yWu1P4",
+   "channel": "Matthew Berman",
+   "published": "2026-08-27T21:12:42.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/z1ez0yWu1P4/mqdefault.jpg"
+  },
+  {
+   "title": "Sam Altman :‘AGI in 2026’, just as Models Start to [Mis]Train Themselves",
+   "url": "https://www.youtube.com/watch?v=KL9_1GbmCic",
+   "videoId": "KL9_1GbmCic",
+   "channel": "AI Explained",
+   "published": "2026-08-27T19:16:24.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/KL9_1GbmCic/mqdefault.jpg"
+  },
+  {
+   "title": "OpenAI just revealed PHASEONE (BIG)",
+   "url": "https://www.youtube.com/watch?v=n2x4ijx5xkk",
+   "videoId": "n2x4ijx5xkk",
+   "channel": "Wes Roth",
+   "published": "2026-08-27T13:28:47.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/n2x4ijx5xkk/mqdefault.jpg"
+  },
+  {
+   "title": "I Built a FREE App That Runs Your Entire Business",
+   "url": "https://www.youtube.com/watch?v=rKo9iLGjUbs",
+   "videoId": "rKo9iLGjUbs",
+   "channel": "Matt Wolfe",
+   "published": "2026-08-26T22:36:30.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/rKo9iLGjUbs/mqdefault.jpg"
+  },
+  {
+   "title": "The Most Important Chart In AI Right Now",
+   "url": "https://www.youtube.com/watch?v=2w7ZdceZT-g",
+   "videoId": "2w7ZdceZT-g",
+   "channel": "Matthew Berman",
+   "published": "2026-08-26T17:45:18.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/2w7ZdceZT-g/mqdefault.jpg"
+  },
+  {
+   "title": "DeepSeek’s New AI System Shouldn’t Be Possible",
+   "url": "https://www.youtube.com/watch?v=L9mMfAFwbl4",
+   "videoId": "L9mMfAFwbl4",
+   "channel": "Two Minute Papers",
+   "published": "2026-08-26T13:10:13.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/L9mMfAFwbl4/mqdefault.jpg"
+  },
+  {
+   "title": "HBM급 미친 메모리 스펙, M5 Ultra 등장... 애플은 에이전틱 AI 시대 강자입니다 | MLX·오픈 모델의 폭발",
+   "url": "https://www.youtube.com/watch?v=ybhBFLKB4Kg",
+   "videoId": "ybhBFLKB4Kg",
+   "channel": "안될공학",
+   "published": "2026-08-26T11:41:48.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/ybhBFLKB4Kg/mqdefault.jpg"
+  },
+  {
+   "title": "OpenAI BROKE the Industry Overnight....",
+   "url": "https://www.youtube.com/watch?v=Im2c-7jvKz8",
+   "videoId": "Im2c-7jvKz8",
+   "channel": "Wes Roth",
+   "published": "2026-08-26T09:18:51.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/Im2c-7jvKz8/mqdefault.jpg"
+  },
+  {
+   "title": "삼성 엑시노스 2700, 차세대 퀄컴 칩 성능 이겼다 | 이번 내부 테스트가 유독 신빙성 높은 이유",
+   "url": "https://www.youtube.com/watch?v=MosypojkWgU",
+   "videoId": "MosypojkWgU",
+   "channel": "안될공학",
+   "published": "2026-08-26T04:32:23.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/MosypojkWgU/mqdefault.jpg"
+  },
   {
    "title": "This New SECRET LLM Is Taking The World By Storm 0x Alpha",
    "url": "https://www.youtube.com/watch?v=DKNmrpppgfw",
@@ -66,7 +146,7 @@
    "thumbnail": "https://i.ytimg.com/vi/ARnUlEyVRoY/mqdefault.jpg"
   },
   {
-   "title": "AI News: OpenAI Pauses, AI Cancer Vaccine, and Qwen3.8",
+   "title": "AI News: OpenAI Just Put the Brakes on AI",
    "url": "https://www.youtube.com/watch?v=EfGF7QbJItA",
    "videoId": "EfGF7QbJItA",
    "channel": "Matt Wolfe",
@@ -240,89 +320,49 @@
    "channel": "TheAIGRID",
    "published": "2026-08-13T11:36:03.000Z",
    "thumbnail": "https://i.ytimg.com/vi/z7DyH2fUxA8/mqdefault.jpg"
-  },
-  {
-   "title": "테라팹, 기존 EUV 안쓰는 미친 구상 | 입자가속기 도입이 현실이 되는 이유 | FEL-EUV의 가능성",
-   "url": "https://www.youtube.com/watch?v=CA4mGzVgRvE",
-   "videoId": "CA4mGzVgRvE",
-   "channel": "안될공학",
-   "published": "2026-08-13T03:03:26.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/CA4mGzVgRvE/mqdefault.jpg"
-  },
-  {
-   "title": "Anyone Can Make Amazing Games Now (Easy)",
-   "url": "https://www.youtube.com/watch?v=qK4nV_LnXxQ",
-   "videoId": "qK4nV_LnXxQ",
-   "channel": "Matt Wolfe",
-   "published": "2026-08-13T01:53:16.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/qK4nV_LnXxQ/mqdefault.jpg"
-  },
-  {
-   "title": "all AI thoughts JUST got revealed...",
-   "url": "https://www.youtube.com/watch?v=kKjmv2CuVUI",
-   "videoId": "kKjmv2CuVUI",
-   "channel": "Wes Roth",
-   "published": "2026-08-12T21:47:19.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/kKjmv2CuVUI/mqdefault.jpg"
-  },
-  {
-   "title": "Cursor just made something incredible...",
-   "url": "https://www.youtube.com/watch?v=mZM-J7XK5Aw",
-   "videoId": "mZM-J7XK5Aw",
-   "channel": "Matthew Berman",
-   "published": "2026-08-12T20:09:00.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/mZM-J7XK5Aw/mqdefault.jpg"
-  },
-  {
-   "title": "영화 '오디세이' 영화관 안 가던 사람도 IMAX 찾는 이유 | 놀란 감독이 IMAX에 집착한 기술적 이유",
-   "url": "https://www.youtube.com/watch?v=Aqrw5z0CDMk",
-   "videoId": "Aqrw5z0CDMk",
-   "channel": "안될공학",
-   "published": "2026-08-12T11:09:09.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/Aqrw5z0CDMk/mqdefault.jpg"
-  },
-  {
-   "title": "This New AI From SpaceX Is The Future (First Look)",
-   "url": "https://www.youtube.com/watch?v=ifToIqwU3Jg",
-   "videoId": "ifToIqwU3Jg",
-   "channel": "The AI Advantage",
-   "published": "2026-08-11T23:40:42.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/ifToIqwU3Jg/mqdefault.jpg"
-  },
-  {
-   "title": "Mark Zuckerberg just called out Dario (and Anthropic)",
-   "url": "https://www.youtube.com/watch?v=hZqJvWDI0Rs",
-   "videoId": "hZqJvWDI0Rs",
-   "channel": "Matthew Berman",
-   "published": "2026-08-11T17:49:03.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/hZqJvWDI0Rs/mqdefault.jpg"
-  },
-  {
-   "title": "OpenAI’s AI Agents Just Crossed A Line",
-   "url": "https://www.youtube.com/watch?v=JQ97GiDwPxc",
-   "videoId": "JQ97GiDwPxc",
-   "channel": "Two Minute Papers",
-   "published": "2026-08-11T15:35:35.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/JQ97GiDwPxc/mqdefault.jpg"
-  },
-  {
-   "title": "How to Set Up ChatGPT to Work Overnight in 7 Minutes",
-   "url": "https://www.youtube.com/watch?v=gNltRF2XPTg",
-   "videoId": "gNltRF2XPTg",
-   "channel": "The AI Advantage",
-   "published": "2026-08-10T17:48:51.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/gNltRF2XPTg/mqdefault.jpg"
-  },
-  {
-   "title": "Meta Just Stunned The AI Industry Meta Muse Spark, Meta Muse Image, Meta Muse Video)",
-   "url": "https://www.youtube.com/watch?v=EXWK2NMAEKk",
-   "videoId": "EXWK2NMAEKk",
-   "channel": "TheAIGRID",
-   "published": "2026-08-10T17:00:05.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/EXWK2NMAEKk/mqdefault.jpg"
   }
  ],
  "vibe": [
+  {
+   "title": "Watch This If Your Coding Agent is Ignoring Your Rules (You Need Hooks)",
+   "url": "https://www.youtube.com/watch?v=msfMqW92Y8Q",
+   "videoId": "msfMqW92Y8Q",
+   "channel": "Cole Medin",
+   "published": "2026-08-27T00:00:36.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/msfMqW92Y8Q/mqdefault.jpg"
+  },
+  {
+   "title": "11 Insane Things Cursor’s NEW GrokBot Can Do",
+   "url": "https://www.youtube.com/watch?v=XgkW4A6lrDY",
+   "videoId": "XgkW4A6lrDY",
+   "channel": "Riley Brown",
+   "published": "2026-08-26T20:02:16.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/XgkW4A6lrDY/mqdefault.jpg"
+  },
+  {
+   "title": "WebMCP: Let AI Agents pay you money",
+   "url": "https://www.youtube.com/watch?v=EoNH3Tn8wYE",
+   "videoId": "EoNH3Tn8wYE",
+   "channel": "Greg Isenberg",
+   "published": "2026-08-26T18:40:21.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/EoNH3Tn8wYE/mqdefault.jpg"
+  },
+  {
+   "title": "미국의 노션 본사, 직접 다녀왔습니다 - AI로 일하는 실리콘밸리 회사는 뭐가 다를까",
+   "url": "https://www.youtube.com/watch?v=3flfON7F8hU",
+   "videoId": "3flfON7F8hU",
+   "channel": "조코딩 JoCoding",
+   "published": "2026-08-26T10:00:04.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/3flfON7F8hU/mqdefault.jpg"
+  },
+  {
+   "title": "NEW ChatGPT Sites Just Changed Everything (Builds Anything)",
+   "url": "https://www.youtube.com/watch?v=mHqSBCHEZOY",
+   "videoId": "mHqSBCHEZOY",
+   "channel": "Riley Brown",
+   "published": "2026-08-26T00:41:14.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/mHqSBCHEZOY/mqdefault.jpg"
+  },
   {
    "title": "BMAD's Founder on the Future of AI Coding (And the Slop Apocalypse)",
    "url": "https://www.youtube.com/watch?v=6XgSpFdD3EU",
@@ -602,46 +642,6 @@
    "channel": "Greg Isenberg",
    "published": "2026-08-03T18:30:26.000Z",
    "thumbnail": "https://i.ytimg.com/vi/JWhICz1QR8M/mqdefault.jpg"
-  },
-  {
-   "title": "My Super Simple Software Factory (For Agentic Engineers)",
-   "url": "https://www.youtube.com/watch?v=haUfb1ievTE",
-   "videoId": "haUfb1ievTE",
-   "channel": "IndyDevDan",
-   "published": "2026-08-03T13:00:25.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/haUfb1ievTE/mqdefault.jpg"
-  },
-  {
-   "title": "Cursor 3.0 Ultimate Guide: Beginner to Pro in 60 min",
-   "url": "https://www.youtube.com/watch?v=5DnOOa-5dTU",
-   "videoId": "5DnOOa-5dTU",
-   "channel": "Riley Brown",
-   "published": "2026-07-30T19:41:09.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/5DnOOa-5dTU/mqdefault.jpg"
-  },
-  {
-   "title": "The Ultimate Knowledge Base: Bring YouTube Into Your AI Second Brain",
-   "url": "https://www.youtube.com/watch?v=8JWhwhxWtJw",
-   "videoId": "8JWhwhxWtJw",
-   "channel": "Cole Medin",
-   "published": "2026-07-30T00:00:15.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/8JWhwhxWtJw/mqdefault.jpg"
-  },
-  {
-   "title": "Claude Code + Codex Can FINALLY Work Together (Buzz AI)",
-   "url": "https://www.youtube.com/watch?v=P1KpxzLVg7c",
-   "videoId": "P1KpxzLVg7c",
-   "channel": "Riley Brown",
-   "published": "2026-07-29T20:54:33.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/P1KpxzLVg7c/mqdefault.jpg"
-  },
-  {
-   "title": "Everyone is saying SOFTWARE IS DEAD (LIVE Q&A)",
-   "url": "https://www.youtube.com/watch?v=Uslb-G2pc5I",
-   "videoId": "Uslb-G2pc5I",
-   "channel": "Greg Isenberg",
-   "published": "2026-07-29T20:42:25.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/Uslb-G2pc5I/mqdefault.jpg"
   }
  ]
 }
