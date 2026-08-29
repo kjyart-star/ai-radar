@@ -1,6 +1,46 @@
 {
- "generated": "2026-08-28T07:05:34.632Z",
+ "generated": "2026-08-29T04:21:17.638Z",
  "news": [
+  {
+   "title": "The Hugging Face Incident Full Report",
+   "url": "https://www.youtube.com/watch?v=0RqTLAeaVMM",
+   "videoId": "0RqTLAeaVMM",
+   "channel": "Matthew Berman",
+   "published": "2026-08-28T19:19:33.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/0RqTLAeaVMM/mqdefault.jpg"
+  },
+  {
+   "title": "How to Use Claude's New Browser for Real Work",
+   "url": "https://www.youtube.com/watch?v=yshSzI1rAMs",
+   "videoId": "yshSzI1rAMs",
+   "channel": "The AI Advantage",
+   "published": "2026-08-28T18:53:03.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/yshSzI1rAMs/mqdefault.jpg"
+  },
+  {
+   "title": "AI News: OpenAI Made a Massive Move Against NVIDIA",
+   "url": "https://www.youtube.com/watch?v=TInwQglNkzo",
+   "videoId": "TInwQglNkzo",
+   "channel": "Matt Wolfe",
+   "published": "2026-08-28T15:00:09.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/TInwQglNkzo/mqdefault.jpg"
+  },
+  {
+   "title": "NVIDIA HBM 등장, 삼성 zHBM 상세 스펙 공개 3일 후... GPU 못 팔아도 ASIC/XPU 엔비디아 남는 이유",
+   "url": "https://www.youtube.com/watch?v=vVCOxL3tgHg",
+   "videoId": "vVCOxL3tgHg",
+   "channel": "안될공학",
+   "published": "2026-08-28T13:20:53.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/vVCOxL3tgHg/mqdefault.jpg"
+  },
+  {
+   "title": "This Free AI Just Caught The Billion Dollar Giants",
+   "url": "https://www.youtube.com/watch?v=LBiNcdGNgrg",
+   "videoId": "LBiNcdGNgrg",
+   "channel": "Two Minute Papers",
+   "published": "2026-08-28T09:44:44.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/LBiNcdGNgrg/mqdefault.jpg"
+  },
   {
    "title": "eSSD, HBF, zNAND-O... 홀대받던 NAND Flash는 앞으로 훨씬 더 많이 필요해진다",
    "url": "https://www.youtube.com/watch?v=pUqkjC716h4",
@@ -280,46 +320,6 @@
    "channel": "Matt Wolfe",
    "published": "2026-08-14T15:00:28.000Z",
    "thumbnail": "https://i.ytimg.com/vi/NC4h5kWH_-A/mqdefault.jpg"
-  },
-  {
-   "title": "AI로 두 번째 뇌 만드는 가장 빠른 방법, 말만 해 두면 끝 |젠스파크 SecondBrain·세컨드브레인 노트 직접 체험",
-   "url": "https://www.youtube.com/watch?v=Qcbo6yI21VQ",
-   "videoId": "Qcbo6yI21VQ",
-   "channel": "안될공학",
-   "published": "2026-08-14T10:00:27.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/Qcbo6yI21VQ/mqdefault.jpg"
-  },
-  {
-   "title": "Claude AI Failed 650 Times…Then Beat The Human Record",
-   "url": "https://www.youtube.com/watch?v=QnGNF8k_uoc",
-   "videoId": "QnGNF8k_uoc",
-   "channel": "Two Minute Papers",
-   "published": "2026-08-14T08:42:07.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/QnGNF8k_uoc/mqdefault.jpg"
-  },
-  {
-   "title": "Grok 4.6 is Fable now",
-   "url": "https://www.youtube.com/watch?v=VB39bHByHuU",
-   "videoId": "VB39bHByHuU",
-   "channel": "Wes Roth",
-   "published": "2026-08-13T23:12:13.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/VB39bHByHuU/mqdefault.jpg"
-  },
-  {
-   "title": "xAI actually did it... (Grok 4.6)",
-   "url": "https://www.youtube.com/watch?v=rdYBjpylJUQ",
-   "videoId": "rdYBjpylJUQ",
-   "channel": "Matthew Berman",
-   "published": "2026-08-13T18:27:35.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/rdYBjpylJUQ/mqdefault.jpg"
-  },
-  {
-   "title": "Grok 4.6 Just Shocked The AI World - Beats GPT 5.6 And Claude For 50% Cheaper!",
-   "url": "https://www.youtube.com/watch?v=z7DyH2fUxA8",
-   "videoId": "z7DyH2fUxA8",
-   "channel": "TheAIGRID",
-   "published": "2026-08-13T11:36:03.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/z7DyH2fUxA8/mqdefault.jpg"
   }
  ],
  "vibe": [
