@@ -1,8 +1,40 @@
 {
- "generated": "2026-08-29T04:21:17.638Z",
+ "generated": "2026-08-30T01:32:11.800Z",
  "news": [
   {
-   "title": "The Hugging Face Incident Full Report",
+   "title": "Cancel your subscriptions, Ox-Alpha is here! (GLM 5.3 Flash)",
+   "url": "https://www.youtube.com/watch?v=TOWXXhn7ctY",
+   "videoId": "TOWXXhn7ctY",
+   "channel": "Matthew Berman",
+   "published": "2026-08-29T22:56:38.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/TOWXXhn7ctY/mqdefault.jpg"
+  },
+  {
+   "title": "Sam Altman \"AGI by December\"",
+   "url": "https://www.youtube.com/watch?v=7uSjh5bde44",
+   "videoId": "7uSjh5bde44",
+   "channel": "Wes Roth",
+   "published": "2026-08-29T13:15:58.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/7uSjh5bde44/mqdefault.jpg"
+  },
+  {
+   "title": "최강 GPU도 HBM 없으면 느려진다 | AI 시대 메모리가 주인공이 된 이유 [패치의 칩문학 시즌1 - 2편]",
+   "url": "https://www.youtube.com/watch?v=SOyGqopYHJc",
+   "videoId": "SOyGqopYHJc",
+   "channel": "안될공학",
+   "published": "2026-08-29T04:39:57.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/SOyGqopYHJc/mqdefault.jpg"
+  },
+  {
+   "title": "Something Is Going Very Wrong With Google’s AI",
+   "url": "https://www.youtube.com/watch?v=gROKrW59Mn4",
+   "videoId": "gROKrW59Mn4",
+   "channel": "TheAIGRID",
+   "published": "2026-08-28T23:09:22.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/gROKrW59Mn4/mqdefault.jpg"
+  },
+  {
+   "title": "They sent each other notes...",
    "url": "https://www.youtube.com/watch?v=0RqTLAeaVMM",
    "videoId": "0RqTLAeaVMM",
    "channel": "Matthew Berman",
@@ -34,7 +66,7 @@
    "thumbnail": "https://i.ytimg.com/vi/vVCOxL3tgHg/mqdefault.jpg"
   },
   {
-   "title": "This Free AI Just Caught The Billion Dollar Giants",
+   "title": "The Billion Dollar AI Gap Is Collapsing",
    "url": "https://www.youtube.com/watch?v=LBiNcdGNgrg",
    "videoId": "LBiNcdGNgrg",
    "channel": "Two Minute Papers",
@@ -288,38 +320,6 @@
    "channel": "TheAIGRID",
    "published": "2026-08-15T21:09:20.000Z",
    "thumbnail": "https://i.ytimg.com/vi/Vl9mPvvdsD8/mqdefault.jpg"
-  },
-  {
-   "title": "구글 Gemini 3.7 Flash, 대체 뭘 바꾼건지... 초당 340토큰, 코딩만 아니라 에이전틱 AI 특화",
-   "url": "https://www.youtube.com/watch?v=BpZI_QowF3o",
-   "videoId": "BpZI_QowF3o",
-   "channel": "안될공학",
-   "published": "2026-08-15T01:00:39.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/BpZI_QowF3o/mqdefault.jpg"
-  },
-  {
-   "title": "AI News: ChatGPT Ultrafast, Grok 4.6, 3 New Open-Source Models, and more!",
-   "url": "https://www.youtube.com/watch?v=9qix4oDB5aw",
-   "videoId": "9qix4oDB5aw",
-   "channel": "Matthew Berman",
-   "published": "2026-08-14T23:34:42.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/9qix4oDB5aw/mqdefault.jpg"
-  },
-  {
-   "title": "ChatGPT Can Now See Everything You Do On Your Screen",
-   "url": "https://www.youtube.com/watch?v=rzLYEIheLPs",
-   "videoId": "rzLYEIheLPs",
-   "channel": "The AI Advantage",
-   "published": "2026-08-14T20:08:20.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/rzLYEIheLPs/mqdefault.jpg"
-  },
-  {
-   "title": "AI News: The AI Agent Race Just Exploded",
-   "url": "https://www.youtube.com/watch?v=NC4h5kWH_-A",
-   "videoId": "NC4h5kWH_-A",
-   "channel": "Matt Wolfe",
-   "published": "2026-08-14T15:00:28.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/NC4h5kWH_-A/mqdefault.jpg"
   }
  ],
  "vibe": [
