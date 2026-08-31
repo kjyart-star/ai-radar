@@ -1,6 +1,14 @@
 {
- "generated": "2026-08-30T01:32:11.800Z",
+ "generated": "2026-08-31T01:33:22.912Z",
  "news": [
+  {
+   "title": "HBF 성공 가능성 낮다? 말하지 않는 치명적 난제 | HBF, zNAND-O 핵심 과제는 발열, 온도, NAND 신뢰성",
+   "url": "https://www.youtube.com/watch?v=gJTto7SP8w0",
+   "videoId": "gJTto7SP8w0",
+   "channel": "안될공학",
+   "published": "2026-08-30T10:51:32.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/gJTto7SP8w0/mqdefault.jpg"
+  },
   {
    "title": "Cancel your subscriptions, Ox-Alpha is here! (GLM 5.3 Flash)",
    "url": "https://www.youtube.com/watch?v=TOWXXhn7ctY",
@@ -34,7 +42,7 @@
    "thumbnail": "https://i.ytimg.com/vi/gROKrW59Mn4/mqdefault.jpg"
   },
   {
-   "title": "They sent each other notes...",
+   "title": "AI is escaping containment",
    "url": "https://www.youtube.com/watch?v=0RqTLAeaVMM",
    "videoId": "0RqTLAeaVMM",
    "channel": "Matthew Berman",
@@ -42,7 +50,7 @@
    "thumbnail": "https://i.ytimg.com/vi/0RqTLAeaVMM/mqdefault.jpg"
   },
   {
-   "title": "How to Use Claude's New Browser for Real Work",
+   "title": "Claude Can Do So Much More For You Now...",
    "url": "https://www.youtube.com/watch?v=yshSzI1rAMs",
    "videoId": "yshSzI1rAMs",
    "channel": "The AI Advantage",
@@ -312,17 +320,17 @@
    "channel": "Wes Roth",
    "published": "2026-08-16T04:56:57.000Z",
    "thumbnail": "https://i.ytimg.com/vi/qZefjtkkvrY/mqdefault.jpg"
-  },
-  {
-   "title": "The Grok Engineer Who Tried To Warn Us But Nobody Listened",
-   "url": "https://www.youtube.com/watch?v=Vl9mPvvdsD8",
-   "videoId": "Vl9mPvvdsD8",
-   "channel": "TheAIGRID",
-   "published": "2026-08-15T21:09:20.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/Vl9mPvvdsD8/mqdefault.jpg"
   }
  ],
  "vibe": [
+  {
+   "title": "IT뉴스 - Astra 임박, 할라피뇨, Fable 5.1, 넥토리얼, GLM-5.3, 실시간 H3, Gemini Omni 1.1 등",
+   "url": "https://www.youtube.com/watch?v=Xs9wHHv-wak",
+   "videoId": "Xs9wHHv-wak",
+   "channel": "조코딩 JoCoding",
+   "published": "2026-08-30T11:44:05.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/Xs9wHHv-wak/mqdefault.jpg"
+  },
   {
    "title": "Watch This If Your Coding Agent is Ignoring Your Rules (You Need Hooks)",
    "url": "https://www.youtube.com/watch?v=msfMqW92Y8Q",
@@ -634,14 +642,6 @@
    "channel": "Greg Isenberg",
    "published": "2026-08-05T20:40:33.000Z",
    "thumbnail": "https://i.ytimg.com/vi/mD7JpNHLT70/mqdefault.jpg"
-  },
-  {
-   "title": "Why Graph Engineering will 10x your Claude/Codex",
-   "url": "https://www.youtube.com/watch?v=JWhICz1QR8M",
-   "videoId": "JWhICz1QR8M",
-   "channel": "Greg Isenberg",
-   "published": "2026-08-03T18:30:26.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/JWhICz1QR8M/mqdefault.jpg"
   }
  ]
 }
