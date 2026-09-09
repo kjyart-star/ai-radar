@@ -1,6 +1,14 @@
 {
- "generated": "2026-09-08T01:20:55.207Z",
+ "generated": "2026-09-09T01:27:14.951Z",
  "news": [
+  {
+   "title": "GPT-6 Astra Changes Everything",
+   "url": "https://www.youtube.com/watch?v=eVBJIUxv8N8",
+   "videoId": "eVBJIUxv8N8",
+   "channel": "Two Minute Papers",
+   "published": "2026-09-08T08:24:27.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/eVBJIUxv8N8/mqdefault.jpg"
+  },
   {
    "title": "GPT6 Astra, AI로 돈 번다… NVIDIA 젠슨황 말을 증명하다 | Compute is Revenue",
    "url": "https://www.youtube.com/watch?v=J0aIaS9DIqA",
@@ -312,19 +320,19 @@
    "channel": "The AI Advantage",
    "published": "2026-08-28T18:53:03.000Z",
    "thumbnail": "https://i.ytimg.com/vi/yshSzI1rAMs/mqdefault.jpg"
-  },
-  {
-   "title": "AI News: OpenAI Made a Massive Move Against NVIDIA",
-   "url": "https://www.youtube.com/watch?v=TInwQglNkzo",
-   "videoId": "TInwQglNkzo",
-   "channel": "Matt Wolfe",
-   "published": "2026-08-28T15:00:09.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/TInwQglNkzo/mqdefault.jpg"
   }
  ],
  "vibe": [
   {
-   "title": "GPT-6 Astra Feels Like AGI (Here’s Everything It Can Do)",
+   "title": "I'm Obsessed With Local AI. Here's Why",
+   "url": "https://www.youtube.com/watch?v=UtFo1ZNC2ns",
+   "videoId": "UtFo1ZNC2ns",
+   "channel": "Greg Isenberg",
+   "published": "2026-09-08T16:30:21.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/UtFo1ZNC2ns/mqdefault.jpg"
+  },
+  {
+   "title": "I Spent 100 Hours Using GPT-6 Astra (This Feels Like AGI)",
    "url": "https://www.youtube.com/watch?v=Ju41cQSe7hY",
    "videoId": "Ju41cQSe7hY",
    "channel": "Riley Brown",
@@ -634,14 +642,6 @@
    "channel": "조코딩 JoCoding",
    "published": "2026-08-17T13:00:09.000Z",
    "thumbnail": "https://i.ytimg.com/vi/VkNEn98sswM/mqdefault.jpg"
-  },
-  {
-   "title": "The Ultimate Guide to Making Your Entire Development Cycle AI Native",
-   "url": "https://www.youtube.com/watch?v=Tliio-33w4g",
-   "videoId": "Tliio-33w4g",
-   "channel": "Cole Medin",
-   "published": "2026-08-17T12:44:25.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/Tliio-33w4g/mqdefault.jpg"
   }
  ]
 }
