@@ -1,6 +1,30 @@
 {
- "generated": "2026-09-10T01:23:08.893Z",
+ "generated": "2026-09-11T01:25:13.208Z",
  "news": [
+  {
+   "title": "We need to talk about this...",
+   "url": "https://www.youtube.com/watch?v=jQIeVznGG3k",
+   "videoId": "jQIeVznGG3k",
+   "channel": "Matthew Berman",
+   "published": "2026-09-10T20:34:23.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/jQIeVznGG3k/mqdefault.jpg"
+  },
+  {
+   "title": "I Never Thought I’d See This Happen",
+   "url": "https://www.youtube.com/watch?v=mOvtumfyjCs",
+   "videoId": "mOvtumfyjCs",
+   "channel": "Two Minute Papers",
+   "published": "2026-09-10T08:47:23.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/mOvtumfyjCs/mqdefault.jpg"
+  },
+  {
+   "title": "비싸도 산다는 현 상황... 애플 폴더블 ‘아이폰 듀오‘ 출시 | 갤럭시 폴드와 다른 기술적 이유",
+   "url": "https://www.youtube.com/watch?v=d-1zGc0JIvY",
+   "videoId": "d-1zGc0JIvY",
+   "channel": "안될공학",
+   "published": "2026-09-10T07:09:09.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/d-1zGc0JIvY/mqdefault.jpg"
+  },
   {
    "title": "Trying To Solve The Biggest AI Problem",
    "url": "https://www.youtube.com/watch?v=-KcHn0QcSb0",
@@ -296,33 +320,17 @@
    "channel": "안될공학",
    "published": "2026-09-01T12:03:40.000Z",
    "thumbnail": "https://i.ytimg.com/vi/fXCHw9tV41A/mqdefault.jpg"
-  },
-  {
-   "title": "GLM 5.3: Powerful AI Is Becoming Almost Free",
-   "url": "https://www.youtube.com/watch?v=w9RDunJACkc",
-   "videoId": "w9RDunJACkc",
-   "channel": "Two Minute Papers",
-   "published": "2026-09-01T09:04:56.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/w9RDunJACkc/mqdefault.jpg"
-  },
-  {
-   "title": "Apple became an AI company OVERNIGHT...",
-   "url": "https://www.youtube.com/watch?v=Dxix8GQD-P4",
-   "videoId": "Dxix8GQD-P4",
-   "channel": "Wes Roth",
-   "published": "2026-09-01T03:09:43.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/Dxix8GQD-P4/mqdefault.jpg"
-  },
-  {
-   "title": "HBF 성공 가능성 낮다? 말하지 않는 치명적 난제 | HBF, zNAND-O 핵심 과제는 발열, 온도, NAND 신뢰성",
-   "url": "https://www.youtube.com/watch?v=gJTto7SP8w0",
-   "videoId": "gJTto7SP8w0",
-   "channel": "안될공학",
-   "published": "2026-08-30T10:51:32.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/gJTto7SP8w0/mqdefault.jpg"
   }
  ],
  "vibe": [
+  {
+   "title": "GPT-6 Astra: How I’d Make Money With It",
+   "url": "https://www.youtube.com/watch?v=nglqTHwuZ-8",
+   "videoId": "nglqTHwuZ-8",
+   "channel": "Greg Isenberg",
+   "published": "2026-09-10T18:11:19.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/nglqTHwuZ-8/mqdefault.jpg"
+  },
   {
    "title": "No One Talks Enough About Security for AI Coding. Here's How I Do It in My Workflows",
    "url": "https://www.youtube.com/watch?v=SGodxQHnVxc",
@@ -332,7 +340,7 @@
    "thumbnail": "https://i.ytimg.com/vi/SGodxQHnVxc/mqdefault.jpg"
   },
   {
-   "title": "Claude Fable 5.1 Is WAY Better Than Everyone Thinks (Build Anything)",
+   "title": "Claude Fable 5.1 is WAY Better Than You Think (Builds Anything)",
    "url": "https://www.youtube.com/watch?v=3cYTWLdHgAE",
    "videoId": "3cYTWLdHgAE",
    "channel": "Riley Brown",
@@ -492,7 +500,7 @@
    "thumbnail": "https://i.ytimg.com/vi/msfMqW92Y8Q/mqdefault.jpg"
   },
   {
-   "title": "11 Insane Things NEW Grok Bot Can Do",
+   "title": "11 Insane Things NEW Grok Bot Can Do (Steal These)",
    "url": "https://www.youtube.com/watch?v=XgkW4A6lrDY",
    "videoId": "XgkW4A6lrDY",
    "channel": "Riley Brown",
@@ -634,14 +642,6 @@
    "channel": "조코딩 JoCoding",
    "published": "2026-08-18T04:00:19.000Z",
    "thumbnail": "https://i.ytimg.com/vi/6-bmczPW5n0/mqdefault.jpg"
-  },
-  {
-   "title": "Claude Code New Features, Explained",
-   "url": "https://www.youtube.com/watch?v=SkY-tR9kf-k",
-   "videoId": "SkY-tR9kf-k",
-   "channel": "Greg Isenberg",
-   "published": "2026-08-17T18:00:14.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/SkY-tR9kf-k/mqdefault.jpg"
   }
  ]
 }
