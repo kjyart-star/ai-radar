@@ -1,6 +1,22 @@
 {
- "generated": "2026-09-12T01:27:01.099Z",
+ "generated": "2026-09-13T01:22:16.324Z",
  "news": [
+  {
+   "title": "Something Is Seriously Wrong at Anthropic…",
+   "url": "https://www.youtube.com/watch?v=QP8PWvxpQ9I",
+   "videoId": "QP8PWvxpQ9I",
+   "channel": "TheAIGRID",
+   "published": "2026-09-12T17:08:10.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/QP8PWvxpQ9I/mqdefault.jpg"
+  },
+  {
+   "title": "엔비디아 진짜 해자는 GPU가 아니다 | CUDA·NVLink·Mellanox가 만든 AI 시스템",
+   "url": "https://www.youtube.com/watch?v=lr5kzD67O_U",
+   "videoId": "lr5kzD67O_U",
+   "channel": "안될공학",
+   "published": "2026-09-12T10:00:10.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/lr5kzD67O_U/mqdefault.jpg"
+  },
   {
    "title": "Deepseek did it again...",
    "url": "https://www.youtube.com/watch?v=U-rsvXds9ck",
@@ -304,25 +320,25 @@
    "channel": "TheAIGRID",
    "published": "2026-09-02T20:01:01.000Z",
    "thumbnail": "https://i.ytimg.com/vi/9V_M1ehCoec/mqdefault.jpg"
-  },
-  {
-   "title": "GPT-6 Astra Just Went CRITICAL...",
-   "url": "https://www.youtube.com/watch?v=qRNZMGc7TMc",
-   "videoId": "qRNZMGc7TMc",
-   "channel": "Wes Roth",
-   "published": "2026-09-02T05:41:07.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/qRNZMGc7TMc/mqdefault.jpg"
-  },
-  {
-   "title": "Anthropic went CRAZY (Mythos/Fable 5.1)",
-   "url": "https://www.youtube.com/watch?v=epogfA_0R4E",
-   "videoId": "epogfA_0R4E",
-   "channel": "Matthew Berman",
-   "published": "2026-09-01T23:57:31.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/epogfA_0R4E/mqdefault.jpg"
   }
  ],
  "vibe": [
+  {
+   "title": "GPT-6 Astra Just Made AI Software Factories Real (Here's How to Run One)",
+   "url": "https://www.youtube.com/watch?v=joKb_QMmglM",
+   "videoId": "joKb_QMmglM",
+   "channel": "Cole Medin",
+   "published": "2026-09-12T13:27:24.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/joKb_QMmglM/mqdefault.jpg"
+  },
+  {
+   "title": "[LIVE] 초파리 24시간 DOOM 시키기 (ft. RTX PRO 6000 Blackwell)",
+   "url": "https://www.youtube.com/watch?v=b79rStjx3nU",
+   "videoId": "b79rStjx3nU",
+   "channel": "조코딩 JoCoding",
+   "published": "2026-09-12T05:02:16.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/b79rStjx3nU/mqdefault.jpg"
+  },
   {
    "title": "GPT-6 Astra: How I’d Make Money With It",
    "url": "https://www.youtube.com/watch?v=nglqTHwuZ-8",
@@ -626,22 +642,6 @@
    "channel": "조코딩 JoCoding",
    "published": "2026-08-19T09:00:37.000Z",
    "thumbnail": "https://i.ytimg.com/vi/Rp7h16-C7mI/mqdefault.jpg"
-  },
-  {
-   "title": "카카오페이증권은 Codex를 어떻게 활용할까? | OpenAI × AX 인재전쟁",
-   "url": "https://www.youtube.com/watch?v=hFrTbX7FRu8",
-   "videoId": "hFrTbX7FRu8",
-   "channel": "조코딩 JoCoding",
-   "published": "2026-08-18T09:00:06.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/hFrTbX7FRu8/mqdefault.jpg"
-  },
-  {
-   "title": "무신사는 Codex를 어떻게 활용할까? | OpenAI × 조코딩AX파트너스",
-   "url": "https://www.youtube.com/watch?v=6-bmczPW5n0",
-   "videoId": "6-bmczPW5n0",
-   "channel": "조코딩 JoCoding",
-   "published": "2026-08-18T04:00:19.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/6-bmczPW5n0/mqdefault.jpg"
   }
  ]
 }
