@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-20T01:23:37.370Z",
+ "generated": "2026-09-21T01:21:32.607Z",
  "source": "arXiv cs.AI · GitHub · Hugging Face",
  "sources": [
   "arXiv cs.AI",
@@ -152,71 +152,71 @@
   {
    "title": "openclaw/openclaw",
    "url": "https://github.com/openclaw/openclaw",
-   "stars": 390105,
+   "stars": 390160,
    "language": "TypeScript",
-   "date": "2026-09-20T01:24:59Z",
+   "date": "2026-09-21T01:24:40Z",
    "summary": "The AI that really does things. Any OS. Any Platform. The lobster way. 🦞 "
   },
   {
    "title": "obra/superpowers",
    "url": "https://github.com/obra/superpowers",
-   "stars": 288838,
+   "stars": 289286,
    "language": "Shell",
-   "date": "2026-09-19T00:32:57Z",
+   "date": "2026-09-20T17:43:04Z",
    "summary": "An agentic skills framework & software development methodology that works."
   },
   {
    "title": "NousResearch/hermes-agent",
    "url": "https://github.com/NousResearch/hermes-agent",
-   "stars": 247166,
+   "stars": 247486,
    "language": "Python",
-   "date": "2026-09-20T01:24:14Z",
+   "date": "2026-09-21T01:24:11Z",
    "summary": "The agent that grows with you"
   },
   {
    "title": "n8n-io/n8n",
    "url": "https://github.com/n8n-io/n8n",
-   "stars": 205387,
+   "stars": 205479,
    "language": "TypeScript",
-   "date": "2026-09-19T20:30:25Z",
+   "date": "2026-09-21T00:52:45Z",
    "summary": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations."
   },
   {
    "title": "Significant-Gravitas/AutoGPT",
    "url": "https://github.com/Significant-Gravitas/AutoGPT",
-   "stars": 187451,
+   "stars": 187466,
    "language": "Python",
-   "date": "2026-09-20T00:17:05Z",
+   "date": "2026-09-20T17:23:31Z",
    "summary": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters."
   },
   {
    "title": "firecrawl/firecrawl",
    "url": "https://github.com/firecrawl/firecrawl",
-   "stars": 182296,
+   "stars": 182604,
    "language": "TypeScript",
-   "date": "2026-09-20T01:10:47Z",
+   "date": "2026-09-20T19:56:56Z",
    "summary": "The web data API to search, scrape, and interact at scale. 🔥"
   },
   {
    "title": "Snailclimb/JavaGuide",
    "url": "https://github.com/Snailclimb/JavaGuide",
-   "stars": 158701,
+   "stars": 158740,
    "language": "JavaScript",
-   "date": "2026-09-19T06:29:38Z",
+   "date": "2026-09-20T05:27:51Z",
    "summary": "Java 面试 & 后端通用面试指南，覆盖计算机基础、数据库、分布式、高并发、系统设计与 AI 应用开发"
   },
   {
    "title": "langgenius/dify",
    "url": "https://github.com/langgenius/dify",
-   "stars": 156489,
+   "stars": 156637,
    "language": "TypeScript",
-   "date": "2026-09-20T00:26:07Z",
+   "date": "2026-09-21T01:23:13Z",
    "summary": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without reb"
   },
   {
    "title": "open-webui/open-webui",
    "url": "https://github.com/open-webui/open-webui",
-   "stars": 152576,
+   "stars": 152645,
    "language": "Python",
    "date": "2026-09-19T22:03:15Z",
    "summary": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)"
@@ -224,15 +224,15 @@
   {
    "title": "langchain-ai/langchain",
    "url": "https://github.com/langchain-ai/langchain",
-   "stars": 146690,
+   "stars": 146752,
    "language": "Python",
-   "date": "2026-09-19T23:20:23Z",
+   "date": "2026-09-20T18:54:54Z",
    "summary": "The agent engineering platform."
   },
   {
    "title": "github/spec-kit",
    "url": "https://github.com/github/spec-kit",
-   "stars": 137975,
+   "stars": 138090,
    "language": "Python",
    "date": "2026-09-18T21:02:09Z",
    "summary": "💫 Toolkit to help you get started with Spec-Driven Development"
@@ -240,15 +240,15 @@
   {
    "title": "Comfy-Org/ComfyUI",
    "url": "https://github.com/Comfy-Org/ComfyUI",
-   "stars": 133934,
+   "stars": 134116,
    "language": "Python",
-   "date": "2026-09-20T00:29:57Z",
+   "date": "2026-09-21T00:24:02Z",
    "summary": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface."
   },
   {
    "title": "microsoft/generative-ai-for-beginners",
    "url": "https://github.com/microsoft/generative-ai-for-beginners",
-   "stars": 120094,
+   "stars": 120141,
    "language": "Jupyter Notebook",
    "date": "2026-09-18T13:48:35Z",
    "summary": "21 Lessons, Get Started Building with Generative AI "
@@ -256,31 +256,31 @@
   {
    "title": "supabase/supabase",
    "url": "https://github.com/supabase/supabase",
-   "stars": 110333,
+   "stars": 110437,
    "language": "TypeScript",
-   "date": "2026-09-20T00:40:21Z",
+   "date": "2026-09-21T01:07:55Z",
    "summary": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications."
   },
   {
    "title": "google-gemini/gemini-cli",
    "url": "https://github.com/google-gemini/gemini-cli",
-   "stars": 107090,
+   "stars": 107102,
    "language": "TypeScript",
-   "date": "2026-09-20T01:25:39Z",
+   "date": "2026-09-21T00:28:53Z",
    "summary": "An open-source AI agent that brings the power of Gemini directly into your terminal."
   },
   {
    "title": "JuliusBrussee/caveman",
    "url": "https://github.com/JuliusBrussee/caveman",
-   "stars": 106791,
+   "stars": 106982,
    "language": "Go",
-   "date": "2026-09-20T01:22:02Z",
+   "date": "2026-09-20T19:57:47Z",
    "summary": "🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman."
   },
   {
    "title": "rasbt/LLMs-from-scratch",
    "url": "https://github.com/rasbt/LLMs-from-scratch",
-   "stars": 105243,
+   "stars": 105301,
    "language": "Jupyter Notebook",
    "date": "2026-09-17T14:08:55Z",
    "summary": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step"
@@ -288,7 +288,7 @@
   {
    "title": "hacksider/Deep-Live-Cam",
    "url": "https://github.com/hacksider/Deep-Live-Cam",
-   "stars": 96725,
+   "stars": 96746,
    "language": "Python",
    "date": "2026-09-15T11:05:04Z",
    "summary": "real time face swap and one-click video deepfake with only a single image"
@@ -296,17 +296,17 @@
   {
    "title": "punkpeye/awesome-mcp-servers",
    "url": "https://github.com/punkpeye/awesome-mcp-servers",
-   "stars": 95293,
+   "stars": 95343,
    "language": "",
-   "date": "2026-09-15T23:17:39Z",
+   "date": "2026-09-21T01:23:34Z",
    "summary": "A collection of MCP servers."
   },
   {
    "title": "thedotmack/claude-mem",
    "url": "https://github.com/thedotmack/claude-mem",
-   "stars": 94275,
+   "stars": 94345,
    "language": "TypeScript",
-   "date": "2026-09-19T18:14:21Z",
+   "date": "2026-09-20T23:56:06Z",
    "summary": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Cla"
   }
  ],
@@ -314,162 +314,162 @@
   {
    "title": "prism-ml/Ternary-Bonsai-2-27B-gguf",
    "url": "https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf",
-   "downloads": 1516960,
-   "likes": 1219,
+   "downloads": 1908396,
+   "likes": 1499,
    "task": "text-generation",
    "date": "2026-09-16T23:40:56.000Z"
-  },
-  {
-   "title": "deepseek-ai/DeepSeek-V4.1-Flash",
-   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-   "downloads": 482270,
-   "likes": 3303,
-   "task": "image-text-to-text",
-   "date": "2026-09-10T02:17:58.000Z"
-  },
-  {
-   "title": "Qwen/Qwen3.8-27B",
-   "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
-   "downloads": 7365368,
-   "likes": 15763,
-   "task": "image-text-to-text",
-   "date": "2026-08-05T08:22:59.000Z"
-  },
-  {
-   "title": "XingChen-AGI/Xing4.0-29B-A4B",
-   "url": "https://huggingface.co/XingChen-AGI/Xing4.0-29B-A4B",
-   "downloads": 7278,
-   "likes": 640,
-   "task": "text-generation",
-   "date": "2026-09-16T06:44:40.000Z"
   },
   {
    "title": "convaiinnovations/laya",
    "url": "https://huggingface.co/convaiinnovations/laya",
    "downloads": 0,
-   "likes": 544,
+   "likes": 1105,
    "task": "text-classification",
    "date": "2026-09-18T05:05:55.000Z"
   },
   {
+   "title": "deepseek-ai/DeepSeek-V4.1-Flash",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+   "downloads": 496684,
+   "likes": 3437,
+   "task": "image-text-to-text",
+   "date": "2026-09-10T02:17:58.000Z"
+  },
+  {
+   "title": "XingChen-AGI/Xing4.0-29B-A4B",
+   "url": "https://huggingface.co/XingChen-AGI/Xing4.0-29B-A4B",
+   "downloads": 12617,
+   "likes": 894,
+   "task": "text-generation",
+   "date": "2026-09-16T06:44:40.000Z"
+  },
+  {
+   "title": "Qwen/Qwen-Image-2.1",
+   "url": "https://huggingface.co/Qwen/Qwen-Image-2.1",
+   "downloads": 183,
+   "likes": 776,
+   "task": "text-to-image",
+   "date": "2026-09-14T03:47:26.000Z"
+  },
+  {
+   "title": "Qwen/Qwen3.8-27B",
+   "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+   "downloads": 7331932,
+   "likes": 15862,
+   "task": "image-text-to-text",
+   "date": "2026-08-05T08:22:59.000Z"
+  },
+  {
    "title": "m-a-p/YuE2-3B",
    "url": "https://huggingface.co/m-a-p/YuE2-3B",
-   "downloads": 15446,
-   "likes": 873,
+   "downloads": 17403,
+   "likes": 916,
    "task": "text-to-audio",
    "date": "2026-09-09T18:30:33.000Z"
   },
   {
    "title": "ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF",
    "url": "https://huggingface.co/ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF",
-   "downloads": 1154265,
-   "likes": 1420,
+   "downloads": 1217204,
+   "likes": 1480,
    "task": "image-text-to-text",
    "date": "2026-08-28T18:38:03.000Z"
   },
   {
+   "title": "harshatheg/Qwen-2.5-1B-RLCD",
+   "url": "https://huggingface.co/harshatheg/Qwen-2.5-1B-RLCD",
+   "downloads": 0,
+   "likes": 478,
+   "task": "text-generation",
+   "date": "2026-09-16T01:35:33.000Z"
+  },
+  {
    "title": "Lightricks/LTX-2.5",
    "url": "https://huggingface.co/Lightricks/LTX-2.5",
-   "downloads": 1607815,
-   "likes": 4440,
+   "downloads": 1609559,
+   "likes": 4556,
    "task": "image-to-video",
    "date": "2026-07-23T07:55:24.000Z"
   },
   {
    "title": "ukisai/Swift-Qwen3.8-27b",
    "url": "https://huggingface.co/ukisai/Swift-Qwen3.8-27b",
-   "downloads": 8761,
-   "likes": 482,
+   "downloads": 10962,
+   "likes": 510,
    "task": "image-text-to-text",
    "date": "2026-09-08T13:35:21.000Z"
   },
   {
-   "title": "harshatheg/Qwen-2.5-1B-RLCD",
-   "url": "https://huggingface.co/harshatheg/Qwen-2.5-1B-RLCD",
-   "downloads": 0,
-   "likes": 427,
-   "task": "text-generation",
-   "date": "2026-09-16T01:35:33.000Z"
-  },
-  {
-   "title": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
-   "url": "https://huggingface.co/DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
-   "downloads": 1256962,
-   "likes": 960,
-   "task": "image-text-to-text",
-   "date": "2026-09-01T07:01:09.000Z"
-  },
-  {
    "title": "unsloth/Qwen3.8-27B-GGUF",
    "url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
-   "downloads": 7118363,
-   "likes": 4374,
+   "downloads": 6941478,
+   "likes": 4431,
    "task": "",
    "date": "2026-08-13T08:28:40.000Z"
   },
   {
+   "title": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
+   "url": "https://huggingface.co/DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
+   "downloads": 1301417,
+   "likes": 1002,
+   "task": "image-text-to-text",
+   "date": "2026-09-01T07:01:09.000Z"
+  },
+  {
+   "title": "AlexWortega/openjev",
+   "url": "https://huggingface.co/AlexWortega/openjev",
+   "downloads": 0,
+   "likes": 317,
+   "task": "text-classification",
+   "date": "2026-09-16T18:25:10.000Z"
+  },
+  {
+   "title": "prism-ml/Ternary-Bonsai-2-27B-mlx-2bit",
+   "url": "https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-mlx-2bit",
+   "downloads": 30043,
+   "likes": 284,
+   "task": "text-generation",
+   "date": "2026-09-16T23:41:18.000Z"
+  },
+  {
+   "title": "Qwen/Qwen3.8-Flash-Next",
+   "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+   "downloads": 761112,
+   "likes": 5493,
+   "task": "image-text-to-text",
+   "date": "2026-08-24T08:24:59.000Z"
+  },
+  {
+   "title": "Comfy-Org/Qwen-Image-2.1",
+   "url": "https://huggingface.co/Comfy-Org/Qwen-Image-2.1",
+   "downloads": 120,
+   "likes": 269,
+   "task": "",
+   "date": "2026-09-15T19:41:09.000Z"
+  },
+  {
    "title": "openbmb/MiniCPM5-2B",
    "url": "https://huggingface.co/openbmb/MiniCPM5-2B",
-   "downloads": 389555,
-   "likes": 1589,
+   "downloads": 420622,
+   "likes": 1627,
    "task": "text-generation",
    "date": "2026-09-06T11:12:19.000Z"
   },
   {
    "title": "ukisai/Swift-Qwen3.8-27B-GGUF",
    "url": "https://huggingface.co/ukisai/Swift-Qwen3.8-27B-GGUF",
-   "downloads": 120740,
-   "likes": 307,
+   "downloads": 136668,
+   "likes": 329,
    "task": "image-text-to-text",
    "date": "2026-09-11T14:58:56.000Z"
   },
   {
-   "title": "Qwen/Qwen3.8-Flash-Next",
-   "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
-   "downloads": 742586,
-   "likes": 5448,
-   "task": "image-text-to-text",
-   "date": "2026-08-24T08:24:59.000Z"
-  },
-  {
-   "title": "prism-ml/Ternary-Bonsai-2-27B-mlx-2bit",
-   "url": "https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-mlx-2bit",
-   "downloads": 23111,
-   "likes": 243,
-   "task": "text-generation",
-   "date": "2026-09-16T23:41:18.000Z"
-  },
-  {
    "title": "meta-llama/Llama-3.1-8B-Instruct",
    "url": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct",
-   "downloads": 5919746,
-   "likes": 7744,
+   "downloads": 5910102,
+   "likes": 7769,
    "task": "text-generation",
    "date": "2024-07-18T08:56:00.000Z"
-  },
-  {
-   "title": "Edge0/Edge0-35B-A3B-preview",
-   "url": "https://huggingface.co/Edge0/Edge0-35B-A3B-preview",
-   "downloads": 68403,
-   "likes": 3489,
-   "task": "text-generation",
-   "date": "2026-09-08T13:56:18.000Z"
-  },
-  {
-   "title": "dealignai/DeepSeek-V4.1-Flash-UNCENSORED-FP8",
-   "url": "https://huggingface.co/dealignai/DeepSeek-V4.1-Flash-UNCENSORED-FP8",
-   "downloads": 34230,
-   "likes": 300,
-   "task": "image-text-to-text",
-   "date": "2026-09-10T21:02:04.000Z"
-  },
-  {
-   "title": "AlexWortega/openjev",
-   "url": "https://huggingface.co/AlexWortega/openjev",
-   "downloads": 0,
-   "likes": 204,
-   "task": "text-classification",
-   "date": "2026-09-16T18:25:10.000Z"
   }
  ]
 }
