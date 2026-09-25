@@ -1,6 +1,94 @@
 {
- "generated": "2026-09-24T01:40:18.570Z",
+ "generated": "2026-09-25T01:48:15.624Z",
  "news": [
+  {
+   "title": "Opus 5.5: How Close Are We to Automated AI Research?",
+   "url": "https://www.youtube.com/watch?v=R9momwXV9w4",
+   "videoId": "R9momwXV9w4",
+   "channel": "AI Explained",
+   "published": "2026-09-24T22:51:54.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/R9momwXV9w4/mqdefault.jpg"
+  },
+  {
+   "title": "8 Jev Use Cases That Feel Like Cheating",
+   "url": "https://www.youtube.com/watch?v=jGD_UR4wMJc",
+   "videoId": "jGD_UR4wMJc",
+   "channel": "Matthew Berman",
+   "published": "2026-09-24T18:37:13.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/jGD_UR4wMJc/mqdefault.jpg"
+  },
+  {
+   "title": "아이폰 18 Pro 압도적 성능에… 체감 속도 2배 온디바이스AI 성능은 더 놀랍네요 | 2나노 칩 A20, 충격적인 벤치마크 점수보다 AI 성능 설계 | 발열 관리",
+   "url": "https://www.youtube.com/watch?v=sHRtYwXtbio",
+   "videoId": "sHRtYwXtbio",
+   "channel": "안될공학",
+   "published": "2026-09-24T11:12:07.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/sHRtYwXtbio/mqdefault.jpg"
+  },
+  {
+   "title": "Claude Opus 5.5 Just Did Something That Looks Like AGI",
+   "url": "https://www.youtube.com/watch?v=ky_T22Lw5rM",
+   "videoId": "ky_T22Lw5rM",
+   "channel": "TheAIGRID",
+   "published": "2026-09-24T10:15:15.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/ky_T22Lw5rM/mqdefault.jpg"
+  },
+  {
+   "title": "Claude Opus 5.5 AI: An Incredible Leap Forward",
+   "url": "https://www.youtube.com/watch?v=SA9kdAX2Zj0",
+   "videoId": "SA9kdAX2Zj0",
+   "channel": "Two Minute Papers",
+   "published": "2026-09-24T08:40:55.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/SA9kdAX2Zj0/mqdefault.jpg"
+  },
+  {
+   "title": "Claude JUST found hidden DNA...",
+   "url": "https://www.youtube.com/watch?v=H7KruLVX2Rk",
+   "videoId": "H7KruLVX2Rk",
+   "channel": "Wes Roth",
+   "published": "2026-09-24T05:24:14.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/H7KruLVX2Rk/mqdefault.jpg"
+  },
+  {
+   "title": "GPT-6 Sol and Luna Are HERE!",
+   "url": "https://www.youtube.com/watch?v=Ima_AVPyQ9E",
+   "videoId": "Ima_AVPyQ9E",
+   "channel": "Matthew Berman",
+   "published": "2026-09-23T20:19:04.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/Ima_AVPyQ9E/mqdefault.jpg"
+  },
+  {
+   "title": "프롬프트는 짧게, 결과는 영화처럼… | GPU·K-드라마·광고 시연",
+   "url": "https://www.youtube.com/watch?v=6ESP4rQLhEo",
+   "videoId": "6ESP4rQLhEo",
+   "channel": "안될공학",
+   "published": "2026-09-23T10:00:21.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/6ESP4rQLhEo/mqdefault.jpg"
+  },
+  {
+   "title": "Anthropic went CRAZY (Opus 5.5)",
+   "url": "https://www.youtube.com/watch?v=OWu2kjKrRTA",
+   "videoId": "OWu2kjKrRTA",
+   "channel": "Matthew Berman",
+   "published": "2026-09-23T03:41:24.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/OWu2kjKrRTA/mqdefault.jpg"
+  },
+  {
+   "title": "Opus 5.5 Is Crazy Good and GPT-6-Sol Launched Too",
+   "url": "https://www.youtube.com/watch?v=0t-eWrGFZyA",
+   "videoId": "0t-eWrGFZyA",
+   "channel": "Matt Wolfe",
+   "published": "2026-09-22T22:30:04.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/0t-eWrGFZyA/mqdefault.jpg"
+  },
+  {
+   "title": "GPT-6 SOL AND LUNA ARE OUT!!!",
+   "url": "https://www.youtube.com/watch?v=5MFORiebZks",
+   "videoId": "5MFORiebZks",
+   "channel": "Matthew Berman",
+   "published": "2026-09-22T18:38:33.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/5MFORiebZks/mqdefault.jpg"
+  },
   {
    "title": "Elon Musk Just Released Grok 4.7 — And It’s NOT What We Expected",
    "url": "https://www.youtube.com/watch?v=wB5eMyhFfRQ",
@@ -10,12 +98,28 @@
    "thumbnail": "https://i.ytimg.com/vi/wB5eMyhFfRQ/mqdefault.jpg"
   },
   {
+   "title": "AI labs may be hiding their biggest breakthroughs",
+   "url": "https://www.youtube.com/watch?v=p2i-fcx0G0M",
+   "videoId": "p2i-fcx0G0M",
+   "channel": "Wes Roth",
+   "published": "2026-09-22T12:20:07.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/p2i-fcx0G0M/mqdefault.jpg"
+  },
+  {
    "title": "Yes, Jev Is Insane, But There's A Catch",
    "url": "https://www.youtube.com/watch?v=qBBRRsH0rQc",
    "videoId": "qBBRRsH0rQc",
    "channel": "Two Minute Papers",
    "published": "2026-09-22T09:32:13.000Z",
    "thumbnail": "https://i.ytimg.com/vi/qBBRRsH0rQc/mqdefault.jpg"
+  },
+  {
+   "title": "Jev가 AI 틈새 기술? 구글이 바로 반응합니다… 빠른 응답에 돈을 내는 이유 | 세레브라스, Groq도 절대 안되는 기술이라 했죠",
+   "url": "https://www.youtube.com/watch?v=qV5p14OSgXU",
+   "videoId": "qV5p14OSgXU",
+   "channel": "안될공학",
+   "published": "2026-09-22T07:11:05.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/qV5p14OSgXU/mqdefault.jpg"
   },
   {
    "title": "Did Elon catch up? (Grok 4.7 is here)",
@@ -216,113 +320,41 @@
    "channel": "Matt Wolfe",
    "published": "2026-09-11T15:00:00.000Z",
    "thumbnail": "https://i.ytimg.com/vi/JwTCjarfJYw/mqdefault.jpg"
-  },
-  {
-   "title": "아이폰18 Pro, 애플은 AI에서 모든 게 준비됩니다... 메모리 열 설계까지 바꾼 AI 아이폰 | A20 Pro와 AFM 3가 맞춰진 이유",
-   "url": "https://www.youtube.com/watch?v=KbT3A34tTPk",
-   "videoId": "KbT3A34tTPk",
-   "channel": "안될공학",
-   "published": "2026-09-11T06:51:06.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/KbT3A34tTPk/mqdefault.jpg"
-  },
-  {
-   "title": "We need to talk about this...",
-   "url": "https://www.youtube.com/watch?v=jQIeVznGG3k",
-   "videoId": "jQIeVznGG3k",
-   "channel": "Matthew Berman",
-   "published": "2026-09-10T20:34:23.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/jQIeVznGG3k/mqdefault.jpg"
-  },
-  {
-   "title": "I Never Thought I’d See This Happen",
-   "url": "https://www.youtube.com/watch?v=mOvtumfyjCs",
-   "videoId": "mOvtumfyjCs",
-   "channel": "Two Minute Papers",
-   "published": "2026-09-10T08:47:23.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/mOvtumfyjCs/mqdefault.jpg"
-  },
-  {
-   "title": "we JUST got played...",
-   "url": "https://www.youtube.com/watch?v=WBK2WX7TA4g",
-   "videoId": "WBK2WX7TA4g",
-   "channel": "Wes Roth",
-   "published": "2026-09-10T08:37:45.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/WBK2WX7TA4g/mqdefault.jpg"
-  },
-  {
-   "title": "비싸도 산다는 현 상황... 애플 폴더블 ‘아이폰 듀오‘ 출시 | 갤럭시 폴드와 다른 기술적 이유",
-   "url": "https://www.youtube.com/watch?v=d-1zGc0JIvY",
-   "videoId": "d-1zGc0JIvY",
-   "channel": "안될공학",
-   "published": "2026-09-10T07:09:09.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/d-1zGc0JIvY/mqdefault.jpg"
-  },
-  {
-   "title": "I Built A Tool To Detect AI Video (You Can Have It)",
-   "url": "https://www.youtube.com/watch?v=-KcHn0QcSb0",
-   "videoId": "-KcHn0QcSb0",
-   "channel": "Matt Wolfe",
-   "published": "2026-09-09T22:18:17.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/-KcHn0QcSb0/mqdefault.jpg"
-  },
-  {
-   "title": "사이버캡 직접 타본 사람들 반응은? 역세권 의미 변화, 일상과 돈 버는 규칙이 달라질 수 있다 | 로보택시 시대의 일상",
-   "url": "https://www.youtube.com/watch?v=YtM10eyIzdM",
-   "videoId": "YtM10eyIzdM",
-   "channel": "안될공학",
-   "published": "2026-09-09T21:45:41.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/YtM10eyIzdM/mqdefault.jpg"
-  },
-  {
-   "title": "Which AI Builds Better Websites: Astra or Fable 5.1?",
-   "url": "https://www.youtube.com/watch?v=twFYccH1A_A",
-   "videoId": "twFYccH1A_A",
-   "channel": "The AI Advantage",
-   "published": "2026-09-09T18:40:57.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/twFYccH1A_A/mqdefault.jpg"
-  },
-  {
-   "title": "We need to talk about this...",
-   "url": "https://www.youtube.com/watch?v=e7t9HU2Z6t8",
-   "videoId": "e7t9HU2Z6t8",
-   "channel": "Matthew Berman",
-   "published": "2026-09-09T18:18:37.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/e7t9HU2Z6t8/mqdefault.jpg"
-  },
-  {
-   "title": "GPT6, 일반인도 잡일, 업무 다 대체됩니다… 제대로 쓰는 법 | AI 에이전트의 진짜 비용 구조 | Computer Use·하네스·토큰 절약법까지",
-   "url": "https://www.youtube.com/watch?v=gUfdzjf_J2k",
-   "videoId": "gUfdzjf_J2k",
-   "channel": "안될공학",
-   "published": "2026-09-09T09:33:45.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/gUfdzjf_J2k/mqdefault.jpg"
-  },
-  {
-   "title": "OpenAI JUST solved math....",
-   "url": "https://www.youtube.com/watch?v=lkujyxUdUIk",
-   "videoId": "lkujyxUdUIk",
-   "channel": "Wes Roth",
-   "published": "2026-09-09T05:41:44.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/lkujyxUdUIk/mqdefault.jpg"
-  },
-  {
-   "title": "GPT-6 Astra Changes Everything",
-   "url": "https://www.youtube.com/watch?v=eVBJIUxv8N8",
-   "videoId": "eVBJIUxv8N8",
-   "channel": "Two Minute Papers",
-   "published": "2026-09-08T08:24:27.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/eVBJIUxv8N8/mqdefault.jpg"
-  },
-  {
-   "title": "GPT6 Astra, AI로 돈 번다… NVIDIA 젠슨황 말을 증명하다 | Compute is Revenue",
-   "url": "https://www.youtube.com/watch?v=J0aIaS9DIqA",
-   "videoId": "J0aIaS9DIqA",
-   "channel": "안될공학",
-   "published": "2026-09-07T23:05:25.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/J0aIaS9DIqA/mqdefault.jpg"
   }
  ],
  "vibe": [
+  {
+   "title": "Meta Muse AI Connectors: The Next App Store Moment?",
+   "url": "https://www.youtube.com/watch?v=84q4WA3kA8Q",
+   "videoId": "84q4WA3kA8Q",
+   "channel": "Greg Isenberg",
+   "published": "2026-09-24T18:45:00.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/84q4WA3kA8Q/mqdefault.jpg"
+  },
+  {
+   "title": "AI Coding Rate Limits are RIDICULOUS Now - Here's How You Keep Scaling Anyway",
+   "url": "https://www.youtube.com/watch?v=NZq88JAJSag",
+   "videoId": "NZq88JAJSag",
+   "channel": "Cole Medin",
+   "published": "2026-09-24T00:00:38.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/NZq88JAJSag/mqdefault.jpg"
+  },
+  {
+   "title": "Astra + 50 Models: This Is the New SaaS",
+   "url": "https://www.youtube.com/watch?v=e7s7jRgHWsg",
+   "videoId": "e7s7jRgHWsg",
+   "channel": "Greg Isenberg",
+   "published": "2026-09-23T18:27:51.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/e7s7jRgHWsg/mqdefault.jpg"
+  },
+  {
+   "title": "GPT 6 + Hyperframe = Crazy combo for expert-level videos",
+   "url": "https://www.youtube.com/watch?v=8pRe7kkPi6g",
+   "videoId": "8pRe7kkPi6g",
+   "channel": "AI Jason",
+   "published": "2026-09-23T11:51:06.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/8pRe7kkPi6g/mqdefault.jpg"
+  },
   {
    "title": "$30M Writer: Never write AI slop again",
    "url": "https://www.youtube.com/watch?v=YuOSyRj3sXg",
@@ -610,38 +642,6 @@
    "channel": "Greg Isenberg",
    "published": "2026-09-02T18:15:30.000Z",
    "thumbnail": "https://i.ytimg.com/vi/9_SZFIW7tus/mqdefault.jpg"
-  },
-  {
-   "title": "I Gave GrokBot Its Own Email and Credit Card (It Actually Worked)",
-   "url": "https://www.youtube.com/watch?v=9lsnEn0tih4",
-   "videoId": "9lsnEn0tih4",
-   "channel": "Riley Brown",
-   "published": "2026-09-02T13:00:06.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/9lsnEn0tih4/mqdefault.jpg"
-  },
-  {
-   "title": "11 Tiny Coding Agent Fixes With A Stupid Amount Of Payoff",
-   "url": "https://www.youtube.com/watch?v=UbylWXukvR8",
-   "videoId": "UbylWXukvR8",
-   "channel": "Cole Medin",
-   "published": "2026-09-01T17:06:40.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/UbylWXukvR8/mqdefault.jpg"
-  },
-  {
-   "title": "AI에게 맡기는 주식 자동매매 - Codex와 NH투자증권 API로 투자 에이전트 만들기",
-   "url": "https://www.youtube.com/watch?v=CGDibbwGfvk",
-   "videoId": "CGDibbwGfvk",
-   "channel": "조코딩 JoCoding",
-   "published": "2026-09-01T09:00:02.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/CGDibbwGfvk/mqdefault.jpg"
-  },
-  {
-   "title": "Marketing Engineer: The $1M Job with AI Agents",
-   "url": "https://www.youtube.com/watch?v=8ZC1G1ezN5o",
-   "videoId": "8ZC1G1ezN5o",
-   "channel": "Greg Isenberg",
-   "published": "2026-08-31T18:45:11.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/8ZC1G1ezN5o/mqdefault.jpg"
   }
  ]
 }
