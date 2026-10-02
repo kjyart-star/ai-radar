@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-01T02:17:25.050Z",
+ "generated": "2026-10-02T02:26:58.122Z",
  "source": "Google News · TechCrunch · MIT Technology Review · The Verge",
  "sources": [
   "Google News",
@@ -9,106 +9,265 @@
  ],
  "items": [
   {
-   "title": "‘AI 혁신 도시’ 조성…충북 청주시, AI 전담팀 신설",
-   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1hanJTWlR5MXpTVG9ac1dXUlRTQ2JHZnhIUi1Xek9WaUtUaHYtUEc4M2tuM19qTzloTndOVE1RT1NiN2hZSU9JX3B1TnNQS1JqWTdYelhsYmJJUdIBX0FVX3lxTE9kSExwOVhsLWw5cXE1OFpfbUpTSVV1Q0tYQmFjU3dDMnl6NVJyTTBoTS1lNURleUlBNXdoSFk1cVJsSjMteGVOQ0g3WVZvcjdURnBSd2FnQWpyNVNkaXU0?oc=5",
-   "date": "2026-10-01T02:12:00.000Z",
-   "source": "경향신문",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "\"백악관 오찬서 '젠슨황·저커버그 vs 아모데이' AI위험 설전\"",
-   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1QeHExenAyLU5ubm9LS1pCbm50cWVDYl9aMENyY2xWZGFUYjd4OXJrMU9wc1pDODFSYjMxcC12bDB5WEpNTE5ETzlkZ0ZKWmM?oc=5",
-   "date": "2026-10-01T02:03:49.000Z",
-   "source": "v.daum.net",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "'답하는 AI'에서 '끊임없이 일하는 AI'로…치열해지는 기업용 AI 시장",
-   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9hd0dHdU9wLVRhTTJjYmc5dUtvMW1EU3Y4aUctN2pPMGJ2SGpqbTVxd0kzaURlb3YwNHJ3Q0VuYTZicktraWZZRXFrb3FJMXc?oc=5",
-   "date": "2026-10-01T02:02:39.000Z",
-   "source": "v.daum.net",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "인천시, 생성형 AI로 소음원 자동 분석 플랫폼 개발",
-   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1VdEtpLWRKTzlETE1nM09lLTFWY09fQW90bjJzLTFlZjQ5SFFmTEtCa0NUdmdZTU1fUUtqeUVJVnRPd2FvdVNLSTVmdzA5VFpBT1ZWSmJDYzFTcXA2ZDhBR29QQUQ2bGRLTGx2NFVEZXo?oc=5",
-   "date": "2026-10-01T01:59:01.000Z",
-   "source": "인천일보",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "대구대 뷰티학부, AI 스마트미러로 미래형 K뷰티 인재 양성 - 머니투데이",
-   "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1GS1IzRmhBUkdCN2tsWVBGRW1hMTN4SzcxbXYyT2xCQllqbl83UVhmVF9HTVRNU190bDRlekZDeTVWQWtmaDFKMURlbHkwYnhpaVVEWXhoU0ZNY3VpR3RHdXM4dk83aXpiUlHSAW9BVV95cUxQbUE4a2F3d3dkUnVNVWlBeFBFN2s5aVlidlBkajRFZ3N4eW9OOGlNUUFnSGhCRUc3SXliZHJGaEdrbE12LUxxOC03TG9zMHdHSnVjbVlRUjJSSW12SDJvdF9tLXNGQ2w1ZDlQaEFWOEk?oc=5",
-   "date": "2026-10-01T01:47:33.000Z",
-   "source": "머니투데이",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "카카오, ‘AI 돛 서밋 26’ 성료… “카카오그룹 AX 역량 부산에 모았다”",
-   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9DSmtjQS01M2RHMGE1NVZ2RUQzZXpqLWgwRUhzMGNsQlBIZ3djVmZ3QTRCVEE0Vm9MZURBQ2JwaHRrUUNYY29TY3JCRjZfcHBZRmNKbWFR?oc=5",
-   "date": "2026-10-01T01:46:36.000Z",
-   "source": "카카오",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "구글, 최신 프론티어 AI '제미나이 4 아곤' 공개… AI 가격 경쟁 점화",
-   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBVcVliTWR5dm14ZDZJNWJTeXNGNjZ4U21DX21zbmt2RE9OUDRVNUdhNWV1VnU0WFMwbU1nMVAwSHRzQzZuYTZLbjd0V20zSzg?oc=5",
-   "date": "2026-10-01T01:41:14.000Z",
-   "source": "v.daum.net",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "트럼프 회동 하루 만에 美당국, 앤트로픽 등 조사…오픈AI는 첫 피소 - 머니투데이",
-   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFAtU3BsX1NBaEJLX0xVMFN6WDFEQS1qa2Y4NGFvdkhBVWpUNlFHQ3dpeWhCdG9IaUtKSGZWUTBla3A4OFlac2VTaEZ3NWdpRnZBWHdzR3pORHA2VjZSb1FUUm5DeTJSRzhD0gFuQVVfeXFMTXZZeDNsQ1EtNUlYUWt2cEVILU51Yk5RZzNqM0Nhei1jOFNabjZRdXdGTVF2aThPMFlGYS01eDgydzR6dmhNR1lEdVBjamtSNE1oeW1KRTZOWnNMQmZkcXRYdnE2SkFGc0pZeUJiTUE?oc=5",
-   "date": "2026-10-01T01:32:41.000Z",
-   "source": "머니투데이",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "덴컴, 치과 진료 전 과정 연결한 AI 플랫폼 ‘덴트허브 1.0’ 공개",
-   "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9EYUlSdDAzejlrRU1ucmVJTDh0akNvaEI1QlFLWUoxRW9RX1g0TnNqUk1XME0tOW5vSG1UQ040cHR1MTRkX0t6SnhoMmFPREtOSUFfNEtTWWd0cUJlR1NHTlNFeVNKbFhnS3c?oc=5",
-   "date": "2026-10-01T01:31:01.000Z",
-   "source": "AI타임스",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "KT, 병원 AX 시장 공략…환자 안내부터 진료행정까지 AI로",
-   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE0xU1RncGM4N1JhYWtHMklkeVd3dHdoazlmLWxFdGhtMnZsMVROaWVabUxnYk5CMkFIcTRDN2NyazBLNGEzWjBVR1lwcmlzT2VLTXFrdGtNTnpCd9IBX0FVX3lxTE1Ra2c2WHhhOFFabml4M0pDQ21Fdkx2UUMwam5tb0czbDE5RnRudjBCYTUtQ1dNbU1aQlZPanN0T0V0U3Q4WGo5YTJPenVCTWZuZ3RoMG9UdUJfTHcycFhR?oc=5",
-   "date": "2026-10-01T01:21:17.000Z",
-   "source": "뉴스1",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "다온아이앤씨, '국가 AI 대상' 과기정통부 장관상 선정",
-   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFA4d3drWEdPOWZ6Rmo3U3NWSUJJNERVYlVwa2g5NkwyV0pRdTZaeFhTeW11VUF2WmZvNGs1dzBtRl8zWWV3aGMyc3FwVmNFWFNMVWowVUZ3?oc=5",
-   "date": "2026-10-01T01:16:40.000Z",
+   "title": "구글, 이병헌·김고은 참여 ‘구글 AI 프로’ 캠페인 진행",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9hT3FVREVvZW5ldlFwUURHdlRhZ1pFbjJVWEVRYzhhbFNWV1ptUDlNbmNHTldia3JKUFNLVGVDTE5FNVVZMGlITFJ3SW1kX0hmVVNScjVB?oc=5",
+   "date": "2026-10-02T01:56:57.000Z",
    "source": "지디넷코리아",
    "feed": "Google News",
    "summary": ""
   },
   {
-   "title": "LG CNS, 글로벌 투자사 제너럴 애틀랜틱과 글로벌 SW·AI 기업 공동투자",
-   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNamM4UTBqSEpodHRxUERIalp5TWlrQlNfdmk4cU83NGRURnlXdnNfeDRSN3R6cV9UdFY3T0xxM0F5YVhNZWw5cDAwZDc2ZmoyLWYzR3FfNXhNWTQ1V2h0QmZHbE9JQ1VXVlE3UVRDTlVHWjlCMzRhQTd1cW9RRElJbjhGMA?oc=5",
-   "date": "2026-10-01T01:03:28.000Z",
+   "title": "LG유플, 옵트에이아이와 AI 토큰 최적화 나선다",
+   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPdVc5clg5czZQUkRveGxSVUJxbTBCSnhZc2NKMWFsZU5NZjdRTmUyT1hGZ0ZqRFF2Tlo0OGRtakt4WEV1UWdXWWZ5NWNrUlBOc3UyMHAtbjc5VlJZLUZ3c1l2OXNzTFdMMzNlM1JvQ2dIUlFNN3VUV1BKd1NzdFJMa0kxYw?oc=5",
+   "date": "2026-10-02T01:40:00.000Z",
    "source": "조선일보",
    "feed": "Google News",
    "summary": ""
   },
   {
-   "title": "[AI픽] KT, 의료 데이터부터 AI까지…AX '의료 표준모델' 구축",
-   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBGQ0RVVU9RbEEtck5nbUx2UlA4dEVRRUpTeTBDcVlaMUxRQ0R3eS1qWkFjTmE5cmNvS2gyVE14MXBOTkR4bjV6TlNtb1NSbTQ?oc=5",
-   "date": "2026-10-01T00:27:02.000Z",
+   "title": "구글, 우주에 AI 칩 쏘아 올렸다…'우주 데이터센터' 궤도 시험 착수",
+   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1uc19rdEFaSDZJOG12SjhiRFIyU2hwMkVjU0wtZTFRVUM4MDA5ek81Z01YYS01SUZCVzZWdnNXNVBmYndHMm9sMWd2TUZYTDJWRnoxOEV5S1Btdk1ueURZTNIBeEFVX3lxTE5iZEJVRk1SV29HaUxrdDhzZVhGb25nUXRjMjdsWFBKTGg0cWZJSkNLbkQzNGplM25xVkhCeXh4OTRrTEJCVXh2bHA2Ny16eVNtR09JdUFVZHBJcEZLcnZxY1EydXZZaXBPeG1BeXFrNVMxT1NMSjBsNA?oc=5",
+   "date": "2026-10-02T01:30:05.000Z",
+   "source": "뉴시스",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "[속보] 신한은행 고객정보 해킹에 ‘중국 AI’ 흔적 발견",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1MM0VfMjkycDRIOENvLWtONEw1MnZuVVJPRGl6d19qcDNONlpRQ3BMLTJ6SDNJR1l3b2gxQVZ2dS1zZk0wY19EYXIwQjlkWkVZa1R1cGFpUHQtYk0?oc=5",
+   "date": "2026-10-02T01:25:54.000Z",
+   "source": "경기일보",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "엔비디아·소프트뱅크, 오픈AI에 투자 약속한 82조원 모두 납입",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE11QnczT1U1NXpES1A2eXRGX29pajJDenlDRUtlQ0xIUk5DVE05aUxodE02UGI0N3pFTFVVSnBrZFAwakM3SFZRRFRiSDdwckdzMy1NbjFnMGM2WTTSAWBBVV95cUxNMHJaREp5V3dMUDVPUm90d2I1NnhxNUdEckhfODlINUlTbWZkT2xTYy1pVFhmMDlTYTdpRWdkcjB0dThmSnR6SWI0WFJUSVlmUER4NHB6c3FfekZaeXhCbVc?oc=5",
+   "date": "2026-10-02T01:21:30.000Z",
+   "source": "연합뉴스",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "LG유플러스, 토큰 최적화로 전기 덜 먹고 응답 빠른 AI 만든다",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE92UVk1bmY3anRNWFB4TnZuWVRBaTdycy10OUtCVzgzYzV1bkVNSWJhY0Znakh6QV9CMHVMY3BHakVEeEVKUEJMWXJtTDRtNVBhTnFPS2dsa0otQQ?oc=5",
+   "date": "2026-10-02T01:18:37.000Z",
+   "source": "파이낸셜뉴스",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "구글, 우주 데이터센터 첫 궤도 실험…전력난·주민 반발 속 AI 서버 우주로",
+   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9jcERlWGFZQUV6Z1l2cjltOU04NVNOZXBMT01scExUdXBVMllIcktfaFoxUzRBTUNZZ1poMWEwOUh0WVhxbFhqR2dsLXc3NHM?oc=5",
+   "date": "2026-10-02T01:02:11.000Z",
    "source": "v.daum.net",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "오픈AI, 외부 AI안전기구에 사내정보 공유한 직원 3명 해고",
+   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBlWjZPVUNVN2NGOWhSbXdoSGhCZnB2cEs2dTkxakNnSzBxYUtucGRhYlhESUIyUUhjUm42VmVRbDJlMTVXaDdfaURwcDAyR2s?oc=5",
+   "date": "2026-10-02T00:52:09.000Z",
+   "source": "v.daum.net",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "신한은행 해킹 서버서 발견된 '중국어 AI'...침투도구 흔적 남아",
+   "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9fVENIWlJ5M0NTWUdUMVZwX0FTZ0FhMDNJWkhWU1ZtU2Z5bG5Xdk91REU2R21kbnI0SXNtWF81WFQ0OWhZN2VEY0dfeXR0MENwaDZPZ2p2c21xa1FmLXc?oc=5",
+   "date": "2026-10-02T00:51:00.000Z",
+   "source": "YTN",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "[AI픽] LGU+, 옵트에이아이와 손잡고 AI 토큰 효율 높인다",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5HdVNOeDhtLS12aFlfLTFWOGgzR3ltcFJMaHNSLWcyRy1jbUx0QlhlTjRIVnI4bXZQMENPNFBXc3NXX0h1Y0t3QUZIT2FYT2sxUHppdC1xY1dGcknSAWBBVV95cUxOYmZuNGNxbVczOUxPQUZFR2NyTzNZb0xyWFE1clYyWTBBWWg1YTFZa2F3LWtpV2x0bXhhVDFxVkwwS0VMUGN6WWtpTVNWUURxVlZFbWhJNDZDNU0xbXplVDg?oc=5",
+   "date": "2026-10-02T00:23:52.000Z",
+   "source": "연합뉴스",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "공공부문 AI 윤리기준 마련…\"최종 책임·통제는 사람\"",
+   "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5mRlBWX2k2b2JtWlhVSjFnOFo1ZXNUN0Njb3hTc3Zjc0hSRktCcjQ2ZEF5YUxJMGMyTERSbml6Yko5UEhhZld6eWpqM00ya1dPSVJiQ1g2bTR4MW9uNHpZMmtkc2UzMEZnT1lzRQ?oc=5",
+   "date": "2026-10-01T23:54:20.000Z",
+   "source": "정책브리핑",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "Musk’s AI chatbot Grok reportedly encouraged Trump to capture Venezuela’s president",
+   "url": "https://techcrunch.com/2026/10/01/musks-ai-chatbot-grok-reportedly-encouraged-trump-to-capture-venezuelas-president/",
+   "date": "2026-10-01T21:08:11.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "President Trump reportedly asked for Grok's opinion before invading Venezuela and capturing Nicolás Maduro.",
+   "titleKo": "머스크의 인공지능 챗봇 그록 (Grok) 은 트럼프가 베네수엘라의 대통령을 사로잡도록 독려한 것으로 전해졌다."
+  },
+  {
+   "title": "[단독]산업부, 1666억 ‘AI반도체 개발’ 예산 한푼도 안썼다",
+   "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9oOEVCUXE3cTI3Ynd2RGkyX1NGRW1JUWJuRklJWnVTTE1ybFhCcnRVMmsxelNZUVp6cnJxTDRSbUVEMnhWU0ptV1BYM0xpV1lscjFZZTFJbTk5UFp6VmhjcjV3RGpMYl9DNG50R0w4Z0w1cEx5Z1E40gFmQVVfeXFMUG94emxEd2U0VGUwQl9Rc29zQ09SSzRDUWxNeTB1X2VyTlN5S2hmX013RW1LdEU5dzAwdm0wQkxNUmswcFpJUDVhVUdVbHFUQkN4QlZ4TkdmNG9mVUhBMV84M2RRV05R?oc=5",
+   "date": "2026-10-01T21:00:00.000Z",
+   "source": "동아일보",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "Google’s new Guided Vision feature can help you read the fine print",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1003756/google-gemini-live-guided-vision",
+   "date": "2026-10-01T19:47:51.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "Guided Vision is launching in Gemini Live on compatible Android devices today to use AI to give real-time audio descriptions of anything you point your phone's camera at. By sharing your camera in Gemini Live, you can ha",
+   "titleKo": "Google의 새로운 가이드 비전 기능을 사용하면 정밀한 인쇄물을 읽을 수 있습니다."
+  },
+  {
+   "title": "ChatGPT can now virtually try on clothes for you",
+   "url": "https://techcrunch.com/2026/10/01/chatgpt-can-now-virtually-try-on-clothes-for-you/",
+   "date": "2026-10-01T19:21:53.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "OpenAI is rolling out new shopping features for ChatGPT that let users virtually try on clothing and accessories using their own photos and save products they like to a Favorites library.",
+   "titleKo": "ChatGPT는 이제 가상으로 옷을 입어볼 수 있습니다"
+  },
+  {
+   "title": "Google thinks SpaceX’s Starship has to launch 1,800 times before space data centers get off the ground",
+   "url": "https://techcrunch.com/2026/10/01/google-thinks-spacexs-starship-has-to-launch-1600-times-before-space-data-centers-get-off-the-ground/",
+   "date": "2026-10-01T19:18:03.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "Google launched its first advanced chip into orbit to pave the way for space data centers.",
+   "titleKo": "Google은 SpaceX의 우주선이 우주 데이터 센터가 착륙하기 전에 1,800번 발사해야 한다고 생각합니다."
+  },
+  {
+   "title": "OpenAI cuts ties with 3 safety researchers, WSJ reports",
+   "url": "https://techcrunch.com/2026/10/01/openai-cuts-ties-with-three-safety-researchers-wsj-reports/",
+   "date": "2026-10-01T18:14:42.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "OpenAI has parted ways with three safety researchers after an internal investigation found they mishandled sensitive company information, report says.",
+   "titleKo": "WSJ에 따르면 OpenAI는 안전 연구원 3명과의 관계를 단절합니다."
+  },
+  {
+   "title": "Opus 5.5 loves to tell you ‘this matters’ (and other AI writing tells)",
+   "url": "https://techcrunch.com/2026/10/01/opus-5-5-loves-to-tell-you-this-matters-and-other-ai-writing-tells/",
+   "date": "2026-10-01T17:50:19.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "Opus 5.5’s biggest tell is the word “dependable,” which pops up 23 times more often than in human samples.",
+   "titleKo": "Opus 5.5는 당신에게 ‘이 문제‘ 를 말하기를 좋아합니다 (그리고 다른 AI 글쓰기가 알려줍니다)."
+  },
+  {
+   "title": "Judge dismisses antitrust lawsuits over Google’s AI Overviews",
+   "url": "https://www.theverge.com/tech/1003589/google-ai-overviews-chegg-penske-lawsuits-dismissed",
+   "date": "2026-10-01T17:12:21.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "A federal judge has dismissed a pair of antitrust lawsuits filed by Chegg and Rolling Stone parent company Penske Media Corporation, which accused Google of driving away web traffic with its AI-powered search features, a",
+   "titleKo": "판사가 Google의 AI 개요에 대한 독점 금지 소송을 기각합니다."
+  },
+  {
+   "title": "Amazon releases its own Jev clone as decision models flood the web",
+   "url": "https://techcrunch.com/2026/10/01/amazon-releases-its-own-jev-clone-as-decision-models-flood-the-web/",
+   "date": "2026-10-01T16:49:22.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "Amazon Web Services' Strand Labs has released the latest Jevalike decision model, Strands Decider 2B.",
+   "titleKo": "아마존은 의사 결정 모델이 웹을 범람함에 따라 자체 Jev 클론을 출시합니다"
+  },
+  {
+   "title": "Shopify debuts Canvas, a way to build online stores by chatting with AI",
+   "url": "https://techcrunch.com/2026/10/01/shopify-debuts-canvas-a-way-to-build-online-stores-by-chatting-with-ai/",
+   "date": "2026-10-01T16:44:35.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "Shopify’s new Canvas site builder lets merchants create and customize their online stores by chatting with its AI agent Sidekick, while watching the changes happen in real time.",
+   "titleKo": "Shopify는 AI와 채팅하여 온라인 스토어를 구축하는 방법인 Canvas를 출시합니다."
+  },
+  {
+   "title": "Brian Chesky interview: AI agents need their own operating system",
+   "url": "https://techcrunch.com/2026/10/01/brian-chesky-interview-ai-agents-need-their-own-operating-system/",
+   "date": "2026-10-01T15:12:00.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "Brian Chesky on making Airbnb agent-friendly, the state of consumer AI, and why the world needs an AI-native operating system.",
+   "titleKo": "브라이언 체스키 (Brian Chesky) 인터뷰: AI 상담원은 자체 운영 체제가 필요합니다."
+  },
+  {
+   "title": "OpenAI’s new agent is a shot at Meta — but can it compete with free?",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1003399/meta-openai-ai-agents-muse-dots-battle",
+   "date": "2026-10-01T14:36:50.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "At OpenAI's annual DevDay conference, the company pulled out all the stops to compete with its rivals - primarily Meta, whose Muse AI agent platform has seen early runaway success. CEO Sam Altman walked onstage to cheers",
+   "titleKo": "OpenAI의 새로운 에이전트는 메타에서 샷입니다 — 하지만 무료와 경쟁 할 수 있습니까?"
+  },
+  {
+   "title": "구글 AI칩 TPU, 스페이스X 로켓타고 우주로…우주데이터센터 첫걸음",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1VV1FobFBIVDQwY3J1cHB3VFlOV3ZxaVpOck13VlhlZlRTTWhXUF93UWFNVE9XbmdPbENtazB6NGljNEx0SU9WZ3UzYThUYmQ0LWtHTmZxQWNKQQ?oc=5",
+   "date": "2026-10-01T14:00:54.000Z",
+   "source": "한국경제",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "Photon held a funeral for mobile apps. Now it has $4.5M to help replace them with agents.",
+   "url": "https://techcrunch.com/2026/10/01/photon-held-a-funeral-for-mobile-apps-now-it-has-4-5m-to-help-replace-them-with-agents/",
+   "date": "2026-10-01T14:00:00.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "The startup helps developers build AI agents that work over iMessage, SMS/RCS, email, and other messaging platforms. It's a bet that consumers will increasingly use agents instead of downloading apps.",
+   "titleKo": "Photon은 모바일 앱을 위한 장례식을 열었습니다. 이제 상담원으로 교체할 수 있도록 $ 450만 달러를 지원할 예정입니다."
+  },
+  {
+   "title": "Inside our months-long investigation into Kevin O’Leary’s Utah data center debacle",
+   "url": "https://www.theverge.com/podcast/1002851/utah-ai-data-center-stratos-kevin-oleary-investigation-backlash",
+   "date": "2026-10-01T14:00:00.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "Today I’m talking with Josh Dzieza, a longtime features writer here at The Verge, about Kevin O’Leary’s plans to build a massive data center in Utah. The idea was to build the world’s biggest data center — a 40,000-acre ",
+   "titleKo": "케빈 오리어리 (Kevin O’Leary) 의 유타 데이터 센터 붕괴에 대한 수개월에 걸친 조사"
+  },
+  {
+   "title": "Hearing tech startup Legato launches its AI hearing glasses",
+   "url": "https://techcrunch.com/2026/10/01/hearing-tech-startup-legato-launches-its-ai-hearing-glasses/",
+   "date": "2026-10-01T13:00:00.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "The glasses stem from the startup’s goal of making hearing care more accessible by addressing the cost, comfort, and stigma associated with traditional hearing aids.",
+   "titleKo": "보청기 스타트업 Legato, 인공지능 보청기 안경 출시"
+  },
+  {
+   "title": "Satlyt, founded by a former Google and SpaceX product manager, raises $8M to run AI on satellites",
+   "url": "https://techcrunch.com/2026/10/01/satlyt-founded-by-a-former-google-and-spacex-product-manager-raises-8m-to-run-ai-on-satellites/",
+   "date": "2026-10-01T12:00:00.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "Satlyt wants to be the Android of orbital computing, offering open software that works on many companies' satellites, versus SpaceX's closed, all-in-one iPhone-style approach.",
+   "titleKo": "전 Google 및 SpaceX 제품 관리자가 설립한 Satlyt는 인공위성에서 AI를 실행하기 위해 $ 8M를 모금합니다."
+  },
+  {
+   "title": "'AI 에이전트'에 당했다…신한은행 보안 허점 노출(종합2보)",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9zdkFyWFY4Umxaa0ZiU0tSSmZNbm9Qdzg4OEJyeVI5QUt2bW5fN3VKREVnMHBBM0I2R3lYczJVS3NTUmFKU1hZZ3p1VHlWNW9kdWdWeFQ1eHV5eUHSAWBBVV95cUxQRnZoejk2RHYwVVBjRWh1RzB3eXhZcWlFM3B5bmJiV0ttUXRtenFHb2JPZklROGwyYkt0anNhMEhpdk85MXNROU1JYUNTdkFSQndFN3FBMHJpd1dNaFJSMzk?oc=5",
+   "date": "2026-10-01T11:00:09.000Z",
+   "source": "연합뉴스",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "구글, 최상위 AI ‘아르곤’ 공개… 오픈AI·앤스로픽 제쳤다",
+   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOQjlQUlRQbGhqZk1PRi0yQ3BxRnZwRDVmZDhXYVQyS2duY2pDUWQzeU1TOHkydC01azBNa3JTdjRCZEVWa2Nyb0dXX3Nuc1hpUVBxaV9xOFpEQks5X28xOVVlbXZnTXAzN0prODNINkpmbTdMSHpMWldJaXFyeDFkS3Y0QQ?oc=5",
+   "date": "2026-10-01T04:49:53.000Z",
+   "source": "조선일보",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "\"개념타령 이젠 그만\"…돈 버는 AI, 한자리서 공개된다",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5VUzRHeFRkM1NQU1FTWEplb1hzVl83bXd5VUh5YXRuOW1SVHBHMVphRWZ5NjVvQXI5X3lhTHBmaG1DOHlaUDhPRmo5MU5kTVhCZm1nelVn?oc=5",
+   "date": "2026-10-01T02:51:50.000Z",
+   "source": "지디넷코리아",
    "feed": "Google News",
    "summary": ""
   },
@@ -122,14 +281,6 @@
    "titleKo": "Elon Musk의 Grokipedia는 '새로 고침된‘ 디자인을 가지고 있습니다"
   },
   {
-   "title": "\"AI가 주담대 실행한다는데\"…금융위, 규율체계 마련 착수",
-   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBwUGJza3NROVBQWjhsYllxM3NUV2U0QTR3UTl5U2laMFJDdW54MkNmdVE2SDE3aWNGaFpGMjFSOGdfaVByMzV1V2U1UmFiLXdyblZ2dlVCRFRQRnZyQzFCNGhOS00zRGh3a29fSWVsRXnSAXRBVV95cUxQSkprUmYwTzlPVmNGZjVjb29NNXhaZ2tKVE54NGc3ZmRkMlcxYmdmbzZGa1FLRkdLUExhUEZVNjdoby1HU3RKRWk2OEJNWFA4ZXczSm43T1BWbmVQVV9ZYmlfTklfckd4VnNYYmVpN0cyYTFGTw?oc=5",
-   "date": "2026-10-01T00:04:26.000Z",
-   "source": "연합인포맥스",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
    "title": "Google releases Gemini 4 Argon, called its most powerful model yet",
    "url": "https://techcrunch.com/2026/09/30/google-releases-gemini-4-argon-called-its-most-powerful-model-yet/",
    "date": "2026-09-30T23:43:07.000Z",
@@ -137,14 +288,6 @@
    "feed": "TechCrunch",
    "summary": "Google has released its latest Gemini model, marketing it as a workhorse for coding and cybersecurity work.",
    "titleKo": "Google은 가장 강력한 모델이라고 불리는 Gemini 4 Argon을 출시합니다."
-  },
-  {
-   "title": "현대차그룹, 한국도로공사와 차세대 충전 인프라 및 피지컬 AI 실증 협력 | 뉴스 | 현대자동차그룹",
-   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOYU5oRUFFTVlEbmZlVHA5YzZSY1hRQkhjbzZLd0JueE5vVXFiU05DOEhSX0o5RnE1ZDIyUGxSMFJ1VkhjRXRCbmZNMW1yZzBNdjh1Z0lMQUxtTWpRdlJ5ck4ycmd6WUttWHRQTVE3MzVESVN1NGZmSm5weUdqMXdYOFY3eTg2ZUNPOVQwaHkzNE5qbHlrWWUyZUFOb29RZ0lydlFWMWktVFpKbTZOUG5qSzdLZ01EOGczZlA3eU5PLVY?oc=5",
-   "date": "2026-09-30T23:30:00.000Z",
-   "source": "Hyundai Motor Group",
-   "feed": "Google News",
-   "summary": ""
   },
   {
    "title": "드디어 최상위 AI '제미나이4' 공개한 구글…일반 접근은 제한",
@@ -200,24 +343,6 @@
    "titleKo": "인공지능 타마고치 (Tamagotchis) 가 다가옵니다"
   },
   {
-   "title": "Reddit is killing RSS feeds and ending public API access because of AI bots",
-   "url": "https://techcrunch.com/2026/09/30/reddit-is-killing-rss-feeds-ending-public-api-access-because-of-ai-bots/",
-   "date": "2026-09-30T17:45:00.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "Reddit is ending support for RSS feeds, as the company continues tightening access to its trove of user-generated content.",
-   "titleKo": "Reddit이 AI 봇으로 인해 RSS 피드를 죽이고 공용 API 액세스를 종료하고 있습니다"
-  },
-  {
-   "title": "The ugly economics of consumer AI",
-   "url": "https://techcrunch.com/2026/09/30/the-ugly-economics-of-consumer-ai/",
-   "date": "2026-09-30T17:24:45.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "There’s a reason frontier labs have gotten gun-shy about consumer AI — and it’s not because the tech isn’t good enough.",
-   "titleKo": "소비자 AI의 추악한 경제성"
-  },
-  {
    "title": "Here’s what AI leaders are saying about Trump’s new safety plan",
    "url": "https://www.theverge.com/ai-artificial-intelligence/1002636/ai-execs-trump-self-policing-deal-comments",
    "date": "2026-09-30T17:15:49.000Z",
@@ -225,42 +350,6 @@
    "feed": "The Verge",
    "summary": "After hosting a meal with Big Tech leaders on Tuesday, President Donald Trump responded to journalist questions about his artificial intelligence announcements in typical fashion. He said his previous claims regarding fe",
    "titleKo": "트럼프 대통령의 새로운 안전 계획에 대한 AI 리더들의 의견은 다음과 같습니다."
-  },
-  {
-   "title": "Meta disputes claim that Muse read a user’s private messages without permission",
-   "url": "https://techcrunch.com/2026/09/30/meta-disputes-claim-that-muse-read-a-users-private-messages-without-permission/",
-   "date": "2026-09-30T16:24:23.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "Meta says its Muse AI agent cannot access a user’s Messages without explicit permission, disputing a journalist’s account that the agent read his private messages while the required Mac setting was turned off.",
-   "titleKo": "Muse가 사용자의 개인 메시지를 허가 없이 읽었다고 주장하는 메타 이의 제기"
-  },
-  {
-   "title": "DoorDash launches an AI agent you can text to order food",
-   "url": "https://techcrunch.com/2026/09/30/doordash-launches-an-ai-agent-you-can-text-to-order-food/",
-   "date": "2026-09-30T16:00:24.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "By launching an AI agent for food ordering, DoorDash is looking to gain an edge over rivals Uber Eats and Grubhub.",
-   "titleKo": "DoorDash는 음식을 주문하기 위해 문자를 보낼 수 있는 AI 에이전트를 출시합니다"
-  },
-  {
-   "title": "Destro AI’s secret sauce is getting robots and humans on the same page",
-   "url": "https://techcrunch.com/2026/09/30/destro-ais-secret-sauce-is-getting-robots-and-humans-on-the-same-page/",
-   "date": "2026-09-30T16:00:00.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "\"One of the biggest reasons we are winning against robotics companies is because we are not a robotics company.\"",
-   "titleKo": "Destro AI의 비밀 소스는 로봇과 인간을 같은 페이지에서 얻고 있습니다."
-  },
-  {
-   "title": "Instinct’s new product recommendations are giving some users the ick",
-   "url": "https://techcrunch.com/2026/09/30/instincts-new-product-recommendations-are-giving-some-users-the-ick/",
-   "date": "2026-09-30T15:56:28.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "Instinct is rolling out human-curated product and travel recommendations, but some users aren’t happy about getting suggestions they never asked for.",
-   "titleKo": "Instinct의 신제품 추천은 일부 사용자에게"
   },
   {
    "title": "All the latest news on Meta’s cute, creepy Muse AI agent",
@@ -281,68 +370,6 @@
    "titleKo": "Google은 AI 검색 결과에 대해 유료 게시자를 테스트한다고 합니다."
   },
   {
-   "title": "Cerebras Systems’ Andrew Feldman on whether AI can keep scaling at TechCrunch Disrupt 2026",
-   "url": "https://techcrunch.com/2026/09/30/cerebras-systems-andrew-feldman-on-whether-ai-can-keep-scaling-at-techcrunch-disrupt-2026/",
-   "date": "2026-09-30T14:30:00.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "At TechCrunch Disrupt 2026, Cerebras Systems CEO and co-founder Andrew Feldman will explore the growing demand for compute, energy, and infrastructure, how Cerebras is approaching those constraints differently, and what ",
-   "titleKo": "AI가 TechCrunch Disrupt 2026에서 계속 확장할 수 있는지에 대한 Cerebras Systems의 Andrew Feldman"
-  },
-  {
-   "title": "Instagram is adding an AI ‘assistant’ to tell you how to post",
-   "url": "https://www.theverge.com/tech/1002402/instagram-ai-edits-assistant-creators-analytics-youtube",
-   "date": "2026-09-30T14:30:00.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "Instagram is the latest social media platform to add built-in AI-powered features that will give users feedback on their posts. The company announced Wednesday that its standalone Edits app will now include an AI \"creati",
-   "titleKo": "Instagram은 게시 방법을 알려주는 AI ‘어시스턴트’ 를 추가하고 있습니다."
-  },
-  {
-   "title": "Restate lands $20M as the need for durable infrastructure increases with AI agents",
-   "url": "https://techcrunch.com/2026/09/30/restate-lands-20m-as-the-need-for-durable-infrastructure-increases-with-ai-agents/",
-   "date": "2026-09-30T14:27:11.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "Instead of building its durable execution engine on top of an external database, the company developed its own storage, replication, and redundancy layers. This architecture allows Restate to be exceptionally fast and li",
-   "titleKo": "AI 상담원과 함께 내구성 있는 인프라에 대한 필요성이 증가함에 따라 $ 20M의 토지 재분배"
-  },
-  {
-   "title": "3 days left to exhibit: Turn visibility into your next opportunity at TechCrunch Disrupt 2026",
-   "url": "https://techcrunch.com/2026/09/30/3-days-left-to-exhibit-at-techcrunch-disrupt-2026-2/",
-   "date": "2026-09-30T14:15:00.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "Three days left to exhibit at TechCrunch Disrupt 2026. Book by October 2 at 11:59 p.m. PT to showcase your startup to 10,000+ founders, investors, operators, and tech leaders.",
-   "titleKo": "전시 3일 남음: TechCrunch Disrupt 2026에서 다음 기회에 대한 가시성을 높이세요."
-  },
-  {
-   "title": "Here’s how tech leaders will self-police AI safety under Trump’s deal",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1002584/trump-us-ai-safety-deal-self-regulation-tech-execs",
-   "date": "2026-09-30T12:24:32.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "We now have the full details of the \"morally binding\" AI safety deal announced by President Trump yesterday, in which top executives agreed to self-regulate their artificial intelligence technology. The accord, officiall",
-   "titleKo": "기술 리더가 트럼프의 거래에 따라 AI 안전을 자체 정책화하는 방법은 다음과 같습니다."
-  },
-  {
-   "title": "‘AI로 인류 종말’…구글·MS 떠난 소아레스 “허깅 해킹은 마지막 경고”",
-   "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1QTHRzdGxmZHI4bVNkM2xJNFY5dDdabmJIUUVUMTV2ekk3dHBlcmstQTFsQmE2anVzaDVKX1o5T3FqWk5rckZNUVdCRlFfRE1TSFBlanF3aTZSY3RRTDZmRVhIRU1ub1ljdzJ3aV9sWQ?oc=5",
-   "date": "2026-09-30T12:20:00.000Z",
-   "source": "한겨레",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "Airbnb adds AI search, more social features",
-   "url": "https://techcrunch.com/2026/09/30/airbnb-adds-ai-search-more-social-features/",
-   "date": "2026-09-30T12:00:00.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "Airbnb is also launching new services such as meal delivery and laundry in select locations.",
-   "titleKo": "에어비앤비는 인공지능 검색, 더 많은 소셜 기능을 추가했습니다."
-  },
-  {
    "title": "“We’re not going to shoot ourselves in the foot” over hack fallout, says OpenAI’s chief research officer",
    "url": "https://www.technologyreview.com/2026/09/30/1145339/were-not-going-to-shoot-ourselves-in-the-foot-over-hugging-face-says-openais-chief-research-officer/",
    "date": "2026-09-30T10:40:30.000Z",
@@ -352,55 +379,12 @@
    "titleKo": "OpenAI의 최고 연구 책임자는 해킹 낙진에 대해 \"우리는 발에 총을 쏘지 않을 것\" 이라고 말합니다."
   },
   {
-   "title": "[AI는 지금] 국민 AI, 10월 예고편 나온다…'모두의 AI' 베타 첫선",
-   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9OT3BaSFFSMjEtUG01cWVCOTk1RzVuY0tob0stYVgtUGVhOWh0RzczNnViWkpsdHBnRnk2NUZjeFoyZUk2RDJfTUU4VGpmbVBUdTFlbzBR?oc=5",
-   "date": "2026-09-30T07:26:31.000Z",
+   "title": "오픈AI, 'GPT-6.1 솔' 공개…아스트라급 성능에 5분의 1 가격",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1yd0FLZG9zUFhBZTNyY1poVnE4T0I0bnhYaFRGTWFhUG1uUEN5VFNWeE9mNmNSM2dFdXJyVlg0NnVvVC1vTVAtZDFyM0NjcjdDVXY2QndB?oc=5",
+   "date": "2026-09-29T19:14:55.000Z",
    "source": "지디넷코리아",
    "feed": "Google News",
    "summary": ""
-  },
-  {
-   "title": "左 머스크, 右 젠슨 황... 트럼프판 ‘AI 권력 지형도’",
-   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxON3ZQT0VCZzJzNnJ2UElUX2c5YTBBQUVVRjNrVnpxUTlJR3Vtc3c4VGhJd0JWVWRaQmFzNnUtNXRpRXdvWjFxNzFKN2dERFhFbzFvMUpPajYtX1ZfSkZfSkY1NzA1M2IwTUY2a3FscUhEWmR0VDJ3c2RPcnVhWHRzTjZtYUQ1ajlkZ05jU0tsQ3VOT2Y4c1E2R2dEcGtzZw?oc=5",
-   "date": "2026-09-30T06:33:44.000Z",
-   "source": "조선일보",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "대학 교육 AI 중심으로 전환…AI중심대학 18곳·AX대학원 15곳 출범",
-   "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE8tRWsySzIyaFVpYnNISlBLV1IzUnNiQk5KczhoYU4xTUc5TzZUQ2I2YmpGZmZOVzU0ZkpRWXpaN3FBR2QxOWF2NXc0ejgyUnRjdVg3R0NUcm44cGoyUHZLVi1CTlh4N2kwUGE2cA?oc=5",
-   "date": "2026-09-30T03:38:07.000Z",
-   "source": "정책브리핑",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "Sam Altman says OpenAI won’t go public until its models are safe",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1002505/sam-altman-openai-ipo-devday-ai-safety",
-   "date": "2026-09-30T00:19:13.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "For months, people have wondered when OpenAI will go public. CEO Sam Altman says it won't happen until the company can make better promises about model safety, with no firm timeline in sight. \"We intend to continue with ",
-   "titleKo": "Sam Altman은 OpenAI의 모델이 안전할 때까지 공개하지 않을 것이라고 말합니다."
-  },
-  {
-   "title": "America.gov gets really weird when you ask it about Minecraft, but it’s not a glitch",
-   "url": "https://techcrunch.com/2026/09/29/america-gov-gets-really-weird-when-you-ask-it-about-minecraft-but-its-not-a-glitch/",
-   "date": "2026-09-29T23:30:55.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "For the sake of national security, it's a relief to learn that America.gov is not hallucinating to the point that it's penning lengthy poetry.",
-   "titleKo": "America.gov는 마인크래프트에 대해 물어보면 정말 이상해지지만 결함은 아닙니다."
-  },
-  {
-   "title": "Trump orders US government to call AI ‘Super Intelligence’",
-   "url": "https://www.theverge.com/policy/1002468/trump-ai-superintelligence-executive-order-ai",
-   "date": "2026-09-29T22:25:45.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "The US executive branch is no longer acknowledging the existence of \"artificial intelligence.\" Going forward, official policy websites, policy documents, and press releases will refer only to \"Super Intelligence,\" thanks",
-   "titleKo": "트럼프는 미국 정부에 AI를 ‘슈퍼 인텔리전스 (Super Intelligence)‘ 라고 부르"
   },
   {
    "title": "Making AI an asset, not an expense",
@@ -410,6 +394,22 @@
    "feed": "MIT Technology Review",
    "summary": "When customers talk about AI costs, the conversation usually starts with token prices and ends with access to the latest, most capable model in the cloud. Do they always need that level of capability? Not necessarily. Bu",
    "titleKo": "AI를 비용이 아닌 자산으로 만들기"
+  },
+  {
+   "title": "삼성 AI 인프라 그룹으로 진화…반도체·냉각·건설 역량 한데 모은다 - 머니투데이",
+   "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1SSTR4OEt4dEtRSDNqYU1rNVNJR0VGckZvc0g4V3NmdUZLR2dGQWZaNDVtWW5aaDIxR092TF9pckk5SVM1QWp4RzVZT1VtUEcxTG5xZEpFWUJXNVFHNTd5Q3R6bHBrcG1zb1VUatIBckFVX3lxTE5yYmNRYXJPeU9DdjRnUjhzTUdJQlRrYi1FUGpFTkNjMEx3RU1XbnphMG95WUlsZzhDaFZEWXlzWUlHeTJlZHdjeTFxSGxnUXlHWU5zM2VuSUxrUWtURWJuMEpSZWZqb0pSNGMySks0OWZvZw?oc=5",
+   "date": "2026-09-29T08:20:00.000Z",
+   "source": "머니투데이",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "삼성, AI 데이터센터 '판' 짠다…미국 AI 인프라 기업에 1.4조 투자",
+   "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9RbDVoY2R4MEVUZ2cyWVBtZlNrMGw2NllYRVdKRlpMUDJwbmZMMjQxMGdCSVo5cDVfWWh4Z0JOVF96bGdpbkx4Y1NGdHFGdw?oc=5",
+   "date": "2026-09-29T05:19:19.000Z",
+   "source": "전자신문",
+   "feed": "Google News",
+   "summary": ""
   },
   {
    "title": "Roundtables: The Deadly Failures of The Virtual Border Wall",
