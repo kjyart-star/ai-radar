@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-03T02:13:02.106Z",
+ "generated": "2026-10-04T02:48:17.907Z",
  "source": "arXiv cs.AI · GitHub · Hugging Face",
  "sources": [
   "arXiv cs.AI",
@@ -152,111 +152,103 @@
   {
    "title": "openclaw/openclaw",
    "url": "https://github.com/openclaw/openclaw",
-   "stars": 391196,
+   "stars": 391249,
    "language": "TypeScript",
-   "date": "2026-10-03T02:15:19Z",
+   "date": "2026-10-04T02:50:00Z",
    "summary": "The AI that really does things. Any OS. Any Platform. The lobster way. 🦞 "
-  },
-  {
-   "title": "obra/superpowers",
-   "url": "https://github.com/obra/superpowers",
-   "stars": 294488,
-   "language": "Shell",
-   "date": "2026-09-27T02:37:47Z",
-   "summary": "An agentic skills framework & software development methodology that works."
   },
   {
    "title": "NousResearch/hermes-agent",
    "url": "https://github.com/NousResearch/hermes-agent",
-   "stars": 250787,
+   "stars": 250998,
    "language": "Python",
-   "date": "2026-10-03T02:14:25Z",
+   "date": "2026-10-04T02:46:15Z",
    "summary": "The agent that grows with you"
   },
   {
    "title": "n8n-io/n8n",
    "url": "https://github.com/n8n-io/n8n",
-   "stars": 206527,
+   "stars": 206587,
    "language": "TypeScript",
-   "date": "2026-10-02T23:43:08Z",
+   "date": "2026-10-03T22:16:11Z",
    "summary": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations."
   },
   {
    "title": "firecrawl/firecrawl",
    "url": "https://github.com/firecrawl/firecrawl",
-   "stars": 187974,
+   "stars": 188313,
    "language": "TypeScript",
-   "date": "2026-10-03T00:12:18Z",
-   "summary": "🔥 Supercharge your AI agents with data from the web and beyond. A web data API to search, scrape, and access more sources."
+   "date": "2026-10-03T18:46:17Z",
+   "summary": "Supercharge your AI agents with data from the web and beyond. Building the library for superintelligence. 🔥"
   },
   {
    "title": "Significant-Gravitas/AutoGPT",
    "url": "https://github.com/Significant-Gravitas/AutoGPT",
-   "stars": 187639,
+   "stars": 187642,
    "language": "Python",
-   "date": "2026-10-03T02:13:37Z",
+   "date": "2026-10-04T01:21:52Z",
    "summary": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters."
   },
   {
    "title": "f/prompts.chat",
    "url": "https://github.com/f/prompts.chat",
-   "stars": 171875,
+   "stars": 171954,
    "language": "HTML",
-   "date": "2026-10-01T09:59:16Z",
+   "date": "2026-10-03T08:12:28Z",
    "summary": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy."
   },
   {
    "title": "Snailclimb/JavaGuide",
    "url": "https://github.com/Snailclimb/JavaGuide",
-   "stars": 159005,
+   "stars": 159018,
    "language": "JavaScript",
-   "date": "2026-10-02T00:38:41Z",
+   "date": "2026-10-03T23:36:32Z",
    "summary": "Java 面试 & 后端通用面试指南，覆盖计算机基础、数据库、分布式、高并发、系统设计与 AI 应用开发"
   },
   {
    "title": "langgenius/dify",
    "url": "https://github.com/langgenius/dify",
-   "stars": 157733,
+   "stars": 157787,
    "language": "TypeScript",
-   "date": "2026-10-03T01:59:55Z",
+   "date": "2026-10-03T15:55:10Z",
    "summary": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without reb"
   },
   {
    "title": "open-webui/open-webui",
    "url": "https://github.com/open-webui/open-webui",
-   "stars": 153824,
+   "stars": 153890,
    "language": "Python",
-   "date": "2026-10-02T04:50:55Z",
+   "date": "2026-10-03T13:06:04Z",
    "summary": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)"
   },
   {
    "title": "langchain-ai/langchain",
    "url": "https://github.com/langchain-ai/langchain",
-   "stars": 147390,
+   "stars": 147416,
    "language": "Python",
-   "date": "2026-10-02T22:57:27Z",
+   "date": "2026-10-03T08:31:42Z",
    "summary": "The agent engineering platform."
   },
   {
    "title": "github/spec-kit",
    "url": "https://github.com/github/spec-kit",
-   "stars": 139864,
+   "stars": 140024,
    "language": "Python",
-   "date": "2026-10-02T21:53:34Z",
+   "date": "2026-10-03T16:48:20Z",
    "summary": "💫 Toolkit to help you get started with SDD or any other process!"
   },
   {
    "title": "Comfy-Org/ComfyUI",
    "url": "https://github.com/Comfy-Org/ComfyUI",
-   "stars": 135893,
+   "stars": 136020,
    "language": "Python",
-   "date": "2026-10-03T02:11:34Z",
+   "date": "2026-10-04T01:36:10Z",
    "summary": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface. The fastest local inference engine in the world."
   },
   {
    "title": "microsoft/generative-ai-for-beginners",
    "url": "https://github.com/microsoft/generative-ai-for-beginners",
-   "stars": 120957,
+   "stars": 120979,
    "language": "Jupyter Notebook",
    "date": "2026-10-01T03:45:43Z",
    "summary": "21 Lessons, Get Started Building with Generative AI "
@@ -264,23 +256,23 @@
   {
    "title": "supabase/supabase",
    "url": "https://github.com/supabase/supabase",
-   "stars": 111026,
+   "stars": 111059,
    "language": "TypeScript",
-   "date": "2026-10-02T20:16:57Z",
+   "date": "2026-10-04T01:15:15Z",
    "summary": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications."
   },
   {
    "title": "JuliusBrussee/caveman",
    "url": "https://github.com/JuliusBrussee/caveman",
-   "stars": 109118,
+   "stars": 109558,
    "language": "Go",
-   "date": "2026-10-03T01:34:05Z",
+   "date": "2026-10-04T01:51:46Z",
    "summary": "🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman."
   },
   {
    "title": "google-gemini/gemini-cli",
    "url": "https://github.com/google-gemini/gemini-cli",
-   "stars": 107216,
+   "stars": 107227,
    "language": "TypeScript",
    "date": "2026-10-03T01:29:14Z",
    "summary": "An open-source AI agent that brings the power of Gemini directly into your terminal."
@@ -288,188 +280,196 @@
   {
    "title": "rasbt/LLMs-from-scratch",
    "url": "https://github.com/rasbt/LLMs-from-scratch",
-   "stars": 105893,
+   "stars": 105957,
    "language": "Jupyter Notebook",
    "date": "2026-10-02T14:55:52Z",
    "summary": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step"
   },
   {
-   "title": "punkpeye/awesome-mcp-servers",
-   "url": "https://github.com/punkpeye/awesome-mcp-servers",
-   "stars": 95767,
-   "language": "",
-   "date": "2026-09-27T02:12:17Z",
-   "summary": "A collection of MCP servers."
-  },
-  {
    "title": "thedotmack/claude-mem",
    "url": "https://github.com/thedotmack/claude-mem",
-   "stars": 95201,
+   "stars": 95627,
    "language": "TypeScript",
-   "date": "2026-10-02T20:44:24Z",
+   "date": "2026-10-04T01:18:09Z",
    "summary": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Cla"
+  },
+  {
+   "title": "infiniflow/ragflow",
+   "url": "https://github.com/infiniflow/ragflow",
+   "stars": 91635,
+   "language": "Go",
+   "date": "2026-10-03T15:52:13Z",
+   "summary": "RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs"
+  },
+  {
+   "title": "koala73/worldmonitor",
+   "url": "https://github.com/koala73/worldmonitor",
+   "stars": 87722,
+   "language": "TypeScript",
+   "date": "2026-10-04T01:38:41Z",
+   "summary": "Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface"
   }
  ],
  "huggingface": [
   {
-   "title": "convaiinnovations/laya",
-   "url": "https://huggingface.co/convaiinnovations/laya",
-   "downloads": 0,
-   "likes": 5005,
-   "task": "text-classification",
-   "date": "2026-09-18T05:05:55.000Z"
-  },
-  {
    "title": "Cloudflare/clef",
    "url": "https://huggingface.co/Cloudflare/clef",
-   "downloads": 824,
-   "likes": 791,
+   "downloads": 2620,
+   "likes": 995,
    "task": "image-text-to-text",
    "date": "2026-09-30T21:15:35.000Z"
   },
   {
+   "title": "convaiinnovations/laya",
+   "url": "https://huggingface.co/convaiinnovations/laya",
+   "downloads": 0,
+   "likes": 5080,
+   "task": "text-classification",
+   "date": "2026-09-18T05:05:55.000Z"
+  },
+  {
    "title": "abenzerps/Qwen-Image-2.1-Uncensored-GGUF",
    "url": "https://huggingface.co/abenzerps/Qwen-Image-2.1-Uncensored-GGUF",
-   "downloads": 1376248,
-   "likes": 2846,
+   "downloads": 1455921,
+   "likes": 2939,
    "task": "text-to-image",
    "date": "2026-09-20T15:51:13.000Z"
   },
   {
-   "title": "Contrastive-LM/CLM-v0.1-8B",
-   "url": "https://huggingface.co/Contrastive-LM/CLM-v0.1-8B",
-   "downloads": 2951,
-   "likes": 671,
-   "task": "text-ranking",
-   "date": "2026-09-21T20:09:04.000Z"
-  },
-  {
    "title": "Lightricks/LTX-2.5",
    "url": "https://huggingface.co/Lightricks/LTX-2.5",
-   "downloads": 1584129,
-   "likes": 5997,
+   "downloads": 1629984,
+   "likes": 6142,
    "task": "image-to-video",
    "date": "2026-07-23T07:55:24.000Z"
   },
   {
    "title": "Qwen/Qwen-Image-2.1",
    "url": "https://huggingface.co/Qwen/Qwen-Image-2.1",
-   "downloads": 81738,
-   "likes": 2840,
+   "downloads": 85895,
+   "likes": 2903,
    "task": "text-to-image",
    "date": "2026-09-14T03:47:26.000Z"
   },
   {
-   "title": "SupersonicLabs/Julia-1",
-   "url": "https://huggingface.co/SupersonicLabs/Julia-1",
-   "downloads": 2909,
-   "likes": 367,
-   "task": "text-classification",
-   "date": "2026-09-23T15:29:46.000Z"
-  },
-  {
-   "title": "Qwen/Qwen3.8-27B",
-   "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
-   "downloads": 6934867,
-   "likes": 16806,
-   "task": "image-text-to-text",
-   "date": "2026-08-05T08:22:59.000Z"
-  },
-  {
-   "title": "Viggle/Qwen-Image-2.1-viggle-turbo",
-   "url": "https://huggingface.co/Viggle/Qwen-Image-2.1-viggle-turbo",
-   "downloads": 240660,
-   "likes": 540,
-   "task": "text-to-image",
-   "date": "2026-09-22T04:14:56.000Z"
-  },
-  {
-   "title": "PSRben/VisionHOPE",
-   "url": "https://huggingface.co/PSRben/VisionHOPE",
-   "downloads": 1279,
-   "likes": 376,
-   "task": "image-classification",
-   "date": "2026-09-29T07:28:16.000Z"
-  },
-  {
    "title": "Cloudflare/clef-flash",
    "url": "https://huggingface.co/Cloudflare/clef-flash",
-   "downloads": 1303,
-   "likes": 266,
+   "downloads": 4310,
+   "likes": 361,
    "task": "image-text-to-text",
    "date": "2026-09-30T21:15:36.000Z"
   },
   {
+   "title": "Qwen/Qwen3.8-27B",
+   "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+   "downloads": 6895117,
+   "likes": 16887,
+   "task": "image-text-to-text",
+   "date": "2026-08-05T08:22:59.000Z"
+  },
+  {
+   "title": "Contrastive-LM/CLM-v0.1-8B",
+   "url": "https://huggingface.co/Contrastive-LM/CLM-v0.1-8B",
+   "downloads": 3190,
+   "likes": 691,
+   "task": "text-ranking",
+   "date": "2026-09-21T20:09:04.000Z"
+  },
+  {
+   "title": "SupersonicLabs/Julia-1",
+   "url": "https://huggingface.co/SupersonicLabs/Julia-1",
+   "downloads": 3251,
+   "likes": 400,
+   "task": "text-classification",
+   "date": "2026-09-23T15:29:46.000Z"
+  },
+  {
+   "title": "PSRben/VisionHOPE",
+   "url": "https://huggingface.co/PSRben/VisionHOPE",
+   "downloads": 1338,
+   "likes": 391,
+   "task": "image-classification",
+   "date": "2026-09-29T07:28:16.000Z"
+  },
+  {
+   "title": "Aleph-Alpha/Kolibri-1",
+   "url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+   "downloads": 0,
+   "likes": 258,
+   "task": "text-generation",
+   "date": "2026-10-02T05:54:02.000Z"
+  },
+  {
    "title": "nvidia/Nemotron-3-Diarization",
    "url": "https://huggingface.co/nvidia/Nemotron-3-Diarization",
-   "downloads": 44350,
-   "likes": 625,
+   "downloads": 48784,
+   "likes": 651,
    "task": "voice-activity-detection",
    "date": "2026-09-01T13:16:57.000Z"
   },
   {
-   "title": "prism-ml/Ternary-Bonsai-2-27B-gguf",
-   "url": "https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf",
-   "downloads": 3869715,
-   "likes": 2359,
-   "task": "text-generation",
-   "date": "2026-09-16T23:40:56.000Z"
-  },
-  {
    "title": "orcarouter/OrcaSAQ-2-Cyber-27B-Uncensored-GGUF",
    "url": "https://huggingface.co/orcarouter/OrcaSAQ-2-Cyber-27B-Uncensored-GGUF",
-   "downloads": 9533,
-   "likes": 272,
+   "downloads": 11585,
+   "likes": 319,
    "task": "text-generation",
    "date": "2026-09-26T03:37:50.000Z"
   },
   {
-   "title": "TaichuAI/ZDTaichu5.0-9B",
-   "url": "https://huggingface.co/TaichuAI/ZDTaichu5.0-9B",
-   "downloads": 12395,
-   "likes": 2660,
-   "task": "image-text-to-text",
-   "date": "2026-09-04T02:55:48.000Z"
-  },
-  {
-   "title": "akatz-ai/MiniMax-H3-Character-Swap-LoRA",
-   "url": "https://huggingface.co/akatz-ai/MiniMax-H3-Character-Swap-LoRA",
-   "downloads": 11563,
-   "likes": 242,
-   "task": "video-to-video",
-   "date": "2026-09-25T08:14:15.000Z"
+   "title": "Viggle/Qwen-Image-2.1-viggle-turbo",
+   "url": "https://huggingface.co/Viggle/Qwen-Image-2.1-viggle-turbo",
+   "downloads": 257298,
+   "likes": 570,
+   "task": "text-to-image",
+   "date": "2026-09-22T04:14:56.000Z"
   },
   {
    "title": "ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-Coder-GGUF",
    "url": "https://huggingface.co/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-Coder-GGUF",
-   "downloads": 261136,
-   "likes": 204,
+   "downloads": 303256,
+   "likes": 241,
    "task": "image-text-to-text",
    "date": "2026-09-26T09:42:51.000Z"
   },
   {
+   "title": "prism-ml/Ternary-Bonsai-2-27B-gguf",
+   "url": "https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf",
+   "downloads": 3969867,
+   "likes": 2394,
+   "task": "text-generation",
+   "date": "2026-09-16T23:40:56.000Z"
+  },
+  {
+   "title": "TaichuAI/ZDTaichu5.0-9B",
+   "url": "https://huggingface.co/TaichuAI/ZDTaichu5.0-9B",
+   "downloads": 12483,
+   "likes": 2773,
+   "task": "image-text-to-text",
+   "date": "2026-09-04T02:55:48.000Z"
+  },
+  {
+   "title": "ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF",
+   "url": "https://huggingface.co/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF",
+   "downloads": 1474719,
+   "likes": 516,
+   "task": "image-text-to-text",
+   "date": "2026-09-07T09:41:37.000Z"
+  },
+  {
+   "title": "akatz-ai/MiniMax-H3-Character-Swap-LoRA",
+   "url": "https://huggingface.co/akatz-ai/MiniMax-H3-Character-Swap-LoRA",
+   "downloads": 13258,
+   "likes": 272,
+   "task": "video-to-video",
+   "date": "2026-09-25T08:14:15.000Z"
+  },
+  {
    "title": "Alissonerdx/BFS-Best-Face-Swap",
    "url": "https://huggingface.co/Alissonerdx/BFS-Best-Face-Swap",
-   "downloads": 187625,
-   "likes": 1096,
+   "downloads": 193270,
+   "likes": 1147,
    "task": "image-to-image",
    "date": "2025-11-07T09:50:28.000Z"
-  },
-  {
-   "title": "ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF",
-   "url": "https://huggingface.co/ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF",
-   "downloads": 1678428,
-   "likes": 1905,
-   "task": "image-text-to-text",
-   "date": "2026-08-28T18:38:03.000Z"
-  },
-  {
-   "title": "deepseek-ai/DeepSeek-V4.1-Flash",
-   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-   "downloads": 767871,
-   "likes": 4015,
-   "task": "image-text-to-text",
-   "date": "2026-09-10T02:17:58.000Z"
   }
  ]
 }
