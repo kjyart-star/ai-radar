@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-06T03:16:37.146Z",
+ "generated": "2026-10-07T02:40:46.464Z",
  "news": [
   {
    "title": "OpenAI's employee's WARNING",
@@ -324,6 +324,22 @@
  ],
  "vibe": [
   {
+   "title": "Grok Bot Just Got 4 HUGE Upgrades (It’s WAY Better Now)",
+   "url": "https://www.youtube.com/watch?v=c9Z7ixVr4CU",
+   "videoId": "c9Z7ixVr4CU",
+   "channel": "Riley Brown",
+   "published": "2026-10-05T18:03:39.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/c9Z7ixVr4CU/mqdefault.jpg"
+  },
+  {
+   "title": "AI뉴스 - Gemini 4 Argon, DevDay, Tavus 영상 튜링테스트 통과, Eleven V4, ideogram 4.5, Kling 4.0 등",
+   "url": "https://www.youtube.com/watch?v=bdp9Crdw0hw",
+   "videoId": "bdp9Crdw0hw",
+   "channel": "조코딩 JoCoding",
+   "published": "2026-10-05T10:30:22.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/bdp9Crdw0hw/mqdefault.jpg"
+  },
+  {
    "title": "IT뉴스 - Gemini 4 Argon, DevDay, Tavus 영상 튜링테스트 통과, Eleven V4, ideogram 4.5, Kling 4.0 등",
    "url": "https://www.youtube.com/watch?v=yBd2IW12zYc",
    "videoId": "yBd2IW12zYc",
@@ -626,22 +642,6 @@
    "channel": "조코딩 JoCoding",
    "published": "2026-09-14T14:30:21.000Z",
    "thumbnail": "https://i.ytimg.com/vi/vmzKqn5GOaw/mqdefault.jpg"
-  },
-  {
-   "title": "Agentic Engineering Benchmarks: How I RANK Astra, Fable 5.1, and Open-Weights",
-   "url": "https://www.youtube.com/watch?v=9weiIHy9T_0",
-   "videoId": "9weiIHy9T_0",
-   "channel": "IndyDevDan",
-   "published": "2026-09-14T13:00:39.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/9weiIHy9T_0/mqdefault.jpg"
-  },
-  {
-   "title": "28 Insane Things Astra Can Do (2 Hour Course)",
-   "url": "https://www.youtube.com/watch?v=ifz8NGHuHtY",
-   "videoId": "ifz8NGHuHtY",
-   "channel": "Riley Brown",
-   "published": "2026-09-14T13:00:30.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/ifz8NGHuHtY/mqdefault.jpg"
   }
  ]
 }
