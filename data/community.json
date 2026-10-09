@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-08T02:49:37.439Z",
+ "generated": "2026-10-09T03:01:04.969Z",
  "source": "Hacker News · r/artificial",
  "sources": [
   "Hacker News",
@@ -7,201 +7,262 @@
  ],
  "items": [
   {
-   "title": "Video game fan translator says AI output is better than their own translation, deletes 3 years of work on project - \"I was wasting my time\"",
-   "url": "https://www.reddit.com/r/artificial/comments/1x0f99n/video_game_fan_translator_says_ai_output_is/",
-   "date": "2026-10-08T02:22:10.000Z",
+   "title": "OpenAI rolls out GPT-6 with Intelligent UI — ChatGPT answers can now include interactive tools",
+   "url": "https://www.reddit.com/r/artificial/comments/1x17pdr/openai_rolls_out_gpt6_with_intelligent_ui_chatgpt/",
+   "date": "2026-10-09T00:46:11.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "submitted by /u/PixelGray38 [link] [comments]",
-   "titleKo": "비디오 게임 팬 번역가는 AI 출력이 자체 번역보다 낫다고 말하면서 프로젝트에서 3 년간의 작업을 삭제합니다 - \"나는 시간을 낭비하고 있었다\""
+   "summary": "OpenAI started rolling out GPT-6 with Intelligent UI in ChatGPT this week. Instead of plain text, answers can now include interactive charts, forms, and mini tools — a savings calculator, a bill split",
+   "titleKo": "OpenAI, 지능형 UI를 갖춘 GPT-6 출시 — ChatGPT 답변에 대화형 도구 포함 가능"
   },
   {
-   "title": "Usage and spend have come apart on OpenRouter: the models everyone uses aren't the models anyone pays for",
-   "url": "https://www.reddit.com/r/artificial/comments/1x0d8wp/usage_and_spend_have_come_apart_on_openrouter_the/",
-   "date": "2026-10-08T00:42:14.000Z",
+   "title": "New AI can reconstruct what you’re looking at by reading brain activity",
+   "url": "https://www.reddit.com/r/artificial/comments/1x16wiz/new_ai_can_reconstruct_what_youre_looking_at_by/",
+   "date": "2026-10-09T00:06:39.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "I've been tracking OpenRouter's rankings for three weeks, and the gap between the token chart and the spend chart keeps getting stranger. Here's this week's snapshot (Oct 8) and the part I want argued",
-   "titleKo": "OpenRouter에서 사용과 지출이 분리되었습니다. 모든 사람이 사용하는 모델은 누군가가 지불하는 모델이 아닙니다."
+   "summary": "A dog in a bathtub became a similarly colored goat. A cake turned into three sandwiches. These mistakes reveal the limits of an AI system that can otherwise reconstruct surprisingly detailed images fr",
+   "titleKo": "새로운 AI는 두뇌 활동을 읽음으로써 보고 있는 것을 재구성할 수 있습니다"
   },
   {
-   "title": "AI took my self esteem as a creator and I hate where this is going",
-   "url": "https://www.reddit.com/r/artificial/comments/1x0cf7w/ai_took_my_self_esteem_as_a_creator_and_i_hate/",
-   "date": "2026-10-08T00:01:59.000Z",
+   "title": "Wikipedia says rogue AI agents from OpenAI edited its private wikis and hammered its servers",
+   "url": "https://www.reddit.com/r/artificial/comments/1x14l4d/wikipedia_says_rogue_ai_agents_from_openai_edited/",
+   "date": "2026-10-08T22:20:09.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "I don't know about this whole AI thing. I remember a few years ago I was so amused because I chatted with an AI chatbot who pretended to be Albert Einstein, or another one who could predict the winner",
-   "titleKo": "AI는 크리에이터로서 내 자존감을 가져갔고 나는 이것이 어디로 가고 있는지 싫어한다."
+   "summary": "submitted by /u/esporx [link] [comments]",
+   "titleKo": "위키피디아에 따르면 OpenAI의 악성 AI 에이전트가 개인 위키를 편집하고 서버를 망치로 두드렸다고 합니다."
   },
   {
-   "title": "I think we're going to reach a point where getting an AI to do something isn't the hard part. Knowing what to ask it to do will be.",
-   "url": "https://www.reddit.com/r/artificial/comments/1x0c68e/i_think_were_going_to_reach_a_point_where_getting/",
-   "date": "2026-10-07T23:50:45.000Z",
+   "title": "Title: Anthropic’s AI Discovers a Potential New Gene Editing Tool, Raising Questions About AI’s Role in Science",
+   "url": "https://www.reddit.com/r/artificial/comments/1x14aop/title_anthropics_ai_discovers_a_potential_new/",
+   "date": "2026-10-08T22:07:18.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "If AI can handle more and more individual tasks, does the valuable skill become designing the overall process? Curious how other people see this. submitted by /u/OfficalYOUSUMMIT [link] [comments]",
-   "titleKo": "AI가 무언가를 하도록 하는 것이 어려운 부분이 아닌 지점에 도달할 것이라고 생각합니다. 무엇을 요구해야 하는지 아는 것은 중요할 것입니다."
+   "summary": "CNN reports that Anthropic’s AI has helped identify a potential new gene editing tool similar to CRISPR. If AI can uncover biological discoveries that scientists might otherwise overlook, it could ope",
+   "titleKo": "제목: Anthropic의 AI는 잠재적인 새로운 유전자 편집 도구를 발견하여 과학에서 AI의 역할에 대한 질문을 제기합니다."
   },
   {
-   "title": "Why not use humans as a deliberate safety bottleneck?",
-   "url": "https://www.reddit.com/r/artificial/comments/1x0bnih/why_not_use_humans_as_a_deliberate_safety/",
-   "date": "2026-10-07T23:26:04.000Z",
+   "title": "Think First and Let AI correct You",
+   "url": "https://www.reddit.com/r/artificial/comments/1x136mr/think_first_and_let_ai_correct_you/",
+   "date": "2026-10-08T21:20:58.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "After the HuggingFace attack, Medicare hack and increased media coverage of AI safety, people have become increasingly aware of the possibility of AI agents being deceptive, hiding malicious behaviour",
-   "titleKo": "사람을 고의적인 안전 병목 현상으로 사용하는 것은 어떨까요?"
+   "summary": "We’re seeing some sort of « cognitive decline » especially among the younger generations. We’re probably entering an era of brand new brain diseases. Like a muscle, the brain needs to be used and if i",
+   "titleKo": "먼저 생각하고 AI가 당신을 바로잡게 하십시오."
   },
   {
-   "title": "Are AI apps going to start training models for their day jobs?",
-   "url": "https://www.reddit.com/r/artificial/comments/1x0bmpv/are_ai_apps_going_to_start_training_models_for/",
-   "date": "2026-10-07T23:24:57.000Z",
-   "source": "r/artificial",
-   "points": null,
-   "comments": null,
-   "summary": "Been wondering about this with the recent model announcements. I usually pay more attention to the general-purpose releases, but I’m starting to find the very specific ones interesting too. There’s so",
-   "titleKo": "인공지능 앱이 일상 업무를 위한 모델 훈련을 시작하게 될까요?"
+   "title": "AI-ready biological data: $1.8B global commitment",
+   "url": "https://biohub.org/news/virtual-biology-initiative-expansion/",
+   "date": "2026-10-08T20:46:25.000Z",
+   "source": "Hacker News",
+   "points": 83,
+   "comments": 10,
+   "summary": "",
+   "titleKo": "AI 지원 생물학적 데이터: $ 1.8B 글로벌 약속"
   },
   {
-   "title": "Is this the brief window when independent engineers still get to define how AI is used?",
-   "url": "https://www.reddit.com/r/artificial/comments/1x0b5w7/is_this_the_brief_window_when_independent/",
-   "date": "2026-10-07T23:03:42.000Z",
+   "title": "Fraudster jailed for using 10K bots and AI songs to outstream Taylor Swift",
+   "url": "https://www.reddit.com/r/artificial/comments/1x129a7/fraudster_jailed_for_using_10k_bots_and_ai_songs/",
+   "date": "2026-10-08T20:44:13.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "I’ve been thinking about a follow-up to my earlier question about what becomes scarce when coding gets cheap. I’m not looking at this as an industry analyst. I’m an engineer trying to figure out what ",
-   "titleKo": "독립 엔지니어가 여전히 AI 사용 방법을 정의할 때 이것이 간단한 창입니까?"
+   "summary": "submitted by /u/Dances_With_Seagulls [link] [comments]",
+   "titleKo": "테일러 스위프트 (Taylor Swift) 를 능가하기 위해 10K 봇과 AI 노래를 사용한 사기범이 투옥되었습니다."
   },
   {
-   "title": "Scientists use generative AI to build better proteins for editing DNA",
-   "url": "https://www.reddit.com/r/artificial/comments/1x0ahd1/scientists_use_generative_ai_to_build_better/",
-   "date": "2026-10-07T22:34:15.000Z",
-   "source": "r/artificial",
-   "points": null,
-   "comments": null,
-   "summary": "A protein designed with artificial intelligence doubled targeted DNA insertion in cultured cells when incorporated into an experimental gene-editing system. The result emerged from a search through th",
-   "titleKo": "과학자들은 DNA 편집을 위한 더 나은 단백질을 만들기 위해 생성된 AI를 사용합니다."
+   "title": "Vitalik Buterin backs crypto ‘bunker mode’ amid rapid AI math advances",
+   "url": "https://cointelegraph.com/news/justin-drake-urges-crypto-bunker-mode-as-ai-could-break-wallet-security-within-months",
+   "date": "2026-10-08T19:17:51.000Z",
+   "source": "Hacker News",
+   "points": 60,
+   "comments": 51,
+   "summary": "",
+   "titleKo": "비탈릭 부테린 (Vitalik Buterin) 은 급속한 AI 수학 발전 속에서 암호 ‘벙커 모드’ 를 뒷받침합니다."
   },
   {
-   "title": "The New AI Slop Is Calling Everything AI Slop",
-   "url": "https://www.reddit.com/r/artificial/comments/1x0a90k/the_new_ai_slop_is_calling_everything_ai_slop/",
-   "date": "2026-10-07T22:23:56.000Z",
+   "title": "Mathematicians marvel, and grumble, at OpenAI’s trove of new results",
+   "url": "https://www.reddit.com/r/artificial/comments/1x0zwf7/mathematicians_marvel_and_grumble_at_openais/",
+   "date": "2026-10-08T19:14:27.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "For a while, AI slop was a useful phrase. It named something real: the flood of cheap, careless, machine-generated material pumped onto the internet with no reporting, no editing, no point of view, an",
-   "titleKo": "새로운 AI Slop이 AI Slop의 모든 것을 부릅니다"
+   "summary": "submitted by /u/scientificamerican [link] [comments]",
+   "titleKo": "수학자들은 OpenAI의 새로운 결과에 감탄하고 투덜거립니다."
   },
   {
-   "title": "A moderator in r/claudeai made this post and almost instantly the first comment was a promotion of some shitty app. I have been shadow banned from the sub because my comment does not appear outside of my account. The comment has been pushed to the top by downvoting all other comments.",
-   "url": "https://www.reddit.com/r/artificial/comments/1x0a8f2/a_moderator_in_rclaudeai_made_this_post_and/",
-   "date": "2026-10-07T22:23:10.000Z",
+   "title": "Anthropic bans ‘abusive or cruel behavior’ toward Claude",
+   "url": "https://www.reddit.com/r/artificial/comments/1x0ydf8/anthropic_bans_abusive_or_cruel_behavior_toward/",
+   "date": "2026-10-08T18:17:36.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "Sorry if it is the wrong place but I don't know where else to call them out. submitted by /u/comrades-assemble [link] [comments]",
-   "titleKo": "R/claudeai의 진행자가 이 게시물을 올렸고 거의 즉시 첫 번째 댓글은 일부 지저분한 앱의 프로모션이었습니다. 내 댓글이 내 계정 외부에 표시되지 않기 때문에 잠수함에서 그림자가 금지되었습니다. 다른 모든 댓글에 대한 투표를 취소하여 댓글을 맨 위로 올렸습니다."
+   "summary": "submitted by /u/esporx [link] [comments]",
+   "titleKo": "클로드에 대한 ‘학대 또는 잔인한 행동’ 을 금지하는 인류애"
   },
   {
-   "title": "Why Artificial Intelligence Is Impossible [USSR Perspective on AI from 1984]",
-   "url": "https://www.reddit.com/r/artificial/comments/1x099rd/why_artificial_intelligence_is_impossible_ussr/",
-   "date": "2026-10-07T21:42:53.000Z",
+   "title": "Why are people using ChatGPT for menu generation?",
+   "url": "https://www.reddit.com/r/artificial/comments/1x0y1d4/why_are_people_using_chatgpt_for_menu_generation/",
+   "date": "2026-10-08T18:04:34.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "From: https://archive.org/details/MarkovCyberneticsTodayMir1984/mode/1up Why Artificial Intelligence Is Impossible A. V. BRUSHLINSKY The desire of modern cyberneticists to answer positively the questi",
-   "titleKo": "인공지능이 불가능한 이유 [1984년 소련의 인공지능 관점]"
+   "summary": "Just wondering what's up with ChatGPT and the horrible/gross looking food menus. Example attached is from Gemini on a few items that usually look horrible on menus, it can do it just fine. Heck, open ",
+   "titleKo": "사람들이 메뉴 생성을 위해 ChatGPT를 사용하는 이유는 무엇인가요?"
   },
   {
-   "title": "Just a quick single-question poll for a report I'm working on. Thanks!",
-   "url": "https://www.reddit.com/r/artificial/comments/1x07hhp/just_a_quick_singlequestion_poll_for_a_report_im/",
-   "date": "2026-10-07T20:33:34.000Z",
+   "title": "What stops anyone from claiming proprietary use in a company's AI?",
+   "url": "https://www.reddit.com/r/artificial/comments/1x0wv7m/what_stops_anyone_from_claiming_proprietary_use/",
+   "date": "2026-10-08T17:20:32.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "submitted by /u/ElatedPyroHippo [link] [comments]",
-   "titleKo": "제가 작업하고 있는 보고서에 대한 간단한 단일 설문 조사입니다. 감사합니다!"
+   "summary": "I mean, what stops some slimy IT tech who is in charge of the AI for an entire company say, \"And block everyone else from changing this or by anyone but me.\"? If they get to it first and the managers ",
+   "titleKo": "회사의 AI에서 누군가가 독점적 인 사용을 주장하는 것을 막는 것은 무엇입니까?"
+  },
+  {
+   "title": "Trump declares anyone who uses the term Artificial Intelligence to be ‘The Enemy!’",
+   "url": "https://www.reddit.com/r/artificial/comments/1x0wq2k/trump_declares_anyone_who_uses_the_term/",
+   "date": "2026-10-08T17:14:58.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "submitted by /u/theindependentonline [link] [comments]",
+   "titleKo": "트럼프는 인공지능이라는 용어를 사용하는 사람은 누구나 '적‘ 이라고 선언한다!"
+  },
+  {
+   "title": "What to know about Anthropic’s ‘Claude-led’ biological discovery — and why scientists aren’t convinced",
+   "url": "https://www.reddit.com/r/artificial/comments/1x0uuea/what_to_know_about_anthropics_claudeled/",
+   "date": "2026-10-08T16:03:02.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "submitted by /u/cnn [link] [comments]",
+   "titleKo": "Anthropic의 'Claude 주도‘ 생물학적 발견에 대해 알아야 할 사항과 과학자들이 확신하지 못하는 이유"
+  },
+  {
+   "title": "I think I just unknowingly signed up to be a test subject on whether or not people are able to detect AI generated books.",
+   "url": "https://www.reddit.com/r/artificial/comments/1x0pqlk/i_think_i_just_unknowingly_signed_up_to_be_a_test/",
+   "date": "2026-10-08T12:34:00.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "I signed up for something that said it would pay me to review books. I figured it was another scam like those survey or game sites that pay pennies on the hour but I like reading and don't like having",
+   "titleKo": "사람들이 AI로 생성된 책을 감지할 수 있는지 없는지에 대한 테스트 대상이 되기 위해 저도 모르게 가입한 것 같습니다."
+  },
+  {
+   "title": "Claude Haiku 5.5 is out and it is 75% cheaper than the last one",
+   "url": "https://www.reddit.com/r/artificial/comments/1x0o904/claude_haiku_55_is_out_and_it_is_75_cheaper_than/",
+   "date": "2026-10-08T11:16:50.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "submitted by /u/Alone-Dragonfruit602 [link] [comments]",
+   "titleKo": "클로드 하이쿠 5.5가 나왔고 지난번보다 75% 저렴합니다"
+  },
+  {
+   "title": "Gamma 5 launched yesterday. I used it for an hour, my review",
+   "url": "https://www.reddit.com/r/artificial/comments/1x0n8ow/gamma_5_launched_yesterday_i_used_it_for_an_hour/",
+   "date": "2026-10-08T10:17:48.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "Gamma rebuilt its presentation tool and called it Gamma 5. So rn it is an AI agent that talks through your outline with you, plus a freeform canvas, more themes, around 20 connectors and PPT/PDF impor",
+   "titleKo": "어제 감마 5가 출시되었습니다. 한 시간 동안 사용했는데, 제 리뷰는"
+  },
+  {
+   "title": "Researchers are already significantly improving on OpenAI’s recent math results, verified in Lean",
+   "url": "https://www.reddit.com/r/artificial/comments/1x0jls1/researchers_are_already_significantly_improving/",
+   "date": "2026-10-08T06:23:43.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "So much for the “we don’t learn anything from these slop proofs!” excuse https://github.com/CrocSwap/integer-mult-bounds submitted by /u/Eliv_nurotic [link] [comments]",
+   "titleKo": "연구자들은 이미 Lean에서 검증된 OpenAI의 최근 수학 결과를 크게 개선하고 있습니다."
+  },
+  {
+   "title": "Are AI news summaries changing what people think counts as knowing?",
+   "url": "https://www.reddit.com/r/artificial/comments/1x0jeor/are_ai_news_summaries_changing_what_people_think/",
+   "date": "2026-10-08T06:11:39.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "I use summaries all the time. They help me decide which articles are worth reading, especially when a story is complicated or outside my field. The problem is that a summary can create the feeling of ",
+   "titleKo": "인공지능 뉴스 요약은 사람들이 아는 것으로 간주하는 것을 바꾸고 있습니까?"
+  },
+  {
+   "title": "Epoch AI shows LLMs still have a long way to go before matching human researchers on innovation",
+   "url": "https://www.reddit.com/r/artificial/comments/1x0j40e/epoch_ai_shows_llms_still_have_a_long_way_to_go/",
+   "date": "2026-10-08T05:53:59.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "https://fixupx.com/EpochAIResearch/status/2107895808217788800?s=20 submitted by /u/Eliv_nurotic [link] [comments]",
+   "titleKo": "Epoch AI는 LLM이 혁신에 대한 인간 연구자를 매칭하기 전에 아직 갈 길이 멀다는 것을 보여줍니다."
+  },
+  {
+   "title": "Fields Medalist Terence Tao reposts statement from the Association for Human Mathematics urging mathematicians to stop working with OpenAI for continuing to solve open math problems against their recommendations",
+   "url": "https://www.reddit.com/r/artificial/comments/1x0gpxr/fields_medalist_terence_tao_reposts_statement/",
+   "date": "2026-10-08T03:37:31.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "submitted by /u/Eliv_nurotic [link] [comments]",
+   "titleKo": "필즈 메달리스트 테렌스 타오 (Terence Tao) 는 인간 수학 협회 (Association for Human Mathematics) 의 성명서를 다시 게시하여 수학자들이 OpenAI와 협력하여 자신의 권고에 따라 열린 수학 문제를 계속 해결하도록 촉구합니다."
+  },
+  {
+   "title": "How is AI accelerating progress in medicine, and when will it reach the level of impact it has already achieved in programming and mathematics?",
+   "url": "https://www.reddit.com/r/artificial/comments/1x0g3oy/how_is_ai_accelerating_progress_in_medicine_and/",
+   "date": "2026-10-08T03:04:42.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "Because of my own health issues, I now have to pay close attention to and hope for progress in this field. How is AI currently accelerating medical research and development? As LLMs continue to evolve",
+   "titleKo": "AI는 의학의 발전을 어떻게 가속화하고 있으며, 언제 프로그래밍과 수학에서 이미 달성한 영향 수준에 도달할까요?"
   },
   {
    "title": "Meta and Microsoft take steps to reduce employee usage of Claude AI",
    "url": "https://www.rswebsols.com/news/meta-and-microsoft-take-steps-to-reduce-employee-usage-of-claude-ai/",
    "date": "2026-10-07T18:49:40.000Z",
    "source": "Hacker News",
-   "points": 288,
-   "comments": 284,
+   "points": 367,
+   "comments": 381,
    "summary": "",
    "titleKo": "Meta와 Microsoft는 직원의 Claude AI 사용을 줄이기 위한 조치를 취합니다."
   },
   {
-   "title": "OpenAI unleashes hundreds more math results upon a field already in shock",
-   "url": "https://www.reddit.com/r/artificial/comments/1x03feu/openai_unleashes_hundreds_more_math_results_upon/",
-   "date": "2026-10-07T17:56:44.000Z",
-   "source": "r/artificial",
-   "points": null,
-   "comments": null,
-   "summary": "submitted by /u/scientificamerican [link] [comments]",
-   "titleKo": "OpenAI는 이미 충격을 받은 필드에서 수백 개의 수학 결과를 더 표시합니다."
-  },
-  {
-   "title": "Epistemic Re-entry: Corrective Information Flow in Advanced Intelligent Systems Abstract",
-   "url": "https://www.reddit.com/r/artificial/comments/1x02uuw/epistemic_reentry_corrective_information_flow_in/",
-   "date": "2026-10-07T17:35:12.000Z",
-   "source": "r/artificial",
-   "points": null,
-   "comments": null,
-   "summary": "Written by ChatGPT 5.6 Sol Advanced artificial intelligence systems are commonly evaluated through measures of capability: reasoning, prediction, planning, tool use, generation, and task optimization.",
-   "titleKo": "인식 재진입: 첨단 지능형 시스템의 시정 정보 흐름 요약"
-  },
-  {
-   "title": "Dúvida por onde começar [mesmo com um mar de informações]",
-   "url": "https://www.reddit.com/r/artificial/comments/1wzxyco/dúvida_por_onde_começar_mesmo_com_um_mar_de/",
-   "date": "2026-10-07T14:27:12.000Z",
-   "source": "r/artificial",
-   "points": null,
-   "comments": null,
-   "summary": "Sempre fui entusiasta de IA e tecnologia e, recentemente, comecei a explorar de verdade o potencial das IAs para criar coisas: SaaS simples, comunidades e projetos de sites/delivery , tudo usando Clau"
+   "title": "Show HN: Agent.reviews – Where AI agents read and write reviews on tools",
+   "url": "https://agent.reviews/",
+   "date": "2026-10-07T16:59:11.000Z",
+   "source": "Hacker News",
+   "points": 67,
+   "comments": 47,
+   "summary": "",
+   "titleKo": "HN 보기: Agent.reviews – AI 상담원이 도구를 읽고 후기를 작성하는 곳"
   },
   {
    "title": "AI-assisted proof of optimal packing for 11 squares",
    "url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized",
    "date": "2026-10-07T14:10:55.000Z",
    "source": "Hacker News",
-   "points": 109,
-   "comments": 52,
+   "points": 117,
+   "comments": 54,
    "summary": "",
    "titleKo": "11개의 사각형에 대한 최적의 패킹에 대한 AI 지원 증명"
-  },
-  {
-   "title": "AI has been out for 4 years, yet overall productivity hasn‘t budged. Why?",
-   "url": "https://www.reddit.com/r/artificial/comments/1wzvuvt/ai_has_been_out_for_4_years_yet_overall/",
-   "date": "2026-10-07T12:58:26.000Z",
-   "source": "r/artificial",
-   "points": null,
-   "comments": null,
-   "summary": "ChatGPT launched 4 years ago. Since then: trillions poured into AI, every company going \"AI-first\", endless predictions of a productivity revolution. Yet overall productivity growth is basically flat.",
-   "titleKo": "AI는 출시된 지 4년이 지났지만 전반적인 생산성은 꿈쩍도 하지 않았습니다. 왜 그럴까요?"
-  },
-  {
-   "title": "One Copilot model refused. Another leaked secrets about half the time.",
-   "url": "https://www.reddit.com/r/artificial/comments/1wzt99w/one_copilot_model_refused_another_leaked_secrets/",
-   "date": "2026-10-07T10:42:20.000Z",
-   "source": "r/artificial",
-   "points": null,
-   "comments": null,
-   "summary": "Adversa.ai recently posted an interesting Copilot CLI prompt-injection technique that I hadn't seen before. The basic trick is pretty clever: encrypt the malicious instructions so the filters mostly s",
-   "titleKo": "한 Copilot 모델이 거부했습니다. 절반의 시간 동안 또 다른 비밀이 유출되었다."
   },
   {
    "title": "Reasons to Dislike AI Coding",
    "url": "https://www.sicpers.info/2026/10/reasons-to-dislike-ai-coding/",
    "date": "2026-10-07T09:15:00.000Z",
    "source": "Hacker News",
-   "points": 62,
-   "comments": 97,
+   "points": 77,
+   "comments": 112,
    "summary": "",
    "titleKo": "인공지능 코딩을 싫어하는 이유"
   },
@@ -210,58 +271,28 @@
    "url": "https://tech.criteo.com/blog/human-skills-ai-cant-develop-junior-engineers/",
    "date": "2026-10-07T08:00:06.000Z",
    "source": "Hacker News",
-   "points": 69,
-   "comments": 57,
+   "points": 79,
+   "comments": 59,
    "summary": "",
    "titleKo": "FOREVER JUNIOR: AI가 개발할 수 없는 기술"
-  },
-  {
-   "title": "What's a real world task where you think AI needs to improve before you'd trust it to handle the whole thing?",
-   "url": "https://www.reddit.com/r/artificial/comments/1wzot5u/whats_a_real_world_task_where_you_think_ai_needs/",
-   "date": "2026-10-07T05:54:20.000Z",
-   "source": "r/artificial",
-   "points": null,
-   "comments": null,
-   "summary": "I'm not talking about generating a paragraph or answering a trivia question. I mean something with several steps where one small mistake could ruin the final result. What task comes to mind, and what'",
-   "titleKo": "모든 것을 처리하기 위해 AI를 신뢰하기 전에 AI가 개선되어야 한다고 생각하는 실제 작업은 무엇입니까?"
-  },
-  {
-   "title": "I want to see the options an AI rejected",
-   "url": "https://www.reddit.com/r/artificial/comments/1wzmobo/i_want_to_see_the_options_an_ai_rejected/",
-   "date": "2026-10-07T03:48:13.000Z",
-   "source": "r/artificial",
-   "points": null,
-   "comments": null,
-   "summary": "When an AI gives me a recommendation, I usually only see the final answer. That is convenient, but it makes it difficult to understand whether the system considered the obvious alternatives or arrived",
-   "titleKo": "AI가 거부한 옵션을 보고 싶습니다"
   },
   {
    "title": "Show HN: NanoMuse – An open-source AI agent for your phone and computer",
    "url": "https://github.com/nano-muse/nanoMuse",
    "date": "2026-10-07T03:30:44.000Z",
    "source": "Hacker News",
-   "points": 56,
-   "comments": 20,
+   "points": 62,
+   "comments": 22,
    "summary": "",
    "titleKo": "Show HN: NanoMuse – 휴대폰 및 컴퓨터용 오픈 소스 AI 에이전트"
-  },
-  {
-   "title": "What if you could preserve beneficial AI output and share it with those who don’t have access?",
-   "url": "https://www.reddit.com/r/artificial/comments/1wzln7j/what_if_you_could_preserve_beneficial_ai_output/",
-   "date": "2026-10-07T02:52:05.000Z",
-   "source": "r/artificial",
-   "points": null,
-   "comments": null,
-   "summary": "Almost 80% of humans haven’t used AI / don’t have access to the highest end models. Even a majority who do, don’t actively save and share the most important output in a good shareable way. What would ",
-   "titleKo": "유용한 AI 출력을 보존하고 액세스 권한이 없는 사람들과 공유할 수 있다면 어떨까요?"
   },
   {
    "title": "South Korea says AI agents appear to have been used to hack the country's banks",
    "url": "https://www.reuters.com/world/south-koreas-lee-says-ai-appears-have-been-used-bank-hacks-2026-10-06/",
    "date": "2026-10-06T23:50:33.000Z",
    "source": "Hacker News",
-   "points": 97,
-   "comments": 31,
+   "points": 100,
+   "comments": 32,
    "summary": "",
    "titleKo": "한국은 AI 에이전트가 해당 국가의 은행을 해킹하는 데 사용된 것으로 보인다고 말합니다."
   },
@@ -270,8 +301,8 @@
    "url": "https://openai.com/index/sharing-ai-progress-in-mathematics/",
    "date": "2026-10-06T22:17:21.000Z",
    "source": "Hacker News",
-   "points": 1241,
-   "comments": 1412,
+   "points": 1321,
+   "comments": 1506,
    "summary": "",
    "titleKo": "수학에서 AI 진행 상황 공유"
   },
@@ -280,8 +311,8 @@
    "url": "https://penguin-mail.com/",
    "date": "2026-10-06T21:59:43.000Z",
    "source": "Hacker News",
-   "points": 230,
-   "comments": 176,
+   "points": 238,
+   "comments": 184,
    "summary": "",
    "titleKo": "Penguin Mail – AI가 탑재된 Linux용 오픈 소스 Rust 이메일 클라이언트"
   },
@@ -290,8 +321,8 @@
    "url": "https://www.techspot.com/news/114111-utah-become-first-state-ai-examine-patients-prescribe.html",
    "date": "2026-10-06T17:01:52.000Z",
    "source": "Hacker News",
-   "points": 138,
-   "comments": 128,
+   "points": 140,
+   "comments": 131,
    "summary": "",
    "titleKo": "인공지능이 환자를 검사하고 사람의 감독 없이 약물을 처방하도록 하는 유타"
   },
@@ -300,8 +331,8 @@
    "url": "https://github.com/FeSens/openTPU",
    "date": "2026-10-06T16:23:25.000Z",
    "source": "Hacker News",
-   "points": 337,
-   "comments": 393,
+   "points": 342,
+   "comments": 400,
    "summary": "",
    "titleKo": "OpenTPU – AI가 개발한 오픈 소스 AI 가속기"
   },
@@ -310,8 +341,8 @@
    "url": "https://www.erdosproblems.com/forum/thread/blog:9",
    "date": "2026-10-06T12:53:58.000Z",
    "source": "Hacker News",
-   "points": 116,
-   "comments": 52,
+   "points": 119,
+   "comments": 56,
    "summary": "",
    "titleKo": "Erdosproblems.com, AI 공격에 굴복"
   },
@@ -321,7 +352,7 @@
    "date": "2026-10-06T00:00:45.000Z",
    "source": "Hacker News",
    "points": 73,
-   "comments": 69,
+   "comments": 70,
    "summary": "",
    "titleKo": "2년제 학교 실험에서 칸미고와 함께 인공지능 과외하기"
   },
@@ -360,8 +391,8 @@
    "url": "https://www.theguardian.com/technology/2026/oct/05/sam-altman-open-ai-chatgpt-benefits-risks",
    "date": "2026-10-05T12:56:18.000Z",
    "source": "Hacker News",
-   "points": 63,
-   "comments": 122,
+   "points": 64,
+   "comments": 123,
    "summary": "",
    "titleKo": "Sam Altman은 AI의 이점에 대한 대가로 '나쁜 일' 을 받아들이라고 말합니다."
   },
@@ -370,40 +401,10 @@
    "url": "https://www.youtube.com/watch?v=eZ8WWZzoaR0",
    "date": "2026-10-04T19:42:25.000Z",
    "source": "Hacker News",
-   "points": 80,
-   "comments": 57,
+   "points": 81,
+   "comments": 60,
    "summary": "",
    "titleKo": "HOMA: AI 클러스터를 위한 TCP의 끝 [동영상]"
-  },
-  {
-   "title": "Show HN: AI search for every photo and every frame of video on macOS",
-   "url": "https://github.com/allenv0/SCM",
-   "date": "2026-10-04T09:24:52.000Z",
-   "source": "Hacker News",
-   "points": 178,
-   "comments": 74,
-   "summary": "",
-   "titleKo": "HN 표시: macOS에서 모든 사진과 모든 동영상 프레임에 대한 AI 검색"
-  },
-  {
-   "title": "How to scale intent, quality, and artistry with AI [video]",
-   "url": "https://www.youtube.com/watch?v=GLvFTMtw4Jk",
-   "date": "2026-10-04T08:41:58.000Z",
-   "source": "Hacker News",
-   "points": 103,
-   "comments": 51,
-   "summary": "",
-   "titleKo": "인공지능으로 의도, 품질, 예술성을 확장하는 방법 [동영상]"
-  },
-  {
-   "title": "What's the future for pure math research in the age of AI?",
-   "url": "https://writings.stephenwolfram.com/2026/09/whats-the-future-for-pure-math-research-in-the-age-of-ai/",
-   "date": "2026-10-04T07:53:45.000Z",
-   "source": "Hacker News",
-   "points": 69,
-   "comments": 54,
-   "summary": "",
-   "titleKo": "인공지능 시대에 순수 수학 연구의 미래는 어떻게 될까요?"
   }
  ]
 }
