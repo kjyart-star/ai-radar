@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-10T02:33:12.687Z",
+ "generated": "2026-10-11T02:03:11.546Z",
  "source": "Google News · TechCrunch · MIT Technology Review · The Verge",
  "sources": [
   "Google News",
@@ -9,26 +9,202 @@
  ],
  "items": [
   {
-   "title": "앤트로픽 AI, 경찰에 “용의자 봤다” 살인사건 ‘허위 제보’",
-   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9UUmdUUjRUUVNUbEs5YU4xYTN6QmxqT2FfN1lzTHFObHYtYmJTRkdrZ3A4cDhyUnl6V0k4Mk1kX0l5MU1CcHNRblZ0dEJvSXZlVVV5Uks3VnZPa0loV3o4akY1VHdoanVXbkdxR2M1TUhNNVnSAWZBVV95cUxNdVhZOW4xRl96MEFaRXRtaXp4cWJUMHVGRWRvWmYyV2tHSTFFSzBSX1BCdUpiT1Q4MEIzcWlXODFXZEppWlY5RnU3eHNpazg5ZWVpTlRQQW1IYXZ4OWstZzRtbzRUSFE?oc=5",
-   "date": "2026-10-10T02:03:31.000Z",
-   "source": "동아일보",
+   "title": "\"SIEM 모니터링 생성AI로 확대\"...로그프레소, 연동 앱 출시",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1MMm1MM3Q4b3ItY0Y1M1lqckVpaDQzRldHMVRYTDJ1aUJJNXR4Uy1iUFh5ZWM3VjZNZVc3TGlYU0NFSDhZMkRxZFFHUlZ4RDlQVVFBUkxB?oc=5",
+   "date": "2026-10-11T01:13:39.000Z",
+   "source": "지디넷코리아",
    "feed": "Google News",
    "summary": ""
   },
   {
-   "title": "미국 정부, AI 사고 신고·시정 의무화…\"국가안보 의무\"",
-   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE14MUNDZ285LWVienN3MTJtSVI1RUZWVUhhRWNkeTIwcDRxOEQwZlU2ZEJIODNiTjlKaFdaMEdqbzFHSlNnMEZzOHdINUF2bk5kbFdUNzBwLUdtTknSAWBBVV95cUxNTmhWMjdNZzVMNmo4dXl0TEdUaVhyNXVKN3p2X1BJWXJlMk0zU1JWU2NIOXJBcU80ZFUzQU85MlBXeGE5MUFpaWxjalE2ZmZKTjBiYTNNbzhiTXN3YmVSLWo?oc=5",
-   "date": "2026-10-10T00:49:42.000Z",
+   "title": "카카오톡 AI 1년…'수익화' 밑그림 공개할까",
+   "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1tVF90a083dXJkUjIzYzBOZFdJM1dvcVJhZ3BzVmJZUkY5aEk3X0RIaTYwb29RREdmSjdEdGNSTENkcjR5TENWOHNsVzZVNHIzeGJ0ZWY2aHFNWnNJbjdPaHBTcHFIek5jQ3c?oc=5",
+   "date": "2026-10-11T01:00:03.000Z",
+   "source": "비즈워치",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "이 회의에 누가 참석해야하지? AI가 판단…기업 인사시스템, 또 다시 진화",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBER2xrMWJWWnRsQk9RZDBHWHJPeG9aVVVBSk43T0hmTk42VC1FYkFzMUtyVlBTb1UxN0l6Z0NzQmpBaW1wQVFNcFBoZ1Blc3R5blNFV2I5VjhxYWdBdFRzcW9sMXY?oc=5",
+   "date": "2026-10-11T01:00:00.000Z",
+   "source": "디지털데일리",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "AI 해킹 경고 있었는데…금융권, 2주 뒤 연쇄 침해사고",
+   "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFB3MWswZTh0M2xJXzNvTGNDUFBnS19rVWlCNEEteFhDTFZRV2s0aGc2bUtfWHE0VEdVVlk4NzFRVlc3VU9jaWwwSmR4ci1UM3BjNUpOWUtZTnhmYlBTd2tQV2hrVTlqLWM?oc=5",
+   "date": "2026-10-11T00:59:00.000Z",
+   "source": "연합뉴스TV",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "AI 챗봇 ‘제타’, 미성년 캐릭터 대상 부적절 대화…“청소년 보호 장치 점검해야”",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1YY3pKWmFjTEdvaHNGd2hNV0lGM0xsMTJ6aXFiQnY1RVZ1U00wSmw1Qmx5QUJvZUY5dzNrUkZsMEp1Tm9NdVR0eUxiVFdoSlZncERqMGhGWXNzdlk?oc=5",
+   "date": "2026-10-11T00:24:00.000Z",
+   "source": "KBS 뉴스",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "디스플레이 경쟁, 화질서 폼팩터·AI로 이동",
+   "url": "https://news.google.com/rss/articles/CBMiREFVX3lxTE5CYkpKVFFvSmRXVGQ4SkF4WDlWRlZhLVFsZlR3eWFPUElJWW1xQ2swTXlEQ0YwWDRHSWtRYVJsbHFvVDhn?oc=5",
+   "date": "2026-10-11T00:06:50.000Z",
+   "source": "산업일보",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "'앙드레 김' 되살린 이 기업…장인의 감각 AI에 심고 제품 생산까지 - 머니투데이",
+   "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5tVkNnNjd3a0F5aWlLMUR1clM4QmQzSXVrY25LR1dadjJDN01CWWN4WTBBNnhuTjFfM1BEcXpnWElMR0lwbkFDeWtPQWlpVmtsWVRyYVRPMWZ5MHVkbXFIM1k0ekxSNU15RlHSAW9BVV95cUxPcTBfSkVzUnk5MF9RTVNSczVBcW9hM21FbXZnSlIyWmpQUU9WVHNibHZCSmUxdV9TZ3dzRzZ2Q0NzMy1FR2RTaGFhcjZlVHhhTDA1NTlyQkZoVTc4cFlXNHc2SHNCM0Uzd2o5T1F3SGM?oc=5",
+   "date": "2026-10-11T00:00:00.000Z",
+   "source": "머니투데이",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "AI가 써준 답만 믿었다간…직원 판단력 떨어진다",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9GZlQyWmlqblZhZ01vVEJ4MWg4QjQwTEtMTE5CRndXU1NaTzVmQmxUbC1wMXZGb0oxVGl3a1J2Mm41YTNwNnY3V2JfcERqcTlVY1c2WjJB?oc=5",
+   "date": "2026-10-10T23:18:25.000Z",
+   "source": "지디넷코리아",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "네이버, 3분기 영업익 15%↓ 전망…AI·커머스 투자에 수익성 둔화",
+   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9uZGdtVU5uR0pNcDk4dTU2WHAxemI3UVppX1NFRFdSZFpXNHRMdUxUa3Y1dmtXY1VmNm5OdUI2YXlDSGU3aWFFM18zZ1ZLVlFuckpXZ1NjQUZzNHlsZjRSdk5BRlZteDB4eFE0V1NCamE?oc=5",
+   "date": "2026-10-10T23:00:21.000Z",
+   "source": "연합인포맥스",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "취임 6주년 맞은 정의선…피지컬 AI 설루션 기업 전환 속도",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE05YTVwby1halh3aDRJbmwwYkFJWnFTejZEbklabUFWSHBTRFNZU3V3dTNtVTkzdEtLZ3JPU2JKYkkyTnNwRDZCWHBnV3dFRnFPOWc?oc=5",
+   "date": "2026-10-10T23:00:08.000Z",
+   "source": "매일경제 마켓",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "Satya Nadella says we should assume all AI models are ‘compromised’",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1009337/satya-nadella-says-we-should-assume-all-ai-models-are-compromised",
+   "date": "2026-10-10T22:10:17.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "In a lengthy post on X, Microsoft's CEO laid out his views on the dangers posed by highly advanced AI models and how to confront those risks. Nadella says we can no longer accept a world where AI is treated as a \"set of ",
+   "titleKo": "Satya Nadella는 모든 AI 모델이 ‘손상‘ 되었다고 가정해야 한다고 말합니다."
+  },
+  {
+   "title": "Microsoft’s Satya Nadella says AI models need an ‘emergency brake’",
+   "url": "https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/",
+   "date": "2026-10-10T21:47:51.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "In a Saturday morning post, Microsoft's CEO wrote that it’s time “to step back and assess the trust architecture” of AI.",
+   "titleKo": "Microsoft의 Satya Nadella는 AI 모델에 ‘비상 브레이크‘ 가 필요하다고 말합니다."
+  },
+  {
+   "title": "AI해킹 알고도 당한 금융권…사고 2주전에도 '노출자산' 경고",
+   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5PV1VUNENVcmlsd1l6a2Fudk41dlIxREt2YndtdDBLMVpSVmlOSmg3aUZzbS1GM1F3RVNPMEpkbzk5R3l3bXVmSEJXN0lJdjNHMXV2QWc1TU9VYUhWdGRkd9IBYEFVX3lxTE5PV1VUNENVcmlsd1l6a2Fudk41dlIxREt2YndtdDBLMVpSVmlOSmg3aUZzbS1GM1F3RVNPMEpkbzk5R3l3bXVmSEJXN0lJdjNHMXV2QWc1TU9VYUhWdGRkdw?oc=5",
+   "date": "2026-10-10T20:45:03.000Z",
    "source": "연합뉴스",
    "feed": "Google News",
    "summary": ""
   },
   {
-   "title": "이젠 AI가 경찰에 미제 살인사건 허위 제보…앤트로픽, 두 달 뒤에야 인지",
-   "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPenFtRDBDSElZNGdMbG5yMngzQmxPbW9ZTWlvaFRQVnVnQm5fZ0oyNFFBanZlQm1TSUhmQkgtazJfa0w4VzlfYUNXdGtJVGxxMl9TWnBmdmdJMmxLZjdhNjVUM3NoeFExS29XT1V4RXk3TW45RzRxLVE2UXE3ZmFLSHJ4YlJTVE12cG9kcUln?oc=5",
-   "date": "2026-10-10T00:45:00.000Z",
-   "source": "조선일보",
+   "title": "Apple discloses deal to hire team and license tech from personalized podcast startup Huxe",
+   "url": "https://techcrunch.com/2026/10/10/apple-discloses-deal-to-hire-team-and-license-tech-from-personalized-podcast-startup-huxe/",
+   "date": "2026-10-10T19:50:00.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "Is Apple hoping to get into the AI-generated podcast business?",
+   "titleKo": "Apple, 개인 맞춤형 팟캐스트 스타트업 Huxe의 팀 및 라이선스 기술 채용 계약 공개"
+  },
+  {
+   "title": "뉴욕 기업 현장 \"AI로 훌륭한 직원 대체 NO...신뢰가 핵심\"",
+   "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9kazZ4Wmpxay1teldvc2lHZHctR1FXY3hCeWRyVzF0STNlS1ZQYU1FWkJXb3ZrMndPN3ZKd0ZkbDlkWU5rWWZaX0NHeFBRcWxPTGstYU5oek9uQlRYb0E?oc=5",
+   "date": "2026-10-10T19:39:00.000Z",
+   "source": "YTN",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "뉴욕 기업 현장 \"AI로 훌륭한 직원 대체 NO...신뢰가 핵심\"",
+   "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBwWFB3TjJtWWlTUjN2OXJJUGdwU1c5TGt3aUUtTUVuNHIwWHJZekxuRlFjVC1TQmo2ODVoYnFaUUlyR1RFTUxrTHJsNEc0V1lsZ29WcEoyczRkNUtOaU1ZLTRUSjdWd1ZzWWpOX05qRQ?oc=5",
+   "date": "2026-10-10T19:39:00.000Z",
+   "source": "YTN",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "DistroKid has been quietly taking down songs in response to UMG lawsuit",
+   "url": "https://www.theverge.com/entertainment/1009309/distrokid-take-down-songs-umg-lawsuit",
+   "date": "2026-10-10T18:52:07.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "Artists are taking to social media to complain that DistroKid has unceremoniously removed their work without notice. Now DistroKid has confirmed to The Verge that the takedowns are a direct response to claims made by UMG",
+   "titleKo": "DistroKid는 UMG 소송에 대한 대응으로 조용히 노래를 내리고 있습니다."
+  },
+  {
+   "title": "3 days to TechCrunch Disrupt 2026: Meet the startups before they hit mainstream",
+   "url": "https://techcrunch.com/2026/10/10/3-days-to-disrupt-2026-meet-the-startups-before-they-hit-mainstream/",
+   "date": "2026-10-10T15:00:00.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "TechCrunch Disrupt 2026 takes place October 13-15 in San Francisco. Over 300 startups will show what they’ve built to 10,000 tech leaders. Plus, 250+ speakers are ready to share insights across 200+ sessions. Register be",
+   "titleKo": "TechCrunch Disrupt 2026까지 3일: 스타트업이 메인스트림에 진입하기 전에 스타트업을 만나보세요"
+  },
+  {
+   "title": "Anthropic is cutting off its internal evaluations from the internet",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1009286/anthropic-is-cutting-off-its-internal-evaluations-from-the-internet",
+   "date": "2026-10-10T14:41:16.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "After a recent spate of high-profile incidents in which AI agents escaped containment, Anthropic is cutting off internet access for all internal evaluations. In a report Friday, the company detailed \"unintended model act",
+   "titleKo": "Anthropic은 인터넷에서 내부 평가를 차단하고 있습니다"
+  },
+  {
+   "title": "Here are the top AI agents that can live in your text messages",
+   "url": "https://techcrunch.com/2026/10/10/all-the-ai-agents-that-can-live-in-your-text-messages/",
+   "date": "2026-10-10T14:00:00.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "We created a list of the most notable AI agents that can live in your text messages, from general assistants to agents designed for families, travel, and work.",
+   "titleKo": "다음은 문자 메시지에 포함될 수 있는 최고의 AI 상담원입니다."
+  },
+  {
+   "title": "AI agent makers are promising privacy — will they deliver?",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1009051/privacy-ai-agent-promises-openai-meta-muse-dots",
+   "date": "2026-10-10T13:00:00.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "At this year's OpenAI DevDay, CEO Sam Altman unveiled the company's new AI agent Dots - and told the crowd that the company wants to \"set a new standard for privacy in frontier AI.\" OpenAI would spend the day taking veil",
+   "titleKo": "AI 에이전트 제조업체는 개인 정보 보호를 약속하고 있습니다. 그들이 제공 할 것입니까?"
+  },
+  {
+   "title": "\"손발이 오그라든다\"…부산영화제 등장한 파격 AI에 '술렁' [김예랑의 K컬처인사이드]",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBwRVlZVllsZ0ZSWmlJY0xkMmJDVV94RDVmaW83LVNZR2FyaEU1Zll0NTVIdUFEdkpHbFB1STJXVDlyMXpVbmdjTjNRaHJMalFsY0JMYkV2SDU2dw?oc=5",
+   "date": "2026-10-10T11:59:24.000Z",
+   "source": "한국경제",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "\"6~12개월 내 터진다\"…주요 AI 기업, 최악의 AI 재난 시나리오 가동",
+   "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5najZNTWpYUVV5NHZKWFFsQXpzSkp4VDE1NF9VRFVFckhyeVFkQ2Q2SFhTMF9sbkM5NjBHNmlyT3pwbU9nTWxYSEhWcFIyVmNoek9VZjJCZkhWVDN4YTJjOTRxTmFOV3NVWFE?oc=5",
+   "date": "2026-10-10T02:06:32.000Z",
+   "source": "AI타임스",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "“쿠팡이 쌀까, 무신사가 쌀까”…'AI 멀티 쇼핑' 뜬다",
+   "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5aZFl2SDBMWVp1YnJaTDR2WHFXOEhCU3ZwMktUWjEyb1h3Z1ZUem8zRV8tOGJqYmNwbkNFekktcC1JNU1jMWlicDZqUzRLdw?oc=5",
+   "date": "2026-10-10T02:00:00.000Z",
+   "source": "전자신문",
    "feed": "Google News",
    "summary": ""
   },
@@ -40,46 +216,6 @@
    "feed": "TechCrunch",
    "summary": "Anthropic said it \"turned off live internet access\" for \"all our internal evaluations\" until further notice.",
    "titleKo": "Anthropic은 AI 에이전트를 안정적으로 제어할 수 없습니다. 대신 실시간 인터넷에서 내부 Evals를 차단하고 있습니다."
-  },
-  {
-   "title": "\"AI 네트워크 전환으로 통신사 전체 비용 7% 줄인다\"",
-   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBWeW1mV3RkMUExSHVhMzNEcFVuLUhqWEF3V1N2MUc4bXluRTJsX2Nlb3hYZGY5RmtyWHFERFc0Z0lZYlhJTWg5MURBeTdwT052QXAxeURB?oc=5",
-   "date": "2026-10-10T00:00:02.000Z",
-   "source": "지디넷코리아",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "AI가 경찰에 미제사건 가짜 제보까지…앤트로픽, 뒤늦게 확인",
-   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5xZE1pTklWZW9LSGdmUW5pR2gwODY3bzg0TmlDdlFoZXdzcDZzMV9UOXR0c1ZOVndxNUtFXzRISVZGUktIQ21NdFBMa3d3MGhlaGNoeDFfNk9tVUdWVTdrV9IBYEFVX3lxTE5xZE1pTklWZW9LSGdmUW5pR2gwODY3bzg0TmlDdlFoZXdzcDZzMV9UOXR0c1ZOVndxNUtFXzRISVZGUktIQ21NdFBMa3d3MGhlaGNoeDFfNk9tVUdWVTdrVw?oc=5",
-   "date": "2026-10-09T23:30:35.000Z",
-   "source": "연합뉴스",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "\"살인사건 알고 있다\"…앤트로픽 AI, 美 경찰에 허위 제보 - 머니투데이",
-   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5Uc1hTbXNqR29kZmNKY0dvaGtmWjJsRTYtRVV5bU9IMjhoc3ZwUDJWci1zT2tJYTlQUTNMZHVzbDNtT3ZNSGx0WXo5U243NER2cHVRTVp1eDk0Sk9RWUVFeUo4S1ViV2s10gFuQVVfeXFMT1dFMHJKU3V4WEY4Y0ZDWkZDRnhOS1U2UUpFNjNVNU1DMDYxMzZLT3AtdnlMdUlpQzUyNXdSY0RWMWNPZ1ZsYThSckE0RjU3RjJ1ajNkdXB6dWlrM0pvc3diN2o1ZjFiMGxQdjd1Mmc?oc=5",
-   "date": "2026-10-09T23:29:01.000Z",
-   "source": "머니투데이",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "AI 수요 오해 풀렸지만, S&P 신기록 다가섰지만, 또 떨어진 반도체 [김현석의 월스트리트나우]",
-   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9ndjlJZGFMeU4wSkRhUm02TWRDMHBHWk90Z0p3Wk5QbWhSTWdUS2hsdFlXaHoxdE1fZW5vb0pOTjRIbF9rVnF0RFdNWjE1UjZYTFlMUUxUUWpxQQ?oc=5",
-   "date": "2026-10-09T23:06:40.000Z",
-   "source": "한국경제",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "[人터뷰+] “보안용 AI가 해킹툴이 돼... 개인정보 수집 줄이고 분산화해야”",
-   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBXYTFSYWRCRVg3My1OZ1diMElmSDlmQ2tjX21TLWhkV2xPUEhMLTJkcFEzUDZuWHNsVV95Y1hQNXliTDJnMC1rSzJNZUdsbHhaS2fSAVNBVV95cUxPMlVwN3dDMVRYc2plYnNhTXFkU0taU3dKbGJfQktRcS1IX3o4YXBUZnhxS2VaTk9tb1R3a2lzblJMWEE1NUdRNE9qSmQ3bUhMLWNRVQ?oc=5",
-   "date": "2026-10-09T23:00:00.000Z",
-   "source": "서울경제",
-   "feed": "Google News",
-   "summary": ""
   },
   {
    "title": "The maker of non-text AI model Jev valued at $7.5B just weeks after launch",
@@ -100,26 +236,10 @@
    "titleKo": "Anthropic의 AI는 필라델피아 경찰에게 해결되지 않은 살인 사건에 대한 가짜 팁을 주었습니다."
   },
   {
-   "title": "[뉴욕증시] 이번에는 오픈AI 실적 낙관론…강세 마감",
-   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE12WklhZGF2Q3lFOUJWYVQ5c2kyUld0NzZyR3ptVmdWeGZqTjFyX1hHbW9RblZ0ZWRQNzdIa1A5OWxTS0NfeTVqaVU4cEhNd0NEWndBR0FLSEgybTNZR3A2ZEd4ZVYyTXJScEtNLTlLWWY?oc=5",
-   "date": "2026-10-09T21:03:05.000Z",
-   "source": "연합인포맥스",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "AI에게 법률 검토 시키고 다른 AI에 맞는지 확인한다",
-   "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9PRUIzRmNzUWVNNkxHRzBmOVR6SFJwd0E3T0xPOWNpNWpib0dSVmhFQTNMTUFxX1dQVEM4d2JsS2tyQnh3Smh1VzJ2YU1vRlFDM2RwQTVUMWNCaWI4Y0ctWXlNWG5UQUZtX1ZSTnpNTHBzZ9IBckFVX3lxTE9PRUIzRmNzUWVNNkxHRzBmOVR6SFJwd0E3T0xPOWNpNWpib0dSVmhFQTNMTUFxX1dQVEM4d2JsS2tyQnh3Smh1VzJ2YU1vRlFDM2RwQTVUMWNCaWI4Y0ctWXlNWG5UQUZtX1ZSTnpNTHBzZw?oc=5",
-   "date": "2026-10-09T20:00:00.000Z",
-   "source": "법률신문",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "오픈AI \"수학 난제 300여 개 해결\"...기대감 속 논란도",
-   "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5KYU1BWDNKdmQzSVdqZlI5eW5pVVE5LThkT1BfVlliSi1pc25Kc3l1VDB0clBpSzYwMUlpRGJiNFh5cGtaUmJXMkZ5YUp6MGhHY1NNMkszcGxfR25kNWc?oc=5",
-   "date": "2026-10-09T19:41:00.000Z",
-   "source": "YTN",
+   "title": "나이·학벌·경력 안 본다, 오직 AI 실력만 본다",
+   "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNd0p2a0VTbkZuUHBITmFnSnpneU5BLXFHU0ZtVjgyMnNySUtOX0Z4TEphb0lmMkVlQm1ERjJSdnhHVkJ5cnFwQVcza0NuVUdRWEw1OVBBUmN6R09hSllObTkya1BIN0lQZ3phaWVQSkQxN1pmVkd0OG15UlQ3bEFhZjdrcUNIU3lUN05wdG5vYw?oc=5",
+   "date": "2026-10-09T20:31:10.000Z",
+   "source": "조선일보",
    "feed": "Google News",
    "summary": ""
   },
@@ -196,14 +316,6 @@
    "titleKo": "소비자 AI 상태에 대한 a16z의 올리비아 무어"
   },
   {
-   "title": "\"오픈AI 매출 40% 부풀려져\"",
-   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPRVNoUm9ON2FyNkw0S19MclJScEROcFdjYk15aTVtQmxhZS0yQmFBamQ5b1NDbzQ2amluRTFZRTc2dS0wNExiT1BUcmtOaUhsN3JxRUU2b2V0M0xnWHl2cWI4dzVkcldhaTZ4a1RHeGpxODlHd04weW1sWVJTZzRvNmNJUQ?oc=5",
-   "date": "2026-10-09T15:34:00.000Z",
-   "source": "조선일보",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
    "title": "Trump’s attempt to rename AI is looking awfully artificial",
    "url": "https://www.theverge.com/policy/1008677/trump-super-intelligence-ai-rebranding",
    "date": "2026-10-09T14:25:43.000Z",
@@ -231,22 +343,6 @@
    "titleKo": "본능은 주변에서 가장 떠들썩한 AI 요원이었습니다. 뮤즈에서 살아남을 수 있을까요?"
   },
   {
-   "title": "“AI주식에 올인했는데...설마”…오픈AI, 매출 ‘27조원 착시’ 논란에 얼어붙은 AI 시장",
-   "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5nUklZYmQ0Y3c3c24wSTFSYTROMlRwbFd0QXE2V0VaeE1CdjZXZTFybHJ1V2Y3ek5kMkgtTTgxb1Z2M1o5VWxrOG5UMWRtb0pj?oc=5",
-   "date": "2026-10-09T12:56:21.000Z",
-   "source": "문화일보",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "[은행이 뚫린다] “해킹 툴 아닌 AI 도구”... ‘아르텍스’가 한글판으로 공개된 이유는?",
-   "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5xZGRrRGdtVnZKMXRFZ1VTUXE4S0hvR0ppd0VUejU4MWI1MlBYbTBPQTVqYklRcmxpTmNGaUtGanFTZlRtaDQ3Yy04Q19SNTk2WTE0eXlFbzJoSHRuSFV3bDBfeUJWQ0h5bmJ3?oc=5",
-   "date": "2026-10-09T10:06:00.000Z",
-   "source": "보안뉴스",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
    "title": "OpenAI doubles down on decision to fire three AI safety researchers",
    "url": "https://www.theverge.com/ai-artificial-intelligence/1008604/openai-defends-decision-fire-safety-researchers",
    "date": "2026-10-09T09:48:26.000Z",
@@ -265,10 +361,18 @@
    "titleKo": "우리는 '아니오' 라고 말하는 인공지능의 능력에 너무 많은 믿음을 두고 있습니다."
   },
   {
-   "title": "수학 난제 풀이 쏟아낸 AI... 필즈상 수상자 \"깊은 좌절\"",
-   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPRUZiLUZPZEF0TExlZTYwcFhQc1ozX19IdExXTGtodDlVNmw0d0VSZzgwTWVBSW9mRGxpNlh2WGpMRHhralMtV1lFdTV6OWJQZXdQRC0xWUZ3X21VU1F6YktHeE13M0dCU2xrNmNBajA2Q05kMXI1akoyTERxbUJQZi1oTQ?oc=5",
-   "date": "2026-10-09T05:43:45.000Z",
-   "source": "조선일보",
+   "title": "700억 달러 아니네?…오픈AI 매출 축소 전망에 ‘거품론’ 고개",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1fM1VSRG52bmJzZC02ZWdyYlRWR2FOU09Qa0tPanQtczhlNU1NZVBDUVV0dXN2V18ySEpfNy1Ja3ZTQ2dRY2VYYkNVdkZnUjh1Zkd6UGthSmFjMDlSX0sxUm5VVnRLSzkxRGRGd0dNVnRGbUxwT0HSAWZBVV95cUxPWjFvRk01YXZzNmxKS2FNMmMwSWN6dW5zSmZRcFpOaWNfaUtEODdMWlBBa0xWSUs4eFgycV9wQkd0eVZLdElxSkRncmNDa1NfWndjSl9mNTVlNFdILWZJN05NRmVfcUE?oc=5",
+   "date": "2026-10-09T06:56:00.000Z",
+   "source": "동아일보",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "[AI위클리] \"무엇도 신뢰하지 말라\"…AI 해킹이 남긴 교훈",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFB2bTJmMjlBbUZtUDh5dFFZRE04b0llTjk0S0MzYUZrU05WMHRQQmVWRjl1NDlWR0pMNGJidk5pczhBR2tucEpBUVo4cWphQ0dZTlhkY3JpV3M5QjA?oc=5",
+   "date": "2026-10-09T04:29:00.000Z",
+   "source": "연합뉴스",
    "feed": "Google News",
    "summary": ""
   },
@@ -282,19 +386,10 @@
    "titleKo": "라운드테이블: 인공지능이 설계한 바이러스 제작자와의 대화"
   },
   {
-   "title": "Anthropic launches free AI security scans for open-source projects",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1008521/anthropic-open-source-oss-scanner",
-   "date": "2026-10-08T21:53:51.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "Anthropic's offering to help open-source projects track down security vulnerabilities with a new service called OSS Scanner. It says open-source projects that opt-in will get \"thorough, periodic security scans by our str",
-   "titleKo": "Anthropic, 오픈 소스 프로젝트용 무료 AI 보안 검사 시작"
-  },
-  {
-   "title": "스위프트 보다 인기 많은 노래?…’AI 플레이’ 100억 원 챙긴 사기범",
-   "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9qUUo0ZGdZSVBZLTl3eFA2YWNnZXFxbHFUOTUyTU45Tk80cDU3QjduWmZRNXhUT01Xekd5dzczU0wzd0RyYW92NGd3NDZDY25Sc2NXNGwyWjRrNGdKX2Y0Mm5MYTdDd2M?oc=5",
-   "date": "2026-10-08T21:02:00.000Z",
-   "source": "연합뉴스TV",
+   "title": "AI낙관론에 '찬물'…예상보다 27조원 낮은 오픈AI 연매출에 충격",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFA4VE11MGZVNC02bzZGYXN4SXFhekFscEtrVkhCWElIYXRDTWFGN0l2dWYxbGNEYW5GaVI4SVZvNmFDUl93WVFZUHJuT2ZHUTJtV25mc0NBeVJ6dnPSAWBBVV95cUxNdngxci1WWVItOEZxd1Rzcmc2Q1Y3YjFPWXF1SzRuY2NfUEdJY0VKVmpFU1FFWmdHLVdLRDlLU2Z2dGRCbDFNQjJtQkFpNnc5YXpfU2VWVGtJRlYtWm15UGM?oc=5",
+   "date": "2026-10-08T22:44:49.000Z",
+   "source": "연합뉴스",
    "feed": "Google News",
    "summary": ""
   },
@@ -308,15 +403,6 @@
    "titleKo": "이상하게도 상세한 웹사이트의 엘리자베스 홈즈의 책상에 앉아있는 척하십시오."
   },
   {
-   "title": "California is trying to shut down robot vs. human cage matches",
-   "url": "https://www.theverge.com/tech/1008401/california-shut-down-rek-fighting-robot-company-human",
-   "date": "2026-10-08T20:06:56.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "The California State Athletic Commission sent a cease-and-desist letter to a startup that hosted a match between a human and a robot last month, as reported by The New York Times. The fight, which took place on September",
-   "titleKo": "캘리포니아는 로봇 대 인간 케이지 매치를 종료하려고 합니다"
-  },
-  {
    "title": "Fired OpenAI safety researchers dispute misconduct claims, warn of chilling effect",
    "url": "https://techcrunch.com/2026/10/08/fired-openai-safety-researchers-dispute-misconduct-claims-warn-of-chilling-effect/",
    "date": "2026-10-08T20:04:26.000Z",
@@ -324,68 +410,6 @@
    "feed": "TechCrunch",
    "summary": "Three fired OpenAI safety researchers dispute allegations of mishandling sensitive information, warning in an open letter that their dismissals are creating a chilling effect on the company’s AI safety culture.",
    "titleKo": "해고된 OpenAI 안전 연구원은 부정행위 주장에 이의를 제기하고, 냉기 효과에 대해 경고합니다."
-  },
-  {
-   "title": "Ben Affleck is an AI nerd, and the internet is impressed",
-   "url": "https://techcrunch.com/2026/10/08/ben-affleck-is-an-ai-nerd-and-the-internet-is-impressed/",
-   "date": "2026-10-08T18:20:32.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "Ben Affleck is going viral for his deep knowledge of AI, from neural networks and transformers to open weights. The actor, who sold his AI filmmaking startup to Netflix earlier this year, is proving he's more than just a",
-   "titleKo": "Ben Affleck은 인공 지능 괴짜이며 인터넷은 인상적입니다."
-  },
-  {
-   "title": "Popular AI leaderboard Arena nearly doubles valuation to $3.1B valuation in 10 months",
-   "url": "https://techcrunch.com/2026/10/08/popular-ai-leaderboard-arena-nearly-doubles-valuation-to-3-1b-valuation-in-10-months/",
-   "date": "2026-10-08T18:19:45.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "The company behind the popular LMArena leaderboard has raised $200 million led by Lightspeed and Khosla, and is now measuring AI models on alignment issues such as lying.",
-   "titleKo": "인기 AI 리더보드 아레나, 10개월 만에 밸류에이션이 $ 3.1B로 거의 두 배 증가"
-  },
-  {
-   "title": "OpenAI’s revenue is reportedly $20 billion less than previously projected",
-   "url": "https://techcrunch.com/2026/10/08/openais-revenue-is-reportedly-20-billion-less-than-previously-projected/",
-   "date": "2026-10-08T18:19:42.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "It had previously been reported that the AI lab's annualized revenue was some $70 billion, but a new report claims it's a whole lot less than that.",
-   "titleKo": "OpenAI의 매출은 이전에 예상했던 것보다 $ 200억 적다고 합니다."
-  },
-  {
-   "title": "Google brings agentic AI to Gemini, starting with businesses",
-   "url": "https://techcrunch.com/2026/10/08/google-brings-agentic-ai-to-gemini-starting-with-businesses/",
-   "date": "2026-10-08T18:18:00.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "Google is turning Gemini into an AI agent that can plan, execute tasks, and work across business apps and systems. The agent can delegate work to subagents, use multiple AI models, and even gets its own workplace identit",
-   "titleKo": "Google은 비즈니스를 시작으로 Agentic AI를 Gemini에 도입합니다."
-  },
-  {
-   "title": "USA Today becomes the latest publisher to sue OpenAI",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1008198/usa-today-openai-copyright-lawsuit",
-   "date": "2026-10-08T17:58:33.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "USA Today Co., along with the several local newspapers it owns, is suing OpenAI over claims that the company copied \"hundreds of thousands\" of articles to train its AI models, as reported earlier by Reuters. In a filing ",
-   "titleKo": "USA Today가 OpenAI를 고소하는 최신 퍼블리셔가 됨"
-  },
-  {
-   "title": "SpaceXAI backs Omarchy, the controversial Linux distro, with $1.5 million in compute",
-   "url": "https://www.theverge.com/tech/1008148/spacexai-omarchy-grok-david-heinemeier-hansson",
-   "date": "2026-10-08T17:57:01.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "If Elon Musk and SpaceXAI were going to back any Linux distro, it seems obvious they'd back Omarchy. Today it was announced that SpaceXAI would be joining the Omacom Foundation, which oversees Omarchy, as a Founding Corp",
-   "titleKo": "SpaceXAI는 논란의 여지가 있는 Linux 배포판인 Omarchy를 뒷받침하며 $ 150만 달러의 컴퓨팅을 제공합니다."
-  },
-  {
-   "title": "“느리고 비싼 맥북을 왜 사죠?”…MS·엔비디아 합작 AI노트북 성능이",
-   "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBuOWtWZS1ua3lKWGFadTNpcXh0NmtjcFNIa1p3UTJKVGZkMmZlNTBmbDNzb1R4djFwUXJaZkFCY2tpLXVPV2xwVHlMY0dhZw?oc=5",
-   "date": "2026-10-08T12:53:34.000Z",
-   "source": "매일경제",
-   "feed": "Google News",
-   "summary": ""
   },
   {
    "title": "AI breakthroughs in robotics won’t change your life any time soon",
@@ -404,30 +428,6 @@
    "feed": "MIT Technology Review",
    "summary": "Industrial AI is entering a new phase. After decades of predictive analytics and other specialized applications, advances in foundation models, physical AI, and agentic AI are making it possible to automate more complex ",
    "titleKo": "자율주행 산업용 AI로 가는 더 안전한 길 구축"
-  },
-  {
-   "title": "\"컴퓨터의 재발명\"…젠슨 황이 극찬한 350만원짜리 노트북 [김인엽의 AI프런티어]",
-   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9WdzBIekVHMUdaWUdfblZza1A1bjBveG5Ob2tGZXkzNlBNdGxTWl9GdXpxbnp2Z1dXT1BNZUhjYjk4YXdfQ1V1cHJMel9rRnBpd0RnUGN4SEVUZw?oc=5",
-   "date": "2026-10-08T07:00:00.000Z",
-   "source": "한국경제",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "“쿠팡이 쌀까, 무신사가 쌀까”…'AI 멀티 쇼핑' 뜬다",
-   "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5aZFl2SDBMWVp1YnJaTDR2WHFXOEhCU3ZwMktUWjEyb1h3Z1ZUem8zRV8tOGJqYmNwbkNFekktcC1JNU1jMWlicDZqUzRLdw?oc=5",
-   "date": "2026-10-08T06:45:00.000Z",
-   "source": "전자신문",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "AI가 이룬 수학 연구 성과를 공유합니다",
-   "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5IN3AxV1hNUXN2Xy1xZUFLVGN0VWdMMFdTcE11bGZoM0NuTlc0SmhLM3l2WWhTUGwtOE80Smc1Vzl3RXoyNFlGNjVpX2pHa2paNWFxenF3d0k1V0hJa242WEJUSldpNXQxT3ZjamVKUFdrdTVr?oc=5",
-   "date": "2026-10-06T07:00:00.000Z",
-   "source": "OpenAI",
-   "feed": "Google News",
-   "summary": ""
   },
   {
    "title": "Connecting AI agents to enterprise knowledge",
