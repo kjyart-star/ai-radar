@@ -1,6 +1,22 @@
 {
- "generated": "2026-10-11T02:07:58.577Z",
+ "generated": "2026-10-12T02:39:16.212Z",
  "news": [
+  {
+   "title": "Microsoft's MASSIVE AI Announcement Has Everyone Talking",
+   "url": "https://www.youtube.com/watch?v=ApsNLVLRvu0",
+   "videoId": "ApsNLVLRvu0",
+   "channel": "TheAIGRID",
+   "published": "2026-10-11T20:15:15.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/ApsNLVLRvu0/mqdefault.jpg"
+  },
+  {
+   "title": "Something BIG Is Happening Behind Closed Doors At OpenAI And Anthropic",
+   "url": "https://www.youtube.com/watch?v=smvEu2N0Pv8",
+   "videoId": "smvEu2N0Pv8",
+   "channel": "TheAIGRID",
+   "published": "2026-10-10T19:00:38.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/smvEu2N0Pv8/mqdefault.jpg"
+  },
   {
    "title": "Anthropic Has Officially Lost Its Mind...",
    "url": "https://www.youtube.com/watch?v=Z9fvMJ9NSSI",
@@ -304,25 +320,41 @@
    "channel": "AI Explained",
    "published": "2026-09-24T22:51:54.000Z",
    "thumbnail": "https://i.ytimg.com/vi/R9momwXV9w4/mqdefault.jpg"
-  },
-  {
-   "title": "8 Jev Use Cases That Feel Like Cheating",
-   "url": "https://www.youtube.com/watch?v=jGD_UR4wMJc",
-   "videoId": "jGD_UR4wMJc",
-   "channel": "Matthew Berman",
-   "published": "2026-09-24T18:37:13.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/jGD_UR4wMJc/mqdefault.jpg"
-  },
-  {
-   "title": "아이폰 18 Pro 압도적 성능에… 체감 속도 2배 온디바이스AI 성능은 더 놀랍네요 | 2나노 칩 A20, 충격적인 벤치마크 점수보다 AI 성능 설계 | 발열 관리",
-   "url": "https://www.youtube.com/watch?v=sHRtYwXtbio",
-   "videoId": "sHRtYwXtbio",
-   "channel": "안될공학",
-   "published": "2026-09-24T11:12:07.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/sHRtYwXtbio/mqdefault.jpg"
   }
  ],
  "vibe": [
+  {
+   "title": "IT뉴스 - 수학 끝났다, 챗GPT 대화형 UI, Claude Motion, Haiku 5.5, AI 인권 등장, Grok Bot 업데이트, 어도비 망했다 등",
+   "url": "https://www.youtube.com/watch?v=gcFqz2lgCvA",
+   "videoId": "gcFqz2lgCvA",
+   "channel": "조코딩 JoCoding",
+   "published": "2026-10-11T11:27:43.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/gcFqz2lgCvA/mqdefault.jpg"
+  },
+  {
+   "title": "Claude's New Updates Are Insane… But Grok Bot Is EVEN Bigger",
+   "url": "https://www.youtube.com/watch?v=UFa8pXW9A3k",
+   "videoId": "UFa8pXW9A3k",
+   "channel": "Riley Brown",
+   "published": "2026-10-10T20:03:25.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/UFa8pXW9A3k/mqdefault.jpg"
+  },
+  {
+   "title": "조코딩의 AI 리터러시 특강 1강 : 2026년, AI 지능은 어디까지 발전했나?",
+   "url": "https://www.youtube.com/watch?v=AHlWV-nI9yo",
+   "videoId": "AHlWV-nI9yo",
+   "channel": "조코딩 JoCoding",
+   "published": "2026-10-10T13:44:08.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/AHlWV-nI9yo/mqdefault.jpg"
+  },
+  {
+   "title": "ChatGPT Dots Is WAY More Powerful Than You Think",
+   "url": "https://www.youtube.com/watch?v=WXhOxfPECnM",
+   "videoId": "WXhOxfPECnM",
+   "channel": "Riley Brown",
+   "published": "2026-10-09T16:08:49.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/WXhOxfPECnM/mqdefault.jpg"
+  },
   {
    "title": "Agentic Apps: How Big Companies Are Actually Deploying AI Agents",
    "url": "https://www.youtube.com/watch?v=cWjS56edaUA",
@@ -610,38 +642,6 @@
    "channel": "조코딩 JoCoding",
    "published": "2026-09-20T11:34:34.000Z",
    "thumbnail": "https://i.ytimg.com/vi/hJj7Xrc5N6c/mqdefault.jpg"
-  },
-  {
-   "title": "Jev is HERE. How to use it",
-   "url": "https://www.youtube.com/watch?v=4mTLpuQpB80",
-   "videoId": "4mTLpuQpB80",
-   "channel": "Greg Isenberg",
-   "published": "2026-09-18T18:35:33.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/4mTLpuQpB80/mqdefault.jpg"
-  },
-  {
-   "title": "JEV: How It Works and What You Can Build",
-   "url": "https://www.youtube.com/watch?v=o1CogAtWdBk",
-   "videoId": "o1CogAtWdBk",
-   "channel": "Riley Brown",
-   "published": "2026-09-18T15:45:55.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/o1CogAtWdBk/mqdefault.jpg"
-  },
-  {
-   "title": "You Built Your AI Second Brain. Now What? (Here's How to Evolve It)",
-   "url": "https://www.youtube.com/watch?v=mjQlZrteMIY",
-   "videoId": "mjQlZrteMIY",
-   "channel": "Cole Medin",
-   "published": "2026-09-17T00:00:25.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/mjQlZrteMIY/mqdefault.jpg"
-  },
-  {
-   "title": "Astra Built Me an Entire Product Launch (UGC, Ads, and Website)",
-   "url": "https://www.youtube.com/watch?v=O8pzzIP1RyM",
-   "videoId": "O8pzzIP1RyM",
-   "channel": "Riley Brown",
-   "published": "2026-09-16T20:37:56.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/O8pzzIP1RyM/mqdefault.jpg"
   }
  ]
 }
