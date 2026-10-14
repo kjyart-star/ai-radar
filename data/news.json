@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-13T03:44:03.753Z",
+ "generated": "2026-10-14T02:03:44.053Z",
  "source": "Google News · TechCrunch · MIT Technology Review · The Verge",
  "sources": [
   "Google News",
@@ -9,114 +9,381 @@
  ],
  "items": [
   {
-   "title": "매출 300조 시대 연 정의선… 피지컬 AI로 확장",
-   "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1fQk43dHFkZTBSZ1R1eU5pdUtmUEEwRGZiNDFUMXY0NVphRkZpelp3R2NZYkY5QzNqZ1lJeUZ3S1ptR3A3X000ck83cDF5QkJr?oc=5",
-   "date": "2026-10-13T03:16:07.000Z",
-   "source": "문화일보",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "'약대 내 유사학과 또 늘어난다'…AI 신약개발까지 교육 영역 확대",
-   "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9EOExnX2pfUjMtWEp4MW1FMDdsOWJZVTlTaDhiS01FX2N2UkJnaVpTYV9fZ2JJUFg5WlRUVFZuZC1JQ2JJVG5pc0hfTXlYUmJSdjNfbUZMQmVSckFwQVc0VWx3MVRaTTN0SHNITg?oc=5",
-   "date": "2026-10-13T03:02:00.000Z",
-   "source": "약사공론",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "메타, 차세대 AI '뮤즈 원더' 공개...업무 기억하고 장애물 우회",
-   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1vb05HdmtZdGRLcG5nQk80a2N4dmVHWXJodk9sYmY2UWRTdE1OUGVPZEFxb2RMMkJXZEEwYk1Ud1o2RklkQ1BTSjI1NU1lZy16MUh3UUl5VDFyS0ZmdW5ZTXc4UGJ3QQ?oc=5",
-   "date": "2026-10-13T02:50:45.000Z",
-   "source": "디일렉",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "인텔 부사장 \"한국, 피지컬 AI 협력 생태계의 좋은 사례\" - 머니투데이",
-   "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5hX0UybmhNaWp4VkdsRl9xMjc3a1UwaEYzY1dvSjhScUJ4d2Fia0Y0NmhPNVVlMnpseE5Zcjd5Vy1weDAxZE9nb1hxbG5ieUh4V3dyMTMxSXdJZ0lDZWxqSkd6OXhhdHPSAWxBVV95cUxQUW1EbkVkaUNyaUw2eGVuelhybVhHWGpSX2s0ODVZc3BqbU9abFVTS1NvbzhlX2pnYXRVbTVxUXJRMG5YeDJGWlVoeHZFdTkxaXJZSXFNTlZvRzB1X0piZ2ZCMGp1QnBxRUpjYzM?oc=5",
-   "date": "2026-10-13T02:42:50.000Z",
+   "title": "KT, AI 전용회선 출시…데이터 전송 대역폭 최대 8배 확대 - 머니투데이",
+   "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1BTV9hTl84V3BPem5qMUJlR3oxREdOb2poY3ZMSXN4Nk9NV0NSazJTTWNYT2U5dVZFbnc0dEluVmJwdE1yQnNyMU1sOURuX2x1NEs4V3U3X2lNWWdYNnNCdEFWMHdkWVXSAWxBVV95cUxPdXh0R2RjaTRLQXZMWGU1ZGdJRkRUc2tLVTRQU2d0YUpocTBld0lKNnM0cEpZN3lmVXBZbDdaUnVMM3Q1bmdHcml1MFZDa05KZl9uWG8wVjVtOHVweXdlUml5VTBPNzEtUU1kRGg?oc=5",
+   "date": "2026-10-14T01:52:39.000Z",
    "source": "머니투데이",
    "feed": "Google News",
    "summary": ""
   },
   {
-   "title": "엔비디아 \"韓, 피지컬 AI 공급망 핵심 역할 가능…LG와 협력 성과 기대\" - 머니투데이",
-   "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBPUnNSSzRaUDhLMTNQSFM5ZGl0MFd4UDJnS2NXRWlTb2stZkZyMDV4TUxyaDNVQ29PTkVBV0F2Zm9vQnc5dUZ3elVGaUxRWWlYS1l0NlNRMjhCTHhTMGtDd0hnVHB6TjDSAWxBVV95cUxQSXZra252d2FMQnNZRERJSEJsVUI1aE5JRG9xYnZfZGRWTDZjdXZVRWpwenJwampFRDhGOE52NE5TQXZUc1ZsTjhfZUJpV2dMTjJ1MEJVZ1JvUzdxRjBDR2VwUXRsOUtCX0wwRXU?oc=5",
-   "date": "2026-10-13T02:40:03.000Z",
+   "title": "AI가 반도체 설계·제조 어떻게 바꿀까…삼성전자가 답한다 - 머니투데이",
+   "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBiUlBLMDlHbHk3RnFzcVRhdy05bzlmVm9CVXlYLWMwcmN3ZXdjYjJXaU0zdGM0M2RBOWRkRFFYem9SS1hWbXpuQV95Z1pfVDR4SnBYT1lfQkJaMVd4OXhGZDUxWUNneFJRY1NOSNIBckFVX3lxTE10MHNJc2hnc1g1bGQ2c1EwU0UyMzQ0Z0JQdU1HalM4QmZ5Q0dIQXNBQWs2MkltMm9PTTVLdm9RSGhXOG9VVTZjc3Nta0owSjlNbGVQQ3pnSEI1aHoxaWI2cmJ5b0FTNmJYaENoQ3NiYk9tUQ?oc=5",
+   "date": "2026-10-14T01:30:00.000Z",
    "source": "머니투데이",
    "feed": "Google News",
    "summary": ""
   },
   {
-   "title": "우리집 TV·냉장고·로봇청소기가 혹시?…\"AI 해킹 거점 될 수도\"",
-   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE85anoyOFV3eTRabUppa1JKLWpZRXg0MWc1cmxVY0x6NnBERTN2NE5MNlI3VllqeXM2RHlUOWRMdUdrUEg1U1c4RGoySzJERnNvMnlxUWZ2SDVSYmNmR0xMMk5yTjYwZFNOYzdLTFhBemhpMlU?oc=5",
-   "date": "2026-10-13T02:21:04.000Z",
-   "source": "마켓인",
+   "title": "한국공학대, 제1회 총장배 ‘온디바이스 AI Tech 챌린지’ 개최",
+   "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9FRVktY1pYM2lnOU0zcWEyR2RaOW5lOThKa1pZLU54aEh1OG1pR3NnNm5oNkVsRTJTYnIxaFZhdHk1RmhETUZnaVljWXlZREF3UWhSazR1SklFSUJfZkVMb0QwbDVCenY2blBkOdIBcEFVX3lxTE9WOTRiVDlUMF9OUzVidTAxZzhYS01VZnJ2eWpJRFU0THhLY3RwX1pSYnJPWEZyX1BPekFWc3pKMGlFN2lmWDBXRjNCM3lSYTZGZ3hYeFFjSjRyeHl2Z2ZNZ0xMWHZDZ25VOE1oVEl6YXg?oc=5",
+   "date": "2026-10-14T01:20:02.000Z",
+   "source": "전기신문",
    "feed": "Google News",
    "summary": ""
   },
   {
-   "title": "\"상상이 현실로…모두를 위한 AI\" 코엑스에서 만난 'AI FESTA 26'",
-   "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9oQ2tzaXVhT0lHa1lxTFpDNklWYm12MmlsVW5rWjdrUlNsVHVoeF9yS2NqRVpfODFPZUhFMGF4a3dKTDFjbzlFamhiZ3lTa2gtQk1YTkE5dEV1MFdQSFAzV0pwdVZKV0xSWHc?oc=5",
-   "date": "2026-10-13T01:25:32.000Z",
-   "source": "정책브리핑",
+   "title": "KT, 데이터센터 연결 속도 최대 8배 높인다…초고속 ‘AI 전용회선’ 출시",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBCaHhLdnFoXzZ3Znl5OFdrMlFkVGo0NW4tcUZQTWpQdmxRa00xc2w0M3VZZ3Fad0RCRHNaRnRQbVdtX29lcGc4Y1VXZkFLR3c1dmtIOUdIUlA1d9IBX0FVX3lxTE0xZU1fVTBxd0dUcFdSU3oyanM2dlcwQkxXdFRzcGIyZVJjcmNDazVCZzRyNmZzcTV1SC12OVg5UzBhdlFGZDJYa09STkxsb0puRnZwRmx2eWhsV241dVU4?oc=5",
+   "date": "2026-10-14T01:20:00.000Z",
+   "source": "경향신문",
    "feed": "Google News",
    "summary": ""
   },
   {
-   "title": "HBM 다음은?...삼성전자, 차세대 AI 메모리 제품군 확장",
-   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE12b2FRWHAwLVAyV2RiNnV6d2ZpeDVkQ1h4Z0x0Q01DRnNsYWRheVBwUE5xcnhvOXJnRzl2SEZYNjR1ODhWNTJSNzBUaW5tRExNOGZ6NkRB?oc=5",
-   "date": "2026-10-13T01:12:57.000Z",
-   "source": "지디넷코리아",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "코어라인소프트, 日 최대 원격판독망에 심혈관 AI 공급…1500개 병원 접점 확보",
-   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBPT1Nia1Z6dUFKN1o5OWNKcUwyb203MGM0OFJUcEhLaldWalI1QjZKMkNCT2dUdWpfVFV5RnZLM2pmVWlWend3dUhJSnE4N1FuTGFLaWVKUDFmMmtNdTFkeVlDTDZtMHU2bE1SQkl3?oc=5",
-   "date": "2026-10-13T01:05:53.000Z",
-   "source": "팜이데일리",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "삼성전자·LG전자, 코엑스 한국전자전서 AI 기술 총망라",
-   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE4weElvQlhTZmk5RllmNTdrdnB3Ukw5dWx2azZ2NUhyUWdQZFZ2X2hWOWc3UDNwOTdvM1NXMEFqRWp6LWxUbnR4X1RXaFZValluZmFSV3BRbXQ2TlRERnQwb0k1TXczQUJIZUdwMHpDek8?oc=5",
-   "date": "2026-10-13T01:01:27.000Z",
-   "source": "연합인포맥스",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "금융권 AI 공격 어떻게 대응할까…내달 12일 FISCON 개최 - 머니투데이",
-   "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5kX3dTXzN3UThEQWVzSllSNFNyR1pDZU9KSFRwd0tvSUM1LWIzVnQtR1BRMktXdXJ6RkZROU1pazlHNEx4bDBhQ0VpdXoybFFwbG5tT2VxVTRrT2NUdUVqNlFXdmVEel9NXy1z0gFwQVVfeXFMTUlUYmtaN2l2c0FqNlUxWG5ZMDVLUWFydlNLeHE4d3ZIelE4MmE3dVRPREo5cDhXVkEzT2c3MUxhUzJWQ1IxWV8xNW9ucERnczFld0tmX2dQd0ZCaUlMVnkzc3BENTk3M0dncjZhTHdTaA?oc=5",
-   "date": "2026-10-13T00:57:25.000Z",
-   "source": "머니투데이",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "삼성전자, 글로벌 미식 행사서 AI 주방가전 소개",
-   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBscUJnMkJVU3RGOXNhWG1OOGt1ekI5blNEWGZLUzRvUXk0UVlqZk9GaE91V3RXY29WMDhITDZyZzhNeGtBNTJJNWh6djNQdDlwWFZXbXZGUXJUenFUM2NYLdIBYEFVX3lxTFBscUJnMkJVU3RGOXNhWG1OOGt1ekI5blNEWGZLUzRvUXk0UVlqZk9GaE91V3RXY29WMDhITDZyZzhNeGtBNTJJNWh6djNQdDlwWFZXbXZGUXJUenFUM2NYLQ?oc=5",
-   "date": "2026-10-12T23:21:21.000Z",
+   "title": "KT, AI 데이터센터 인프라 혁신…초고속·초저지연 'AI 전용회선' 선보인다",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5aUHZOMzE1NXBvMk5pS0ZpcExNaXllYWFoUzVDdG9lOExFMnFKbm1wa0pfY1BCVC1rLTV5aEt3d0FmOXhWNnZnb2QzN0d2a3FqdXJ2bWhmY1FaZ2s?oc=5",
+   "date": "2026-10-14T01:08:56.000Z",
    "source": "연합뉴스",
    "feed": "Google News",
    "summary": ""
   },
   {
-   "title": "물 들어올 때 노 젓는 메타... ‘뮤즈 탑재’ 새 고성능 AI 모델 발표",
-   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQZUd2Z1VpMXZrenZoSVNhY04tbnBsWUpNc0dNZnZhZ0taX0xrWmJkSUVqU1ItWDBYb25wXzJJQ0w5OXliRnN5LWp6cHl6Q3l5Uk56SE0xZGdFaUlLdnlQYXhPZXRUaUZ0UXFjUmVhX1M2RUstWnRQRUh0eXZMSDBDaWp1bw?oc=5",
-   "date": "2026-10-12T22:17:00.000Z",
+   "title": "피지컬 AI 시대 '국방혁신'…신뢰할 수 있는 방패 조건 - 오피니언 | 뉴스",
+   "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFAyMDJ1ZVl6NjhFUHBiaUd2akNiYnNnNjRIcmdfMXpndWdaMUlaaVIyb2RpVFpVT0kyNjc1NTJSR1BEOTlMcXNrWkZ2WXJac19FVWVCTnp5ZnN0VDBTOVFTVHJIa1QyTm1YelEzQ0NfVnZkb3NQ?oc=5",
+   "date": "2026-10-14T01:03:31.000Z",
+   "source": "정책브리핑",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "류제명 제2차관, 「피지컬 AI Tech Day」 참석",
+   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPX3ViMkU5V19rbUdXY1VLMTIwVm9MX0h1VE1Cd19rY2JJb0k2U1dZZzFSaFViSUF0aG00VlNRbDROd1FkWS1Da3JkcFJFNFR5Mkg2VkFzNVRqVldYMjdBUWlMT2RPWU9mOHVseXBzUEtSajRFaElsUUFLeXNkSXEtSFc5UUZkSGpZZi1aUE1aTE1qdw?oc=5",
+   "date": "2026-10-14T01:00:00.000Z",
+   "source": "정책브리핑",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "앤트로픽 ‘자가복제 AI, 강제종료 저항하고 웹 마비’ 경고",
+   "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOUnZqZ0hfaE1OMHFtSW5OREE3T2l2VVlMVk91a1JzS0FnQ01OZ0tpd1RPVDh0dlVCbUV6cHVfTnJpdGxIelBKbjY1endSNWxRemNLLXJsVmMxQ0hLZDVzbXBkNHY0N0ZxdllFdWhJMXg4M3g5Q194TWVOaXZQbzVyV2NB?oc=5",
+   "date": "2026-10-14T00:24:00.000Z",
+   "source": "한겨레",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "앤트로픽, 오늘 투자자 설명회…매출 공개에 AI주 영향 관심 - 머니투데이",
+   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBtZ0dBcVpxRkZkUk1CQi1IcnBTYlIxb1BfTUZwYjFCWTlGTzhaLUZmRkY3SXlwNTN6RzhEMWUyb2tTT2duQVkxa09kQk05TmdIUmF5YWFyaE1qb1FwZkVIeFdWRXpiTUxC0gFuQVVfeXFMT1A0Ymc0TmN2bVpCZEpOQktnYzVCTjhtV3kycEwtRzBUUUdLMzNEWXBfR0FfdlRETG1IRlR5LUtiRFpxUTUzT05TZ2RPSmNrZUh1VWhaU0tJTUpaMzRxRXBvYTd2REVOX0ZNbXRoT2c?oc=5",
+   "date": "2026-10-13T23:58:08.000Z",
+   "source": "머니투데이",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "판단은 결국 인간…신간 'AI와 국제 행사 글로벌 커뮤니케이션'",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1leHplVVhubGMwMC03c3FYRTIyNnVJcjBBWE5ERTR6SUdpWEVNT3RucWdxQXZLX1RQNW1PWUJVTk5tS0lFd3JscC1BOHA2dWlSS0UxRExqenNVbnfSAWBBVV95cUxNcmtZMS1KbE5zbDg4dUtGRnFiS1RKWEFTYlZkRkRSQ193RTNlYXhxUWZGOGd2NC13SE1WSHVQQy1jc0FwcTk3c2xmYlU4Y2FFQmhjWWVPZGlTVWNyQUdWWXM?oc=5",
+   "date": "2026-10-13T23:47:03.000Z",
+   "source": "연합뉴스",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "Science Corporation implants its vision-restoring chip in its first Stargardt disease patient",
+   "url": "https://techcrunch.com/2026/10/13/science-corporation-implants-its-vision-restoring-chip-in-its-first-stargardt-disease-patient/",
+   "date": "2026-10-13T23:13:31.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "Max Hodak, the former president and co-founder of Neuralink, detailed on stage at TechCrunch Disrupt how his company's work with PRIMA is part of its path toward a novel brain-computer interface (BCI).",
+   "titleKo": "Science Corporation은 첫 번째 Stargardt 질환 환자에게 시력 회복 칩을 이식합니다."
+  },
+  {
+   "title": "Cerebras CEO says we’re nearing a future where everyone has a personal AI assistant at home",
+   "url": "https://techcrunch.com/2026/10/13/cerebras-ceo-says-were-nearing-a-future-where-everyone-has-a-personal-ai-assistant-at-home/",
+   "date": "2026-10-13T23:05:34.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "Cerebras CEO Andrew Feldman predicts a future where personal AI assistants become as commonplace as household appliances, running partly on local devices and partly in the cloud.",
+   "titleKo": "Cerebras CEO는 모든 사람이 개인 AI 비서를 집에 두는 미래가 가까워지고 있다고 말합니다."
+  },
+  {
+   "title": "Industrial Next wants factory robots to switch tasks in minutes, not weeks",
+   "url": "https://techcrunch.com/2026/10/13/industrial-next-wants-factory-robots-to-switch-tasks-in-minutes-not-weeks/",
+   "date": "2026-10-13T23:00:00.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "Industrial Next helps manufacturers automate complex, delicate tasks that have traditionally required human labor.",
+   "titleKo": "Industrial Next는 공장 로봇이 몇 주가 아니라 몇 분 안에 작업을 전환하기를 원합니다"
+  },
+  {
+   "title": "Cerebras CEO pushes back on AI doomsday warnings",
+   "url": "https://techcrunch.com/2026/10/13/cerebras-ceo-pushes-back-on-ai-doomsday-warnings/",
+   "date": "2026-10-13T22:36:59.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "Cerebras CEO Andrew Feldman has a message for AI leaders spreading doomsday warnings: Maybe stop talking? At TechCrunch Disrupt, he argued that the industry's focus on AI's risks is drowning out its potential benefits.",
+   "titleKo": "Cerebras CEO, AI 종말 경고에 반발"
+  },
+  {
+   "title": "[단독] 서울대 교수도 극찬한 9.5점 감상문…알고 보니 AI가 썼다",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBwNmdCb2ZsWlgxaEZmRHdMaEtLcnF5TU5OY3VjdHBRYW92ZnRBRTh4M05hc3lGVFEwUDBLb2VLR2o3VkRjOThUUFBKSTBoQVRra1M2WlowT0pEZw?oc=5",
+   "date": "2026-10-13T22:00:14.000Z",
+   "source": "한국경제",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "오픈AI·앤스로픽, “6~12개월 내 AI 대재앙”... ‘최악의 날’ 대비",
+   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNVHBVYVVVWkNmWURZUEVuazBLLWR1TkxrX2ZON2k5c1dScUdRS2oyT2JlcVNaQVhyc1hMcFBtaHFjYUE5SEVZN1lWLWUtdVpVZXVVMWpTOWVVd0hwcElBcmM0OEgtR2U1UUU4VG85LVhnMkFVMUVldk1ZUVZvSFpZeERHTQ?oc=5",
+   "date": "2026-10-13T21:03:56.000Z",
    "source": "조선일보",
    "feed": "Google News",
    "summary": ""
   },
   {
-   "title": "밝히면 0원, 숨긴 4명엔 163억 ‘이상한 저작권료’…‘AI 음악’ 걸러낼 기준이 없다",
-   "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE80enFHUW4tZFc4NFg1encyeFVpMjJlVU9CZll5MmVfWTVyZ2hOY25rWUNBRzFrcUVMYVp4dGZMYVlPb2twTEl1Vzlia01ZdG43cEZWNVlmVnlzYXhRd3c?oc=5",
-   "date": "2026-10-12T21:00:00.000Z",
-   "source": "주간경향",
+   "title": "OpenAI employee arrested for allegedly planting a bug in a conference room",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1010642/openai-employee-arrested-recording-device",
+   "date": "2026-10-13T20:45:25.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "An OpenAI engineer was arrested after the company said it discovered a \"sophisticated recording device\" hidden in one of its offices. The employee was identified as Abdulrahman Alfozan, a 35-year-old Saudi national. Alfo",
+   "titleKo": "OpenAI 직원이 회의실에 버그를 심었다는 혐의로 체포됨"
+  },
+  {
+   "title": "Judge orders OpenAI to turn over hiring records in Apple trade secrets case",
+   "url": "https://techcrunch.com/2026/10/13/judge-orders-openai-to-turn-over-hiring-records-in-apple-trade-secrets-case/",
+   "date": "2026-10-13T20:36:44.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "A federal judge ruled that Apple can access OpenAI's interview materials involving former Apple employees, as well as private messages and testimony from key figures in the case.",
+   "titleKo": "심사위원이 OpenAI에 Apple 영업 비밀 케이스의 채용 기록을 넘겨달라고 명령함"
+  },
+  {
+   "title": "AI 시범 재판의 확장 가능성",
+   "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1Jakp1MFQ2bjBlbmlnR3MzTXBqdTJZRTZkOEF0aExETV9WUVNwajl2LW5HVlNpTUlWdDRMb1A3eVFmWUl4WGY0VWJnWFV3YlpPVTNKQjd2dmtHaFNmTFktVzhfVlVHRzN2YmQzZGlOWHRMQdIBckFVX3lxTE1Jakp1MFQ2bjBlbmlnR3MzTXBqdTJZRTZkOEF0aExETV9WUVNwajl2LW5HVlNpTUlWdDRMb1A3eVFmWUl4WGY0VWJnWFV3YlpPVTNKQjd2dmtHaFNmTFktVzhfVlVHRzN2YmQzZGlOWHRMQQ?oc=5",
+   "date": "2026-10-13T20:05:00.000Z",
+   "source": "법률신문",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "Shopify opens its catalog up to more AI agents",
+   "url": "https://www.theverge.com/news/1010365/shopify-opens-its-catalog-up-to-more-ai-agents",
+   "date": "2026-10-13T19:42:42.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "More AI agents will soon be able to browse and purchase from Shopify listings, marking an expansion of the company's agentic commerce ambitions. Shopify announced Tuesday it will let shoppers configure their AI agents to",
+   "titleKo": "Shopify, 더 많은 AI 상담원에게 카탈로그 공개"
+  },
+  {
+   "title": "Xbox is officially embracing the chaos of AI-powered game ports",
+   "url": "https://www.theverge.com/news/1010406/xbox-labs-game-decompiling-emulation-exploration",
+   "date": "2026-10-13T19:00:48.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "Retro gaming is going through a wild time at the moment, thanks to decompilations and recompilations that are letting gamers port classic titles to new devices, or merge code from two different games into a single new ex",
+   "titleKo": "Xbox는 공식적으로 AI 기반 게임 포트의 혼란을 수용하고 있습니다"
+  },
+  {
+   "title": "Flox Intelligence is building AI to keep wildlife away from trains, airports, and roads",
+   "url": "https://techcrunch.com/2026/10/13/flox-intelligence-is-building-ai-to-keep-wildlife-away-from-trains-airports-and-roads/",
+   "date": "2026-10-13T18:30:00.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "Flox's edge devices can identify animals and use species-specific sounds to drive them away from critical infrastructure.",
+   "titleKo": "Flox Intelligence는 기차, 공항 및 도로에서 야생 동물을 멀리하기 위해 AI를 구축하고 있습니다."
+  },
+  {
+   "title": "Facebook is giving users more control over their algorithm",
+   "url": "https://techcrunch.com/2026/10/13/facebook-is-giving-users-more-control-over-their-algorithm/",
+   "date": "2026-10-13T18:05:24.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "Meta announced the launch of its new AI-powered feature, “Your Algorithm,” a feature it first launched on Instagram.",
+   "titleKo": "페이스북은 사용자에게 알고리즘에 대한 더 많은 제어 권한을 부여하고 있습니다."
+  },
+  {
+   "title": "I don’t miss the camera on the Ray-Ban Meta Audio glasses",
+   "url": "https://www.theverge.com/tech/1009128/ray-ban-meta-audio-glasses-review-smart-glasses-headphones-wearables",
+   "date": "2026-10-13T18:00:00.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "The other day I whizzed past several people while running in the park, my playlist blasting at full volume. The next morning, I smiled at a barista while ordering a caramel apple-flavored matcha latte. Afterward, I sat o",
+   "titleKo": "Ray-Ban Meta Audio 안경의 카메라를 놓치지 않습니다."
+  },
+  {
+   "title": "Laplace Intelligence red-teams robots and self-driving cars before they hit the real world",
+   "url": "https://techcrunch.com/2026/10/13/laplace-intelligence-red-teams-robots-and-self-driving-cars-before-they-hit-the-real-world/",
+   "date": "2026-10-13T17:30:00.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "University of Michigan spinout Laplace Intelligence uses AI agents and interactive simulation to stress-test robots and self-driving vehicles before deployment. The profitable startup is competing in Startup Battlefield ",
+   "titleKo": "라플라스 인텔리전스 (Laplace Intelligence) 는 로봇과 자율 주행 자동차가 실제 세계에 도달하기 전에 빨간색 팀을 구성합니다."
+  },
+  {
+   "title": "Pluto Security raises $42M as AI gives enterprise security teams a new headache",
+   "url": "https://techcrunch.com/2026/10/13/pluto-security-raises-42m-as-ai-gives-enterprise-security-teams-a-new-headache/",
+   "date": "2026-10-13T17:18:25.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "The problem with giving everyone in a company access to AI tools is that people will use them in unexpected ways. And that fact is steadily seeding fears that companies now have new, gaping security holes in their system",
+   "titleKo": "인공지능 (AI) 이 기업 보안팀에 새로운 골칫거리를 제공함에 따라 명왕성 보안 (Pluto Security) 이 $ 42M를 올립니다."
+  },
+  {
+   "title": "Facebook will let you customize your feed algorithm using AI",
+   "url": "https://www.theverge.com/tech/1010344/meta-facebook-your-algorithm-ai",
+   "date": "2026-10-13T17:01:31.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "Facebook's new \"Your Algorithm\" feature will let you directly add and manage topics you want to see in your feed and Facebook Reels. Meta says your recommendations \"respond right away\" after you make updates using the ne",
+   "titleKo": "Facebook을 사용하면 AI를 사용하여 피드 알고리즘을 사용자 정의할 수 있습니다."
+  },
+  {
+   "title": "Google Play now lets anyone build private, vibe-coded apps that run on Android",
+   "url": "https://techcrunch.com/2026/10/13/google-play-now-supports-private-vibe-coded-apps-built-just-for-you/",
+   "date": "2026-10-13T17:00:00.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "Google is making it easier to build and use personal Android apps created with AI, without having to make them available to everyone on the Play Store.",
+   "titleKo": "이제 Google Play를 통해 누구나 Android에서 실행되는 비공개 진동 코딩 앱을 빌드할 수 있습니다."
+  },
+  {
+   "title": "Google makes it easier to launch your vibe-coded apps",
+   "url": "https://www.theverge.com/tech/1009066/google-play-vibe-coded-android-apps-launch",
+   "date": "2026-10-13T17:00:00.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "The next time you vibe-code a custom app with Google's AI Studio, you won't have to connect your phone to a computer to install it. On Tuesday, Google announced a new feature in the US that will allow you to launch perso",
+   "titleKo": "Google을 사용하면 진동으로 코딩된 앱을 더 쉽게 실행할 수 있습니다."
+  },
+  {
+   "title": "It’s ‘incomprehensible’ that Instagram allowed an AI image of Mia Goth to spread, say her reps",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1010277/mia-goth-instagram-ai-shirt-deepfake-divorce",
+   "date": "2026-10-13T16:42:51.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "Earlier this month, news broke that actress Mia Goth had filed for divorce from actor and filmmaker Shia LaBeouf. An Instagram post from the account miagoth_ - marked with a blue verified checkmark - quickly spread. The ",
+   "titleKo": "Instagram이 Mia Goth의 AI 이미지가 확산되도록 허용한 것은 ‘이해할 수 없다' 고 말합니다."
+  },
+  {
+   "title": "SpaceX and Google both said no. Now his software is riding a SpaceX rocket next to Google’s",
+   "url": "https://techcrunch.com/2026/10/13/satlyt-founded-by-a-former-google-and-spacex-product-manager-raises-8m-to-run-ai-on-satellites/",
+   "date": "2026-10-13T16:30:00.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "Satlyt wants to be the Android of orbital computing, offering open software that works on many companies' satellites, versus SpaceX's closed, all-in-one iPhone-style approach.",
+   "titleKo": "SpaceX와 Google은 모두 거절했습니다. 이제 그의 소프트웨어는 Google 옆에 있는 SpaceX 로켓을 타고 있습니다."
+  },
+  {
+   "title": "Google finally releases Gemini 4 Argon",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1009862/google-releases-gemini-4-argon",
+   "date": "2026-10-13T16:00:00.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "After months sitting on the sidelines of the frontier AI race, Google has finally launched its long-awaited Gemini 4 Argon model, claiming it can compete with the best the industry has to offer. Google says Argon deliver",
+   "titleKo": "Google, 마침내 Gemini 4 Argon 출시"
+  },
+  {
+   "title": "Epic shifts to ‘AI-accelerated development’ for upcoming Disney game",
+   "url": "https://www.theverge.com/games/1010097/epic-games-disney-project-ai-coding-art",
+   "date": "2026-10-13T15:12:59.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "Epic Games plans to use AI to generate code and art for an unannounced Disney game, which is now delayed from its original March release window, according to a report from Bloomberg. The project's developers have been gi",
+   "titleKo": "곧 출시될 디즈니 게임을 위한 ‘AI 가속 개발’ 로의 에픽 전환"
+  },
+  {
+   "title": "TechCrunch Disrupt 2026: Day 1",
+   "url": "https://techcrunch.com/2026/10/13/techcrunch-disrupt-2026-day-1/",
+   "date": "2026-10-13T14:00:00.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "TechCrunch Disrupt 2026 officially kicks off today. See what's in store for Day 1 (Oct. 13) at San Francisco's Moscone West. Don't miss it. Register for your pass now and meet 10,000+ tech leaders at the startup epicente",
+   "titleKo": "테크크런치 디스럽트 2026: 1일 차"
+  },
+  {
+   "title": "DLSS 5 gets toned down for its Hogwarts Legacy debut next month",
+   "url": "https://www.theverge.com/news/1009904/dlss-5-hogwarts-legacy-changes-improvements",
+   "date": "2026-10-13T13:55:45.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "When Nvidia originally showed off DLSS 5 earlier this year, the technology immediately got branded as gen AI for video games. To gamers, Nvidia had lost the plot. I personally couldn't get over how faces were transformed",
+   "titleKo": "DLSS 5는 다음 달 호그와트 레거시 데뷔를 위해 톤다운됩니다"
+  },
+  {
+   "title": "SpaceXSI bundles X Premium, Grok, and Cursor into one subscription",
+   "url": "https://techcrunch.com/2026/10/13/spacexsi-bundles-x-premium-grok-and-cursor-into-one-subscription/",
+   "date": "2026-10-13T13:50:19.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "The new X Subscription combines X's paid features with AI tools like Grok and Cursor, offering plans ranging from $8 to $200 per month.",
+   "titleKo": "SpaceXSI는 X Premium, Grok 및 Cursor를 하나의 구독으로 묶습니다"
+  },
+  {
+   "title": "The final Disrupt Stage lineup: Three days of conversations you won’t hear anywhere outside of TechCrunch Disrupt 2026",
+   "url": "https://techcrunch.com/2026/10/13/the-final-disrupt-stage-lineup-three-days-of-conversations-you-wont-hear-anywhere-outside-of-techcrunch-disrupt-2026/",
+   "date": "2026-10-13T13:28:06.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "The full TechCrunch Disrupt Stage lineup revealed, featuring Max Hodak, Mark Wahlberg, Benchmark partners, and more. Register now to save up to $100 on your pass and get a second at 50% off.",
+   "titleKo": "최종 Disrupt Stage 라인업: TechCrunch Disrupt 2026 외부에서는 들을 수 없는 3일간의 대화"
+  },
+  {
+   "title": "Amex introduces a framework to prevent AI agents from making unauthorized purchases",
+   "url": "https://techcrunch.com/2026/10/13/amex-introduces-a-framework-to-prevent-ai-agents-from-making-unauthorized-purchases/",
+   "date": "2026-10-13T13:00:00.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "American Express is introducing a new framework designed to ensure AI agents only make purchases their users have authorized, potentially preventing costly mistakes and disputes as AI-powered shopping grows.",
+   "titleKo": "Amex는 AI 상담원이 무단으로 구매하는 것을 방지하기 위한 프레임워크를 도입합니다."
+  },
+  {
+   "title": "[단독] 인공지능 공부하겠다더니‥입시에서부터 AI안경 쓰고 부정행위",
+   "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9vVUhYNm9sUVV5cE1FZlVteExVLTh0WmY5UjZvQmloTWtnNUp0NDFpQzc3c2d2TzZadTV5NnlpTXJOaFMybEo1TGdqajVqWjk5WkZqS1JRdkpBUUJlM1dFWmZBOWtQRUp6Qms2Q3lDSENhX2VfSXRfMtIBeEFVX3lxTFA5Ul82NThxUXlLMC1WWjJEQUVzSUN2VWcyZXU4Rk9RTjFBN1JkMllTcUlyZlZxM29kT0phYzA0eGhDcktyNmFDcHg2UnFVejZrQ1c3cHpCcUtYM3NZbUhsc25uWGxKRnIwanl0TTlBTGtkaFJkOHJzSg?oc=5",
+   "date": "2026-10-13T11:09:37.000Z",
+   "source": "MBC 뉴스",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "Open models have real benefits. Do they outweigh the risks?",
+   "url": "https://www.technologyreview.com/2026/10/13/1146366/open-models-have-real-benefits-do-they-outweigh-the-risks/",
+   "date": "2026-10-13T10:00:00.000Z",
+   "source": "MIT Technology Review",
+   "feed": "MIT Technology Review",
+   "summary": "MIT Technology Review Explains: Let our writers untangle the complex, messy world of science and technology to help you understand what’s coming next. You can read more from the series here. Late last month, Anthropic re",
+   "titleKo": "개방형 모델은 실질적인 이점이 있습니다. 그들은 위험보다 중요합니까?"
+  },
+  {
+   "title": "AI labs are buying data from dead startups to train their models",
+   "url": "https://www.technologyreview.com/2026/10/13/1145755/ai-labs-buying-data-from-dead-startups-to-train-models/",
+   "date": "2026-10-13T09:00:00.000Z",
+   "source": "MIT Technology Review",
+   "feed": "MIT Technology Review",
+   "summary": "When Keelan Miskell began winding down his crypto startup this year, he didn’t think its data was worth much: the users were anonymous, the company just a few years old. But he’s since turned the firm’s digital archives ",
+   "titleKo": "AI 연구소는 모델을 훈련시키기 위해 죽은 신생 기업으로부터 데이터를 구입하고 있습니다."
+  },
+  {
+   "title": "대입 논술시험서 AI안경 쓴 수험생들 적발…시립대 \"응시 3년 금지\"",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBkb21vYW14V21SZVNZOVlHaGIyRkJ4TlA5RU9IYkRrekVpOVBSbjlqLWdSZ25mcnVpOUhvS1R5WGpjSGdicm4xSDhCR2xERjduVktqR3RveWJKY03SAWBBVV95cUxObXlQc0RwOFRTSnJaSk9MUTM1S3JsaFlsSUVsc1ZGeWc1SUVjNGFWLUNiWExVc2pTSkpmc1Eyek80WHN3cE9tOHdBZXJIMm5aNno5TGR2bFZ0cml1aEM0WE8?oc=5",
+   "date": "2026-10-13T02:43:06.000Z",
+   "source": "연합뉴스",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "정신아 카카오 \"말 한마디로 주문·예약까지...AI로 다음 10년 연결\"",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5veVBVSTNIV1hQVFc1eXozUVVxN21tRWw3cFE0Vm9MYWdJazBQTnNTM2hmd3pWMUNCUjhtU0s1akFRQ29fenlWWFpQQzd0YTFfVW1sU3BR?oc=5",
+   "date": "2026-10-13T02:13:55.000Z",
+   "source": "지디넷코리아",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "삼성전자, ‘KES 2026’ 참가… 일상에 스며든 AI 라이프 공개",
+   "url": "https://news.google.com/rss/articles/CBMipAJBVV95cUxNZXFhbmc1R2wyaTk0U2NsS2ZOM0F3QkpKVXBGb2JpVUVyUHFvWjVkeW1CaXoyb3dvamozYUdwa2tMZDFiTV9VRTZ3SC10OEVHdkF5X253N3ZGYjM2YmVQVFY1bDFpQktYbmxxMGxFUkFIcWJPX2dTUXIyY3JuYjF6SkExSXhYdzhRTU5kRHNSTmxscVRveEEyeGxybWVMZGtjR3hLMlBzX3RSd2ptWENfdW1nZVdoWEN5SDVpZTN4M0VYdlNNNUNKNHA5cVlkQzAtRmlMaFlxR08wVkhHNVAtS2M3M3FHTFhDdVdXa0dWOGx4TDAyc01McVlibXEwZU9iVnZzZVY5dHZrVk50dmRIQl8taktlSUZkNWZ3ZHJIMzhHSXZ5?oc=5",
+   "date": "2026-10-13T01:00:00.000Z",
+   "source": "samsung.com",
    "feed": "Google News",
    "summary": ""
   },
@@ -129,269 +396,20 @@
    "summary": ""
   },
   {
-   "title": "Meta releases its first frontier model, Muse Wonder",
-   "url": "https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/",
-   "date": "2026-10-12T17:56:56.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "Where Muse Spark aimed to be a lightweight model that could perform at low latency, the Wonder models are larger and said to be more capable, with higher benchmark scores and better results on complex tasks like coding.",
-   "titleKo": "Meta, 첫 번째 프론티어 모델 Muse Wonder 출시"
-  },
-  {
-   "title": "WindBorne wins a hefty US Air Force contract for its balloon data",
-   "url": "https://techcrunch.com/2026/10/12/windborne-wins-a-hefty-us-air-force-contract-for-its-balloon-data/",
-   "date": "2026-10-12T17:19:14.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "A Silicon Valley startup that uses weather balloons and AI to predict the weather won a U.S. military contract worth almost $50 million.",
-   "titleKo": "WindBorne은 풍선 데이터로 무거운 미 공군 계약을 따냅니다"
-  },
-  {
-   "title": "Meta has some Wonder Full new AI models",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1009479/meta-muse-wonder-full-ai-model",
-   "date": "2026-10-12T17:00:00.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "Meta is making up for lost time in the AI race. After launching Muse Spark, the first model from its revamped Superintelligence Labs division, and buzzy AI agent Muse, it's now launching two new models it claims can go t",
-   "titleKo": "메타에는 Wonder Full의 새로운 AI 모델이 있습니다."
-  },
-  {
-   "title": "Honeyjar offers AI tools to improve PR and comms at every company",
-   "url": "https://techcrunch.com/2026/10/12/honeyjar-offers-ai-tools-to-improve-pr-and-comms-at-every-company/",
-   "date": "2026-10-12T15:45:00.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "Journalists, entrepreneurs, and even some public relations professionals will tell you that the PR process is broken. But could AI actually make things better?",
-   "titleKo": "Honeyjar는 모든 회사의 PR 및 커뮤니케이션을 개선하는 AI 도구를 제공합니다."
-  },
-  {
-   "title": "Microsoft president says UK is best placed to drive AI regulation",
-   "url": "https://techcrunch.com/2026/10/12/microsoft-president-says-uk-is-best-placed-to-drive-ai-regulation/",
-   "date": "2026-10-12T15:31:19.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "Microsoft president Brad Smith calls for urgent AI regulation, saying milk and washing machines have more oversight than AI companies.",
-   "titleKo": "Microsoft 사장은 영국이 AI 규제를 추진하는 데 가장 적합하다고 말합니다."
-  },
-  {
-   "title": "This AI startup says it can generate permit-ready blueprints in minutes",
-   "url": "https://techcrunch.com/2026/10/12/this-ai-startup-says-it-can-generate-permit-ready-blueprints-in-minutes/",
-   "date": "2026-10-12T15:27:59.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "Blueprints AI, a bootstrapped startup based in Santa Monica, developed software that produces code-compliant construction blueprints from a photo, PDF, or sketch.",
-   "titleKo": "이 AI 스타트업은 몇 분 안에 허가 준비 청사진을 생성할 수 있다고 말합니다."
-  },
-  {
-   "title": "TechCrunch Disrupt 2026 starts tomorrow: Your final chance to secure up to $100 ticket savings",
-   "url": "https://techcrunch.com/2026/10/12/techcrunch-disrupt-2026-starts-tomorrow-your-final-chance-to-secure-up-to-100-ticket-savings/",
-   "date": "2026-10-12T14:00:00.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "Tomorrow at 8 a.m. PT, it all begins z— 10,000+ founders, investors, and tech operators will gather at San Francisco’s Moscone West for TechCrunch Disrupt 2026 for three days of ideas, connections, and startups shaping w",
-   "titleKo": "TechCrunch Disrupt 2026이 내일부터 시작됩니다. 최대 $ 100의 티켓 할인 혜택을 받을 수 있는 마지막 기회입니다."
-  },
-  {
-   "title": "Microsoft’s new AI chip makes it less reliant on Nvidia’s GPUs",
-   "url": "https://www.theverge.com/news/1009465/microsoft-maia-300-chip-improvements-rollout",
-   "date": "2026-10-12T13:00:00.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "Microsoft is announcing its third-generation Maia in-house AI chip today, designed to be the \"primary AI inference system\" for Microsoft's products and services. Maia 300 not only improves the cost and efficiency of runn",
-   "titleKo": "Microsoft의 새로운 AI 칩을 사용하면 Nvidia의 GPU에 대한 의존도가 낮아집니다."
-  },
-  {
-   "title": "Former Plaud exec raises $26M for AI app that listens to you in the background",
-   "url": "https://techcrunch.com/2026/10/12/former-plaud-exec-raises-26m-for-ai-app-that-listens-to-you-in-the-background/",
-   "date": "2026-10-12T12:47:59.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "One of the core promises of AI is that the more it knows about a person, the better it will be able to assist them with tasks and make appropriate suggestions, which, if you'll believe the tech companies, requires apps a",
-   "titleKo": "전 Plaud 경영진이 백그라운드에서 여러분의 의견을 경청하는 AI 앱으로 $ 26M를 모금했습니다"
-  },
-  {
-   "title": "“AI야, 내 고민 좀 들어줘”…마음까지 맡겨도 될까? [이슈픽]",
-   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1GTElDTmR4MzR6T3V4dVNoNlB0ODNFUk9pdFV4WU5WM291VmVpTGN0dGpBLTZ4bW9Hd29nWTUyQjBoTHcxamo2XzlpVVBKLXd4OFlJbUNBWWx5XzQ?oc=5",
-   "date": "2026-10-12T09:23:00.000Z",
-   "source": "KBS 뉴스",
+   "title": "“정보 유출·비용 폭탄 막아라“… 기업들 자체 ‘AI 서버’ 짓는다",
+   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOLWlENko5dWtuSWpmcjNNTTZDeHYzakZPOTdLX3VGTm1ybVVtZnN4bmJ0N01xbHhUejNxT3ZRc0JWemNxUVh0QVJKVnRDanlWY2FwM3Zub1ZFaDBpTjR5Z2wyUjN0Q1pNUUcxNlFOZlltSFFZdjF0cTg3S09BcU45cF9yMA?oc=5",
+   "date": "2026-10-12T07:00:00.000Z",
+   "source": "조선일보",
    "feed": "Google News",
    "summary": ""
   },
   {
-   "title": "엔비디아 GPU의 수명이 AI 버블을 결정한다?",
-   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9NVjJaTU11RFg3RmRMY3o1WUxCYm02eVZDTGxEdl9hMmdXVXExS0d0NzZvVWNaVDhqZ1FBWVJTUmJQcE1tQjlBY21CR0RYTXRkMDQtMXVmZkRFZw?oc=5",
-   "date": "2026-10-12T09:15:17.000Z",
-   "source": "한국경제",
+   "title": "삼성전자, 차세대 'z낸드' 개발영역 넓힌다…맞춤형 AI 메모리 전략",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5KSUFQb0hhYjNpb3Q0cjRkRFBuZ253Zlp3UzdROWNkZzROeVh5S2Fsd3lOWnprMjU5TUh3VkY4LXZ6Qy1jT29lYnd4Y2R0Y29ldEZOVlNB?oc=5",
+   "date": "2026-10-12T01:45:52.000Z",
+   "source": "지디넷코리아",
    "feed": "Google News",
    "summary": ""
-  },
-  {
-   "title": "신제품 출시 전 반응… '사람' 대신 'AI'에 묻는다",
-   "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBmX0E5VGVLOWpCd0ZhVGdvVldjYTI2aHJveFBmd0g0ODZwS2FFenFnZ1BTejZ4QWpNcGU4SHlPbnN6b1hSV2NNVnNCUV8tUQ?oc=5",
-   "date": "2026-10-12T06:30:00.000Z",
-   "source": "전자신문",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "AI로 복제한 어도비 무료 대안 '아트크래프트' 등장…저작권 논란",
-   "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBLa3JKWWVNQmpscnZoT3BzOHhuSUhscmFKTkFCNWdZLUd2WC13QnFZOTVDYWh5NjZ1UXFTb1ZJUFI3TjRsamJGVmRqSzhHdTlTVm55SU9udkpGSDJ0T2dtRHlKYnE0NG8tRWc?oc=5",
-   "date": "2026-10-12T03:58:17.000Z",
-   "source": "AI타임스",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "Will the HomeView be Apple’s first smart home success?",
-   "url": "https://techcrunch.com/2026/10/11/will-the-homeview-be-apples-first-smart-home-success/",
-   "date": "2026-10-11T21:14:40.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "Over the past couple of years, we’ve seen multiple reports that Apple was working on a new smart home product, but now it seems the product has a name and a launch date.",
-   "titleKo": "HomeView가 Apple의 첫 번째 스마트 홈 성공이 될까요?"
-  },
-  {
-   "title": "48 hours to TechCrunch Disrupt 2026 — hear directly from the people building what’s next",
-   "url": "https://techcrunch.com/2026/10/11/48-hours-to-techcrunch-disrupt-2026-hear-directly-from-the-people-building-whats-next/",
-   "date": "2026-10-11T19:00:00.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "Less than 48 hours, TechCrunch Disrupt 2026 starts in San Francisco’s Moscone West. Save up to $100 on your pass before prices increase at the door, plus get 50% on a second pass. Or score other deals.",
-   "titleKo": "TechCrunch Disrupt 2026까지 48시간 — 다음 단계에 대한 사람들의 의견을 직접 들어보세요"
-  },
-  {
-   "title": "Silicon Valley is falling in line with Trump’s attempt to rename AI",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1009406/silicon-valley-is-falling-in-line-with-trumps-attempt-to-rename-ai",
-   "date": "2026-10-11T18:33:56.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "When President Donald Trump announced his plans to rebrand artificial intelligence as \"super intelligence,\" you'd be forgiven for being skeptical that it would catch on. While most of the broader population is sticking w",
-   "titleKo": "실리콘 밸리는 AI의 이름을 바꾸려는 트럼프의 시도에 따라 추락하고 있습니다."
-  },
-  {
-   "title": "Can the AI industry persuade data center opponents by getting rid of NDAs?",
-   "url": "https://techcrunch.com/2026/10/11/can-the-ai-industry-persuade-data-center-opponents-by-getting-rid-of-ndas/",
-   "date": "2026-10-11T16:52:33.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "On Equity, we debate the impact of data center moratoriums and whether the AI industry has a communication problem.",
-   "titleKo": "AI 산업은 NDA를 제거하여 데이터 센터 상대를 설득할 수 있습니까?"
-  },
-  {
-   "title": "These execs think voice AI hasn’t reached its ChatGPT moment yet",
-   "url": "https://techcrunch.com/2026/10/11/these-execs-think-voice-ai-hasnt-reached-its-chatgpt-moment-yet/",
-   "date": "2026-10-11T14:00:00.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "Voice AI often misses important points for its context layer, and causes the whole pipeline to break.",
-   "titleKo": "이 임원들은 음성 AI가 아직 ChatGPT 순간에 도달하지 않았다고 생각합니다."
-  },
-  {
-   "title": "Learning to use local AI is exciting, overwhelming, and frustrating",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1008484/learning-local-ai-hermes-qwen-model-mac-studio-testing-diary-progress",
-   "date": "2026-10-11T11:00:00.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "I'm embarking on a journey I've so far been hesitant to go on: actually using AI on the regular. Giving my most personal data to cloud services has been a major hold up for me, but it's increasingly possible to run power",
-   "titleKo": "현지 AI 사용법을 배우는 것은 흥미롭고, 압도적이며, 좌절스럽습니다."
-  },
-  {
-   "title": "금융권 뚫은 AI 해킹…中企·제조업도 ‘사정권’",
-   "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9kVW1FclJVdnk4NG05V0Q5aW5Pa2hvM2pRRUlkODNtU0J0QkFNNGJObWMzWXpZWUk5WmdRX2plNTZkSkJiamtJLWhqNU1IUQ?oc=5",
-   "date": "2026-10-11T01:29:44.000Z",
-   "source": "www.dt.co.kr",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "Satya Nadella says we should assume all AI models are ‘compromised’",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1009337/satya-nadella-says-we-should-assume-all-ai-models-are-compromised",
-   "date": "2026-10-10T22:10:17.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "In a lengthy post on X, Microsoft's CEO laid out his views on the dangers posed by highly advanced AI models and how to confront those risks. Nadella says we can no longer accept a world where AI is treated as a \"set of ",
-   "titleKo": "Satya Nadella는 모든 AI 모델이 ‘손상‘ 되었다고 가정해야 한다고 말합니다."
-  },
-  {
-   "title": "Microsoft’s Satya Nadella says AI models need an ‘emergency brake’",
-   "url": "https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/",
-   "date": "2026-10-10T21:47:51.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "In a Saturday morning post, Microsoft's CEO wrote that it’s time “to step back and assess the trust architecture” of AI.",
-   "titleKo": "Microsoft의 Satya Nadella는 AI 모델에 ‘비상 브레이크‘ 가 필요하다고 말합니다."
-  },
-  {
-   "title": "Apple discloses deal to hire team and license tech from personalized podcast startup Huxe",
-   "url": "https://techcrunch.com/2026/10/10/apple-discloses-deal-to-hire-team-and-license-tech-from-personalized-podcast-startup-huxe/",
-   "date": "2026-10-10T19:50:00.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "Is Apple hoping to get into the AI-generated podcast business?",
-   "titleKo": "Apple, 개인 맞춤형 팟캐스트 스타트업 Huxe의 팀 및 라이선스 기술 채용 계약 공개"
-  },
-  {
-   "title": "DistroKid has been quietly taking down songs in response to UMG lawsuit",
-   "url": "https://www.theverge.com/entertainment/1009309/distrokid-take-down-songs-umg-lawsuit",
-   "date": "2026-10-10T18:52:07.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "Artists are taking to social media to complain that DistroKid has unceremoniously removed their work without notice. Now DistroKid has confirmed to The Verge that the takedowns are a direct response to claims made by UMG",
-   "titleKo": "DistroKid는 UMG 소송에 대한 대응으로 조용히 노래를 내리고 있습니다."
-  },
-  {
-   "title": "3 days to TechCrunch Disrupt 2026: Meet the startups before they hit mainstream",
-   "url": "https://techcrunch.com/2026/10/10/3-days-to-disrupt-2026-meet-the-startups-before-they-hit-mainstream/",
-   "date": "2026-10-10T15:00:00.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "TechCrunch Disrupt 2026 takes place October 13-15 in San Francisco. Over 300 startups will show what they’ve built to 10,000 tech leaders. Plus, 250+ speakers are ready to share insights across 200+ sessions. Register be",
-   "titleKo": "TechCrunch Disrupt 2026까지 3일: 스타트업이 메인스트림에 진입하기 전에 스타트업을 만나보세요"
-  },
-  {
-   "title": "Anthropic is cutting off its internal evaluations from the internet",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1009286/anthropic-is-cutting-off-its-internal-evaluations-from-the-internet",
-   "date": "2026-10-10T14:41:16.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "After a recent spate of high-profile incidents in which AI agents escaped containment, Anthropic is cutting off internet access for all internal evaluations. In a report Friday, the company detailed \"unintended model act",
-   "titleKo": "Anthropic은 인터넷에서 내부 평가를 차단하고 있습니다"
-  },
-  {
-   "title": "Here are the top AI agents that can live in your text messages",
-   "url": "https://techcrunch.com/2026/10/10/all-the-ai-agents-that-can-live-in-your-text-messages/",
-   "date": "2026-10-10T14:00:00.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "We created a list of the most notable AI agents that can live in your text messages, from general assistants to agents designed for families, travel, and work.",
-   "titleKo": "다음은 문자 메시지에 포함될 수 있는 최고의 AI 상담원입니다."
-  },
-  {
-   "title": "AI agent makers are promising privacy — will they deliver?",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1009051/privacy-ai-agent-promises-openai-meta-muse-dots",
-   "date": "2026-10-10T13:00:00.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "At this year's OpenAI DevDay, CEO Sam Altman unveiled the company's new AI agent Dots - and told the crowd that the company wants to \"set a new standard for privacy in frontier AI.\" OpenAI would spend the day taking veil",
-   "titleKo": "AI 에이전트 제조업체는 개인 정보 보호를 약속하고 있습니다. 그들이 제공 할 것입니까?"
-  },
-  {
-   "title": "Anthropic’s AI gave Philadelphia police a fake tip about an unsolved homicide",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1009090/anthropic-fake-homicide-information-philadelphia-pd-tip",
-   "date": "2026-10-09T21:15:38.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "An Anthropic AI model provided false information about an unsolved homicide to a Philadelphia Police Department (PPD) tipline, according to a report from 6abc. In a statement released on Friday, the PPD said the AI model",
-   "titleKo": "Anthropic의 AI는 필라델피아 경찰에게 해결되지 않은 살인 사건에 대한 가짜 팁을 주었습니다."
-  },
-  {
-   "title": "‘Pure insanity’: Mathematicians will need years to make sense of OpenAI’s latest drop",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1008726/openai-mathematics-solutions-chaos",
-   "date": "2026-10-09T19:09:44.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "\"Staggering.\" \"Overwhelming.\" \"Unprecedented.\" \"Surreal.\" \"Pure insanity.\" Those were among the descriptions more than three dozen mathematicians reached for in conversations with The Verge as they tried to make sense of",
-   "titleKo": "‘순수한 광기’: 수학자들은 OpenAI의 최근 하락을 이해하는 데 몇 년이 걸릴 것입니다."
   },
   {
    "title": "We’re putting too much faith in AI’s ability to say no",
@@ -464,24 +482,6 @@
    "feed": "MIT Technology Review",
    "summary": "Yossi Matias, Vice President & Head of Google Research, explores how AI is beginning to reshape biology, infrastructure, manufacturing, and science, and why its greatest impact may come when it intersects with other fiel",
    "titleKo": "EmTech Future 2026: AI가 모든 것을 충족할 때"
-  },
-  {
-   "title": "Redefining enterprise intelligence with autonomous AI",
-   "url": "https://www.technologyreview.com/2026/10/02/1143774/redefining-enterprise-intelligence-with-autonomous-ai/",
-   "date": "2026-10-02T15:49:04.000Z",
-   "source": "MIT Technology Review",
-   "feed": "MIT Technology Review",
-   "summary": "Enterprise AI is no longer a future ambition. It is in full operational flight. Model capabilities are advancing faster than most organizations can absorb, while the cost of performance continues to fall. Globally, AI in",
-   "titleKo": "자율주행 AI로 엔터프라이즈 인텔리전스 재정의"
-  },
-  {
-   "title": "Don’t be fooled—LLMs don’t reason",
-   "url": "https://www.technologyreview.com/2026/10/02/1145639/dont-be-fooled-llms-dont-reason/",
-   "date": "2026-10-02T08:00:00.000Z",
-   "source": "MIT Technology Review",
-   "feed": "MIT Technology Review",
-   "summary": "On an afternoon in Seoul in March 2016, I watched a program I helped build put a stone on the fifth line of a Go board in what looked like a gift to its human opponent. Move 37 in game two of the five-game match looked s",
-   "titleKo": "속지 마세요-LLM은 이유를 밝히지 않습니다"
   }
  ]
 }

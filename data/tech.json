@@ -1,166 +1,24 @@
 {
- "generated": "2026-10-13T03:44:03.753Z",
- "source": "arXiv cs.AI · GitHub · Hugging Face",
+ "generated": "2026-10-14T02:03:44.053Z",
+ "source": "GitHub · Hugging Face",
  "sources": [
-  "arXiv cs.AI",
   "GitHub",
   "Hugging Face"
  ],
- "arxiv": [
-  {
-   "title": "Can Language Models Play the Wikipedia Game?",
-   "url": "https://arxiv.org/abs/2610.13948v1",
-   "date": "2026-10-09T17:59:56.000Z",
-   "summary": "Language models increasingly support or automate information retrieval from document collections too large to index. This task is difficult when it requires specialist linguistic or scientific knowledge. We used the Wiki",
-   "titleKo": "언어 모델이 위키백과 게임을 할 수 있나요?"
-  },
-  {
-   "title": "Hide and Seek: HIDE Concepts to SEEK explanations for black box models",
-   "url": "https://arxiv.org/abs/2610.13935v1",
-   "date": "2026-10-09T17:56:59.000Z",
-   "summary": "Interpreting machine learning model predictions is a central challenge, particularly for black-box vision models. Concept-based attribution methods interpret models using human-understandable concepts. Existing concept-b",
-   "titleKo": "숨바꼭질: 개념을 숨겨 블랙박스 모델에 대한 설명을 찾습니다."
-  },
-  {
-   "title": "Revisiting Tabular Deep Regression: Objectives and the Limits of Global Early Stopping",
-   "url": "https://arxiv.org/abs/2610.13909v1",
-   "date": "2026-10-09T17:49:32.000Z",
-   "summary": "While deep learning models for tabular data have recently received significant research attention, the choice of objective functions for regression tasks remains an understudied degree of freedom. Several lines of resear",
-   "titleKo": "표형 딥 회귀 재검토: 글로벌 조기 중단의 목표와 한계"
-  },
-  {
-   "title": "Task Context Shapes Component Roles in Language Models",
-   "url": "https://arxiv.org/abs/2610.13895v1",
-   "date": "2026-10-09T17:40:53.000Z",
-   "summary": "Large language models reuse the same attention heads across tasks, but identifying these shared heads does not explain what they do differently in each task. A natural source of inspiration is task-dependent interactions",
-   "titleKo": "작업 컨텍스트 언어 모델의 구성 요소 역할 도형"
-  },
-  {
-   "title": "RATED: Reliability-Aware AI Agent Tool Retrieval via Execution Dynamics",
-   "url": "https://arxiv.org/abs/2610.13889v1",
-   "date": "2026-10-09T17:38:11.000Z",
-   "summary": "As AI agents increasingly rely on external tools, accurate retrieval is essential for reliable behavior. Existing methods optimize semantic relevance but largely ignore tool availability during execution. To address this",
-   "titleKo": "정격: 실행 역학을 통한 신뢰성 인식 AI 상담원 도구 검색"
-  },
-  {
-   "title": "X-AgentRed: Red-Teaming Personal Agents in Evolving Multi-Service Ecosystems",
-   "url": "https://arxiv.org/abs/2610.13886v1",
-   "date": "2026-10-09T17:34:44.000Z",
-   "summary": "Personal agents increasingly connect to services across the web and applications by using tools. As the effects of their actions accumulate and interact across services, unintended or harmful outcomes can arise when agen",
-   "titleKo": "X-AgentRed: 진화하는 멀티 서비스 생태계에서 개인 에이전트 빨간색 길들이기"
-  },
-  {
-   "title": "Studying Comics at Scale with Artificial Intelligence: The PAGE Framework and Three Studies of American Comics and Japanese Manga",
-   "url": "https://arxiv.org/abs/2610.13840v1",
-   "date": "2026-10-09T16:49:29.000Z",
-   "summary": "Comics are one of the great visual records of the twentieth century: hundreds of thousands of pages in which a mass readership saw its leaders, its wars and its heroes. Most of this record has never been studied as a who",
-   "titleKo": "인공지능으로 만화를 대규모로 공부하다: 미국 만화와 일본 만화의 PAGE 프레임워크와 세 가지 연구"
-  },
-  {
-   "title": "SpatialASM: Internalizing Active Mentalization for Spatial Reasoning",
-   "url": "https://arxiv.org/abs/2610.13832v1",
-   "date": "2026-10-09T16:39:50.000Z",
-   "summary": "When solving complex spatial reasoning tasks, ordinary humans naturally revisit the scenes from task-relevant viewpoints and mentally reconstruct the spatial layouts from those viewpoints. But can Large Vision-Language M",
-   "titleKo": "공간ASM: 공간 추론을 위한 능동적 정신화 내면화"
-  },
-  {
-   "title": "MC-EvoBench: Auditing Experience-Driven Self-Improvement in Minecraft Agents",
-   "url": "https://arxiv.org/abs/2610.13829v1",
-   "date": "2026-10-09T16:37:39.000Z",
-   "summary": "A central challenge in embodied recursive self-improvement is enabling agents to convert interaction history into capabilities that persist beyond one world and transfer to later tasks. A saved memory or successful final",
-   "titleKo": "MC-EvoBench: Minecraft 에이전트에서 경험 중심의 자기 개선 감사"
-  },
-  {
-   "title": "Same Query, Different Answer: Run-to-Run Variance in Semantic Query Processing",
-   "url": "https://arxiv.org/abs/2610.13823v1",
-   "date": "2026-10-09T16:34:13.000Z",
-   "summary": "Semantic query engines ask a large language model (LLM) to judge individual rows, and benchmarks compare these engines on the quality of a few executions at temperature 0. We measure how much another execution changes. W",
-   "titleKo": "동일한 쿼리, 다른 답변: 시맨틱 쿼리 처리의 런-투-런 분산"
-  },
-  {
-   "title": "FORTE: A Production Framework for Feature Evaluation and Deprecation in Industrial Recommender Systems",
-   "url": "https://arxiv.org/abs/2610.13806v1",
-   "date": "2026-10-09T16:18:39.000Z",
-   "summary": "Production recommender systems have feature-lifecycle asymmetry: adding new features must produce gains on some metric, while feature removal must not regress any metric. In practice, feature deprecation is hard to prior",
-   "titleKo": "FORTE: 산업 추천 시스템에서 기능 평가 및 사용 중단을 위한 생산 프레임워크"
-  },
-  {
-   "title": "Your Discrete Graph Diffusion Model is Secretly Memorizing",
-   "url": "https://arxiv.org/abs/2610.13786v1",
-   "date": "2026-10-09T16:04:06.000Z",
-   "summary": "Discrete graph diffusion models (GDMs) corrupt the graph structure by adding noise independently to nodes and edges under a Markovian noise model. In the unconditional setting without node features, an equivariant denois",
-   "titleKo": "이산 그래프 확산 모델이 은밀하게 기억 중입니다"
-  },
-  {
-   "title": "UkrMeme: Multimodal Explainable Persuasion Detection in Ukrainian Memes",
-   "url": "https://arxiv.org/abs/2610.13783v1",
-   "date": "2026-10-09T16:03:27.000Z",
-   "summary": "Memes play a central role in modern online communication, especially in contexts of political conflict where visual and textual cues combine to convey persuasive messages. We study persuasive technique detection in Ukrai",
-   "titleKo": "UkrMeme: 우크라이나 밈에서 다중 방식의 설명 가능한 설득 탐지"
-  },
-  {
-   "title": "ReplaySSM: Cache SSM Inputs, Not State",
-   "url": "https://arxiv.org/abs/2610.13778v1",
-   "date": "2026-10-09T15:59:40.000Z",
-   "summary": "State-space models (SSMs) maintain a fixed-size recurrent state, but reading and writing it at every decoding step can bottleneck hybrid models. This eager state management causes large state I/O with low arithmetic inte",
-   "titleKo": "ReplaySSM: 캐시 SSM 입력, 상태 아님"
-  },
-  {
-   "title": "DualQuant: Dual-scale Calibration-free Weight-and-Activation Quantization for LLMs",
-   "url": "https://arxiv.org/abs/2610.13767v1",
-   "date": "2026-10-09T15:51:38.000Z",
-   "summary": "Low-bit inference on accelerators with native 4-bit support requires quantizing both weights and activations to realize the full throughput gains these formats provide. While post-training weight quantization has been ex",
-   "titleKo": "DualQuant: LLM에 대한 이중 스케일 보정이 필요 없는 중량 및 정품 인증 정량화"
-  },
-  {
-   "title": "When Edge Independence Fails: Joint Graph Diffusion with Latent Sociability Priors",
-   "url": "https://arxiv.org/abs/2610.13765v1",
-   "date": "2026-10-09T15:50:48.000Z",
-   "summary": "Discrete graph diffusion models corrupt graph structure through independent edge updates with a Markovian noise model. Combined with the exchangeability requirement on the output distribution, the terminal prior is neces",
-   "titleKo": "엣지 인디펜던스가 실패할 때: 잠재적 사교성 선행자와의 공동 그래프 확산"
-  },
-  {
-   "title": "Matched-Context Group Policy Optimization for LLM Agent Training",
-   "url": "https://arxiv.org/abs/2610.13755v1",
-   "date": "2026-10-09T15:41:37.000Z",
-   "summary": "Training long-horizon language model agents requires assigning credit to intermediate decisions from sparse terminal feedback. Within a finite group of sibling rollouts, useful action comparisons depend on their context,",
-   "titleKo": "LLM 상담원 교육을 위한 매칭 컨텍스트 그룹 정책 최적화"
-  },
-  {
-   "title": "A Privileged Teacher That Only Scores Cannot Search: Critique-Conditioned On-Policy Self-Distillation for Reasoning",
-   "url": "https://arxiv.org/abs/2610.13744v1",
-   "date": "2026-10-09T15:36:47.000Z",
-   "summary": "On-policy self-distillation promises to replace the sparse outcome signal of verifiable-reward RL with dense token-level credit: a teacher conditioned on the reference solution scores the student's own rollout, and the r",
-   "titleKo": "점수만으로는 검색할 수 없는 특권층 교사: 추론을 위한 비판적 조건의 정책적 자기 증류"
-  },
-  {
-   "title": "SafeDiSTL: Decomposing Joint Constraints for Safe Multi-Agent Reinforcement Learning",
-   "url": "https://arxiv.org/abs/2610.13737v1",
-   "date": "2026-10-09T15:32:06.000Z",
-   "summary": "Cooperative multi-agent tasks often impose constraints on a shared objective or collective safety. A team level violation cost function can measure this constraint outcome, but does not distinguish which agents' actions ",
-   "titleKo": "SafeDiSTL: 안전한 다중 제제 강화 학습을 위한 공동 제약 분해"
-  },
-  {
-   "title": "Orthros: Phase-Aware Heterogeneous Attention for Efficient Transformers",
-   "url": "https://arxiv.org/abs/2610.13735v1",
-   "date": "2026-10-09T15:30:08.000Z",
-   "summary": "Efficient attention mechanisms, such as linear and sliding window attention, aim to reduce the computational complexity of Transformers from quadratic to linear. However, their degraded in-context recall often necessitat",
-   "titleKo": "Orthros: 효율적인 변압기에 대한 위상 인식 이질적 주의"
-  }
- ],
+ "arxiv": [],
  "github": [
   {
    "title": "openclaw/openclaw",
    "url": "https://github.com/openclaw/openclaw",
-   "stars": 391816,
+   "stars": 391915,
    "language": "TypeScript",
-   "date": "2026-10-13T03:46:21Z",
+   "date": "2026-10-14T02:06:18Z",
    "summary": "The AI that really does things. Any OS. Any Platform. The lobster way. 🦞 "
   },
   {
    "title": "obra/superpowers",
    "url": "https://github.com/obra/superpowers",
-   "stars": 298269,
+   "stars": 298698,
    "language": "Shell",
    "date": "2026-10-10T03:03:30Z",
    "summary": "An agentic skills framework & software development methodology that works."
@@ -168,39 +26,39 @@
   {
    "title": "NousResearch/hermes-agent",
    "url": "https://github.com/NousResearch/hermes-agent",
-   "stars": 253186,
+   "stars": 253511,
    "language": "Python",
-   "date": "2026-10-13T03:41:10Z",
+   "date": "2026-10-14T01:25:18Z",
    "summary": "The agent that grows with you"
   },
   {
    "title": "n8n-io/n8n",
    "url": "https://github.com/n8n-io/n8n",
-   "stars": 207161,
+   "stars": 207273,
    "language": "TypeScript",
-   "date": "2026-10-13T00:30:55Z",
+   "date": "2026-10-14T02:06:41Z",
    "summary": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations."
   },
   {
    "title": "firecrawl/firecrawl",
    "url": "https://github.com/firecrawl/firecrawl",
-   "stars": 190905,
+   "stars": 191241,
    "language": "TypeScript",
-   "date": "2026-10-12T23:27:53Z",
+   "date": "2026-10-13T22:58:04Z",
    "summary": "Supercharge your AI agents with data from the web and beyond. Building the library for superintelligence. 🔥"
   },
   {
    "title": "Significant-Gravitas/AutoGPT",
    "url": "https://github.com/Significant-Gravitas/AutoGPT",
-   "stars": 187539,
+   "stars": 187563,
    "language": "Python",
-   "date": "2026-10-13T02:18:30Z",
+   "date": "2026-10-13T17:51:46Z",
    "summary": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters."
   },
   {
    "title": "f/prompts.chat",
    "url": "https://github.com/f/prompts.chat",
-   "stars": 172767,
+   "stars": 172879,
    "language": "HTML",
    "date": "2026-10-13T03:23:40Z",
    "summary": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy."
@@ -208,7 +66,7 @@
   {
    "title": "Snailclimb/JavaGuide",
    "url": "https://github.com/Snailclimb/JavaGuide",
-   "stars": 158974,
+   "stars": 159000,
    "language": "JavaScript",
    "date": "2026-10-12T04:50:18Z",
    "summary": "Java 面试 & 后端通用面试指南，覆盖计算机基础、数据库、分布式、高并发、系统设计与 AI 应用开发"
@@ -216,31 +74,31 @@
   {
    "title": "langgenius/dify",
    "url": "https://github.com/langgenius/dify",
-   "stars": 158299,
+   "stars": 158390,
    "language": "TypeScript",
-   "date": "2026-10-13T03:43:54Z",
+   "date": "2026-10-14T02:03:48Z",
    "summary": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without reb"
   },
   {
    "title": "open-webui/open-webui",
    "url": "https://github.com/open-webui/open-webui",
-   "stars": 155175,
+   "stars": 155588,
    "language": "Python",
-   "date": "2026-10-12T22:13:08Z",
+   "date": "2026-10-13T20:19:18Z",
    "summary": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)"
   },
   {
    "title": "langchain-ai/langchain",
    "url": "https://github.com/langchain-ai/langchain",
-   "stars": 147718,
+   "stars": 147792,
    "language": "Python",
-   "date": "2026-10-12T19:28:40Z",
+   "date": "2026-10-13T17:22:08Z",
    "summary": "The agent engineering platform."
   },
   {
    "title": "x1xhlol/system-prompts-and-models-of-ai-tools",
    "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-   "stars": 143971,
+   "stars": 144010,
    "language": "",
    "date": "2026-10-12T15:19:01Z",
    "summary": "FULL Augment Code, Claude Code, Cluely, CodeBuddy, Comet, Cursor, Devin AI, Junie, Kiro, Leap.new, Lovable, Manus, NotionAI, Orchids.app, Perplexity, Poke, Qoder, Replit, Same.dev, Trae, Traycer AI, V"
@@ -248,31 +106,31 @@
   {
    "title": "github/spec-kit",
    "url": "https://github.com/github/spec-kit",
-   "stars": 141004,
+   "stars": 141141,
    "language": "Python",
-   "date": "2026-10-12T21:39:32Z",
+   "date": "2026-10-13T19:35:18Z",
    "summary": "💫 Toolkit to help you get started with SDD or any other process!"
   },
   {
    "title": "Comfy-Org/ComfyUI",
    "url": "https://github.com/Comfy-Org/ComfyUI",
-   "stars": 137185,
+   "stars": 137344,
    "language": "Python",
-   "date": "2026-10-13T03:40:28Z",
+   "date": "2026-10-14T01:58:26Z",
    "summary": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface. The fastest local inference engine in the world."
   },
   {
    "title": "shadcn-ui/ui",
    "url": "https://github.com/shadcn-ui/ui",
-   "stars": 125451,
+   "stars": 125538,
    "language": "TypeScript",
-   "date": "2026-10-12T17:45:44Z",
+   "date": "2026-10-13T18:51:14Z",
    "summary": "Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own."
   },
   {
    "title": "microsoft/generative-ai-for-beginners",
    "url": "https://github.com/microsoft/generative-ai-for-beginners",
-   "stars": 121279,
+   "stars": 121316,
    "language": "Jupyter Notebook",
    "date": "2026-10-12T02:16:31Z",
    "summary": "21 Lessons, Get Started Building with Generative AI "
@@ -280,33 +138,33 @@
   {
    "title": "supabase/supabase",
    "url": "https://github.com/supabase/supabase",
-   "stars": 111444,
+   "stars": 111500,
    "language": "TypeScript",
-   "date": "2026-10-13T03:16:52Z",
+   "date": "2026-10-14T01:07:23Z",
    "summary": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications."
   },
   {
    "title": "JuliusBrussee/caveman",
    "url": "https://github.com/JuliusBrussee/caveman",
-   "stars": 111264,
+   "stars": 111500,
    "language": "Go",
-   "date": "2026-10-13T03:36:39Z",
+   "date": "2026-10-13T18:34:03Z",
    "summary": "🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman."
   },
   {
    "title": "google-gemini/gemini-cli",
    "url": "https://github.com/google-gemini/gemini-cli",
-   "stars": 107304,
+   "stars": 107328,
    "language": "TypeScript",
-   "date": "2026-10-13T01:36:44Z",
+   "date": "2026-10-14T01:29:12Z",
    "summary": "An open-source AI agent that brings the power of Gemini directly into your terminal."
   },
   {
    "title": "thedotmack/claude-mem",
    "url": "https://github.com/thedotmack/claude-mem",
-   "stars": 100143,
+   "stars": 100462,
    "language": "TypeScript",
-   "date": "2026-10-13T03:07:25Z",
+   "date": "2026-10-13T21:35:02Z",
    "summary": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Cla"
   }
  ],
@@ -314,162 +172,162 @@
   {
    "title": "google/embeddinggemma-2",
    "url": "https://huggingface.co/google/embeddinggemma-2",
-   "downloads": 115763,
-   "likes": 1958,
+   "downloads": 124930,
+   "likes": 2112,
    "task": "feature-extraction",
    "date": "2026-09-14T14:53:42.000Z"
   },
   {
    "title": "jialinyyzz/humanizer",
    "url": "https://huggingface.co/jialinyyzz/humanizer",
-   "downloads": 46070,
-   "likes": 1342,
+   "downloads": 54039,
+   "likes": 1527,
    "task": "text-generation",
    "date": "2026-09-11T05:00:16.000Z"
   },
   {
    "title": "Qwen/Qwen-Image-2.1-Turbo",
    "url": "https://huggingface.co/Qwen/Qwen-Image-2.1-Turbo",
-   "downloads": 6787,
-   "likes": 645,
+   "downloads": 9665,
+   "likes": 710,
    "task": "text-to-image",
    "date": "2026-10-09T04:50:01.000Z"
   },
   {
    "title": "abenzerps/Qwen-Image-2.1-Uncensored-Quantized",
    "url": "https://huggingface.co/abenzerps/Qwen-Image-2.1-Uncensored-Quantized",
-   "downloads": 2188658,
-   "likes": 4110,
+   "downloads": 2247929,
+   "likes": 4208,
    "task": "text-to-image",
    "date": "2026-09-20T15:51:13.000Z"
   },
   {
-   "title": "Cloudflare/clef",
-   "url": "https://huggingface.co/Cloudflare/clef",
-   "downloads": 15064,
-   "likes": 2099,
+   "title": "openbmb/MiniCPM-V-4.7-35B-A3B",
+   "url": "https://huggingface.co/openbmb/MiniCPM-V-4.7-35B-A3B",
+   "downloads": 630,
+   "likes": 469,
    "task": "image-text-to-text",
-   "date": "2026-09-30T21:15:35.000Z"
+   "date": "2026-10-07T07:07:30.000Z"
   },
   {
    "title": "Lightricks/LTX-2.5",
    "url": "https://huggingface.co/Lightricks/LTX-2.5",
-   "downloads": 1719766,
-   "likes": 7499,
+   "downloads": 1724548,
+   "likes": 7650,
    "task": "image-to-video",
    "date": "2026-07-23T07:55:24.000Z"
   },
   {
    "title": "ConwayResearch/Underdog-Saluki-27B-1.0",
    "url": "https://huggingface.co/ConwayResearch/Underdog-Saluki-27B-1.0",
-   "downloads": 242329,
-   "likes": 378,
+   "downloads": 269829,
+   "likes": 426,
    "task": "text-generation",
    "date": "2026-10-08T01:47:26.000Z"
   },
   {
-   "title": "Qwen/Qwen3.8-27B",
-   "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
-   "downloads": 6895303,
-   "likes": 17582,
-   "task": "image-text-to-text",
-   "date": "2026-08-05T08:22:59.000Z"
-  },
-  {
    "title": "LiquidAI/d1-3B",
    "url": "https://huggingface.co/LiquidAI/d1-3B",
-   "downloads": 11866,
-   "likes": 350,
+   "downloads": 13190,
+   "likes": 381,
    "task": "image-text-to-text",
    "date": "2026-10-05T09:55:28.000Z"
   },
   {
-   "title": "canberkkkkkk/ema-lightning",
-   "url": "https://huggingface.co/canberkkkkkk/ema-lightning",
-   "downloads": 20310,
-   "likes": 393,
-   "task": "text-to-speech",
-   "date": "2026-10-01T14:18:49.000Z"
+   "title": "Cloudflare/clef",
+   "url": "https://huggingface.co/Cloudflare/clef",
+   "downloads": 17173,
+   "likes": 2144,
+   "task": "image-text-to-text",
+   "date": "2026-09-30T21:15:35.000Z"
   },
   {
    "title": "AtomicChat/Qwen-Image-2.1-Turbo-Uncensored-GGUF",
    "url": "https://huggingface.co/AtomicChat/Qwen-Image-2.1-Turbo-Uncensored-GGUF",
-   "downloads": 161715,
-   "likes": 374,
+   "downloads": 208575,
+   "likes": 409,
    "task": "text-to-image",
    "date": "2026-10-09T16:30:48.000Z"
   },
   {
+   "title": "Qwen/Qwen3.8-27B",
+   "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+   "downloads": 7119569,
+   "likes": 17642,
+   "task": "image-text-to-text",
+   "date": "2026-08-05T08:22:59.000Z"
+  },
+  {
+   "title": "autotrust/JEV-35B",
+   "url": "https://huggingface.co/autotrust/JEV-35B",
+   "downloads": 17426,
+   "likes": 508,
+   "task": "text-classification",
+   "date": "2026-10-11T01:22:03.000Z"
+  },
+  {
    "title": "nerkyor/Qwen3.8-27B-Coder390-EfficientThink-Opus5.5-GPT6Astra-Grok4.7-DSV4Pro-K3-SFT-RLOO-MTP-DFlash2",
    "url": "https://huggingface.co/nerkyor/Qwen3.8-27B-Coder390-EfficientThink-Opus5.5-GPT6Astra-Grok4.7-DSV4Pro-K3-SFT-RLOO-MTP-DFlash2",
-   "downloads": 75302,
-   "likes": 286,
+   "downloads": 83887,
+   "likes": 308,
    "task": "image-text-to-text",
    "date": "2026-10-04T10:44:11.000Z"
   },
   {
-   "title": "Venastine-Research/Xing4.0-29B-A4B-GGUF",
-   "url": "https://huggingface.co/Venastine-Research/Xing4.0-29B-A4B-GGUF",
-   "downloads": 52788,
-   "likes": 705,
-   "task": "text-generation",
-   "date": "2026-09-17T18:37:31.000Z"
-  },
-  {
-   "title": "unsloth/embeddinggemma-2-GGUF",
-   "url": "https://huggingface.co/unsloth/embeddinggemma-2-GGUF",
-   "downloads": 71914,
-   "likes": 284,
-   "task": "feature-extraction",
-   "date": "2026-10-06T10:58:50.000Z"
+   "title": "baidu/Unlimited-OCR",
+   "url": "https://huggingface.co/baidu/Unlimited-OCR",
+   "downloads": 1175446,
+   "likes": 4617,
+   "task": "image-text-to-text",
+   "date": "2026-06-19T09:40:33.000Z"
   },
   {
    "title": "convaiinnovations/laya",
    "url": "https://huggingface.co/convaiinnovations/laya",
-   "downloads": 45062,
-   "likes": 5535,
+   "downloads": 46160,
+   "likes": 5573,
    "task": "text-classification",
    "date": "2026-09-18T05:05:55.000Z"
   },
   {
-   "title": "Cactus-Compute/whistle",
-   "url": "https://huggingface.co/Cactus-Compute/whistle",
-   "downloads": 18643,
-   "likes": 363,
-   "task": "automatic-speech-recognition",
-   "date": "2026-09-30T17:13:26.000Z"
-  },
-  {
-   "title": "Aleph-Alpha/Kolibri-1",
-   "url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
-   "downloads": 14018,
-   "likes": 915,
-   "task": "text-generation",
-   "date": "2026-10-02T05:54:02.000Z"
-  },
-  {
-   "title": "Cloudflare/clef-flash",
-   "url": "https://huggingface.co/Cloudflare/clef-flash",
-   "downloads": 23285,
-   "likes": 790,
-   "task": "image-text-to-text",
-   "date": "2026-09-30T21:15:36.000Z"
+   "title": "canberkkkkkk/ema-lightning",
+   "url": "https://huggingface.co/canberkkkkkk/ema-lightning",
+   "downloads": 22641,
+   "likes": 403,
+   "task": "text-to-speech",
+   "date": "2026-10-01T14:18:49.000Z"
   },
   {
    "title": "speridlabs/iris-3b",
    "url": "https://huggingface.co/speridlabs/iris-3b",
-   "downloads": 706,
-   "likes": 202,
+   "downloads": 889,
+   "likes": 233,
    "task": "text-to-image",
    "date": "2026-10-05T14:51:15.000Z"
   },
   {
-   "title": "baidu/Unlimited-OCR",
-   "url": "https://huggingface.co/baidu/Unlimited-OCR",
-   "downloads": 1205646,
-   "likes": 4520,
+   "title": "openbmb/MiniCPM-V-4.7-1B",
+   "url": "https://huggingface.co/openbmb/MiniCPM-V-4.7-1B",
+   "downloads": 263,
+   "likes": 285,
    "task": "image-text-to-text",
-   "date": "2026-06-19T09:40:33.000Z"
+   "date": "2026-10-06T17:40:13.000Z"
+  },
+  {
+   "title": "Cactus-Compute/whistle",
+   "url": "https://huggingface.co/Cactus-Compute/whistle",
+   "downloads": 21005,
+   "likes": 383,
+   "task": "automatic-speech-recognition",
+   "date": "2026-09-30T17:13:26.000Z"
+  },
+  {
+   "title": "autotrust/JEV-35B-NVFP4",
+   "url": "https://huggingface.co/autotrust/JEV-35B-NVFP4",
+   "downloads": 20494,
+   "likes": 301,
+   "task": "text-classification",
+   "date": "2026-10-11T03:05:28.000Z"
   }
  ]
 }
