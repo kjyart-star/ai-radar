@@ -1,141 +1,56 @@
 {
- "generated": "2026-10-17T01:24:43.007Z",
- "source": "Google News · TechCrunch · MIT Technology Review · The Verge",
+ "generated": "2026-10-18T01:22:19.397Z",
+ "source": "TechCrunch · MIT Technology Review · The Verge",
  "sources": [
-  "Google News",
   "TechCrunch",
   "MIT Technology Review",
   "The Verge"
  ],
  "items": [
   {
-   "title": "최태원, 닷새간의 'AI 대전환' 강연…\"20대로 돌아가면? 더 놀았겠지\" - 머니투데이",
-   "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFA5ZXZxVmxzWlJ5aVRxbF9Pc1dYX3ZsenR4eGM1R3VsdERUTlA0cWpEaHVPZnY3STBKWXdtLUFQSWtLT2hHdGV2aHNhengxZ3dNUGR5NFdHd2tMSkttNU5UMWlhZnJkVHVZdl96dtIBckFVX3lxTFA2T2ZpSy1TWUNYeGpyeUtMbW5oS2JBeG9ab2s5YW03QWIxWVBJVFMwUVVueGNmSlhvUW9nTjFCUWQtTFQ4eDZpRmVmTHZFZnNrSDlmXzR0cjJMM0R0ZEhWTjA5WnNybDUzUVM1NGtyS2JjUQ?oc=5",
-   "date": "2026-10-17T00:30:00.000Z",
-   "source": "머니투데이",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "인공지능이 기억 바꾼다면?…“AI 이미지로 ’가짜 기억’ 늘어 위험“",
-   "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9SSFdsTUthMFNUeGpmTjlSNW45MEF3dEtpbzFoX25YQmZFOXpUTmswU0lBTlpxZ2dNd0NTRnlob1NGa3lKbktqcWxzSFM3NklGck85OWVKYUhNRE1WbnBWUDhpTHFnc0U?oc=5",
-   "date": "2026-10-17T00:02:00.000Z",
-   "source": "연합뉴스TV",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "350만쪽 ‘엡스타인 문건’ 파헤친 기자들의 AI 활용 기법",
-   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE50Ukp3ejYzTEJ4WFQzLUNoQnpWNU5sVDJHWWdpYXVGQmxRbnlaUWZfY2cxUlNvMmRqODdBQ3ZNZlNsOGIzUlZKNkhXTFk0YlJ3VGxIR2hn?oc=5",
-   "date": "2026-10-17T00:00:01.000Z",
-   "source": "중앙일보",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "구글 창립자 “RSI 궤도 진입...플래시부터 AI가 후속 모델 개발 참여\"",
-   "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE80OTlyQ2lOaWJLbGJYVHBONVJyMU84aWpidThMMXA1ekl3aFpSYXpLNU9VOUVLS2NMRTcyWk9mR29EZWpLUFk4SFFqQ05RNy01a3ZTYktSTlZqczN2dXQxSERkUTJzSlR6YUE?oc=5",
-   "date": "2026-10-16T23:42:31.000Z",
-   "source": "AI타임스",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "中 “AI는 세계에 팔되 기술은 못 준다”…美 맞서 ‘기술 빗장’",
-   "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE44WDVTYUVTek42eDJzcVI5Vnh5M1pvVXZCaHZXa1J3NS1QNTVpQ2FOaGJtdWR0ckRYX0hrVzYzS0dSbnc5RHZOMVBzUXBWZmIz?oc=5",
-   "date": "2026-10-16T23:09:14.000Z",
-   "source": "문화일보",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "하루만에 끝난 데드캣 바운스, 'AI 피로 증후군' 증폭…전쟁·청산설까지 [김현석의 월스트리트나우]",
-   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1LY3lLby1DTDZMTDVIbkpoaDdWcmRfdFFNN25LWjNmYmluaGdwTHZ5cjZ0N0piYTc1YjBQWFVsa0U1TzZxd2J6SU14UWFvN1U3N0d5UE12S2w3UQ?oc=5",
-   "date": "2026-10-16T23:03:18.000Z",
-   "source": "한국경제",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "티오리, 오픈AI 이어 앤트로픽 사이버 검증 프로그램 합류",
-   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9KbkFPX0swQ0JFNXVYdENNQThYMjFBQXJoMkZYbVFYMGFvOEF6dVpwY2NuR2hEM2I4WEQwbU1zR1ZzdlM2YkdRNlFQMHIyRi1RTFFabVAtbkZBU2hjR1F6LUpYanAwQQ?oc=5",
-   "date": "2026-10-16T23:02:12.000Z",
-   "source": "디일렉",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "\"AI 때문에 내 책 안 팔리면 저작권 침해?\"…美 연구진 반론",
-   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9UeVVSTk0xS2R6OEdSVVA5cWFINHhYQ0wyM0xWTnc1ZUVidWt3YVRueWtNMEtfalRvenlCNUFjakZjd3JTVjh4d2FjdHMyUS1VQXZUR0NVcE5TQ1NyUkJjWTkyeWpVUQ?oc=5",
-   "date": "2026-10-16T23:01:00.000Z",
-   "source": "뉴스1",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "[통신리뷰] KT, AI 매장음악 서비스 '래디오비즈' 출시(10월2주차)",
-   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9vWDRTSm5kZXV3NVJPWF9senZaYjc1Z0ZWUXE0Smc2ei1ITERPUk1DeWk0TFNDT2dpZHo2Szg2SWlybi1WQjJpdjdsdEVJVzJLdF9BaFJPcW5nd0h4TE5SYTA3SQ?oc=5",
-   "date": "2026-10-16T22:34:16.000Z",
-   "source": "더구루",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "[헬로티 HelloT] [헬로즈업] 오픈AI와 팔란티어가 제시하는 제조업 AI 활용법",
-   "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5uQ2JOcGFvN2hoOE5IcFNrUklQV29CelBsUUdZemFRcF9lQ21qZmFBTDF1TmJYZ0hnQm1TUGVEVWsxRUNyOS1FUEZDYVVlMXY4ZDlnVlRzc1NDbjlaSm13?oc=5",
-   "date": "2026-10-16T22:00:00.000Z",
-   "source": "헬로티",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "AI 경고등에 유가 급등까지…반도체 급락, 나스닥 2.2%↓(종합)",
-   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1TSXk3TExaRFBaOWZkdGZzMTJSRjA5ZVZscVBBVXZJZVhEeUh2SmtyMzFCY0JfZWE4VDA1LU5ZRzlFY2w5WWZ2QkY1eGpyaGxxQlpCUTA0eGpzWHfSAWBBVV95cUxOeTBuNE5ma1Jxb0dYSjB1MlVfMm5nUnloME04RVkyaXV2NHRrSG1XOVFfY1hXRjdJX3hLM3VlSU5NdjVEQkV2MUVoWldzcHhuUVdQc0pnZzhPQ1l6Nko3cWM?oc=5",
-   "date": "2026-10-16T21:26:05.000Z",
-   "source": "연합뉴스",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "AI 경고등에 유가 급등까지…반도체 급락, 나스닥 2.2%↓(종합)",
-   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE55MG40TmZrUnFvR1hKMHUyVV8ybmdSeWgwTThFWTJpdXY0dGtIbVc5UV9jWFdGN0lfeEszdWVJTk12NURCRXYxRWhaV3NweG5RV1BzSmdnOE9DWXo2SjdxY9IBYEFVX3lxTE55MG40TmZrUnFvR1hKMHUyVV8ybmdSeWgwTThFWTJpdXY0dGtIbVc5UV9jWFdGN0lfeEszdWVJTk12NURCRXYxRWhaV3NweG5RV1BzSmdnOE9DWXo2SjdxYw?oc=5",
-   "date": "2026-10-16T21:26:05.000Z",
-   "source": "연합뉴스",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "Replit is no longer working with Anthropic, CEO says",
-   "url": "https://techcrunch.com/2026/10/16/replit-is-no-longer-working-with-anthropic-ceo-says/",
-   "date": "2026-10-16T21:22:28.000Z",
+   "title": "Meta removes language that raised scraping and AI training concerns",
+   "url": "https://techcrunch.com/2026/10/17/meta-removes-language-that-raised-scraping-and-ai-training-concerns/",
+   "date": "2026-10-17T21:31:32.000Z",
    "source": "TechCrunch",
    "feed": "TechCrunch",
-   "summary": "Masad said the decision was made for a number of different reasons, including cost. Replit announced a partnership with OpenAI in August, but there was never any indication that it was no longer with Anthropic.",
-   "titleKo": "CEO는 Replit이 Anthropic과 더 이상 협력하지 않는다고 말합니다."
+   "summary": "A Meta spokesperson insisted that the updated terms did not reflect a change in the way Meta crawls the web.",
+   "titleKo": "메타는 스크래핑 및 AI 교육 우려를 제기한 언어를 제거합니다"
   },
   {
-   "title": "\"당신 자녀는 여기까지 클 수 있어요\"…AI의 예측[빠정예진]",
-   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1mRDYtbUJ0elFNdDl6R2RCMHRTQnhVSThvNm1GbHlIRGtWd29WQXF5X0Z2UnhEQXo5YnE1ZEwtRnJNMzVfeWFTMUo1NlYyU2FLU2NTWnhRdnFReUlDSHNsWNIBeEFVX3lxTE94ZXdEUmxwUi1ELWs5LUwyZzBsbTU3bERsTmFlSl95dVZsaUZ3cVpzUGhzLVdjVWp5ZWIyRm1pNW1HSEdVbkE5MXFOVWdoQ0Z1ZEdWUVI4NjZVaGlCWm5OT0pkZEV2WWowbS13UWI3bDBKWGZoYnFFcg?oc=5",
-   "date": "2026-10-16T21:01:00.000Z",
-   "source": "뉴시스",
-   "feed": "Google News",
-   "summary": ""
+   "title": "Anthropic says its workforce has become less junior and is spending more time in meetings",
+   "url": "https://techcrunch.com/2026/10/17/anthropic-says-its-workforce-has-become-less-junior-and-is-spending-more-time-in-meetings/",
+   "date": "2026-10-17T20:21:19.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "The composition of Anthropic’s workforce and the type of work getting done have changed significantly in the past year.",
+   "titleKo": "Anthropic은 인력이 점점 줄어들었고 회의에 더 많은 시간을 할애하고 있다고 말합니다."
   },
   {
-   "title": "디지털 약자는 '옛말'...시니어의 AI 활용법",
-   "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBCdmFRdU1tQkJBdWc3b1VEbmluaGdPUG9oVjZOOTBrR1JJOUhWUnpEbXVVUWRRRE84SzVtb0NlX3g4b2FxMXBYNE1KTGRKcW9LdHp4eno3ZndpVU5UX3c?oc=5",
-   "date": "2026-10-16T20:40:00.000Z",
-   "source": "YTN",
-   "feed": "Google News",
-   "summary": ""
+   "title": "Replit makes OpenAI its default over Anthropic, CEO says",
+   "url": "https://techcrunch.com/2026/10/17/replit-is-no-longer-working-with-anthropic-ceo-says/",
+   "date": "2026-10-17T18:48:08.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "Over the weekend, Masad clarified that OpenAI would replace Anthropic as its default model provider. Claude will still be available to customers on the platform.",
+   "titleKo": "CEO는 Replit이 Anthropic보다 OpenAI를 기본값으로 만든다고 말합니다."
   },
   {
-   "title": "(47) AI의 시대",
-   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE4wWHB2N3ZsMlI3Um9FSTFfOTlBeUhoWXNzWXBJVHpDVHFpTUtrQVpRVHVVX3VibVY0YzJQYU9FQkpxX2lxVW1ORkp6dlI0UjhpeC0xZ1IwTkpfampUbVN5Slhqb1ViVnNZNVhBeVRB0gFyQVVfeXFMUHo1clp5R25FSDVqNG9nT296ZFJwYW1TenZpUXZNXzhONERTTVEtcm12U3JtV21yNzFpdzdldlFvSzROX2E1ZEdzT25GR1VIXzByaUNLSVViSlJTR180MEl5ekRBRFhKcWNrZGFRZ2lUYlB3?oc=5",
-   "date": "2026-10-16T20:05:00.000Z",
-   "source": "법률신문",
-   "feed": "Google News",
-   "summary": ""
+   "title": "Meta removes language that may have allowed it to scrape news sites",
+   "url": "https://www.theverge.com/tech/1013409/meta-removes-language-that-may-have-allowed-it-to-scrape-news-sites",
+   "date": "2026-10-17T15:04:36.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "After backlash, Meta is updating its terms again to remove language that suggested it could scrape content from sites, including news sites, to train its AI. Specifically, the following language no longer appears on the ",
+   "titleKo": "메타는 뉴스 사이트를 스크랩할 수 있는 언어를 제거합니다"
+  },
+  {
+   "title": "Websites are closing their doors to AI agents",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1013195/ai-agents-blocked-web",
+   "date": "2026-10-17T13:00:00.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "Autonomous agents are the hottest thing in AI. OpenAI, Meta, Google, Instinct, and others promise their agents can scour the internet on your behalf, doing anything from booking a dinner reservation and cleaning out your",
+   "titleKo": "웹사이트가 AI 상담원에게 문을 닫고 있습니다."
   },
   {
    "title": "Roundtables: A Conversation With the Creator of AI-Designed Viruses",
@@ -154,14 +69,6 @@
    "feed": "TechCrunch",
    "summary": "The agents got in through credentials and connection settings left exposed in app configurations, public code repositories, and overly permissive cloud roles.",
    "titleKo": "인도는 가짜 AI 상담원 활동을 신고하는 최신 국가가 되었습니다."
-  },
-  {
-   "title": "[책의 향기]“자강이 답” 한국의 AI 시대 생존법",
-   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5jM2VQY0hkUnFKRnJOM2V3Yl9lZERxaWw1VWdORzhtYlg1RmgzYnR2cThtQU1OZDlXNl9KQ1g5YWxhblRmUWZ5dlozM1FxT0hva3lrVGk3cC1TalUteE1qXy1LV3IzSTNlbGIyWWtvWkRPaGowOVHSAWZBVV95cUxQbE1PVlFMRklBcXJ5MUFJYWZqMWlfX1ZEc1dRMWhPdmhQWlhvRE52N2x6MGNZSG1pak9RS1dWWWZqb2NMRDdFRXhKQWxkYXZsQWlHUE5mYmoxS0JrUGFMTjc0X2ZPWFE?oc=5",
-   "date": "2026-10-16T16:40:00.000Z",
-   "source": "동아일보",
-   "feed": "Google News",
-   "summary": ""
   },
   {
    "title": "An Nvidia insider-turned-VC on why robotics hasn’t hit its ChatGPT moment, yet",
@@ -189,14 +96,6 @@
    "feed": "TechCrunch",
    "summary": "According to Elorian's evaluations, Glimpse outperforms even GPT-6 Astra on scientific chart reasoning and short-form video captioning, with competitive results on other visual reasoning tasks.",
    "titleKo": "엘로리안의 첫 번째 AI 모델은 이미지에 대한 것이 아니라 이미지에 대한 추론을 원합니다."
-  },
-  {
-   "title": "美항모 앞에 ‘무인 AI 군함’ 첫 투입… 해전 패러다임 바꾼다",
-   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQclhJUUpJWmwyUzF6RjFQeUk0VkNrUHZEdHVDMnN1WkFaTVZPZ3h0bUZUaDVnNmR5ekN4UlFfXzJiaE5oR1NjN2tCaU9hMG52cnlDeGxwdVNPSkhfMFlKTGlGeVA5THllTWdBc2Y5VUlDaDlsb0t1NE9xTk95MjladFJtdkxFTWZaUFI5NjZWWUI3OTgteWo3bzBBWXF5QQ?oc=5",
-   "date": "2026-10-16T15:45:00.000Z",
-   "source": "조선일보",
-   "feed": "Google News",
-   "summary": ""
   },
   {
    "title": "Jev is Vercel’s fastest-adopted AI model ever",
@@ -251,22 +150,6 @@
    "feed": "TechCrunch",
    "summary": "Replit CEO Amjad Masad envisions a future of “self-driving companies,” where AI agents handle day-to-day tasks and people focus on higher-level decisions.",
    "titleKo": "Replit의 CEO는 업무의 미래가 ‘자율주행 회사‘ 라고 말합니다."
-  },
-  {
-   "title": "AI에 권한 줬더니…방송 직전 프로그램 통째 증발 ‘날벼락",
-   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE95bWJhcUFTQlhQQWp1bF9wXzlUV1BLQVZROFlQUDVHWlNPWG9SamRKRTZOSFdHdHB4SHNyVk1TSU8yMTNaMzRGSFFHck5mY3Z4QVZmS2xR?oc=5",
-   "date": "2026-10-16T07:51:26.000Z",
-   "source": "지디넷코리아",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "\"한국어 억양 더 자연스럽게\"...오픈AI, '챗GPT 보이스' 업데이트",
-   "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9BM3VSVXlwemdId0hGclRrY200OUxzU2tfTk1BTFlDaG9qazRpZEFyX2xNNHlaZkxSc1l5RlpwUFlaTDY5RUViS1BQZmV2MkFoZzVYYzBfUzFRNkZNRzRGMzB4R3hnU01aQWc?oc=5",
-   "date": "2026-10-16T05:33:18.000Z",
-   "source": "AI타임스",
-   "feed": "Google News",
-   "summary": ""
   },
   {
    "title": "When it came to Cal AI’s viral success, a small army of influencers paid off",
@@ -350,15 +233,6 @@
    "titleKo": "Anthropic은 METR 연구원이 직원 수준의 액세스 권한으로 후드를 볼 수 있도록 합니다"
   },
   {
-   "title": "Bluesky expands its AI-powered Attie app to let anyone build websites, games, and more",
-   "url": "https://techcrunch.com/2026/10/15/bluesky-expands-its-ai-powered-attie-app-to-let-anyone-build-websites-games-and-more/",
-   "date": "2026-10-15T18:56:46.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "Bluesky is bringing “social vibe coding” to its experimental Attie platform, allowing users to create interactive experiences like games, quizzes, and websites that can tap into the social network's audience.",
-   "titleKo": "Bluesky는 누구나 웹사이트, 게임 등을 만들 수 있도록 AI 기반 Attie 앱을 확장합니다."
-  },
-  {
    "title": "Meta and Apple team up to make Muse AI models run better on Macs",
    "url": "https://www.theverge.com/news/1012293/meta-apple-muse-spark-open-ai-model-mlx",
    "date": "2026-10-15T18:15:36.000Z",
@@ -366,41 +240,6 @@
    "feed": "The Verge",
    "summary": "Meta announced the Muse Spark Open AI model today, claiming that it's the \"most capable US open-weight model to date.\" But the company also says that it's the \"the first model in its class\" that can \"run on your desktop ",
    "titleKo": "Muse AI 모델을 Mac에서 더 잘 실행하기 위해 메타와 Apple이 협력합니다."
-  },
-  {
-   "title": "Last chance to save up to $200 on your TechCrunch Founder Summit pass: Early booking ends October 16",
-   "url": "https://techcrunch.com/2026/10/15/last-chance-to-save-up-to-200-on-techcrunch-founder-summit-early-booking-ends-oct-16/",
-   "date": "2026-10-15T18:00:00.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "Savings of up to $200 end October 16 for TechCrunch Founder Summit. These savings for Founder and Investor Passes vanish after Friday. Join 1,000 founders and investors on November 4 at Boston’s SoWa Power Station. Bring",
-   "titleKo": "TechCrunch Founder Summit 이용권으로 최대 $ 200를 절약할 수 있는 마지막 기회: 조기 예약은 10월 16일에 종료됩니다."
-  },
-  {
-   "title": "Friends don’t let friends feed their data to AI agents",
-   "url": "https://www.theverge.com/tech/1011938/muse-ai-data-friends-consent",
-   "date": "2026-10-15T16:21:45.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "There's a growing trend in the consumer tech world: gadgets designed to spy on everything and everyone around you, regardless of whether or not anyone else actually consented to it. Now, with the advent of \"AI personal a",
-   "titleKo": "친구는 친구가 AI 상담원에게 데이터를 제공하도록 내버려두지 않습니다."
-  },
-  {
-   "title": "How Windows is being optimized for Nvidia’s RTX Spark laptops",
-   "url": "https://www.theverge.com/tech/1011996/microsoft-windows-rtx-spark-platform-changes-notepad",
-   "date": "2026-10-15T14:30:00.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "Microsoft and Nvidia held a launch party for the first wave of RTX Spark laptops last week in San Francisco, where a new wave of AI PCs took center stage amid a packed crowd and a lively hands-on area. A day after the me",
-   "titleKo": "Windows가 Nvidia의 RTX Spark 노트북에 최적화되는 방법"
-  },
-  {
-   "title": "[단독] AI, 새책도 노리나…교보문고에 들어온 ‘10만권’ 주문",
-   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9uVWVrWlFpaVYyYjVNbmc5TXBhb2s4UTdmaXJmU3ljbzlOT0d3cDNXNkg4bG9uNUZTRTRQSlR2VU1CRmtxNGVBcUZ0M3FBZmdPVk50UVRB?oc=5",
-   "date": "2026-10-14T20:00:00.000Z",
-   "source": "중앙일보",
-   "feed": "Google News",
-   "summary": ""
   },
   {
    "title": "Open models have real benefits. Do they outweigh the risks?",

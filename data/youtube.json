@@ -1,6 +1,38 @@
 {
- "generated": "2026-10-17T01:29:29.832Z",
+ "generated": "2026-10-18T01:27:52.293Z",
  "news": [
+  {
+   "title": "Former OpenAI Researcher Makes a MASSIVE AI Discovery",
+   "url": "https://www.youtube.com/watch?v=2mE6bbjVazE",
+   "videoId": "2mE6bbjVazE",
+   "channel": "TheAIGRID",
+   "published": "2026-10-17T20:31:16.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/2mE6bbjVazE/mqdefault.jpg"
+  },
+  {
+   "title": "ChatGPT Just Solved My Biggest Browser Problem",
+   "url": "https://www.youtube.com/watch?v=KwvpDtUFS-s",
+   "videoId": "KwvpDtUFS-s",
+   "channel": "The AI Advantage",
+   "published": "2026-10-16T16:45:54.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/KwvpDtUFS-s/mqdefault.jpg"
+  },
+  {
+   "title": "AI News: 6 New Models & A Nano Banana Killer",
+   "url": "https://www.youtube.com/watch?v=KGcuuhqmPhI",
+   "videoId": "KGcuuhqmPhI",
+   "channel": "Matt Wolfe",
+   "published": "2026-10-16T16:20:28.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/KGcuuhqmPhI/mqdefault.jpg"
+  },
+  {
+   "title": "자동차가 진짜 날았다… 머스크는 왜 자동차에 로켓을 달았나 | 신형 로드스터가 보여준 기술과 테슬라의 다음 승부수",
+   "url": "https://www.youtube.com/watch?v=B3NBhTRaWgs",
+   "videoId": "B3NBhTRaWgs",
+   "channel": "안될공학",
+   "published": "2026-10-16T13:17:20.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/B3NBhTRaWgs/mqdefault.jpg"
+  },
   {
    "title": "일론머스크가 노리는 건 우주만이 아니다… 주파수 인수부터 6G 지상·위성 통합까지 | 미국 통신 3사가 긴장한 스페이스X의 다음 계획",
    "url": "https://www.youtube.com/watch?v=6OjmZgnK3oU",
@@ -288,41 +320,25 @@
    "channel": "Wes Roth",
    "published": "2026-10-04T14:11:55.000Z",
    "thumbnail": "https://i.ytimg.com/vi/9CGsq3A590Q/mqdefault.jpg"
-  },
-  {
-   "title": "OpenAI Is Building Past GPT-8… This Is Getting Serious",
-   "url": "https://www.youtube.com/watch?v=2dWC2vkIzAc",
-   "videoId": "2dWC2vkIzAc",
-   "channel": "TheAIGRID",
-   "published": "2026-10-03T23:00:16.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/2dWC2vkIzAc/mqdefault.jpg"
-  },
-  {
-   "title": "How ChatGPT Dots Can Change Your Life in 4 Minutes",
-   "url": "https://www.youtube.com/watch?v=E3xKmcHBOzY",
-   "videoId": "E3xKmcHBOzY",
-   "channel": "The AI Advantage",
-   "published": "2026-10-02T16:01:03.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/E3xKmcHBOzY/mqdefault.jpg"
-  },
-  {
-   "title": "AI News: Dots, GPT-6.1 Sol, Sonnet 5.5, Gemini 4, and everything you need to know",
-   "url": "https://www.youtube.com/watch?v=dDgncbBAA0c",
-   "videoId": "dDgncbBAA0c",
-   "channel": "Matt Wolfe",
-   "published": "2026-10-02T15:00:16.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/dDgncbBAA0c/mqdefault.jpg"
-  },
-  {
-   "title": "AI 시대, 전력도 데이터를 읽어야 한다 | ‘멈추지 않는 전력’을 완성하는 변압기·배전반 예지보전 기술",
-   "url": "https://www.youtube.com/watch?v=A7D28b2bxT8",
-   "videoId": "A7D28b2bxT8",
-   "channel": "안될공학",
-   "published": "2026-10-02T10:00:00.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/A7D28b2bxT8/mqdefault.jpg"
   }
  ],
  "vibe": [
+  {
+   "title": "Gemini 4 and Muse Wonder Dropped… But Fable 5.5 Is TERRIFYING",
+   "url": "https://www.youtube.com/watch?v=1d7P3ewd9AA",
+   "videoId": "1d7P3ewd9AA",
+   "channel": "Riley Brown",
+   "published": "2026-10-16T17:30:21.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/1d7P3ewd9AA/mqdefault.jpg"
+  },
+  {
+   "title": "My AI Dark Factory Dream Is Dead (Here's What Actually Works)",
+   "url": "https://www.youtube.com/watch?v=GQatuTWSRqY",
+   "videoId": "GQatuTWSRqY",
+   "channel": "Cole Medin",
+   "published": "2026-10-16T14:00:33.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/GQatuTWSRqY/mqdefault.jpg"
+  },
   {
    "title": "Make cool things with AI that people buy (Gemini 4 Argon)",
    "url": "https://www.youtube.com/watch?v=jEOUUAPC1sc",
@@ -332,7 +348,7 @@
    "thumbnail": "https://i.ytimg.com/vi/jEOUUAPC1sc/mqdefault.jpg"
   },
   {
-   "title": "Claude Code Makes Regular Claude Feel Dumb",
+   "title": "Why You Should Use Claude Code (For Everything)",
    "url": "https://www.youtube.com/watch?v=fDE5R4fSq2w",
    "videoId": "fDE5R4fSq2w",
    "channel": "Riley Brown",
@@ -626,22 +642,6 @@
    "channel": "AI Jason",
    "published": "2026-09-23T11:51:06.000Z",
    "thumbnail": "https://i.ytimg.com/vi/8pRe7kkPi6g/mqdefault.jpg"
-  },
-  {
-   "title": "264만 구독자 엔조이커플 맥미니 AI 직원 세팅해드렸습니다 (ft. 맥북가이버)",
-   "url": "https://www.youtube.com/watch?v=F9ppxTBO_mM",
-   "videoId": "F9ppxTBO_mM",
-   "channel": "조코딩 JoCoding",
-   "published": "2026-09-23T11:00:18.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/F9ppxTBO_mM/mqdefault.jpg"
-  },
-  {
-   "title": "$30M Writer: Never write AI slop again",
-   "url": "https://www.youtube.com/watch?v=YuOSyRj3sXg",
-   "videoId": "YuOSyRj3sXg",
-   "channel": "Greg Isenberg",
-   "published": "2026-09-21T19:30:18.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/YuOSyRj3sXg/mqdefault.jpg"
   }
  ]
 }
