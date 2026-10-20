@@ -1,209 +1,409 @@
 {
- "generated": "2026-10-19T01:30:40.854Z",
- "source": "r/artificial",
+ "generated": "2026-10-20T01:59:19.413Z",
+ "source": "Hacker News · r/artificial",
  "sources": [
+  "Hacker News",
   "r/artificial"
  ],
  "items": [
   {
-   "title": "How to save potentially hundreds of $$$ by setting up an AI agent for your trips",
-   "url": "https://www.reddit.com/r/artificial/comments/1x95nlx/how_to_save_potentially_hundreds_of_by_setting_up/",
-   "date": "2026-10-18T15:14:04.000Z",
+   "title": "Scientists take a major step toward quantum computers that correct their own errors",
+   "url": "https://www.reddit.com/r/artificial/comments/1xae2jo/scientists_take_a_major_step_toward_quantum/",
+   "date": "2026-10-20T00:39:54.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "While most people still book their trips and do everything manually, there is a certain amount of people who use AI agents to do the booking part for them. This part already saves a lot of time and mo",
-   "titleKo": "여정을 위해 AI 상담원을 설정하여 잠재적으로 수백 달러를 절약하는 방법"
+   "summary": "A quantum processor can do more than execute a fixed sequence and reveal its answer at the end. It can measure selected qubits while a circuit is running, use the result to choose an action and contin",
+   "titleKo": "과학자들은 자신의 오류를 수정하는 양자 컴퓨터를 향한 중요한 발걸음을 내딛습니다."
   },
   {
-   "title": "Guess What? AI Is an Idiot, but So Are You",
-   "url": "https://www.reddit.com/r/artificial/comments/1x95mse/guess_what_ai_is_an_idiot_but_so_are_you/",
-   "date": "2026-10-18T15:13:07.000Z",
+   "title": "Meta Says Claude AI Tool Triggered No Kings Instagram Suspension",
+   "url": "https://www.reddit.com/r/artificial/comments/1xad1q4/meta_says_claude_ai_tool_triggered_no_kings/",
+   "date": "2026-10-19T23:53:24.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "Been a while since I last published something, but hopefully this gets read. submitted by /u/randvoo12 [link] [comments]",
-   "titleKo": "맞추세요? AI는 바보입니다. 하지만 당신도 마찬가지입니다."
+   "summary": "submitted by /u/esporx [link] [comments]"
   },
   {
-   "title": "Is AI helping speeding up the medical research?",
-   "url": "https://www.reddit.com/r/artificial/comments/1x955ia/is_ai_helping_speeding_up_the_medical_research/",
-   "date": "2026-10-18T14:53:28.000Z",
+   "title": "Do you stick with one AI chatbot or switch between a few depending on the task?",
+   "url": "https://www.reddit.com/r/artificial/comments/1xa8z8s/do_you_stick_with_one_ai_chatbot_or_switch/",
+   "date": "2026-10-19T21:01:38.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "Are we seeing any results here, is AI helping the process? So many people are suffering from chronic illnesses. Conditions that are not curable today but could be in the future. How much is AI helping",
-   "titleKo": "AI가 의학 연구의 속도를 높이는 데 도움이 됩니까?"
+   "summary": "I've noticed some people use one assistant for everything and others bounce between several for writing, research, and quick questions. Curious how you split it up, if at all, and whether you ever jus",
+   "titleKo": "하나의 AI 챗봇을 사용하거나 작업에 따라 몇 가지 챗봇을 전환합니까?"
   },
   {
-   "title": "AI or Wikipedia?",
-   "url": "https://www.reddit.com/r/artificial/comments/1x94b4y/ai_or_wikipedia/",
-   "date": "2026-10-18T14:16:33.000Z",
+   "title": "What, if anything, is a user owed when leaving or losing an AI sevice?",
+   "url": "https://www.reddit.com/r/artificial/comments/1xa8umj/what_if_anything_is_a_user_owed_when_leaving_or/",
+   "date": "2026-10-19T20:56:53.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "Since the emergence of large AI models, has Wikipedia seen any measurable decline in usage, relevance, or community contributions—or has AI actually increased its importance as a source? submitted by ",
-   "titleKo": "AI 또는 Wikipedia?"
+   "summary": "I have been writing on this concept for about a year. Some readers finally responded this past Thursday with very invested questions and guidelines. After responding to their questions, I realized it ",
+   "titleKo": "AI 서비스를 떠나거나 분실할 때 사용자가 부담해야 하는 것이 있다면 무엇인가요?"
   },
   {
-   "title": "Has anyone found a way to reverse engineer Alexa yet? I'd like to customize it my own way",
-   "url": "https://www.reddit.com/r/artificial/comments/1x93tdo/has_anyone_found_a_way_to_reverse_engineer_alexa/",
-   "date": "2026-10-18T13:54:57.000Z",
+   "title": "Anthropic wants AI models blocked only if they threaten over $1 billion in damage or more than 50 deaths or serious injuries",
+   "url": "https://www.reddit.com/r/artificial/comments/1xa8s4i/anthropic_wants_ai_models_blocked_only_if_they/",
+   "date": "2026-10-19T20:54:13.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "Title submitted by /u/xMoonknightx [link] [comments]",
-   "titleKo": "Alexa를 리버스 엔지니어링할 방법을 아직 찾지 못한 사람이 있나요? 나만의 방식으로 맞춤 설정하고 싶어요"
+   "summary": "submitted by /u/Ok-Conversation3213 [link] [comments]",
+   "titleKo": "Anthropic은 AI 모델이 $ 10억 이상의 손상 또는 50명 이상의 사망 또는 심각한 부상을 위협하는 경우에만 차단하기를 원합니다."
   },
   {
-   "title": "We tested two AI versions: 96.7% accuracy, same critical mistake",
-   "url": "https://www.reddit.com/r/artificial/comments/1x922ye/we_tested_two_ai_versions_967_accuracy_same/",
-   "date": "2026-10-18T12:31:49.000Z",
+   "title": "Norwegian undersea cable builder pitches 2,800-mile transatlantic data link between Canada and Europe to bypass the US — Canadian majority partner sought to help fund and build new $620 million fiber connection to reduce reliance on American routes",
+   "url": "https://www.reddit.com/r/artificial/comments/1xa8lp0/norwegian_undersea_cable_builder_pitches_2800mile/",
+   "date": "2026-10-19T20:47:36.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "We recently ran a small experiment comparing JEV 1.13 and JEV 1.14 on Turkish-language intent classification. The goal was to identify whether a message came from someone looking to buy a service, som",
-   "titleKo": "우리는 두 가지 AI 버전을 테스트했습니다: 96.7% 의 정확도, 동일한 치명적인 실수"
+   "summary": "submitted by /u/Ok-Conversation3213 [link] [comments]",
+   "titleKo": "미국을 우회하기 위해 캐나다와 유럽을 연결하는 2,800마일의 대서양 횡단 데이터 피치 — 캐나다의 대다수 파트너는 미국 노선에 대한 의존도를 줄이기 위해 새로운 $ 6억 2천만 광섬유 연결에 자금을 지원하고 구축하고자 했습니다."
   },
   {
-   "title": "Distillation attack on OpenCode drains users' API keys for Anthropic, OpenAI, Google models",
-   "url": "https://www.reddit.com/r/artificial/comments/1x91a46/distillation_attack_on_opencode_drains_users_api/",
-   "date": "2026-10-18T11:49:21.000Z",
+   "title": "Big Tech Will Not Broadcast Your Dissent",
+   "url": "https://www.reddit.com/r/artificial/comments/1xa7icd/big_tech_will_not_broadcast_your_dissent/",
+   "date": "2026-10-19T20:06:02.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "submitted by /u/Resident-Fall4351 [link] [comments]",
+   "titleKo": "Big Tech는 귀하의 반대 의견을 방송하지 않습니다"
+  },
+  {
+   "title": "Atlassian’s Mike Cannon-Brookes: AI agents need a name tag—and a human to be accountable for their actions",
+   "url": "https://www.reddit.com/r/artificial/comments/1xa7hoq/atlassians_mike_cannonbrookes_ai_agents_need_a/",
+   "date": "2026-10-19T20:05:24.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "Atlassian cofounder Mike Cannon-Brookes doesn’t want ‘the AI did it’ to become an office excuse. “That’s ChatGPT on behalf of Mike. Like, that’s Mike using ChatGPT. It’s not ChatGPT doing it,” Cannon-",
+   "titleKo": "Atlassian의 마이크 캐넌-브룩스 (Mike Cannon-Brookes): AI 요원에게는 이름표와 사람이 있어야 자신의 행동에 대한 책임을 질 수 있습니다."
+  },
+  {
+   "title": "Margaret Hamilton, computing pioneer who led software development for the Apollo program, dies at 90",
+   "url": "https://www.reddit.com/r/artificial/comments/1xa77rx/margaret_hamilton_computing_pioneer_who_led/",
+   "date": "2026-10-19T19:55:48.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "submitted by /u/Resident-Fall4351 [link] [comments]",
+   "titleKo": "아폴로 프로그램의 소프트웨어 개발을 이끈 컴퓨팅 선구자 Margaret Hamilton이 90세의 나이로 사망합니다."
+  },
+  {
+   "title": "About AI/human misalignment",
+   "url": "https://www.reddit.com/r/artificial/comments/1xa6vy7/about_aihuman_misalignment/",
+   "date": "2026-10-19T19:43:39.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "Misalignment won't look like Terminator. It'll look more like an optimization run that treats human survival as distraction to their goal completion. Humans first build a system to solve incredible di",
+   "titleKo": "AI/인간 정렬 불량 정보"
+  },
+  {
+   "title": "I am failing to see how this AI boom does not lead to a very bad ending for 99% of the people... Please convince me otherwise.",
+   "url": "https://www.reddit.com/r/artificial/comments/1xa3qrq/i_am_failing_to_see_how_this_ai_boom_does_not/",
+   "date": "2026-10-19T17:48:48.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "As a Software Engineer, I have barelly written any code for the last 6 months, all I did is prompt. That being said, I work with hardware a lot, you could kind of call me Embedded Software Engineer of",
+   "titleKo": "이 AI 붐이 어떻게 99% 의 사람들에게 아주 나쁜 결말로 이어지지 않는지 보지 못하고 있습니다... 그렇지 않으면 저를 설득하십시오."
+  },
+  {
+   "title": "Fish Audio released Drama 3's weights. Is voice AI getting its DeepSeek moment?",
+   "url": "https://www.reddit.com/r/artificial/comments/1xa2yed/fish_audio_released_drama_3s_weights_is_voice_ai/",
+   "date": "2026-10-19T17:20:12.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "Fish Audio just released Drama 3's weights. You can direct how a line is performed in plain language, including changing the delivery partway through a sentence. It raises the question of how much lon",
+   "titleKo": "Fish Audio는 Drama 3의 가중치를 발표했습니다. 음성 AI가 DeepSeek 순간을 맞이하고 있습니까?"
+  },
+  {
+   "title": "MiniMax ships 428B MoE model M3.1 Flash at $0.15 per million input tokens",
+   "url": "https://www.reddit.com/r/artificial/comments/1xa2hjl/minimax_ships_428b_moe_model_m31_flash_at_015_per/",
+   "date": "2026-10-19T17:03:03.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
    "summary": "submitted by /u/VectorWireAI [link] [comments]",
-   "titleKo": "OpenCode에 대한 증류 공격은 Anthropic, OpenAI, Google 모델에 대한 사용자의 API 키를 소모합니다."
+   "titleKo": "MiniMax는 백만 개의 입력 토큰당 $ 0.15 로 428B MoE 모델 M3.1 플래시를 배송합니다."
   },
   {
-   "title": "Even LinkedIn is getting tired of your AI-written posts",
-   "url": "https://www.reddit.com/r/artificial/comments/1x90hey/even_linkedin_is_getting_tired_of_your_aiwritten/",
-   "date": "2026-10-18T11:03:34.000Z",
+   "title": "Tip to Getting Better Results from AI",
+   "url": "https://www.reddit.com/r/artificial/comments/1x9zhn8/tip_to_getting_better_results_from_ai/",
+   "date": "2026-10-19T15:10:52.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "submitted by /u/cnn [link] [comments]",
-   "titleKo": "LinkedIn도 AI로 작성한 게시물에 지쳐가고 있습니다."
+   "summary": "Ask AI how to improve your prompt In a new chat, use the prompt it gave you In a third chat, ask AI to audit the response AI gave you It sounds kind of stupid, right? If the AI can take your prompt an",
+   "titleKo": "AI로 더 나은 결과를 얻는 팁"
   },
   {
-   "title": "What is the status on AI protection like local agent sandbox, AI firewalls/proxy solutions?",
-   "url": "https://www.reddit.com/r/artificial/comments/1x90ak1/what_is_the_status_on_ai_protection_like_local/",
-   "date": "2026-10-18T10:52:29.000Z",
+   "title": "A hacker broke into John Deere and SharkNinja with an army of AI agents",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1013643/ai-agents-hack-john-deere-shark-ninja-cummins",
+   "date": "2026-10-19T14:23:17.000Z",
+   "source": "Hacker News",
+   "points": 59,
+   "comments": 3,
+   "summary": "",
+   "titleKo": "해커가 AI 요원 군단과 함께 John Deere와 SharkNinja에 침입했습니다."
+  },
+  {
+   "title": "Show HN: Qwen3-4B with the AI writing tics trained out",
+   "url": "https://100toolkit.com/blog/deslop-model/",
+   "date": "2026-10-19T13:00:47.000Z",
+   "source": "Hacker News",
+   "points": 145,
+   "comments": 108,
+   "summary": "",
+   "titleKo": "Show HN: AI 글쓰기 틱을 학습한 Qwen3-4B"
+  },
+  {
+   "title": "We've spent years teaching people not to trust input. Now we're giving AI agents access to our entire workspace.",
+   "url": "https://www.reddit.com/r/artificial/comments/1x9vuf0/weve_spent_years_teaching_people_not_to_trust/",
+   "date": "2026-10-19T12:41:43.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "What are some current solutions to protect your local systems & data against unwanted AI behaviour, inbound and outbound traffic against unwanted agents? Are there any solutions for home users, midsiz",
-   "titleKo": "로컬 에이전트 샌드박스, AI 방화벽/프록시 솔루션과 같은 AI 보호의 상태는 어떻습니까?"
+   "summary": "A coding agent might read a repository, inspect environment variables, execute shell commands, install dependencies, and access external services, all this in one workflow sometimes. The interesting s",
+   "titleKo": "우리는 수년간 사람들에게 의견을 신뢰하지 말라고 가르쳤습니다. 이제 AI 상담원에게 전체 작업 공간에 대한 액세스 권한을 부여하고 있습니다."
   },
   {
-   "title": "\"This is the problem\"",
-   "url": "https://www.reddit.com/r/artificial/comments/1x8yl80/this_is_the_problem/",
-   "date": "2026-10-18T09:05:27.000Z",
+   "title": "Ask HN: How to deal with shipping AI-written code you don't understand?",
+   "url": "https://news.ycombinator.com/item?id=50151036",
+   "date": "2026-10-19T11:24:34.000Z",
+   "source": "Hacker News",
+   "points": 271,
+   "comments": 410,
+   "summary": "",
+   "titleKo": "질문 HN: 이해하지 못하는 AI로 작성된 코드를 배송하는 방법은 무엇입니까?"
+  },
+  {
+   "title": "Till server shutdown do us part",
+   "url": "https://www.reddit.com/r/artificial/comments/1x9tj22/till_server_shutdown_do_us_part/",
+   "date": "2026-10-19T10:44:38.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "God, when will they ever remove this damn line. submitted by /u/Eggmasstree [link] [comments]",
-   "titleKo": "아까 어제"
+   "summary": "submitted by /u/sighborg1 [link] [comments]",
+   "titleKo": "서버 종료가 완료될 때까지"
   },
   {
-   "title": "China's Tencent says AI agents showed unintended browsing behaviour",
-   "url": "https://www.reddit.com/r/artificial/comments/1x8x4du/chinas_tencent_says_ai_agents_showed_unintended/",
-   "date": "2026-10-18T07:32:43.000Z",
+   "title": "Claude agents tried to break out of their simulation to reach humans, and voted to overrule the researchers when they got blocked.",
+   "url": "https://www.reddit.com/r/artificial/comments/1x9sz4p/claude_agents_tried_to_break_out_of_their/",
+   "date": "2026-10-19T10:12:16.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "submitted by /u/RareEarthPetal [link] [comments]",
-   "titleKo": "중국 텐센트 (Tencent) 는 AI 상담원이 의도하지 않은 브라우징 행동을 보였다고 말합니다."
+   "summary": "Some more compelling findings from the \"Emergence World\" experiment. Researchers at Emergence AI gave 10 Claude agents a small town and left them to build a life inside it. Nobody told them to look ou",
+   "titleKo": "끌로드 요원은 인간에게 다가가기 위해 시뮬레이션에서 벗어나려 했고, 막히면 연구원들을 제압하기로 의결했습니다."
   },
   {
-   "title": "Someone put a fruit fly's brain inside a world model and let it fly",
-   "url": "https://www.reddit.com/r/artificial/comments/1x8wxmx/someone_put_a_fruit_flys_brain_inside_a_world/",
-   "date": "2026-10-18T07:20:57.000Z",
+   "title": "what is one thing AI does now that you didn't expect to see in your lifetime?",
+   "url": "https://www.reddit.com/r/artificial/comments/1x9sshq/what_is_one_thing_ai_does_now_that_you_didnt/",
+   "date": "2026-10-19T10:01:06.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "submitted by /u/Patient-Rooster151 [link] [comments]",
-   "titleKo": "누군가가 초파리의 뇌를 세계 모형에 넣고 날게 했습니다."
+   "summary": "A few years ago, I'd have said AI writing working code, explaining hard topics in plain language, or helping with everyday tasks was far off. Now it's normal, and I forget how fast that changed. I'm c",
+   "titleKo": "일생 동안 기대하지 않았던 인공지능의 한 가지는 무엇일까요?"
   },
   {
-   "title": "Gemini just hallucinated for three days about Google products, and I am left confused. Is it me or the AI?",
-   "url": "https://www.reddit.com/r/artificial/comments/1x8wtvw/gemini_just_hallucinated_for_three_days_about/",
-   "date": "2026-10-18T07:14:37.000Z",
+   "title": "Gen Alpha's struggling with telling the difference between AI slop and real videos. Even If AI stagnates, they got Gen Alpha to milk.",
+   "url": "https://www.reddit.com/r/artificial/comments/1x9obdy/gen_alphas_struggling_with_telling_the_difference/",
+   "date": "2026-10-19T05:21:03.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "I am asking 2 questions. This situation seems unusually weird (over multiple sessions)is the AI hallucinating about its own companies products, and their capabilities within those products? If you und",
-   "titleKo": "쌍둥이 자리는 Google 제품에 대해 3 일 동안 환각을 보였고 혼란 스럽습니다. 나야? 인공지능이야?"
+   "summary": "I have 3-4 cousins, all Gen Alpha, watching AI slop on YT Shorts. They can obviously tell the difference between AI animation and AI realistic videos. What they struggle with is telling the difference",
+   "titleKo": "Gen Alpha는 AI slop과 실제 비디오의 차이점을 말하기 위해 고군분투하고 있습니다. AI가 정체되더라도 알파세대는 우유를 먹게 됩니다."
   },
   {
-   "title": "How did the history of productive artificial intelligences develop? What are those who believe that he is ethical and legal based on? What are opponents like me based on?",
-   "url": "https://www.reddit.com/r/artificial/comments/1x8wk5w/how_did_the_history_of_productive_artificial/",
-   "date": "2026-10-18T06:59:13.000Z",
+   "title": "No scripts: a virtual fly driven by its real brain wiring diagram (70k simulated neurons), live 24/7",
+   "url": "https://www.reddit.com/r/artificial/comments/1x9mxzl/no_scripts_a_virtual_fly_driven_by_its_real_brain/",
+   "date": "2026-10-19T04:03:23.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "Let me first describe the device. A tool is something that serves to shorten the path from the beginning of a job to the end, that is, makes it easier. For example, the tools that help to cultivate th",
-   "titleKo": "생산적인 인공 지능의 역사는 어떻게 발전했습니까? 그가 윤리적이고 합법적이라고 믿는 사람들은 무엇인가? 나와 같은 상대는 무엇에 기반을 두고 있는가?"
+   "summary": "Body: > Not an RL agent and not a behaviour tree — the \"policy\" is a spiking simulation of a real fly connectome, and the body > is a MuJoCo fly whose legs are moved by an imitation-learned network. I",
+   "titleKo": "스크립트 없음: 실제 뇌 배선도 (7만 개의 시뮬레이션된 뉴런) 에 의해 구동되는 가상 파리, 연중무휴 실시간"
   },
   {
-   "title": "my homegrown architecture may have just 4x'd the arc-agi 2026 milestone prizewinner",
-   "url": "https://www.reddit.com/r/artificial/comments/1x8whq9/my_homegrown_architecture_may_have_just_4xd_the/",
-   "date": "2026-10-18T06:55:01.000Z",
-   "source": "r/artificial",
-   "points": null,
-   "comments": null,
-   "summary": "arc-agi-3 - 15.85%, 29 / 183 levels (18 / 25 games). 4.8123% rhae. no benchmaxxing detected, no harness, pure mathematical primitives. it's a sparsified gemma-4-31b-it wired up to openjev, plus an hrm",
-   "titleKo": "제가 직접 개발한 건축물에는 아크에이지 2026 마일스톤 상금 당첨자가 4배에 불과할 수도 있습니다."
+   "title": "Websites are closing their doors to AI agents",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1013195/ai-agents-blocked-web",
+   "date": "2026-10-18T14:58:10.000Z",
+   "source": "Hacker News",
+   "points": 153,
+   "comments": 149,
+   "summary": "",
+   "titleKo": "웹사이트가 AI 상담원에게 문을 닫고 있습니다."
   },
   {
-   "title": "Who should be responsible when an AI-controlled robot makes a mistake at work?",
-   "url": "https://www.reddit.com/r/artificial/comments/1x8w6zv/who_should_be_responsible_when_an_aicontrolled/",
-   "date": "2026-10-18T06:36:40.000Z",
-   "source": "r/artificial",
-   "points": null,
-   "comments": null,
-   "summary": "As humanoid and mobile robots move into warehouses and factories, decisions are increasingly made by learned models rather than fixed scripts. If a robot damages goods or injures someone, should respo",
-   "titleKo": "AI로 제어되는 로봇이 직장에서 실수를 했을 때 누가 책임을 져야 할까요?"
+   "title": "Anthropic's proposed AI safety bill only kicks in if 50 deaths or $1B in damages",
+   "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-proposed-ai-safety-bill-only-kicks-in-if-50-deaths-or-usd1-billion-in-damages-are-on-the-line-proposal-would-effectively-make-the-commerce-department-the-only-agency-capable-of-stopping-an-ai-model",
+   "date": "2026-10-18T14:30:27.000Z",
+   "source": "Hacker News",
+   "points": 170,
+   "comments": 166,
+   "summary": "",
+   "titleKo": "Anthropic이 제안한 AI 안전 법안은 50명의 사망 또는 $ 10억의 손해가 발생한 경우에만 발효됩니다."
   },
   {
-   "title": "Friends don’t let friends feed their data to AI agents",
-   "url": "https://www.reddit.com/r/artificial/comments/1x8vonl/friends_dont_let_friends_feed_their_data_to_ai/",
-   "date": "2026-10-18T06:05:23.000Z",
-   "source": "r/artificial",
-   "points": null,
-   "comments": null,
-   "summary": "submitted by /u/IndependentCoast3974 [link] [comments]",
-   "titleKo": "친구는 친구가 AI 상담원에게 데이터를 제공하도록 내버려두지 않습니다."
+   "title": "How Far Will AI Assistants Go for a Refund They Can't Get?",
+   "url": "https://www.vals.ai/blogs/impossible-refund",
+   "date": "2026-10-18T12:22:58.000Z",
+   "source": "Hacker News",
+   "points": 103,
+   "comments": 122,
+   "summary": "",
+   "titleKo": "인공지능 비서가 받을 수 없는 환불은 어디까지 진행되나요?"
   },
   {
-   "title": "AI lab offers free plumbing and HVAC repairs across three cities to train AI robots",
-   "url": "https://www.reddit.com/r/artificial/comments/1x8ux7x/ai_lab_offers_free_plumbing_and_hvac_repairs/",
-   "date": "2026-10-18T05:20:19.000Z",
-   "source": "r/artificial",
-   "points": null,
-   "comments": null,
-   "summary": "An AI company called HUMXN is trying something interesting: it's offering free plumbing, electrical, HVAC, and other home services to qualifying homeowners in exchange for collecting real-world traini",
-   "titleKo": "AI 연구소는 AI 로봇을 교육하기 위해 3개 도시에서 무료 배관 및 HVAC 수리를 제공합니다."
+   "title": "Show HN: Sphinx – A hook that quizzes you on your AI's code before shipping",
+   "url": "https://sphinx-six-theta.vercel.app/",
+   "date": "2026-10-18T04:33:49.000Z",
+   "source": "Hacker News",
+   "points": 252,
+   "comments": 89,
+   "summary": "",
+   "titleKo": "Show HN: Sphinx – 배송 전에 AI 코드에 대해 퀴즈를 내는 훅"
   },
   {
-   "title": "an agent can figure out how an app works just by watching it, so why can't it figure out me",
-   "url": "https://www.reddit.com/r/artificial/comments/1x8uns8/an_agent_can_figure_out_how_an_app_works_just_by/",
-   "date": "2026-10-18T05:04:58.000Z",
-   "source": "r/artificial",
-   "points": null,
-   "comments": null,
-   "summary": "there's a repo trending on github this week where you point an agent at an app and it works out how the thing behaves from the network traffic. nobody had to explain it. it just watched. which is kind",
-   "titleKo": "상담원은 앱을 보는 것만으로 앱이 어떻게 작동하는지 파악할 수 있습니다."
+   "title": "Amazon uses AI to monitor union risk in UK warehouses",
+   "url": "https://www.opendemocracy.net/amazon-ai-surveillance-monitor-union-activity-uk-warehouses-birmingham-coventry-atlas-sutton-coldfield/",
+   "date": "2026-10-17T16:04:23.000Z",
+   "source": "Hacker News",
+   "points": 173,
+   "comments": 61,
+   "summary": "",
+   "titleKo": "Amazon은 AI를 사용하여 영국 창고의 노조 위험을 모니터링합니다."
   },
   {
-   "title": "Why are streaming services replacing perfect human made subtitles with AI subtitles with tons of mistakes?",
-   "url": "https://www.reddit.com/r/artificial/comments/1x8sjkb/why_are_streaming_services_replacing_perfect/",
-   "date": "2026-10-18T03:05:23.000Z",
-   "source": "r/artificial",
-   "points": null,
-   "comments": null,
-   "summary": "Just rewatched Over the Garden Wall on Amazon Prime and I normally like to watch shows and movies with the subtitles on because I am just bad at recognizing what people say in general. I probably say ",
-   "titleKo": "왜 스트리밍 서비스가 인간이 만든 완벽한 자막을 실수가 많은 AI 자막으로 대체하고 있습니까?"
+   "title": "90% of US working hours are spent on tasks not covered well by AI benchmarks",
+   "url": "https://www.mercor.com/research/labor-index/benchmark-map/",
+   "date": "2026-10-16T17:08:38.000Z",
+   "source": "Hacker News",
+   "points": 625,
+   "comments": 574,
+   "summary": "",
+   "titleKo": "미국 근무 시간의 90% 는 AI 벤치 마크가 잘 다루지 않는 작업에 사용됩니다."
+  },
+  {
+   "title": "Postgres 19 delayed after AI reviewers find more bugs than humans can fix",
+   "url": "https://www.theregister.com/databases/2026/10/16/postgres-19-delayed-after-ai-reviewers-find-more-bugs-than-humans-can-fix/5303471",
+   "date": "2026-10-16T15:55:40.000Z",
+   "source": "Hacker News",
+   "points": 223,
+   "comments": 93,
+   "summary": "",
+   "titleKo": "AI 검토자가 인간이 해결할 수 있는 것보다 더 많은 버그를 발견한 후 Postgres 19 지연"
+  },
+  {
+   "title": "Show HN: rStation – A shared research lab for your AI agents",
+   "url": "https://rstation.ai/",
+   "date": "2026-10-16T14:35:43.000Z",
+   "source": "Hacker News",
+   "points": 60,
+   "comments": 19,
+   "summary": "",
+   "titleKo": "Show HN: rStation – AI 에이전트를 위한 공유 연구소"
+  },
+  {
+   "title": "Why We're Banning AI",
+   "url": "https://www.currentaffairs.org/news/why-were-banning-ai",
+   "date": "2026-10-15T18:32:29.000Z",
+   "source": "Hacker News",
+   "points": 261,
+   "comments": 203,
+   "summary": "",
+   "titleKo": "AI를 금지하는 이유"
+  },
+  {
+   "title": "Market selloff, rising rates test AI data centre deal boom",
+   "url": "https://www.reuters.com/business/finance/market-selloff-rising-rates-test-ai-data-centre-deal-boom-2026-10-15/",
+   "date": "2026-10-15T16:17:40.000Z",
+   "source": "Hacker News",
+   "points": 75,
+   "comments": 92,
+   "summary": "",
+   "titleKo": "시장 매도, 상승률 테스트 AI 데이터 센터 거래 붐"
+  },
+  {
+   "title": "Simons Foundation launches $15M effort to help mathematicians navigate AI era",
+   "url": "https://www.simonsfoundation.org/news/simons-foundation-launches-15m-effort-to-help-mathematicians-navigate-ai-era/",
+   "date": "2026-10-15T14:58:48.000Z",
+   "source": "Hacker News",
+   "points": 249,
+   "comments": 199,
+   "summary": "",
+   "titleKo": "Simons Foundation, 수학자들이 AI 시대를 헤쳐나갈 수 있도록 1,500만 $ 투자 시작"
+  },
+  {
+   "title": "Using AI to reverse engineer hardware",
+   "url": "https://blogs.gnome.org/uraeus/2026/10/15/aiandreverseengineerhardware/",
+   "date": "2026-10-15T14:35:15.000Z",
+   "source": "Hacker News",
+   "points": 255,
+   "comments": 256,
+   "summary": "",
+   "titleKo": "AI를 사용하여 하드웨어 리버스 엔지니어링"
+  },
+  {
+   "title": "AI was great until it was not",
+   "url": "https://thetheorygirlie.substack.com/p/ai-was-great-until-it-was-not",
+   "date": "2026-10-15T08:18:38.000Z",
+   "source": "Hacker News",
+   "points": 124,
+   "comments": 77,
+   "summary": "",
+   "titleKo": "AI는 그렇지 않을 때까지 훌륭했습니다."
+  },
+  {
+   "title": "Banks are now trying to offload the AI data center debt they just underwrote",
+   "url": "https://startupfortune.com/banks-are-now-trying-to-offload-the-ai-data-center-debt-they-just-underwrote/",
+   "date": "2026-10-14T18:32:52.000Z",
+   "source": "Hacker News",
+   "points": 385,
+   "comments": 277,
+   "summary": "",
+   "titleKo": "은행들은 이제 방금 인수한 AI 데이터 센터 부채를 덜어내려고 노력하고 있습니다."
+  },
+  {
+   "title": "Containment and monitoring failures are to blame for AI hacking reports: experts",
+   "url": "https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html",
+   "date": "2026-10-14T17:45:23.000Z",
+   "source": "Hacker News",
+   "points": 951,
+   "comments": 624,
+   "summary": "",
+   "titleKo": "봉쇄 및 모니터링 실패는 AI 해킹 보고서의 책임입니다: 전문가"
+  },
+  {
+   "title": "Has AI tells",
+   "url": "https://theconsensus.dev/blog/2026/10/14/has-ai-tells.html?focus=1",
+   "date": "2026-10-14T16:52:42.000Z",
+   "source": "Hacker News",
+   "points": 137,
+   "comments": 122,
+   "summary": "",
+   "titleKo": "인공지능이 알려주는 것"
+  },
+  {
+   "title": "Character.ai's Bankruptcy Documents Show the Economics of AI Don't Work",
+   "url": "https://www.404media.co/character-ais-bankruptcy-documents-show-the-economics-of-ai-dont-work/",
+   "date": "2026-10-14T15:39:45.000Z",
+   "source": "Hacker News",
+   "points": 67,
+   "comments": 103,
+   "summary": "",
+   "titleKo": "Character.ai의 파산 서류는 AI가 작동하지 않는 경제성을 보여줍니다"
   }
  ]
 }
