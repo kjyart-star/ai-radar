@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-03T03:58:37.525Z",
+ "generated": "2026-11-04T03:06:10.626Z",
  "source": "Hacker News · r/artificial",
  "sources": [
   "Hacker News",
@@ -7,91 +7,330 @@
  ],
  "items": [
   {
-   "title": "Are We Measuring AI Intelligence, or Just the Infrastructure Behind It?",
-   "url": "https://www.reddit.com/r/artificial/comments/1xmhgs4/are_we_measuring_ai_intelligence_or_just_the/",
-   "date": "2026-11-03T02:49:29.000Z",
+   "title": "Graded 1,300+ word-association clues: Google's models beat OpenAI's, and both beat Anthropic's",
+   "url": "https://www.reddit.com/r/artificial/comments/1xnbvcs/graded_1300_wordassociation_clues_googles_models/",
+   "date": "2026-11-04T01:55:45.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "We often measure AI intelligence through speed, computing power, data, and overall performance. But are these measures telling us how intelligent a system really is? How much of an AI system's perform",
-   "titleKo": "우리는 인공 지능을 측정하고 있습니까, 아니면 그 뒤에있는 인프라 만 측정하고 있습니까?"
+   "summary": "I run a word-association benchmark: one model gives a one-word clue meant to point at several of its team's words on a 5x5 board, and a teammate model guesses. Each clue is graded 0-100, mostly on how",
+   "titleKo": "1,300개 이상의 단어 연관성 평가: Google의 모델이 OpenAI를 이겼고, 둘 다 Anthropic의 모델을 이겼습니다."
   },
   {
-   "title": "OpenAI’s quarterly commit growth has exploded this year, rising to 2442% by Q4 2026 relative to Q1 2024",
-   "url": "https://www.reddit.com/r/artificial/comments/1xmfx3a/openais_quarterly_commit_growth_has_exploded_this/",
-   "date": "2026-11-03T01:36:30.000Z",
+   "title": "Scientists release new ‘four as’ framework to tackle key ethical challenges governing AI",
+   "url": "https://www.reddit.com/r/artificial/comments/1xn88ws/scientists_release_new_four_as_framework_to/",
+   "date": "2026-11-03T23:09:38.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "https://openai.com/index/scaling-git-at-openai/ submitted by /u/Eliv_nurotic [link] [comments]",
-   "titleKo": "OpenAI의 올해 분기별 커밋 성장률은 2024년 1분기 대비 2026년 4분기에 2442% 로 증가했습니다."
+   "summary": "Restricting who can use a powerful AI model makes misuse harder and concentrates power at the same time. Two researchers at Anglia Ruskin University in Cambridge treat that trade-off not as an awkward",
+   "titleKo": "과학자들은 인공지능을 지배하는 주요 윤리적 문제를 해결하기 위한 새로운 ‘4’ 프레임워크를 발표한다."
   },
   {
-   "title": "Designers, how do you... work?",
-   "url": "https://www.reddit.com/r/artificial/comments/1xmf7dx/designers_how_do_you_work/",
-   "date": "2026-11-03T01:03:13.000Z",
+   "title": "The Little Book of Generative AI Foundations: An Intuitive Mathematical Primer",
+   "url": "https://arxiv.org/abs/2605.29713",
+   "date": "2026-11-03T21:40:53.000Z",
+   "source": "Hacker News",
+   "points": 253,
+   "comments": 42,
+   "summary": "",
+   "titleKo": "The Little Book of Generative AI Foundations: 직관적인 수학 입문서"
+  },
+  {
+   "title": "US tech giants' hidden AI debt swells 90% to $3.2T in 6 months",
+   "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/us-tech-giants-hidden-ai-debt-swells-90-to-3.2tn-in-6-months",
+   "date": "2026-11-03T21:26:44.000Z",
+   "source": "Hacker News",
+   "points": 283,
+   "comments": 126,
+   "summary": "",
+   "titleKo": "미국 기술 대기업의 숨겨진 AI 부채가 6 개월 만에 $ 3.2T로 90% 증가"
+  },
+  {
+   "title": "The AI Boom May Be Sowing Seeds of Another Financial Crisis",
+   "url": "https://www.bloomberg.com/opinion/articles/2026-11-03/ai-investment-boom-demands-stronger-financial-oversight",
+   "date": "2026-11-03T21:25:48.000Z",
+   "source": "Hacker News",
+   "points": 70,
+   "comments": 68,
+   "summary": "",
+   "titleKo": "AI 붐은 또 다른 금융 위기의 씨앗을 뿌릴 수 있습니다"
+  },
+  {
+   "title": "Jules is shutting down, and it's made me sad... 😥",
+   "url": "https://www.reddit.com/r/artificial/comments/1xn5axk/jules_is_shutting_down_and_its_made_me_sad/",
+   "date": "2026-11-03T21:10:35.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "I'm asking because, as a software engineer, I never thought about how things looked. I just wanted them to work. Now with AI, it seems like the most important thing actually is how things look, becaus",
-   "titleKo": "디자이너님, 어떻게... 일하시나요?"
+   "summary": "Jules is a coding agent by Google, an ephemeral, agentic agent, and it's shutting down on the 11th November. So... I discovered this agent I think originally through ChatGPT but it's been a wonderful ",
+   "titleKo": "대표님이 문을 닫는 바람에 슬퍼졌어요... 😥"
   },
   {
-   "title": "Apple Intelligence is finally coming to China in December, powered by Alibaba's Qwen instead of ChatGPT",
-   "url": "https://www.reddit.com/r/artificial/comments/1xmf3on/apple_intelligence_is_finally_coming_to_china_in/",
-   "date": "2026-11-03T00:58:43.000Z",
+   "title": "Anthropic's FlashProve: cryptographic proof that a reply really came from the model you were promised",
+   "url": "https://www.reddit.com/r/artificial/comments/1xn4g6l/anthropics_flashprove_cryptographic_proof_that_a/",
+   "date": "2026-11-03T20:37:55.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "Apple confirmed on October 31 that Apple Intelligence will come to iPhones in mainland China in December with iOS 27.3, with testing starting in the iOS developer beta on November 4. The notable part ",
-   "titleKo": "ChatGPT 대신 Alibaba의 Qwen이 제공하는 Apple Intelligence가 마침내 12월에 중국에 출시됩니다."
+   "summary": "Anthropic published research on November 2 (with collaborators from EPFL, MIT and others) on provable inference: a system called FlashProve that uses zkSNARKs to prove a response was produced by a spe",
+   "titleKo": "Anthropic의 FlashProve: 약속된 모델에서 회신이 왔다는 암호화 증거"
   },
   {
-   "title": "Opinion | The Big Change Coming in U.S.-China Relations in the Age of A.I.",
-   "url": "https://www.reddit.com/r/artificial/comments/1xmbk0m/opinion_the_big_change_coming_in_uschina/",
-   "date": "2026-11-02T22:25:24.000Z",
+   "title": "Google says students in schools that ban AI won't have access to Search",
+   "url": "https://www.reddit.com/r/artificial/comments/1xn34ud/google_says_students_in_schools_that_ban_ai_wont/",
+   "date": "2026-11-03T19:49:13.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "submitted by /u/ScubadooX [link] [comments]",
-   "titleKo": "오피니언 | A.I. 시대에 미국과 중국 관계에 다가올 큰 변화"
+   "summary": "submitted by /u/beingmodest [link] [comments]",
+   "titleKo": "Google은 AI를 금지하는 학교의 학생들은 검색에 액세스할 수 없다고 말합니다."
   },
   {
-   "title": "failure log #2: the patch was real, the bug was different, the PoC still fired",
-   "url": "https://www.reddit.com/r/artificial/comments/1xmbiex/failure_log_2_the_patch_was_real_the_bug_was/",
-   "date": "2026-11-02T22:23:35.000Z",
+   "title": "What’s the smallest AI use that saves you the most time? Not the impressive stuff, the boring daily thing.",
+   "url": "https://www.reddit.com/r/artificial/comments/1xn299f/whats_the_smallest_ai_use_that_saves_you_the_most/",
+   "date": "2026-11-03T19:17:12.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "submitted by /u/AIGODSEND [link] [comments]",
-   "titleKo": "실패 로그 # 2: 패치가 실제이고, 버그가 다르며, PoC가 여전히 실행됨"
+   "summary": "Everyone talks about the big AI wins, but the thing that actually saves me time is boring: I paste in messy notes and ask for a clean to-do list. Takes ten seconds, saves me twenty minutes of staring ",
+   "titleKo": "가장 많은 시간을 절약할 수 있는 가장 작은 AI 사용은 무엇입니까? 인상적인 물건이 아니라 지루한 일상적인 물건입니다."
   },
   {
-   "title": "How to tell if a voice recording is AI-generated",
-   "url": "https://www.reddit.com/r/artificial/comments/1xm9hsx/how_to_tell_if_a_voice_recording_is_aigenerated/",
-   "date": "2026-11-02T21:05:26.000Z",
+   "title": "Google to shut off search for schools that opt-out of AI",
+   "url": "https://www.reddit.com/r/artificial/comments/1xn22y7/google_to_shut_off_search_for_schools_that_optout/",
+   "date": "2026-11-03T19:10:47.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
-   "summary": "submitted by /u/scientificamerican [link] [comments]",
-   "titleKo": "음성 녹음이 AI로 생성되었는지 확인하는 방법"
+   "summary": "submitted by /u/nbcnews [link] [comments]",
+   "titleKo": "Google, AI를 옵트아웃하는 학교에 대한 검색 차단"
   },
   {
-   "title": "OpenAI lowers funding goals as investors cool on AI",
-   "url": "https://www.reddit.com/r/artificial/comments/1xm7eyb/openai_lowers_funding_goals_as_investors_cool_on/",
-   "date": "2026-11-02T19:47:27.000Z",
+   "title": "Anna Brockman, Wife to One of the “Kings of AI,” Is a Republican Mega-Donor. What Is It Like to Be Queen?",
+   "url": "https://www.reddit.com/r/artificial/comments/1xn13td/anna_brockman_wife_to_one_of_the_kings_of_ai_is_a/",
+   "date": "2026-11-03T18:35:46.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "submitted by /u/vanityfairmagazine [link] [comments]",
+   "titleKo": "Anna Brockman, \"인공지능의 왕들\" 중 한 사람의 아내는 공화당의 거대 기부자입니다. 여왕이 된다는 것은 어떤 것일까요?"
+  },
+  {
+   "title": "Measuring AI hype in marketing copy: site builder homepages went from 16 mentions of \"AI\" in 2022 to 570, and \"agent\" from 0 to 99",
+   "url": "https://www.reddit.com/r/artificial/comments/1xn13d9/measuring_ai_hype_in_marketing_copy_site_builder/",
+   "date": "2026-11-03T18:35:18.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "A small attempt to put a number on AI marketing: I took the homepages of 37 established website, landing page and scrollytelling builders from the Wayback Machine (the capture closest to 1 July each y",
+   "titleKo": "마케팅 카피에서 AI 과대 광고 측정: 사이트 빌더 홈페이지는 2022년 \"AI\" 에 대한 16개의 언급에서 570개로, \"에이전트\" 는 0개에서 99개로 증가했습니다."
+  },
+  {
+   "title": "How I use AI (Oct 2026)",
+   "url": "https://ben.stolovitz.com/posts/how-use-ai-oct-2026/",
+   "date": "2026-11-03T18:11:11.000Z",
+   "source": "Hacker News",
+   "points": 95,
+   "comments": 86,
+   "summary": "",
+   "titleKo": "AI 사용 방법 (2026년 10월)"
+  },
+  {
+   "title": "Google researchers demand freedom to tell the world what they know about AI",
+   "url": "https://www.washingtonpost.com/technology/2026/11/03/google-deepmind-staff-protest-lifetime-ban-criticizing-company/",
+   "date": "2026-11-03T17:55:26.000Z",
+   "source": "Hacker News",
+   "points": 84,
+   "comments": 103,
+   "summary": "",
+   "titleKo": "Google 연구원은 AI에 대해 알고 있는 것을 전 세계에 알릴 자유를 요구합니다."
+  },
+  {
+   "title": "Postman silently auto-installs AI plugins and attempts to share all API data",
+   "url": "https://github.com/postmanlabs/postman-app-support/issues/14370",
+   "date": "2026-11-03T17:22:37.000Z",
+   "source": "Hacker News",
+   "points": 1069,
+   "comments": 352,
+   "summary": "",
+   "titleKo": "Postman은 AI 플러그인을 자동으로 자동 설치하고 모든 API 데이터 공유를 시도합니다"
+  },
+  {
+   "title": "Databricks Dashboard Insights: Genie summarizes the charts",
+   "url": "https://www.reddit.com/r/artificial/comments/1xmy9hk/databricks_dashboard_insights_genie_summarizes/",
+   "date": "2026-11-03T16:53:56.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "Viewers of a published dashboard can have Genie analyze a page’s charts and return insight cards that call out trends and outliers. It uses the dashboard’s Genie Agent (Settings → General → Enable Gen",
+   "titleKo": "Databricks 대시보드 인사이트: Genie가 차트를 요약합니다"
+  },
+  {
+   "title": "The model didn't break containment. The sandbox was shit, and the marketing team did the rest.",
+   "url": "https://www.reddit.com/r/artificial/comments/1xmwotm/the_model_didnt_break_containment_the_sandbox_was/",
+   "date": "2026-11-03T15:56:00.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "submitted by /u/allixsenos [link] [comments]",
+   "titleKo": "모델이 격리를 깨뜨리지 않았습니다. 샌드박스는 똥이었고 마케팅 팀은 나머지를 처리했습니다."
+  },
+  {
+   "title": "Quili AI",
+   "url": "https://www.quili.ai/",
+   "date": "2026-11-03T15:49:02.000Z",
+   "source": "Hacker News",
+   "points": 94,
+   "comments": 64,
+   "summary": ""
+  },
+  {
+   "title": "AI is destroying my CS degree",
+   "url": "https://lordtoots.bearblog.dev/ai-is-destroying-my-cs-degree/",
+   "date": "2026-11-03T15:35:06.000Z",
+   "source": "Hacker News",
+   "points": 119,
+   "comments": 110,
+   "summary": "",
+   "titleKo": "AI가 CS 학위를 파괴하고 있습니다"
+  },
+  {
+   "title": "Google will turn off search for schools that reject AI",
+   "url": "https://www.nytimes.com/2026/11/03/us/google-search-schools-restrict-ai.html",
+   "date": "2026-11-03T15:25:47.000Z",
+   "source": "Hacker News",
+   "points": 567,
+   "comments": 415,
+   "summary": "",
+   "titleKo": "Google은 AI를 거부하는 학교에 대한 검색을 비활성화합니다"
+  },
+  {
+   "title": "Octomind – open-source AI harness that saves your tokens, static rust",
+   "url": "https://github.com/Muvon/octomind",
+   "date": "2026-11-03T15:02:58.000Z",
+   "source": "Hacker News",
+   "points": 52,
+   "comments": 34,
+   "summary": "",
+   "titleKo": "Octomind – 토큰을 저장하는 오픈 소스 AI 하네스, 정적 녹"
+  },
+  {
+   "title": "The AI Bubble Monitor",
+   "url": "https://cepr.net/publications/ai-bubble-monitor/",
+   "date": "2026-11-03T14:51:31.000Z",
+   "source": "Hacker News",
+   "points": 61,
+   "comments": 35,
+   "summary": "",
+   "titleKo": "AI 버블 모니터"
+  },
+  {
+   "title": "Just a little AI resistance, as a treat",
+   "url": "https://shkspr.mobi/blog/2026/11/just-a-little-ai-resistance-as-a-treat/",
+   "date": "2026-11-03T14:14:12.000Z",
+   "source": "Hacker News",
+   "points": 172,
+   "comments": 106,
+   "summary": "",
+   "titleKo": "약간의 AI 저항만 있으면 됩니다."
+  },
+  {
+   "title": "Anthropic builds breakthrough system to help users trust AI",
+   "url": "https://www.reddit.com/r/artificial/comments/1xmtzv4/anthropic_builds_breakthrough_system_to_help/",
+   "date": "2026-11-03T14:13:12.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "submitted by /u/HotMinuteUK [link] [comments]",
+   "titleKo": "Anthropic은 사용자가 AI를 신뢰할 수 있도록 획기적인 시스템을 구축합니다."
+  },
+  {
+   "title": "ok AI assistants are getting kinda out of hand",
+   "url": "https://www.reddit.com/r/artificial/comments/1xmtn3k/ok_ai_assistants_are_getting_kinda_out_of_hand/",
+   "date": "2026-11-03T13:59:06.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "So i've been reading about AI agent stuff and this week was actually insane. this guy in japan asked some AI assistant called Pickle to look up hotels for new years and it just... called the hotel by ",
+   "titleKo": "확인 AI 어시스턴트들이 일종의 손에서 벗어나고 있습니다"
+  },
+  {
+   "title": "To the companies building AI: the cheapest day to pay for the damage is today",
+   "url": "https://www.reddit.com/r/artificial/comments/1xmss5o/to_the_companies_building_ai_the_cheapest_day_to/",
+   "date": "2026-11-03T13:22:01.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "In 1986, a gold mine opened at Summitville, Colorado, after posting a reclamation bond of less than $5 million. Six years later the company was bankrupt, acid and cyanide were leaking into the watersh",
+   "titleKo": "AI를 구축하는 회사에게: 피해에 대해 지불하기에 가장 저렴한 날은 오늘입니다."
+  },
+  {
+   "title": "Brookfield targets $27 billion AI data centre at UK power station site in Yorkshire",
+   "url": "https://www.reddit.com/r/artificial/comments/1xmrhht/brookfield_targets_27_billion_ai_data_centre_at/",
+   "date": "2026-11-03T12:19:32.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "submitted by /u/Alone-Dragonfruit602 [link] [comments]",
+   "titleKo": "브룩필드는 요크셔의 영국 발전소 부지에 있는 270억 달러 규모의 AI 데이터 센터를 목표로 $"
+  },
+  {
+   "title": "What AI tools do you use on your store?",
+   "url": "https://www.reddit.com/r/artificial/comments/1xmq393/what_ai_tools_do_you_use_on_your_store/",
+   "date": "2026-11-03T11:04:13.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "Before starting my online store, I never imagined there would be so much to do in its daily operations. Finding suppliers, updating product listings, managing orders, handling customer service, tracki",
+   "titleKo": "스토어에서 어떤 AI 도구를 사용하시나요?"
+  },
+  {
+   "title": "UK High Court records a non-existent case citation in its 2026 judgment",
+   "url": "https://www.reddit.com/r/artificial/comments/1xmn0l8/uk_high_court_records_a_nonexistent_case_citation/",
+   "date": "2026-11-03T07:53:48.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "The UK High Court's [2026] EWHC 2778 (Admin) judgment records that Senior Crown Prosecutor Ravinder Dhillon relied on a case called R v J. The judgment says the authority did not exist. Dhillon later ",
+   "titleKo": "영국 고등법원은 2026년 판결에서 존재하지 않는 사례 인용을 기록합니다."
+  },
+  {
+   "title": "Marvell inks record-breaking $115B AI deal",
+   "url": "https://www.reddit.com/r/artificial/comments/1xmkk63/marvell_inks_recordbreaking_115b_ai_deal/",
+   "date": "2026-11-03T05:26:41.000Z",
    "source": "r/artificial",
    "points": null,
    "comments": null,
    "summary": "submitted by /u/LinkedInNews [link] [comments]",
-   "titleKo": "OpenAI는 투자자들이 AI에 열을 올리면서 자금 조달 목표를 낮춥니다."
+   "titleKo": "Marvell 잉크 기록적인 $ 115B AI 특가"
+  },
+  {
+   "title": "I made ChatGPT, Claude, Gemini, etc. into FREE text-to-speech sites.",
+   "url": "https://www.reddit.com/r/artificial/comments/1xmim57/i_made_chatgpt_claude_gemini_etc_into_free/",
+   "date": "2026-11-03T03:44:47.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "Nowadays, all popular ai chatting websites like qwen, chatgpt, gemini, claude, etc. come with a read aloud functionality that allows users to read aloud the AI's responses. I used that feature to inst",
+   "titleKo": "ChatGPT, Claude, Gemini 등을 무료 텍스트 음성 변환 사이트로 만들었습니다."
+  },
+  {
+   "title": "Apple Intelligence in China will run on Alibaba's Qwen, testing starts Nov 4",
+   "url": "https://www.reddit.com/r/artificial/comments/1xmhyjf/apple_intelligence_in_china_will_run_on_alibabas/",
+   "date": "2026-11-03T03:12:26.000Z",
+   "source": "r/artificial",
+   "points": null,
+   "comments": null,
+   "summary": "Apple's China Newsroom said on Oct 31 that Apple Intelligence will begin testing on November 4 via the iOS developer Beta and ship to Chinese users in December with iOS 27.3. The China rollout integra",
+   "titleKo": "중국의 Apple Intelligence는 Alibaba의 Qwen에서 실행되며 11월 4일부터 테스트가 시작됩니다."
   },
   {
    "title": "Anthropic reveals $900B AI spending commitments ahead of IPO",
    "url": "https://www.ft.com/content/4d91dbab-6fe4-45ab-beee-d77e091cb37f",
    "date": "2026-11-02T19:36:37.000Z",
    "source": "Hacker News",
-   "points": 71,
+   "points": 74,
    "comments": 44,
    "summary": "",
    "titleKo": "Anthropic, IPO를 앞두고 $ 900B AI 지출 약속 발표"
@@ -101,310 +340,70 @@
    "url": "https://www.cnbc.com/2026/11/02/oracle-files-to-sell-20-billion-in-new-stock-bonds-to-finance-ai-buildout.html",
    "date": "2026-11-02T19:27:37.000Z",
    "source": "Hacker News",
-   "points": 173,
-   "comments": 152,
+   "points": 197,
+   "comments": 173,
    "summary": "",
    "titleKo": "오라클, $ 20B 신주 매각 파일, AI 구축 자금 조달 채권"
-  },
-  {
-   "title": "Your agentic coding sessions are a treasure",
-   "url": "https://www.reddit.com/r/artificial/comments/1xm6ev6/your_agentic_coding_sessions_are_a_treasure/",
-   "date": "2026-11-02T19:10:38.000Z",
-   "source": "r/artificial",
-   "points": null,
-   "comments": null,
-   "summary": "submitted by /u/Bartaseth [link] [comments]",
-   "titleKo": "에이전트 코딩 세션은 보물과도 같습니다."
   },
   {
    "title": "Egoless Mathematics in the AI Era",
    "url": "https://terrytao.wordpress.com/2026/11/02/egoless-mathematics-in-the-ai-era/",
    "date": "2026-11-02T18:54:44.000Z",
    "source": "Hacker News",
-   "points": 128,
-   "comments": 90,
+   "points": 182,
+   "comments": 153,
    "summary": "",
    "titleKo": "AI 시대의 Egoless Mathematics"
-  },
-  {
-   "title": "OpenAI's plan to make data centers less hated: Rename them \"compute campuses\"",
-   "url": "https://www.reddit.com/r/artificial/comments/1xm43yd/openais_plan_to_make_data_centers_less_hated/",
-   "date": "2026-11-02T17:49:57.000Z",
-   "source": "r/artificial",
-   "points": null,
-   "comments": null,
-   "summary": "submitted by /u/esporx [link] [comments]",
-   "titleKo": "데이터 센터를 덜 싫어하게 만들려는 OpenAI의 계획: \"컴퓨팅 캠퍼스\" 로 이름 변경"
-  },
-  {
-   "title": "OpenAI says its AI is getting better at doing things humans do, like shopping and meal planning",
-   "url": "https://www.reddit.com/r/artificial/comments/1xm3vf1/openai_says_its_ai_is_getting_better_at_doing/",
-   "date": "2026-11-02T17:41:16.000Z",
-   "source": "r/artificial",
-   "points": null,
-   "comments": null,
-   "summary": "submitted by /u/cnn [link] [comments]",
-   "titleKo": "OpenAI는 AI가 쇼핑 및 식사 계획과 같은 인간이하는 일을 점점 더 잘 수행하고 있다고 말합니다."
-  },
-  {
-   "title": "Unified Embodied Mind Architecture for growing a conscious mind.",
-   "url": "https://www.reddit.com/r/artificial/comments/1xm3h7k/unified_embodied_mind_architecture_for_growing_a/",
-   "date": "2026-11-02T17:27:02.000Z",
-   "source": "r/artificial",
-   "points": null,
-   "comments": null,
-   "summary": "UEMA Specification v3.5 Many Minds Specification Help build conscious beings | Mind Machine Learning UEMA: from a first touch to a growing self https://github.com/bhartsb/UEMA_Research (code + avatar ",
-   "titleKo": "의식적인 마음을 키우기 위한 통합 구현형 마인드 아키텍처."
-  },
-  {
-   "title": "Suggestions for an Emerging Technology Theme for a College Tech Event",
-   "url": "https://www.reddit.com/r/artificial/comments/1xm2l58/suggestions_for_an_emerging_technology_theme_for/",
-   "date": "2026-11-02T16:55:35.000Z",
-   "source": "r/artificial",
-   "points": null,
-   "comments": null,
-   "summary": "we are going to have an technical event at my college for that we have to come up with a theme for the event for this, earlier it was related to artificial general intelligence. Ideally the theme shou",
-   "titleKo": "대학 기술 행사를 위한 신흥 기술 테마 제안"
   },
   {
    "title": "Anthropic's internal AI use, at retail prices, now exceeds its employee pay",
    "url": "https://www.businessinsider.com/anthropic-claude-internal-ai-use-exceeds-employee-pay-tokens-2026-11",
    "date": "2026-11-02T16:40:29.000Z",
    "source": "Hacker News",
-   "points": 299,
-   "comments": 241,
+   "points": 349,
+   "comments": 268,
    "summary": "",
    "titleKo": "소매 가격으로 Anthropic의 내부 AI 사용이 이제 직원 급여를 초과합니다"
-  },
-  {
-   "title": "Almost half of all new Steam games use AI now",
-   "url": "https://www.reddit.com/r/artificial/comments/1xm0tga/almost_half_of_all_new_steam_games_use_ai_now/",
-   "date": "2026-11-02T15:50:53.000Z",
-   "source": "r/artificial",
-   "points": null,
-   "comments": null,
-   "summary": "submitted by /u/ImCalcium [link] [comments]",
-   "titleKo": "현재 모든 신규 Steam 게임의 거의 절반이 AI를 사용합니다."
-  },
-  {
-   "title": "Gulf investors bet on AI, space tech",
-   "url": "https://www.reddit.com/r/artificial/comments/1xlzxdx/gulf_investors_bet_on_ai_space_tech/",
-   "date": "2026-11-02T15:17:24.000Z",
-   "source": "r/artificial",
-   "points": null,
-   "comments": null,
-   "summary": "submitted by /u/LinkedInNews [link] [comments]",
-   "titleKo": "걸프 투자자는 AI, 우주 기술에 베팅합니다"
-  },
-  {
-   "title": "Dell XPS Googlebook Review: Beautiful Hardware For A Useless Platform",
-   "url": "https://www.reddit.com/r/artificial/comments/1xlz1su/dell_xps_googlebook_review_beautiful_hardware_for/",
-   "date": "2026-11-02T14:44:02.000Z",
-   "source": "r/artificial",
-   "points": null,
-   "comments": null,
-   "summary": "submitted by /u/Resident-Fall4351 [link] [comments]",
-   "titleKo": "Dell XPS Googlebook Review: 쓸모없는 플랫폼을 위한 아름다운 하드웨어"
   },
   {
    "title": "Jobless tech workers are being left out of San Francisco's AI boom",
    "url": "https://www.bloomberg.com/news/features/2026-09-17/san-francisco-s-ai-wealth-boom-skirts-engineers-as-openai-anthropic-ipos-near",
    "date": "2026-11-02T14:40:05.000Z",
    "source": "Hacker News",
-   "points": 167,
-   "comments": 239,
+   "points": 188,
+   "comments": 253,
    "summary": "",
    "titleKo": "일자리가 없는 기술 종사자들이 샌프란시스코의 AI 붐에서 소외되고 있습니다."
+  },
+  {
+   "title": "Fujifilm to boost tape production 5x as AI fuels archiving demand",
+   "url": "https://arstechnica.com/gadgets/2026/10/fujifilm-to-boost-tape-production-5x-as-ai-fuels-archiving-demand/",
+   "date": "2026-11-02T14:02:42.000Z",
+   "source": "Hacker News",
+   "points": 395,
+   "comments": 174,
+   "summary": "",
+   "titleKo": "후지필름, AI로 아카이빙 수요 증가에 따라 테이프 생산량 5배 증가"
   },
   {
    "title": "Last night an AI agent performed brain surgery on a mouse",
    "url": "https://twitter.com/OcanaSantero/status/2115442964574908902",
    "date": "2026-11-02T12:50:59.000Z",
    "source": "Hacker News",
-   "points": 125,
-   "comments": 100,
+   "points": 142,
+   "comments": 116,
    "summary": "",
    "titleKo": "어젯밤 인공지능 요원이 마우스로 뇌수술을 했습니다."
-  },
-  {
-   "title": "How to stop Meta, OpenAI, and Apple from training AI on your data in the UK",
-   "url": "https://www.reddit.com/r/artificial/comments/1xlu9ui/how_to_stop_meta_openai_and_apple_from_training/",
-   "date": "2026-11-02T11:03:37.000Z",
-   "source": "r/artificial",
-   "points": null,
-   "comments": null,
-   "summary": "submitted by /u/HotMinuteUK [link] [comments]",
-   "titleKo": "Meta, OpenAI 및 Apple이 영국에서 데이터에 대한 AI 교육을 중단하는 방법"
   },
   {
    "title": "China's First Frontier AI Export Controls: Mofcom Announcement No. 48",
    "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-china-ai-export-controls-announcement-48-2/",
    "date": "2026-11-02T07:27:28.000Z",
    "source": "Hacker News",
-   "points": 151,
-   "comments": 86,
-   "summary": "",
-   "titleKo": "중국 최초의 프론티어 AI 수출 통제: Mofcom 발표 No. 48"
-  },
-  {
-   "title": "Michigan will pilot a prison classification system targeting 30% better violence-risk predictions starting December 1",
-   "url": "https://www.reddit.com/r/artificial/comments/1xlqr10/michigan_will_pilot_a_prison_classification/",
-   "date": "2026-11-02T07:20:33.000Z",
-   "source": "r/artificial",
-   "points": null,
-   "comments": null,
-   "summary": "Michigan says it will pilot a new prison classification system on December 1, 2026. The state forecasts about 30% better prediction of future violence risk. The system will support security-level plac",
-   "titleKo": "미시간은 12월 1일부터 30% 향상된 폭력 위험 예측을 목표로 교도소 분류 시스템을 시범 운영할 예정입니다."
-  },
-  {
-   "title": "How do you guys handle AI image/video moderation at scale?",
-   "url": "https://www.reddit.com/r/artificial/comments/1xlpsnm/how_do_you_guys_handle_ai_imagevideo_moderation/",
-   "date": "2026-11-02T06:21:10.000Z",
-   "source": "r/artificial",
-   "points": null,
-   "comments": null,
-   "summary": "I'm building a content moderation system, processing potentially 1M+ uploads per day. We need to detect and block these categories: m*nor s*xual_v*olence b*stiality self_h*rm real_person (non-consensu",
-   "titleKo": "대규모로 AI 이미지/동영상 검토를 어떻게 처리하시나요?"
-  },
-  {
-   "title": "Brandon sex offender had 'sexual conversations' with AI-generated children: HCSO",
-   "url": "https://www.reddit.com/r/artificial/comments/1xlo5om/brandon_sex_offender_had_sexual_conversations/",
-   "date": "2026-11-02T04:47:45.000Z",
-   "source": "r/artificial",
-   "points": null,
-   "comments": null,
-   "summary": "submitted by /u/Fcking_Chuck [link] [comments]",
-   "titleKo": "브랜든 성범죄자가 AI로 생성된 아이들과 '성적인 대화' 를 나눈 경우: HCSO"
-  },
-  {
-   "title": "AI fan wikis riddled with errors are muddying the waters of games culture",
-   "url": "https://www.eurogamer.net/ai-fan-wikis-errors-complicating-games-culture",
-   "date": "2026-11-02T01:47:07.000Z",
-   "source": "Hacker News",
-   "points": 100,
-   "comments": 110,
-   "summary": "",
-   "titleKo": "오류로 가득 찬 인공지능 팬 위키가 게임 문화의 바다를 어지럽히고 있습니다."
-  },
-  {
-   "title": "AI delivers 'zero financial payoff' to most companies, Apollo economist says",
-   "url": "https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist/",
-   "date": "2026-11-01T22:10:45.000Z",
-   "source": "Hacker News",
-   "points": 242,
-   "comments": 252,
-   "summary": "",
-   "titleKo": "아폴로 이코노미스트는 AI가 대부분의 기업에 '제로 금융 성과' 를 제공한다고 말합니다."
-  },
-  {
-   "title": "It wasn't AI that flipped Proton's charge",
-   "url": "https://blog.raed.dev/posts/proton-loser-thinking/",
-   "date": "2026-11-01T18:53:55.000Z",
-   "source": "Hacker News",
-   "points": 165,
-   "comments": 99,
-   "summary": "",
-   "titleKo": "양성자의 전하를 뒤집은 것은 AI가 아니었다."
-  },
-  {
-   "title": "Muse AI agent is a commercial surveillance network disguised as an AI assistant",
-   "url": "https://paulfwalsh.substack.com/p/metas-muse-ai-agent-is-a-commercial",
-   "date": "2026-11-01T18:33:02.000Z",
-   "source": "Hacker News",
-   "points": 60,
-   "comments": 6,
-   "summary": "",
-   "titleKo": "Muse AI 에이전트는 AI 어시스턴트로 위장한 상업용 감시 네트워크입니다."
-  },
-  {
-   "title": "AI agent swarms in Minecraft fail to build civilization, drown in bureaucracy",
-   "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/ai-agent-swarms-unleashed-in-minecraft-to-build-a-thriving-civilization-50-agent-teams-fail-after-falling-into-paralyzing-bureaucracy",
-   "date": "2026-11-01T13:47:24.000Z",
-   "source": "Hacker News",
-   "points": 176,
+   "points": 158,
    "comments": 90,
    "summary": "",
-   "titleKo": "마인크래프트의 AI 요원 무리는 문명을 건설하는 데 실패하고, 관료주의에 익사합니다."
-  },
-  {
-   "title": "The AI cost of JavaScript frameworks",
-   "url": "https://nolanlawson.com/2026/10/28/the-ai-cost-of-javascript-frameworks/",
-   "date": "2026-11-01T06:06:19.000Z",
-   "source": "Hacker News",
-   "points": 468,
-   "comments": 386,
-   "summary": "",
-   "titleKo": "자바스크립트 프레임워크의 AI 비용"
-  },
-  {
-   "title": "AI text watermarking and quality loss",
-   "url": "https://blog.keyvan.net/p/ai-text-watermarking-and-quality",
-   "date": "2026-10-31T21:50:13.000Z",
-   "source": "Hacker News",
-   "points": 75,
-   "comments": 16,
-   "summary": "",
-   "titleKo": "AI 텍스트 워터마킹 및 품질 손실"
-  },
-  {
-   "title": "The Impact of Generative AI on Critical Thinking: Self-Reported (2025)",
-   "url": "https://dl.acm.org/doi/full/10.1145/3706598.3713778",
-   "date": "2026-10-31T18:02:29.000Z",
-   "source": "Hacker News",
-   "points": 82,
-   "comments": 56,
-   "summary": "",
-   "titleKo": "생성 AI가 비판적 사고에 미치는 영향: 자기보고 (2025)"
-  },
-  {
-   "title": "AI startup hacks Anthropic, gains access to employee details, internal messages",
-   "url": "https://www.indiatoday.in/technology/news/story/ai-startup-hacks-anthropic-in-12-hours-gains-access-to-employee-details-and-internal-messages-3025452-2026-10-26",
-   "date": "2026-10-31T13:25:10.000Z",
-   "source": "Hacker News",
-   "points": 74,
-   "comments": 18,
-   "summary": "",
-   "titleKo": "AI 스타트업이 Anthropic을 해킹하고 직원 세부 정보, 내부 메시지에 액세스합니다."
-  },
-  {
-   "title": "Anthropic's Claude AI blocks video game cloning and reverse-engineering",
-   "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-ai-model-is-now-blocking-attempts-at-video-game-recreation-and-cloning-users-also-claim-non-malicious-generic-reverse-engineering-tasks-are-blocked",
-   "date": "2026-10-31T13:25:00.000Z",
-   "source": "Hacker News",
-   "points": 74,
-   "comments": 43,
-   "summary": "",
-   "titleKo": "Anthropic의 Claude AI는 비디오 게임 복제 및 리버스 엔지니어링을 차단합니다"
-  },
-  {
-   "title": "Wall Street closes sharply lower as AI cash burn fears spark tech selloff",
-   "url": "https://www.reuters.com/business/nasdaq-futures-tumble-amazon-intel-results-deepen-ai-spending-woes-2026-10-30/",
-   "date": "2026-10-30T21:32:35.000Z",
-   "source": "Hacker News",
-   "points": 71,
-   "comments": 15,
-   "summary": "",
-   "titleKo": "인공지능 (AI) 현금 화상 공포가 기술 매각을 촉발함에 따라 월스트리트는 급격히 낮아진다."
-  },
-  {
-   "title": "Proton's CEO Cancels AI 'Re-Interviews'",
-   "url": "https://www.404media.co/protons-ceo-cancels-ai-re-interviews/",
-   "date": "2026-10-30T17:24:45.000Z",
-   "source": "Hacker News",
-   "points": 301,
-   "comments": 258,
-   "summary": "",
-   "titleKo": "프로톤의 CEO, AI '재인터뷰' 취소"
-  },
-  {
-   "title": "US tech stocks see sharp falls over AI cost fears",
-   "url": "https://www.bbc.co.uk/news/articles/cvwy72e0n72yo",
-   "date": "2026-10-30T16:13:02.000Z",
-   "source": "Hacker News",
-   "points": 269,
-   "comments": 303,
-   "summary": "",
-   "titleKo": "미국 기술주, AI 비용 우려에 급격한 하락"
+   "titleKo": "중국 최초의 프론티어 AI 수출 통제: Mofcom 발표 No. 48"
   }
  ]
 }
