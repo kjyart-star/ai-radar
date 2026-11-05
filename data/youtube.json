@@ -1,6 +1,70 @@
 {
- "generated": "2026-11-04T03:11:17.305Z",
+ "generated": "2026-11-05T03:41:31.666Z",
  "news": [
+  {
+   "title": "How I Edit My Videos with Claude",
+   "url": "https://www.youtube.com/watch?v=fS-88gtHXIg",
+   "videoId": "fS-88gtHXIg",
+   "channel": "The AI Advantage",
+   "published": "2026-11-04T22:20:46.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/fS-88gtHXIg/mqdefault.jpg"
+  },
+  {
+   "title": "The most important paper in AI right now",
+   "url": "https://www.youtube.com/watch?v=j09uV1oAuIo",
+   "videoId": "j09uV1oAuIo",
+   "channel": "Matthew Berman",
+   "published": "2026-11-04T17:09:34.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/j09uV1oAuIo/mqdefault.jpg"
+  },
+  {
+   "title": "How I Get Claude To Edit My Videos (No Code Needed)",
+   "url": "https://www.youtube.com/watch?v=ep4psgAFOqc",
+   "videoId": "ep4psgAFOqc",
+   "channel": "Matt Wolfe",
+   "published": "2026-11-04T16:40:16.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/ep4psgAFOqc/mqdefault.jpg"
+  },
+  {
+   "title": "GPT 6 Astra Just Did the Unthinkable",
+   "url": "https://www.youtube.com/watch?v=lmLsiBmwEFE",
+   "videoId": "lmLsiBmwEFE",
+   "channel": "TheAIGRID",
+   "published": "2026-11-04T14:15:38.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/lmLsiBmwEFE/mqdefault.jpg"
+  },
+  {
+   "title": "AI 칩은 만들어도 기판이 없다? 반도체 공급을 막는 새로운 병목 | 유리기판이 나온다는데 왜 기존 기판은 더 부족해질까? 브로드컴 기판 공장",
+   "url": "https://www.youtube.com/watch?v=gbUdfXFkNZc",
+   "videoId": "gbUdfXFkNZc",
+   "channel": "안될공학",
+   "published": "2026-11-04T10:15:02.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/gbUdfXFkNZc/mqdefault.jpg"
+  },
+  {
+   "title": "Stop Wasting Hours Looking for Files. Try This.",
+   "url": "https://www.youtube.com/watch?v=XQuRgVP9-Sc",
+   "videoId": "XQuRgVP9-Sc",
+   "channel": "The AI Advantage",
+   "published": "2026-11-03T19:04:36.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/XQuRgVP9-Sc/mqdefault.jpg"
+  },
+  {
+   "title": "They did it...",
+   "url": "https://www.youtube.com/watch?v=r0cJOa9MZsE",
+   "videoId": "r0cJOa9MZsE",
+   "channel": "Matthew Berman",
+   "published": "2026-11-03T16:51:59.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/r0cJOa9MZsE/mqdefault.jpg"
+  },
+  {
+   "title": "AI Is Now Doing Things Scientists Thought Were Impossible",
+   "url": "https://www.youtube.com/watch?v=9FjbFGYKxAc",
+   "videoId": "9FjbFGYKxAc",
+   "channel": "TheAIGRID",
+   "published": "2026-11-03T09:00:26.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/9FjbFGYKxAc/mqdefault.jpg"
+  },
   {
    "title": "‘We may release models we can’t control’: Amodei, Altman … and Gemini Carbon",
    "url": "https://www.youtube.com/watch?v=0Kw6_DTZPrY",
@@ -8,6 +72,14 @@
    "channel": "AI Explained",
    "published": "2026-11-02T17:02:16.000Z",
    "thumbnail": "https://i.ytimg.com/vi/0Kw6_DTZPrY/mqdefault.jpg"
+  },
+  {
+   "title": "Anthropic Just Made a Move That Could Change Capitalism Forever",
+   "url": "https://www.youtube.com/watch?v=zadg3dWaMts",
+   "videoId": "zadg3dWaMts",
+   "channel": "TheAIGRID",
+   "published": "2026-11-02T11:15:13.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/zadg3dWaMts/mqdefault.jpg"
   },
   {
    "title": "EUV 규제가 부른 중국 반도체 장비사의 성장 | 나우라 세계 Top 10, 한국 기업에는 위기일까 기회일까",
@@ -18,12 +90,52 @@
    "thumbnail": "https://i.ytimg.com/vi/Ww2N3rZR0_Q/mqdefault.jpg"
   },
   {
+   "title": "Sam Altman Just Made His Most Controversial Statement Yet",
+   "url": "https://www.youtube.com/watch?v=HMA357MXB1o",
+   "videoId": "HMA357MXB1o",
+   "channel": "TheAIGRID",
+   "published": "2026-11-01T17:15:19.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/HMA357MXB1o/mqdefault.jpg"
+  },
+  {
+   "title": "the BIGGEST HACK of all time just started...",
+   "url": "https://www.youtube.com/watch?v=WhA2iNfzytY",
+   "videoId": "WhA2iNfzytY",
+   "channel": "Wes Roth",
+   "published": "2026-11-01T07:54:54.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/WhA2iNfzytY/mqdefault.jpg"
+  },
+  {
+   "title": "Grok 5 Could Be The Most Powerful AI Ever Created",
+   "url": "https://www.youtube.com/watch?v=KlG0VyhIzBU",
+   "videoId": "KlG0VyhIzBU",
+   "channel": "TheAIGRID",
+   "published": "2026-11-01T03:30:28.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/KlG0VyhIzBU/mqdefault.jpg"
+  },
+  {
+   "title": "AI News Is Getting Absolutely RIDICULOUS",
+   "url": "https://www.youtube.com/watch?v=UIYoKcIvSVo",
+   "videoId": "UIYoKcIvSVo",
+   "channel": "TheAIGRID",
+   "published": "2026-10-31T16:15:15.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/UIYoKcIvSVo/mqdefault.jpg"
+  },
+  {
    "title": "AI News: The Only 6 Stories Worth Knowing This Week",
    "url": "https://www.youtube.com/watch?v=eDiQNFa-zYg",
    "videoId": "eDiQNFa-zYg",
    "channel": "Matt Wolfe",
    "published": "2026-10-30T21:15:04.000Z",
    "thumbnail": "https://i.ytimg.com/vi/eDiQNFa-zYg/mqdefault.jpg"
+  },
+  {
+   "title": "ChatGPT & Grok Bot: 7 Useful Updates for Everyday Life",
+   "url": "https://www.youtube.com/watch?v=MNiurW07nLs",
+   "videoId": "MNiurW07nLs",
+   "channel": "The AI Advantage",
+   "published": "2026-10-30T19:20:20.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/MNiurW07nLs/mqdefault.jpg"
   },
   {
    "title": "my bots just BROKE Wall St...",
@@ -58,6 +170,14 @@
    "thumbnail": "https://i.ytimg.com/vi/B2QBL9TV6bI/mqdefault.jpg"
   },
   {
+   "title": "How to Build a Free Version of any Paid App",
+   "url": "https://www.youtube.com/watch?v=dc3pgMqhRzI",
+   "videoId": "dc3pgMqhRzI",
+   "channel": "The AI Advantage",
+   "published": "2026-10-29T20:28:21.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/dc3pgMqhRzI/mqdefault.jpg"
+  },
+  {
    "title": "Gemini 4 Carbon - The Worlds Smartest AI (Beats Opus 5.5 and GPT-6 Astra)",
    "url": "https://www.youtube.com/watch?v=yNI84SU9x4I",
    "videoId": "yNI84SU9x4I",
@@ -82,7 +202,7 @@
    "thumbnail": "https://i.ytimg.com/vi/zhnJo7s91ls/mqdefault.jpg"
   },
   {
-   "title": "He Breaks Down His 3 Most Powerful AI Automations",
+   "title": "He Built an AI Board of Billionaires (Free & Open-Source)",
    "url": "https://www.youtube.com/watch?v=AtjFk9f44HE",
    "videoId": "AtjFk9f44HE",
    "channel": "Matt Wolfe",
@@ -200,129 +320,33 @@
    "channel": "안될공학",
    "published": "2026-10-25T07:47:53.000Z",
    "thumbnail": "https://i.ytimg.com/vi/vrfcKCobME0/mqdefault.jpg"
-  },
-  {
-   "title": "it's WORSE than we thought...",
-   "url": "https://www.youtube.com/watch?v=eK7Sn0_zHQw",
-   "videoId": "eK7Sn0_zHQw",
-   "channel": "Wes Roth",
-   "published": "2026-10-24T06:17:07.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/eK7Sn0_zHQw/mqdefault.jpg"
-  },
-  {
-   "title": "They actually did it... (Kimi K3.1)",
-   "url": "https://www.youtube.com/watch?v=5sEVvu4mQ8g",
-   "videoId": "5sEVvu4mQ8g",
-   "channel": "Matthew Berman",
-   "published": "2026-10-24T02:34:15.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/5sEVvu4mQ8g/mqdefault.jpg"
-  },
-  {
-   "title": "삼성 7만 원·하이닉스 20만 원? 진짜인지 반도체 제조 과정에 대입해 봤습니다 | 가동률과 감산 논쟁에서 빠진 조건들",
-   "url": "https://www.youtube.com/watch?v=bZDEGNtNSAY",
-   "videoId": "bZDEGNtNSAY",
-   "channel": "안될공학",
-   "published": "2026-10-24T00:47:42.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/bZDEGNtNSAY/mqdefault.jpg"
-  },
-  {
-   "title": "Kimi K3.1 Just Revealed The Worlds Most Powerful AI (Beats Fable 5 and GPT-5.6)",
-   "url": "https://www.youtube.com/watch?v=MyJMMXUjsqY",
-   "videoId": "MyJMMXUjsqY",
-   "channel": "TheAIGRID",
-   "published": "2026-10-23T23:45:19.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/MyJMMXUjsqY/mqdefault.jpg"
-  },
-  {
-   "title": "Team AMA (and Kimi K3.1 Testing!!)",
-   "url": "https://www.youtube.com/watch?v=7fZ1rFcm1nA",
-   "videoId": "7fZ1rFcm1nA",
-   "channel": "Matthew Berman",
-   "published": "2026-10-23T18:07:47.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/7fZ1rFcm1nA/mqdefault.jpg"
-  },
-  {
-   "title": "AI News: 24 Things You Need To Know This Week",
-   "url": "https://www.youtube.com/watch?v=TVRCcMlvR10",
-   "videoId": "TVRCcMlvR10",
-   "channel": "Matt Wolfe",
-   "published": "2026-10-23T17:40:19.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/TVRCcMlvR10/mqdefault.jpg"
-  },
-  {
-   "title": "Who is local AI really for?",
-   "url": "https://www.youtube.com/watch?v=fHY0sjAejcA",
-   "videoId": "fHY0sjAejcA",
-   "channel": "Matthew Berman",
-   "published": "2026-10-23T16:36:20.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/fHY0sjAejcA/mqdefault.jpg"
-  },
-  {
-   "title": "My Honest Take on Muse, Grok Bot, Dots & Duet",
-   "url": "https://www.youtube.com/watch?v=Bd8-geZPwI4",
-   "videoId": "Bd8-geZPwI4",
-   "channel": "The AI Advantage",
-   "published": "2026-10-23T16:10:03.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/Bd8-geZPwI4/mqdefault.jpg"
-  },
-  {
-   "title": "This New AI Video Model Changes EVERYTHING",
-   "url": "https://www.youtube.com/watch?v=FCt80_Qwwzg",
-   "videoId": "FCt80_Qwwzg",
-   "channel": "TheAIGRID",
-   "published": "2026-10-23T05:13:03.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/FCt80_Qwwzg/mqdefault.jpg"
-  },
-  {
-   "title": "GTC 베를린 키노트 18분 핵심정리 | AI 위기론? 젠슨 황, 투자 가속화 전방위적 준비 마쳤다... 데이터센터 통째로 배송부터 기업용 AI 확장",
-   "url": "https://www.youtube.com/watch?v=3cM4N87lHVw",
-   "videoId": "3cM4N87lHVw",
-   "channel": "안될공학",
-   "published": "2026-10-21T22:54:43.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/3cM4N87lHVw/mqdefault.jpg"
-  },
-  {
-   "title": "AI Just BROKE The Internet",
-   "url": "https://www.youtube.com/watch?v=7yFSH4VChUw",
-   "videoId": "7yFSH4VChUw",
-   "channel": "TheAIGRID",
-   "published": "2026-10-21T21:28:23.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/7yFSH4VChUw/mqdefault.jpg"
-  },
-  {
-   "title": "they’re shutting it DOWN",
-   "url": "https://www.youtube.com/watch?v=ehcBwqyUGjo",
-   "videoId": "ehcBwqyUGjo",
-   "channel": "Wes Roth",
-   "published": "2026-10-21T20:47:18.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/ehcBwqyUGjo/mqdefault.jpg"
-  },
-  {
-   "title": "11 AI Breakthroughs You Didn’t Know Existed",
-   "url": "https://www.youtube.com/watch?v=umGZrkyTRtw",
-   "videoId": "umGZrkyTRtw",
-   "channel": "Matt Wolfe",
-   "published": "2026-10-21T17:45:26.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/umGZrkyTRtw/mqdefault.jpg"
-  },
-  {
-   "title": "Sam Altman: RSI, AI Consciousness, OpenAI's New Hardware, Compute, and more!",
-   "url": "https://www.youtube.com/watch?v=3gXLmy7DK_4",
-   "videoId": "3gXLmy7DK_4",
-   "channel": "Matthew Berman",
-   "published": "2026-10-21T15:30:24.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/3gXLmy7DK_4/mqdefault.jpg"
-  },
-  {
-   "title": "삼성 비장의 카드인데... 엔비디아가 제동 | 핵심 층을 TSMC에서? 3나노 베이스다이 요구 보도 | 메모리 주문하던 엔비디아, 만드는 방식까지 정한다",
-   "url": "https://www.youtube.com/watch?v=FBIwZuJuMIQ",
-   "videoId": "FBIwZuJuMIQ",
-   "channel": "안될공학",
-   "published": "2026-10-21T10:15:07.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/FBIwZuJuMIQ/mqdefault.jpg"
   }
  ],
  "vibe": [
+  {
+   "title": "I REALLY Want Open Models to Win, But They Just Don't Cut It (Yet)",
+   "url": "https://www.youtube.com/watch?v=RYIV5E2Xq60",
+   "videoId": "RYIV5E2Xq60",
+   "channel": "Cole Medin",
+   "published": "2026-11-05T01:00:05.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/RYIV5E2Xq60/mqdefault.jpg"
+  },
+  {
+   "title": "If You Want To Create Wealth In The Age of AI, Watch This",
+   "url": "https://www.youtube.com/watch?v=b3tMAOFB71o",
+   "videoId": "b3tMAOFB71o",
+   "channel": "Greg Isenberg",
+   "published": "2026-11-04T20:30:20.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/b3tMAOFB71o/mqdefault.jpg"
+  },
+  {
+   "title": "I Built My Most Useful App Ever (Insane Focus)",
+   "url": "https://www.youtube.com/watch?v=8QPd6WD9Zzg",
+   "videoId": "8QPd6WD9Zzg",
+   "channel": "Riley Brown",
+   "published": "2026-11-02T21:20:19.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/8QPd6WD9Zzg/mqdefault.jpg"
+  },
   {
    "title": "My AI Software Factory Ships Hundreds of PRs a Week (Here's How I Manage It)",
    "url": "https://www.youtube.com/watch?v=YHKuUjicB3M",
@@ -330,6 +354,14 @@
    "channel": "Cole Medin",
    "published": "2026-11-02T21:06:17.000Z",
    "thumbnail": "https://i.ytimg.com/vi/YHKuUjicB3M/mqdefault.jpg"
+  },
+  {
+   "title": "The $1M+ Solo Grok Bot Business (Full Course)",
+   "url": "https://www.youtube.com/watch?v=67BmkptgTms",
+   "videoId": "67BmkptgTms",
+   "channel": "Greg Isenberg",
+   "published": "2026-11-02T19:15:08.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/67BmkptgTms/mqdefault.jpg"
   },
   {
    "title": "AI뉴스 - Gemini 4 Carbon, 검색의 종말, 앤트로픽 S1, GPT-6.1 테라, Subvocal, LFM3, agent-desktop, 바이낸스 해킹 등",
@@ -354,6 +386,14 @@
    "channel": "Cole Medin",
    "published": "2026-10-31T16:51:47.000Z",
    "thumbnail": "https://i.ytimg.com/vi/BlbxhsItZPg/mqdefault.jpg"
+  },
+  {
+   "title": "ChatGPT Just Changed A LOT AGAIN (Here’s What’s New)",
+   "url": "https://www.youtube.com/watch?v=vMvkR8WEOpE",
+   "videoId": "vMvkR8WEOpE",
+   "channel": "Riley Brown",
+   "published": "2026-10-31T14:00:02.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/vMvkR8WEOpE/mqdefault.jpg"
   },
   {
    "title": "(광고) AI 6개에게 2주간 모의 투자를 맡겼더니? 결과 공개 LIVE",
@@ -602,46 +642,6 @@
    "channel": "Riley Brown",
    "published": "2026-10-10T20:03:25.000Z",
    "thumbnail": "https://i.ytimg.com/vi/UFa8pXW9A3k/mqdefault.jpg"
-  },
-  {
-   "title": "조코딩의 AI 리터러시 특강 1강 : 2026년, AI 지능은 어디까지 발전했나?",
-   "url": "https://www.youtube.com/watch?v=AHlWV-nI9yo",
-   "videoId": "AHlWV-nI9yo",
-   "channel": "조코딩 JoCoding",
-   "published": "2026-10-10T13:44:08.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/AHlWV-nI9yo/mqdefault.jpg"
-  },
-  {
-   "title": "ChatGPT Dots Is WAY More Powerful Than You Think",
-   "url": "https://www.youtube.com/watch?v=WXhOxfPECnM",
-   "videoId": "WXhOxfPECnM",
-   "channel": "Riley Brown",
-   "published": "2026-10-09T16:08:49.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/WXhOxfPECnM/mqdefault.jpg"
-  },
-  {
-   "title": "Agentic Apps: How Big Companies Are Actually Deploying AI Agents",
-   "url": "https://www.youtube.com/watch?v=cWjS56edaUA",
-   "videoId": "cWjS56edaUA",
-   "channel": "Cole Medin",
-   "published": "2026-10-09T14:52:28.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/cWjS56edaUA/mqdefault.jpg"
-  },
-  {
-   "title": "8 GitHub Repos To Go Viral and Make Money",
-   "url": "https://www.youtube.com/watch?v=rkK8ZyzYyEA",
-   "videoId": "rkK8ZyzYyEA",
-   "channel": "Greg Isenberg",
-   "published": "2026-10-08T18:30:11.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/rkK8ZyzYyEA/mqdefault.jpg"
-  },
-  {
-   "title": "Jev Can SERIOUSLY Supercharge Your AI Second Brain (Here's How)",
-   "url": "https://www.youtube.com/watch?v=Cl3OWig5hkk",
-   "videoId": "Cl3OWig5hkk",
-   "channel": "Cole Medin",
-   "published": "2026-10-08T00:00:21.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/Cl3OWig5hkk/mqdefault.jpg"
   }
  ]
 }
