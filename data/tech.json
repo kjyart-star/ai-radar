@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-05T03:36:36.303Z",
+ "generated": "2026-11-06T03:31:41.560Z",
  "source": "arXiv cs.AI · GitHub · Hugging Face",
  "sources": [
   "arXiv cs.AI",
@@ -8,166 +8,167 @@
  ],
  "arxiv": [
   {
-   "title": "Graph-Mediated Large Language Model Systems in the Agentic Era: Reasoning, Knowledge, Retrieval, Execution, and Coordination",
-   "url": "https://arxiv.org/abs/2611.05953v1",
-   "date": "2026-11-04T04:47:38.000Z",
-   "summary": "Graphs play an increasingly important role in large language model (LLM) systems, supporting structural reasoning, knowledge grounding, retrieval, and memory. As these systems evolve toward the agentic era, graphs also o",
-   "titleKo": "에이전트 시대의 그래프 매개 대형 언어 모델 시스템: 추리, 지식, 검색, 실행 및 조정"
+   "title": "Technohybridism: Recursive Semantic Normalization in AI-Mediated Societies",
+   "url": "https://arxiv.org/abs/2611.07984v1",
+   "date": "2026-11-05T13:14:00.000Z",
+   "summary": "Language-generating AI systems are no longer only objects of linguistic interaction: their outputs increasingly re-enter the communicative and institutional practices from which their training material was drawn. Drawing",
+   "titleKo": "테크노 하이브리드: AI 매개 사회의 재귀적 의미 정규화"
   },
   {
-   "title": "BAM: Bivariate Additive Models for Interpretable Tabular Prediction",
-   "url": "https://arxiv.org/abs/2611.05940v1",
-   "date": "2026-11-04T04:28:59.000Z",
-   "summary": "Generalized Additive Models with pairwise interactions (GA$^2$Ms) are regarded as glass-box models, since each pairwise shape function can be visualized as a contour plot. In practice, the shape functions learned by meth",
-   "titleKo": "BAM: 해석 가능한 표 예측을 위한 이변량 첨가제 모델"
+   "title": "TCSExam: Evaluating Frontier LLMs on the Full Range of TCS Research",
+   "url": "https://arxiv.org/abs/2611.07962v1",
+   "date": "2026-11-05T12:58:43.000Z",
+   "summary": "Can large language models (LLMs) advance theoretical computer science and resolve its long-standing open conjectures? To study progress toward this goal, we introduce TCSExam, a unified framework and benchmark covering t",
+   "titleKo": "TCSExam: TCS 연구의 전체 범위에서 Frontier LLM 평가"
   },
   {
-   "title": "Deep Meets Classical: A CPU-Efficient Decision-Fusion Model for Automatic Modulation Classification",
-   "url": "https://arxiv.org/abs/2611.05937v1",
-   "date": "2026-11-04T04:25:29.000Z",
-   "summary": "Automatic modulation classification (AMC) underpins spectrum sensing and non-cooperative signal identification in cognitive radio, yet the two standard CPU-feasible approaches to it, a compact convolutional neural networ",
-   "titleKo": "Deep Meets Classical: 자동 변조 분류를 위한 CPU 효율적인 의사 결정-융합 모델"
+   "title": "A Behavioural Framework for Predicting and Understanding Loss of Control in Frontier Artificial Intelligence Systems",
+   "url": "https://arxiv.org/abs/2611.07953v1",
+   "date": "2026-11-05T12:49:20.000Z",
+   "summary": "Frontier artificial intelligence (AI) systems are increasingly operating over longer horizons with diminishing human oversight, raising the risk of loss of control: systems acting beyond effective human control with pote",
+   "titleKo": "프론티어 인공 지능 시스템에서 통제력 상실을 예측하고 이해하기 위한 행동 프레임워크"
   },
   {
-   "title": "Split-KV: Efficient Context Parallelism for Training Diffusion Drafters",
-   "url": "https://arxiv.org/abs/2611.05926v1",
-   "date": "2026-11-04T04:16:46.000Z",
-   "summary": "Diffusion drafters accelerate speculative decoding by denoising multiple draft tokens in parallel. Their training uses anchor sampling to construct compact draft queries and performs cross-attention with a block-sparse m",
-   "titleKo": "Split-KV: 훈련 확산 초안을 위한 효율적인 컨텍스트 병렬 처리"
+   "title": "Circe: Training-Free LLM Self-Evaluation via Component Interaction Consistency",
+   "url": "https://arxiv.org/abs/2611.07948v1",
+   "date": "2026-11-05T12:45:40.000Z",
+   "summary": "As large language models (LLMs) are increasingly deployed in real-world applications, evaluating the correctness of their responses is crucial for reliable use. However, such evaluation is challenging because reference a",
+   "titleKo": "CIRCE: 구성 요소 상호 작용 일관성을 통한 훈련 없는 LLM 자체 평가"
   },
   {
-   "title": "Routes of Reasoning: Reading and Reshaping Test-Time Compute in MoE Models",
-   "url": "https://arxiv.org/abs/2611.05919v1",
-   "date": "2026-11-04T04:13:02.000Z",
-   "summary": "Reasoning models allocate test-time compute across distinct behaviors such as planning, deriving, and verifying. However, models frequently \"overthink,\" continuing to verify and re-derive long after finding a correct ans",
-   "titleKo": "추론 경로: MoE 모델에서 테스트 시간 컴퓨팅 읽기 및 재구성"
+   "title": "ChemE-as-Code: An Open-Source Platform for Agentic AI in Chemical Engineering",
+   "url": "https://arxiv.org/abs/2611.07947v1",
+   "date": "2026-11-05T12:45:28.000Z",
+   "summary": "ChemE-as-Code provides an open-source environment in which AI agents built on large language models (LLMs) can carry out chemical engineering work and engineers can check it. Its calculation tools range from catalysis th",
+   "titleKo": "ChemE-as-Code: 화학 공학 분야의 에이전트 AI를 위한 오픈 소스 플랫폼"
   },
   {
-   "title": "Autonomous ETL Pipelines for Salesforce M&A Consolidation: A Reference Framework, Jitterbit Mapping, and Reproducible Simulation Study",
-   "url": "https://arxiv.org/abs/2611.05918v1",
-   "date": "2026-11-04T04:12:38.000Z",
-   "summary": "Merging companies that each run Salesforce must consolidate their customer data into a single organization while both source systems remain in use. This requires reconciling different schemas and picklists, resolving dup",
-   "titleKo": "Salesforce M&A 통합을 위한 자율 ETL 파이프라인: 참조 프레임워크, 지터비트 매핑 및 재현 가능한 시뮬레이션 연구"
+   "title": "tok: a textual concrete syntax of BPMN and DMN for humans and AI agents",
+   "url": "https://arxiv.org/abs/2611.07945v1",
+   "date": "2026-11-05T12:42:56.000Z",
+   "summary": "tok is a plain-text notation for Business Process Model and Notation (BPMN) 2.0.2 process models and Decision Model and Notation (DMN) 1.5 decisions. One engine checks a tok document against both standards, compiles the ",
+   "titleKo": "tok: 인간 및 AI 에이전트를 위한 BPMN 및 DMN의 텍스트 콘크리트 구문"
   },
   {
-   "title": "Autonomous agents for electricity-system planning",
-   "url": "https://arxiv.org/abs/2611.05911v1",
-   "date": "2026-11-04T04:01:54.000Z",
-   "summary": "Planning electricity systems requires repeated decisions that connect regional resources, investment, operation and network constraints. Here we present an autonomous planning framework that carries prepared regional sce",
-   "titleKo": "전기 시스템 계획을 위한 자율 에이전트"
+   "title": "CardioLM: A multilingual suite of small language models for the cardiology domain",
+   "url": "https://arxiv.org/abs/2611.07940v1",
+   "date": "2026-11-05T12:41:19.000Z",
+   "summary": "Background: Cardiovascular care generates large volumes of clinical free-text documentation in local languages. However, clinical natural language processing (NLP) resources remain concentrated in English, and no existin",
+   "titleKo": "CardioLM: 심장학 영역을 위한 소규모 언어 모델의 다국어 제품군"
   },
   {
-   "title": "Do Saliency Maps Fail Dense Breasts? A Chance-Normalized, Confounder-Aware Audit of Explanation Fairness in Mammography",
-   "url": "https://arxiv.org/abs/2611.05909v1",
-   "date": "2026-11-04T04:01:32.000Z",
-   "summary": "Saliency maps, offered as evidence that mammography classifiers use the cancer, are untested in dense breasts, which can hide cancers. We tested whether they locate cancers worse there, and why. On 1,345 malignant CBIS-D",
-   "titleKo": "Saliency Maps는 치밀 유방에 실패합니까? 유방조영술의 설명 공정성에 대한 기회-정규화, 교란자 인식 감사"
+   "title": "Towards Scalable Diagnostic-Driven Whole-Slide Image Retrieval for Pathology Archives",
+   "url": "https://arxiv.org/abs/2611.07935v1",
+   "date": "2026-11-05T12:38:23.000Z",
+   "summary": "The growing adoption of digital pathology has rapidly expanded collections of hematoxylin-and-eosin whole-slide images, yet efficient navigation through these archives remains challenging, as metadata is often inconsiste",
+   "titleKo": "병리 아카이브를 위한 확장 가능한 진단 기반 전체 슬라이드 이미지 검색을 향하여"
   },
   {
-   "title": "Does Your Trial Simulator Know What the Drug Does? An Intervention-Blind Test of Interventional Validity on 7,207 Registered Trials",
-   "url": "https://arxiv.org/abs/2611.05907v1",
-   "date": "2026-11-04T03:59:15.000Z",
-   "summary": "Patient world models are increasingly proposed as simulators of clinical trials, and recent surveys rank their capabilities on a ladder from temporal prediction to counterfactual rollouts. Position on that ladder is curr",
-   "titleKo": "귀하의 시험 시뮬레이터는 약물이 무엇을 하는지 알고 있습니까? 7,207건의 등록된 시험에 대한 중재 타당성에 대한 중재-맹검 시험"
+   "title": "AttnSR: Attention Step Reward for Long-Horizon Agentic RL",
+   "url": "https://arxiv.org/abs/2611.07932v1",
+   "date": "2026-11-05T12:37:19.000Z",
+   "summary": "Long-horizon LLM agents make multi-step decisions, yet outcome-reward-only reinforcement learning provides little direct supervision for individual steps. We introduce AttnSR, a step-level reward augmentation method that",
+   "titleKo": "AttnSR: Long-Horizon Agentic RL에 대한 주의 단계 보상"
   },
   {
-   "title": "CHARM+: Cross-Hardware Attention with Re-Merge Multistream Mechanism",
-   "url": "https://arxiv.org/abs/2611.05906v1",
-   "date": "2026-11-04T03:57:56.000Z",
-   "summary": "As sequence lengths continue to grow, distributed attention based on sequence parallel (e.g., Ring-Attention) has become a mainstream solution for large language models (LLMs). Nevertheless, inherent communication depend",
-   "titleKo": "CHARM +: 멀티스트림 메커니즘을 다시 병합하는 크로스하드웨어 주의"
+   "title": "ZeroRAG: Adaptive Semantic Peer Routing for Decentralized Retrieval-Augmented Generation",
+   "url": "https://arxiv.org/abs/2611.07928v1",
+   "date": "2026-11-05T12:33:45.000Z",
+   "summary": "Retrieval-augmented generation (RAG) is a standard approach to enhance the reliability of large language model (LLM) outputs by retrieving documents relevant to a query and supplying them in the LLM prompt. Today's RAG s",
+   "titleKo": "ZeroRAG: 분산 검색 증강 생성을 위한 적응형 시맨틱 피어 라우팅"
   },
   {
-   "title": "EchoKV: Self-Corrective KV Cache Eviction via Iterative Query Feedback",
-   "url": "https://arxiv.org/abs/2611.05903v1",
-   "date": "2026-11-04T03:52:59.000Z",
-   "summary": "KV cache eviction is not merely a token-ranking problem: the workspace retained for generating eviction queries also determines the quality of those queries. Consequently, an early workspace error can distort later query",
-   "titleKo": "EchoKV: 반복 쿼리 피드백을 통한 자체 수정 KV 캐시 제거"
+   "title": "How Finite Brains Generalize Without Bound: Spatial Memory as a Universal Computer",
+   "url": "https://arxiv.org/abs/2611.07920v1",
+   "date": "2026-11-05T12:30:06.000Z",
+   "summary": "A child who learns to add small numbers adds numbers of any length. LSTMs and Transformers trained on short sequences fail on longer ones. We trace the difference to what a learner reads when it decides. A position, a co",
+   "titleKo": "유한한 두뇌가 바운드 없이 일반화하는 방법: 범용 컴퓨터로서의 공간 메모리"
   },
   {
-   "title": "RECAP: Context-Aware Prediction Recycling with Request-Local and Persistent Memories for Multimodal Speculative Decoding",
-   "url": "https://arxiv.org/abs/2611.05894v1",
-   "date": "2026-11-04T03:32:18.000Z",
-   "summary": "Recycling a target model's own predictions offers a training-free source of proposals for speculative decoding. In vision-language models, however, existing recycling indexes predictions by the last token alone, conflati",
-   "titleKo": "요약: 멀티모달 투기 디코딩을 위한 요청-로컬 및 영구 메모리를 사용한 상황 인식 예측 재활용"
+   "title": "Adaptive Semantic Branching: Disagreement-Localized Cross-Trajectory Regeneration for Reasoning Candidate Expansion",
+   "url": "https://arxiv.org/abs/2611.07918v1",
+   "date": "2026-11-05T12:29:57.000Z",
+   "summary": "Reasoning trajectories generated for the same problem often arrive at conflicting answers. These disagreements reveal alternative intermediate decisions that can be reused to explore new solutions. We introduce Adaptive ",
+   "titleKo": "적응형 의미 분기: 추론 대상자 확장을 위한 불일치-국소적 교차 궤적 재생"
   },
   {
-   "title": "CellCanon: An Agentic Cellular World Model for Prediction, Explanation, and Observation-Driven Updating",
-   "url": "https://arxiv.org/abs/2611.05890v1",
-   "date": "2026-11-04T03:29:21.000Z",
-   "summary": "Biological discovery requires using molecular knowledge and new measurements to infer responses beyond the conditions already observed. We introduce CellCanon, the first agentic cellular world model to unify single-cell ",
-   "titleKo": "CellCanon: 예측, 설명 및 관찰 기반 업데이트를 위한 에이전트 셀룰러 월드 모델"
+   "title": "GuidedWAM: Training-Free Energy Guidance for World Action Models in Autonomous Driving",
+   "url": "https://arxiv.org/abs/2611.07912v1",
+   "date": "2026-11-05T12:27:38.000Z",
+   "summary": "World action models (WAMs) for autonomous driving couple the driving policy and the visual world model in a single generative network whose objectives are fixed post-training. Conditioning on a new driving objective requ",
+   "titleKo": "GuidedWAM: 자율 주행에서 세계 행동 모델을 위한 훈련 없는 에너지 지침"
   },
   {
-   "title": "AI-Assisted Classification under Correlation Neglect and Trust",
-   "url": "https://arxiv.org/abs/2611.05870v1",
-   "date": "2026-11-04T03:04:05.000Z",
-   "summary": "When does an AI assistant improve human decision-making, and when does it hurt? We argue that the answer depends not just on AI accuracy but also on how much its evidence overlaps with the human's and how the human combi",
-   "titleKo": "상관 관계 소홀 및 신뢰 하에서 AI 지원 분류"
+   "title": "Structure from Collision via Hypothesis-Space Reasoning",
+   "url": "https://arxiv.org/abs/2611.07900v1",
+   "date": "2026-11-05T12:20:11.000Z",
+   "summary": "Knowledge of the hidden interior structure of an object, including the presence and location of cavities, is essential for predictive simulation, robotic manipulation, and nondestructive inspection. However, such cavitie",
+   "titleKo": "가설-공간 추론을 통한 충돌 구조"
   },
   {
-   "title": "Auditable Unlearning for LLMs",
-   "url": "https://arxiv.org/abs/2611.05866v1",
-   "date": "2026-11-04T02:58:44.000Z",
-   "summary": "Machine unlearning aims to remove a user's data from a trained model after a deletion request. Existing methods are majorly evaluated on three axes - how well they forget, how much capability they retain, and how robust ",
-   "titleKo": "LLM에 대한 감사 가능한 학습 취소"
+   "title": "Persistent Retrieval for Conversational Agents: A Study of Retrieval Efficiency",
+   "url": "https://arxiv.org/abs/2611.07899v1",
+   "date": "2026-11-05T12:19:39.000Z",
+   "summary": "Conversational agents can retrieve information directly or delegate retrieval to a subagent. This design choice affects how retrieval history is maintained, what context each model call receives, and what information mus",
+   "titleKo": "대화형 에이전트를 위한 영구 검색: 검색 효율성에 대한 연구"
   },
   {
-   "title": "Generative AI for urban planning: synthesizing land-use maps with satellite imagery via DualControlNet",
-   "url": "https://arxiv.org/abs/2611.05859v1",
-   "date": "2026-11-04T02:49:55.000Z",
-   "summary": "Various land-use models characterize land-use patterns and facilitate scenario planning. However, existing models are largely predictive, forecasting transitions based on numeric data without synthesizing new land-use ma",
-   "titleKo": "도시 계획을 위한 AI 생성: DualControlNet을 통해 토지 이용 지도를 위성 이미지와 합성"
+   "title": "DISCERN: Distributional Synthetic Replay for Retain-Free Incremental Machine Unlearning",
+   "url": "https://arxiv.org/abs/2611.07892v1",
+   "date": "2026-11-05T12:11:29.000Z",
+   "summary": "Machine unlearning aims to remove the influence of specific training data from a trained model without retraining from scratch. In real deployments, however, deletion requests arrive over time, calling for incremental cl",
+   "titleKo": "DISCERN: Retain-Free Incremental Machine Unlearning을 위한 Distributional Synthetic Replay"
   },
   {
-   "title": "Risk Control Certifies Rates, Not Magnitudes: An Audit of Selective Fetal Biometry",
-   "url": "https://arxiv.org/abs/2611.05851v1",
-   "date": "2026-11-04T02:41:56.000Z",
-   "summary": "Prenatal ultrasound biometry must return a head circumference (HC) and refuse when the image cannot support one. Selective prediction trades coverage against error, but its finite-sample guarantees bound the rate of gros",
-   "titleKo": "위험 관리는 규모가 아닌 비율을 인증합니다: 선택적 태아 생체 측정에 대한 감사"
+   "title": "When Bigger Becomes Brittle: Why Compression Hurts More as Language Models Scale",
+   "url": "https://arxiv.org/abs/2611.07891v1",
+   "date": "2026-11-05T12:11:13.000Z",
+   "summary": "Quantization and pruning reduce the cost of deploying language models, but their effects are usually reported as benchmark scores. Such scores record only the loss that remains at the output. Inside the model, compressio",
+   "titleKo": "더 큰 것이 부서지기 쉬워질 때: 언어 모델 규모에 따라 압축이 더 많은 피해를 입는 이유"
   },
   {
-   "title": "PEARL: Prediction Error-Adaptive Regularized Learning for Selective Forgetting under Partial Preference Drift",
-   "url": "https://arxiv.org/abs/2611.05842v1",
-   "date": "2026-11-04T02:31:49.000Z",
-   "summary": "User preferences shift as needs, context, and tastes evolve. This matters for personalized recommendation, LLM response generation, and RLHF-trained reward models, which can become miscalibrated as preferences drift. Exi"
+   "title": "When, Where, How: Active In-Context Learning for Tabular Foundation Models",
+   "url": "https://arxiv.org/abs/2611.07886v1",
+   "date": "2026-11-05T12:04:48.000Z",
+   "summary": "Tabular Foundation Models (TFMs) adapt to a new task only through the labeled rows in their context. However, labels are expensive to acquire in real-world scenarios due to the need for highly specific domain knowledge t",
+   "titleKo": "언제, 어디서, 어떻게: 표 형식 기초 모델을 위한 능동적 직접 학습"
   },
   {
-   "title": "Vision Paper: Why Distributed LLM Post-Training and Decentralized Alignment Are Now Essential",
-   "url": "https://arxiv.org/abs/2611.05841v1",
-   "date": "2026-11-04T02:30:51.000Z",
-   "summary": "This vision paper argues that distributed learning, including federated and decentralized, should become a first-class paradigm in LLM post-training, not merely a privacy add-on. Current methods like RLHF and DPO rest on",
-   "titleKo": "비전 페이퍼: 분산 LLM 사후 교육 및 분산 조정이 필수적인 이유"
+   "title": "InnerLogic-Surg: An Open Surgical Foundation Model via Continual Pretraining",
+   "url": "https://arxiv.org/abs/2611.07883v1",
+   "date": "2026-11-05T12:03:01.000Z",
+   "summary": "Vision foundation models are the backbone of modern surgical image analysis, yet most surgical systems still rely on encoders pretrained on natural images or on specialist models trained from scratch on comparatively sma",
+   "titleKo": "InnerLogic-Surg: 지속적인 사전 교육을 통한 개방형 수술 파운데이션 모델"
   },
   {
-   "title": "RACE: Calibrated Cumulative Scoring for Rollout-Free Robot Policy Checkpoint Selection",
-   "url": "https://arxiv.org/abs/2611.05838v1",
-   "date": "2026-11-04T02:26:29.000Z",
-   "summary": "Assessing the deployment performance of learned robot policies during training is challenging, as directly measuring task success requires costly real-world trials for each candidate checkpoint. Averaged validation loss ",
-   "titleKo": "RACE: 롤아웃 없는 로봇 정책 체크포인트 선택을 위한 보정된 누적 점수"
+   "title": "Network Effect Decomposition for Causal Effect Estimation under Network Interference",
+   "url": "https://arxiv.org/abs/2611.07879v1",
+   "date": "2026-11-05T12:00:31.000Z",
+   "summary": "Estimating causal effects from observational network data requires accounting for both individual treatment and neighborhood exposure. Existing outcome models commonly incorporate these intervention variables into a join",
+   "titleKo": "네트워크 간섭 하에서의 인과 효과 추정에 대한 네트워크 효과 분해"
   }
  ],
  "github": [
   {
    "title": "morluto/rea",
    "url": "https://github.com/morluto/rea",
-   "stars": 431414,
+   "stars": 434857,
    "language": "TypeScript",
-   "date": "2026-11-04T22:50:59Z",
+   "date": "2026-11-06T03:32:49Z",
    "summary": "Reverse engineer anything with agents, from app behavior down to native binaries."
   },
   {
    "title": "openclaw/openclaw",
    "url": "https://github.com/openclaw/openclaw",
-   "stars": 393925,
+   "stars": 393998,
    "language": "TypeScript",
-   "date": "2026-11-05T03:38:59Z",
+   "date": "2026-11-06T03:33:22Z",
    "summary": "The AI that really does things. Any OS. Any Platform. The lobster way. 🦞 "
   },
   {
    "title": "obra/superpowers",
    "url": "https://github.com/obra/superpowers",
-   "stars": 312520,
+   "stars": 313082,
    "language": "Shell",
    "date": "2026-11-03T23:24:58Z",
    "summary": "An agentic skills framework & software development methodology that works."
@@ -175,300 +176,300 @@
   {
    "title": "NousResearch/hermes-agent",
    "url": "https://github.com/NousResearch/hermes-agent",
-   "stars": 260608,
+   "stars": 260920,
    "language": "Python",
-   "date": "2026-11-05T03:23:50Z",
+   "date": "2026-11-06T03:33:05Z",
    "summary": "The agent that grows with you"
   },
   {
    "title": "n8n-io/n8n",
    "url": "https://github.com/n8n-io/n8n",
-   "stars": 209579,
+   "stars": 209648,
    "language": "TypeScript",
-   "date": "2026-11-05T02:44:28Z",
+   "date": "2026-11-06T02:34:30Z",
    "summary": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations."
   },
   {
    "title": "firecrawl/firecrawl",
    "url": "https://github.com/firecrawl/firecrawl",
-   "stars": 198696,
+   "stars": 199001,
    "language": "TypeScript",
-   "date": "2026-11-05T03:19:26Z",
+   "date": "2026-11-06T02:57:01Z",
    "summary": "Supercharge your AI agents with data from the web and beyond. Building the library for superintelligence. 🔥"
   },
   {
    "title": "Significant-Gravitas/AutoGPT",
    "url": "https://github.com/Significant-Gravitas/AutoGPT",
-   "stars": 187910,
+   "stars": 187916,
    "language": "Python",
-   "date": "2026-11-05T03:02:26Z",
+   "date": "2026-11-06T03:22:30Z",
    "summary": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters."
   },
   {
    "title": "f/prompts.chat",
    "url": "https://github.com/f/prompts.chat",
-   "stars": 175829,
+   "stars": 175913,
    "language": "MDX",
-   "date": "2026-11-05T03:12:44Z",
+   "date": "2026-11-06T03:12:32Z",
    "summary": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy."
   },
   {
    "title": "langgenius/dify",
    "url": "https://github.com/langgenius/dify",
-   "stars": 160427,
+   "stars": 160497,
    "language": "Python",
-   "date": "2026-11-05T03:37:56Z",
+   "date": "2026-11-06T03:31:53Z",
    "summary": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without reb"
   },
   {
    "title": "open-webui/open-webui",
    "url": "https://github.com/open-webui/open-webui",
-   "stars": 157808,
+   "stars": 157880,
    "language": "Svelte",
-   "date": "2026-11-05T03:32:29Z",
+   "date": "2026-11-06T02:59:18Z",
    "summary": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)"
   },
   {
    "title": "langchain-ai/langchain",
    "url": "https://github.com/langchain-ai/langchain",
-   "stars": 149040,
+   "stars": 149102,
    "language": "Python",
-   "date": "2026-11-05T00:22:11Z",
+   "date": "2026-11-06T01:57:42Z",
    "summary": "The agent engineering platform."
   },
   {
    "title": "github/spec-kit",
    "url": "https://github.com/github/spec-kit",
-   "stars": 147395,
+   "stars": 147922,
    "language": "Python",
-   "date": "2026-11-04T22:34:18Z",
+   "date": "2026-11-05T21:54:09Z",
    "summary": "💫 Toolkit to help you get started with SDD or any other process!"
   },
   {
    "title": "Comfy-Org/ComfyUI",
    "url": "https://github.com/Comfy-Org/ComfyUI",
-   "stars": 145067,
+   "stars": 145256,
    "language": "Python",
-   "date": "2026-11-05T02:16:25Z",
+   "date": "2026-11-06T03:26:05Z",
    "summary": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface. The fastest local inference engine in the world."
   },
   {
    "title": "shadcn-ui/ui",
    "url": "https://github.com/shadcn-ui/ui",
-   "stars": 127379,
+   "stars": 127455,
    "language": "TypeScript",
-   "date": "2026-11-04T07:50:48Z",
+   "date": "2026-11-05T16:47:13Z",
    "summary": "Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own."
   },
   {
    "title": "microsoft/generative-ai-for-beginners",
    "url": "https://github.com/microsoft/generative-ai-for-beginners",
-   "stars": 122997,
+   "stars": 123035,
    "language": "Jupyter Notebook",
-   "date": "2026-11-02T18:55:18Z",
+   "date": "2026-11-05T03:43:23Z",
    "summary": "21 Lessons, Get Started Building with Generative AI "
   },
   {
    "title": "JuliusBrussee/caveman",
    "url": "https://github.com/JuliusBrussee/caveman",
-   "stars": 117540,
+   "stars": 117794,
    "language": "Go",
-   "date": "2026-11-04T07:43:20Z",
+   "date": "2026-11-06T01:17:10Z",
    "summary": "🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman."
   },
   {
    "title": "supabase/supabase",
    "url": "https://github.com/supabase/supabase",
-   "stars": 114539,
+   "stars": 114582,
    "language": "TypeScript",
-   "date": "2026-11-05T03:38:01Z",
+   "date": "2026-11-06T03:10:28Z",
    "summary": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications."
   },
   {
    "title": "thedotmack/claude-mem",
    "url": "https://github.com/thedotmack/claude-mem",
-   "stars": 112967,
+   "stars": 113610,
    "language": "TypeScript",
-   "date": "2026-11-05T02:03:51Z",
+   "date": "2026-11-06T03:17:20Z",
    "summary": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Cla"
   },
   {
    "title": "google-gemini/gemini-cli",
    "url": "https://github.com/google-gemini/gemini-cli",
-   "stars": 108733,
+   "stars": 108746,
    "language": "TypeScript",
-   "date": "2026-11-05T01:15:47Z",
+   "date": "2026-11-06T01:09:43Z",
    "summary": "An open-source AI agent that brings the power of Gemini directly into your terminal."
   },
   {
    "title": "rasbt/LLMs-from-scratch",
    "url": "https://github.com/rasbt/LLMs-from-scratch",
-   "stars": 107830,
+   "stars": 107881,
    "language": "Jupyter Notebook",
-   "date": "2026-11-05T03:07:48Z",
+   "date": "2026-11-06T01:58:43Z",
    "summary": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step"
   }
  ],
  "huggingface": [
   {
-   "title": "nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
-   "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
-   "downloads": 44939,
-   "likes": 2276,
-   "task": "automatic-speech-recognition",
-   "date": "2026-10-07T22:50:21.000Z"
-  },
-  {
-   "title": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
-   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
-   "downloads": 221621,
-   "likes": 5282,
-   "task": "image-text-to-text",
-   "date": "2026-10-17T02:40:38.000Z"
-  },
-  {
-   "title": "speridlabs/idol",
-   "url": "https://huggingface.co/speridlabs/idol",
-   "downloads": 14613,
-   "likes": 629,
-   "task": "image-to-3d",
-   "date": "2026-10-28T15:55:17.000Z"
-  },
-  {
-   "title": "LiquidAI/LFM3-1.7B",
-   "url": "https://huggingface.co/LiquidAI/LFM3-1.7B",
-   "downloads": 54959,
-   "likes": 1490,
-   "task": "text-generation",
-   "date": "2026-10-23T21:35:42.000Z"
-  },
-  {
-   "title": "mistralai/Mistral-Large-4-1T-A52B",
-   "url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B",
-   "downloads": 8200,
-   "likes": 1592,
-   "task": "image-text-to-text",
-   "date": "2026-09-30T18:35:13.000Z"
-  },
-  {
    "title": "moonshotai/Kimi-K3.1-Pro",
    "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
-   "downloads": 797,
-   "likes": 560,
+   "downloads": 11658,
+   "likes": 941,
    "task": "image-text-to-text",
    "date": "2026-11-02T04:13:51.000Z"
   },
   {
-   "title": "Pika-Labs/Pika-H3-Flex",
-   "url": "https://huggingface.co/Pika-Labs/Pika-H3-Flex",
-   "downloads": 749,
-   "likes": 431,
-   "task": "image-to-video",
-   "date": "2026-10-29T17:08:44.000Z"
-  },
-  {
-   "title": "Lightricks/LTX-2.5",
-   "url": "https://huggingface.co/Lightricks/LTX-2.5",
-   "downloads": 2493402,
-   "likes": 10631,
-   "task": "image-to-video",
-   "date": "2026-07-23T07:55:24.000Z"
+   "title": "speridlabs/idol",
+   "url": "https://huggingface.co/speridlabs/idol",
+   "downloads": 17180,
+   "likes": 795,
+   "task": "image-to-3d",
+   "date": "2026-10-28T15:55:17.000Z"
   },
   {
    "title": "ccore/Qwen3.5-4B-3D-Coder",
    "url": "https://huggingface.co/ccore/Qwen3.5-4B-3D-Coder",
-   "downloads": 123321,
-   "likes": 659,
+   "downloads": 157157,
+   "likes": 713,
    "task": "",
    "date": "2026-10-25T05:43:34.000Z"
   },
   {
+   "title": "Lightricks/LTX-2.5",
+   "url": "https://huggingface.co/Lightricks/LTX-2.5",
+   "downloads": 2561845,
+   "likes": 10743,
+   "task": "image-to-video",
+   "date": "2026-07-23T07:55:24.000Z"
+  },
+  {
+   "title": "nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
+   "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
+   "downloads": 57297,
+   "likes": 3059,
+   "task": "automatic-speech-recognition",
+   "date": "2026-10-07T22:50:21.000Z"
+  },
+  {
+   "title": "mistralai/Mistral-Large-4-1T-A52B",
+   "url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B",
+   "downloads": 9592,
+   "likes": 1615,
+   "task": "image-text-to-text",
+   "date": "2026-09-30T18:35:13.000Z"
+  },
+  {
+   "title": "Pika-Labs/Pika-H3-Flex",
+   "url": "https://huggingface.co/Pika-Labs/Pika-H3-Flex",
+   "downloads": 863,
+   "likes": 475,
+   "task": "image-to-video",
+   "date": "2026-10-29T17:08:44.000Z"
+  },
+  {
    "title": "burner22/numbat",
    "url": "https://huggingface.co/burner22/numbat",
-   "downloads": 8118,
-   "likes": 342,
+   "downloads": 8789,
+   "likes": 355,
    "task": "",
    "date": "2026-10-23T01:37:02.000Z"
   },
   {
    "title": "FusionCow/Sulphur-3",
    "url": "https://huggingface.co/FusionCow/Sulphur-3",
-   "downloads": 528,
-   "likes": 364,
+   "downloads": 607,
+   "likes": 381,
    "task": "",
    "date": "2026-10-31T20:31:01.000Z"
   },
   {
    "title": "Qwen/Qwen3.8-27B",
    "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
-   "downloads": 8032442,
-   "likes": 19158,
+   "downloads": 8037597,
+   "likes": 19216,
    "task": "image-text-to-text",
    "date": "2026-08-05T08:22:59.000Z"
   },
   {
-   "title": "abenzerps/Qwen-Image-2.1-Turbo-Quantized",
-   "url": "https://huggingface.co/abenzerps/Qwen-Image-2.1-Turbo-Quantized",
-   "downloads": 305860,
-   "likes": 5650,
-   "task": "text-to-image",
-   "date": "2026-09-20T15:51:13.000Z"
-  },
-  {
    "title": "AtomicChat/DeepSeek-V4.1-Flash-1017-Uncensored-GSQ-RCO-GGUF",
    "url": "https://huggingface.co/AtomicChat/DeepSeek-V4.1-Flash-1017-Uncensored-GSQ-RCO-GGUF",
-   "downloads": 73659,
-   "likes": 294,
+   "downloads": 92333,
+   "likes": 322,
    "task": "text-generation",
    "date": "2026-10-28T04:48:45.000Z"
   },
   {
+   "title": "ricursiveAI/Ripple-65B-Preview",
+   "url": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview",
+   "downloads": 939,
+   "likes": 277,
+   "task": "",
+   "date": "2026-11-04T02:41:21.000Z"
+  },
+  {
    "title": "black-forest-labs/flux-3-image-klein-comfy",
    "url": "https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy",
-   "downloads": 1052684,
-   "likes": 2497,
+   "downloads": 1077477,
+   "likes": 2578,
    "task": "image-to-image",
    "date": "2026-10-14T12:00:13.000Z"
   },
   {
+   "title": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "downloads": 243508,
+   "likes": 5331,
+   "task": "image-text-to-text",
+   "date": "2026-10-17T02:40:38.000Z"
+  },
+  {
+   "title": "LiquidAI/LFM3-1.7B",
+   "url": "https://huggingface.co/LiquidAI/LFM3-1.7B",
+   "downloads": 60681,
+   "likes": 1511,
+   "task": "text-generation",
+   "date": "2026-10-23T21:35:42.000Z"
+  },
+  {
    "title": "Edge0/Audio8-TTS-Realistic-Air",
    "url": "https://huggingface.co/Edge0/Audio8-TTS-Realistic-Air",
-   "downloads": 9695,
-   "likes": 296,
+   "downloads": 11349,
+   "likes": 319,
    "task": "text-to-speech",
    "date": "2026-10-14T03:02:49.000Z"
   },
   {
    "title": "sensenova/SenseNova-Loop-9B-Preview",
    "url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview",
-   "downloads": 2704,
-   "likes": 235,
+   "downloads": 2929,
+   "likes": 251,
    "task": "image-text-to-text",
    "date": "2026-10-28T15:34:40.000Z"
   },
   {
-   "title": "baidu/Unlimited-OCR-2",
-   "url": "https://huggingface.co/baidu/Unlimited-OCR-2",
-   "downloads": 230232,
-   "likes": 612,
-   "task": "image-text-to-text",
-   "date": "2026-10-26T03:57:46.000Z"
-  },
-  {
-   "title": "OBLITERATUS/DeepSeek-V4.1-Flash-1017-obliterated",
-   "url": "https://huggingface.co/OBLITERATUS/DeepSeek-V4.1-Flash-1017-obliterated",
-   "downloads": 1979,
-   "likes": 249,
-   "task": "text-generation",
-   "date": "2026-10-23T08:59:53.000Z"
+   "title": "abenzerps/Qwen-Image-2.1-Turbo-Quantized",
+   "url": "https://huggingface.co/abenzerps/Qwen-Image-2.1-Turbo-Quantized",
+   "downloads": 233059,
+   "likes": 5667,
+   "task": "text-to-image",
+   "date": "2026-09-20T15:51:13.000Z"
   },
   {
    "title": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
    "url": "https://huggingface.co/DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
-   "downloads": 1403315,
-   "likes": 2494,
+   "downloads": 1457791,
+   "likes": 2546,
    "task": "image-text-to-text",
    "date": "2026-09-01T07:01:09.000Z"
+  },
+  {
+   "title": "OBLITERATUS/DeepSeek-V4.1-Flash-1017-obliterated",
+   "url": "https://huggingface.co/OBLITERATUS/DeepSeek-V4.1-Flash-1017-obliterated",
+   "downloads": 2296,
+   "likes": 260,
+   "task": "text-generation",
+   "date": "2026-10-23T08:59:53.000Z"
   }
  ]
 }
