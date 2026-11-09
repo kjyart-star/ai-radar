@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-08T02:38:20.268Z",
+ "generated": "2026-11-09T02:52:31.398Z",
  "source": "Google News · TechCrunch · MIT Technology Review · The Verge",
  "sources": [
   "Google News",
@@ -9,50 +9,199 @@
  ],
  "items": [
   {
-   "title": "월가의 AI '올인' 베팅, 어떻게 무너졌나",
-   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBVOGtjU28tWnZmQnVVOWJ0THctbWh5bFZidlpzQk5Ha2RIbzVmTVBvekFzaFNISS1SMTB4Z19zRGRGWEx1WUxYanphdFgxVUt0QmVjTXpvaDYzdHRUN21wNjY0UnRpR0h1b0U2SjBlZDY2YVk?oc=5",
-   "date": "2026-11-08T02:19:10.000Z",
-   "source": "마켓인",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "\"AI 추천, 반복할수록 편향 심해져\"",
-   "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE91OVc4SG01UEU0MkV3WHcwTnFleHNUcjhGX200NWtBTTdNck5SQU1xaXpYTVRrXzlHTHBSYVBwMTNnV2ZPbl9Nd0R1MTNGc2JsczFzYg?oc=5",
-   "date": "2026-11-08T01:49:00.000Z",
-   "source": "DongA Science",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "보안업체 모니터랩 \"AI 해킹, 특정 문자열 막아도 못 막아…공격 흐름 살펴야\"",
-   "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNQ2N5bEx0ZFlGZEMxSmRWTzhla0ZBS3BGU2VKNzB5ektaVnNhRFVwVFJvQXF6OWJlNk9ZQmMzZFAxLV9TajNDMnc3MGl0TERrdFJjSDJZWjhBUnIxYXctcVRvUmFpakR3dTFNMUJ0d3lDeF9xMVhhYXRMLUUwcXQybnhoZEtzUzdXUGc?oc=5",
-   "date": "2026-11-08T01:37:00.000Z",
-   "source": "조선일보",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "AI에 웃던 헤지펀드도 ‘백기’…10여년 만에 최대 투자 축소",
-   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNcTZFcExOa3VoYmNVaHhBb2JLVF9UR182ajFhNUtQaTlKVjJfaERTSC1iYVFWTkFTSHpZMUwxUVYydFZubDVyTVlLd2JXbzVnNXZ1Uy1OUGVYSG9kREhyMmlFLXM0a2ZCdFRscTlfUml4bnpMM0J5WG1xNTY2WUlFTzc1UThDeE1m?oc=5",
-   "date": "2026-11-08T01:09:00.000Z",
-   "source": "조선일보",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "\"AI 상품 추천이 AI 재학습시켜\"…오류·편향 추적기술 개발",
-   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFA5QldQdG84aU5uNjR6NUlWZVFBY0twUXBRRVRET0cwR3MtbHpHTmNtM2R5cktaaDhPTXBrdFh1elUyaWRFa2tsOFRDcHFMcXNaVVQ2S28zTTdDMnFONHVTadIBeEFVX3lxTFBNaHVTZVNGMXMyR0hkSVlkR2RsQVFGTTQ1djI0eWh6RmdzV1FDdUtyajh1QmtCYWJudDBKN2o5N3E3V0FnVnV2MElIZ1YwWmxJTElsdTQ0SldycjRISzdKeTFNS0FnemxPWnYzME9fb2FUYlQ1eTBwRw?oc=5",
-   "date": "2026-11-08T01:05:23.000Z",
+   "title": "동국대, 정신질환 인과추론 AI 연구센터 개소…124억원 투입",
+   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE4xdW42Q2FhZWtNcmw5NFdpSktrT3pMYU9hd1BJcUo1YWk1Zkt1R2huYWNQbVowMlBNYjMzYllhRkRyOXo3dVhsZU15aElHeGt1dWNveGtmSVpBZXpyUmpnTQ?oc=5",
+   "date": "2026-11-09T02:47:05.000Z",
    "source": "뉴시스",
    "feed": "Google News",
    "summary": ""
   },
   {
-   "title": "AI 데이터센터 위험 커지자…공동 대응 나선 보험사들",
-   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5TQlU4VC15bFBEVld1bE5BcEl6N2V4VF94QU05WnFKTlEyaHdpakhEcXVqVHBHb3g0dDNETU14YWZIQTdxdHlfV2ItU1hkbWNuRkJqNWNkNTJUV0dPQ2RXTQ?oc=5",
-   "date": "2026-11-08T01:00:00.000Z",
-   "source": "아시아경제",
+   "title": "피플앤드테크놀러지, SKT 손잡고 의료 AI 서비스 확장",
+   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE52U2Q2dUNRR09PRVF6emh4clhzbHh6anNPekF4NTlTTzFRMTcwWXlaNXBJOHFPOXBKMHFfcFhIYTRLVE8tS3h5Q1RSb1FEOUFBeHBlblJJLXYxX05IMEVrWlRYLW5Vd2VHdGVpcUdB?oc=5",
+   "date": "2026-11-09T02:35:54.000Z",
+   "source": "팜이데일리",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "히츠, KAIST AI-혁신신약연구단과 협약 체결...AI 플랫폼 활용 연구지원",
+   "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9ENXd2V05Bc1NHcGZOdVRPUWVESW5LVWE5Y3h6R2lFWlNNT0Vlajl2Q1VQU0JENlJQZlJXNGFtVms4V0dGOHMxUWcwb0EwOUIwLWltbVVtVVl5eFZoMUdDRS1NSkJWc2dlRGc?oc=5",
+   "date": "2026-11-09T02:32:37.000Z",
+   "source": "AI타임스",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "[한국정보공학기술사 보안을 論하다–51] AI 위협의 진화, 우리에게 주어진 현실적 과제는 무엇인가?",
+   "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE40SHpMVFgtYlJwUlJMaHVWT2tvQ2FlV200LXhWclJGb0J3b2VyaHpMeDROTEdCak5oeUVqWkdtd3ZKZWJOWFlxLWVWcVVwVDIxdENaTVhlV19kWUczZEl1Zk80eTNYMmVZR3hF?oc=5",
+   "date": "2026-11-09T02:30:00.000Z",
+   "source": "보안뉴스",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "KBSI, 연구·행정에 AI 도입 본격화…업무 혁신 속도",
+   "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9QX3hLLS1OOUtIdmNRRFBiX0ZQb1lVUERUaEp4dGd1bkk4UUFRTk02dkx1QzIxbE5hd2NOYm5YUVdRejIxSDYzVHhrX0Q0c3BLWFpmU1pQVnFia0JBNmUzcjZVZlFvcjdPbkF1anpQMmVnUQ?oc=5",
+   "date": "2026-11-09T01:31:21.000Z",
+   "source": "굿모닝충청",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "KBSI, 연구 현장 맞춤형 AI 전환 성과 공개",
+   "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5qM3FpaDdORFJVdmpaNTlWUW5nZDRJaFdQNzdXUDUtNFZhMnBSYk1Fd3FQZS1uNHoxd0FQc0pxWHBEWTk5a1hIbFdJdWZDWjRDbEV5emZTUENLZ1JEU0Q5U0xoNXFuYkdSNndj?oc=5",
+   "date": "2026-11-09T01:16:31.000Z",
+   "source": "충청뉴스",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "“AI가 아이디어 쏟아내도 인간만 할 수 있는 일”…예술·기술 전문가들이 찾은 답",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE0yWVdJSFdYcjlYUVpKN0U5OXZDdnY0UlY2QzR1QjVtd2gteUNJNnVxSVRsbURiUlFyaDNqQzFYVzlubjRTVjlsMWthWlFXdnVLNmY4NnZfQjR3MUZqenRvNkVPQlJoSTc4VmtSR09IOE5sbUtUY0HSAWZBVV95cUxQTjJaRERCa3ZrZW80ZWRBY3ZLT3c3UnNlOFVoS0JRZV9wSmJtcnp1bUVnT3NTZEw0clhmZ1pQYnZnbGhqd2ctTnpGR0xuazVDYkt3QXNQc1FoTG5mTlpxZWxnQ1hod2c?oc=5",
+   "date": "2026-11-09T01:12:52.000Z",
+   "source": "동아일보",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "“코딩 몰라도 AI 만든다”...ETRI, 개발도구 '탱고' 공개",
+   "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1IYmFaUTNTQVNBaFdGYmpIa3dGRHBxYVNKVjd6OVg2Q09ubDk2bWJzUnJLS0NHbG84eUpKWkNtekgtZVhRM0Q0YlpSeG45SHpIY3hHUWE0VkZaRUJYdW5r?oc=5",
+   "date": "2026-11-09T01:04:22.000Z",
+   "source": "헬로티",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "“AI시대에도 몸 움직여 ‘회복’ 실천하는 주체는 나”",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9RMUVIenU1Q0IxUkVNV2RObDJQOVdOOUlPbWR3SVdQSG02NEZaSlJmNVZBYy12WGtPOGc1Q1lBTE00dnFjYmtHcVVMQVJIdlVmdDFZZ0txM1dldw?oc=5",
+   "date": "2026-11-09T01:00:00.000Z",
+   "source": "이투데이",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "세아베스틸, 철강공장 특화 AI 안전 솔루션 개발",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFByYll3YUhiU0VqVDl4WDltaFgyNlh6WU1JNUNYZG42UG5vQnBWY2NUaGRxd0x2dUh6VmpQQ3BNUTQ0V0o3ZTBsMmZaY1VGemNOU0lYV3FXTjJmZzjSAWBBVV95cUxPS19lbU1ValhYc2Z6NFIwZk05Y1JXalJRRlloQnZNQ1VyM0dlUVgxekRZdkxmS1NpQnpOWW1ydkl6Tm1vRGVRQklZSC05U3RKVzFEVjVVSy0xSmtTWDY5R3U?oc=5",
+   "date": "2026-11-09T00:55:41.000Z",
+   "source": "연합뉴스",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "RBA 부총재보 \"AI 투자 확대, 중립 금리 높일 가능성\"",
+   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1UcEhhZ0t2MUxETGU0OV8yTms5R0JPblZFVzktXy1YR0FIU2Z2Um5qek16cGlEMXU1Ulc4YjF1cXh3bzBnYkFSRFNRXzczSEFTQklrZkYwY25ZNzR1VkxKOVYwSGVEQmlraDVUTHpUREc?oc=5",
+   "date": "2026-11-09T00:54:09.000Z",
+   "source": "연합인포맥스",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "\"회사 안에 AI가 너무 많아지고 있다... 이제 ‘AI 직원’을 관리해야 한다\"",
+   "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9JenNTc01teUlZUi1CYlF2T2Q4OXR3RC1LOXFKSmhXeWhyc0NUbEY1NDhkNXA3eVY1UTFPTFUxUGxaZEFBQlBQeHNudDl1VFFROHB3UDF6X1czOFhNS09pVFdvdV9HbUE?oc=5",
+   "date": "2026-11-09T00:36:12.000Z",
+   "source": "인공지능신문",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "히츠, KAIST AI-혁신신약연구단과 MOU 체결",
+   "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1Rd19aSmZpbUY2YmwxbVh3MEdZbWxPbDZhUHZ6clJEN2tabENLSGxpdVVWMjhaT0kwZVp4bVVtSG5fa3A1TDFtYk9KRlhFeS1ZaGZaWjYwWDdpQkpfNkkxNUtzX09VbG9qeFZn?oc=5",
+   "date": "2026-11-09T00:13:22.000Z",
+   "source": "히트뉴스",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "AI로 영상·음악·게임 직접 만든다…‘AI 콘텐츠 페스티벌 2026’ 12일 개막",
+   "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1TTlp3dGgwbkFxWTBrRUM2N2s1TFBYSnNGeWNINW1aRnFSaUVJdU9NNER6TGw3bGVFa3FRRkt6enpCNm1GZDlPVW53U0tqMURSVDF3TlFKSG13NzFsM05yZzNLa3pwUG8?oc=5",
+   "date": "2026-11-09T00:07:20.000Z",
+   "source": "인공지능신문",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "[AI리더의 서가] AI 에이전트 시대의 연결 프로토콜",
+   "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5oa0VtekxINjUyZnBjUzZ3WF94YU84bkllVDRQSWJmc0hIbXpCWUwzdUhBMWhNUGR6RXMwMzVrck1zQ2JhOGNoWnU1YlQ3VXJ3ZWVMaWtheHNhUTloS0VaSjhyaHpMY2pnNGc?oc=5",
+   "date": "2026-11-09T00:00:00.000Z",
+   "source": "AI타임스",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "Here’s the full text of Jensen Huang’s memo to Nvidia",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1029595/full-text-jensen-huang-affair-memo-nvidia",
+   "date": "2026-11-08T22:54:50.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "On Sunday, Nvidia announced it was launching an investigation into CEO Jensen Huang's relationship with Alice Huang, an AI executive and agent of the Chinese government. In addition to the Board of Directors announcing t",
+   "titleKo": "다음은 엔비디아에 보낸 Jensen Huang의 메모 전문입니다."
+  },
+  {
+   "title": "“데이터센터, 여기서 멈추면 빚폭탄 터진다”…AI업계, 美민주당에 ‘간청’",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1YcFBKVmg2TUpMNlVjWEdxM2JfOHNPd1EwSnhlRkxLZzZINFZ2NXJZaUtKQ0JtSGM1V2t3enBVZl9hSFFpdFh2Zk54N1g3U2NaUXc?oc=5",
+   "date": "2026-11-08T21:22:16.000Z",
+   "source": "매일경제",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "Nvidia will investigate CEO Jensen Huang’s relationship with possible Chinese spy",
+   "url": "https://techcrunch.com/2026/11/08/nvidia-says-its-investigating-ceo-jensen-huangs-relationship-with-possible-chinese-spy/",
+   "date": "2026-11-08T21:00:11.000Z",
+   "source": "TechCrunch",
+   "feed": "TechCrunch",
+   "summary": "In a memo to the company, Huang admitted that he had an affair.",
+   "titleKo": "엔비디아는 CEO 젠슨 황 (Jensen Huang) 과 중국 스파이와의 관계를 조사할 예정이다."
+  },
+  {
+   "title": "Nvidia is investigating Jensen Huang’s relationship with a Chinese spy",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1029562/nvidia-investigating-jensen-huang-relationship-chinese-spy",
+   "date": "2026-11-08T20:22:39.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "Nvidia has announced that it is opening an investigation into CEO Jensen Huang and his relationship with Megaspeed executive Alice Huang, who was reportedly recruited by China's Ministry of State Security to spy on the c",
+   "titleKo": "엔비디아는 젠슨 황 (Jensen Huang) 과 중국 스파이의 관계를 조사하고 있습니다."
+  },
+  {
+   "title": "Apple is racing to make Siri more agentic",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1029552/apple-siri-ai-agentic",
+   "date": "2026-11-08T19:18:19.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "Bloomberg's Mark Gurman says CEO John Ternus is pressuring AI czar Craig Federighi to accelerate the Siri roadmap and deliver a powerful AI agent that can compete with OpenAI's Dots or Meta's Muse. While Federighi has de",
+   "titleKo": "Apple은 Siri를 보다 에이전트적으로 만들기 위해 경쟁하고 있습니다."
+  },
+  {
+   "title": "Elvis and Eminem rights holders are suing Suno",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1029533/elvis-eminem-suno-ai-music-clone-lawsuit",
+   "date": "2026-11-08T17:23:19.000Z",
+   "source": "The Verge",
+   "feed": "The Verge",
+   "summary": "Suno is facing yet another pair of lawsuits. A group of rights holders of Elvis Presley's music and the publisher of some of Eminem's biggest records are suing the AI music company, claiming it illegally generates music ",
+   "titleKo": "엘비스와 에미넴 권리 보유자들이 수노를 고소하고 있습니다"
+  },
+  {
+   "title": "AI·인터넷 없이 3시간 글쓰기… \"내 힘으로 완성하니 짜릿\"",
+   "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQZWs5VnhmVTFNWU1LT3dYeVN4bXUtMzVST1p4dTFqNHNCVjNaNFRBcVVIUGJqcnMxeHU5R2lCVWc0b0pZVDlSUVUzSGNJS3BWUTdvMGMwWFhPeGpQUVBSa3kwRlhQa000M0NrOUlKc1AwQUpzNUpGdnBvVW9Uc2NxWjFULVM5Rk0?oc=5",
+   "date": "2026-11-08T15:44:00.000Z",
+   "source": "조선일보",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "“미국에 못 짓는 AI 데이터센터 한국에 유치하자”?…정말 기회이기만 할까",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE94RDVVMHVwZ0tVRjZSbmxUX3Nmb014LUNCZllaa3FJTTRsdnNwMTNBOXBSZHU4MmJTbmZCenFCNEtIc0FmOEZod1FvdEtuOHJrR2NoWi1RTjBQQdIBX0FVX3lxTE1SQUp2azZFYkpiTFhDMERZNHNlNm9xc3laeEx5UElnMDNFUXlhNHRCTXpCeW1oR25FcmRSTnZWbmgxMFNtM0xRU0tkSUZ3OTZDZ2lHQ1luay1RU3ZHeXVV?oc=5",
+   "date": "2026-11-08T07:38:00.000Z",
+   "source": "경향신문",
+   "feed": "Google News",
+   "summary": ""
+  },
+  {
+   "title": "급락한 美 증시, 내년 운명은 AI 산업·국채금리에 달렸다",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE0xWS1jWTI0ME01ZXpWNXU5cVpyRTJ1dUMwTnJRSDRWNk5pTFZYNjduQkZpdzJjeEs0SHpuU0x6bXVya2t3YlNqNnNJaWViZkZUMTgwUWhxTEZFdw?oc=5",
+   "date": "2026-11-08T06:29:02.000Z",
+   "source": "한국경제",
    "feed": "Google News",
    "summary": ""
   },
@@ -61,30 +210,6 @@
    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5VcFlOWm1Oak00bUV5ZEpjdlhUSGJqTFZKVjVidG5GV29lZXJrT1Jad0NwNEhrU2F3ZVVrQVNWSG01cjZIRElZVXRhZlhUSVI0bEtNWG9R?oc=5",
    "date": "2026-11-08T00:54:32.000Z",
    "source": "지디넷코리아",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "오픈AI, '이미지 2.6' 프롬프트 가이드 공개…\"바꿀 것과 유지할 것 구분하라\"",
-   "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9za0ZhRHB3VTdDLV9WbFBvbVJySW5YSXFWUWdTb2ZVdk04czZSNHN4SWpleFl3YzFYVi10OVJRMDIyemZKTXRsN3JhSkFGcExZdWl3MXJaTUxvX3BZeUJiVUN6RlMyTkdiTkE?oc=5",
-   "date": "2026-11-08T00:51:29.000Z",
-   "source": "AI타임스",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "국방데이터·GPU 공동 활용…함정 AI 기술, 민간 조선·MRO까지 확산",
-   "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBGN3VQaWRaN2FYRWQ0WGVsVmlORUNJTGYxbFdrRFF0RkQ5enJoSTNZRjBrc1NSZ0RfMUx4cTJOaXZrUVI2MXNFaEJTYmVYLTViaGNobDdEUUNHVlpJVEF1enl2WTZxbHgzTW4w?oc=5",
-   "date": "2026-11-08T00:16:51.000Z",
-   "source": "해사신문",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "엔비디아, 9일 ‘AI 데이 서울’ 개최…삼성·SK·LG와 AI 기술 협력 공개",
-   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9tZWNBanhMWmc4SjVvaWx4V0hnNlB4OVlGRkJUdDgzOUVxT3JmNGtzbUEyY3JaOTBtRlN1N29DMHJ1bFNCYWM5aTUyc0JRaFNvVzd4M3ZxalhHMU9Nak56c0V3bjJONi1v?oc=5",
-   "date": "2026-11-08T00:01:46.000Z",
-   "source": "아이티데일리",
    "feed": "Google News",
    "summary": ""
   },
@@ -98,14 +223,6 @@
    "titleKo": "중간고사 이후, 일론 머스크 (Elon Musk) 와 데이터 센터에 대한 관심이 높아지고 있습니다."
   },
   {
-   "title": "AI가 여성 일자리 뺏는다...교육·보건 분야 취약",
-   "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE44YnpFb0NmQThNV09UdWU0UF8weGpLTU83UFNGSGd4cmgta3JicGIwRWxoenNtM05OM1hfNXBpVzRXWDZBYWJxZmFQTWxCUHRmNmQ1MUw4SUJWN04wNUE?oc=5",
-   "date": "2026-11-07T21:33:00.000Z",
-   "source": "YTN",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
    "title": "Megaspeed exec was recruited to spy on Nvidia CEO, according to US intelligence memo",
    "url": "https://techcrunch.com/2026/11/07/chinese-exec-was-recruited-to-spy-on-nvidia-ceo-according-to-us-intelligence-memo/",
    "date": "2026-11-07T21:17:08.000Z",
@@ -113,22 +230,6 @@
    "feed": "TechCrunch",
    "summary": "A memo circulated earlier this year reportedly claimed that China’s Ministry of State Security recruited a female technology executive to spy on Nvidia's CEO.",
    "titleKo": "미국 정보 메모에 따르면 엔비디아 CEO를 감시하기 위해 Megaspeed EXEC을 모집했다고 합니다."
-  },
-  {
-   "title": "AI 해킹에 기존 방어망 뚫리나…금융권 보안 '경고등'",
-   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBGc0llUHFDQjdQRll2bm5aM1Q5Szk2bHk0bEU4OGdObXlldGFwZl9CQzNZd3ZET0VoaTVSQ1JBekxBMVNhd1N0cFdSSjlIOTVjWkwtMWdzcDBDNjjSAWBBVV95cUxQdzhQRjRmcW5GLVNrTXVBOVJEcnJWS2k1YmFsX2hmWFpFQ2ZwOG1UY01MZkVqVGtlT1pBZzRoRjN6YmJBcWVpTlBDbmNnc21pa0c0bmY0Qk5BTEVRUmpZT20?oc=5",
-   "date": "2026-11-07T21:05:24.000Z",
-   "source": "연합뉴스",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "AI가 당신에게 바가지를 씌우는 시대가 올까요? - 머니투데이",
-   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1tWDRqcU5BbTJqbGhYN1I1UkVDOUZQbEJVYjZEMzFPVERZcEVEenNfcFc1Q1AtaUFzbGVNbHVqZG9PYUZoTlRVaTlsTGVOelMxNW4yVFUycC0yVXVtQTJZM1JBM0g0Qy1G0gFuQVVfeXFMTjl4QWFOSF9aNE5kRmZsTy1POEJqWXFBbEtCWUJkQ1hvd2lQc21ydDlnQVN5d2Q1STVVX3BsWVEydXpIeEhKdTVNSHExelNDNEkxT0l5MEo1RGdka1NjTEU3RTVKSmMtQU5JVE85eHc?oc=5",
-   "date": "2026-11-07T21:00:00.000Z",
-   "source": "머니투데이",
-   "feed": "Google News",
-   "summary": ""
   },
   {
    "title": "NYT Cooking’s AI assistant saved my weeknight chicken, but almost ruined my cake",
@@ -167,38 +268,6 @@
    "titleKo": "Anthropic automating AI development에 대한 새로운 보고서가 연구자들을 놀라게 하는 이유"
   },
   {
-   "title": "‘데이터센터’ 미국선 애물단지?…중국은 AI 인프라 확충 박차",
-   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9uMmpHWkxuRXFhTmZaemRBSnMzOWFua3JOZ1lMdDJxZEdONlAxN2lEc0pmQlJxbFlrZ2Qyd2d0SzNVSkFnTkRmT3Zxa2RsY0JYeUVscVhiMG9VRjQ?oc=5",
-   "date": "2026-11-07T12:09:00.000Z",
-   "source": "KBS 뉴스",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "미 증시 급락세는 진정…트럼프 “나는 AI 지지”",
-   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE0xYmxyMmRqREdfRnhqdlZQaVFxUVlLVUVsSHFUY2VERmVQVy0zOHVlUWJtRWlaZWlEelA0SkVGU19qQV9vSU1JQ3pKV3RxYVV6Q3A2b0VISV9PMkE?oc=5",
-   "date": "2026-11-07T12:07:00.000Z",
-   "source": "KBS 뉴스",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "17분 만에 해골문양 등장‥PHP 서버, AI 모의해킹에 속수무책으로 뚫려",
-   "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBvMzFCSTJPT1dIR3JmYlRBTmktcFQzLVFvMEpsOW5zN1o1c0VibkpxMzFsY19yMGMzZnFMYVRUN0NMeTVuZ2kwdEVrbkkwaHhqTUx2RGRZVjVzRTI0YmVfWndNTGRZOGFFMFB3emhsMF9EdHE5ZU9wTtIBeEFVX3lxTE5XRnRrdGRlczhiUDVabjBsSElvVDhIVGQ4QVMzemh3dEVJaDI2Z3NVeVpHckd5cWd6Ul9iWWJoTkItenlydUJPTE9NMkxOMDBfNnoxVHVKLVJGMUk5MmxYaGFJS3ZMWjRPY3FpVWIxTGZKc01BNlRxRA?oc=5",
-   "date": "2026-11-07T11:10:47.000Z",
-   "source": "MBC 뉴스",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "“하루 새 4800조원 증발”…세계 증시 AI 열기 끝나나",
-   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5Qc1ZjZFphQXl2Z1VCV0ZVVTJPYi1WakJrM1JvWEFpb01KVGVuRFBMQWhiTnFvcWk0QjB1Y3ZMaTQtU1pRa2I0aEE0c1B5YTFCd182dkV0ZC0tQdIBX0FVX3lxTE1Ja3VhQzhXN21BSHZTSlcwak5BbFBBcEdYOTM5d0REUWgzb1lORkV5TlBpZk02bF83cHVIQnlUZ09PN3lZTEZ0andBZ1hndDhvY01SNDBZNDNvZVljbTQw?oc=5",
-   "date": "2026-11-07T03:21:00.000Z",
-   "source": "경향신문",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
    "title": "Crusoe sells troubled Wyoming data center project to Google",
    "url": "https://techcrunch.com/2026/11/06/crusoe-sells-troubled-wyoming-data-center-project-to-google/",
    "date": "2026-11-07T01:40:28.000Z",
@@ -206,14 +275,6 @@
    "feed": "TechCrunch",
    "summary": "The deal highlights the challenges of developing massive AI data centers.",
    "titleKo": "Crusoe는 문제가 있는 와이오밍 데이터 센터 프로젝트를 Google에 판매합니다"
-  },
-  {
-   "title": "“AI에 아이디어 안 물어본다”…나이키 광고 거친 日 디렉터의 창작법 [더긱스]",
-   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5FN3BfS3FRZzJiUnNxYlU1eTk1R0s4enpkSm9aLVVGM0JPcFM4T2dlNEFVcWFuV3l3TzZmWmNzaVVOX0JlUmN4T1ROWTJ3bEFnVVFacGFCZTBiWkdsZ2Mxbk41Q0drX1Azcml6dUF0eEVRNG5nZVHSAWZBVV95cUxNYXFJcGM0UWE1ejVNVHBVZ2EwTjZlUTNYVzhyV2pCZll3bjExcEZGR2hzS1dpSjZjRk0wOUpsa3oyWFdWaFZWZFlIdDJVLTZyYmpvZTZJdDNaN0MxRERBVE1sMkd4MEE?oc=5",
-   "date": "2026-11-07T01:07:50.000Z",
-   "source": "동아일보",
-   "feed": "Google News",
-   "summary": ""
   },
   {
    "title": "OpenAI valued at $1.25 trillion, as rival Anthropic nears its IPO",
@@ -243,15 +304,6 @@
    "titleKo": "OpenAI가 1조 2천 5백억 달러 ($) 의 가치 평가로 110억 달러 ($) 를 추가로 모금한다고 보고되었습니다."
   },
   {
-   "title": "All the latest updates on AI data centers",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/902546/data-centers-ai-energy-power-grids-controversy",
-   "date": "2026-11-06T20:02:22.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "Massive new data centers are the physical foundation for tech companies’ hopes and dreams for AI. But the rush to expand warehouses full of energy-hungry servers has also kicked up fights across the world over their impa",
-   "titleKo": "AI 데이터 센터에 대한 모든 최신 업데이트"
-  },
-  {
    "title": "Hundreds of Artex AI hacking tools found publicly exposed to the web",
    "url": "https://techcrunch.com/2026/11/06/hundreds-of-artex-ai-hacking-tools-found-publicly-exposed-to-the-web/",
    "date": "2026-11-06T18:44:38.000Z",
@@ -270,15 +322,6 @@
    "titleKo": "Meta가 Muse 에이전트와 협업할 수 있는 새로운 방법인 Spaces를 소개합니다."
   },
   {
-   "title": "Meta’s Muse AI can create custom ‘spaces’ for the version of the app you need right now",
-   "url": "https://www.theverge.com/tech/1028871/meta-muse-ai-spaces",
-   "date": "2026-11-06T18:10:10.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "Meta will now allow you to build customized, app-like experiences within Muse. The new feature, called \"spaces,\" allows its AI assistant to build things like a shopping hub, school dashboard, music tracker, trivia game, ",
-   "titleKo": "Meta의 Muse AI는 현재 필요한 앱 버전에 대한 사용자 정의 ‘공간’ 을 만들 수 있습니다."
-  },
-  {
    "title": "How a Blue Wave midterm might reshape the AI industry",
    "url": "https://techcrunch.com/podcast/how-a-blue-wave-midterm-might-reshape-the-ai-industry/",
    "date": "2026-11-06T18:00:00.000Z",
@@ -295,24 +338,6 @@
    "feed": "TechCrunch",
    "summary": "Democrats’ historic victories in this week’s U.S. midterm elections could also transform the tech industry. The public voted on 41 data center-related ballot measures on Tuesday — in all but one, the majority voted to im",
    "titleKo": "중간고사 이후, 인공지능 산업은 약 2년 동안 지속될 것인가?"
-  },
-  {
-   "title": "AI is the new dating dealbreaker",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1028609/ai-dating-feelings-doomers-singularity",
-   "date": "2026-11-06T17:00:00.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "When Irene moved to San Francisco last year, she started using dating apps as a way to meet new people, get to know her new city, and connect with others who care about the things she does. After the 25-year-old analyst ",
-   "titleKo": "AI는 새로운 데이트 거래 차단기입니다"
-  },
-  {
-   "title": "Big Tech lost big in the 2026 election",
-   "url": "https://www.theverge.com/podcast/1028731/2026-midterms-tech-ai-vergecast",
-   "date": "2026-11-06T16:38:02.000Z",
-   "source": "The Verge",
-   "feed": "The Verge",
-   "summary": "On Tuesday, millions of American voters went to the polls and voted overwhelmingly for Democrats and against AI. The fight against Big Tech is about to come roaring back, and the fight over data centers is looking even h",
-   "titleKo": "빅 테크는 2026년 선거에서 큰 손실을 입었습니다."
   },
   {
    "title": "Ramp data shows AI spending stalling just as Anthropic nears its IPO",
@@ -369,14 +394,6 @@
    "titleKo": "Palo Alto Networks, AI 에이전트 보안 스타트업 Clutch를 $ 500M에 구매하기 위한 강연"
   },
   {
-   "title": "31돌 맞은 KOREN, AI 네트워크 선도 시험망 도약 선언",
-   "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5iOG4xWHZvLV9xdzRRT0NQZnh4bzF2Q3NTcEtveDZTenhTQVAwYkxTWk5GVGR2aVJZbkJ4YmIzaTlER0FLNEhmbkVQMFI5Zw?oc=5",
-   "date": "2026-11-06T06:02:00.000Z",
-   "source": "전자신문",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
    "title": "Airbnb says it’s launching an AI travel agent in the first half of 2027",
    "url": "https://techcrunch.com/2026/11/05/airbnb-says-its-launching-an-ai-travel-agent-in-the-first-half-of-2027/",
    "date": "2026-11-05T22:40:55.000Z",
@@ -384,23 +401,6 @@
    "feed": "TechCrunch",
    "summary": "Airbnb says its upcoming AI agent will help travelers plan trips, compare options, manage bookings, and get assistance throughout their stay.",
    "titleKo": "에어비앤비는 2027년 상반기에 AI 여행사를 출범한다고 밝혔습니다."
-  },
-  {
-   "title": "[잇슈 컬처] 배우·배경 모두 인공지능…‘AI 장편영화’ 개봉 잇따라",
-   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE04ZkZVU3Fubmt6RlJueEcyT05IZTFFbDV5YmRrWVViUVp5SUdPU1VjUEZMaUdHbFozS3l2a094cWQ3YjFhNTZYczN5WUVXdGhDR1VqR3NFZmFyNU0?oc=5",
-   "date": "2026-11-05T21:44:00.000Z",
-   "source": "KBS 뉴스",
-   "feed": "Google News",
-   "summary": ""
-  },
-  {
-   "title": "Meta says US users can now video chat with their Muse AI avatar",
-   "url": "https://techcrunch.com/2026/11/05/meta-says-us-users-can-now-video-chat-with-their-muse-ai-avatar/",
-   "date": "2026-11-05T19:48:28.000Z",
-   "source": "TechCrunch",
-   "feed": "TechCrunch",
-   "summary": "Meta's AI agent can now take calls as a customizable animated avatar, ahead of the launch of a Tamagotchi-like wearable designed to bring Muse to life.",
-   "titleKo": "메타는 미국 사용자가 이제 Muse AI 아바타로 화상 채팅을 할 수 있다고 말합니다."
   },
   {
    "title": "Texas was the new epicenter of the AI data center buildout. That might be kaput.",
