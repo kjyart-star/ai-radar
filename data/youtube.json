@@ -1,6 +1,14 @@
 {
- "generated": "2026-11-10T04:48:21.558Z",
+ "generated": "2026-11-11T03:00:00.906Z",
  "news": [
+  {
+   "title": "Is Software Over?",
+   "url": "https://www.youtube.com/watch?v=vug73goPJaM",
+   "videoId": "vug73goPJaM",
+   "channel": "Two Minute Papers",
+   "published": "2026-11-10T10:15:57.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/vug73goPJaM/mqdefault.jpg"
+  },
   {
    "title": "Anthropic's Fable 5.2 is the World’s Best AI Model",
    "url": "https://www.youtube.com/watch?v=2TM8W66NI_8",
@@ -312,14 +320,6 @@
    "channel": "Matt Wolfe",
    "published": "2026-10-28T19:25:38.000Z",
    "thumbnail": "https://i.ytimg.com/vi/AtjFk9f44HE/mqdefault.jpg"
-  },
-  {
-   "title": "Sam Altman Just Issued His Scariest Warning Yet",
-   "url": "https://www.youtube.com/watch?v=x6jBcI5FtXc",
-   "videoId": "x6jBcI5FtXc",
-   "channel": "TheAIGRID",
-   "published": "2026-10-28T18:45:08.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/x6jBcI5FtXc/mqdefault.jpg"
   }
  ],
  "vibe": [
