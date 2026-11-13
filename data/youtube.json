@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-12T04:06:15.370Z",
+ "generated": "2026-11-13T03:35:47.637Z",
  "news": [
   {
    "title": "Fable 5.2: The Self-Improvement Loop Keeps Loopin’ … (plus Gemini Carbon)",
@@ -324,6 +324,22 @@
  ],
  "vibe": [
   {
+   "title": "Your Complete Guide to Fable 5.2 (When to Use It, Effort Levels, Prompting)",
+   "url": "https://www.youtube.com/watch?v=fLjGgbW0Ki8",
+   "videoId": "fLjGgbW0Ki8",
+   "channel": "Cole Medin",
+   "published": "2026-11-12T04:24:26.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/fLjGgbW0Ki8/mqdefault.jpg"
+  },
+  {
+   "title": "11 More Tiny Coding Agent Fixes With A Stupid Amount Of Payoff (Learn These Now)",
+   "url": "https://www.youtube.com/watch?v=hMEQ4rdaOLw",
+   "videoId": "hMEQ4rdaOLw",
+   "channel": "Cole Medin",
+   "published": "2026-11-10T22:57:03.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/hMEQ4rdaOLw/mqdefault.jpg"
+  },
+  {
    "title": "ZERO to RUNNING Software Factory In 16 Minutes (LIQUID Software)",
    "url": "https://www.youtube.com/watch?v=GRlcm3wmOqs",
    "videoId": "GRlcm3wmOqs",
@@ -626,22 +642,6 @@
    "channel": "Cole Medin",
    "published": "2026-10-15T00:00:12.000Z",
    "thumbnail": "https://i.ytimg.com/vi/2i_ZyqDmtio/mqdefault.jpg"
-  },
-  {
-   "title": "조코딩의 AI 리터러시 특강 2강 : AI는 모든 형태의 콘텐츠를 다룬다",
-   "url": "https://www.youtube.com/watch?v=lN1IOA6evoQ",
-   "videoId": "lN1IOA6evoQ",
-   "channel": "조코딩 JoCoding",
-   "published": "2026-10-14T12:00:38.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/lN1IOA6evoQ/mqdefault.jpg"
-  },
-  {
-   "title": "Is Learning to Build Software Still Worth It with AI? (My Honest Take)",
-   "url": "https://www.youtube.com/watch?v=PMOnd8T7Py0",
-   "videoId": "PMOnd8T7Py0",
-   "channel": "Cole Medin",
-   "published": "2026-10-12T15:32:59.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/PMOnd8T7Py0/mqdefault.jpg"
   }
  ]
 }
