@@ -1,7 +1,7 @@
 {
- "generated": "2026-11-13T03:30:28.883Z",
+ "generated": "2026-11-14T03:26:43.186Z",
  "source": "Devpost",
- "total_on_devpost": 2439,
+ "total_on_devpost": 2442,
  "search": "ai",
  "items": [
   {
@@ -9,7 +9,7 @@
    "url": "https://start-developer-competition-26.devpost.com/",
    "state": "open",
    "dates": "Sep 24 - Nov 18, 2026",
-   "time_left": "6 days left",
+   "time_left": "5 days left",
    "prize": "$1,000,000",
    "themes": [
     "AR/VR",
@@ -18,7 +18,7 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/374/843/datas/medium_square.png",
-   "registrations": 6016
+   "registrations": 6142
   },
   {
    "title": "Codegeist 2026: Build with context. Ship with confidence.",
@@ -34,14 +34,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/624/479/datas/medium_square.png",
-   "registrations": 3046
+   "registrations": 3278
   },
   {
    "title": "AWS MSP AI Hackathon",
    "url": "https://aws-agentic-msp.devpost.com/",
    "state": "open",
    "dates": "Nov 02 - Dec 11, 2026",
-   "time_left": "29 days left",
+   "time_left": "28 days left",
    "prize": "$64,000",
    "themes": [
     "Machine Learning/AI",
@@ -50,14 +50,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/715/013/datas/medium_square.png",
-   "registrations": 352
+   "registrations": 364
   },
   {
    "title": "UGREEN Hackathon 2026 on AI NAS",
    "url": "https://ugreenhackathon.devpost.com/",
    "state": "open",
    "dates": "Oct 22 - Nov 16, 2026",
-   "time_left": "3 days left",
+   "time_left": "2 days left",
    "prize": "$46,000",
    "themes": [
     "Lifehacks",
@@ -66,14 +66,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/624/690/datas/medium_square.png",
-   "registrations": 2321
+   "registrations": 2442
   },
   {
    "title": "Reddit’s Game of the Day Hackathon",
    "url": "https://redditgameofday2026.devpost.com/",
    "state": "open",
    "dates": "Nov 11 - Dec 08, 2026",
-   "time_left": "26 days left",
+   "time_left": "25 days left",
    "prize": "$35,000",
    "themes": [
     "Beginner Friendly",
@@ -81,14 +81,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/533/494/datas/medium_square.png",
-   "registrations": 796
+   "registrations": 1064
   },
   {
    "title": "#BuildHybridAI 2026",
    "url": "https://firebasehybridaihackathon.devpost.com/",
    "state": "open",
    "dates": "Nov 11 - 30, 2026",
-   "time_left": "18 days left",
+   "time_left": "17 days left",
    "prize": "$30,000",
    "themes": [
     "Machine Learning/AI",
@@ -97,14 +97,30 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/784/130/datas/medium_square.png",
-   "registrations": 1750
+   "registrations": 2045
+  },
+  {
+   "title": "University Blockchain Conference Hackathon 2026",
+   "url": "https://ubc-hackathon-2026.devpost.com/",
+   "state": "open",
+   "dates": "Nov 13 - 20, 2026",
+   "time_left": "7 days left",
+   "prize": "$22,000",
+   "themes": [
+    "Blockchain",
+    "Fintech",
+    "Machine Learning/AI"
+   ],
+   "location": "University of Texas at Austin",
+   "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/585/747/datas/medium_square.png",
+   "registrations": 278
   },
   {
    "title": "IceHacks",
    "url": "https://icehacks.devpost.com/",
    "state": "open",
    "dates": "Nov 08 - 15, 2026",
-   "time_left": "3 days left",
+   "time_left": "2 days left",
    "prize": "$17,150",
    "themes": [
     "Beginner Friendly",
@@ -113,7 +129,23 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/491/441/datas/medium_square.png",
-   "registrations": 596
+   "registrations": 658
+  },
+  {
+   "title": "Kearney PERLab x Velocity AI Hackathon",
+   "url": "https://kearney-x-velocity-ai.devpost.com/",
+   "state": "open",
+   "dates": "Nov 13 - 15, 2026",
+   "time_left": "1 day left",
+   "prize": "$15,000",
+   "themes": [
+    "Beginner Friendly",
+    "Enterprise",
+    "Open Ended"
+   ],
+   "location": "Online",
+   "thumbnail": "https://assets.devpost.com/assets/defaults/thumbnail-placeholder-8c916ef4da99a222ce6ece077c71c7e282f071f830747b2abb5718018cbfa699.gif",
+   "registrations": 0
   },
   {
    "title": "Open Agentic Web Challenge",
@@ -129,14 +161,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/839/029/datas/medium_square.png",
-   "registrations": 155
+   "registrations": 470
   },
   {
    "title": "Unfair Weekend 2026",
    "url": "https://unfair-weekend.devpost.com/",
    "state": "open",
    "dates": "Nov 12 - 14, 2026",
-   "time_left": "1 day left",
+   "time_left": "about 19 hours left",
    "prize": "€7,000",
    "themes": [
     "Low/No Code",
@@ -145,14 +177,14 @@
    ],
    "location": "ISM University, Vilnius",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/824/957/datas/medium_square.png",
-   "registrations": 20
+   "registrations": 35
   },
   {
    "title": "SLAY HACKS",
    "url": "https://slayy-hacks.devpost.com/",
    "state": "open",
    "dates": "Nov 07 - Dec 07, 2026",
-   "time_left": "25 days left",
+   "time_left": "24 days left",
    "prize": "$4,500",
    "themes": [
     "Beginner Friendly",
@@ -161,7 +193,7 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/785/867/datas/medium_square.png",
-   "registrations": 192
+   "registrations": 216
   },
   {
    "title": "HackOut! 2027",
@@ -177,14 +209,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/705/871/datas/medium_square.jpg",
-   "registrations": 33
+   "registrations": 38
   },
   {
    "title": "Learn AR with SPECS",
    "url": "https://learn-specs.devpost.com/",
    "state": "open",
    "dates": "Nov 10 - Dec 07, 2026",
-   "time_left": "25 days left",
+   "time_left": "24 days left",
    "prize": "$2,500",
    "themes": [
     "AR/VR",
@@ -193,14 +225,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/837/067/datas/medium_square.png",
-   "registrations": 129
+   "registrations": 184
   },
   {
    "title": "CIVIC Hack 2026",
    "url": "https://civic-hack-2026.devpost.com/",
    "state": "open",
    "dates": "Nov 12 - 14, 2026",
-   "time_left": "1 day left",
+   "time_left": "about 12 hours left",
    "prize": "$CAD 1,500",
    "themes": [
     "Beginner Friendly",
@@ -209,14 +241,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/779/857/datas/medium_square.png",
-   "registrations": 98
+   "registrations": 104
   },
   {
    "title": "Scope-AI-Thon 2026 - AI for Detection of Acute Patient Deterioration",
    "url": "https://scope-ai-thon-2026.devpost.com/",
    "state": "open",
    "dates": "Nov 01 - 14, 2026",
-   "time_left": "2 days left",
+   "time_left": "about 19 hours left",
    "prize": "$CAD 1,400",
    "themes": [
     "Design",
@@ -225,7 +257,7 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/622/830/datas/medium_square.jpg",
-   "registrations": 86
+   "registrations": 92
   },
   {
    "title": "GenHacks",
@@ -241,7 +273,23 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/766/254/datas/medium_square.png",
-   "registrations": 319
+   "registrations": 358
+  },
+  {
+   "title": "GTransformer AI Buildathon 2026 — AI for Global Good",
+   "url": "https://gtransformer-buildathon-2026.devpost.com/",
+   "state": "open",
+   "dates": "Nov 13 - 15, 2026",
+   "time_left": "1 day left",
+   "prize": "$1,000",
+   "themes": [
+    "Education",
+    "Machine Learning/AI",
+    "Social Good"
+   ],
+   "location": "Milpitas, Bay Area + Online",
+   "thumbnail": "https://assets.devpost.com/assets/defaults/thumbnail-placeholder-8c916ef4da99a222ce6ece077c71c7e282f071f830747b2abb5718018cbfa699.gif",
+   "registrations": 15
   },
   {
    "title": "AI Agents for Founders Challenge — HETIC 2026",
@@ -257,14 +305,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/366/043/datas/medium_square.png",
-   "registrations": 330
+   "registrations": 353
   },
   {
    "title": "Dakar Bitcoin Hack by BTrust",
    "url": "https://dakar-bitcoin-hack-2026.devpost.com/",
    "state": "open",
    "dates": "Oct 26 - Nov 20, 2026",
-   "time_left": "8 days left",
+   "time_left": "7 days left",
    "prize": "$900",
    "themes": [
     "Blockchain",
@@ -273,23 +321,7 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/640/846/datas/medium_square.jpg",
-   "registrations": 244
-  },
-  {
-   "title": "Build, Demo, and Take Home a Working AI Support Bot",
-   "url": "https://build-a-working-ai-support-bot.devpost.com/",
-   "state": "open",
-   "dates": "Nov 06 - 12, 2026",
-   "time_left": "about 1 hour left",
-   "prize": "$750",
-   "themes": [
-    "Beginner Friendly",
-    "Machine Learning/AI",
-    "Productivity"
-   ],
-   "location": "eGain Corp.",
-   "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/758/654/datas/medium_square.jpeg",
-   "registrations": 117
+   "registrations": 252
   },
   {
    "title": "Silicon Valley Buildathon",
@@ -305,14 +337,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/825/168/datas/medium_square.png",
-   "registrations": 92
+   "registrations": 113
   },
   {
    "title": "LaunchPad Hacks (Judges + Sponsors Needed)",
    "url": "https://launchpad-hacks.devpost.com/",
    "state": "open",
    "dates": "Oct 16 - Dec 04, 2026",
-   "time_left": "22 days left",
+   "time_left": "21 days left",
    "prize": "$300",
    "themes": [
     "Beginner Friendly",
@@ -320,14 +352,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/592/065/datas/medium_square.png",
-   "registrations": 536
+   "registrations": 552
   },
   {
    "title": "CSC Winter Sparkathon",
    "url": "https://csc-winter-sparkathon.devpost.com/",
    "state": "open",
    "dates": "Oct 29 - Nov 30, 2026",
-   "time_left": "17 days left",
+   "time_left": "16 days left",
    "prize": "$300",
    "themes": [
     "Beginner Friendly",
@@ -336,14 +368,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/557/957/datas/medium_square.png",
-   "registrations": 175
+   "registrations": 186
   },
   {
    "title": "SafeSpace Hacks",
    "url": "https://safespace-hacks.devpost.com/",
    "state": "open",
    "dates": "Oct 17 - Nov 22, 2026",
-   "time_left": "10 days left",
+   "time_left": "9 days left",
    "prize": "$280",
    "themes": [
     "Beginner Friendly",
@@ -352,14 +384,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/602/787/datas/medium_square.png",
-   "registrations": 421
+   "registrations": 445
   },
   {
    "title": "AI OpenBuild",
    "url": "https://ai-openbuild.devpost.com/",
    "state": "open",
    "dates": "Nov 05 - Dec 10, 2026",
-   "time_left": "28 days left",
+   "time_left": "27 days left",
    "prize": "$150",
    "themes": [
     "Beginner Friendly",
@@ -368,14 +400,29 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/785/560/datas/medium_square.png",
-   "registrations": 110
+   "registrations": 126
+  },
+  {
+   "title": "Engage Test",
+   "url": "https://engage-test.devpost.com/",
+   "state": "open",
+   "dates": "Nov 13 - 15, 2026",
+   "time_left": "1 day left",
+   "prize": "$20",
+   "themes": [
+    "Machine Learning/AI",
+    "Productivity"
+   ],
+   "location": "Dubai",
+   "thumbnail": "https://assets.devpost.com/assets/defaults/thumbnail-placeholder-8c916ef4da99a222ce6ece077c71c7e282f071f830747b2abb5718018cbfa699.gif",
+   "registrations": 9
   },
   {
    "title": "STEM2Connect AI Hackathon",
    "url": "https://stem2connect-online-hackathon.devpost.com/",
    "state": "open",
    "dates": "Oct 17 - Nov 21, 2026",
-   "time_left": "9 days left",
+   "time_left": "8 days left",
    "prize": "$0",
    "themes": [
     "Beginner Friendly",
@@ -384,14 +431,30 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/600/935/datas/medium_square.png",
-   "registrations": 471
+   "registrations": 491
+  },
+  {
+   "title": "EVOLVE: 8090 AI Hackathon",
+   "url": "https://evolve-8090.devpost.com/",
+   "state": "open",
+   "dates": "Nov 13 - 14, 2026",
+   "time_left": "about 20 hours left",
+   "prize": "$0",
+   "themes": [
+    "DevOps",
+    "Enterprise",
+    "Machine Learning/AI"
+   ],
+   "location": "8090 office",
+   "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/891/864/datas/medium_square.png",
+   "registrations": 3
   },
   {
    "title": "Build Your First AI App",
    "url": "https://build-your-first-ai-app.devpost.com/",
    "state": "open",
    "dates": "Oct 27 - Nov 27, 2026",
-   "time_left": "15 days left",
+   "time_left": "14 days left",
    "prize": "$0",
    "themes": [
     "Education",
@@ -400,14 +463,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/723/285/datas/medium_square.png",
-   "registrations": 502
+   "registrations": 524
   },
   {
    "title": "AI for Medicine: A Global Student Hackathon on the Future of Care",
    "url": "https://ai-for-medicine.devpost.com/",
    "state": "open",
    "dates": "Nov 04 - Dec 04, 2026",
-   "time_left": "22 days left",
+   "time_left": "21 days left",
    "prize": "$0",
    "themes": [
     "Beginner Friendly",
@@ -416,14 +479,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/788/362/datas/medium_square.png",
-   "registrations": 91
+   "registrations": 106
   },
   {
    "title": "DSH Hacks V2 ($100k+ in prizes!)",
    "url": "https://dsh-hacks-v2.devpost.com/",
    "state": "open",
    "dates": "Jun 24 - Nov 15, 2026",
-   "time_left": "2 days left",
+   "time_left": "1 day left",
    "prize": "$0",
    "themes": [
     "Beginner Friendly",
@@ -432,14 +495,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/152/677/datas/medium_square.png",
-   "registrations": 1199
+   "registrations": 1223
   },
   {
    "title": "Technology x Health: Amador Valley Girls Who Code Hackathon",
    "url": "https://ai-x-health-hackathon-avgwc.devpost.com/",
    "state": "open",
    "dates": "Nov 06 - 16, 2026",
-   "time_left": "3 days left",
+   "time_left": "2 days left",
    "prize": "$0",
    "themes": [
     "Beginner Friendly",
@@ -448,14 +511,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/824/404/datas/medium_square.png",
-   "registrations": 22
+   "registrations": 24
   },
   {
    "title": "Relate by Neo4j Hackathon",
    "url": "https://relate.devpost.com/",
    "state": "open",
    "dates": "Nov 11 - Dec 11, 2026",
-   "time_left": "29 days left",
+   "time_left": "28 days left",
    "prize": "$0",
    "themes": [
     "Databases",
@@ -464,14 +527,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/838/437/datas/medium_square.png",
-   "registrations": 177
+   "registrations": 265
   },
   {
    "title": "Mathematics for systems security",
    "url": "https://mathematics-systems-security.devpost.com/",
    "state": "open",
    "dates": "Oct 16 - Nov 15, 2026",
-   "time_left": "3 days left",
+   "time_left": "2 days left",
    "prize": "$0",
    "themes": [
     "Communication",
@@ -480,7 +543,7 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/539/461/datas/medium_square.jpg",
-   "registrations": 220
+   "registrations": 232
   },
   {
    "title": "Code for Humanity",
@@ -496,14 +559,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/909/585/datas/medium_square.png",
-   "registrations": 870
+   "registrations": 887
   },
   {
    "title": "ML Empowerment Build Challenge 4.0",
    "url": "https://ml-build-challenge-4.devpost.com/",
    "state": "open",
    "dates": "Nov 01 - Dec 02, 2026",
-   "time_left": "19 days left",
+   "time_left": "18 days left",
    "prize": "$0",
    "themes": [
     "Beginner Friendly",
@@ -512,23 +575,7 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/767/299/datas/medium_square.png",
-   "registrations": 130
-  },
-  {
-   "title": "CodeCoogs x CenterPoint Hackathon",
-   "url": "https://codecoogsxcenterpointhackathon.devpost.com/",
-   "state": "open",
-   "dates": "Nov 12 - 13, 2026",
-   "time_left": "about 15 hours left",
-   "prize": "$0",
-   "themes": [
-    "Enterprise",
-    "Machine Learning/AI",
-    "Social Good"
-   ],
-   "location": "University of Houston PGH/Student Center",
-   "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/853/579/datas/medium_square.png",
-   "registrations": 12
+   "registrations": 137
   },
   {
    "title": "InnovArt 2027: Art and Technology Hack Day",
@@ -544,30 +591,44 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/163/349/datas/medium_square.jpg",
-   "registrations": 334
+   "registrations": 339
   },
   {
-   "title": "IdeaLab Hacks",
-   "url": "https://idealab-hacks.devpost.com/",
+   "title": "Build with Gemma - Innovate in Windsor",
+   "url": "https://innovate-in-windsor-hackathon.devpost.com/",
    "state": "open",
-   "dates": "Nov 04 - 30, 2026",
-   "time_left": "18 days left",
+   "dates": "Nov 13 - 20, 2026",
+   "time_left": "7 days left",
+   "prize": "$CAD 0",
+   "themes": [
+    "Machine Learning/AI"
+   ],
+   "location": "University of Windsor",
+   "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/298/521/datas/medium_square.png",
+   "registrations": 14
+  },
+  {
+   "title": "HackPrinceton Fall '26",
+   "url": "https://hackprinceton-fall-26.devpost.com/",
+   "state": "open",
+   "dates": "Nov 13 - 15, 2026",
+   "time_left": "1 day left",
    "prize": "$0",
    "themes": [
-    "Beginner Friendly",
-    "Design",
-    "Open Ended"
+    "Education",
+    "Machine Learning/AI",
+    "Social Good"
    ],
-   "location": "Online",
-   "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/825/096/datas/medium_square.png",
-   "registrations": 47
+   "location": "JRR, LAS, Robertson, Friend",
+   "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/789/397/datas/medium_square.png",
+   "registrations": 119
   },
   {
    "title": "CRC Hacks",
    "url": "https://crc-student-hackathon.devpost.com/",
    "state": "open",
    "dates": "Nov 09 - 17, 2026",
-   "time_left": "5 days left",
+   "time_left": "4 days left",
    "prize": "$0",
    "themes": [
     "Beginner Friendly",
@@ -576,14 +637,30 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/568/785/datas/medium_square.png",
-   "registrations": 24
+   "registrations": 34
+  },
+  {
+   "title": "BYU-Idaho: i-Hack 2026: Reinventing the Past",
+   "url": "https://ihack-2026.devpost.com/",
+   "state": "open",
+   "dates": "Nov 13 - 14, 2026",
+   "time_left": "about 20 hours left",
+   "prize": "$0",
+   "themes": [
+    "Beginner Friendly",
+    "Design",
+    "Open Ended"
+   ],
+   "location": "Science &amp; Technology Building (STC) ",
+   "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/220/569/datas/medium_square.jpg",
+   "registrations": 71
   },
   {
    "title": "NorCal Hacks 27",
    "url": "https://norcal-hacks-27.devpost.com/",
    "state": "open",
    "dates": "Nov 12 - 15, 2026",
-   "time_left": "3 days left",
+   "time_left": "1 day left",
    "prize": "$0",
    "themes": [
     "Beginner Friendly",
@@ -592,14 +669,46 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/716/043/datas/medium_square.png",
-   "registrations": 51
+   "registrations": 67
+  },
+  {
+   "title": "IdeaLab Hacks",
+   "url": "https://idealab-hacks.devpost.com/",
+   "state": "open",
+   "dates": "Nov 04 - 30, 2026",
+   "time_left": "17 days left",
+   "prize": "$0",
+   "themes": [
+    "Beginner Friendly",
+    "Design",
+    "Open Ended"
+   ],
+   "location": "Online",
+   "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/825/096/datas/medium_square.png",
+   "registrations": 53
+  },
+  {
+   "title": "WiseStart 2026 Hackathon: Tallinn",
+   "url": "https://wisestart-2026-tll.devpost.com/",
+   "state": "open",
+   "dates": "Nov 13 - 14, 2026",
+   "time_left": "about 11 hours left",
+   "prize": "€0",
+   "themes": [
+    "Open Ended",
+    "Fintech",
+    "Beginner Friendly"
+   ],
+   "location": "Wise Tallinn",
+   "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/888/757/datas/medium_square.png",
+   "registrations": 37
   },
   {
    "title": "InnovateHER Hackathon: Girls Who Code",
    "url": "https://hackathon-girls-who-code.devpost.com/",
    "state": "open",
    "dates": "Nov 10 - Dec 13, 2026",
-   "time_left": "about 1 month left",
+   "time_left": "30 days left",
    "prize": "$0",
    "themes": [
     "Beginner Friendly",
@@ -608,14 +717,14 @@
    ],
    "location": "Online",
    "thumbnail": "https://assets.devpost.com/assets/defaults/thumbnail-placeholder-8c916ef4da99a222ce6ece077c71c7e282f071f830747b2abb5718018cbfa699.gif",
-   "registrations": 17
+   "registrations": 24
   },
   {
    "title": "PhysTech 2027: Physical Activity and Technology Hack Day",
    "url": "https://phystech2027.devpost.com/",
    "state": "open",
    "dates": "Nov 04, 2026 - Jun 26, 2027",
-   "time_left": "8 months left",
+   "time_left": "7 months left",
    "prize": "$0",
    "themes": [
     "Beginner Friendly",
@@ -624,7 +733,7 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/788/274/datas/medium_square.png",
-   "registrations": 13
+   "registrations": 17
   },
   {
    "title": "Hack AI x Stan",
@@ -639,7 +748,7 @@
    ],
    "location": "Stan HQ - Toronto",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/792/650/datas/medium_square.png",
-   "registrations": 8
+   "registrations": 11
   },
   {
    "title": "AI@USC",
@@ -655,7 +764,7 @@
    ],
    "location": "Ginsburg Hall, USC",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/796/905/datas/medium_square.png",
-   "registrations": 9
+   "registrations": 40
   },
   {
    "title": "DevNetwork [API + Cloud + AI] Hackathon 2027",
@@ -671,23 +780,7 @@
    ],
    "location": "Santa Clara Convention Center and Online",
    "thumbnail": "https://assets.devpost.com/assets/defaults/thumbnail-placeholder-8c916ef4da99a222ce6ece077c71c7e282f071f830747b2abb5718018cbfa699.gif",
-   "registrations": 4
-  },
-  {
-   "title": "AI for Human Impact: A Global BASIS Hackathon",
-   "url": "https://basisglobalhackathon.devpost.com/",
-   "state": "upcoming",
-   "dates": "Feb 06 - 13, 2027",
-   "time_left": "Upcoming",
-   "prize": "$10,200",
-   "themes": [
-    "Beginner Friendly",
-    "Machine Learning/AI",
-    "Social Good"
-   ],
-   "location": "Online",
-   "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/631/248/datas/medium_square.png",
-   "registrations": 4
+   "registrations": 6
   },
   {
    "title": "The Dawn of Superintelligence | Kaya AI Grand Challenge",
@@ -703,23 +796,7 @@
    ],
    "location": "Mumbai",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/796/876/datas/medium_square.png",
-   "registrations": 119
-  },
-  {
-   "title": "GTransformer AI Buildathon 2026 — AI for Global Good",
-   "url": "https://gtransformer-buildathon-2026.devpost.com/",
-   "state": "upcoming",
-   "dates": "Nov 13 - 15, 2026",
-   "time_left": "Upcoming",
-   "prize": "$1,000",
-   "themes": [
-    "Education",
-    "Machine Learning/AI",
-    "Social Good"
-   ],
-   "location": "Milpitas, Bay Area + Online",
-   "thumbnail": "https://assets.devpost.com/assets/defaults/thumbnail-placeholder-8c916ef4da99a222ce6ece077c71c7e282f071f830747b2abb5718018cbfa699.gif",
-   "registrations": 13
+   "registrations": 146
   },
   {
    "title": "OBSCURA: Satellite AI Research Challenge",
@@ -738,37 +815,6 @@
    "registrations": 68
   },
   {
-   "title": "Engage Test",
-   "url": "https://engage-test.devpost.com/",
-   "state": "upcoming",
-   "dates": "Nov 13 - 15, 2026",
-   "time_left": "Upcoming",
-   "prize": "$20",
-   "themes": [
-    "Machine Learning/AI",
-    "Productivity"
-   ],
-   "location": "Dubai",
-   "thumbnail": "https://assets.devpost.com/assets/defaults/thumbnail-placeholder-8c916ef4da99a222ce6ece077c71c7e282f071f830747b2abb5718018cbfa699.gif",
-   "registrations": 1
-  },
-  {
-   "title": "N/A",
-   "url": "https://ai-content-engine-hackathon.devpost.com/",
-   "state": "upcoming",
-   "dates": "Feb 02 - Apr 06, 2027",
-   "time_left": "Upcoming",
-   "prize": "$2",
-   "themes": [
-    "Design",
-    "DevOps",
-    "Health"
-   ],
-   "location": "Online",
-   "thumbnail": "https://assets.devpost.com/assets/defaults/thumbnail-placeholder-8c916ef4da99a222ce6ece077c71c7e282f071f830747b2abb5718018cbfa699.gif",
-   "registrations": 6
-  },
-  {
    "title": "Global AI Builder’s Challenge",
    "url": "https://global-ai-builders-challenge.devpost.com/",
    "state": "upcoming",
@@ -780,7 +826,7 @@
    ],
    "location": "Online",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/631/283/datas/medium_square.png",
-   "registrations": 211
+   "registrations": 217
   },
   {
    "title": "CSAIC Hack-AI-Thon",
@@ -796,7 +842,7 @@
    ],
    "location": "Online",
    "thumbnail": "https://assets.devpost.com/assets/defaults/thumbnail-placeholder-8c916ef4da99a222ce6ece077c71c7e282f071f830747b2abb5718018cbfa699.gif",
-   "registrations": 2
+   "registrations": 3
   },
   {
    "title": "DevFest Münster 2026: Agentic AI Hackathon",
@@ -813,53 +859,6 @@
    "location": "Volkshochschule",
    "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/339/368/datas/medium_square.png",
    "registrations": 36
-  },
-  {
-   "title": "SearchHack: Build the next layer of AI search",
-   "url": "https://searchhack.devpost.com/",
-   "state": "upcoming",
-   "dates": "Nov 14, 2026",
-   "time_left": "Upcoming",
-   "prize": "$0",
-   "themes": [
-    "Machine Learning/AI",
-    "Web"
-   ],
-   "location": "Sunnyvale",
-   "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/713/209/datas/medium_square.png",
-   "registrations": 20
-  },
-  {
-   "title": "Vibe Code Animated Maps",
-   "url": "https://vibecode-animated-maps.devpost.com/",
-   "state": "upcoming",
-   "dates": "Dec 20, 2026",
-   "time_left": "Upcoming",
-   "prize": "$0",
-   "themes": [
-    "Design",
-    "Education",
-    "Web"
-   ],
-   "location": "South Plainfield Library",
-   "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/004/646/118/datas/medium_square.png",
-   "registrations": 29
-  },
-  {
-   "title": "Arioron Think 2026",
-   "url": "https://arioron-think-2026.devpost.com/",
-   "state": "upcoming",
-   "dates": "Dec 10 - 17, 2026",
-   "time_left": "Upcoming",
-   "prize": "$0",
-   "themes": [
-    "Beginner Friendly",
-    "Education",
-    "Social Good"
-   ],
-   "location": "Online",
-   "thumbnail": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/005/828/797/datas/medium_square.png",
-   "registrations": 0
   }
  ]
 }
