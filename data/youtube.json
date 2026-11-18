@@ -1,6 +1,30 @@
 {
- "generated": "2026-11-17T05:15:41.729Z",
+ "generated": "2026-11-18T04:42:53.785Z",
  "news": [
+  {
+   "title": "OpenAI GPT-6.2 Astra is Here - It's Not What You Think",
+   "url": "https://www.youtube.com/watch?v=JVHkb8PTMvc",
+   "videoId": "JVHkb8PTMvc",
+   "channel": "Matt Wolfe",
+   "published": "2026-11-18T01:43:27.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/JVHkb8PTMvc/mqdefault.jpg"
+  },
+  {
+   "title": "OpenAI JUST made EVERYONE MAD...",
+   "url": "https://www.youtube.com/watch?v=tEysfZGzJc8",
+   "videoId": "tEysfZGzJc8",
+   "channel": "Wes Roth",
+   "published": "2026-11-17T20:38:00.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/tEysfZGzJc8/mqdefault.jpg"
+  },
+  {
+   "title": "OpenAI's New Breakthrough Is... Utter Chaos",
+   "url": "https://www.youtube.com/watch?v=gl2U4fGTr6g",
+   "videoId": "gl2U4fGTr6g",
+   "channel": "Two Minute Papers",
+   "published": "2026-11-17T12:46:24.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/gl2U4fGTr6g/mqdefault.jpg"
+  },
   {
    "title": "AI Just Reached A Tipping Point",
    "url": "https://www.youtube.com/watch?v=6LmezY6_kGY",
@@ -10,7 +34,7 @@
    "thumbnail": "https://i.ytimg.com/vi/6LmezY6_kGY/mqdefault.jpg"
   },
   {
-   "title": "Box CEO Explains How AI Is Changing Software",
+   "title": "Box CEO Explains Why AI Makes Software Features Obsolete",
    "url": "https://www.youtube.com/watch?v=kMdHCyAnNHA",
    "videoId": "kMdHCyAnNHA",
    "channel": "Matthew Berman",
@@ -296,33 +320,17 @@
    "channel": "Wes Roth",
    "published": "2026-11-06T14:35:24.000Z",
    "thumbnail": "https://i.ytimg.com/vi/2lt4P_xGFL8/mqdefault.jpg"
-  },
-  {
-   "title": "Something Strange Is Happening With GPT-6.2",
-   "url": "https://www.youtube.com/watch?v=R-OeFlyzveI",
-   "videoId": "R-OeFlyzveI",
-   "channel": "TheAIGRID",
-   "published": "2026-11-06T08:30:00.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/R-OeFlyzveI/mqdefault.jpg"
-  },
-  {
-   "title": "The Future of AI Is Absolutely Incredible (Spencer Huang)",
-   "url": "https://www.youtube.com/watch?v=XgC1QTs6A2U",
-   "videoId": "XgC1QTs6A2U",
-   "channel": "Two Minute Papers",
-   "published": "2026-11-06T07:27:02.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/XgC1QTs6A2U/mqdefault.jpg"
-  },
-  {
-   "title": "Kimi K3.1 weights OUT, open source computer use, SOTA image model, science model, Pika H3: AI NEWS",
-   "url": "https://www.youtube.com/watch?v=-M62vWrZh54",
-   "videoId": "-M62vWrZh54",
-   "channel": "Matthew Berman",
-   "published": "2026-11-05T16:51:09.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/-M62vWrZh54/mqdefault.jpg"
   }
  ],
  "vibe": [
+  {
+   "title": "한국인이 설립해 구글, 메타와 경쟁하는 글로벌 유니콘 기업 몰로코 안익진 CEO, 전동환 CTO 인터뷰",
+   "url": "https://www.youtube.com/watch?v=iU4K3mN817I",
+   "videoId": "iU4K3mN817I",
+   "channel": "조코딩 JoCoding",
+   "published": "2026-11-17T11:00:16.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/iU4K3mN817I/mqdefault.jpg"
+  },
   {
    "title": "5 Types of AI Software Factories Clearly Explained",
    "url": "https://www.youtube.com/watch?v=r5iPi8RL7A8",
@@ -634,14 +642,6 @@
    "channel": "Cole Medin",
    "published": "2026-10-22T00:00:15.000Z",
    "thumbnail": "https://i.ytimg.com/vi/zj1TJlP7c9Y/mqdefault.jpg"
-  },
-  {
-   "title": "The 9 Stages of AI Agent Adoption, Explained",
-   "url": "https://www.youtube.com/watch?v=nRl-7Yhmbog",
-   "videoId": "nRl-7Yhmbog",
-   "channel": "Greg Isenberg",
-   "published": "2026-10-21T19:15:33.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/nRl-7Yhmbog/mqdefault.jpg"
   }
  ]
 }
