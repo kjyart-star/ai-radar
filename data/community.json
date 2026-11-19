@@ -1,17 +1,87 @@
 {
- "generated": "2026-11-18T04:38:20.361Z",
+ "generated": "2026-11-19T04:22:57.859Z",
  "source": "Hacker News",
  "sources": [
   "Hacker News"
  ],
  "items": [
   {
+   "title": "AI will not make you rich (2025)",
+   "url": "https://colossus.com/article/ai-will-not-make-you-rich/",
+   "date": "2026-11-19T01:51:28.000Z",
+   "source": "Hacker News",
+   "points": 74,
+   "comments": 44,
+   "summary": "",
+   "titleKo": "AI는 여러분을 부자로 만들어 주지 않을 것입니다(2025년)"
+  },
+  {
+   "title": "Black high school students sue after AI mistakes Doritos bag for gun",
+   "url": "https://www.lawyerscommittee.org/lawyers-committee-files-lawsuit-on-behalf-of-black-students-detained-and-searched-due-to-ai-alert-falsely-identifying-a-bag-of-chips-as-a-firearm/",
+   "date": "2026-11-19T00:57:20.000Z",
+   "source": "Hacker News",
+   "points": 62,
+   "comments": 26,
+   "summary": "",
+   "titleKo": "인공지능이 도리토스 봉지를 총으로 오인한 후 흑인 고등학생들이 소송을 제기했습니다."
+  },
+  {
+   "title": "\"Anthropic Is Not a Safe AI Company\" – Coalition Challenges Anthropic Safety",
+   "url": "https://www.businesswire.com/news/home/20261118974464/en/Anthropic-is-Not-a-Safe-AI-Company---Broad-Coalition-of-Scientists-Legal-Scholars-and-Tech-Leaders-Challenge-Anthropics-Safety-Branding-Ahead-of-IPO",
+   "date": "2026-11-18T16:41:22.000Z",
+   "source": "Hacker News",
+   "points": 129,
+   "comments": 77,
+   "summary": "",
+   "titleKo": "\"앤트로픽은 안전한 AI 기업이 아닙니다\" – 앤트로픽의 안전성에 의문을 제기하는 연합"
+  },
+  {
+   "title": "AI agents ask better questions than KPMG accountants in audit trial",
+   "url": "https://europeanbusinessmagazine.com/ai-agents-better-questions-kpmg/",
+   "date": "2026-11-18T15:49:34.000Z",
+   "source": "Hacker News",
+   "points": 403,
+   "comments": 175,
+   "summary": "",
+   "titleKo": "AI 에이전트가 감사 테스트에서 KPMG 회계사보다 더 나은 질문을 함"
+  },
+  {
+   "title": "Can Peer Review Survive AI-Generated Text? [pdf]",
+   "url": "https://www.sas.upenn.edu/~jesusfv/Peer_Review.pdf",
+   "date": "2026-11-18T13:51:03.000Z",
+   "source": "Hacker News",
+   "points": 67,
+   "comments": 79,
+   "summary": "",
+   "titleKo": "전문가 검토가 AI 생성 텍스트를 견뎌낼 수 있을까요? [PDF]"
+  },
+  {
+   "title": "AI is killing All About Berlin",
+   "url": "https://nicolasbouliane.com/blog/death-by-ai",
+   "date": "2026-11-18T06:47:26.000Z",
+   "source": "Hacker News",
+   "points": 766,
+   "comments": 688,
+   "summary": "",
+   "titleKo": "AI가 All About Berlin을 망치고 있습니다"
+  },
+  {
+   "title": "Bank CEOs, NSA Tell Congress That AI-Driven Patches Are Behind Outages",
+   "url": "https://www.washingtonsun.com/technology/bank-ceos-nsa-tell-congress-ai-driven-patches-behind-outages",
+   "date": "2026-11-18T01:45:11.000Z",
+   "source": "Hacker News",
+   "points": 96,
+   "comments": 57,
+   "summary": "",
+   "titleKo": "은행 CEO, NSA가 의회에 AI 기반 패치가 서비스 중단의 원인이라고 밝힘"
+  },
+  {
    "title": "Google's AI answers reducing search traffic by 40%",
    "url": "https://revscope.co/blog/search-seo-geo-2026/",
    "date": "2026-11-18T00:17:58.000Z",
    "source": "Hacker News",
-   "points": 186,
-   "comments": 131,
+   "points": 692,
+   "comments": 542,
    "summary": "",
    "titleKo": "Google의 AI 답변으로 인해 검색 트래픽이 40% 감소"
   },
@@ -20,8 +90,8 @@
    "url": "https://complexdiscovery.com/harvard-researchers-find-ai-coding-agents-shifted-the-bottleneck-to-code-review/",
    "date": "2026-11-17T21:16:12.000Z",
    "source": "Hacker News",
-   "points": 95,
-   "comments": 153,
+   "points": 320,
+   "comments": 441,
    "summary": "",
    "titleKo": "하버드대 연구진, AI 코딩 에이전트가 코드 검토로 병목 현상을 옮겼다는 사실 발견"
   },
@@ -30,18 +100,28 @@
    "url": "https://www.scmp.com/tech/big-tech/article/3374774/baidu-xiaomi-ceos-warn-growing-gap-between-ai-hype-and-returns",
    "date": "2026-11-17T14:19:59.000Z",
    "source": "Hacker News",
-   "points": 186,
-   "comments": 244,
+   "points": 191,
+   "comments": 256,
    "summary": "",
    "titleKo": "바이두, 샤오미 CEO, AI 과대 광고와 수익 간 격차 확대 경고"
+  },
+  {
+   "title": "FBI says Artex AI open-source hacking tool used to breach networks",
+   "url": "https://techcrunch.com/2026/11/16/fbi-says-artex-ai-open-source-hacking-tool-used-to-breach-networks-in-under-three-hours/",
+   "date": "2026-11-16T18:12:21.000Z",
+   "source": "Hacker News",
+   "points": 50,
+   "comments": 15,
+   "summary": "",
+   "titleKo": "FBI, 네트워크 침입에 사용된 오픈 소스 해킹 도구 'Artex AI' 지목"
   },
   {
    "title": "Ask HN: If AI tools are so good, why isn't your bug backlog empty?",
    "url": "https://news.ycombinator.com/item?id=50520076",
    "date": "2026-11-16T17:20:28.000Z",
    "source": "Hacker News",
-   "points": 92,
-   "comments": 108,
+   "points": 101,
+   "comments": 114,
    "summary": "",
    "titleKo": "HN에 질문하기: AI 도구가 그렇게 뛰어나다면, 왜 버그 백로그가 비어 있지 않을까요?"
   },
@@ -66,12 +146,22 @@
    "titleKo": "학부모들은 알파의 AI 학교에 75,000달러를 지불합니다. 학생의 절반이 수학 목표를 달성하지 못했습니다."
   },
   {
+   "title": "When AI Knows More Than It Can Offer",
+   "url": "https://medium.com/@smoking2man/when-ai-knows-more-than-it-can-offer-how-training-turns-an-intelligent-assistant-into-a-generator-7e700f05163e",
+   "date": "2026-11-15T15:59:23.000Z",
+   "source": "Hacker News",
+   "points": 90,
+   "comments": 57,
+   "summary": "",
+   "titleKo": "AI가 제공할 수 있는 것보다 더 많은 것을 알고 있을 때"
+  },
+  {
    "title": "All AI-generated code should be Open Source",
    "url": "https://jakub.jankiewicz.org/blog/ai-code-open-source/",
    "date": "2026-11-15T14:46:58.000Z",
    "source": "Hacker News",
-   "points": 1279,
-   "comments": 669,
+   "points": 1281,
+   "comments": 671,
    "summary": "",
    "titleKo": "모든 AI 생성 코드는 오픈 소스여야 합니다."
   },
@@ -83,14 +173,14 @@
    "points": 61,
    "comments": 43,
    "summary": "",
-   "titleKo": "150만 대의 AI GPU 밀수가 황씨의 퇴진 원인일 수 있다"
+   "titleKo": "150만 대의 AI GPU 밀수가 황씨의 퇴진 원인일 수 있음"
   },
   {
    "title": "Ask HN: What are the most useful, concrete AI skills to independently learn?",
    "url": "https://news.ycombinator.com/item?id=50494696",
    "date": "2026-11-14T06:56:42.000Z",
    "source": "Hacker News",
-   "points": 92,
+   "points": 93,
    "comments": 53,
    "summary": "",
    "titleKo": "HN에 질문하기: 독학으로 익힐 수 있는 가장 유용하고 실질적인 AI 기술은 무엇인가요?"
@@ -103,7 +193,7 @@
    "points": 1113,
    "comments": 650,
    "summary": "",
-   "titleKo": "Nvidia는 AI 스타트업에 자금을 지원하여 GPU를 구매하도록 함으로써 인위적으로 공급 부족을 유발한 것으로 알려져 있습니다."
+   "titleKo": "Nvidia가 AI 스타트업에 자금을 지원하여 GPU를 구매하도록 함으로써 인위적으로 공급 부족을 유발했다는 의혹이 제기되었습니다."
   },
   {
    "title": "Anthropic upgrades Claude Code Projects to run parallel AI workers",
@@ -113,97 +203,7 @@
    "points": 100,
    "comments": 97,
    "summary": "",
-   "titleKo": "Anthropic, Claude Code Projects를 병렬 AI 작업자 실행이 가능하도록 업그레이드"
-  },
-  {
-   "title": "No AI Slop: A Manifesto",
-   "url": "https://www.slopmanifesto.com/",
-   "date": "2026-11-13T19:51:56.000Z",
-   "source": "Hacker News",
-   "points": 230,
-   "comments": 139,
-   "summary": "",
-   "titleKo": "AI 슬롭(AI Slop) 없는 세상: 선언문"
-  },
-  {
-   "title": "The avalanche that hit math is coming for AI development",
-   "url": "https://www.dwarkesh.com/p/rsi",
-   "date": "2026-11-13T18:39:42.000Z",
-   "source": "Hacker News",
-   "points": 68,
-   "comments": 118,
-   "summary": "",
-   "titleKo": "수학계를 강타한 눈사태가 AI 개발 분야로 향하고 있습니다."
-  },
-  {
-   "title": "Are we just going to ignore that books are destroyed for AI?",
-   "url": "https://www.forbes.com/sites/maryroeloffs/2026/08/17/ai-companies-are-buying-and-destroying-antique-books-heres-why/",
-   "date": "2026-11-13T18:14:38.000Z",
-   "source": "Hacker News",
-   "points": 61,
-   "comments": 75,
-   "summary": "",
-   "titleKo": "우리는 AI를 위해 책이 파괴된다는 사실을 그냥 무시할 겁니까?"
-  },
-  {
-   "title": "AI unlocks Gödel's notebooks, said to contain hundreds of proved theorems",
-   "url": "https://www.theguardian.com/science/2026/nov/13/kurt-godel-notebooks-ai-helps-unlock-hidden-discoveries-man-who-transformed-maths",
-   "date": "2026-11-13T17:30:10.000Z",
-   "source": "Hacker News",
-   "points": 444,
-   "comments": 112,
-   "summary": "",
-   "titleKo": "AI가 수백 개의 증명된 정리가 담겨 있다고 알려진 괴델의 노트 내용을 해독하다"
-  },
-  {
-   "title": "Why is Google cutting off Search from AI-free schools? Here are some theories",
-   "url": "https://text.npr.org/nx-s1-6029408",
-   "date": "2026-11-13T15:29:10.000Z",
-   "source": "Hacker News",
-   "points": 198,
-   "comments": 197,
-   "summary": "",
-   "titleKo": "Google이 AI를 사용하지 않는 학교에서 검색 기능을 차단하는 이유는 무엇인가요? 몇 가지 가설을 소개해 드립니다."
-  },
-  {
-   "title": "Jonathan Blow – If AI solved coding, why is my software still the same? [video]",
-   "url": "https://www.youtube.com/watch?v=IRK8h67ol7Q",
-   "date": "2026-11-13T15:08:44.000Z",
-   "source": "Hacker News",
-   "points": 494,
-   "comments": 748,
-   "summary": "",
-   "titleKo": "조나단 블로우 – AI가 코딩 문제를 해결했다면, 왜 제 소프트웨어는 여전히 똑같을까요? [동영상]"
-  },
-  {
-   "title": "AI is destroying the trust between writers and readers",
-   "url": "https://www.theatlantic.com/books/2026/11/ai-literary-scams-amazon/689391/",
-   "date": "2026-11-13T11:13:46.000Z",
-   "source": "Hacker News",
-   "points": 372,
-   "comments": 239,
-   "summary": "",
-   "titleKo": "AI는 작가와 독자 간의 신뢰를 파괴하고 있습니다."
-  },
-  {
-   "title": "Elevated errors on claude.ai, Claude Code, and platform.claude.com",
-   "url": "https://status.claude.com/incidents/nn11wk485zfn",
-   "date": "2026-11-13T10:18:13.000Z",
-   "source": "Hacker News",
-   "points": 494,
-   "comments": 394,
-   "summary": "",
-   "titleKo": "claude.ai, Claude Code 및 platform.claude.com에서 오류 증가"
-  },
-  {
-   "title": "Chicago schools to Google – we'd rather lose Search than be forced to accept AI",
-   "url": "https://www.techspot.com/news/114532-chicago-schools-tell-google-they-can-live-without.html",
-   "date": "2026-11-13T00:38:41.000Z",
-   "source": "Hacker News",
-   "points": 90,
-   "comments": 30,
-   "summary": "",
-   "titleKo": "시카고 학교들이 Google에 전하는 메시지 – AI를 강제로 수용하기보다는 차라리 검색 기능을 포기하겠습니다"
+   "titleKo": "Anthropic, Claude Code Projects를 업그레이드하여 병렬 AI 작업자 실행"
   }
  ]
 }

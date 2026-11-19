@@ -1,88 +1,61 @@
 {
- "generated": "2026-11-18T04:45:38.242Z",
+ "generated": "2026-11-19T04:30:35.499Z",
  "source": "Higgsfield (higgsfield.ai/contests)",
  "page": "https://higgsfield.ai/contests",
  "items": [
   {
-   "title": "Contests",
+   "title": "$1,000,000 TALENT CONTEST",
    "url": "https://higgsfield.ai/contests/talent-contest",
-   "prize": "",
+   "prize": "$1,000,000",
    "status": "",
    "dates": "",
-   "desc": "",
-   "thumbnail": ""
+   "desc": "Build in public. Explore prizes and rules, then submit your film to Talent Contest",
+   "thumbnail": "https://higgsfield.ai/cdn-cgi/image/fit=scale-down,format=webp,onerror=redirect,width=1920,quality=85/https://static.higgsfield.ai/community-contest/banner/bg-v2-poster.webp"
   },
   {
-   "title": "WCC#4: WITHOUT A WORD",
-   "url": "https://higgsfield.ai/contests/wcc-without-a-word",
-   "prize": "",
-   "status": "",
-   "dates": "Nov 11 – Nov 18",
-   "desc": "Weekly challenge 100,000 Prize pool in credits View challenge",
-   "thumbnail": "https://d2ol7oe51mr4n9.cloudfront.net/content_user_id/76541cf5-f61b-4d9f-a7e3-0cdc496dfd2f.jpg"
-  },
-  {
-   "title": "WCC#3: THE WHOLE SCENE",
-   "url": "https://higgsfield.ai/contests/wcc-the-whole-scene",
-   "prize": "",
-   "status": "",
-   "dates": "Nov 04 – Nov 11",
-   "desc": "Weekly challenge 100,000 Prize pool in credits View challenge",
-   "thumbnail": "https://d2ol7oe51mr4n9.cloudfront.net/content_user_id/64a148c4-87d6-4bb9-a1dd-16c0194f55ec.png"
-  },
-  {
-   "title": "WCC#2: THE PLACE YOU KNOW",
-   "url": "https://higgsfield.ai/contests/wcc-the-place-you-know",
-   "prize": "",
-   "status": "",
-   "dates": "Oct 28 – Nov 04",
-   "desc": "Weekly challenge 60,000 Prize pool in credits View challenge",
-   "thumbnail": "https://d2ol7oe51mr4n9.cloudfront.net/content_user_id/74e84b5f-f151-4f36-97f0-47e4aed88406.webp"
-  },
-  {
-   "title": "HIGGSFIELD FESTIVAL",
+   "title": "Higgsfield Festival",
    "url": "https://higgsfield.ai/contests/higgsfield-global-film-festival",
    "prize": "$1,000,000",
    "status": "Winners announced",
    "dates": "Jul 16 – Oct 31",
-   "desc": "",
-   "thumbnail": ""
+   "desc": "Finished View details",
+   "thumbnail": "https://higgsfield.ai/cdn-cgi/image/fit=scale-down,format=webp,onerror=redirect,width=1920,quality=85/https://static.higgsfield.ai/contest/festival-hero/higgs_6_fix_v2-poster.webp"
   },
   {
-   "title": "WCC#1: IMPOSSIBLE CAMERA",
+   "title": "WCC#4: Without a Word Open until Nov 18",
+   "url": "https://higgsfield.ai/contests/wcc-without-a-word",
+   "prize": "",
+   "status": "",
+   "dates": "",
+   "desc": "",
+   "thumbnail": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd2ol7oe51mr4n9.cloudfront.net%2Fcontent_user_id%2F76541cf5-f61b-4d9f-a7e3-0cdc496dfd2f.jpg&w=1920&q=85"
+  },
+  {
+   "title": "WCC#3: The Whole Scene Finished Nov 11",
+   "url": "https://higgsfield.ai/contests/wcc-the-whole-scene",
+   "prize": "",
+   "status": "",
+   "dates": "",
+   "desc": "",
+   "thumbnail": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd2ol7oe51mr4n9.cloudfront.net%2Fcontent_user_id%2F64a148c4-87d6-4bb9-a1dd-16c0194f55ec.png&w=1920&q=85"
+  },
+  {
+   "title": "WCC#2: The Place You Know Finished Nov 04",
+   "url": "https://higgsfield.ai/contests/wcc-the-place-you-know",
+   "prize": "",
+   "status": "",
+   "dates": "",
+   "desc": "",
+   "thumbnail": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd2ol7oe51mr4n9.cloudfront.net%2Fcontent_user_id%2F74e84b5f-f151-4f36-97f0-47e4aed88406.webp&w=1920&q=85"
+  },
+  {
+   "title": "WCC#1: Impossible Camera Finished Oct 28",
    "url": "https://higgsfield.ai/contests/wcc-impossible-camera",
    "prize": "",
    "status": "",
-   "dates": "Oct 21 – Oct 28",
-   "desc": "Weekly challenge 60,000 Prize pool in credits View challenge",
-   "thumbnail": "https://d2ol7oe51mr4n9.cloudfront.net/content_user_id/ab6c3c3d-bbcf-47f2-a013-af18e679e875.webp"
-  },
-  {
-   "title": "THE ADATHON",
-   "url": "https://higgsfield.ai/contests/adathon",
-   "prize": "$85,000",
-   "status": "",
-   "dates": "Jul 27 – Aug 24",
-   "desc": "Contest has ended View details",
-   "thumbnail": ""
-  },
-  {
-   "title": "HIGGSFIELD APPS CONTEST",
-   "url": "https://higgsfield.ai/contests/apps",
-   "prize": "$100,000",
-   "status": "Winners announced",
    "dates": "",
-   "desc": "Build your best app on Higgsfield",
-   "thumbnail": "https://higgsfield.ai/cdn-cgi/image/fit=scale-down,format=webp,onerror=redirect,width=314,quality=85/https://static.higgsfield.ai/public/apps-contest/monument.webp"
-  },
-  {
-   "title": "MAKE YOUR ACTION SCENE",
-   "url": "https://higgsfield.ai/contests/make-your-action-scene",
-   "prize": "$500,000",
-   "status": "Winners announced",
-   "dates": "Feb 09 – Mar 01",
-   "desc": "Projects submitted +8,752",
-   "thumbnail": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd2ol7oe51mr4n9.cloudfront.net%2Fuser_2v6VgaMnJ5GyJeBVqK7RHExAAc6%2F17ee8356-28d1-44e0-a1c0-14ff2f1262da.jpg&w=28&q=85"
+   "desc": "",
+   "thumbnail": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd2ol7oe51mr4n9.cloudfront.net%2Fcontent_user_id%2Fab6c3c3d-bbcf-47f2-a013-af18e679e875.webp&w=1920&q=85"
   }
  ]
 }
