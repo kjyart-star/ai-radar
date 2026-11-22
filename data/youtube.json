@@ -1,6 +1,22 @@
 {
- "generated": "2026-11-21T04:14:19.488Z",
+ "generated": "2026-11-22T03:25:57.067Z",
  "news": [
+  {
+   "title": "I’m Crashing Out About Anthropic",
+   "url": "https://www.youtube.com/watch?v=I0Fasi1-teQ",
+   "videoId": "I0Fasi1-teQ",
+   "channel": "Matthew Berman",
+   "published": "2026-11-21T21:23:31.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/I0Fasi1-teQ/mqdefault.jpg"
+  },
+  {
+   "title": "AI just BROKE SaaS...",
+   "url": "https://www.youtube.com/watch?v=AxQE_ash8b8",
+   "videoId": "AxQE_ash8b8",
+   "channel": "Wes Roth",
+   "published": "2026-11-21T10:02:45.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/AxQE_ash8b8/mqdefault.jpg"
+  },
   {
    "title": "Claude JUST solved the Riemann Hypothesis...",
    "url": "https://www.youtube.com/watch?v=xjX3jESpZqs",
@@ -304,25 +320,17 @@
    "channel": "TheAIGRID",
    "published": "2026-11-10T11:30:05.000Z",
    "thumbnail": "https://i.ytimg.com/vi/GipTWtfaiLs/mqdefault.jpg"
-  },
-  {
-   "title": "Is Software Over?",
-   "url": "https://www.youtube.com/watch?v=vug73goPJaM",
-   "videoId": "vug73goPJaM",
-   "channel": "Two Minute Papers",
-   "published": "2026-11-10T10:15:57.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/vug73goPJaM/mqdefault.jpg"
-  },
-  {
-   "title": "구글의 초대형 TPU 8i Max, 8tx 기습 출시, NVIDIA 대항 자체 칩 개발 가속 | 칩 두 개를 붙인 TPU가 노리는 것 | TPU Sync 활용",
-   "url": "https://www.youtube.com/watch?v=xYoJ1kePj9c",
-   "videoId": "xYoJ1kePj9c",
-   "channel": "안될공학",
-   "published": "2026-11-10T10:12:50.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/xYoJ1kePj9c/mqdefault.jpg"
   }
  ],
  "vibe": [
+  {
+   "title": "Is Claude Still Worth Paying 30x For? | Billion-Dollar Founder Suhail Doshi",
+   "url": "https://www.youtube.com/watch?v=K2UEMxBTu9M",
+   "videoId": "K2UEMxBTu9M",
+   "channel": "Riley Brown",
+   "published": "2026-11-21T20:11:03.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/K2UEMxBTu9M/mqdefault.jpg"
+  },
   {
    "title": "Gemini 4 Neon: the most underrated model of the year",
    "url": "https://www.youtube.com/watch?v=tCY7zMknCJQ",
@@ -340,7 +348,7 @@
    "thumbnail": "https://i.ytimg.com/vi/IsWEWB-Ownk/mqdefault.jpg"
   },
   {
-   "title": "Gemini Neon Just Caught Up To Claude (And It’s HALF the Price)",
+   "title": "Google JUST Caught Up To Claude... And It’s HALF the Price",
    "url": "https://www.youtube.com/watch?v=LNIrmrZ_0gY",
    "videoId": "LNIrmrZ_0gY",
    "channel": "Riley Brown",
@@ -372,7 +380,7 @@
    "thumbnail": "https://i.ytimg.com/vi/vKobP6DkC1E/mqdefault.jpg"
   },
   {
-   "title": "Master Claude Artifacts in 20 Minutes (All 7 Types)",
+   "title": "How I Actually Use Claude Artifacts (All 7 Types)",
    "url": "https://www.youtube.com/watch?v=7N1AE5Y87GU",
    "videoId": "7N1AE5Y87GU",
    "channel": "Riley Brown",
@@ -634,14 +642,6 @@
    "channel": "Riley Brown",
    "published": "2026-10-28T22:20:09.000Z",
    "thumbnail": "https://i.ytimg.com/vi/YT0u2eQ-Aj4/mqdefault.jpg"
-  },
-  {
-   "title": "$100M ARR Founder: The Next Big AI Opportunity",
-   "url": "https://www.youtube.com/watch?v=st61aKW8P5A",
-   "videoId": "st61aKW8P5A",
-   "channel": "Greg Isenberg",
-   "published": "2026-10-28T17:40:18.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/st61aKW8P5A/mqdefault.jpg"
   }
  ]
 }

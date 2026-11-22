@@ -1,39 +1,69 @@
 {
- "generated": "2026-11-21T04:09:28.797Z",
+ "generated": "2026-11-22T03:21:12.682Z",
  "source": "Hacker News",
  "sources": [
   "Hacker News"
  ],
  "items": [
   {
+   "title": "ClawDOS – An AI coding agent for DOS",
+   "url": "http://ricapar.net/ClawDOS/",
+   "date": "2026-11-21T05:38:01.000Z",
+   "source": "Hacker News",
+   "points": 159,
+   "comments": 51,
+   "summary": "",
+   "titleKo": "ClawDOS – DOS용 AI 코딩 에이전트"
+  },
+  {
+   "title": "Leaky AI supply chain is exposing secret user data at an alarming rate",
+   "url": "https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/",
+   "date": "2026-11-20T21:53:39.000Z",
+   "source": "Hacker News",
+   "points": 53,
+   "comments": 6,
+   "summary": "",
+   "titleKo": "정보가 유출되는 AI 공급망으로 인해 비밀 사용자 데이터가 우려스러운 속도로 노출되고 있습니다."
+  },
+  {
+   "title": "Anthropic's IPO Bust Deepens $4T AI Wipeout on Wall Street",
+   "url": "https://www.wsj.com/finance/stocks/anthropics-ipo-bust-punctuates-4-trillion-ai-wipeout-on-wall-street-f1f1ec90",
+   "date": "2026-11-20T21:18:46.000Z",
+   "source": "Hacker News",
+   "points": 66,
+   "comments": 5,
+   "summary": "",
+   "titleKo": "앤트로픽의 IPO 실패로 월스트리트에서 4조 달러 규모의 AI 주가 폭락이 심화되고 있습니다."
+  },
+  {
    "title": "Google workers tell their employer not to punish schools that don't want AI",
    "url": "https://www.motherjones.com/politics/2026/11/google-alphabet-union-school-ai-protest-gemini-workers-petition/",
    "date": "2026-11-20T16:59:27.000Z",
    "source": "Hacker News",
-   "points": 271,
-   "comments": 198,
+   "points": 280,
+   "comments": 228,
    "summary": "",
-   "titleKo": "Google 직원들이 고용주에게 AI를 원하지 않는 학교에 불이익을 주지 말라고 요청하다"
+   "titleKo": "Google 직원들이 고용주에게 AI를 원하지 않는 학교에 불이익을 주지 말라고 요청"
   },
   {
    "title": "AI is giving everyone the same advice",
    "url": "https://a90.com/experiments/same-advice/",
    "date": "2026-11-20T16:58:05.000Z",
    "source": "Hacker News",
-   "points": 64,
-   "comments": 26,
+   "points": 122,
+   "comments": 49,
    "summary": "",
    "titleKo": "AI는 모든 사람에게 동일한 조언을 제공합니다."
   },
   {
-   "title": "Global stock markets slump as Anthropic's record IPO fails to stem AI sell-off",
+   "title": "Nasdaq erases all 2026 gains as AI sell-off dampens Anthropic’s second day",
    "url": "https://www.theguardian.com/business/2026/nov/20/global-stock-markets-slump-anthropic-ipo-ai-sell-off",
    "date": "2026-11-20T13:29:59.000Z",
    "source": "Hacker News",
-   "points": 192,
-   "comments": 233,
+   "points": 503,
+   "comments": 881,
    "summary": "",
-   "titleKo": "앤트로픽의 사상 최대 규모 IPO에도 불구하고 AI 관련주 매도세가 꺾이지 않으면서 글로벌 주식 시장이 급락했습니다."
+   "titleKo": "나스닥, AI 매도세로 인해 앤트로픽의 이틀째 주가가 하락하며 2026년 모든 상승분을 상쇄"
   },
   {
    "title": "Epic Games Turns to AI Coding for the Unreal Engine",
@@ -50,8 +80,8 @@
    "url": "https://architectlabs.com/blog/frostbite",
    "date": "2026-11-20T10:01:41.000Z",
    "source": "Hacker News",
-   "points": 632,
-   "comments": 330,
+   "points": 668,
+   "comments": 355,
    "summary": "",
    "titleKo": "Frostbite: AI가 발견하고 설계하고 검증한 새로운 CPU 아키텍처"
   },
@@ -60,28 +90,28 @@
    "url": "https://signal.org/blog/protecting-your-privacy/",
    "date": "2026-11-20T09:42:16.000Z",
    "source": "Hacker News",
-   "points": 527,
-   "comments": 310,
+   "points": 571,
+   "comments": 336,
    "summary": "",
-   "titleKo": "모바일 운영 체제 플랫폼에서 AI 에이전트가 데이터를 수집하지 못하도록 제한"
+   "titleKo": "모바일 운영 체제 플랫폼에서 AI 에이전트가 데이터를 수집하는 것을 제한"
   },
   {
    "title": "Court: 4th Amendment Disallows Use Of AI-Generated 'Probable Cause'",
    "url": "https://www.techdirt.com/2026/11/19/court-tells-cops-that-the-4th-amendment-doesnt-cover-ai-generated-probable-cause/",
    "date": "2026-11-19T22:56:59.000Z",
    "source": "Hacker News",
-   "points": 69,
+   "points": 70,
    "comments": 21,
    "summary": "",
-   "titleKo": "법원: 수정헌법 제4조에 따라 AI가 생성한 '합리적 의심'의 사용을 불허"
+   "titleKo": "법원: 수정헌법 제4조에 따라 AI가 생성한 '개연성 있는 사유'의 사용이 금지됨"
   },
   {
    "title": "Should governments slow frontier AI? Jacob Coxon and Robin Hanson debate [video]",
    "url": "https://www.youtube.com/watch?v=lwfewYL7X0o",
    "date": "2026-11-19T18:47:16.000Z",
    "source": "Hacker News",
-   "points": 114,
-   "comments": 243,
+   "points": 115,
+   "comments": 258,
    "summary": "",
    "titleKo": "정부는 최첨단 AI의 발전을 늦춰야 할까요? 제이컵 콕슨과 로빈 핸슨의 토론 [동영상]"
   },
@@ -101,7 +131,7 @@
    "date": "2026-11-19T17:43:38.000Z",
    "source": "Hacker News",
    "points": 68,
-   "comments": 81,
+   "comments": 82,
    "summary": "",
    "titleKo": "AI가 코더를 찾아왔습니다. 그 이유를 이해하면 다음 차례가 누구인지 알 수 있습니다."
   },
@@ -110,38 +140,38 @@
    "url": "https://perishablepress.com/chrome-ai-wasting-much-bandwidth/",
    "date": "2026-11-19T16:54:25.000Z",
    "source": "Hacker News",
-   "points": 133,
+   "points": 134,
    "comments": 51,
    "summary": "",
-   "titleKo": "많은 대역폭을 낭비하는 Chrome AI 기능"
+   "titleKo": "Chrome AI 기능이 대역폭을 많이 소모합니다."
   },
   {
    "title": "AI isn't replacing your job. It's turning it into low-paid gig work",
    "url": "https://restofworld.org/2026/ai-jobs-skills-gig-work/",
    "date": "2026-11-19T16:45:50.000Z",
    "source": "Hacker News",
-   "points": 145,
-   "comments": 80,
+   "points": 148,
+   "comments": 82,
    "summary": "",
-   "titleKo": "AI가 여러분의 일자리를 대체하는 것이 아닙니다. AI는 여러분의 일을 저임금 단기 일자리로 바꾸고 있습니다."
+   "titleKo": "AI가 여러분의 일자리를 대체하는 것이 아닙니다. AI는 여러분의 일을 저임금 임시직으로 바꾸고 있습니다."
   },
   {
    "title": "Fuck Your AI Safeguards",
    "url": "https://ounapuu.ee/posts/2026/11/19/unsafeguards/",
    "date": "2026-11-19T16:30:18.000Z",
    "source": "Hacker News",
-   "points": 601,
-   "comments": 246,
+   "points": 616,
+   "comments": 249,
    "summary": "",
-   "titleKo": "AI 안전 장치 따위는 집어치워라"
+   "titleKo": "AI 안전 장치 따위는 집어치워"
   },
   {
    "title": "Pete Warden on local AI, open models, voice interfaces, the future of hardware",
    "url": "https://thedataexchange.media/pete-warden-moonshine/",
    "date": "2026-11-19T15:38:12.000Z",
    "source": "Hacker News",
-   "points": 269,
-   "comments": 247,
+   "points": 270,
+   "comments": 248,
    "summary": "",
    "titleKo": "피트 워든이 말하는 로컬 AI, 오픈 모델, 음성 인터페이스, 하드웨어의 미래"
   },
@@ -150,10 +180,10 @@
    "url": "https://spectrum.ieee.org/ai-superintelligence-debate",
    "date": "2026-11-19T12:17:10.000Z",
    "source": "Hacker News",
-   "points": 104,
-   "comments": 163,
+   "points": 105,
+   "comments": 164,
    "summary": "",
-   "titleKo": "AI 초지능 논쟁에는 심각한 결함이 있습니다."
+   "titleKo": "인공지능 초지능 논쟁에는 심각한 결함이 있습니다."
   },
   {
    "title": "AI will not make you rich (2025)",
@@ -163,47 +193,17 @@
    "points": 108,
    "comments": 70,
    "summary": "",
-   "titleKo": "AI는 여러분을 부자로 만들어 주지 않을 것입니다(2025년)"
+   "titleKo": "AI는 여러분을 부자로 만들어주지 않을 것입니다(2025년)"
   },
   {
    "title": "Black high school students sue after AI mistakes Doritos bag for gun",
    "url": "https://www.lawyerscommittee.org/lawyers-committee-files-lawsuit-on-behalf-of-black-students-detained-and-searched-due-to-ai-alert-falsely-identifying-a-bag-of-chips-as-a-firearm/",
    "date": "2026-11-19T00:57:20.000Z",
    "source": "Hacker News",
-   "points": 118,
-   "comments": 91,
+   "points": 119,
+   "comments": 92,
    "summary": "",
    "titleKo": "인공지능이 도리토스 봉지를 총으로 오인한 후 흑인 고등학생들이 소송을 제기했습니다."
-  },
-  {
-   "title": "Launch HN: Maritime (YC F26) – A managed cloud for production AI agents",
-   "url": "https://news.ycombinator.com/item?id=50549188",
-   "date": "2026-11-18T17:26:28.000Z",
-   "source": "Hacker News",
-   "points": 60,
-   "comments": 65,
-   "summary": "",
-   "titleKo": "HN 출시: Maritime(YC F26) – 프로덕션 AI 에이전트를 위한 관리형 클라우드"
-  },
-  {
-   "title": "\"Anthropic Is Not a Safe AI Company\" – Coalition Challenges Anthropic Safety",
-   "url": "https://www.businesswire.com/news/home/20261118974464/en/Anthropic-is-Not-a-Safe-AI-Company---Broad-Coalition-of-Scientists-Legal-Scholars-and-Tech-Leaders-Challenge-Anthropics-Safety-Branding-Ahead-of-IPO",
-   "date": "2026-11-18T16:41:22.000Z",
-   "source": "Hacker News",
-   "points": 148,
-   "comments": 79,
-   "summary": "",
-   "titleKo": "\"앤트로픽은 안전한 AI 기업이 아닙니다\" – 앤트로픽의 안전성에 의문을 제기하는 연합"
-  },
-  {
-   "title": "AI agents ask better questions than KPMG accountants in audit trial",
-   "url": "https://europeanbusinessmagazine.com/ai-agents-better-questions-kpmg/",
-   "date": "2026-11-18T15:49:34.000Z",
-   "source": "Hacker News",
-   "points": 497,
-   "comments": 262,
-   "summary": "",
-   "titleKo": "AI 에이전트가 감사 테스트에서 KPMG 회계사보다 더 나은 질문을 합니다."
   }
  ]
 }
