@@ -1,6 +1,14 @@
 {
- "generated": "2026-11-22T03:25:57.067Z",
+ "generated": "2026-11-23T03:58:07.567Z",
  "news": [
+  {
+   "title": "OpenAI Warns AI Could Take Over Within 12 Months",
+   "url": "https://www.youtube.com/watch?v=Dx_oAiLIK1E",
+   "videoId": "Dx_oAiLIK1E",
+   "channel": "TheAIGRID",
+   "published": "2026-11-22T07:15:22.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/Dx_oAiLIK1E/mqdefault.jpg"
+  },
   {
    "title": "I’m Crashing Out About Anthropic",
    "url": "https://www.youtube.com/watch?v=I0Fasi1-teQ",
@@ -312,19 +320,19 @@
    "channel": "AI Explained",
    "published": "2026-11-10T23:11:36.000Z",
    "thumbnail": "https://i.ytimg.com/vi/583ThJIqQ7k/mqdefault.jpg"
-  },
-  {
-   "title": "Claude Fable 5.2 Is Absolutely RIDICULOUS",
-   "url": "https://www.youtube.com/watch?v=GipTWtfaiLs",
-   "videoId": "GipTWtfaiLs",
-   "channel": "TheAIGRID",
-   "published": "2026-11-10T11:30:05.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/GipTWtfaiLs/mqdefault.jpg"
   }
  ],
  "vibe": [
   {
-   "title": "Is Claude Still Worth Paying 30x For? | Billion-Dollar Founder Suhail Doshi",
+   "title": "IT뉴스 - 리만가설 증명됐다, GPT-6.2 Astra, Gemini 4 Neon, Inkling 2 Mini, Qwen4-Max, FSD v15 등",
+   "url": "https://www.youtube.com/watch?v=hMXOsa3eO-8",
+   "videoId": "hMXOsa3eO-8",
+   "channel": "조코딩 JoCoding",
+   "published": "2026-11-22T11:00:51.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/hMXOsa3eO-8/mqdefault.jpg"
+  },
+  {
+   "title": "Open Source AI Is Dangerously Close to Claude (And 30x Cheaper)",
    "url": "https://www.youtube.com/watch?v=K2UEMxBTu9M",
    "videoId": "K2UEMxBTu9M",
    "channel": "Riley Brown",
@@ -380,7 +388,7 @@
    "thumbnail": "https://i.ytimg.com/vi/vKobP6DkC1E/mqdefault.jpg"
   },
   {
-   "title": "How I Actually Use Claude Artifacts (All 7 Types)",
+   "title": "How I Actually Use Claude Artifacts (Full Guide)",
    "url": "https://www.youtube.com/watch?v=7N1AE5Y87GU",
    "videoId": "7N1AE5Y87GU",
    "channel": "Riley Brown",
@@ -634,14 +642,6 @@
    "channel": "Cole Medin",
    "published": "2026-10-29T00:00:35.000Z",
    "thumbnail": "https://i.ytimg.com/vi/qIWB1yMsqRo/mqdefault.jpg"
-  },
-  {
-   "title": "My AI Setup Feels Like Cheating (Here's All of It)",
-   "url": "https://www.youtube.com/watch?v=YT0u2eQ-Aj4",
-   "videoId": "YT0u2eQ-Aj4",
-   "channel": "Riley Brown",
-   "published": "2026-10-28T22:20:09.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/YT0u2eQ-Aj4/mqdefault.jpg"
   }
  ]
 }
