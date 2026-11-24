@@ -1,6 +1,30 @@
 {
- "generated": "2026-11-23T03:58:07.567Z",
+ "generated": "2026-11-24T07:06:03.421Z",
  "news": [
+  {
+   "title": "Did AI JUST Solve Mathematics?",
+   "url": "https://www.youtube.com/watch?v=MkeKXJzJo98",
+   "videoId": "MkeKXJzJo98",
+   "channel": "Matthew Berman",
+   "published": "2026-11-24T02:30:08.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/MkeKXJzJo98/mqdefault.jpg"
+  },
+  {
+   "title": "Claude AI Solved The Secret Of Black Holes",
+   "url": "https://www.youtube.com/watch?v=1jPdehG3Hms",
+   "videoId": "1jPdehG3Hms",
+   "channel": "Two Minute Papers",
+   "published": "2026-11-23T07:37:52.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/1jPdehG3Hms/mqdefault.jpg"
+  },
+  {
+   "title": "OpenAI's SHOCKING new warning...",
+   "url": "https://www.youtube.com/watch?v=f5_c0O_chy4",
+   "videoId": "f5_c0O_chy4",
+   "channel": "Wes Roth",
+   "published": "2026-11-23T07:35:14.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/f5_c0O_chy4/mqdefault.jpg"
+  },
   {
    "title": "OpenAI Warns AI Could Take Over Within 12 Months",
    "url": "https://www.youtube.com/watch?v=Dx_oAiLIK1E",
@@ -296,33 +320,41 @@
    "channel": "Matt Wolfe",
    "published": "2026-11-11T16:00:07.000Z",
    "thumbnail": "https://i.ytimg.com/vi/pvl3z_GyU2Y/mqdefault.jpg"
-  },
-  {
-   "title": "Gemini Carbon, NVIDIA CEO AFFAIR, Fable 5.2, Meta Muse Ember, GPT Image 2.6, Minimax H3: AI NEWS",
-   "url": "https://www.youtube.com/watch?v=FCmLuTENOp0",
-   "videoId": "FCmLuTENOp0",
-   "channel": "Matthew Berman",
-   "published": "2026-11-11T11:00:25.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/FCmLuTENOp0/mqdefault.jpg"
-  },
-  {
-   "title": "AI 신규 모델 대격돌 | 구글 카본 vs 클로드 페이블 5.2 | 새로 나온 두 AI의 코딩 실력과 실제 비용을 따져봤습니다",
-   "url": "https://www.youtube.com/watch?v=ijLTC-d1TMs",
-   "videoId": "ijLTC-d1TMs",
-   "channel": "안될공학",
-   "published": "2026-11-11T07:43:53.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/ijLTC-d1TMs/mqdefault.jpg"
-  },
-  {
-   "title": "Fable 5.2: The Self-Improvement Loop Keeps Loopin’ … (plus Gemini Carbon)",
-   "url": "https://www.youtube.com/watch?v=583ThJIqQ7k",
-   "videoId": "583ThJIqQ7k",
-   "channel": "AI Explained",
-   "published": "2026-11-10T23:11:36.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/583ThJIqQ7k/mqdefault.jpg"
   }
  ],
  "vibe": [
+  {
+   "title": "Robots are the new apps (and you’re early)",
+   "url": "https://www.youtube.com/watch?v=TXzJ4pGW59o",
+   "videoId": "TXzJ4pGW59o",
+   "channel": "Greg Isenberg",
+   "published": "2026-11-23T18:45:05.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/TXzJ4pGW59o/mqdefault.jpg"
+  },
+  {
+   "title": "Hackers Are Coming for Your AI Coding Agent (Lock It Down Now)",
+   "url": "https://www.youtube.com/watch?v=0q0UbO4oqgQ",
+   "videoId": "0q0UbO4oqgQ",
+   "channel": "Cole Medin",
+   "published": "2026-11-23T15:23:29.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/0q0UbO4oqgQ/mqdefault.jpg"
+  },
+  {
+   "title": "AI뉴스 - 리만가설 증명됐다, FSD v15, GPT-6.2 Astra, Gemini 4 Neon, Inkling 2 Mini, Qwen4-Max 등",
+   "url": "https://www.youtube.com/watch?v=K8y9zyC-jeY",
+   "videoId": "K8y9zyC-jeY",
+   "channel": "조코딩 JoCoding",
+   "published": "2026-11-23T14:15:00.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/K8y9zyC-jeY/mqdefault.jpg"
+  },
+  {
+   "title": "The Meta Software Factory: Advanced Agentic Engineering",
+   "url": "https://www.youtube.com/watch?v=PuHDu3Kn8sQ",
+   "videoId": "PuHDu3Kn8sQ",
+   "channel": "IndyDevDan",
+   "published": "2026-11-23T14:00:13.000Z",
+   "thumbnail": "https://i.ytimg.com/vi/PuHDu3Kn8sQ/mqdefault.jpg"
+  },
   {
    "title": "IT뉴스 - 리만가설 증명됐다, GPT-6.2 Astra, Gemini 4 Neon, Inkling 2 Mini, Qwen4-Max, FSD v15 등",
    "url": "https://www.youtube.com/watch?v=hMXOsa3eO-8",
@@ -356,7 +388,7 @@
    "thumbnail": "https://i.ytimg.com/vi/IsWEWB-Ownk/mqdefault.jpg"
   },
   {
-   "title": "Google JUST Caught Up To Claude... And It’s HALF the Price",
+   "title": "Google JUST Caught Up To Claude For Half The Price (NEON Tested)",
    "url": "https://www.youtube.com/watch?v=LNIrmrZ_0gY",
    "videoId": "LNIrmrZ_0gY",
    "channel": "Riley Brown",
@@ -610,38 +642,6 @@
    "channel": "Cole Medin",
    "published": "2026-10-31T16:51:47.000Z",
    "thumbnail": "https://i.ytimg.com/vi/BlbxhsItZPg/mqdefault.jpg"
-  },
-  {
-   "title": "ChatGPT Just Changed A LOT AGAIN (Here’s What’s New)",
-   "url": "https://www.youtube.com/watch?v=vMvkR8WEOpE",
-   "videoId": "vMvkR8WEOpE",
-   "channel": "Riley Brown",
-   "published": "2026-10-31T14:00:02.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/vMvkR8WEOpE/mqdefault.jpg"
-  },
-  {
-   "title": "(광고) AI 6개에게 2주간 모의 투자를 맡겼더니? 결과 공개 LIVE",
-   "url": "https://www.youtube.com/watch?v=ulvo0ophBNE",
-   "videoId": "ulvo0ophBNE",
-   "channel": "조코딩 JoCoding",
-   "published": "2026-10-30T03:50:27.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/ulvo0ophBNE/mqdefault.jpg"
-  },
-  {
-   "title": "SaaS is dead?",
-   "url": "https://www.youtube.com/watch?v=AqqjH_uv-_w",
-   "videoId": "AqqjH_uv-_w",
-   "channel": "Greg Isenberg",
-   "published": "2026-10-29T19:25:16.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/AqqjH_uv-_w/mqdefault.jpg"
-  },
-  {
-   "title": "The 4 Components of Every Successful AI Second Brain (Build These Now)",
-   "url": "https://www.youtube.com/watch?v=qIWB1yMsqRo",
-   "videoId": "qIWB1yMsqRo",
-   "channel": "Cole Medin",
-   "published": "2026-10-29T00:00:35.000Z",
-   "thumbnail": "https://i.ytimg.com/vi/qIWB1yMsqRo/mqdefault.jpg"
   }
  ]
 }
