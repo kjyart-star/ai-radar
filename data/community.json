@@ -1,17 +1,57 @@
 {
- "generated": "2026-11-24T07:01:16.169Z",
+ "generated": "2026-11-25T05:35:05.187Z",
  "source": "Hacker News",
  "sources": [
   "Hacker News"
  ],
  "items": [
   {
+   "title": "Working with AI",
+   "url": "https://www.anthropic.com/research/working-with-ai",
+   "date": "2026-11-24T21:07:38.000Z",
+   "source": "Hacker News",
+   "points": 65,
+   "comments": 66,
+   "summary": "",
+   "titleKo": "AI와 함께 일하기"
+  },
+  {
+   "title": "Tidal bans AI-generated music",
+   "url": "https://variety.com/2026/music/news/tidal-bans-ai-generated-music-1236956924/",
+   "date": "2026-11-24T16:12:38.000Z",
+   "source": "Hacker News",
+   "points": 320,
+   "comments": 308,
+   "summary": "",
+   "titleKo": "Tidal, AI가 생성한 음악 금지"
+  },
+  {
+   "title": "Jevons Paradox in AI: Cheaper Tokens Won't Pay for Capex",
+   "url": "https://philippdubach.com/posts/cheaper-ai-tokens-wont-pay-for-capex/",
+   "date": "2026-11-24T09:39:50.000Z",
+   "source": "Hacker News",
+   "points": 79,
+   "comments": 40,
+   "summary": "",
+   "titleKo": "AI 분야의 제본스 역설: 저렴한 토큰으로는 자본 지출을 충당할 수 없다"
+  },
+  {
+   "title": "Declare is a UI language for you and your AI",
+   "url": "https://davidtemkin.github.io/declarelang/",
+   "date": "2026-11-24T02:36:56.000Z",
+   "source": "Hacker News",
+   "points": 110,
+   "comments": 92,
+   "summary": "",
+   "titleKo": "Declare는 사용자 및 AI를 위한 UI 언어입니다."
+  },
+  {
    "title": "Amodei reportedly suggested games could pacify masses after AI took their jobs (2015)",
    "url": "https://www.theverge.com/ai-artificial-intelligence/1039745/dario-amodei-video-games-ai-joblessness",
    "date": "2026-11-23T12:41:14.000Z",
    "source": "Hacker News",
-   "points": 74,
-   "comments": 82,
+   "points": 78,
+   "comments": 83,
    "summary": "",
    "titleKo": "아모데이(Amodei)는 AI가 사람들의 일자리를 빼앗은 후 게임이 대중을 진정시킬 수 있다고 제안한 것으로 알려졌습니다(2015년)."
   },
@@ -20,7 +60,7 @@
    "url": "https://0rwx.com/",
    "date": "2026-11-22T23:53:00.000Z",
    "source": "Hacker News",
-   "points": 69,
+   "points": 71,
    "comments": 17,
    "summary": "",
    "titleKo": "0rwx – Unix 권한에서 영감을 얻은 간단한 AI 사용 모델"
@@ -30,8 +70,8 @@
    "url": "https://www.gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth",
    "date": "2026-11-22T21:01:16.000Z",
    "source": "Hacker News",
-   "points": 752,
-   "comments": 304,
+   "points": 773,
+   "comments": 313,
    "summary": "",
    "titleKo": "Inkling, Qwen, Unsloth를 활용한 로컬 AI 입문 가이드"
   },
@@ -40,7 +80,7 @@
    "url": "https://boazbk.github.io/mltheoryseminar/",
    "date": "2026-11-22T18:01:54.000Z",
    "source": "Hacker News",
-   "points": 79,
+   "points": 81,
    "comments": 8,
    "summary": "",
    "titleKo": "하버드 CS 2881R AI 안전"
@@ -60,7 +100,7 @@
    "url": "https://simonwillison.net/2026/Nov/21/muru/",
    "date": "2026-11-22T09:57:01.000Z",
    "source": "Hacker News",
-   "points": 78,
+   "points": 80,
    "comments": 12,
    "summary": "",
    "titleKo": "Muru – mod_WSGI의 개발자가 만든 Python 앱용 AI 지원 Rust 서버"
@@ -70,10 +110,20 @@
    "url": "https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens",
    "date": "2026-11-22T05:11:43.000Z",
    "source": "Hacker News",
-   "points": 104,
+   "points": 106,
    "comments": 22,
    "summary": "",
    "titleKo": "AI 공급망 보안: 카나리 토큰이 발견한 것"
+  },
+  {
+   "title": "Since last year, we asked: \"What if AI solved the Riemann Hypothesis?\"",
+   "url": "https://www.youtube.com/watch?v=zqzk43bSdDI",
+   "date": "2026-11-22T03:06:35.000Z",
+   "source": "Hacker News",
+   "points": 50,
+   "comments": 18,
+   "summary": "",
+   "titleKo": "작년부터 우리는 \"AI가 리만 가설을 해결한다면 어떨까?\"라는 질문을 던졌습니다."
   },
   {
    "title": "The Mythology of Conscious AI",
@@ -81,7 +131,7 @@
    "date": "2026-11-22T02:10:02.000Z",
    "source": "Hacker News",
    "points": 181,
-   "comments": 550,
+   "comments": 561,
    "summary": "",
    "titleKo": "의식을 가진 AI에 대한 신화"
   },
@@ -90,8 +140,8 @@
    "url": "https://www.pandex.io",
    "date": "2026-11-21T20:47:41.000Z",
    "source": "Hacker News",
-   "points": 140,
-   "comments": 36,
+   "points": 141,
+   "comments": 37,
    "summary": "",
    "titleKo": "Pandex – MCP를 통한 AI 에이전트에 대한 공식 유럽 법률"
   },
@@ -100,8 +150,8 @@
    "url": "http://ricapar.net/ClawDOS/",
    "date": "2026-11-21T05:38:01.000Z",
    "source": "Hacker News",
-   "points": 175,
-   "comments": 52,
+   "points": 176,
+   "comments": 53,
    "summary": "",
    "titleKo": "ClawDOS – DOS용 AI 코딩 에이전트"
   },
@@ -110,17 +160,17 @@
    "url": "https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/",
    "date": "2026-11-20T21:53:39.000Z",
    "source": "Hacker News",
-   "points": 70,
+   "points": 71,
    "comments": 8,
    "summary": "",
-   "titleKo": "정보가 유출되는 AI 공급망으로 인해 비밀 사용자 데이터가 위험한 속도로 노출되고 있습니다."
+   "titleKo": "정보가 유출되는 AI 공급망으로 인해 비밀 사용자 데이터가 경각심을 불러일으킬 정도로 빠르게 노출되고 있습니다."
   },
   {
    "title": "Anthropic's IPO Bust Deepens $4T AI Wipeout on Wall Street",
    "url": "https://www.wsj.com/finance/stocks/anthropics-ipo-bust-punctuates-4-trillion-ai-wipeout-on-wall-street-f1f1ec90",
    "date": "2026-11-20T21:18:46.000Z",
    "source": "Hacker News",
-   "points": 66,
+   "points": 67,
    "comments": 5,
    "summary": "",
    "titleKo": "앤트로픽의 IPO 실패로 월스트리트에서 4조 달러 규모의 AI 주가 폭락이 심화되고 있습니다."
@@ -151,59 +201,9 @@
    "date": "2026-11-20T13:29:59.000Z",
    "source": "Hacker News",
    "points": 530,
-   "comments": 932,
+   "comments": 938,
    "summary": "",
-   "titleKo": "나스닥, AI 매도세로 인해 앤트로픽의 이틀째 주가가 하락하며 2026년 모든 상승분을 상쇄"
-  },
-  {
-   "title": "Epic Games Turns to AI Coding for the Unreal Engine",
-   "url": "https://spectrum.ieee.org/epic-games-unreal-engine-ai",
-   "date": "2026-11-20T12:16:36.000Z",
-   "source": "Hacker News",
-   "points": 58,
-   "comments": 61,
-   "summary": "",
-   "titleKo": "에픽게임즈, 언리얼 엔진에 AI 코딩 도입"
-  },
-  {
-   "title": "Frostbite: A new CPU architecture discovered, designed and verified by AI",
-   "url": "https://architectlabs.com/blog/frostbite",
-   "date": "2026-11-20T10:01:41.000Z",
-   "source": "Hacker News",
-   "points": 684,
-   "comments": 366,
-   "summary": "",
-   "titleKo": "Frostbite: AI가 발견하고 설계하고 검증한 새로운 CPU 아키텍처"
-  },
-  {
-   "title": "Restricting AI agents in mobile operating systems platforms from capturing data",
-   "url": "https://signal.org/blog/protecting-your-privacy/",
-   "date": "2026-11-20T09:42:16.000Z",
-   "source": "Hacker News",
-   "points": 583,
-   "comments": 349,
-   "summary": "",
-   "titleKo": "모바일 운영 체제 플랫폼에서 AI 에이전트가 데이터를 수집하는 것을 제한"
-  },
-  {
-   "title": "Court: 4th Amendment Disallows Use Of AI-Generated 'Probable Cause'",
-   "url": "https://www.techdirt.com/2026/11/19/court-tells-cops-that-the-4th-amendment-doesnt-cover-ai-generated-probable-cause/",
-   "date": "2026-11-19T22:56:59.000Z",
-   "source": "Hacker News",
-   "points": 72,
-   "comments": 21,
-   "summary": "",
-   "titleKo": "법원: 수정헌법 제4조에 따라 AI가 생성한 '개연성 있는 사유'의 사용이 금지됨"
-  },
-  {
-   "title": "Should governments slow frontier AI? Jacob Coxon and Robin Hanson debate [video]",
-   "url": "https://www.youtube.com/watch?v=lwfewYL7X0o",
-   "date": "2026-11-19T18:47:16.000Z",
-   "source": "Hacker News",
-   "points": 115,
-   "comments": 263,
-   "summary": "",
-   "titleKo": "정부는 최첨단 AI의 발전을 늦춰야 할까요? 제이컵 콕슨과 로빈 핸슨의 토론 [동영상]"
+   "titleKo": "AI 매도세가 Anthropic의 이틀째 주가를 하락시키면서 Nasdaq이 2026년의 모든 상승분을 상쇄했습니다."
   }
  ]
 }
