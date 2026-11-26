@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-25T05:47:09.258Z",
+ "generated": "2026-11-26T05:25:30.671Z",
  "source": "Higgsfield (higgsfield.ai/contests)",
  "page": "https://higgsfield.ai/contests",
  "items": [
@@ -22,7 +22,16 @@
    "thumbnail": "https://higgsfield.ai/cdn-cgi/image/fit=scale-down,format=webp,onerror=redirect,width=1920,quality=85/https://static.higgsfield.ai/contest/festival-hero/higgs_6_fix_v2-poster.webp"
   },
   {
-   "title": "WCC#5: The Escape Judging",
+   "title": "WCC#6: The Fixed Frame Open until Dec 02",
+   "url": "https://higgsfield.ai/contests/wcc-the-fixed-frame",
+   "prize": "",
+   "status": "",
+   "dates": "",
+   "desc": "",
+   "thumbnail": "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd2ol7oe51mr4n9.cloudfront.net%2Fcontent_user_id%2F558c615c-5c3b-43f9-80e9-18ffc77d865c.png&w=1920&q=85"
+  },
+  {
+   "title": "WCC#5: The Escape Finished Nov 25",
    "url": "https://higgsfield.ai/contests/wcc-the-escape",
    "prize": "",
    "status": "",

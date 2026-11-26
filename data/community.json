@@ -1,17 +1,47 @@
 {
- "generated": "2026-11-25T05:35:05.187Z",
+ "generated": "2026-11-26T05:18:04.161Z",
  "source": "Hacker News",
  "sources": [
   "Hacker News"
  ],
  "items": [
   {
+   "title": "The New York Times warns photographers not to update Photoshop over AI features",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1041227/the-new-york-times-warns-photographers-not-to-update-photoshop-over-ai-features",
+   "date": "2026-11-25T21:18:02.000Z",
+   "source": "Hacker News",
+   "points": 270,
+   "comments": 246,
+   "summary": "",
+   "titleKo": "뉴욕타임스, 사진작가들에게 AI 기능이 포함된 포토샵 업데이트하지 말라고 경고"
+  },
+  {
+   "title": "New York bans AI toys, including those using internet to talk to children",
+   "url": "https://www.theguardian.com/us-news/2026/nov/25/new-york-bans-ai-toys",
+   "date": "2026-11-25T17:27:05.000Z",
+   "source": "Hacker News",
+   "points": 50,
+   "comments": 9,
+   "summary": "",
+   "titleKo": "뉴욕, 인터넷을 통해 어린이와 대화하는 인공지능 장난감을 포함한 인공지능 장난감 금지"
+  },
+  {
+   "title": "Marginalia Search, Money, C++, Rust, AI, Stuff",
+   "url": "https://www.marginalia.nu/log/a_141_marginalia_update/",
+   "date": "2026-11-25T03:47:42.000Z",
+   "source": "Hacker News",
+   "points": 219,
+   "comments": 83,
+   "summary": "",
+   "titleKo": "마지날리아 검색, 돈, C++, Rust, AI, 기타"
+  },
+  {
    "title": "Working with AI",
    "url": "https://www.anthropic.com/research/working-with-ai",
    "date": "2026-11-24T21:07:38.000Z",
    "source": "Hacker News",
-   "points": 65,
-   "comments": 66,
+   "points": 88,
+   "comments": 76,
    "summary": "",
    "titleKo": "AI와 함께 일하기"
   },
@@ -20,8 +50,8 @@
    "url": "https://variety.com/2026/music/news/tidal-bans-ai-generated-music-1236956924/",
    "date": "2026-11-24T16:12:38.000Z",
    "source": "Hacker News",
-   "points": 320,
-   "comments": 308,
+   "points": 336,
+   "comments": 333,
    "summary": "",
    "titleKo": "Tidal, AI가 생성한 음악 금지"
   },
@@ -30,18 +60,18 @@
    "url": "https://philippdubach.com/posts/cheaper-ai-tokens-wont-pay-for-capex/",
    "date": "2026-11-24T09:39:50.000Z",
    "source": "Hacker News",
-   "points": 79,
+   "points": 82,
    "comments": 40,
    "summary": "",
-   "titleKo": "AI 분야의 제본스 역설: 저렴한 토큰으로는 자본 지출을 충당할 수 없다"
+   "titleKo": "AI 분야의 제번스 역설: 저렴한 토큰으로는 자본지출을 충당할 수 없다"
   },
   {
    "title": "Declare is a UI language for you and your AI",
    "url": "https://davidtemkin.github.io/declarelang/",
    "date": "2026-11-24T02:36:56.000Z",
    "source": "Hacker News",
-   "points": 110,
-   "comments": 92,
+   "points": 117,
+   "comments": 95,
    "summary": "",
    "titleKo": "Declare는 사용자 및 AI를 위한 UI 언어입니다."
   },
@@ -50,8 +80,8 @@
    "url": "https://www.theverge.com/ai-artificial-intelligence/1039745/dario-amodei-video-games-ai-joblessness",
    "date": "2026-11-23T12:41:14.000Z",
    "source": "Hacker News",
-   "points": 78,
-   "comments": 83,
+   "points": 79,
+   "comments": 85,
    "summary": "",
    "titleKo": "아모데이(Amodei)는 AI가 사람들의 일자리를 빼앗은 후 게임이 대중을 진정시킬 수 있다고 제안한 것으로 알려졌습니다(2015년)."
   },
@@ -70,8 +100,8 @@
    "url": "https://www.gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth",
    "date": "2026-11-22T21:01:16.000Z",
    "source": "Hacker News",
-   "points": 773,
-   "comments": 313,
+   "points": 776,
+   "comments": 318,
    "summary": "",
    "titleKo": "Inkling, Qwen, Unsloth를 활용한 로컬 AI 입문 가이드"
   },
@@ -80,7 +110,7 @@
    "url": "https://boazbk.github.io/mltheoryseminar/",
    "date": "2026-11-22T18:01:54.000Z",
    "source": "Hacker News",
-   "points": 81,
+   "points": 82,
    "comments": 8,
    "summary": "",
    "titleKo": "하버드 CS 2881R AI 안전"
@@ -110,7 +140,7 @@
    "url": "https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens",
    "date": "2026-11-22T05:11:43.000Z",
    "source": "Hacker News",
-   "points": 106,
+   "points": 107,
    "comments": 22,
    "summary": "",
    "titleKo": "AI 공급망 보안: 카나리 토큰이 발견한 것"
@@ -131,7 +161,7 @@
    "date": "2026-11-22T02:10:02.000Z",
    "source": "Hacker News",
    "points": 181,
-   "comments": 561,
+   "comments": 565,
    "summary": "",
    "titleKo": "의식을 가진 AI에 대한 신화"
   },
@@ -163,7 +193,7 @@
    "points": 71,
    "comments": 8,
    "summary": "",
-   "titleKo": "정보가 유출되는 AI 공급망으로 인해 비밀 사용자 데이터가 경각심을 불러일으킬 정도로 빠르게 노출되고 있습니다."
+   "titleKo": "정보가 유출되는 AI 공급망으로 인해 비밀 사용자 데이터가 위험한 속도로 노출되고 있습니다."
   },
   {
    "title": "Anthropic's IPO Bust Deepens $4T AI Wipeout on Wall Street",
@@ -174,36 +204,6 @@
    "comments": 5,
    "summary": "",
    "titleKo": "앤트로픽의 IPO 실패로 월스트리트에서 4조 달러 규모의 AI 주가 폭락이 심화되고 있습니다."
-  },
-  {
-   "title": "Google workers tell their employer not to punish schools that don't want AI",
-   "url": "https://www.motherjones.com/politics/2026/11/google-alphabet-union-school-ai-protest-gemini-workers-petition/",
-   "date": "2026-11-20T16:59:27.000Z",
-   "source": "Hacker News",
-   "points": 284,
-   "comments": 229,
-   "summary": "",
-   "titleKo": "Google 직원들이 고용주에게 AI를 원하지 않는 학교에 불이익을 주지 말라고 요청하다"
-  },
-  {
-   "title": "AI is giving everyone the same advice",
-   "url": "https://a90.com/experiments/same-advice/",
-   "date": "2026-11-20T16:58:05.000Z",
-   "source": "Hacker News",
-   "points": 125,
-   "comments": 56,
-   "summary": "",
-   "titleKo": "AI는 모든 사람에게 동일한 조언을 제공합니다."
-  },
-  {
-   "title": "Nasdaq erases all 2026 gains as AI sell-off dampens Anthropic’s second day",
-   "url": "https://www.theguardian.com/business/2026/nov/20/global-stock-markets-slump-anthropic-ipo-ai-sell-off",
-   "date": "2026-11-20T13:29:59.000Z",
-   "source": "Hacker News",
-   "points": 530,
-   "comments": 938,
-   "summary": "",
-   "titleKo": "AI 매도세가 Anthropic의 이틀째 주가를 하락시키면서 Nasdaq이 2026년의 모든 상승분을 상쇄했습니다."
   }
  ]
 }
