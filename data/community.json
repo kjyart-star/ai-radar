@@ -1,17 +1,47 @@
 {
- "generated": "2026-11-26T05:18:04.161Z",
+ "generated": "2026-11-27T05:14:28.080Z",
  "source": "Hacker News",
  "sources": [
   "Hacker News"
  ],
  "items": [
   {
+   "title": "AI made self-hosting fun again",
+   "url": "https://janlukas.blog/posts/ai-self-hosting",
+   "date": "2026-11-26T21:47:45.000Z",
+   "source": "Hacker News",
+   "points": 454,
+   "comments": 241,
+   "summary": "",
+   "titleKo": "AI 덕분에 다시 즐겁게 직접 호스팅할 수 있게 되었습니다."
+  },
+  {
+   "title": "Tracking Diseases Cured by AI",
+   "url": "https://diseasescuredbyai.com/",
+   "date": "2026-11-26T17:16:41.000Z",
+   "source": "Hacker News",
+   "points": 307,
+   "comments": 184,
+   "summary": "",
+   "titleKo": "AI로 치료된 질병 추적"
+  },
+  {
+   "title": "Google Will Make AI Agents Use Its MCP Servers. The Gmail One Can't Send Email",
+   "url": "https://techstackups.com/articles/google-workspace-ai-agents-mcp/",
+   "date": "2026-11-26T09:44:23.000Z",
+   "source": "Hacker News",
+   "points": 294,
+   "comments": 251,
+   "summary": "",
+   "titleKo": "Google, AI 에이전트가 자사 MCP 서버를 사용하도록 할 예정. Gmail One은 이메일을 보낼 수 없습니다."
+  },
+  {
    "title": "The New York Times warns photographers not to update Photoshop over AI features",
    "url": "https://www.theverge.com/ai-artificial-intelligence/1041227/the-new-york-times-warns-photographers-not-to-update-photoshop-over-ai-features",
    "date": "2026-11-25T21:18:02.000Z",
    "source": "Hacker News",
-   "points": 270,
-   "comments": 246,
+   "points": 661,
+   "comments": 525,
    "summary": "",
    "titleKo": "뉴욕타임스, 사진작가들에게 AI 기능이 포함된 포토샵 업데이트하지 말라고 경고"
   },
@@ -20,8 +50,8 @@
    "url": "https://www.theguardian.com/us-news/2026/nov/25/new-york-bans-ai-toys",
    "date": "2026-11-25T17:27:05.000Z",
    "source": "Hacker News",
-   "points": 50,
-   "comments": 9,
+   "points": 55,
+   "comments": 14,
    "summary": "",
    "titleKo": "뉴욕, 인터넷을 통해 어린이와 대화하는 인공지능 장난감을 포함한 인공지능 장난감 금지"
   },
@@ -30,8 +60,8 @@
    "url": "https://www.marginalia.nu/log/a_141_marginalia_update/",
    "date": "2026-11-25T03:47:42.000Z",
    "source": "Hacker News",
-   "points": 219,
-   "comments": 83,
+   "points": 223,
+   "comments": 85,
    "summary": "",
    "titleKo": "마지날리아 검색, 돈, C++, Rust, AI, 기타"
   },
@@ -40,18 +70,18 @@
    "url": "https://www.anthropic.com/research/working-with-ai",
    "date": "2026-11-24T21:07:38.000Z",
    "source": "Hacker News",
-   "points": 88,
-   "comments": 76,
+   "points": 89,
+   "comments": 77,
    "summary": "",
-   "titleKo": "AI와 함께 일하기"
+   "titleKo": "AI와 함께하기"
   },
   {
    "title": "Tidal bans AI-generated music",
    "url": "https://variety.com/2026/music/news/tidal-bans-ai-generated-music-1236956924/",
    "date": "2026-11-24T16:12:38.000Z",
    "source": "Hacker News",
-   "points": 336,
-   "comments": 333,
+   "points": 337,
+   "comments": 344,
    "summary": "",
    "titleKo": "Tidal, AI가 생성한 음악 금지"
   },
@@ -63,17 +93,17 @@
    "points": 82,
    "comments": 40,
    "summary": "",
-   "titleKo": "AI 분야의 제번스 역설: 저렴한 토큰으로는 자본지출을 충당할 수 없다"
+   "titleKo": "AI 분야의 제본스 역설: 저렴한 토큰으로는 자본 지출을 충당할 수 없다"
   },
   {
    "title": "Declare is a UI language for you and your AI",
    "url": "https://davidtemkin.github.io/declarelang/",
    "date": "2026-11-24T02:36:56.000Z",
    "source": "Hacker News",
-   "points": 117,
-   "comments": 95,
+   "points": 122,
+   "comments": 97,
    "summary": "",
-   "titleKo": "Declare는 사용자 및 AI를 위한 UI 언어입니다."
+   "titleKo": "Declare는 사용자와 AI를 위한 UI 언어입니다."
   },
   {
    "title": "Amodei reportedly suggested games could pacify masses after AI took their jobs (2015)",
@@ -100,8 +130,8 @@
    "url": "https://www.gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth",
    "date": "2026-11-22T21:01:16.000Z",
    "source": "Hacker News",
-   "points": 776,
-   "comments": 318,
+   "points": 780,
+   "comments": 319,
    "summary": "",
    "titleKo": "Inkling, Qwen, Unsloth를 활용한 로컬 AI 입문 가이드"
   },
@@ -110,7 +140,7 @@
    "url": "https://boazbk.github.io/mltheoryseminar/",
    "date": "2026-11-22T18:01:54.000Z",
    "source": "Hacker News",
-   "points": 82,
+   "points": 83,
    "comments": 8,
    "summary": "",
    "titleKo": "하버드 CS 2881R AI 안전"
@@ -120,7 +150,7 @@
    "url": "https://www.bloodinthemachine.com/p/ai-is-becoming-a-disaster-for-the",
    "date": "2026-11-22T12:19:46.000Z",
    "source": "Hacker News",
-   "points": 134,
+   "points": 135,
    "comments": 64,
    "summary": "",
    "titleKo": "AI는 기후에 재앙이 되고 있습니다."
@@ -140,8 +170,8 @@
    "url": "https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens",
    "date": "2026-11-22T05:11:43.000Z",
    "source": "Hacker News",
-   "points": 107,
-   "comments": 22,
+   "points": 110,
+   "comments": 23,
    "summary": "",
    "titleKo": "AI 공급망 보안: 카나리 토큰이 발견한 것"
   },
@@ -161,7 +191,7 @@
    "date": "2026-11-22T02:10:02.000Z",
    "source": "Hacker News",
    "points": 181,
-   "comments": 565,
+   "comments": 568,
    "summary": "",
    "titleKo": "의식을 가진 AI에 대한 신화"
   },
@@ -174,36 +204,6 @@
    "comments": 37,
    "summary": "",
    "titleKo": "Pandex – MCP를 통한 AI 에이전트에 대한 공식 유럽 법률"
-  },
-  {
-   "title": "ClawDOS – An AI coding agent for DOS",
-   "url": "http://ricapar.net/ClawDOS/",
-   "date": "2026-11-21T05:38:01.000Z",
-   "source": "Hacker News",
-   "points": 176,
-   "comments": 53,
-   "summary": "",
-   "titleKo": "ClawDOS – DOS용 AI 코딩 에이전트"
-  },
-  {
-   "title": "Leaky AI supply chain is exposing secret user data at an alarming rate",
-   "url": "https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/",
-   "date": "2026-11-20T21:53:39.000Z",
-   "source": "Hacker News",
-   "points": 71,
-   "comments": 8,
-   "summary": "",
-   "titleKo": "정보가 유출되는 AI 공급망으로 인해 비밀 사용자 데이터가 위험한 속도로 노출되고 있습니다."
-  },
-  {
-   "title": "Anthropic's IPO Bust Deepens $4T AI Wipeout on Wall Street",
-   "url": "https://www.wsj.com/finance/stocks/anthropics-ipo-bust-punctuates-4-trillion-ai-wipeout-on-wall-street-f1f1ec90",
-   "date": "2026-11-20T21:18:46.000Z",
-   "source": "Hacker News",
-   "points": 67,
-   "comments": 5,
-   "summary": "",
-   "titleKo": "앤트로픽의 IPO 실패로 월스트리트에서 4조 달러 규모의 AI 주가 폭락이 심화되고 있습니다."
   }
  ]
 }
