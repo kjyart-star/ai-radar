@@ -1,79 +1,126 @@
 {
- "generated": "2026-11-27T05:14:28.080Z",
+ "generated": "2026-11-28T04:52:25.679Z",
  "source": "Hacker News",
  "sources": [
   "Hacker News"
  ],
  "items": [
   {
+   "title": "Woman evicted after landlord's AI assistant told her she could delay rent",
+   "url": "https://drmahfouz.substack.com/p/woman-evicted-after-landlords-ai",
+   "date": "2026-11-28T01:32:56.000Z",
+   "source": "Hacker News",
+   "points": 112,
+   "comments": 85,
+   "summary": ""
+  },
+  {
+   "title": "Prospero: Bloat-free, native AI coding harness with ImGui",
+   "url": "https://github.com/skeeto/prospero",
+   "date": "2026-11-27T20:23:14.000Z",
+   "source": "Hacker News",
+   "points": 50,
+   "comments": 9,
+   "summary": ""
+  },
+  {
+   "title": "I'm Scared of AI",
+   "url": "https://thesoapbox.email/archive/3",
+   "date": "2026-11-27T17:45:31.000Z",
+   "source": "Hacker News",
+   "points": 206,
+   "comments": 244,
+   "summary": ""
+  },
+  {
+   "title": "AI on brink of making online security useless, mathematicians fear",
+   "url": "https://www.thetimes.com/uk/technology-uk/article/ai-making-online-security-useless-smr73d3n8",
+   "date": "2026-11-27T11:09:04.000Z",
+   "source": "Hacker News",
+   "points": 118,
+   "comments": 155,
+   "summary": ""
+  },
+  {
+   "title": "Group chat where your AI talks behind your back",
+   "url": "https://construct22.com/",
+   "date": "2026-11-27T06:44:34.000Z",
+   "source": "Hacker News",
+   "points": 692,
+   "comments": 286,
+   "summary": ""
+  },
+  {
+   "title": "AI agents now control part of DeepMind's compute for Gemini experiments",
+   "url": "https://the-decoder.com/ai-agents-now-control-part-of-deepminds-compute-for-gemini-experiments-but-recursive-self-improvement-remains-distant/",
+   "date": "2026-11-27T00:03:18.000Z",
+   "source": "Hacker News",
+   "points": 56,
+   "comments": 28,
+   "summary": ""
+  },
+  {
    "title": "AI made self-hosting fun again",
    "url": "https://janlukas.blog/posts/ai-self-hosting",
    "date": "2026-11-26T21:47:45.000Z",
    "source": "Hacker News",
-   "points": 454,
-   "comments": 241,
-   "summary": "",
-   "titleKo": "AI 덕분에 다시 즐겁게 직접 호스팅할 수 있게 되었습니다."
+   "points": 1107,
+   "comments": 509,
+   "summary": ""
   },
   {
    "title": "Tracking Diseases Cured by AI",
    "url": "https://diseasescuredbyai.com/",
    "date": "2026-11-26T17:16:41.000Z",
    "source": "Hacker News",
-   "points": 307,
-   "comments": 184,
-   "summary": "",
-   "titleKo": "AI로 치료된 질병 추적"
+   "points": 321,
+   "comments": 195,
+   "summary": ""
   },
   {
    "title": "Google Will Make AI Agents Use Its MCP Servers. The Gmail One Can't Send Email",
    "url": "https://techstackups.com/articles/google-workspace-ai-agents-mcp/",
    "date": "2026-11-26T09:44:23.000Z",
    "source": "Hacker News",
-   "points": 294,
-   "comments": 251,
-   "summary": "",
-   "titleKo": "Google, AI 에이전트가 자사 MCP 서버를 사용하도록 할 예정. Gmail One은 이메일을 보낼 수 없습니다."
+   "points": 420,
+   "comments": 333,
+   "summary": ""
   },
   {
    "title": "The New York Times warns photographers not to update Photoshop over AI features",
    "url": "https://www.theverge.com/ai-artificial-intelligence/1041227/the-new-york-times-warns-photographers-not-to-update-photoshop-over-ai-features",
    "date": "2026-11-25T21:18:02.000Z",
    "source": "Hacker News",
-   "points": 661,
-   "comments": 525,
-   "summary": "",
-   "titleKo": "뉴욕타임스, 사진작가들에게 AI 기능이 포함된 포토샵 업데이트하지 말라고 경고"
+   "points": 680,
+   "comments": 545,
+   "summary": ""
   },
   {
    "title": "New York bans AI toys, including those using internet to talk to children",
    "url": "https://www.theguardian.com/us-news/2026/nov/25/new-york-bans-ai-toys",
    "date": "2026-11-25T17:27:05.000Z",
    "source": "Hacker News",
-   "points": 55,
+   "points": 56,
    "comments": 14,
-   "summary": "",
-   "titleKo": "뉴욕, 인터넷을 통해 어린이와 대화하는 인공지능 장난감을 포함한 인공지능 장난감 금지"
+   "summary": ""
   },
   {
    "title": "Marginalia Search, Money, C++, Rust, AI, Stuff",
    "url": "https://www.marginalia.nu/log/a_141_marginalia_update/",
    "date": "2026-11-25T03:47:42.000Z",
    "source": "Hacker News",
-   "points": 223,
-   "comments": 85,
-   "summary": "",
-   "titleKo": "마지날리아 검색, 돈, C++, Rust, AI, 기타"
+   "points": 224,
+   "comments": 84,
+   "summary": ""
   },
   {
    "title": "Working with AI",
    "url": "https://www.anthropic.com/research/working-with-ai",
    "date": "2026-11-24T21:07:38.000Z",
    "source": "Hacker News",
-   "points": 89,
-   "comments": 77,
-   "summary": "",
-   "titleKo": "AI와 함께하기"
+   "points": 91,
+   "comments": 78,
+   "summary": ""
   },
   {
    "title": "Tidal bans AI-generated music",
@@ -81,9 +128,8 @@
    "date": "2026-11-24T16:12:38.000Z",
    "source": "Hacker News",
    "points": 337,
-   "comments": 344,
-   "summary": "",
-   "titleKo": "Tidal, AI가 생성한 음악 금지"
+   "comments": 346,
+   "summary": ""
   },
   {
    "title": "Jevons Paradox in AI: Cheaper Tokens Won't Pay for Capex",
@@ -92,18 +138,16 @@
    "source": "Hacker News",
    "points": 82,
    "comments": 40,
-   "summary": "",
-   "titleKo": "AI 분야의 제본스 역설: 저렴한 토큰으로는 자본 지출을 충당할 수 없다"
+   "summary": ""
   },
   {
    "title": "Declare is a UI language for you and your AI",
    "url": "https://davidtemkin.github.io/declarelang/",
    "date": "2026-11-24T02:36:56.000Z",
    "source": "Hacker News",
-   "points": 122,
-   "comments": 97,
-   "summary": "",
-   "titleKo": "Declare는 사용자와 AI를 위한 UI 언어입니다."
+   "points": 126,
+   "comments": 98,
+   "summary": ""
   },
   {
    "title": "Amodei reportedly suggested games could pacify masses after AI took their jobs (2015)",
@@ -112,8 +156,7 @@
    "source": "Hacker News",
    "points": 79,
    "comments": 85,
-   "summary": "",
-   "titleKo": "아모데이(Amodei)는 AI가 사람들의 일자리를 빼앗은 후 게임이 대중을 진정시킬 수 있다고 제안한 것으로 알려졌습니다(2015년)."
+   "summary": ""
   },
   {
    "title": "0rwx – A simple model of AI usage, inspired by Unix permissions",
@@ -122,18 +165,16 @@
    "source": "Hacker News",
    "points": 71,
    "comments": 17,
-   "summary": "",
-   "titleKo": "0rwx – Unix 권한에서 영감을 얻은 간단한 AI 사용 모델"
+   "summary": ""
   },
   {
    "title": "A Beginner's Guide to Local AI with Inkling, Qwen, and Unsloth",
    "url": "https://www.gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth",
    "date": "2026-11-22T21:01:16.000Z",
    "source": "Hacker News",
-   "points": 780,
+   "points": 782,
    "comments": 319,
-   "summary": "",
-   "titleKo": "Inkling, Qwen, Unsloth를 활용한 로컬 AI 입문 가이드"
+   "summary": ""
   },
   {
    "title": "Harvard CS 2881R AI Safety",
@@ -142,68 +183,7 @@
    "source": "Hacker News",
    "points": 83,
    "comments": 8,
-   "summary": "",
-   "titleKo": "하버드 CS 2881R AI 안전"
-  },
-  {
-   "title": "AI is becoming a disaster for the climate",
-   "url": "https://www.bloodinthemachine.com/p/ai-is-becoming-a-disaster-for-the",
-   "date": "2026-11-22T12:19:46.000Z",
-   "source": "Hacker News",
-   "points": 135,
-   "comments": 64,
-   "summary": "",
-   "titleKo": "AI는 기후에 재앙이 되고 있습니다."
-  },
-  {
-   "title": "Muru – AI-assisted Rust server for Python apps by mod_WSGI's creator",
-   "url": "https://simonwillison.net/2026/Nov/21/muru/",
-   "date": "2026-11-22T09:57:01.000Z",
-   "source": "Hacker News",
-   "points": 80,
-   "comments": 12,
-   "summary": "",
-   "titleKo": "Muru – mod_WSGI의 개발자가 만든 Python 앱용 AI 지원 Rust 서버"
-  },
-  {
-   "title": "AI Supply Chain Security: What Canary Tokens Found",
-   "url": "https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens",
-   "date": "2026-11-22T05:11:43.000Z",
-   "source": "Hacker News",
-   "points": 110,
-   "comments": 23,
-   "summary": "",
-   "titleKo": "AI 공급망 보안: 카나리 토큰이 발견한 것"
-  },
-  {
-   "title": "Since last year, we asked: \"What if AI solved the Riemann Hypothesis?\"",
-   "url": "https://www.youtube.com/watch?v=zqzk43bSdDI",
-   "date": "2026-11-22T03:06:35.000Z",
-   "source": "Hacker News",
-   "points": 50,
-   "comments": 18,
-   "summary": "",
-   "titleKo": "작년부터 우리는 \"AI가 리만 가설을 해결한다면 어떨까?\"라는 질문을 던졌습니다."
-  },
-  {
-   "title": "The Mythology of Conscious AI",
-   "url": "https://www.noemamag.com/the-mythology-of-conscious-ai/",
-   "date": "2026-11-22T02:10:02.000Z",
-   "source": "Hacker News",
-   "points": 181,
-   "comments": 568,
-   "summary": "",
-   "titleKo": "의식을 가진 AI에 대한 신화"
-  },
-  {
-   "title": "Pandex – Official European Law for AI Agents, over MCP",
-   "url": "https://www.pandex.io",
-   "date": "2026-11-21T20:47:41.000Z",
-   "source": "Hacker News",
-   "points": 141,
-   "comments": 37,
-   "summary": "",
-   "titleKo": "Pandex – MCP를 통한 AI 에이전트에 대한 공식 유럽 법률"
+   "summary": ""
   }
  ]
 }
